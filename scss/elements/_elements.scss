@@ -25,3 +25,23 @@
 // Neat Settings -- uncomment if using Neat -- must be imported before Neat
 // @import "grid-settings";
 
+// Miscellaneous resets
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  border-bottom: #000;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1rem 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

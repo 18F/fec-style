@@ -5,8 +5,6 @@ $base-font-family: $serif;
 
 // Colors
 // 
-// 
-//
 // Styleguide 1.1
 
 // Primary colors
@@ -38,3 +36,9 @@ $primary-contrast: $federal-blue;
 
 $secondary: $orange;
 $secondary-contrast: $crimson;
+
+// Color classes
+.crimson {
+  background-color: $crimson;
+}
+
