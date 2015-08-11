@@ -1,0 +1,76 @@
+// Forms
+// 
+// 
+// Styleguide 1.5
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+label,
+select {
+  display: block;
+}
+
+label {
+  font-weight: 600;
+  margin: 0;
+
+  &.required::after {
+    content: "*";
+  }
+
+  abbr {
+    display: none;
+  }
+}
+
+#{$all-text-inputs},
+select[multiple=multiple],
+textarea {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  font-family: $base-font-family;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  transition: border-color;
+  width: 100%;
+
+  &:hover {
+
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="search"] {
+  @include appearance(none);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 1rem;
+}
+
+input[type="file"] {
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+select {
+  margin-bottom: 1rem;
+  max-width: 100%;
+  width: auto;
+}

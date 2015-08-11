@@ -1,0 +1,13 @@
+{
+  "name": "fec-style",
+  "version": "0.0.0",
+  "description": "Shared styles for FEC Beta",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/18F/fec-style.git"
+  },
+  "dependencies": {
+    "node-bourbon": "4.2.2",
+    "node-neat": "1.7.1-beta1"
+  }
+}

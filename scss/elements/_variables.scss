@@ -1,0 +1,40 @@
+// Typography
+$serif: 'Gandhi Serif', serif;
+$sans-serif: 'Karla Sans', sans-serif;
+$base-font-family: $serif;
+
+// Colors
+// 
+// 
+//
+// Styleguide 1.1
+
+// Primary colors
+$crimson: #631010;
+$orange: #F77B42;
+
+$federal-blue: #022C53;
+$aqua: #36BDBB;
+
+$ivory: #EFDECD;
+$cream: #FCF6EF;
+
+// Accent colors
+$bright-red: #DD1400;
+$deep-orange: #E36641;
+$deep-red: #961A16;
+
+$bright-blue: #0AACFA;
+$deep-aqua: #3E8A9A;
+$navy: #164F85;
+
+$beige: #CEB59C;
+$brown: #C09C7C;
+$black: #000205;
+
+// Color aliases
+$primary: $aqua;
+$primary-contrast: $federal-blue;
+
+$secondary: $orange;
+$secondary-contrast: $crimson;

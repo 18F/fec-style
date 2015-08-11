@@ -1,0 +1,93 @@
+// Typography
+// 
+// Use them like this
+// 
+// Markup:
+// <h1>Introduction (h1)</h1>
+// <h2>Heading 2 (h2)</h2>
+// <h3>Heading 3 (h3)</h3>
+// <h4>Heading 4 (h4)</h4>
+// <h5>Heading 5 (h5)</h5>
+// <h6>Heading 6 (h6)</h6>
+// <p>Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
+//  
+// Styleguide 1.2
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  font-family: $base-font-family;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0;
+}
+
+h1 {
+  border-bottom: 1px solid #000;
+  font-family: $serif;
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.15;
+}
+
+h2 {
+  font-family: $serif;
+  font-size: 2.0rem;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: $serif;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1.14;  
+}
+
+h4 {
+  font-family: $sans-serif;
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 1.14;
+}
+
+h5 {
+  font-family: $serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.33;
+}
+
+h6 {
+  border-bottom: 1px solid #000;
+  font-family: $sans-serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.63;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+hr {
+  border-bottom: #000;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1rem 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}

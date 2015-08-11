@@ -1,0 +1,25 @@
+// Links
+// 
+// Use them like this
+//
+// Markup:
+// <a href="...">Link</a>
+//  
+// Styleguide 1.3
+
+a {
+  color: $primary-contrast;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
