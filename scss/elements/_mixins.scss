@@ -1,6 +1,12 @@
-// Utility Mixins
+// Utility Mixins 
 // 
 // Styleguide mixins
+
+// u-visually-hidden() 
+//
+// Used to visually hide components but keep them visible to screenreaders
+//
+// Styleguide mixins.visually-hidden
 
 @mixin u-visually_hidden {
   position: absolute !important;
@@ -8,11 +14,13 @@
   left: -9999px !important;
 }
 
-// @include font-color()
+// font-color()
 //
 // Used to set the color of all child elements
 //
 // $color     - The color of the font and (if applicable) border-color
+//
+// Styleguide mixins.font-color
 
 @mixin font-color($color) {
   color: $color;
@@ -30,7 +38,8 @@
   dt, 
   dd, 
   label,
-  blockquote {
+  blockquote,
+  .label {
     color: $color;
   }
 
@@ -38,5 +47,53 @@
   h6,
   a {
     border-color: $color;
+  }
+}
+
+// form-color()
+//
+// Used to set the color of the form elements
+//
+// $background-color      - The color of the background of the inputs
+// $contrast-color        - Border and font colors
+// $focus-color           - Focus color
+// $icon-color            - A string that will be appended to the background-image url for checkboxes (e.g. 'primary', 'secondary')
+//
+// Styleguide mixins.font-colo
+
+@mixin form-color($background-color, $contrast-color, $focus-color, $icon-color) {
+  #{$all-text-inputs},
+  select,
+  select[multiple=multiple],
+  textarea {
+    color: $contrast-color;
+    border-color: $contrast-color;
+    background-color: $background-color;
+
+    &:focus {
+      border-color: $focus-color;
+      color: $focus-color;
+    }
+  }
+  
+  select {
+    background-image: url('../img/i-arrow-down--' + $icon-color + '-contrast.png');
+    background-image: url('../img/i-arrow-down--' + $icon-color + '-contrast.svg');
+  }
+
+  input[type="checkbox"] + label::before,
+  input[type="radio"] + label::before {
+    background-color: $background-color;
+    border-color: $contrast-color;
+  }
+
+  input[type="checkbox"]:checked + label::before,
+  input[type="radio"]:checked + label::before {
+    background-color: $contrast-color;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    background-image: url('../img/i-check--' + $icon-color + '.png');
+    background-image: url('../img/i-check--' + $icon-color + '.svg');
   }
 }

@@ -16,6 +16,7 @@
 
 .bg--primary {
   @include font-color($primary-contrast);
+  @include form-color($primary, $primary-contrast, $ivory, 'primary');
   background-color: $primary;
   
   a {
@@ -27,6 +28,7 @@
 
 .bg--secondary {
   @include font-color($secondary-contrast);
+  @include form-color($secondary, $secondary-contrast, $ivory, 'secondary');
   background-color: $secondary;
 
   a {

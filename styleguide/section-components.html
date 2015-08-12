@@ -37,29 +37,27 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-components.html">
+        <a href="section-buttons.html">
           <span class="kss-nav__ref">2</span
-          ><span class="kss-nav__name">Components</span>
+          ><span class="kss-nav__name">Buttons</span>
         </a>
-        <ul class="kss-nav__menu-child">
-            <li class="kss-nav__menu-item">
-              <a href="section-components.html#kssref-components-buttons">
-                <span class="kss-nav__ref">2.1</span
-                ><span class="kss-nav__name">Buttons</span>
-              </a>
-            </li>
-            <li class="kss-nav__menu-item">
-              <a href="section-components.html#kssref-components-slabs">
-                <span class="kss-nav__ref">2.2</span
-                ><span class="kss-nav__name">Slabs</span>
-              </a>
-            </li>
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-layout.html">
-          <span class="kss-nav__ref">3</span
+          <span class="kss-nav__ref">5</span
           ><span class="kss-nav__name">Layout</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-mixins.html">
+          <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">Utility Mixins</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-toggles.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Toggles</span>
         </a>
       </li>
     </ul>
@@ -67,38 +65,18 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-components" class="kss-section kss-section--depth-1">
-
-    <div class="kss-style">
-      <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-components">
-          <span class="kss-title__ref">
-              2
-            <span class="kss-title__permalink-hash">
-                #components
-            </span>
-          </span>
-          Components
-        </a>
-      </h1>
-
-
-    </div>
-
-
-      </div>
-      <section id="kssref-components-buttons" class="kss-section kss-section--depth-2">
+      <section id="kssref-components-forms" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-components-buttons">
+        <a class="kss-title__permalink" href="#kssref-components-forms">
           <span class="kss-title__ref">
-              2.1
+              3.1
             <span class="kss-title__permalink-hash">
-                #components.buttons
+                #components.forms
             </span>
           </span>
-          Buttons
+          Forms
         </a>
       </h2>
 
@@ -110,153 +88,14 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <button class="button--primary">Primary button</button>
-<button class="button--secondary">Secondary button</button>
-<button class="button--neutral">Neutral button</button>
+          <label class="label" for="input">Label</label>
+<input type="text">
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--primary&quot;&gt;Primary button&lt;/button&gt;
-&lt;button class=&quot;button--secondary&quot;&gt;Secondary button&lt;/button&gt;
-&lt;button class=&quot;button--neutral&quot;&gt;Neutral button&lt;/button&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-components-buttons.large-buttons" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink" href="#kssref-components-buttons.large-buttons">
-          <span class="kss-title__ref">
-              2.1.1
-            <span class="kss-title__permalink-hash">
-                #components.buttons.large-buttons
-            </span>
-          </span>
-          Large Buttons
-        </a>
-      </h3>
-
-
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <button class="button--lg button--primary">Primary button</button>
-<button class="button--lg button--secondary">Secondary button</button>
-<button class="button--lg button--neutral">Neutral button</button>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--lg button--primary&quot;&gt;Primary button&lt;/button&gt;
-&lt;button class=&quot;button--lg button--secondary&quot;&gt;Secondary button&lt;/button&gt;
-&lt;button class=&quot;button--lg button--neutral&quot;&gt;Neutral button&lt;/button&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-components-buttons.small-buttons" class="kss-section kss-section--depth-3">
-
-    <div class="kss-style">
-      <h3 class="kss-title kss-title--level-3">
-        <a class="kss-title__permalink" href="#kssref-components-buttons.small-buttons">
-          <span class="kss-title__ref">
-              2.1.2
-            <span class="kss-title__permalink-hash">
-                #components.buttons.small-buttons
-            </span>
-          </span>
-          Small Buttons
-        </a>
-      </h3>
-
-
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <button class="button--sm button--primary">Primary button</button>
-<button class="button--sm button--secondary">Secondary button</button>
-<button class="button--sm button--neutral">Neutral button</button>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--sm button--primary&quot;&gt;Primary button&lt;/button&gt;
-&lt;button class=&quot;button--sm button--secondary&quot;&gt;Secondary button&lt;/button&gt;
-&lt;button class=&quot;button--sm button--neutral&quot;&gt;Neutral button&lt;/button&gt;</code></pre>
-      </div>
-
-      </section>
-      <section id="kssref-components-slabs" class="kss-section kss-section--depth-2">
-
-    <div class="kss-style">
-      <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-components-slabs">
-          <span class="kss-title__ref">
-              2.2
-            <span class="kss-title__permalink-hash">
-                #components.slabs
-            </span>
-          </span>
-          Slabs
-        </a>
-      </h2>
-
-
-      <div class="kss-description">
-        <p>Slabs are full-width blocks of color. Slabs should contain containers to center content.
-Slabs can can have background color styles applied</p>
-
-      </div>
-    </div>
-
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <div class="slab bg--neutral">
-  <div class="container">
-    This is a neutral slab
-  </div>
-</div>
-<div class="slab bg--primary">
-  <div class="container">
-    This is a primary slab
-  </div>
-</div>
-<div class="slab bg--secondary">
-  <div class="container">
-    This is a secondary slab
-  </div>
-</div>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab bg--neutral&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    This is a neutral slab
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;slab bg--primary&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    This is a primary slab
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;slab bg--secondary&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    This is a secondary slab
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label class=&quot;label&quot; for=&quot;input&quot;&gt;Label&lt;/label&gt;
+&lt;input type=&quot;text&quot;&gt;</code></pre>
       </div>
 
       </section>

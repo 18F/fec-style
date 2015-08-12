@@ -1,7 +1,18 @@
 // Forms
 // 
-// 
-// Styleguide 1.5
+// Markup:
+// <div class="slab bg--secondary">
+//   <div class="container">
+//     <label class="label" for="input">Label</label>
+//     <input type="text" id="input">
+//     <label class="label" for="select">Label</label>
+//     <select>
+//      <option>Option 1</option>
+//     </select>
+//   </div>
+// </div>
+//
+// Styleguide elements.forms
 
 fieldset {
   border: none;
@@ -16,12 +27,8 @@ select {
 }
 
 label {
-  font-weight: 600;
   margin: 0;
-
-  &.required::after {
-    content: "*";
-  }
+  font-family: $sans-serif;
 
   abbr {
     display: none;
@@ -30,24 +37,39 @@ label {
 
 #{$all-text-inputs},
 select[multiple=multiple],
-textarea {
-  background-color: #fff;
-  border-width: 1px;
+textarea,
+select {
+  background-color: $neutral;
+  border-color: $brown;
+  border-width: 2px;
   border-style: solid;
   border-radius: 4px;
-  font-family: $base-font-family;
+  font-family: $sans-serif;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   padding: 1rem;
   transition: border-color;
   width: 100%;
 
-  &:hover {
-
-  }
-
   &:focus {
     outline: none;
+    border-color: $primary;
+    color: $primary;
   }
+}
+
+select {
+  @include appearance(none);
+  width: auto;
+  background-image: url('../img/i-arrow-down--primary.png');
+  background-image: url('../img/i-arrow-down--primary.svg');
+  background-repeat: no-repeat;
+  background-position: 90% 50%;
+  background-size: 12px;
+  padding: 1rem 3rem 1rem 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 textarea {
@@ -58,23 +80,10 @@ input[type="search"] {
   @include appearance(none);
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  margin-right: 1rem;
-}
-
 input[type="file"] {
   padding-bottom: 1rem;
   width: 100%;
 }
-
-select {
-  margin-bottom: 1rem;
-  max-width: 100%;
-  width: auto;
-}
-
 
 // Labels
 //
@@ -82,10 +91,106 @@ select {
 //
 // Styleguide elements.forms.labels
 
-.label,
-legend.label {
+.label {
+  color: $primary;
   font-family: $sans-serif;
   font-weight: bold;
   margin-bottom: .5rem;
   text-transform: uppercase;
+}
+
+// Checkboxes and Radio Buttons
+//
+// Custom checkboxes and radio buttons
+//
+// Markup:
+// <div class="slab bg--neutral">
+//  <div class="container">
+//   <fieldset>
+//     <legend class="label">Select any</legend>
+//     <ul>
+//       <li>
+//         <input type="checkbox" id="checkbox-1" checked>
+//         <label for="checkbox-1">Option 1</label>
+//       </li>
+//       <li>
+//         <input type="checkbox" id="checkbox-2">
+//         <label for="checkbox-2">Option 2</label>
+//       </li>
+//     </ul>
+//   </fieldset>
+//   <fieldset>
+//     <legend class="label">Select one</legend>
+//     <ul>
+//       <li>
+//         <input type="radio" id="radio-1" name="radio" checked>
+//         <label for="radio-1">Option 1</label>
+//       </li>
+//       <li>
+//         <input type="radio" id="radio-2" name="radio">
+//         <label for="radio-2" >Option 2</label>
+//       </li>
+//     </ul>
+//   </fieldset>
+//  </div>
+// </div>
+//
+// Styleguide elements.forms.checkboxes
+
+input[type="checkbox"],
+input[type="radio"] {
+  @include u-visually-hidden();
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  cursor: pointer;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+  background: $neutral;
+  border: 2px solid $primary;
+  border-radius: 2px;
+  content: '';
+  display: inline-block;
+  height: 1.6rem;
+  margin-right: .6em;
+  text-indent: .15em;
+  width: 1.6rem;
+  vertical-align: -4px;
+}
+
+input[type="radio"] + label::before {  
+  height: 1.6rem;  
+  width: 1.6rem;  
+}
+
+input[type="radio"] + label::before {
+  border-radius: 1.6rem;
+}
+
+input[type="checkbox"]:checked + label::before,
+input[type="radio"]:checked + label::before {
+  background-color: $primary;
+}
+
+input[type="checkbox"]:checked + label::before {
+  background-image: url('../img/i-check--neutral.png');
+  background-image: url('../img/i-check--neutral.svg');
+  background-position: 50%;
+  background-size: 12px;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:focus + label::before {
+}
+
+input[type="checkbox"]:disabled + label::before,
+input[type="radio"]:disabled + label::before {
+  // background: $color-grey-600;
+  // color: $color-grey-600;
+  cursor: not-allowed;
 }
