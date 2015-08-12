@@ -1,4 +1,7 @@
-# Getting started (work in progress)
+# Viewing the style guide
+Clone the repo to your machine and open `styleguide/index.html`. Voila.
+
+# Contributing
 Install dependencies
 ``` 
 $ npm install
