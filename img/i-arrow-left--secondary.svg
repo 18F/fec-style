@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="9px" height="10px" viewBox="0 0 9 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>i-arrow-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style-Guide-v1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Web-Style-Guide" sketch:type="MSArtboardGroup" transform="translate(-371.000000, -5513.000000)" fill="#631010">
+            <path d="M379.476617,5518.7095 L373.243055,5522.39401 C373.106266,5522.4752 372.958124,5522.51835 372.800051,5522.51835 C372.329802,5522.51835 371.948665,5522.1371 371.948665,5521.66671 L371.948665,5514.28575 C371.948665,5513.81564 372.329802,5513.43411 372.800051,5513.43411 C372.958124,5513.43411 373.106266,5513.47754 373.233122,5513.55277 C373.238798,5513.55589 379.476617,5517.24296 379.476617,5517.24296 C379.726924,5517.39143 379.894931,5517.66424 379.894931,5517.97623 C379.894931,5518.2885 379.726924,5518.56131 379.476617,5518.7095 Z" id="i-arrow-left" sketch:type="MSShapeGroup" transform="translate(375.921798, 5517.976230) rotate(-180.000000) translate(-375.921798, -5517.976230) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,25 +1,27 @@
 // Buttons
 //
 // Markup:
-// <button>Basic button</button>
-// <button class="primary">Primary button</button>
-// <button class="button--large">Large button</button>
+// <button class="button--primary">Primary button</button>
+// <button class="button--secondary">Secondary button</button>
+// <button class="button--neutral">Neutral button</button>
 //
-// Styleguide 2
+// Styleguide buttons
 
 #{$all-button-inputs},
 button,
 .button {
   @include appearance(none);
+  @include transition(background-color, .1s, color, .1s, border-color, .1s);
   -webkit-font-smoothing: antialiased;
   border-radius: 2px;
-  border: none;
+  border: 2px solid transparent;
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-size: 1.4rem;
   font-family: $sans-serif;
   line-height: 1;
-  padding: 1rem 2rem;
+  padding: 8px 2rem;
   text-decoration: none;
   user-select: none;
   vertical-align: middle;
@@ -36,13 +38,114 @@ button,
   }
 }
 
-.primary {
+.button--primary {
   background-color: $primary-contrast;
   color: $primary;
+
+  &:hover {
+    background-color: lighten($primary-contrast, 10%);
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $navy;
+    border: 2px solid $primary-contrast; 
+    color: $cream;
+  }
 }
 
-.button--large {
+.button--secondary {
+  background-color: $secondary-contrast;
+  color: $secondary;
+
+  &:hover {
+    background-color: lighten($secondary-contrast, 10%);
+  }  
+
+  &:active,
+  &.is-active {
+    background-color: $deep-red;
+    border: 2px solid $secondary-contrast; 
+    color: $cream;
+  }  
+}
+
+.button--neutral {
+  background-color: $beige;
+  color: $primary;
+
+  &:hover {
+    background-color: lighten($beige, 10%);
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $brown;
+    border: 2px solid $primary; 
+  }  
+}
+
+// Large Buttons
+//
+// Markup:
+// <button class="button--lg button--primary">Primary button</button>
+// <button class="button--lg button--secondary">Secondary button</button>
+// <button class="button--lg button--neutral">Neutral button</button>
+//
+// Styleguide buttons.large-buttons
+//
+
+.button--lg {
   border-radius: 4px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 1.4rem 3rem;
 }
+
+// Small Buttons
+//
+// Markup:
+// <button class="button--sm button--primary">Primary button</button>
+// <button class="button--sm button--secondary">Secondary button</button>
+// <button class="button--sm button--neutral">Neutral button</button>
+//
+// Styleguide buttons.small-buttons
+//
+.button--sm {
+  border-radius: 2px;
+  font-size: 1.2rem;
+  padding: 5px 1rem;
+}
+
+// Icon Buttons
+//
+// Icon color matches text color
+// Small vertical line between icon and text. Buttons that have “forward” actions have icons to the right of the text, and those with “back” actions have icons to the left.
+//
+// Markup:
+// <button class="button--icon button--secondary"><img alt="arrow-left" src="../img/i-arrow-left--secondary.svg">Previous</button>
+// <button class="button--icon button--secondary button--icon--right">Next<img alt="arrow-right" src="../img/i-arrow-right--secondary.svg"></button>
+// <button class="button--icon button--secondary"><img alt="charts" src="../img/i-chart--secondary.svg">View charts</button>
+//
+// Styleguide buttons.icon-buttons
+//
+
+.button--icon {
+  img {
+    border-right: 1px solid;
+    height: 1em;
+    margin-right: 5px;
+    padding-right: 5px;
+  }
+}
+
+.button--icon--right {
+  img {
+    border-right: none;
+    border-left: 1px solid;    
+    margin-right: none;
+    margin-left: 5px;
+    padding-right: none;
+    padding-left: 5px;
+  }
+}
+

@@ -31,14 +31,11 @@ $brown: #C09C7C;
 $black: #000205;
 
 // Color aliases
-$primary: $aqua;
-$primary-contrast: $federal-blue;
+$primary: $federal-blue;
+$primary-contrast: $aqua;
 
-$secondary: $orange;
-$secondary-contrast: $crimson;
+$secondary: $crimson;
+$secondary-contrast: $orange;
 
-// Color classes
-.crimson {
-  background-color: $crimson;
-}
-
+$neutral: $ivory;
+$neutral-contrast: $brown;

@@ -1,0 +1,27 @@
+// Slabs
+//
+// Slabs are full-width blocks of color. Slabs should contain containers to center content. 
+// Slabs can can have background color styles applied 
+// 
+// Markup:
+// <div class="slab bg--neutral">
+//   <div class="container">
+//     This is a neutral slab
+//   </div>
+// </div>
+// <div class="slab bg--primary">
+//   <div class="container">
+//     This is a primary slab
+//   </div>
+// </div>
+// <div class="slab bg--secondary">
+//   <div class="container">
+//     This is a secondary slab
+//   </div>
+// </div>
+//
+// Styleguide slabs
+
+.slab {
+  padding: 2rem 0;
+}

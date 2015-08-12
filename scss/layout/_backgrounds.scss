@@ -1,0 +1,25 @@
+// Backgrounds
+//
+// Background styles can be applied to any component and will apply background-color, 
+// text colors and link styles to that component. 
+//
+// .bg--neutral      - Ivory background with black text
+// .bg--primary      - Federal Blue background with aqua text
+// .bg--secondary    - Crimson background with orange text
+//
+// Styleguide layout.backgrounds
+
+.bg--neutral {
+  background-color: $neutral;
+  color: #000;
+}
+
+.bg--primary {
+  background-color: $primary;
+  color: $primary-contrast;
+}
+
+.bg--secondary {
+  background-color: $secondary;
+  color: $secondary-contrast;
+}
