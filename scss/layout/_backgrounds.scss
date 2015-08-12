@@ -1,7 +1,7 @@
 // Backgrounds
 //
 // Background styles can be applied to any component and will apply background-color, 
-// text colors and link styles to that component. 
+// Uses the font-color() mixin to set font and border colors
 //
 // .bg--neutral      - Ivory background with black text
 // .bg--primary      - Federal Blue background with aqua text
@@ -15,11 +15,23 @@
 }
 
 .bg--primary {
+  @include font-color($primary-contrast);
   background-color: $primary;
-  color: $primary-contrast;
+  
+  a {
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }  
 }
 
 .bg--secondary {
+  @include font-color($secondary-contrast);
   background-color: $secondary;
-  color: $secondary-contrast;
+
+  a {
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }
 }

@@ -20,10 +20,11 @@ body {
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0; }
+  margin: 0 0 1em 0;
+  color: #022C53; }
 
 h1 {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #022C53;
   font-family: "Gandhi Serif", serif;
   font-size: 2.6rem;
   font-weight: bold;
@@ -54,7 +55,7 @@ h5 {
   line-height: 1.33; }
 
 h6 {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #022C53;
   font-family: "Karla Sans", sans-serif;
   font-size: 1.1rem;
   font-weight: normal;
@@ -72,10 +73,15 @@ hr {
   margin: 1rem 0; }
 
 a {
-  border-bottom: 2px dotted #36BDBB;
-  color: #36BDBB;
+  border-bottom: 2px dotted #022C53;
+  color: #022C53;
+  cursor: pointer;
   text-decoration: none;
   transition: color 0.1s linear; }
+  a:active,
+  a:focus,
+  a:hover {
+    border-bottom-color: #36BDBB; }
   a:active,
   a:focus {
     outline: none; }
@@ -153,6 +159,13 @@ select {
   max-width: 100%;
   width: auto; }
 
+.label,
+legend.label {
+  font-family: "Karla Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  text-transform: uppercase; }
+
 table {
   -webkit-font-feature-settings: "kern", "liga", "tnum";
   -moz-font-feature-settings: "kern", "liga", "tnum";
@@ -214,12 +227,54 @@ body {
   color: #000; }
 
 .bg--primary {
-  background-color: #022C53;
-  color: #36BDBB; }
+  color: #36BDBB;
+  background-color: #022C53; }
+  .bg--primary h1,
+  .bg--primary h2,
+  .bg--primary h3,
+  .bg--primary h4,
+  .bg--primary h5,
+  .bg--primary h6,
+  .bg--primary a,
+  .bg--primary p,
+  .bg--primary span,
+  .bg--primary li,
+  .bg--primary dt,
+  .bg--primary dd,
+  .bg--primary label,
+  .bg--primary blockquote {
+    color: #36BDBB; }
+  .bg--primary h1,
+  .bg--primary h6,
+  .bg--primary a {
+    border-color: #36BDBB; }
+  .bg--primary a:hover {
+    border-bottom-color: #fff; }
 
 .bg--secondary {
-  background-color: #631010;
-  color: #F77B42; }
+  color: #F77B42;
+  background-color: #631010; }
+  .bg--secondary h1,
+  .bg--secondary h2,
+  .bg--secondary h3,
+  .bg--secondary h4,
+  .bg--secondary h5,
+  .bg--secondary h6,
+  .bg--secondary a,
+  .bg--secondary p,
+  .bg--secondary span,
+  .bg--secondary li,
+  .bg--secondary dt,
+  .bg--secondary dd,
+  .bg--secondary label,
+  .bg--secondary blockquote {
+    color: #F77B42; }
+  .bg--secondary h1,
+  .bg--secondary h6,
+  .bg--secondary a {
+    border-color: #F77B42; }
+  .bg--secondary a:hover {
+    border-bottom-color: #fff; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"],
 button,
@@ -310,3 +365,38 @@ button,
 
 .slab {
   padding: 2rem 0; }
+
+.toggles {
+  margin-bottom: 2rem; }
+  .toggles::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .toggles input[type="radio"] {
+    position: absolute !important;
+    top: auto;
+    left: -9999px !important; }
+  .toggles input:checked + .button--primary {
+    background-color: #164F85;
+    border: 2px solid #36BDBB;
+    color: #FCF6EF; }
+  .toggles input:checked + .button--secondary {
+    background-color: #961A16;
+    border: 2px solid #F77B42;
+    color: #FCF6EF; }
+  .toggles input:checked + .button--neutral {
+    background-color: #C09C7C;
+    border: 2px solid #022C53; }
+  .toggles label {
+    margin-top: 0;
+    float: left; }
+  .toggles .button {
+    border-radius: 0 0 0 0;
+    display: block;
+    font-weight: normal;
+    margin-right: 1px; }
+  .toggles label:first-of-type .button {
+    border-radius: 2px 0 0 2px; }
+  .toggles label:last-of-type .button {
+    border-radius: 0 2px 2px 0;
+    margin-right: 0; }

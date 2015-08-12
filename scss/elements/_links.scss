@@ -8,15 +8,16 @@
 // Styleguide 1.3
 
 a {
-  border-bottom: 2px dotted $primary-contrast;
-  color: $primary-contrast;
+  border-bottom: 2px dotted $primary;
+  color: $primary;
+  cursor: pointer;
   text-decoration: none;
   transition: color 0.1s linear;
 
   &:active,
   &:focus,
   &:hover {
-
+    border-bottom-color: $primary-contrast;
   }
 
   &:active,

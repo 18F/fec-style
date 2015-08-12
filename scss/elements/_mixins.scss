@@ -1,0 +1,42 @@
+// Utility Mixins
+// 
+// Styleguide mixins
+
+@mixin u-visually_hidden {
+  position: absolute !important;
+  top: auto;
+  left: -9999px !important;
+}
+
+// @include font-color()
+//
+// Used to set the color of all child elements
+//
+// $color     - The color of the font and (if applicable) border-color
+
+@mixin font-color($color) {
+  color: $color;
+
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6,
+  a, 
+  p, 
+  span, 
+  li, 
+  dt, 
+  dd, 
+  label,
+  blockquote {
+    color: $color;
+  }
+
+  h1,
+  h6,
+  a {
+    border-color: $color;
+  }
+}
