@@ -1,7 +1,11 @@
 // Forms
 // 
+// .bg--primary     - When the form is on a primary background
+// .bg--secondary   - When the form is on a secondary background
+// .bg--neutral     - When the form is on a neutral background
+//
 // Markup:
-// <div class="slab bg--secondary">
+// <div class="slab {{modifier_class}}">
 //   <div class="container">
 //     <label class="label" for="input">Label</label>
 //     <input type="text" id="input">
@@ -89,8 +93,12 @@ input[type="file"] {
 //
 // Custom checkboxes and radio buttons
 //
+// .bg--primary     - When the form is on a primary background
+// .bg--secondary   - When the form is on a secondary background
+// .bg--neutral     - When the form is on a neutral background
+//
 // Markup:
-// <div class="slab bg--neutral">
+// <div class="slab {{modifier_class}}">
 //  <div class="container">
 //   <fieldset>
 //     <legend class="label">Select any</legend>

@@ -1,10 +1,5 @@
 // Buttons
 //
-// Markup:
-// <button class="button--primary">Primary button</button>
-// <button class="button--secondary">Secondary button</button>
-// <button class="button--neutral">Neutral button</button>
-//
 // Styleguide buttons
 
 #{$all-button-inputs},
@@ -38,6 +33,17 @@ button,
   }
 }
 
+// Primary buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--primary {{ modifier_class }}">Button</button>
+//
+// Styleguide buttons.primary
+
 .button--primary {
   background-color: $primary-contrast;
   color: $primary;
@@ -53,6 +59,17 @@ button,
     color: $cream;
   }
 }
+
+// Secondary buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--secondary {{ modifier_class }}">Button</button>
+//
+// Styleguide buttons.secondary
 
 .button--secondary {
   background-color: $secondary-contrast;
@@ -70,6 +87,17 @@ button,
   }  
 }
 
+// Neutral buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--neutral {{ modifier_class }}">Button</button>
+//
+// Styleguide buttons.neutral
+
 .button--neutral {
   background-color: $neutral;
   color: $primary;
@@ -85,15 +113,7 @@ button,
   }  
 }
 
-// Large Buttons
-//
-// Markup:
-// <button class="button--lg button--primary">Primary button</button>
-// <button class="button--lg button--secondary">Secondary button</button>
-// <button class="button--lg button--neutral">Neutral button</button>
-//
-// Styleguide buttons.large-buttons
-//
+// Alt sizes
 
 .button--lg {
   border: 2px solid transparent;
@@ -103,15 +123,6 @@ button,
   padding: 1.4rem 3rem;
 }
 
-// Small Buttons
-//
-// Markup:
-// <button class="button--sm button--primary">Primary button</button>
-// <button class="button--sm button--secondary">Secondary button</button>
-// <button class="button--sm button--neutral">Neutral button</button>
-//
-// Styleguide buttons.small-buttons
-//
 .button--sm {
   border: 1px solid transparent;
   border-radius: 2px;
