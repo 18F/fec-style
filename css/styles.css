@@ -264,7 +264,8 @@ html {
 
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  background-color: #FFFFF6; }
 
 [aria-hidden=true] {
   display: none !important; }
@@ -520,7 +521,7 @@ button,
   .button--primary.is-active {
     background-color: #164F85;
     border: 2px solid #36BDBB;
-    color: #FCF6EF; }
+    color: #FFFFF6; }
 
 .button--secondary {
   background-color: #F77B42;
@@ -531,7 +532,7 @@ button,
   .button--secondary.is-active {
     background-color: #961A16;
     border: 2px solid #F77B42;
-    color: #FCF6EF; }
+    color: #FFFFF6; }
 
 .button--neutral, .paginate_button {
   background-color: #EFDECD;
@@ -588,11 +589,11 @@ button,
   .toggles input:checked + .button--primary {
     background-color: #164F85;
     border: 2px solid #36BDBB;
-    color: #FCF6EF; }
+    color: #FFFFF6; }
   .toggles input:checked + .button--secondary {
     background-color: #961A16;
     border: 2px solid #F77B42;
-    color: #FCF6EF; }
+    color: #FFFFF6; }
   .toggles input:checked + .button--neutral, .toggles input:checked + .paginate_button {
     background-color: #C09C7C;
     border: 2px solid #022C53; }
@@ -691,9 +692,13 @@ button,
     float: left;
     display: block;
     margin-right: 4.82916%;
-    width: 47.58542%; }
+    width: 47.58542%;
+    padding: 2rem 0; }
     .card--wide .card__content:last-child {
       margin-right: 0; }
+  .card--wide .icon--complex {
+    max-height: 10rem;
+    max-width: 10rem; }
   @media screen and (min-width: 40em) {
     .card--wide {
       float: left;
@@ -868,7 +873,7 @@ button,
   background-image: url("../img/i-menu--primary.svg");
   float: left; }
   .site-nav__button--left:hover {
-    background-color: #FCF6EF; }
+    background-color: #FFFFF6; }
   @media screen and (min-width: 40em) {
     .site-nav__button--left {
       display: none; } }
