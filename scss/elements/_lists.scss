@@ -1,6 +1,19 @@
 // Lists
 // 
-// 
+// Blank list markup. No bullets, no numbers.
+//
+// Markup:
+// <ul>
+//  <li>Unordered list item 1</li>
+//  <li>Unordered list item 2</li>
+//  <li>Unordered list item 2</li>
+// </ul>
+// <ol>
+//  <li>Ordered list item 1</li>
+//  <li>Ordered list item 2</li>
+//  <li>Ordered list item 2</li>
+// </ol>
+//
 // Styleguide elements.lists
 
 ul,
@@ -8,18 +21,6 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
-
-  &%default-ul {
-    list-style-type: disc;
-    margin: 0;
-    padding-left: 1rem;
-  }
-
-  &%default-ol {
-    list-style-type: decimal;
-    margin: 0;
-    padding-left: 1rem;
-  }
 }
 
 dl {
