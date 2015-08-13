@@ -5,11 +5,11 @@
   color: $primary;
 
   @if $level == display {
-    border-bottom: 1px solid $primary;
-    border-top: 1px solid $primary;
+    border-bottom: 2px solid $primary;
+    border-top: 2px solid $primary;
     font-family: $serif;
     font-size: 4.8rem;
-    font-weight: normal;
+    font-weight: bold;
     line-height: 1;
     padding: 1.2rem 0;
   }
