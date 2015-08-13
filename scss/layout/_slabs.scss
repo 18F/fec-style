@@ -3,23 +3,15 @@
 // Slabs are full-width blocks of color. Slabs should contain containers to center content. 
 // Slabs can can have background color styles applied 
 // 
+// .bg--primary     - Primary background with primary-contrast accents and type
+// .bg--secondary   - Secondary background with secondary-contrast accents and type
+// .bg--neutral     - Neutral background with primary-contrast accents and type
+//
 // Markup:
-// <div class="slab bg--neutral">
+// <div class="slab {{ modifier_class }}">
 //   <div class="container">
 //     <h1>Heading in a slab</h1>
-//     This is a neutral slab <a>with a link</a>
-//   </div>
-// </div>
-// <div class="slab bg--primary">
-//   <div class="container">
-//     <h1>Heading in a slab</h1>
-//     This is a primary slab <a>with a link</a>
-//   </div>
-// </div>
-// <div class="slab bg--secondary">
-//   <div class="container">
-//     <h1>Heading in a slab</h1>
-//     This is a secondary slab <a>with a link</a>
+//     This is a slab <a>with a link</a>
 //   </div>
 // </div>
 //
