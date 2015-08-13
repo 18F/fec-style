@@ -1,6 +1,6 @@
 // Elements
 //
-// Base styles 
+// Base styles for html elements
 //
 // Styleguide elements
 
@@ -32,13 +32,6 @@ html {
 body {
   padding: 0;
   margin: 0;
-}
-
-.lt-ie9 {
-  // Hack for clearfixes
-  * {
-    filter: none !important;
-  }
 }
 
 [aria-hidden=true] {
