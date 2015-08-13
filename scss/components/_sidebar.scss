@@ -1,0 +1,67 @@
+// Sidebar
+//
+// Sidebars are asides with .bg--* classes applied to color the text and forms.
+// Sidebars can contain .sidebar__sections which provide a bottom rule
+// 
+// .sidebar--primary    - Blue background sidebar
+// .sidebar--secondary  - Crimson background sidebar
+//
+// Markup:
+// <div class="container">
+// <main class="main">
+// </main>
+// <aside class="sidebar {{modifier_class}}">
+//  <div class="sidebar__section">
+//  <h2>Legal Resources</h2>
+//  <ul>
+//    <li><a href="#">102.2(a) »</a></li>
+//    <li><a href="#">102.7(a), (b), (c) »</a></li>
+//    <li><a href="#">102.9(c)  »</a></li>
+//  </ul>
+//  </div>
+//  <div class="sidebar__section">
+//  <h2>Other information</h2>
+//  <p>Call us: 555-555-5555</p>
+//  </div>
+// </aside>
+// </div>
+//
+// Styleguide sidebar
+
+.sidebar {
+  padding: 2rem;
+
+  @include media($med) {
+    @include span-columns(3);
+  }
+}
+
+.sidebar__section {
+  border-bottom: 1px solid;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.sidebar--primary {
+  @include u-bg--primary();
+
+  .sidebar__section {
+    border-bottom-color: $primary-contrast;
+  }
+}
+
+.sidebar--secondary {
+  @include u-bg--secondary();
+  
+  .sidebar__section {
+    border-bottom-color: $secondary-contrast;
+  }
+}

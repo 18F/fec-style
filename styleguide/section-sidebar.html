@@ -83,14 +83,14 @@
           <span class="kss-nav__ref">9</span
           ><span class="kss-nav__name">Sidebar</span>
         </a>
+        <ul class="kss-nav__menu-child">
+        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-toggles.html">
           <span class="kss-nav__ref">10</span
           ><span class="kss-nav__name">Toggles</span>
         </a>
-        <ul class="kss-nav__menu-child">
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-type-styles.html">
@@ -103,76 +103,129 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-toggles" class="kss-section kss-section--depth-1">
+      <div     id="kssref-sidebar" class="kss-section kss-section--depth-1">
 
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-toggles">
+        <a class="kss-title__permalink" href="#kssref-sidebar">
           <span class="kss-title__ref">
-              10
+              9
             <span class="kss-title__permalink-hash">
-                #toggles
+                #sidebar
             </span>
           </span>
-          Toggles
+          Sidebar
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.
-Apply standard button classes to the .button span to style them</p>
+        <p>Sidebars are asides with .bg--* classes applied to color the text and forms.
+Sidebars can contain .sidebar__sections which provide a bottom rule</p>
 
       </div>
     </div>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
         </div>
         <div class="kss-modifier__example">
-          <fieldset class="toggles">
-  <legend class="label">View by:</legend>
-  <label for="toggle-state">
-    <input id="toggle-state" type="radio" name="receipt-aggregate" value="by-state" checked>
-    <span class="button button--primary">State</span>
-  </label>
-  <label for="toggle-contribution-size">
-    <input id="toggle-contribution-size" type="radio" name="receipt-aggregate" value="by-contribution-size">
-    <span class="button button--primary">Contribution Size</span>
-  </label>
-  <label for="toggle-employer">
-    <input id="toggle-employer" type="radio" name="receipt-aggregate" value="by-employer">
-    <span class="button button--primary">Employer</span>
-  </label>
-  <label for="toggle-occupation">
-    <input id="toggle-occupation" type="radio" name="receipt-aggregate" value="by-occupation">
-    <span class="button button--primary">Occupation</span>
-  </label>
-</fieldset>
+          <div class="container">
+<main class="main">
+</main>
+<aside class="sidebar [modifier class]">
+ <div class="sidebar__section">
+ <h2>Legal Resources</h2>
+ <ul>
+   <li><a href="#">102.2(a) »</a></li>
+   <li><a href="#">102.7(a), (b), (c) »</a></li>
+   <li><a href="#">102.9(c)  »</a></li>
+ </ul>
+ </div>
+ <div class="sidebar__section">
+ <h2>Other information</h2>
+ <p>Call us: 555-555-5555</p>
+ </div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.sidebar--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Blue background sidebar
+        </div>
+        <div class="kss-modifier__example">
+          <div class="container">
+<main class="main">
+</main>
+<aside class="sidebar sidebar--primary">
+ <div class="sidebar__section">
+ <h2>Legal Resources</h2>
+ <ul>
+   <li><a href="#">102.2(a) »</a></li>
+   <li><a href="#">102.7(a), (b), (c) »</a></li>
+   <li><a href="#">102.9(c)  »</a></li>
+ </ul>
+ </div>
+ <div class="sidebar__section">
+ <h2>Other information</h2>
+ <p>Call us: 555-555-5555</p>
+ </div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.sidebar--secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Crimson background sidebar
+        </div>
+        <div class="kss-modifier__example">
+          <div class="container">
+<main class="main">
+</main>
+<aside class="sidebar sidebar--secondary">
+ <div class="sidebar__section">
+ <h2>Legal Resources</h2>
+ <ul>
+   <li><a href="#">102.2(a) »</a></li>
+   <li><a href="#">102.7(a), (b), (c) »</a></li>
+   <li><a href="#">102.9(c)  »</a></li>
+ </ul>
+ </div>
+ <div class="sidebar__section">
+ <h2>Other information</h2>
+ <p>Call us: 555-555-5555</p>
+ </div>
+</aside>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;toggles&quot;&gt;
-  &lt;legend class=&quot;label&quot;&gt;View by:&lt;/legend&gt;
-  &lt;label for=&quot;toggle-state&quot;&gt;
-    &lt;input id=&quot;toggle-state&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-state&quot; checked&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;State&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-contribution-size&quot;&gt;
-    &lt;input id=&quot;toggle-contribution-size&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-contribution-size&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Contribution Size&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-employer&quot;&gt;
-    &lt;input id=&quot;toggle-employer&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-employer&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Employer&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-occupation&quot;&gt;
-    &lt;input id=&quot;toggle-occupation&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-occupation&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Occupation&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;container&quot;&gt;
+&lt;main class=&quot;main&quot;&gt;
+&lt;/main&gt;
+&lt;aside class=&quot;sidebar [modifier class]&quot;&gt;
+ &lt;div class=&quot;sidebar__section&quot;&gt;
+ &lt;h2&gt;Legal Resources&lt;/h2&gt;
+ &lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.2(a) »&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.7(a), (b), (c) »&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.9(c)  »&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;sidebar__section&quot;&gt;
+ &lt;h2&gt;Other information&lt;/h2&gt;
+ &lt;p&gt;Call us: 555-555-5555&lt;/p&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </div>
