@@ -110,6 +110,12 @@
           ><span class="kss-nav__name">Toggles</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-type-styles.html">
+          <span class="kss-nav__ref">9</span
+          ><span class="kss-nav__name">Type Styles</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -132,7 +138,7 @@
 
 
       <div class="kss-description">
-        <p>Base styles</p>
+        <p>Base styles for html elements</p>
 
       </div>
     </div>
@@ -159,7 +165,46 @@
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab [modifier class]">
+  <div class="container">
+    <label class="label" for="input">Label</label>
+    <input type="text" id="input">
+    <label class="label" for="select">Label</label>
+    <select>
+     <option>Option 1</option>
+    </select>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--primary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a primary background
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--primary">
+  <div class="container">
+    <label class="label" for="input">Label</label>
+    <input type="text" id="input">
+    <label class="label" for="select">Label</label>
+    <select>
+     <option>Option 1</option>
+    </select>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--secondary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a secondary background
         </div>
         <div class="kss-modifier__example">
           <div class="slab bg--secondary">
@@ -173,10 +218,28 @@
   </div>
 </div>
         </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--neutral
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a neutral background
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--neutral">
+  <div class="container">
+    <label class="label" for="input">Label</label>
+    <input type="text" id="input">
+    <label class="label" for="select">Label</label>
+    <select>
+     <option>Option 1</option>
+    </select>
+  </div>
+</div>
+        </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab bg--secondary&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab [modifier class]&quot;&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;label class=&quot;label&quot; for=&quot;input&quot;&gt;Label&lt;/label&gt;
     &lt;input type=&quot;text&quot; id=&quot;input&quot;&gt;
@@ -213,7 +276,124 @@
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab [modifier class]">
+ <div class="container">
+  <fieldset>
+    <legend class="label">Select any</legend>
+    <ul>
+      <li>
+        <input type="checkbox" id="checkbox-1" checked>
+        <label for="checkbox-1">Option 1</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-2">
+        <label for="checkbox-2">Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend class="label">Select one</legend>
+    <ul>
+      <li>
+        <input type="radio" id="radio-1" name="radio" checked>
+        <label for="radio-1">Option 1</label>
+      </li>
+      <li>
+        <input type="radio" id="radio-2" name="radio">
+        <label for="radio-2" >Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+ </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--primary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a primary background
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--primary">
+ <div class="container">
+  <fieldset>
+    <legend class="label">Select any</legend>
+    <ul>
+      <li>
+        <input type="checkbox" id="checkbox-1" checked>
+        <label for="checkbox-1">Option 1</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-2">
+        <label for="checkbox-2">Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend class="label">Select one</legend>
+    <ul>
+      <li>
+        <input type="radio" id="radio-1" name="radio" checked>
+        <label for="radio-1">Option 1</label>
+      </li>
+      <li>
+        <input type="radio" id="radio-2" name="radio">
+        <label for="radio-2" >Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+ </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--secondary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a secondary background
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--secondary">
+ <div class="container">
+  <fieldset>
+    <legend class="label">Select any</legend>
+    <ul>
+      <li>
+        <input type="checkbox" id="checkbox-1" checked>
+        <label for="checkbox-1">Option 1</label>
+      </li>
+      <li>
+        <input type="checkbox" id="checkbox-2">
+        <label for="checkbox-2">Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend class="label">Select one</legend>
+    <ul>
+      <li>
+        <input type="radio" id="radio-1" name="radio" checked>
+        <label for="radio-1">Option 1</label>
+      </li>
+      <li>
+        <input type="radio" id="radio-2" name="radio">
+        <label for="radio-2" >Option 2</label>
+      </li>
+    </ul>
+  </fieldset>
+ </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--neutral
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the form is on a neutral background
         </div>
         <div class="kss-modifier__example">
           <div class="slab bg--neutral">
@@ -250,7 +430,7 @@
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab bg--neutral&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab [modifier class]&quot;&gt;
  &lt;div class=&quot;container&quot;&gt;
   &lt;fieldset&gt;
     &lt;legend class=&quot;label&quot;&gt;Select any&lt;/legend&gt;
@@ -361,8 +541,42 @@
       </h2>
 
 
+      <div class="kss-description">
+        <p>Blank list markup. No bullets, no numbers.</p>
+
+      </div>
     </div>
 
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <ul>
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+<ol>
+ <li>Ordered list item 1</li>
+ <li>Ordered list item 2</li>
+ <li>Ordered list item 2</li>
+</ol>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul&gt;
+ &lt;li&gt;Unordered list item 1&lt;/li&gt;
+ &lt;li&gt;Unordered list item 2&lt;/li&gt;
+ &lt;li&gt;Unordered list item 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+ &lt;li&gt;Ordered list item 1&lt;/li&gt;
+ &lt;li&gt;Ordered list item 2&lt;/li&gt;
+ &lt;li&gt;Ordered list item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </div>
 
       </section>
       <section id="kssref-elements-tables" class="kss-section kss-section--depth-2">

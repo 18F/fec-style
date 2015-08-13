@@ -98,6 +98,12 @@
           ><span class="kss-nav__name">Toggles</span>
         </a>
       </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-type-styles.html">
+          <span class="kss-nav__ref">9</span
+          ><span class="kss-nav__name">Type Styles</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </div>
@@ -217,47 +223,68 @@ Slabs can can have background color styles applied</p>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab [modifier class]">
+  <div class="container">
+    <h1>Heading in a slab</h1>
+    This is a slab <a>with a link</a>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--primary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Primary background with primary-contrast accents and type
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--primary">
+  <div class="container">
+    <h1>Heading in a slab</h1>
+    This is a slab <a>with a link</a>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--secondary
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Secondary background with secondary-contrast accents and type
+        </div>
+        <div class="kss-modifier__example">
+          <div class="slab bg--secondary">
+  <div class="container">
+    <h1>Heading in a slab</h1>
+    This is a slab <a>with a link</a>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          .bg--neutral
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Neutral background with primary-contrast accents and type
         </div>
         <div class="kss-modifier__example">
           <div class="slab bg--neutral">
   <div class="container">
     <h1>Heading in a slab</h1>
-    This is a neutral slab <a>with a link</a>
-  </div>
-</div>
-<div class="slab bg--primary">
-  <div class="container">
-    <h1>Heading in a slab</h1>
-    This is a primary slab <a>with a link</a>
-  </div>
-</div>
-<div class="slab bg--secondary">
-  <div class="container">
-    <h1>Heading in a slab</h1>
-    This is a secondary slab <a>with a link</a>
+    This is a slab <a>with a link</a>
   </div>
 </div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab bg--neutral&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab [modifier class]&quot;&gt;
   &lt;div class=&quot;container&quot;&gt;
     &lt;h1&gt;Heading in a slab&lt;/h1&gt;
-    This is a neutral slab &lt;a&gt;with a link&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;slab bg--primary&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    &lt;h1&gt;Heading in a slab&lt;/h1&gt;
-    This is a primary slab &lt;a&gt;with a link&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;slab bg--secondary&quot;&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    &lt;h1&gt;Heading in a slab&lt;/h1&gt;
-    This is a secondary slab &lt;a&gt;with a link&lt;/a&gt;
+    This is a slab &lt;a&gt;with a link&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
