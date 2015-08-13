@@ -28,7 +28,7 @@ module.exports.options = {
   'title': {
     string: true,
     multiple: false,
-    describe: 'Title of the style guide',
-    default: 'KSS Style Guide'
+    describe: 'Styles for the new beta.fec.gov',
+    default: 'FEC Styleguide'
   }
 };

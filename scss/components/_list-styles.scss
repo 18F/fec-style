@@ -1,0 +1,29 @@
+// List Styles
+// 
+// These are classes to be applied to lists to give them particular styles
+//
+// .list--flat      - Lay out items horizontally
+// .list--check     - Use checkboxes for the list bullets
+//
+// Styleguide list-styles
+
+.list--flat {
+  @include clearfix();
+  padding: 0;
+  
+  li {
+    float: left;
+  }
+}
+
+.list--check {
+  .is-completed {
+    list-style-image: url('/static/img/checkbox.svg');
+    margin-left: 2.5rem;
+  }
+  
+  .is-uncompleted {
+    list-style-image: url('/static/img/checkbox--empty.svg');
+    margin-left: 2.5rem;
+  }
+}

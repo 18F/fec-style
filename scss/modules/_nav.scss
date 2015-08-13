@@ -1,0 +1,173 @@
+// Navigation
+//
+// Primary site navigation
+//
+// Markup:
+// <nav class="site-nav">
+//   <button class="site-nav__button site-nav__button--left">Glossary</button>
+//   <ul class="site-nav__list">
+//     <li class="site-nav__item">
+//       <a href="#" class="site-nav__link is-current">Campaign Finance Data</a>
+//     </li>
+//     <li class="site-nav__item">
+//       <a href="#" class="site-nav__link">Reporting &amp; Registration</a>
+//     </li>
+//     <li class="site-nav__item">
+//       <a href="#" class="site-nav__link is-disabled">TBD</a>
+//     </li>
+//   </ul>
+//   <button class="site-nav__button site-nav__button--right">Glossary</button>
+// </nav>
+//
+// Styleguide navigation
+
+.site-nav {
+  @include clearfix();
+  background-color: $neutral;
+  position: relative;
+}
+
+.site-nav__list {
+  // display: none;
+  background-color: $neutral;
+  position: absolute;
+  left: 0;
+  top: 6rem;
+
+  @include media($med) {
+    @include clearfix();
+    display: block;
+    float: left;
+    position: relative;
+    top: 0;
+  }
+}
+
+.site-nav__item {
+  border-bottom: 1px solid $beige;
+  @include media($med) {
+    float: left;
+    border-bottom: none;
+  }
+}
+
+.site-nav__link {
+  @include transition(background-color, .1s);
+  border-bottom: .5rem solid transparent;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 2rem 2rem 1.5rem 2rem;
+
+  &:hover,
+  &:active {
+    border-bottom-color: transparent;
+    background-color: $beige;
+  }
+
+  &.is-current {
+    border-bottom-color: $aqua;
+  }
+
+  &.is-active {
+    background-color: $primary;
+    color: $primary-contrast;
+  }
+
+  &.is-disabled {
+    opacity: .5;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      background: none;
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+// Dropdown
+//
+// Primary site navigation
+//
+// Markup:
+// <nav class="site-nav__dropdown" id="dropdown-1" aria-hidden="false">
+//  <ul class="site-nav__dropdown__section">
+//    <li>
+//      <a href="#">Search for candidates &raquo;</a>
+//    </li>
+//    <li>
+//      <a href="#">Search by ZIP code &raquo;</a>
+//    </li>
+//  </ul>
+//  <ul class="site-nav__dropdown__section">
+//    <li><h4>Browse the Data</h4></li>
+//    <li>
+//      <a href="#">Browse candidates &raquo;</a>
+//    </li>
+//    <li>
+//      <a href="#">Browse committees &raquo;</a>
+//    </li>
+//  </ul>
+//  <div class="site-nav__dropdown__section">
+//    <p>About this section</p>
+//  </div>
+// </nav> 
+//
+// Styleguide navigation.dropdown
+
+.site-nav__dropdown {
+  @include font-color($primary-contrast);
+  background-color: $primary;
+  padding: 2rem;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+}
+
+.site-nav__dropdown__section {
+  @include span-columns(4);
+}
+
+// Nav Buttons
+//
+// For the mobile menu toggle and glossary toggle
+//
+// .site-nav__button--left      - Mobile toggle
+// .site-nav__button--right     - Glossary toggle
+
+.site-nav__button {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-width: 0;
+  border-radius: 0;
+  line-height: 2rem;
+  padding: 2rem 3rem;
+  text-indent: -99999px;
+}
+
+.site-nav__button--left {
+  background-color: $ivory;
+  background-image: url('../img/i-menu--primary.png');
+  background-image: url('../img/i-menu--primary.svg');
+  float: left;
+
+  &:hover {
+    background-color: $cream;
+  }  
+
+  @include media($med) {
+    display: none;
+  }
+}
+
+.site-nav__button--right {
+  background-color: $secondary;
+  background-image: url('../img/i-book--neutral.png');
+  background-image: url('../img/i-book--neutral.svg');
+  float: right;
+  
+  &:hover {
+    background-color: lighten($secondary, 10%);
+  }  
+}
