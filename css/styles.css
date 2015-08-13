@@ -19,11 +19,9 @@ body {
   font-size: 1.4rem;
   line-height: 1.5; }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1em 0;
-  color: #022C53; }
-
 h1 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   border-bottom: 1px solid #022C53;
   font-family: "Gandhi Serif", serif;
   font-size: 2.8rem;
@@ -31,30 +29,40 @@ h1 {
   line-height: 1.15; }
 
 h2 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   font-family: "Gandhi Serif", serif;
   font-size: 2.2rem;
   font-weight: bold;
   line-height: 1.2; }
 
 h3 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   font-family: "Gandhi Serif", serif;
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 1.14; }
 
 h4 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   font-family: "Karla Sans", sans-serif;
   font-size: 1.6rem;
   font-weight: normal;
   line-height: 1.14; }
 
 h5 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   font-family: "Gandhi Serif", serif;
   font-size: 1.4rem;
   font-weight: bold;
   line-height: 1.33; }
 
 h6 {
+  margin: 0 0 1em 0;
+  color: #022C53;
   border-bottom: 1px solid #022C53;
   font-family: "Karla Sans", sans-serif;
   font-size: 1.3rem;
@@ -170,13 +178,6 @@ input[type="file"] {
   padding-bottom: 1rem;
   width: 100%; }
 
-.label {
-  color: #022C53;
-  font-family: "Karla Sans", sans-serif;
-  font-weight: bold;
-  margin-bottom: .5rem;
-  text-transform: uppercase; }
-
 input[type="checkbox"],
 input[type="radio"] {
   position: absolute !important;
@@ -264,9 +265,6 @@ html {
 body {
   padding: 0;
   margin: 0; }
-
-.lt-ie9 * {
-  filter: none !important; }
 
 [aria-hidden=true] {
   display: none !important; }
@@ -390,6 +388,41 @@ body {
 
 .slab {
   padding: 2rem 0; }
+
+.display {
+  margin: 0 0 1em 0;
+  color: #022C53;
+  border-bottom: 1px solid #022C53;
+  border-top: 1px solid #022C53;
+  font-family: "Gandhi Serif", serif;
+  font-size: 4.8rem;
+  font-weight: normal;
+  line-height: 1;
+  padding: 1.2rem 0; }
+
+.list--flat {
+  padding: 0; }
+  .list--flat::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .list--flat li {
+    float: left; }
+
+.list--check .is-completed {
+  list-style-image: url("/static/img/checkbox.svg");
+  margin-left: 2.5rem; }
+
+.list--check .is-uncompleted {
+  list-style-image: url("/static/img/checkbox--empty.svg");
+  margin-left: 2.5rem; }
+
+.label {
+  color: #022C53;
+  font-family: "Karla Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  text-transform: uppercase; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"],
 button,
@@ -520,23 +553,6 @@ button,
   .toggles label:last-of-type .button {
     border-radius: 0 2px 2px 0;
     margin-right: 0; }
-
-.list--flat {
-  padding: 0; }
-  .list--flat::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .list--flat li {
-    float: left; }
-
-.list--check .is-completed {
-  list-style-image: url("/static/img/checkbox.svg");
-  margin-left: 2.5rem; }
-
-.list--check .is-uncompleted {
-  list-style-image: url("/static/img/checkbox--empty.svg");
-  margin-left: 2.5rem; }
 
 .paginate_button {
   display: inline-block; }

@@ -1,0 +1,17 @@
+// Type Styles
+//
+// For classes that define type styles
+//
+// Styleguide type-styles
+
+// Headings
+//
+// .display         - Large type for major page headings
+//
+// <span class="display">Display text</span>
+//
+// Styleguide type-styles.headings
+
+.display {
+  @include heading(display);
+}
