@@ -6,8 +6,19 @@
     "type": "git",
     "url": "git://github.com/18F/fec-style.git"
   },
+  "scripts": {
+    "build": "node-sass scss/ -o css/",
+    "build-styleguide": "kss-node --config kss-config.json",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "build": "./scss/**/*"
+  },
   "dependencies": {
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1"
+  },
+  "devDependencies": {
+    "npm-watch": "0.0.0"
   }
 }
