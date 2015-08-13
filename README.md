@@ -3,25 +3,32 @@ Clone the repo to your machine and open `styleguide/index.html`. Voila.
 
 # Contributing
 Install dependencies
-``` 
+```
 $ npm install
 ```
 
 Eventually we'll have a sweet build process for this all. In the mean time, we're using node-sass and kss-node to compile the Sass and generate the styleguide.
 
-Watch the sass:
+Watch the sass, build css and styleguide:
 ```
-$ node-sass -w scss/ -o css/
+$ npm run watch
+```
+
+Generate the CSS:
+```
+$ npm run build-sass
 ```
 
 Generate the styleguide:
 ```
- $ ./node_modules/.bin/kss-node --config kss-config.json
+$ npm run build-styleguide
 ```
 
-And then we're using a custom template for the styleguide, which lives in `fec-template/`. To make style changes to the template, you need to edit `kss.less` and compile. From `fec-template/`:
+And then we're using a custom template for the styleguide, which lives in
+`fec-template/`. To make style changes to the template, you need to edit
+`kss.less` and then run:
 ```
-$ npm run less
+$ npm run build-styleguide
 ```
 
 ## Using KSS
@@ -30,7 +37,7 @@ We use the KSS standard for documenting our Sass. This is both readable to human
 ```
 // Buttons
 // A button suitable for giving stars to someone.
-// 
+//
 // Markup:
 // <button>Button</button>
 // <button class="primary">Primary Button</button>
@@ -38,7 +45,7 @@ We use the KSS standard for documenting our Sass. This is both readable to human
 // :hover             - Subtle hover highlight.
 // .primary           - The primary action button
 // .disabled          - Dims the button to indicate it cannot be used.
-// 
+//
 // Styleguide 2.1.3.
 //
 ```
