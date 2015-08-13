@@ -1,0 +1,123 @@
+// Cards
+//
+// Small boxes that contain content
+// Default layout is image stacked on text
+//
+// .card--horizontal      - Image next to text
+// .card--wide            - Card takes up half of grid
+//
+// Markup:
+// <div class="container">
+//   <aside class="card {{modifier_class}}">
+//    <img alt="" src="../img/i-calendar.svg" class="icon--complex card__image">
+//    <div class="card__content">
+//      <a href="#">Take this action</a>
+//    </div>
+//  </aside>
+// </div>
+//
+// Styleguide cards
+
+.card {
+  @include clearfix();
+  background-color: $neutral;
+  border-radius: 4px;
+  text-align: center;
+  padding: 2rem;
+
+  .card__image {
+    
+  }
+
+  .card__content {
+    text-align: left;
+  }
+
+  @include media($med) {
+    @include span-columns(2)
+  }
+
+}
+
+.card--horizontal {
+  padding: 1rem;
+  text-align: left;
+
+  .card__image {
+    @include span-columns(1 of 3);
+  }
+
+  .card__content {
+    @include span-columns(2 of 3);
+  }
+
+  @include media($med) {
+    @include span-columns(3)
+  }
+}
+
+.card--wide {
+  padding: 2rem;
+  text-align: left;
+
+  .card__image {
+    @include span-columns(3 of 6);
+  }
+
+  .card__content {
+    @include span-columns(3 of 6);
+  }
+  
+  @include media($med) {
+    @include span-columns(6)
+  }
+}
+
+// Primary cards
+//
+// .card--vertical        - Image on top of text
+// .card--horizontal      - Image next to text
+// .card--wide            - Card takes up half of grid
+//
+// Markup:
+// <div class="container">
+//   <aside class="card card--primary {{modifier_class}}">
+//    <img alt="" src="../img/i-register.svg" class="icon--complex card__image">
+//    <div class="card__content">
+//      <a href="#">Take this action</a>
+//    </div>
+//  </aside>
+// </div>
+//
+// Styleguide cards.primary
+
+.card--primary {
+  @include u-font-color($ivory);
+  background-color: $primary;
+}
+
+
+// Secondary cards
+//
+// Different styles of cards require different icons
+//
+// .card--vertical        - Image on top of text
+// .card--horizontal      - Image next to text
+// .card--wide            - Card takes up half of grid
+//
+// Markup:
+// <div class="container">
+//   <aside class="card card--secondary {{modifier_class}}">
+//    <img alt="" src="../img/i-resources.svg" class="icon--complex card__image">
+//    <div class="card__content">
+//      <a href="#">Take this action</a>
+//    </div>
+//  </aside>
+// </div>
+//
+// Styleguide cards.alternate-colors
+
+.card--secondary {
+  @include u-font-color($ivory);
+  background-color: $deep-orange;
+}

@@ -16,8 +16,8 @@
 $medium-screen: em(640);
 $large-screen: em(860);
 
-$med: new-breakpoint(min-width $medium-screen 4);
-$lg: new-breakpoint(min-width $large-screen 8);
+$med: new-breakpoint(min-width $medium-screen 12);
+$lg: new-breakpoint(min-width $large-screen 12);
 
 .container {
   @include outer-container();

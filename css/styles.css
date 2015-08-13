@@ -454,8 +454,9 @@ body {
     float: left; }
 
 .list--checkboxes .is-completed:before {
-  background-image: url("../img/i-check--primary.png");
-  background-image: url("../img/i-check--primary.svg"); }
+  background-color: #022C53;
+  background-image: url("../img/i-check--neutral.png");
+  background-image: url("../img/i-check--neutral.svg"); }
 
 .list--checkboxes__item {
   padding-left: 2.5rem;
@@ -625,6 +626,134 @@ button,
     background-image: url("../img/i-right-2--primary.svg"); }
   .paginate_button.current {
     background-color: #CEB59C; }
+
+.icon--complex {
+  max-height: 6rem;
+  max-width: 6rem; }
+
+.card {
+  background-color: #EFDECD;
+  border-radius: 4px;
+  text-align: center;
+  padding: 2rem; }
+  .card::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .card .card__content {
+    text-align: left; }
+  @media screen and (min-width: 40em) {
+    .card {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%; }
+      .card:last-child {
+        margin-right: 0; } }
+
+.card--horizontal {
+  padding: 1rem;
+  text-align: left; }
+  .card--horizontal .card__image {
+    float: left;
+    display: block;
+    margin-right: 10.1484%;
+    width: 26.56773%; }
+    .card--horizontal .card__image:last-child {
+      margin-right: 0; }
+  .card--horizontal .card__content {
+    float: left;
+    display: block;
+    margin-right: 10.1484%;
+    width: 63.28387%; }
+    .card--horizontal .card__content:last-child {
+      margin-right: 0; }
+  @media screen and (min-width: 40em) {
+    .card--horizontal {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      .card--horizontal:last-child {
+        margin-right: 0; } }
+
+.card--wide {
+  padding: 2rem;
+  text-align: left; }
+  .card--wide .card__image {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 47.58542%; }
+    .card--wide .card__image:last-child {
+      margin-right: 0; }
+  .card--wide .card__content {
+    float: left;
+    display: block;
+    margin-right: 4.82916%;
+    width: 47.58542%; }
+    .card--wide .card__content:last-child {
+      margin-right: 0; }
+  @media screen and (min-width: 40em) {
+    .card--wide {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      .card--wide:last-child {
+        margin-right: 0; } }
+
+.card--primary {
+  color: #EFDECD;
+  background-color: #022C53; }
+  .card--primary h1,
+  .card--primary h2,
+  .card--primary h3,
+  .card--primary h4,
+  .card--primary h5,
+  .card--primary h6,
+  .card--primary a,
+  .card--primary p,
+  .card--primary span,
+  .card--primary li,
+  .card--primary dt,
+  .card--primary dd,
+  .card--primary label,
+  .card--primary blockquote,
+  .card--primary .label {
+    color: #EFDECD; }
+  .card--primary h1,
+  .card--primary h6,
+  .card--primary a {
+    border-color: #EFDECD; }
+  .card--primary .t-ruled {
+    border-color: #EFDECD; }
+
+.card--secondary {
+  color: #EFDECD;
+  background-color: #E36641; }
+  .card--secondary h1,
+  .card--secondary h2,
+  .card--secondary h3,
+  .card--secondary h4,
+  .card--secondary h5,
+  .card--secondary h6,
+  .card--secondary a,
+  .card--secondary p,
+  .card--secondary span,
+  .card--secondary li,
+  .card--secondary dt,
+  .card--secondary dd,
+  .card--secondary label,
+  .card--secondary blockquote,
+  .card--secondary .label {
+    color: #EFDECD; }
+  .card--secondary h1,
+  .card--secondary h6,
+  .card--secondary a {
+    border-color: #EFDECD; }
+  .card--secondary .t-ruled {
+    border-color: #EFDECD; }
 
 .site-header {
   position: relative; }

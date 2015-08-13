@@ -54,8 +54,9 @@
 .list--checkboxes {
   .is-completed {
     &:before {
-      background-image: url('../img/i-check--primary.png');
-      background-image: url('../img/i-check--primary.svg');
+      background-color: $primary;
+      background-image: url('../img/i-check--neutral.png');
+      background-image: url('../img/i-check--neutral.svg');
     }
   }
 }
