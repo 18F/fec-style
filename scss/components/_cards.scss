@@ -66,8 +66,14 @@
 
   .card__content {
     @include span-columns(3 of 6);
+    padding: 2rem 0;
   }
-  
+
+  .icon--complex {
+    max-height: 10rem;
+    max-width: 10rem;
+  }
+
   @include media($med) {
     @include span-columns(6)
   }
