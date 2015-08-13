@@ -14,7 +14,7 @@
   left: -9999px !important;
 }
 
-// font-color()
+// u-font-color()
 //
 // Used to set the color of all child elements
 //
@@ -22,7 +22,7 @@
 //
 // Styleguide mixins.font-color
 
-@mixin font-color($color) {
+@mixin u-font-color($color) {
   color: $color;
 
   h1, 
@@ -50,7 +50,7 @@
   }
 }
 
-// form-color()
+// u-form-color()
 //
 // Used to set the color of the form elements
 //
@@ -61,7 +61,7 @@
 //
 // Styleguide mixins.font-colo
 
-@mixin form-color($background-color, $contrast-color, $focus-color, $icon-color) {
+@mixin u-form-color($background-color, $contrast-color, $focus-color, $icon-color) {
   #{$all-text-inputs},
   select,
   select[multiple=multiple],

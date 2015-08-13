@@ -2,6 +2,11 @@
 @import "lib/bourbon/_bourbon.scss";
 @import "lib/neat/_neat.scss";
 
+// Variables and mixins
+@import "variables";
+@import "mixins/_utilities.scss";
+@import "mixins/_type-mixins.scss";
+
 // Base styling for html elements
 @import "elements/_elements.scss";
 

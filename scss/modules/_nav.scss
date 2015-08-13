@@ -117,7 +117,7 @@
 // Styleguide navigation.dropdown
 
 .site-nav__dropdown {
-  @include font-color($primary-contrast);
+  @include u-font-color($primary-contrast);
   background-color: $primary;
   padding: 2rem;
   position: absolute;
