@@ -1,0 +1,49 @@
+// Pagination
+//
+// Based on the datatables.js markup and classes
+// Markup simplified for demo's sake
+//
+// Markup:
+// <div class="dataTables_paginate paging_simple_numbers" id="results_paginate">
+//   <a class="paginate_button previous" aria-controls="results" data-dt-idx="0" tabindex="0" id="results_previous">Previous</a>
+//   <span>
+//     <a class="paginate_button">1</a>
+//     <a class="paginate_button">2</a>
+//     <a class="paginate_button current">3</a>
+//     <a class="paginate_button">4</a>
+//     <a class="paginate_button">5</a>
+//     <span class="ellipsis">…</span>
+//     <a class="paginate_button">162</a>
+//   </span>
+//   <a class="paginate_button next">Next</a>
+// </div>
+//
+// Styleguide pagination
+
+.paginate_button {
+  @extend .button--neutral;
+  @extend .button--sm;
+  display: inline-block;
+
+  &.previous,
+  &.next {
+    text-indent: -99999px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;    
+  }
+
+  &.previous {
+    background-image: url('../img/i-left-2--primary.png');
+    background-image: url('../img/i-left-2--primary.svg');
+  }
+  
+  &.next {
+    text-indent: -99999px;
+    background-image: url('../img/i-right-2--primary.png');
+    background-image: url('../img/i-right-2--primary.svg');
+  }
+
+  &.current {
+    background-color: $beige;
+  }
+}

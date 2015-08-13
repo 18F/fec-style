@@ -71,39 +71,39 @@
           <span class="kss-nav__ref">7</span
           ><span class="kss-nav__name">Pagination</span>
         </a>
+        <ul class="kss-nav__menu-child">
+        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-toggles.html">
           <span class="kss-nav__ref">8</span
           ><span class="kss-nav__name">Toggles</span>
         </a>
-        <ul class="kss-nav__menu-child">
-        </ul>
       </li>
     </ul>
   </nav>
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-toggles" class="kss-section kss-section--depth-1">
+      <div     id="kssref-pagination" class="kss-section kss-section--depth-1">
 
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-toggles">
+        <a class="kss-title__permalink" href="#kssref-pagination">
           <span class="kss-title__ref">
-              8
+              7
             <span class="kss-title__permalink-hash">
-                #toggles
+                #pagination
             </span>
           </span>
-          Toggles
+          Pagination
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.
-Apply standard button classes to the .button span to style them</p>
+        <p>Based on the datatables.js markup and classes
+Markup simplified for demo&#39;s sake</p>
 
       </div>
     </div>
@@ -113,48 +113,36 @@ Apply standard button classes to the .button span to style them</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <fieldset class="toggles">
-  <legend class="label">View by:</legend>
-  <label for="toggle-state">
-    <input id="toggle-state" type="radio" name="receipt-aggregate" value="by-state" checked>
-    <span class="button button--primary">State</span>
-  </label>
-  <label for="toggle-contribution-size">
-    <input id="toggle-contribution-size" type="radio" name="receipt-aggregate" value="by-contribution-size">
-    <span class="button button--primary">Contribution Size</span>
-  </label>
-  <label for="toggle-employer">
-    <input id="toggle-employer" type="radio" name="receipt-aggregate" value="by-employer">
-    <span class="button button--primary">Employer</span>
-  </label>
-  <label for="toggle-occupation">
-    <input id="toggle-occupation" type="radio" name="receipt-aggregate" value="by-occupation">
-    <span class="button button--primary">Occupation</span>
-  </label>
-</fieldset>
+          <div class="dataTables_paginate paging_simple_numbers" id="results_paginate">
+  <a class="paginate_button previous" aria-controls="results" data-dt-idx="0" tabindex="0" id="results_previous">Previous</a>
+  <span>
+    <a class="paginate_button">1</a>
+    <a class="paginate_button">2</a>
+    <a class="paginate_button current">3</a>
+    <a class="paginate_button">4</a>
+    <a class="paginate_button">5</a>
+    <span class="ellipsis">…</span>
+    <a class="paginate_button">162</a>
+  </span>
+  <a class="paginate_button next">Next</a>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;toggles&quot;&gt;
-  &lt;legend class=&quot;label&quot;&gt;View by:&lt;/legend&gt;
-  &lt;label for=&quot;toggle-state&quot;&gt;
-    &lt;input id=&quot;toggle-state&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-state&quot; checked&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;State&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-contribution-size&quot;&gt;
-    &lt;input id=&quot;toggle-contribution-size&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-contribution-size&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Contribution Size&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-employer&quot;&gt;
-    &lt;input id=&quot;toggle-employer&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-employer&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Employer&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-occupation&quot;&gt;
-    &lt;input id=&quot;toggle-occupation&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-occupation&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Occupation&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dataTables_paginate paging_simple_numbers&quot; id=&quot;results_paginate&quot;&gt;
+  &lt;a class=&quot;paginate_button previous&quot; aria-controls=&quot;results&quot; data-dt-idx=&quot;0&quot; tabindex=&quot;0&quot; id=&quot;results_previous&quot;&gt;Previous&lt;/a&gt;
+  &lt;span&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;1&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;2&lt;/a&gt;
+    &lt;a class=&quot;paginate_button current&quot;&gt;3&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;4&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;5&lt;/a&gt;
+    &lt;span class=&quot;ellipsis&quot;&gt;…&lt;/span&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;162&lt;/a&gt;
+  &lt;/span&gt;
+  &lt;a class=&quot;paginate_button next&quot;&gt;Next&lt;/a&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </div>

@@ -444,25 +444,33 @@ button,
     border: 2px solid #F77B42;
     color: #FCF6EF; }
 
-.button--neutral {
-  background-color: #CEB59C;
+.button--neutral, .paginate_button {
+  background-color: #EFDECD;
   color: #022C53; }
-  .button--neutral:hover {
+  .button--neutral:hover, .paginate_button:hover {
     background-color: #dfcfbe; }
   .button--neutral:active,
-  .button--neutral.is-active {
-    background-color: #C09C7C;
+  .paginate_button:active,
+  .button--neutral.is-active, .is-active.paginate_button {
+    background-color: #CEB59C;
     border: 2px solid #022C53; }
 
 .button--lg {
+  border: 2px solid transparent;
   border-radius: 4px;
+  font-family: "Karla Sans", sans-serif;
   font-size: 1.6rem;
   padding: 1.4rem 3rem; }
 
-.button--sm {
+.button--sm, .paginate_button {
+  border: 1px solid transparent;
   border-radius: 2px;
+  font-family: "Karla Sans", sans-serif;
   font-size: 1.2rem;
+  line-height: 1;
   padding: 5px 1rem; }
+  .button--sm:hover, .paginate_button:hover {
+    border: 1px solid; }
 
 .button--icon img {
   border-right: 1px solid;
@@ -496,7 +504,7 @@ button,
     background-color: #961A16;
     border: 2px solid #F77B42;
     color: #FCF6EF; }
-  .toggles input:checked + .button--neutral {
+  .toggles input:checked + .button--neutral, .toggles input:checked + .paginate_button {
     background-color: #C09C7C;
     border: 2px solid #022C53; }
   .toggles label {
@@ -529,6 +537,23 @@ button,
 .list--check .is-uncompleted {
   list-style-image: url("/static/img/checkbox--empty.svg");
   margin-left: 2.5rem; }
+
+.paginate_button {
+  display: inline-block; }
+  .paginate_button.previous,
+  .paginate_button.next {
+    text-indent: -99999px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
+  .paginate_button.previous {
+    background-image: url("../img/i-left-2--primary.png");
+    background-image: url("../img/i-left-2--primary.svg"); }
+  .paginate_button.next {
+    text-indent: -99999px;
+    background-image: url("../img/i-right-2--primary.png");
+    background-image: url("../img/i-right-2--primary.svg"); }
+  .paginate_button.current {
+    background-color: #CEB59C; }
 
 .site-header {
   position: relative; }
