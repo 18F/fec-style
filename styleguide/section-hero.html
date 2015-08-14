@@ -53,6 +53,8 @@
           <span class="kss-nav__ref">4</span
           ><span class="kss-nav__name">Hero</span>
         </a>
+        <ul class="kss-nav__menu-child">
+        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-layout.html">
@@ -95,8 +97,6 @@
           <span class="kss-nav__ref">11</span
           ><span class="kss-nav__name">Toggles</span>
         </a>
-        <ul class="kss-nav__menu-child">
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-type-styles.html">
@@ -109,76 +109,81 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-toggles" class="kss-section kss-section--depth-1">
+      <div     id="kssref-hero" class="kss-section kss-section--depth-1">
 
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-toggles">
+        <a class="kss-title__permalink" href="#kssref-hero">
           <span class="kss-title__ref">
-              11
+              4
             <span class="kss-title__permalink-hash">
-                #toggles
+                #hero
             </span>
           </span>
-          Toggles
+          Hero
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.
-Apply standard button classes to the .button span to style them</p>
+        <p>Hero units are special slabs that have a thick bottom border and centered content.
+They are used on landing pages for top-level sections</p>
 
       </div>
     </div>
 
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
-          Example
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
         </div>
         <div class="kss-modifier__example">
-          <fieldset class="toggles">
-  <legend class="label">View by:</legend>
-  <label for="toggle-state">
-    <input id="toggle-state" type="radio" name="receipt-aggregate" value="by-state" checked>
-    <span class="button button--primary">State</span>
-  </label>
-  <label for="toggle-contribution-size">
-    <input id="toggle-contribution-size" type="radio" name="receipt-aggregate" value="by-contribution-size">
-    <span class="button button--primary">Contribution Size</span>
-  </label>
-  <label for="toggle-employer">
-    <input id="toggle-employer" type="radio" name="receipt-aggregate" value="by-employer">
-    <span class="button button--primary">Employer</span>
-  </label>
-  <label for="toggle-occupation">
-    <input id="toggle-occupation" type="radio" name="receipt-aggregate" value="by-occupation">
-    <span class="button button--primary">Occupation</span>
-  </label>
-</fieldset>
+          <section class="hero [modifier class]">
+ <div class="container">
+   <h1 class="t-display">Explore campaign finance data</h1>
+   <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
+ </div>
+</section>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.hero--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Blue background
+        </div>
+        <div class="kss-modifier__example">
+          <section class="hero hero--primary">
+ <div class="container">
+   <h1 class="t-display">Explore campaign finance data</h1>
+   <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
+ </div>
+</section>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.hero--secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Crimson background
+        </div>
+        <div class="kss-modifier__example">
+          <section class="hero hero--secondary">
+ <div class="container">
+   <h1 class="t-display">Explore campaign finance data</h1>
+   <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
+ </div>
+</section>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;toggles&quot;&gt;
-  &lt;legend class=&quot;label&quot;&gt;View by:&lt;/legend&gt;
-  &lt;label for=&quot;toggle-state&quot;&gt;
-    &lt;input id=&quot;toggle-state&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-state&quot; checked&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;State&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-contribution-size&quot;&gt;
-    &lt;input id=&quot;toggle-contribution-size&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-contribution-size&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Contribution Size&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-employer&quot;&gt;
-    &lt;input id=&quot;toggle-employer&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-employer&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Employer&lt;/span&gt;
-  &lt;/label&gt;
-  &lt;label for=&quot;toggle-occupation&quot;&gt;
-    &lt;input id=&quot;toggle-occupation&quot; type=&quot;radio&quot; name=&quot;receipt-aggregate&quot; value=&quot;by-occupation&quot;&gt;
-    &lt;span class=&quot;button button--primary&quot;&gt;Occupation&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;section class=&quot;hero [modifier class]&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+   &lt;h1 class=&quot;t-display&quot;&gt;Explore campaign finance data&lt;/h1&gt;
+   &lt;h2 class=&quot;t-ruled&quot;&gt;See how money is raised and spent in federal elections&lt;/h2&gt;
+ &lt;/div&gt;
+&lt;/section&gt;</code></pre>
       </div>
 
       </div>

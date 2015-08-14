@@ -5,8 +5,7 @@
   color: $primary;
 
   @if $level == display {
-    border-bottom: 2px solid $primary;
-    border-top: 2px solid $primary;
+    border-bottom: 0;
     font-family: $serif;
     font-size: 4.8rem;
     font-weight: bold;
