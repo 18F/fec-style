@@ -109,7 +109,7 @@
 // Styleguide mixins.bg-primary
 
 @mixin u-bg--primary() {
-  @include u-font-color($primary-contrast);
+  @include u-font-color($ivory);
   @include u-form-color($primary, $primary-contrast, $ivory, 'primary');
   background-color: $primary;
   
@@ -127,7 +127,6 @@
 // Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary(){
-  @include u-font-color($secondary-contrast);
   @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
   background-color: $secondary;
 

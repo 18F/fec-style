@@ -50,15 +50,17 @@
 
 .sidebar--primary {
   @include u-bg--primary();
+  @include u-font-color($primary-contrast);
 
   .sidebar__section {
     border-bottom-color: $primary-contrast;
   }
 }
 
-.sidebar--secondary {
+.sidebar--secondary {  
   @include u-bg--secondary();
-  
+  @include u-font-color($secondary-contrast);
+
   .sidebar__section {
     border-bottom-color: $secondary-contrast;
   }

@@ -23,7 +23,7 @@
   .t-display {
     margin-bottom: 0;
   }
-  
+
   @include media($med) {
     padding: 7rem 0;
   }
@@ -31,8 +31,11 @@
 
 .hero--primary {
   @include u-bg--primary();
+  @include u-font-color($ivory);
+
 }
 
 .hero--secondary {
   @include u-bg--secondary();
+  @include u-font-color($ivory);
 }

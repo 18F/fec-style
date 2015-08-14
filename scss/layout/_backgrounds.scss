@@ -15,9 +15,11 @@
 }
 
 .bg--primary {
-  @include u-bg--primary(); 
+  @include u-bg--primary();
+  @include u-font-color($ivory); 
 }
 
 .bg--secondary {
   @include u-bg--secondary();
+  @include u-font-color($ivory); 
 }
