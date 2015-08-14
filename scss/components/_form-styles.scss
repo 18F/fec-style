@@ -1,9 +1,14 @@
+// Form styles
+//
+// For fancy form styling
+//
+// Styleguide form-styles
 
 // Labels
 //
 // .label     - Bold, uppercase, with a bottom margin
 //
-// Styleguide elements.forms.labels
+// Styleguide form-styles.labels
 
 .label {
   color: $primary;
@@ -11,4 +16,48 @@
   font-weight: bold;
   margin-bottom: .5rem;
   text-transform: uppercase;
+}
+
+// Combo
+//
+// On medium and up, displays input and button right next to each other. On small screens they're stacked.
+//
+// Markup:
+// <div class="slab bg--primary">
+//   <div class="container">
+//   <div class="combo">
+//     <input type="text" class="combo__input">
+//     <button class="button--primary combo__button">Go</button>
+//   </div>
+// </div>
+// </div>
+//
+// Styleguide form-styles.combo
+
+.combo {
+  @include clearfix();
+
+  .combo__input {
+    height: 3.6rem;
+  }
+
+  .combo__button {
+    width: 100%;
+    height: 3.6rem;
+  }  
+
+  @include media($med) {    
+    .combo__input {
+      height: 3.6rem;
+      border-radius: 2px 0 0 2px;
+      float: left;
+      width: 80%;
+    }
+
+    .combo__button {
+      border-radius: 0 4px 4px 0;
+      float: left;
+      width: 20%;
+    } 
+  }
 }

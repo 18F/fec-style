@@ -4,7 +4,7 @@
 
 // u-visually-hidden() 
 //
-// Used to visually hide components but keep them visible to screenreaders
+// Used to visually hide components but keep them visible to screenreaders. Also includes a utility class .u-visually-hidden.
 //
 // Styleguide mixins.visually-hidden
 
@@ -13,6 +13,11 @@
   top: auto;
   left: -9999px !important;
 }
+
+.u-visually-hidden {
+  @include u-visually-hidden();
+}
+
 
 // u-font-color()
 //

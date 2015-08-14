@@ -1,11 +1,10 @@
 // Slabs
 //
 // Slabs are full-width blocks of color. Slabs should contain containers to center content. 
-// Slabs can can have background color styles applied 
+// Slabs can can have background color styles applied. By default is a neutral background.
 // 
-// .bg--primary     - Primary background with primary-contrast accents and type
-// .bg--secondary   - Secondary background with secondary-contrast accents and type
-// .bg--neutral     - Neutral background with primary-contrast accents and type
+// .slab--primary     - Primary background with primary-contrast accents and type
+// .slab--secondary   - Secondary background with secondary-contrast accents and type
 //
 // Markup:
 // <div class="slab {{ modifier_class }}">
@@ -18,5 +17,17 @@
 // Styleguide layout.slabs
 
 .slab {
+  @include clearfix();
+  background-color: $neutral;
   padding: 2rem 0;
+}
+
+.slab--primary {
+  @include u-bg--primary();
+  @include u-font-color($ivory)
+}
+
+.slab--secondary {
+  @include u-bg--secondary();
+  @include u-font-color($ivory)
 }

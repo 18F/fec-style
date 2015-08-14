@@ -25,7 +25,7 @@ $xl: new-breakpoint(min-width $x-large-screen 12);
   @include outer-container();
   padding: 0 2rem;
 
-  @include media($xl) {
+  @include media($lg) {
     padding: 0;
   }
 }
