@@ -2,13 +2,13 @@
 //
 // For fancy form styling
 //
-// Styleguide form-styles
+// Styleguide components.form-styles
 
 // Labels
 //
 // .label     - Bold, uppercase, with a bottom margin
 //
-// Styleguide form-styles.labels
+// Styleguide components.form-styles.labels
 
 .label {
   color: $primary;
@@ -23,7 +23,7 @@
 // On medium and up, displays input and button right next to each other. On small screens they're stacked.
 //
 // Markup:
-// <div class="slab bg--primary">
+// <div class="slab slab--primary">
 //   <div class="container">
 //   <div class="combo">
 //     <input type="text" class="combo__input">
@@ -32,7 +32,7 @@
 // </div>
 // </div>
 //
-// Styleguide form-styles.combo
+// Styleguide components.form-styles.combo
 
 .combo {
   @include clearfix();

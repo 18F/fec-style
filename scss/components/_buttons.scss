@@ -5,7 +5,7 @@
 // Markup:
 // <button>Basic button</button>
 //
-// Styleguide buttons
+// Styleguide components.buttons
 
 .button {
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
@@ -86,7 +86,8 @@
 
 .button--neutral {
   @extend .button;
-  background-color: $neutral;
+  background-color: $cream;
+  border: 2px solid $brown;
   color: $primary;
 
   &:hover {

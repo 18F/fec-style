@@ -1,0 +1,52 @@
+// Datatables
+//
+// .is-showing-filters    - Class applied to body when the filters are open, causing the datatable to shrink slightly
+//
+// Styleguide components.datatables
+
+// Wraps the datatable on browse pages
+
+.datatable__container {
+  @include clearfix();
+  float: left;
+  margin-top: 2rem;
+  width: 100%;
+
+  @include media($lg) {
+    @include transition(width .5s);
+    border-top: 0;
+    margin: 0 1% 0 0;
+    padding-top: 2rem;
+    width: 96%;    
+  }
+}
+
+.is-showing-filters {
+  .datatable__container {
+
+  }
+  
+  @include media($lg) {
+    .datatable__container {
+      width: 79%;
+      float: left;
+      margin: 0 1% 0 0;
+    }
+  }
+}
+
+.datatable {
+
+  th {
+    padding: 2rem 0 0 0;
+    border-bottom: 1px solid $primary;
+  }
+
+  tr {
+    border-bottom: 1px solid $neutral;
+  }
+  
+  td {
+    height: 3rem;    
+  }
+}

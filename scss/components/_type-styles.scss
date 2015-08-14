@@ -3,7 +3,7 @@
 // For classes that define type styles
 // Prefix these styles with t-
 //
-// Styleguide type-styles
+// Styleguide comopnents.type-styles
 
 // Display
 //
@@ -14,7 +14,7 @@
 // Markup:
 // <h2 class="t-display {{modifier_class}}">Some great heading</h2>
 //
-// Styleguide type-styles.display
+// Styleguide components.type-styles.display
 
 .t-display {
   @include heading(display);

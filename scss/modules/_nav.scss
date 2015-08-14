@@ -19,7 +19,7 @@
 //   <button class="site-nav__button site-nav__button--right">Glossary</button>
 // </nav>
 //
-// Styleguide navigation
+// Styleguide modules.navigation
 
 .site-nav {
   @include clearfix();
@@ -114,7 +114,7 @@
 //  </div>
 // </nav> 
 //
-// Styleguide navigation.dropdown
+// Styleguide modules.navigation.dropdown
 
 .site-nav__dropdown {
   @include u-font-color($primary-contrast);
@@ -162,7 +162,7 @@
 }
 
 .site-nav__button--right {
-  background-color: $secondary;
+  background-color: $ivory;
   background-image: url('../img/i-book--neutral.png');
   background-image: url('../img/i-book--neutral.svg');
   float: right;

@@ -7,16 +7,18 @@
 // .slab--secondary   - Secondary background with secondary-contrast accents and type
 //
 // Markup:
-// <div class="page-header slab {{ modifier_class }}">
+// <div class="page-header {{ modifier_class }}">
 //  <div class="container">
 //    <h1>Page heading</h1>
 //  </div>
 // </div>
 //
-// Styleguide page-header
+// Styleguide components.page-header
 
 .page-header {
   @include clearfix();
+  padding: 2rem;
+
   h1 {
     border-bottom: none;
     margin-bottom: 0;

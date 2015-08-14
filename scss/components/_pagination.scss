@@ -18,12 +18,13 @@
 //   <a class="paginate_button next">Next</a>
 // </div>
 //
-// Styleguide pagination
+// Styleguide components.pagination
 
 .paginate_button {
   @extend .button--neutral;
   @extend .button--sm;
   display: inline-block;
+  margin-left: .5rem;
 
   &.previous,
   &.next {
@@ -46,4 +47,5 @@
   &.current {
     background-color: $beige;
   }
+
 }

@@ -1,6 +1,6 @@
 // Site Header
 // 
-// Styleguide site-header
+// Styleguide modules.site-header
 
 .site-header {
   position: relative;
@@ -18,11 +18,11 @@
 //   <span class="disclaimer__right">This site is currently in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>.</span>
 // </div>
 //
-// Styleguide site-header.disclaimer
+// Styleguide modules.site-header.disclaimer
 
 .disclaimer {
   @include clearfix();
-  border-bottom: 1px solid $neutral;
+  border-bottom: 1px solid $primary;
   font-size: 1.2rem;
   padding: .5rem 2rem;
   text-align: center;
@@ -65,7 +65,7 @@
 //   </ul>
 // </div>
 //
-// Styleguide site-header.masthead
+// Styleguide modules.site-header.masthead
 
 .masthead {
   @include clearfix();

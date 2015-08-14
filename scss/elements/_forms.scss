@@ -1,8 +1,8 @@
 // Forms
 // 
-// .bg--primary     - When the form is on a primary background
-// .bg--secondary   - When the form is on a secondary background
-// .bg--neutral     - When the form is on a neutral background
+// .slab--primary     - When the form is on a primary background
+// .slab--secondary   - When the form is on a secondary background
+// .slab--neutral     - When the form is on a neutral background
 //
 // Markup:
 // <div class="slab {{modifier_class}}">
@@ -50,7 +50,7 @@ select {
   border-radius: 4px;
   font-family: $sans-serif;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin: 0;
   padding: 1rem;
   transition: border-color;
   width: 100%;
@@ -93,9 +93,9 @@ input[type="file"] {
 //
 // Custom checkboxes and radio buttons
 //
-// .bg--primary     - When the form is on a primary background
-// .bg--secondary   - When the form is on a secondary background
-// .bg--neutral     - When the form is on a neutral background
+// .slab--primary     - When the form is on a primary background
+// .slab--secondary   - When the form is on a secondary background
+// .slab--neutral     - When the form is on a neutral background
 //
 // Markup:
 // <div class="slab {{modifier_class}}">
