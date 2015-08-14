@@ -1,7 +1,7 @@
 // Backgrounds
 //
-// Background styles can be applied to any component and will apply background-color, 
-// Uses the font-color() mixin to set font and border colors
+// Background styles can be applied to any component and will apply background-color and child element colors
+// Uses the u-bg--*() mixins to set colors
 //
 // .bg--neutral      - Ivory background with black text
 // .bg--primary      - Federal Blue background with aqua text
@@ -15,25 +15,11 @@
 }
 
 .bg--primary {
-  @include u-font-color($primary-contrast);
-  @include u-form-color($primary, $primary-contrast, $ivory, 'primary');
-  background-color: $primary;
-  
-  a {
-    &:hover {
-      border-bottom-color: #fff;
-    }
-  }  
+  @include u-bg--primary();
+  @include u-font-color($ivory); 
 }
 
 .bg--secondary {
-  @include u-font-color($secondary-contrast);
-  @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
-  background-color: $secondary;
-
-  a {
-    &:hover {
-      border-bottom-color: #fff;
-    }
-  }
+  @include u-bg--secondary();
+  @include u-font-color($ivory); 
 }

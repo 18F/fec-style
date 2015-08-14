@@ -98,8 +98,8 @@
 // Styleguide cards.primary
 
 .card--primary {
+  @include u-bg--primary();
   @include u-font-color($ivory);
-  background-color: $primary;
 }
 
 
@@ -114,7 +114,7 @@
 // Markup:
 // <div class="container">
 //   <aside class="card card--secondary {{modifier_class}}">
-//    <img alt="" src="../img/i-resources.svg" class="icon--complex card__image">
+//    <img alt="" src="../img/i-register.svg" class="icon--complex card__image">
 //    <div class="card__content">
 //      <a href="#">Take this action</a>
 //    </div>
@@ -124,6 +124,22 @@
 // Styleguide cards.alternate-colors
 
 .card--secondary {
+  @include u-bg--secondary();
   @include u-font-color($ivory);
-  background-color: $deep-orange;
+}
+
+// Tiled cards
+// 
+// For showing multiple rows of cards, use:
+// 
+// .card--tiled
+//
+// Styleguide cards.tiled-cards
+
+.card--tiled {
+  margin-bottom: 2rem;
+  
+  &:nth-child(even) {
+    margin-right: 0;
+  }
 }

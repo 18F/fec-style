@@ -49,26 +49,44 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-layout.html">
+        <a href="section-footer.html">
           <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">Site Footer</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-form-styles.html">
+          <span class="kss-nav__ref">5</span
+          ><span class="kss-nav__name">Form styles</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-hero.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Hero</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-layout.html">
+          <span class="kss-nav__ref">8</span
           ><span class="kss-nav__name">Layout</span>
         </a>
         <ul class="kss-nav__menu-child">
             <li class="kss-nav__menu-item">
               <a href="section-layout.html#kssref-layout-backgrounds">
-                <span class="kss-nav__ref">4.1</span
+                <span class="kss-nav__ref">8.1</span
                 ><span class="kss-nav__name">Backgrounds</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-layout.html#kssref-layout-grid">
-                <span class="kss-nav__ref">4.2</span
+                <span class="kss-nav__ref">8.2</span
                 ><span class="kss-nav__name">Grid</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
               <a href="section-layout.html#kssref-layout-slabs">
-                <span class="kss-nav__ref">4.3</span
+                <span class="kss-nav__ref">8.3</span
                 ><span class="kss-nav__name">Slabs</span>
               </a>
             </li>
@@ -76,37 +94,61 @@
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-list-styles.html">
-          <span class="kss-nav__ref">5</span
+          <span class="kss-nav__ref">9</span
           ><span class="kss-nav__name">List Styles</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-mixins.html">
-          <span class="kss-nav__ref">6</span
+          <span class="kss-nav__ref">10</span
           ><span class="kss-nav__name">Utility Mixins</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-navigation.html">
-          <span class="kss-nav__ref">7</span
+          <span class="kss-nav__ref">11</span
           ><span class="kss-nav__name">Navigation</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
+        <a href="section-page-header.html">
+          <span class="kss-nav__ref">12</span
+          ><span class="kss-nav__name">Page Header</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
         <a href="section-pagination.html">
-          <span class="kss-nav__ref">8</span
+          <span class="kss-nav__ref">13</span
           ><span class="kss-nav__name">Pagination</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
+        <a href="section-search-bar.html">
+          <span class="kss-nav__ref">14</span
+          ><span class="kss-nav__name">Search Bar</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-sidebar.html">
+          <span class="kss-nav__ref">15</span
+          ><span class="kss-nav__name">Sidebar</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-site-header.html">
+          <span class="kss-nav__ref">16</span
+          ><span class="kss-nav__name">Site Header</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
         <a href="section-toggles.html">
-          <span class="kss-nav__ref">9</span
+          <span class="kss-nav__ref">17</span
           ><span class="kss-nav__name">Toggles</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-type-styles.html">
-          <span class="kss-nav__ref">10</span
+          <span class="kss-nav__ref">18</span
           ><span class="kss-nav__name">Type Styles</span>
         </a>
       </li>
@@ -121,7 +163,7 @@
       <h1 class="kss-title kss-title--level-1">
         <a class="kss-title__permalink" href="#kssref-layout">
           <span class="kss-title__ref">
-              4
+              8
             <span class="kss-title__permalink-hash">
                 #layout
             </span>
@@ -145,7 +187,7 @@
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-layout-backgrounds">
           <span class="kss-title__ref">
-              4.1
+              8.1
             <span class="kss-title__permalink-hash">
                 #layout.backgrounds
             </span>
@@ -170,8 +212,8 @@
       </ul>
 
       <div class="kss-description">
-        <p>Background styles can be applied to any component and will apply background-color,
-Uses the font-color() mixin to set font and border colors</p>
+        <p>Background styles can be applied to any component and will apply background-color and child element colors
+Uses the u-bg--*() mixins to set colors</p>
 
       </div>
     </div>
@@ -184,7 +226,7 @@ Uses the font-color() mixin to set font and border colors</p>
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-layout-grid">
           <span class="kss-title__ref">
-              4.2
+              8.2
             <span class="kss-title__permalink-hash">
                 #layout.grid
             </span>
@@ -198,6 +240,10 @@ Uses the font-color() mixin to set font and border colors</p>
           <code class="kss-parameters__name">.container</code>
           <div class="kss-parameters__description">Used to set group grid items</div>
         </li>
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">.main</code>
+          <div class="kss-parameters__description">The main content area below heros</div>
+        </li>
       </ul>
 
     </div>
@@ -210,7 +256,7 @@ Uses the font-color() mixin to set font and border colors</p>
       <h2 class="kss-title kss-title--level-2">
         <a class="kss-title__permalink" href="#kssref-layout-slabs">
           <span class="kss-title__ref">
-              4.3
+              8.3
             <span class="kss-title__permalink-hash">
                 #layout.slabs
             </span>
@@ -222,7 +268,7 @@ Uses the font-color() mixin to set font and border colors</p>
 
       <div class="kss-description">
         <p>Slabs are full-width blocks of color. Slabs should contain containers to center content.
-Slabs can can have background color styles applied</p>
+Slabs can can have background color styles applied. By default is a neutral background.</p>
 
       </div>
     </div>
@@ -243,13 +289,13 @@ Slabs can can have background color styles applied</p>
 </div>
         </div>
         <div class="kss-modifier__name kss-style">
-          <pre>.bg--primary</pre>
+          <pre>.slab--primary</pre>
         </div>
         <div class="kss-modifier__description kss-style">
           Primary background with primary-contrast accents and type
         </div>
         <div class="kss-modifier__example">
-          <div class="slab bg--primary">
+          <div class="slab slab--primary">
   <div class="container">
     <h1>Heading in a slab</h1>
     This is a slab <a>with a link</a>
@@ -257,27 +303,13 @@ Slabs can can have background color styles applied</p>
 </div>
         </div>
         <div class="kss-modifier__name kss-style">
-          <pre>.bg--secondary</pre>
+          <pre>.slab--secondary</pre>
         </div>
         <div class="kss-modifier__description kss-style">
           Secondary background with secondary-contrast accents and type
         </div>
         <div class="kss-modifier__example">
-          <div class="slab bg--secondary">
-  <div class="container">
-    <h1>Heading in a slab</h1>
-    This is a slab <a>with a link</a>
-  </div>
-</div>
-        </div>
-        <div class="kss-modifier__name kss-style">
-          <pre>.bg--neutral</pre>
-        </div>
-        <div class="kss-modifier__description kss-style">
-          Neutral background with primary-contrast accents and type
-        </div>
-        <div class="kss-modifier__example">
-          <div class="slab bg--neutral">
+          <div class="slab slab--secondary">
   <div class="container">
     <h1>Heading in a slab</h1>
     This is a slab <a>with a link</a>

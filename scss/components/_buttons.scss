@@ -1,36 +1,20 @@
 // Buttons
+// 
+// .button      - The basic styled button that contains the properties that get extended by more specific classes
+//
+// Markup:
+// <button>Basic button</button>
 //
 // Styleguide buttons
 
-#{$all-button-inputs},
-button,
 .button {
-  @include appearance(none);
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
-  -webkit-font-smoothing: antialiased;
   border-radius: 2px;
   border: 2px solid transparent;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
   font-size: 1.4rem;
-  font-family: $sans-serif;
-  line-height: 1;
   padding: 8px 2rem;
-  text-decoration: none;
-  user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-
-  &:hover,
-  &:focus {
-
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
 }
 
 // Primary buttons
@@ -45,6 +29,7 @@ button,
 // Styleguide buttons.primary
 
 .button--primary {
+  @extend .button;
   background-color: $primary-contrast;
   color: $primary;
 
@@ -72,6 +57,7 @@ button,
 // Styleguide buttons.secondary
 
 .button--secondary {
+  @extend .button;  
   background-color: $secondary-contrast;
   color: $secondary;
 
@@ -99,6 +85,7 @@ button,
 // Styleguide buttons.neutral
 
 .button--neutral {
+  @extend .button;
   background-color: $neutral;
   color: $primary;
 

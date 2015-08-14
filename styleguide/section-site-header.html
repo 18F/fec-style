@@ -89,14 +89,6 @@
           <span class="kss-nav__ref">11</span
           ><span class="kss-nav__name">Navigation</span>
         </a>
-        <ul class="kss-nav__menu-child">
-            <li class="kss-nav__menu-item">
-              <a href="section-navigation.html#kssref-navigation-dropdown">
-                <span class="kss-nav__ref">11.1</span
-                ><span class="kss-nav__name">Dropdown</span>
-              </a>
-            </li>
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-page-header.html">
@@ -127,6 +119,20 @@
           <span class="kss-nav__ref">16</span
           ><span class="kss-nav__name">Site Header</span>
         </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-site-header.html#kssref-site-header-disclaimer">
+                <span class="kss-nav__ref">16.1</span
+                ><span class="kss-nav__name">US Bar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-site-header.html#kssref-site-header-masthead">
+                <span class="kss-nav__ref">16.2</span
+                ><span class="kss-nav__name">Masthead</span>
+              </a>
+            </li>
+        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-toggles.html">
@@ -145,26 +151,42 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-navigation" class="kss-section kss-section--depth-1">
+      <div     id="kssref-site-header" class="kss-section kss-section--depth-1">
 
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-navigation">
+        <a class="kss-title__permalink" href="#kssref-site-header">
           <span class="kss-title__ref">
-              11
+              16
             <span class="kss-title__permalink-hash">
-                #navigation
+                #site-header
             </span>
           </span>
-          Navigation
+          Site Header
         </a>
       </h1>
 
 
-      <div class="kss-description">
-        <p>Primary site navigation</p>
+    </div>
+
 
       </div>
+      <section id="kssref-site-header-disclaimer" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-site-header-disclaimer">
+          <span class="kss-title__ref">
+              16.1
+            <span class="kss-title__permalink-hash">
+                #site-header.disclaimer
+            </span>
+          </span>
+          US Bar
+        </a>
+      </h2>
+
+
     </div>
 
       <div class="kss-modifier__wrapper">
@@ -172,61 +194,47 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <nav class="site-nav">
-  <button class="site-nav__button site-nav__button--left">Glossary</button>
-  <ul class="site-nav__list">
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link is-current">Campaign Finance Data</a>
-    </li>
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link">Reporting &amp; Registration</a>
-    </li>
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link is-disabled">TBD</a>
-    </li>
-  </ul>
-  <button class="site-nav__button site-nav__button--right">Glossary</button>
-</nav>
+          <div class="disclaimer">
+  <span class="disclaimer__left">Looking for fec.gov? <a href="http://www.fec.gov">Click here.</a></span>
+  <span class="disclaimer__center">
+    An official website of the United States Government.
+    <img alt="US flag signifying that this is a United States Federal Government website" src="../img/us_flag_small.png">
+  </span>
+  <span class="disclaimer__right">This site is currently in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>.</span>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;nav class=&quot;site-nav&quot;&gt;
-  &lt;button class=&quot;site-nav__button site-nav__button--left&quot;&gt;Glossary&lt;/button&gt;
-  &lt;ul class=&quot;site-nav__list&quot;&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link is-current&quot;&gt;Campaign Finance Data&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link&quot;&gt;Reporting &amp;amp; Registration&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link is-disabled&quot;&gt;TBD&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;button class=&quot;site-nav__button site-nav__button--right&quot;&gt;Glossary&lt;/button&gt;
-&lt;/nav&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;disclaimer&quot;&gt;
+  &lt;span class=&quot;disclaimer__left&quot;&gt;Looking for fec.gov? &lt;a href=&quot;http://www.fec.gov&quot;&gt;Click here.&lt;/a&gt;&lt;/span&gt;
+  &lt;span class=&quot;disclaimer__center&quot;&gt;
+    An official website of the United States Government.
+    &lt;img alt=&quot;US flag signifying that this is a United States Federal Government website&quot; src=&quot;../img/us_flag_small.png&quot;&gt;
+  &lt;/span&gt;
+  &lt;span class=&quot;disclaimer__right&quot;&gt;This site is currently in &lt;a href=&quot;https://18f.gsa.gov/dashboard/stages/#beta&quot;&gt;beta&lt;/a&gt;.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
-      </div>
-      <section id="kssref-navigation-dropdown" class="kss-section kss-section--depth-2">
+      </section>
+      <section id="kssref-site-header-masthead" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-navigation-dropdown">
+        <a class="kss-title__permalink" href="#kssref-site-header-masthead">
           <span class="kss-title__ref">
-              11.1
+              16.2
             <span class="kss-title__permalink-hash">
-                #navigation.dropdown
+                #site-header.masthead
             </span>
           </span>
-          Dropdown
+          Masthead
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>Primary site navigation</p>
+        <p>The combination of the logo, site title and utility nav</p>
 
       </div>
     </div>
@@ -236,54 +244,24 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <nav class="site-nav__dropdown" id="dropdown-1" aria-hidden="false">
- <ul class="site-nav__dropdown__section">
-   <li>
-     <a href="#">Search for candidates &raquo;</a>
-   </li>
-   <li>
-     <a href="#">Search by ZIP code &raquo;</a>
-   </li>
- </ul>
- <ul class="site-nav__dropdown__section">
-   <li><h4>Browse the Data</h4></li>
-   <li>
-     <a href="#">Browse candidates &raquo;</a>
-   </li>
-   <li>
-     <a href="#">Browse committees &raquo;</a>
-   </li>
- </ul>
- <div class="site-nav__dropdown__section">
-   <p>About this section</p>
- </div>
-</nav>
+          <div class="masthead">
+  <span class="site-title">Federal Election Commission</span>
+  <ul class="utility-nav">
+    <li class="utility-nav__item">About</li>
+    <li class="utility-nav__item">Contact</li>
+  </ul>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;nav class=&quot;site-nav__dropdown&quot; id=&quot;dropdown-1&quot; aria-hidden=&quot;false&quot;&gt;
- &lt;ul class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Search for candidates &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Search by ZIP code &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
- &lt;/ul&gt;
- &lt;ul class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;li&gt;&lt;h4&gt;Browse the Data&lt;/h4&gt;&lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Browse candidates &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Browse committees &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
- &lt;/ul&gt;
- &lt;div class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;p&gt;About this section&lt;/p&gt;
- &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;masthead&quot;&gt;
+  &lt;span class=&quot;site-title&quot;&gt;Federal Election Commission&lt;/span&gt;
+  &lt;ul class=&quot;utility-nav&quot;&gt;
+    &lt;li class=&quot;utility-nav__item&quot;&gt;About&lt;/li&gt;
+    &lt;li class=&quot;utility-nav__item&quot;&gt;Contact&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
       </section>

@@ -59,6 +59,20 @@
           <span class="kss-nav__ref">5</span
           ><span class="kss-nav__name">Form styles</span>
         </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-form-styles.html#kssref-form-styles-combo">
+                <span class="kss-nav__ref">5.1</span
+                ><span class="kss-nav__name">Combo</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-form-styles.html#kssref-form-styles-labels">
+                <span class="kss-nav__ref">5.2</span
+                ><span class="kss-nav__name">Labels</span>
+              </a>
+            </li>
+        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-hero.html">
@@ -89,14 +103,6 @@
           <span class="kss-nav__ref">11</span
           ><span class="kss-nav__name">Navigation</span>
         </a>
-        <ul class="kss-nav__menu-child">
-            <li class="kss-nav__menu-item">
-              <a href="section-navigation.html#kssref-navigation-dropdown">
-                <span class="kss-nav__ref">11.1</span
-                ><span class="kss-nav__name">Dropdown</span>
-              </a>
-            </li>
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
         <a href="section-page-header.html">
@@ -145,88 +151,48 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-navigation" class="kss-section kss-section--depth-1">
+      <div     id="kssref-form-styles" class="kss-section kss-section--depth-1">
 
     <div class="kss-style">
       <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-navigation">
+        <a class="kss-title__permalink" href="#kssref-form-styles">
           <span class="kss-title__ref">
-              11
+              5
             <span class="kss-title__permalink-hash">
-                #navigation
+                #form-styles
             </span>
           </span>
-          Navigation
+          Form styles
         </a>
       </h1>
 
 
       <div class="kss-description">
-        <p>Primary site navigation</p>
+        <p>For fancy form styling</p>
 
       </div>
     </div>
 
-      <div class="kss-modifier__wrapper">
-        <div class="kss-modifier__heading kss-style">
-          Example
-        </div>
-        <div class="kss-modifier__example">
-          <nav class="site-nav">
-  <button class="site-nav__button site-nav__button--left">Glossary</button>
-  <ul class="site-nav__list">
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link is-current">Campaign Finance Data</a>
-    </li>
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link">Reporting &amp; Registration</a>
-    </li>
-    <li class="site-nav__item">
-      <a href="#" class="site-nav__link is-disabled">TBD</a>
-    </li>
-  </ul>
-  <button class="site-nav__button site-nav__button--right">Glossary</button>
-</nav>
-        </div>
-      </div>
-
-      <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;nav class=&quot;site-nav&quot;&gt;
-  &lt;button class=&quot;site-nav__button site-nav__button--left&quot;&gt;Glossary&lt;/button&gt;
-  &lt;ul class=&quot;site-nav__list&quot;&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link is-current&quot;&gt;Campaign Finance Data&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link&quot;&gt;Reporting &amp;amp; Registration&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;site-nav__item&quot;&gt;
-      &lt;a href=&quot;#&quot; class=&quot;site-nav__link is-disabled&quot;&gt;TBD&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;button class=&quot;site-nav__button site-nav__button--right&quot;&gt;Glossary&lt;/button&gt;
-&lt;/nav&gt;</code></pre>
-      </div>
 
       </div>
-      <section id="kssref-navigation-dropdown" class="kss-section kss-section--depth-2">
+      <section id="kssref-form-styles-combo" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
       <h2 class="kss-title kss-title--level-2">
-        <a class="kss-title__permalink" href="#kssref-navigation-dropdown">
+        <a class="kss-title__permalink" href="#kssref-form-styles-combo">
           <span class="kss-title__ref">
-              11.1
+              5.1
             <span class="kss-title__permalink-hash">
-                #navigation.dropdown
+                #form-styles.combo
             </span>
           </span>
-          Dropdown
+          Combo
         </a>
       </h2>
 
 
       <div class="kss-description">
-        <p>Primary site navigation</p>
+        <p>On medium and up, displays input and button right next to each other. On small screens they&#39;re stacked.</p>
 
       </div>
     </div>
@@ -236,55 +202,53 @@
           Example
         </div>
         <div class="kss-modifier__example">
-          <nav class="site-nav__dropdown" id="dropdown-1" aria-hidden="false">
- <ul class="site-nav__dropdown__section">
-   <li>
-     <a href="#">Search for candidates &raquo;</a>
-   </li>
-   <li>
-     <a href="#">Search by ZIP code &raquo;</a>
-   </li>
- </ul>
- <ul class="site-nav__dropdown__section">
-   <li><h4>Browse the Data</h4></li>
-   <li>
-     <a href="#">Browse candidates &raquo;</a>
-   </li>
-   <li>
-     <a href="#">Browse committees &raquo;</a>
-   </li>
- </ul>
- <div class="site-nav__dropdown__section">
-   <p>About this section</p>
- </div>
-</nav>
+          <div class="slab bg--primary">
+  <div class="container">
+  <div class="combo">
+    <input type="text" class="combo__input">
+    <button class="button--primary combo__button">Go</button>
+  </div>
+</div>
+</div>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;nav class=&quot;site-nav__dropdown&quot; id=&quot;dropdown-1&quot; aria-hidden=&quot;false&quot;&gt;
- &lt;ul class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Search for candidates &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Search by ZIP code &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
- &lt;/ul&gt;
- &lt;ul class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;li&gt;&lt;h4&gt;Browse the Data&lt;/h4&gt;&lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Browse candidates &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-     &lt;a href=&quot;#&quot;&gt;Browse committees &amp;raquo;&lt;/a&gt;
-   &lt;/li&gt;
- &lt;/ul&gt;
- &lt;div class=&quot;site-nav__dropdown__section&quot;&gt;
-   &lt;p&gt;About this section&lt;/p&gt;
- &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab bg--primary&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;combo&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;combo__input&quot;&gt;
+    &lt;button class=&quot;button--primary combo__button&quot;&gt;Go&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
       </div>
+
+      </section>
+      <section id="kssref-form-styles-labels" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-form-styles-labels">
+          <span class="kss-title__ref">
+              5.2
+            <span class="kss-title__permalink-hash">
+                #form-styles.labels
+            </span>
+          </span>
+          Labels
+        </a>
+      </h2>
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">.label</code>
+          <div class="kss-parameters__description">Bold, uppercase, with a bottom margin</div>
+        </li>
+      </ul>
+
+    </div>
+
 
       </section>
 </article>

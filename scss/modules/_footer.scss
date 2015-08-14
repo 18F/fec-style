@@ -1,0 +1,45 @@
+// Site Footer
+//
+// Markup:
+// <footer class="footer">
+//   <div class="container">
+//     <div class="seal">
+//       <img class="seal__img"src="../img/seal--reversed@2x.png" alt="Seal of the Federal Election Commission">
+//     </div>
+//     <div class="address">
+//       <p class="address__title">Federal Election Commission</p>
+//       <p>999 E Street, NW, Washington, DC 20463</p>
+//       <p>(800) 424-9530</p>
+//       <p><a href="mailto:info@FEC.gov">info@FEC.gov</a></p>
+//     </div>
+//   </div>
+// </footer>
+//
+// Styleguide footer
+
+.footer {
+  @include u-bg--primary();
+  @include u-font-color($neutral);
+  padding: 3rem 0;
+
+  .address__title {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  @include media($med) {
+    .seal {
+      @include span-columns(6);
+    }
+
+    .address {
+      @include span-columns(6);
+      text-align: right;
+    }
+  }
+}
+
+.seal__img {
+  max-width: 140px;
+  height: auto;
+}

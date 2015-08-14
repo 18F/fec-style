@@ -1,6 +1,7 @@
 // Grid
 //
 // .container     - Used to set group grid items
+// .main          - The main content area below heros
 //
 // Styleguide layout.grid
 
@@ -15,10 +16,64 @@
 // Neat Breakpoints
 $medium-screen: em(640);
 $large-screen: em(860);
+$x-large-screen: em(1088);
 
 $med: new-breakpoint(min-width $medium-screen 12);
 $lg: new-breakpoint(min-width $large-screen 12);
+$xl: new-breakpoint(min-width $x-large-screen 12);
 
 .container {
   @include outer-container();
+  padding: 0 2rem;
+
+  @include media($lg) {
+    padding: 0;
+  }
+}
+
+.main {
+  padding: 2rem 0;
+
+  @include media($lg) {
+    padding: 3rem 0;
+  }
+}
+
+// Grid columns
+//
+// Classes from the US Web Design Standards library
+//
+// Styleguide grid.columns
+
+@include media($medium-screen) {
+  .usa-width-one-whole {
+    @include span-columns(12);
+  }
+  .usa-width-one-half {
+    @include span-columns(6);
+  }
+  .usa-width-one-third {
+    @include span-columns(4);
+  }
+  .usa-width-two-thirds {
+    @include span-columns(8);
+  }
+  .usa-width-one-fourth {
+    @include span-columns(3);
+  }
+  .usa-width-three-fourths {
+    @include span-columns(9);
+  }
+  .usa-width-one-sixth {
+    @include span-columns(2);
+  }
+  .usa-width-five-sixths {
+    @include span-columns(10);
+  }
+  .usa-width-one-twelfth {
+    @include span-columns(1);
+  }    
+  .usa-end-row {
+    @include omega();
+  }      
 }
