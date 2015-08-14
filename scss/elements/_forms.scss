@@ -1,7 +1,11 @@
 // Forms
 // 
+// .bg--primary     - When the form is on a primary background
+// .bg--secondary   - When the form is on a secondary background
+// .bg--neutral     - When the form is on a neutral background
+//
 // Markup:
-// <div class="slab bg--secondary">
+// <div class="slab {{modifier_class}}">
 //   <div class="container">
 //     <label class="label" for="input">Label</label>
 //     <input type="text" id="input">
@@ -35,11 +39,11 @@ label {
   }
 }
 
-#{$all-text-inputs},
+input,
 select[multiple=multiple],
 textarea,
 select {
-  background-color: $neutral;
+  background-color: $cream;
   border-color: $brown;
   border-width: 2px;
   border-style: solid;
@@ -85,26 +89,16 @@ input[type="file"] {
   width: 100%;
 }
 
-// Labels
-//
-// .label     - Bold, uppercase, with a bottom margin
-//
-// Styleguide elements.forms.labels
-
-.label {
-  color: $primary;
-  font-family: $sans-serif;
-  font-weight: bold;
-  margin-bottom: .5rem;
-  text-transform: uppercase;
-}
-
 // Checkboxes and Radio Buttons
 //
 // Custom checkboxes and radio buttons
 //
+// .bg--primary     - When the form is on a primary background
+// .bg--secondary   - When the form is on a secondary background
+// .bg--neutral     - When the form is on a neutral background
+//
 // Markup:
-// <div class="slab bg--neutral">
+// <div class="slab {{modifier_class}}">
 //  <div class="container">
 //   <fieldset>
 //     <legend class="label">Select any</legend>
@@ -193,4 +187,35 @@ input[type="radio"]:disabled + label::before {
   // background: $color-grey-600;
   // color: $color-grey-600;
   cursor: not-allowed;
+}
+
+// Basic button reset
+// 
+// Markup:
+// <button>Unstyled button</button>
+//
+// Styleguide elements.forms.buttons
+
+[type="submit"],
+[type="reset"],
+[type="button"],
+button {
+  @include appearance(none);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $sans-serif;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 }

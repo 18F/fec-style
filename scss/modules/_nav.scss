@@ -23,12 +23,11 @@
 
 .site-nav {
   @include clearfix();
-  background-color: $neutral;
   position: relative;
 }
 
 .site-nav__list {
-  // display: none;
+  display: none;
   background-color: $neutral;
   position: absolute;
   left: 0;
@@ -36,6 +35,7 @@
 
   @include media($med) {
     @include clearfix();
+    background: none;
     display: block;
     float: left;
     position: relative;
@@ -117,7 +117,7 @@
 // Styleguide navigation.dropdown
 
 .site-nav__dropdown {
-  @include font-color($primary-contrast);
+  @include u-font-color($primary-contrast);
   background-color: $primary;
   padding: 2rem;
   position: absolute;

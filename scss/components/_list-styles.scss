@@ -2,10 +2,30 @@
 // 
 // These are classes to be applied to lists to give them particular styles
 //
+// .list--bulleted  - Bulleted list (for ul)
+// .list--numbered  - Numbered list (for ol)
 // .list--flat      - Lay out items horizontally
-// .list--check     - Use checkboxes for the list bullets
+//
+// Markup:
+// <ul class="{{modifier_class}}">
+//  <li>Unordered list item 1</li>
+//  <li>Unordered list item 2</li>
+//  <li>Unordered list item 2</li>
+// </ul>
 //
 // Styleguide list-styles
+
+.list--bulleted {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.list--numbered {
+  list-style-type: decimal;
+  margin: 0;
+  padding-left: 1rem;
+}
 
 .list--flat {
   @include clearfix();
@@ -16,14 +36,45 @@
   }
 }
 
-.list--check {
+// Checkbox Lists
+// 
+// For showing a list of completed or uncompleted features
+//
+// .is-completed     - Checkbox inside
+//
+// Markup:
+// <ul class="list--checkboxes">
+//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 1</li>
+//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 2</li>
+//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 2</li>
+// </ul>
+//
+// Styleguide list-styles.checkboxes
+
+.list--checkboxes {
   .is-completed {
-    list-style-image: url('/static/img/checkbox.svg');
-    margin-left: 2.5rem;
+    &:before {
+      background-color: $primary;
+      background-image: url('../img/i-check--neutral.png');
+      background-image: url('../img/i-check--neutral.svg');
+    }
   }
-  
-  .is-uncompleted {
-    list-style-image: url('/static/img/checkbox--empty.svg');
-    margin-left: 2.5rem;
-  }
+}
+
+.list--checkboxes__item {
+   padding-left: 2.5rem;
+   position: relative;
+
+   &:before {
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 2px solid $primary;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 2rem;
+    left: 0;
+    position: absolute;
+    width: 2rem;
+   }
 }

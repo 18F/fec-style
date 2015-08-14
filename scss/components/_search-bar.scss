@@ -1,0 +1,121 @@
+// Search Bar
+//
+// .combo--search--large      - 6rem tall
+//
+// Markup:
+// <div class="slab bg--primary">
+//   <div class="container">
+//   <div class="combo combo--search {{modifier_class}}">
+//     <input type="text" class="combo__input">
+//     <button type="submit" class="button--primary combo__button">
+//      <span class="u-visually-hidden">Search</span>
+//     </button>
+//   </div>
+// </div>
+// </div>
+//
+// Styleguide search-bar
+
+.combo--search {
+  .combo__button {
+    background-image: url('../img/i-search--primary.png');
+    background-image: url('../img/i-search--primary.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  @include media($med) {
+    .combo__input {
+      width: calc(100% - 4.6rem);
+    }
+
+    .combo__button {
+      width: 4rem; 
+    }
+  }
+}
+
+.combo--search--large {
+  @include media($med) {
+    height: 6rem;
+    .combo__input {
+      font-size: 2.8rem;
+      height: 6rem;
+      width: calc(100% - 6.6rem);
+    }
+
+    .combo__button {
+      height: 6rem;
+      width: 6rem;
+    }
+  }
+}
+
+// Typeahead styles
+.twitter-typeahead {
+  width: 100%;
+}
+
+.tt-dropdown-menu {
+  background-color: rgba($primary-contrast, .9);
+  border: 1px solid $primary;
+  font-family: $sans-serif;
+  left: 0;
+  text-align: left;
+  position: absolute;
+  width: calc(100% - 6.6rem);
+}
+
+.combo--search--large {
+  .tt-dropdown-menu {
+    font-size: 1.6rem;
+    top: 40px !important;
+  }
+
+  @include media($med) {
+    .tt-dropdown-menu {
+      top: 60px !important;
+    }
+  }
+}
+
+.tt-suggestion {
+  @include clearfix();
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 0;
+  line-height: 1;
+  border-bottom: 1px solid $primary;
+}
+
+span.tt-suggestion__name {
+  @include u-truncate();
+  color: $primary;
+  display: block;
+  float: left;
+  width: 65%;
+}
+
+span.tt-suggestion__office {
+  @include u-truncate();
+  color: $primary;
+  font-size: 1.2rem;
+  text-align: right;
+  display: block;
+  width: 35%;
+  float: right;
+  font-style: italic;
+}
+
+.tt-cursor {
+  cursor: pointer;
+  background: $primary;
+  
+  .tt-suggestion__name {
+    color: $primary-contrast;
+  }
+
+  .tt-suggestion__office {
+    color: $primary-contrast;
+  }
+}

@@ -1,11 +1,9 @@
 // Elements
 //
-// Base styles 
+// Base styles for html elements
 //
 // Styleguide elements
 
-@import "mixins";
-@import "variables";
 @import "typography";
 @import "links";
 @import "lists";
@@ -32,13 +30,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-}
-
-.lt-ie9 {
-  // Hack for clearfixes
-  * {
-    filter: none !important;
-  }
+  background-color: $cream;
 }
 
 [aria-hidden=true] {

@@ -1,0 +1,84 @@
+// Type Styles
+//
+// For classes that define type styles
+// Prefix these styles with t-
+//
+// Styleguide type-styles
+
+// Display
+//
+// Large type with top and bottom borders for major page headings. In order to have rules, apply .t-ruled
+// 
+// .t-ruled     - Apply top and bottom rules to the heading
+//
+// Markup:
+// <h2 class="t-display {{modifier_class}}">Some great heading</h2>
+//
+// Styleguide type-styles.display
+
+.t-display {
+  @include heading(display);
+
+  &.t-ruled {
+    border-width: 2px;
+  }
+}
+
+// Display sans
+//
+// Used for showing large numbers. Sans-serif and no border
+//
+// Markup:
+// <span class="t-display--sans">$2,010</span>
+//
+// Styleguide type-styles.display-sans
+
+.t-display--sans {
+  @include heading(display);
+  font-family: $sans-serif;
+  border: none;
+}
+
+// Ruled Headings
+//
+// Adds top and bottom borders; color changed by u-font-color
+//
+// .t-ruled--bold     - 2px weight borders
+//
+// Markup:
+// <h2 class="t-ruled {{ modifier_class }}">Another heading</h2>
+//
+// Styleguide type-styles.ruled-headings
+
+.t-ruled {
+  border-bottom: 1px solid $primary;
+  border-top: 1px solid $primary;
+  padding: 1rem 0;
+}
+
+.t-ruled--bold {
+  border-width: 2px;
+}
+
+// Modifier styles for text
+//
+// .is-centered       - Center the text
+// .is-right-aligned  - Right-align the text
+// .is-left-aligned   - Left-align the text
+//
+// Markup:
+// <p class="{{ modifier_class }}"">Some sample text</p>
+//
+// Styleguide type-styles.modifiers
+
+.is-centered {
+  text-align: center;
+}
+
+.is-right-aligned {
+  text-align: right;
+}
+
+.is-left-aligned {
+  text-align: left;
+}

@@ -1,15 +1,15 @@
 // ------------------------------------------------------------------------------
 //   @group Variables - Colors, Fonts, etc.
 // ------------------------------------------------------------------------------
-@kss-colors-background     : #fff;
+@kss-colors-background     : #fffff6;
 
 @kss-colors-foreground     : #444;
 @kss-colors-heading        : #111;
 @kss-colors-quotes         : #666;
 
-@kss-colors-link           : #022c53;
-@kss-colors-link-visited   : #022c53;
-@kss-colors-link-hover     : #022c53;
+@kss-colors-link           : #36BDBB;
+@kss-colors-link-visited   : #36BDBB;
+@kss-colors-link-hover     : #36BDBB;
 @kss-colors-link-active    : #36BDBB;
 
 @kss-font-body             : 'Karla Sans', Arial, sans-serif;
@@ -22,6 +22,10 @@
 // Wrap all of this template's base HTML styling inside a .kss-style selector.
 // ------------------------------------------------------------------------------
 
+html {
+  height: 100%;
+}
+
 .kss-style {
   color: @kss-colors-foreground;
   font-family: @kss-font-body;
@@ -33,6 +37,7 @@
     text-decoration: none;
     transition-property: color;
     transition-duration: 0.5s;
+    border-bottom: none;
 
     &:visited { color: @kss-colors-link-visited; }
     &:hover,
@@ -162,23 +167,20 @@
 
 #kss-node {
   margin: 0;
-  padding: 20px;
-  background: #fff;
+  padding: 0;
+  background: #fffff9;
+  min-height: 100%;
 
   @media screen and (min-width: 769px) {
+    display: flex;
     padding: 0;
-    background: #fcf6ef; /* Old browsers */
-    background: -moz-linear-gradient(left, #fcf6ef 0%, #fcf6ef 20%, #ffffff 20%, #ffffff 20%, #ffffff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fcf6ef), color-stop(20%,#fcf6ef), color-stop(20%,#ffffff), color-stop(20%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, #fcf6ef 0%,#fcf6ef 20%,#ffffff 20%,#ffffff 20%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, #fcf6ef 0%,#fcf6ef 20%,#ffffff 20%,#ffffff 20%,#ffffff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, #fcf6ef 0%,#fcf6ef 20%,#ffffff 20%,#ffffff 20%,#ffffff 100%); /* IE10+ */
-    background: linear-gradient(to right, #fcf6ef 0%,#fcf6ef 20%,#ffffff 20%,#ffffff 20%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf6ef', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+    .kss-sidebar {
+      width: 20%;
+    }
+
     .kss-main,
     .kss-sidebar {
-      float: left;
-      margin-right: -100%;
       box-sizing: border-box;
     }
   }
@@ -189,13 +191,13 @@
 
     @media screen and (min-width: 769px) {
       width: 80%;
-      margin-left: 20%;
       padding: 0 20px 0 30px;
     }
   }
 
   .kss-sidebar {
     border-bottom:1px solid #ddd;
+    background-color: #022C53;
 
     @media screen and (min-width: 769px) {
       width: 20%;
@@ -214,6 +216,7 @@
   .kss-doc-title {
     margin: 0;
     border-bottom: 0;
+    color: #36BDBB;
 
     @media screen and (min-width: 769px) {
       font-size: 1.5em;
@@ -248,29 +251,32 @@
     display: none;
 
     @media screen and (min-width: 769px) {
+      background-color: #164F85;
       display: block;
       list-style-type: none;
       margin: 0;
       padding: 0;
 
+      li {
+        padding: 0 10px;
+      }
+
       // @TODO: The ul is output even when there are no children. Fix this, so
       // we can put these :first-child and :last child styles back on the ul.
       li:first-child {
         margin: 10px 0 0;
-        border-top: 1px solid #ccc;
-        padding: 10px 0 0;
+        padding: 10px 10px 0 10px;
       }
 
       li:last-child {
         margin: 0 0 10px;
-        border-bottom: 1px solid #ccc;
-        padding: 0 0 10px;
+        padding: 0 10px 10px 10px;
       }
     }
   }
 
   .kss-nav__ref {
-    color: #333;
+    color: #36BDBB;
     font-weight: bold;
 
     &:after {
@@ -356,20 +362,26 @@
     margin: -10px -10px 10px -10px;
     padding: 10px;
     border-bottom: 1px solid #efdecd;
-    background-color: #fcf6ef;
+    background-color: #fffff6;
     font-weight: bold;
   }
   .kss-modifier__default-name {
     font-weight: bold;
     margin-bottom: (@kss-vertical-rhythm / 2);
+    border-bottom: 1px solid #efdecd;
   }
+  
   .kss-modifier__name {
     float: left;
-    padding-right: 10px;
-    font-weight: bold;
+    pre {
+      margin: 0 20px 0 0;
+      font-weight: bold;
+    }
   }
+
   .kss-modifier__description {
     margin-bottom: (@kss-vertical-rhythm / 2);
+    border-bottom: 1px solid #efdecd;
   }
   .kss-modifier__example {
     clear: left;
@@ -379,6 +391,10 @@
 
     &:last-child {
       margin: 0;
+    }
+
+    .container {
+      padding: 0 2rem;
     }
   }
 
