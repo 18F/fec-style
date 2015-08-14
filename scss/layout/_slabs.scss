@@ -18,7 +18,6 @@
 
 .slab {
   @include clearfix();
-  background-color: $neutral;
   padding: 2rem 0;
 }
 
@@ -30,4 +29,8 @@
 .slab--secondary {
   @include u-bg--secondary();
   @include u-font-color($ivory)
+}
+
+.slab--neutral {
+  background-color: $neutral;
 }

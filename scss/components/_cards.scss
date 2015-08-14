@@ -127,3 +127,19 @@
   @include u-bg--secondary();
   @include u-font-color($ivory);
 }
+
+// Tiled cards
+// 
+// For showing multiple rows of cards, use:
+// 
+// .card--tiled
+//
+// Styleguide cards.tiled-cards
+
+.card--tiled {
+  margin-bottom: 2rem;
+  
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+}

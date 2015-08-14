@@ -11,12 +11,17 @@
 //  <div class="container">
 //    <h1 class="t-display">Explore campaign finance data</h1>
 //    <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
+//    <div class="hero__content">
+//      <button>Centered call out component</p>
+//    </div>
+//    </div>
 //  </div>
 // </section>
 //
 // Styleguide hero
 
 .hero {
+  border-bottom: 10px solid;
   padding: 3rem 0;
   text-align: center;
 
@@ -32,10 +37,21 @@
 .hero--primary {
   @include u-bg--primary();
   @include u-font-color($ivory);
-
+  border-bottom-color: $primary-contrast;
 }
 
 .hero--secondary {
   @include u-bg--secondary();
   @include u-font-color($ivory);
+  border-bottom-color: $secondary-contrast;
+}
+
+.hero__content {
+  padding-top: 2rem;
+
+  @include media($med) {
+    @include span-columns(6);
+    @include shift(3);
+    padding-top: 6rem;
+  }
 }

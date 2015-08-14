@@ -141,3 +141,15 @@
     }
   }
 }
+
+// u-truncate()
+//
+// Truncate text to a single line with an ellipsis
+// Thanks to http://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+//
+// Styleguide mixins.truncate
+@mixin u-truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
