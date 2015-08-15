@@ -11,6 +11,10 @@
   padding: 2rem 0;
 }
 
+.results-info__null {
+  float: right;
+}
+
 .dataTables_wrapper {
   .results-info {
 
@@ -33,6 +37,7 @@
       .dataTables_paginate {
         margin-left: 1.5em;
         float: right;
+        clear: right;
       }
     }
 

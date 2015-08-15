@@ -16,7 +16,7 @@
     @include transition(width .5s);
     border-top: 0;
     margin: 0 1% 0 0;
-    padding-top: 2rem;
+    padding: 2rem 0;
     width: 96%;    
   }
 }
@@ -36,6 +36,7 @@
 }
 
 .datatable {
+  font-family: $sans-serif;
 
   th {
     padding: 2rem 0 0 0;
@@ -47,6 +48,31 @@
   }
   
   td {
-    height: 3rem;    
+    padding: 1rem 0;
   }
+
+  .sorting,
+  .sorting_asc,
+  .sorting_desc {
+    background-position: 0 2.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-left: 1rem;
+  }   
+}
+
+// Sortable headers
+.sorting {
+  background-image: url('../img/i-sort--neutral.png');
+  background-image: url('../img/i-sort--neutral.svg');
+}
+
+.sorting_asc {
+  background-image: url('../img/i-sort-up--neutral.png');
+  background-image: url('../img/i-sort-up--neutral.svg'); 
+}
+
+.sorting_desc {
+  background-image: url('../img/i-sort-down--neutral.png');
+  background-image: url('../img/i-sort-down--neutral.svg'); 
 }

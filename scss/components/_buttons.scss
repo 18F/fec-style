@@ -26,7 +26,7 @@
 // Markup:
 // <button class="button--primary {{ modifier_class }}">Button</button>
 //
-// Styleguide buttons.primary
+// Styleguide components.buttons.primary
 
 .button--primary {
   @extend .button;
@@ -54,7 +54,7 @@
 // Markup:
 // <button class="button--secondary {{ modifier_class }}">Button</button>
 //
-// Styleguide buttons.secondary
+// Styleguide components.buttons.secondary
 
 .button--secondary {
   @extend .button;  
@@ -82,11 +82,11 @@
 // Markup:
 // <button class="button--neutral {{ modifier_class }}">Button</button>
 //
-// Styleguide buttons.neutral
+// Styleguide components.buttons.neutral
 
 .button--neutral {
   @extend .button;
-  background-color: $cream;
+  background-color: $neutral;
   border: 2px solid $brown;
   color: $primary;
 
@@ -134,7 +134,7 @@
 // <button class="button--icon button--secondary button--icon--right">Next<img alt="arrow-right" src="../img/i-arrow-right--secondary.svg"></button>
 // <button class="button--icon button--secondary"><img alt="charts" src="../img/i-chart--secondary.svg">View charts</button>
 //
-// Styleguide buttons.icon-buttons
+// Styleguide components.buttons.icon-buttons
 //
 
 .button--icon {
@@ -157,3 +157,46 @@
   }
 }
 
+// Remove button
+//
+// For clearing form inputs
+//
+// <div class="input--removable is-active">
+//  <input type="text" value="Input">
+//  <button type="button" class="button--remove button" data-removes="{{ name }}"><span class="u-visually-hidden">Remove</span></button>
+// </div>
+//
+// Styleguide components.buttons.remove
+
+.button--remove {
+  background-image: url('../img/i-x--primary.png');
+  background-image: url('../img/i-x--primary.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: none;
+  height: 4rem;
+  padding: .6rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4rem;
+
+  &:hover {
+    padding: .6rem;
+    text-decoration: none;
+  }
+}
+
+.input--removable {
+  position: relative;
+
+  input[type="text"] {
+    padding-right: 5rem;
+  }
+
+  &.is-active {
+    .button--remove {
+      display: block;
+    }
+  }
+}

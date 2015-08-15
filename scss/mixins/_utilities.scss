@@ -88,8 +88,8 @@
   }
   
   select {
-    background-image: url('../img/i-arrow-down--' + $icon-color + '-contrast.png');
-    background-image: url('../img/i-arrow-down--' + $icon-color + '-contrast.svg');
+    background-image: url('../img/i-down--' + $icon-color + '-contrast.png');
+    background-image: url('../img/i-down--' + $icon-color + '-contrast.svg');
   }
 
   input[type="checkbox"] + label::before,

@@ -1,0 +1,118 @@
+// Dropdowns
+//
+// Default styling is for the filter panels
+//
+// Markup:
+// <fieldset class="js-checkbox-filters">
+//   <legend class="label">Election Years</legend>
+//   <ul class="dropdown__selected"></ul>
+//   <div class="dropdown">
+//     <button class="js-toggle js-dropdown button--dropdown button--neutral" data-toggles="cycle-dropdown">More</button>
+//     <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
+//       <ul class="dropdown__list">
+//         <li>
+//           <input id="cycle-checkbox-year" name="cycle" type="checkbox" value="2011" />
+//           <label class="dropdown__value" for="cycle-checkbox-year">2011 - 2012</label>
+//         </li>
+//       </ul>
+//     </div>
+//   </div>
+// </fieldset>
+// 
+// Styleguide components.dropdowns
+
+.button--dropdown {
+  position: relative;
+  max-width: 20rem;
+  text-align: left;
+  width: 100%;
+
+  &:after {
+    background-image: url('../img/i-down--primary.png');
+    background-image: url('../img/i-down--primary.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 12px;
+    border-left: 1px solid $primary;
+    content: '';
+    display: block;
+    padding: 1rem 2rem 1rem 1rem;
+    position: absolute;
+    right: 1.5rem;
+    top: .5rem;
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__value {
+  margin: 0;
+}
+
+.dropdown__panel {
+  position: absolute;
+  top: 3.2rem;
+  min-width: 100%;
+  background: $cream;
+  border: 2px solid $ivory-dark;
+  max-height: 30rem;
+  overflow: hidden;
+  z-index: 999;
+
+  li {
+    border-bottom: 2px solid $ivory-dark;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+
+    &:hover {
+      background-color: $ivory;
+      cursor: pointer;
+    }    
+  }
+  
+  // For labeling a group of options
+  .dropdown__subhead {
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }  
+}
+
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dropdown__selected {
+  margin-bottom: .5rem;
+
+  li {
+    @include animation(fadeIn .2s ease-in);
+  }
+
+  input {
+    margin-left: 0;
+  }
+}
+
+.ps-scrollbar-y-rail { 
+  position: absolute;
+  background: $ivory;
+  width: 4px;
+  border-left: 1px solid $ivory-dark;
+}
+
+.ps-scrollbar-y {
+  position: absolute;
+  width: 4px;
+  background: $ivory-dark;
+}
