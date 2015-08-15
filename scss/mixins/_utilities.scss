@@ -162,3 +162,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+// u-bg-background-image()
+//
+// Generates everything you need for a background image
+//
+// $image     - Name of the image file. It will create two calls, one to a png and one to an svg
+// $position: - Will set the background-position property, defaults to 50% 50%
+// 
+// Styleguide mixins.background-image
+
+@mixin u-background-image($image, $position: 50% 50%) {
+  background-image: url('../img/' + $image + '.png');
+  background-image: url('../img/' + $image + '.svg');
+  background-repeat: no-repeat;
+  background-position: $position;
+}
