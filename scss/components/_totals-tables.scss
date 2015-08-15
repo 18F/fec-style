@@ -1,0 +1,68 @@
+// Totals Tables
+//
+// Simple tables, often paired with accordion components to expand and collapse.
+// This component is focused on the styling.
+//
+// Styleguide components.totals-tables
+
+
+.totals-table {
+  font-family: $sans-serif;
+  font-size: 1.6rem;
+}
+
+.totals-table__row {
+  @include clearfix();
+  border-bottom: 1px solid $neutral;
+}
+
+.totals-table__cell {
+  width: 100%;
+  padding: 1rem 0;
+
+  &:first-child {
+    padding: 1rem 0 0 0;
+    font-weight: bold;
+  }
+}
+
+.totals-table__label {
+  font-weight: bold;
+  display: block;
+}
+
+.totals-table__row--nested {
+  font-size: 1.4rem;
+  background-color: $neutral;
+  padding: .5rem;
+
+  .totals-table__cell,
+  .totals-table__cell:first-child {
+    width: 100%;
+    padding-top: .5rem;
+  }
+
+  .totals-table__cell:first-child {
+    font-weight: normal;
+  }  
+}
+
+@include media($med) {
+  .totals-table__row,
+  .totals-table__row--nested {
+    .totals-table__cell {
+      float: left;
+      width: 20%;
+      padding: .5em 0;
+
+      &:first-child {
+        width: 40%;
+        padding: .5em 0;
+      }
+
+      &:last-of-type {
+        width: 40%;
+      }
+    }
+  }
+}  

@@ -32,7 +32,6 @@
   @include clearfix();
   width: 100%;
   top: -200px; // Setting this property so we can animate it when .is-fixed is applied
-  box-shadow: 0 40px 20px 10px rgba($cream, .9);
 }
 
 .page-controls__bottom {

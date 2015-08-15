@@ -1,0 +1,34 @@
+// Accordions/
+//
+// Styleguide components.accordions
+
+.accordion__header {
+  position: relative;
+  clear: both;
+}
+
+.accordion__button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.accordion--collapsed {
+  .accordion__button {
+
+  }
+}
+
+.accordion__button {
+  &.button {
+    @include u-background-image('i-plus--primary');
+  }
+
+  &.button--primary {
+    @include u-background-image('i-plus--primary');
+    border-radius: 3rem;
+    height: 4rem;
+    padding: 0;
+    width: 4rem;
+  }
+}
