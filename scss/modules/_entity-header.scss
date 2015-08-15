@@ -1,0 +1,114 @@
+// Entity headers
+//
+// Styleguide modules.entity-header
+
+.entity__header {
+  @include u-bg--primary();
+  border-top: 1px solid $ivory;
+}
+
+.entity__header--top {
+  padding: 1rem 0;
+
+  @include media($lg) {
+    padding: 2rem 0;
+  }
+}
+
+.entity__header--bottom {
+  padding-bottom: 1rem;
+
+  @include media($lg) {
+    padding-bottom: 2rem;
+  }
+}
+
+.entity__header {
+  &.page-header {
+    padding: 1rem 0;
+  }
+}
+
+.entity__name {
+  font-weight: bold;
+}
+
+.entity__id {
+    color: #dde7f4;
+}
+
+.entity__type {
+  line-height: 1.2;
+  display: block;
+  padding: .5rem 0;
+  float: left;
+
+  @include media($med) {
+  }
+}
+
+.entity__info {
+  @include clearfix(); 
+  margin: 1rem 0;
+  width: 100%;
+
+  @include media($med) {
+    display: table;
+  }
+}
+
+.entity__term {
+  @include clearfix();
+  width: 100%;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @include media($med) {
+    display: table-cell;
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+.entity__header {
+  @include media($med) {
+    .entity__term {
+      max-width: 200px;
+    }
+  }
+}
+
+.entity__term--aligned {
+  @include media($med) {
+    vertical-align: top;
+  }
+}
+
+.entity__term--icon {
+  min-width: 3rem;
+  width: 3rem;
+  text-align: center;
+}
+
+.entity__term__label {
+  color: #fff;
+  font-weight: bold;
+
+  @include media($med) {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $ivory;
+    padding: 0 1rem;
+  }
+}
+
+.entity__term__data {
+  @include media($med) {
+    display: block;
+    width: 100%;
+    padding: 0 1rem;
+  }
+}

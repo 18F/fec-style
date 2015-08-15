@@ -1,0 +1,111 @@
+// Page Controls & Tabs
+//
+// The bar at the top of pages that contains the page title and tabs. The page title shows when scrolled below the page-controls.
+// 
+// .page-controls--primary    - On blue background
+// .page-controls--secondary  - On crimson background
+//
+// Markup:
+// <div class="page-controls {{modifier_class}}">
+//   <div class="page-controls__top">
+//     <div class="container">
+//       <span class="page-controls__title">Page Title</span>
+//     </div>
+//   </div>
+//   <div class="page-controls__bottom">
+//     <div class="container">
+//        <nav class="page-tabs list--flat">
+//           <ul role="tablist" data-name="tab">
+//             <li role="presentation" class="page-tabs__item"><a role="tab" data-name="summary" tabindex="0" aria-controls="panel1" aria-selected="true" href="#section-1">Financial Summary</a></li>
+//             <li role="presentation" class="page-tabs__item"><a role="tab" data-name="receipts" tabindex="-1" aria-controls="panel2" href="#section-2">Receipts</a></li>
+//             <li role="presentation" class="page-tabs__item"><a role="tab" data-name="disbursements" tabindex="-1" aria-controls="panel3" href="#section-3">Disbursements</a></li>
+//             <li role="presentation" class="page-tabs__item"><a role="tab" data-name="filings" tabindex="-1" aria-controls="panel4" href="#section-4">Filings</a></li>
+//           </ul>
+//       </nav>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide modules.page-controls
+
+.page-controls {
+  @include clearfix();
+  width: 100%;
+  top: -200px; // Setting this property so we can animate it when .is-fixed is applied
+  box-shadow: 0 40px 20px 10px rgba($cream, .9);
+}
+
+.page-controls__bottom {
+  width: 100%;
+}
+
+.page-controls__top {
+  display: none;
+  padding: 1rem 0;
+}
+
+.page-tabs {
+  text-align: left;
+  padding: 0;
+}
+
+.page-tabs__item {
+
+  &:first-of-type a {
+    border-left-width: 1px;
+  }
+
+  a {
+    @include heading(h3);
+    color: $ivory;
+    border-bottom: 0;
+    border-color: $cream;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-left-width: 0;
+    border-style: solid;
+    display: block;
+    line-height: 2rem;
+    margin-bottom: 0;
+    padding: 1rem 2rem;
+    text-decoration: none;
+
+    &[aria-selected="true"] {
+      background-color: $cream;
+    }
+  }
+}
+
+// Primary and secondary styles
+.page-controls--primary {
+  @include u-bg--primary();
+
+  .page-tabs__item {
+    a[aria-selected="true"]  {
+      color: $primary;
+    }
+  }
+}
+
+.page-controls--secondary {
+  @include u-bg--secondary();
+
+  .page-tabs__item {
+    a[aria-selected="true"]  {
+      color: $secondary;
+    }
+  }
+}
+
+// To stick to the top of the page
+.is-fixed {
+  @include transition(top, .2s);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  
+  .page-controls__top {
+    display: block;
+  }
+}
