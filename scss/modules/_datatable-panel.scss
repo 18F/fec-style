@@ -1,0 +1,157 @@
+// Datatable Panel
+// 
+// Styleguide modules.datatable-panel
+
+.panel__overlay {
+  @include transform(translateX(100%));
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  &[aria-hidden="false"] {
+    @include transform(translateX(0%));
+  }
+
+  @include media($med) {
+    border: 1px solid $primary;
+    margin-top: 2rem;
+    width: 100%;
+
+    &[aria-hidden="false"] {
+      // 99.5 to ensure when container is not an even number.
+      @include transform(translateX(99.5%));
+    }
+  }
+}
+
+.panel {
+  background: $cream;
+  padding: 2rem 1rem;
+
+  @include media($med) {
+    padding: 0;
+  }
+}
+
+.panel__main {
+  clear: both;
+}
+
+// Open panel
+.panel-active {
+  .dataTables_wrapper {
+    height: 118vh;
+    overflow: hidden;
+  }
+
+  @include media($med) {
+    .panel__main {
+      width: 50%;
+    }  
+
+    .dataTables_wrapper {
+      height: auto;
+      overflow: visible;
+    }
+  }
+}
+
+.panel__row {
+  margin-top: 3px;
+  padding: .65rem 1.5rem;
+
+  @include media($med) {
+    border-bottom: 1px solid $neutral;
+    padding: 10px 18px;
+    margin-top: 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Specifying in order to override datatable styles
+
+.datatable .panel__row {
+  table {
+    border: 0;
+  }
+
+  tr {
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  td {
+    border-bottom: 0;
+    padding: .3rem 0;
+    white-space: pre-wrap;
+    overflow: visible;
+
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+#datatable-modal .panel .panel__row {
+  // TODO This selector is overly specific because of a very specific selector in the tables.scss
+  // file which has to be refactored.
+  @include media($med) {
+    td {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+// Panel Navigation
+// 
+// The top bar of the panel
+// 
+// .panel__link   - Link to source page or document. Floats to the left on desktop and to the right on mobile 
+// .panel__close  - Closes the panel. Shows up as a back arrow on the left on mobile and an x on the right on desktop
+
+.panel__navigation {
+  @include clearfix();
+  text-align: right;
+
+  @include media($med) {
+    text-align: left;
+  }
+}
+
+.panel__link {
+  float: right;
+
+  @include media($med) {
+    float: left;
+  }
+}
+
+.panel__close {
+  background-image: url('../img/i-left-2--primary.png');
+  background-image: url('../img/i-left-2--primary.svg');  
+  background-position: 1rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  float: left;
+  padding-left: 3rem;
+
+  &:after {
+    content: "View all";
+  }
+
+  @include media($med) {
+    background-image: url('../img/i-x--primary.png');
+    background-image: url('../img/i-x--primary.svg');
+    float: right;
+
+    &:after {
+      content: "Close";
+    }
+  }
+}

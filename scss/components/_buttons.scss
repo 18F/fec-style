@@ -11,10 +11,15 @@
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
   border-radius: 2px;
   border: 2px solid transparent;
+  line-height: 1;
   font-size: 1.4rem;
   padding: 8px 2rem;
   vertical-align: middle;
   white-space: nowrap;
+
+  &:hover {
+    border-color: transparent;
+  }
 }
 
 // Primary buttons
@@ -119,7 +124,7 @@
   line-height: 1;
   padding: 5px 1rem;
 
-  &:hover {
+  &:active {
     border: 1px solid;
   }
 }

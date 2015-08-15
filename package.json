@@ -10,7 +10,8 @@
     "build": "npm run build-sass && npm run build-styleguide",
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "kss-node --config kss-config.json && cd fec-template/ && npm run less",
-    "watch": "watch 'npm run build' ./scss"
+    "watch": "watch 'npm run build' ./scss",
+    "watch-sass": "node-sass scss/ -o css/ --watch"
   },
   "dependencies": {
     "node-bourbon": "4.2.2",

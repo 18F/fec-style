@@ -20,6 +20,13 @@
   @include u-visually-hidden();
 }
 
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}
 
 // u-font-color()
 //
