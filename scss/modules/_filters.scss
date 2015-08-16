@@ -129,3 +129,36 @@
     border-bottom: 0;
   }
 }
+
+// Horizontal layout 
+
+.filters--horizontal {
+  background-color: $neutral;
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  @include media($lg) {
+    form {
+      @include display(flex);
+      @include justify-content(flex-start);
+    }
+
+    .filter {
+      border-bottom: none;
+      border-top: none;
+      border-right: 1px solid $cream;
+      margin-right: 0;
+      padding: 0 1rem;
+      width: 100%;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+  }
+}

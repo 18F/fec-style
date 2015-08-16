@@ -14,6 +14,7 @@
 // .container     - Used to set group grid items
 // .main          - The main content area below heros
 // .main__content - The area below page headers
+// .row           - Clearfixes a group of divs / wraps grid columns
 //
 // Styleguide layout.elements
 
@@ -31,11 +32,15 @@
   padding: 2rem 0;
 
   @include media($lg) {
-    padding: 3rem 0;
+    padding: 4rem 0;
   }
 }
 
 .main__content {
   @include clearfix();
   position: relative;
+}
+
+.row {
+  @include clearfix();
 }

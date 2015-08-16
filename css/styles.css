@@ -538,7 +538,7 @@ body {
     display: table; }
   @media screen and (min-width: 53.75em) {
     .main {
-      padding: 3rem 0; } }
+      padding: 4rem 0; } }
 
 .main__content {
   position: relative; }
@@ -546,6 +546,11 @@ body {
     clear: both;
     content: "";
     display: table; }
+
+.row::after {
+  clear: both;
+  content: "";
+  display: table; }
 
 .t-display {
   margin: 0 0 1em 0;
@@ -822,9 +827,26 @@ body {
     clear: both;
     content: "";
     display: table; }
-  .page-header h1 {
+  .page-header .page-header__title {
     border-bottom: none;
     margin-bottom: 0; }
+  .page-header .combo--search {
+    display: none; }
+  @media screen and (min-width: 40em) {
+    .page-header .page-header__title {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      .page-header .page-header__title:last-child {
+        margin-right: 0; }
+    .page-header .combo--search {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .page-header .combo--search:last-child {
+        margin-right: 0; } }
 
 .icon--complex {
   max-height: 6rem;
@@ -1389,13 +1411,13 @@ body {
   position: absolute;
   width: calc(100% - 6.6rem); }
 
-.combo--search--large .tt-dropdown-menu {
-  font-size: 1.6rem;
-  top: 40px !important; }
-
 @media screen and (min-width: 40em) {
   .combo--search--large .tt-dropdown-menu {
-    top: 60px !important; } }
+    top: 6rem !important; } }
+
+.tt-dropdown-menu {
+  font-size: 1.6rem;
+  top: 3.6rem !important; }
 
 .tt-suggestion {
   position: relative;
@@ -1936,6 +1958,69 @@ span.tt-suggestion__office {
     .chart__key__item {
       float: left; } }
 
+.page-subsection {
+  padding: 2rem 0; }
+  .page-subsection::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.page-subsection--ruled {
+  border-top: 1px solid #EFDECD;
+  margin-top: 2rem; }
+
+.page-section__intro::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.page-section__intro .time-period {
+  display: inline-block;
+  margin-bottom: 1rem; }
+
+.section-heading {
+  border-bottom: 1px solid; }
+
+.section-heading--primary {
+  border-color: #022C53; }
+
+path.shape {
+  stroke: #ccc; }
+  path.shape.active {
+    fill: #36BDBB; }
+
+.legend rect {
+  stroke: #022C53; }
+
+.legend svg {
+  height: 75px; }
+
+.box {
+  border: 1px solid #EFDECD;
+  padding: 2rem; }
+  .box::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.message {
+  padding: 2rem;
+  border: 1px solid; }
+  .message::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.message--alert {
+  background-color: rgba(239, 222, 205, 0.3);
+  border-color: #EFDECD; }
+
+.message--alert__bottom {
+  border-top: 1px solid #EFDECD;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center; }
+
 .site-header {
   position: relative; }
 
@@ -2086,6 +2171,41 @@ span.tt-suggestion__office {
     padding-top: 0; }
   .filter:last-child {
     border-bottom: 0; }
+
+.filters--horizontal {
+  background-color: #EFDECD;
+  margin-bottom: 2rem;
+  padding: 2rem; }
+  @media screen and (min-width: 53.75em) {
+    .filters--horizontal form {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: start;
+      -moz-box-pack: start;
+      box-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+      -o-justify-content: flex-start;
+      justify-content: flex-start;
+      -ms-flex-pack: start; }
+    .filters--horizontal .filter {
+      border-bottom: none;
+      border-top: none;
+      border-right: 1px solid #FFFFF9;
+      margin-right: 0;
+      padding: 0 1rem;
+      width: 100%; }
+      .filters--horizontal .filter:first-child {
+        padding-left: 0; }
+      .filters--horizontal .filter:last-child {
+        border-right: none;
+        padding-right: 0; } }
 
 .site-nav {
   position: relative; }

@@ -1,0 +1,34 @@
+// Messages
+// 
+// Banners and alerts
+//
+// Markup:
+// <div class="message message--alert">
+//   <h2 id="section-1-header" tabindex="0">No results</h2>
+//   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
+//   <p>For complete data, search the <a href="http://www.fec.gov/finance/disclosure/candcmte_info.shtml">FEC Candidate and Committee Viewer</a>.</p>
+//   <div class="message--alert__bottom">
+//       <h4>Is this information incorrect? Let us know.</h4>
+//       <a class="button button--neutral" href="mailto:{{ contact_email }}">Contact support <i class="ti-email"></i></a>
+//   </div>
+// </div>
+//
+// Styleguide components.messages
+
+.message {
+  @include clearfix();
+  padding: 2rem;
+  border: 1px solid;
+}
+
+.message--alert {
+  background-color: rgba($neutral, .3);
+  border-color: $neutral;
+}
+
+.message--alert__bottom {
+  border-top: 1px solid $neutral;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}

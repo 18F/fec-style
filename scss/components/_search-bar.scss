@@ -67,16 +67,16 @@
 }
 
 .combo--search--large {
-  .tt-dropdown-menu {
-    font-size: 1.6rem;
-    top: 40px !important;
-  }
-
   @include media($med) {
     .tt-dropdown-menu {
-      top: 60px !important;
+      top: 6rem !important;
     }
   }
+}
+
+.tt-dropdown-menu {
+  font-size: 1.6rem;
+  top: 3.6rem !important;
 }
 
 .tt-suggestion {

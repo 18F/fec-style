@@ -1,0 +1,11 @@
+// Boxes
+//
+// Subtle styles for grouping elements
+//
+// Styleguide components.boxes
+
+.box {
+  @include clearfix();
+  border: 1px solid $neutral;
+  padding: 2rem;
+}

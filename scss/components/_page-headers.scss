@@ -9,7 +9,7 @@
 // Markup:
 // <div class="page-header {{ modifier_class }}">
 //  <div class="container">
-//    <h1>Page heading</h1>
+//    <h1 class="page-header__title">Page heading</h1>
 //  </div>
 // </div>
 //
@@ -19,8 +19,22 @@
   @include clearfix();
   padding: 2rem;
 
-  h1 {
+  .page-header__title {
     border-bottom: none;
     margin-bottom: 0;
+  }
+
+  .combo--search {
+    display: none;
+  }
+
+  @include media($med) {
+    .page-header__title {
+      @include span-columns(8);
+    }
+
+    .combo--search {
+      @include span-columns(4);
+    }
   }
 }
