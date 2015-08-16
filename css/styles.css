@@ -546,6 +546,21 @@ body {
     clear: both;
     content: "";
     display: table; }
+  @media screen and (min-width: 40em) {
+    .main__content {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%; }
+      .main__content:last-child {
+        margin-right: 0; } }
+
+.main__content--full {
+  position: relative; }
+  .main__content--full::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 .row::after {
   clear: both;
@@ -614,7 +629,10 @@ body {
     content: "";
     display: table; }
   .list--flat li {
-    float: left; }
+    float: left;
+    margin-right: 1rem; }
+    .list--flat li:last-child {
+      margin-right: 0; }
 
 .list--checkboxes .is-completed:before {
   background-color: #022C53;
@@ -855,8 +873,9 @@ body {
 .card {
   background-color: #EFDECD;
   border-radius: 4px;
-  text-align: center;
-  padding: 2rem; }
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: left; }
   .card::after {
     clear: both;
     content: "";
@@ -1059,21 +1078,25 @@ body {
   .card--secondary .t-ruled {
     border-color: #EFDECD; }
 
-.card--tiled {
-  margin-bottom: 2rem; }
-  .card--tiled:nth-child(even) {
+.card--tiled:nth-child(even) {
+  margin-right: 0; }
+
+.sidebar .card {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .sidebar .card:last-child {
     margin-right: 0; }
 
-.sidebar {
-  padding: 2rem; }
-  @media screen and (min-width: 40em) {
-    .sidebar {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%; }
-      .sidebar:last-child {
-        margin-right: 0; } }
+@media screen and (min-width: 40em) {
+  .sidebar {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .sidebar:last-child {
+      margin-right: 0; } }
 
 .sidebar__section {
   border-bottom: 1px solid;
@@ -1088,7 +1111,8 @@ body {
 .sidebar--primary {
   color: #EFDECD;
   background-color: #022C53;
-  color: #36BDBB; }
+  color: #36BDBB;
+  padding: 2rem; }
   .sidebar--primary h1,
   .sidebar--primary h2,
   .sidebar--primary h3,
@@ -1166,7 +1190,8 @@ body {
 
 .sidebar--secondary {
   background-color: #631010;
-  color: #F77B42; }
+  color: #F77B42;
+  padding: 2rem; }
   .sidebar--secondary input[type="color"], .sidebar--secondary input[type="date"], .sidebar--secondary input[type="datetime"], .sidebar--secondary input[type="datetime-local"], .sidebar--secondary input[type="email"], .sidebar--secondary input[type="month"], .sidebar--secondary input[type="number"], .sidebar--secondary input[type="password"], .sidebar--secondary input[type="search"], .sidebar--secondary input[type="tel"], .sidebar--secondary input[type="text"], .sidebar--secondary input[type="time"], .sidebar--secondary input[type="url"], .sidebar--secondary input[type="week"], .sidebar--secondary textarea,
   .sidebar--secondary select,
   .sidebar--secondary select[multiple=multiple],
@@ -1403,8 +1428,8 @@ body {
   width: 100%; }
 
 .tt-dropdown-menu {
-  background-color: rgba(54, 189, 187, 0.9);
-  border: 1px solid #022C53;
+  background-color: #FFFFF9;
+  border: 1px solid #EFDECD;
   font-family: "Karla Sans", sans-serif;
   left: 0;
   text-align: left;
@@ -1413,18 +1438,18 @@ body {
 
 @media screen and (min-width: 40em) {
   .combo--search--large .tt-dropdown-menu {
-    top: 6rem !important; } }
+    top: 5.9rem !important; } }
 
 .tt-dropdown-menu {
   font-size: 1.6rem;
-  top: 3.6rem !important; }
+  top: 3.5rem !important; }
 
 .tt-suggestion {
   position: relative;
   padding: 1rem 1rem;
   margin-bottom: 0;
   line-height: 1;
-  border-bottom: 1px solid #022C53; }
+  border-bottom: 1px solid #EFDECD; }
   .tt-suggestion::after {
     clear: both;
     content: "";
@@ -1440,9 +1465,6 @@ span.tt-suggestion__name {
   width: 65%; }
 
 span.tt-suggestion__office {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   color: #022C53;
   font-size: 1.2rem;
   text-align: right;
@@ -1453,11 +1475,11 @@ span.tt-suggestion__office {
 
 .tt-cursor {
   cursor: pointer;
-  background: #022C53; }
+  background: #EFDECD; }
   .tt-cursor .tt-suggestion__name {
-    color: #36BDBB; }
+    color: #022C53; }
   .tt-cursor .tt-suggestion__office {
-    color: #36BDBB; }
+    color: #022C53; }
 
 .results-info {
   border-top: 2px solid #022C53;
@@ -1997,6 +2019,7 @@ path.shape {
 
 .box {
   border: 1px solid #EFDECD;
+  margin: 2rem 0;
   padding: 2rem; }
   .box::after {
     clear: both;
@@ -2004,8 +2027,9 @@ path.shape {
     display: table; }
 
 .message {
-  padding: 2rem;
-  border: 1px solid; }
+  border: 1px solid;
+  margin: 2rem 0;
+  padding: 2rem; }
   .message::after {
     clear: both;
     content: "";

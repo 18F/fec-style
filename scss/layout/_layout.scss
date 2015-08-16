@@ -39,7 +39,17 @@
 .main__content {
   @include clearfix();
   position: relative;
+
+  @include media($med) {
+    @include span-columns(9);
+  }
 }
+
+.main__content--full {
+  @include clearfix();
+  position: relative;
+} 
+
 
 .row {
   @include clearfix();

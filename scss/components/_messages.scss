@@ -17,8 +17,9 @@
 
 .message {
   @include clearfix();
-  padding: 2rem;
   border: 1px solid;
+  margin: 2rem 0;
+  padding: 2rem;
 }
 
 .message--alert {

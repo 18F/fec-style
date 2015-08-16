@@ -7,5 +7,6 @@
 .box {
   @include clearfix();
   border: 1px solid $neutral;
+  margin: 2rem 0;
   padding: 2rem;
 }
