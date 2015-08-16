@@ -2683,6 +2683,9 @@ path.shape {
   .page-tabs__item a[aria-selected="true"] {
     background-color: #FFFFF9; }
 
+.list--flat .page-tabs__item {
+  margin-right: 0; }
+
 .page-controls--primary {
   color: #EFDECD;
   background-color: #022C53; }

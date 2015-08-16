@@ -49,7 +49,6 @@
 }
 
 .page-tabs__item {
-
   &:first-of-type a {
     border-left-width: 1px;
   }
@@ -72,6 +71,12 @@
     &[aria-selected="true"] {
       background-color: $cream;
     }
+  }
+}
+
+.list--flat {
+  .page-tabs__item {
+    margin-right: 0;
   }
 }
 
