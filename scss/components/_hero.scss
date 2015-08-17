@@ -21,7 +21,6 @@
 // Styleguide components.hero
 
 .hero {
-  border-bottom: 10px solid;
   padding: 3rem 0;
   text-align: center;
 
@@ -37,13 +36,13 @@
 .hero--primary {
   @include u-bg--primary();
   @include u-font-color($ivory);
-  border-bottom-color: $primary-contrast;
+  border-bottom: 10px solid $primary-contrast;
 }
 
 .hero--secondary {
   @include u-bg--secondary();
   @include u-font-color($ivory);
-  border-bottom-color: $secondary-contrast;
+  border-bottom: 10px solid $secondary-contrast;
 }
 
 .hero__content {

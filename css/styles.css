@@ -640,6 +640,7 @@ body {
   background-image: url("../img/i-check--neutral.svg"); }
 
 .list--checkboxes__item {
+  margin-bottom: 1rem;
   padding-left: 2.5rem;
   position: relative; }
   .list--checkboxes__item:before {
@@ -1246,7 +1247,6 @@ body {
     border-bottom-color: #F77B42; }
 
 .hero {
-  border-bottom: 10px solid;
   padding: 3rem 0;
   text-align: center; }
   .hero .t-display {
@@ -1259,7 +1259,7 @@ body {
   color: #EFDECD;
   background-color: #022C53;
   color: #EFDECD;
-  border-bottom-color: #36BDBB; }
+  border-bottom: 10px solid #36BDBB; }
   .hero--primary h1,
   .hero--primary h2,
   .hero--primary h3,
@@ -1336,7 +1336,7 @@ body {
 .hero--secondary {
   background-color: #631010;
   color: #EFDECD;
-  border-bottom-color: #F77B42; }
+  border-bottom: 10px solid #F77B42; }
   .hero--secondary input[type="color"], .hero--secondary input[type="date"], .hero--secondary input[type="datetime"], .hero--secondary input[type="datetime-local"], .hero--secondary input[type="email"], .hero--secondary input[type="month"], .hero--secondary input[type="number"], .hero--secondary input[type="password"], .hero--secondary input[type="search"], .hero--secondary input[type="tel"], .hero--secondary input[type="text"], .hero--secondary input[type="time"], .hero--secondary input[type="url"], .hero--secondary input[type="week"], .hero--secondary textarea,
   .hero--secondary select,
   .hero--secondary select[multiple=multiple],
@@ -2044,6 +2044,38 @@ path.shape {
   margin-top: 1rem;
   padding-top: 1rem;
   text-align: center; }
+
+.billboard {
+  border-bottom: 3px solid;
+  border-color: #022C53;
+  border-top: 3px solid;
+  background-color: #631010; }
+
+.billboard__image {
+  background-size: contain;
+  background-color: #631010;
+  min-height: 10rem;
+  margin: 2rem 0; }
+
+.billboard__content {
+  background-color: #EFDECD;
+  margin-bottom: 2rem;
+  padding: 4rem; }
+
+.billboard__image--glossary {
+  background-image: url("../img/i-glossary--lg.png");
+  background-image: url("../img/i-glossary--lg.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+@media screen and (min-width: 40em) {
+  .billboard__image {
+    display: table-cell;
+    width: 33.33333%;
+    background-size: auto auto; }
+  .billboard__content {
+    display: table-cell;
+    width: 66.66667%; } }
 
 .site-header {
   position: relative; }

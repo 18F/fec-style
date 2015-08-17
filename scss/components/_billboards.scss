@@ -1,0 +1,42 @@
+// Billboards
+//
+// Full-width sections for promoting specific features
+//
+// Styleguide components.billboards
+
+.billboard {
+  border-bottom: 3px solid;
+  border-color: $primary;
+  border-top: 3px solid;
+  background-color: $secondary;
+}
+
+.billboard__image {
+  background-size: contain;
+  background-color: $secondary;
+  min-height: 10rem;
+  margin: 2rem 0;
+}
+
+.billboard__content {
+  background-color: $neutral;
+  margin-bottom: 2rem;
+  padding: 4rem;
+}
+
+.billboard__image--glossary {
+  @include u-background-image('i-glossary--lg');
+}
+
+@include media($med) {
+  @include display-context(table) {
+    .billboard__image {
+      @include span-columns(4);
+      background-size: auto auto;
+    }
+
+    .billboard__content {
+      @include span-columns(8);
+    }
+  }  
+}
