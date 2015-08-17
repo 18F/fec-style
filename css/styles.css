@@ -435,6 +435,8 @@ body {
   .slab--primary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .slab--primary .button, .slab--primary .button--primary, .slab--primary .button--secondary, .slab--primary .button--neutral, .slab--primary .paginate_button {
+    color: #022C53; }
   .slab--primary a:hover {
     border-bottom-color: #fff; }
   .slab--primary h1,
@@ -489,6 +491,8 @@ body {
   .slab--secondary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
+  .slab--secondary .button, .slab--secondary .button--primary, .slab--secondary .button--secondary, .slab--secondary .button--neutral, .slab--secondary .paginate_button {
+    color: #631010; }
   .slab--secondary a:hover {
     border-bottom-color: #fff; }
   .slab--secondary h1,
@@ -809,8 +813,9 @@ body {
     background-color: #C09C7C;
     border: 2px solid #022C53; }
   .toggles label {
-    margin-top: 0;
-    float: left; }
+    cursor: pointer;
+    float: left;
+    margin-top: 0; }
   .toggles .button, .toggles .button--primary, .toggles .button--secondary, .toggles .button--neutral, .toggles .paginate_button {
     border-radius: 0 0 0 0;
     display: block;
@@ -849,23 +854,29 @@ body {
   .page-header .page-header__title {
     border-bottom: none;
     margin-bottom: 0; }
-  .page-header .combo--search {
+  .page-header .search__container {
     display: none; }
   @media screen and (min-width: 40em) {
     .page-header .page-header__title {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 65.88078%; }
+      width: 48.82117%; }
       .page-header .page-header__title:last-child {
         margin-right: 0; }
-    .page-header .combo--search {
+    .page-header .search__container {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 31.76157%; }
-      .page-header .combo--search:last-child {
-        margin-right: 0; } }
+      width: 48.82117%; }
+      .page-header .search__container:last-child {
+        margin-right: 0; }
+    .page-header .search__radio {
+      display: table-cell;
+      width: 50%; }
+    .page-header .combo--search {
+      display: table-cell;
+      width: 50%; } }
 
 .icon--complex {
   max-height: 6rem;
@@ -1000,6 +1011,8 @@ body {
   .card--primary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .card--primary .button, .card--primary .button--primary, .card--primary .button--secondary, .card--primary .button--neutral, .card--primary .paginate_button {
+    color: #022C53; }
   .card--primary a:hover {
     border-bottom-color: #fff; }
   .card--primary h1,
@@ -1054,6 +1067,8 @@ body {
   .card--secondary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
+  .card--secondary .button, .card--secondary .button--primary, .card--secondary .button--secondary, .card--secondary .button--neutral, .card--secondary .paginate_button {
+    color: #631010; }
   .card--secondary a:hover {
     border-bottom-color: #fff; }
   .card--secondary h1,
@@ -1162,6 +1177,8 @@ body {
   .sidebar--primary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .sidebar--primary .button, .sidebar--primary .button--primary, .sidebar--primary .button--secondary, .sidebar--primary .button--neutral, .sidebar--primary .paginate_button {
+    color: #022C53; }
   .sidebar--primary a:hover {
     border-bottom-color: #fff; }
   .sidebar--primary h1,
@@ -1219,6 +1236,8 @@ body {
   .sidebar--secondary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
+  .sidebar--secondary .button, .sidebar--secondary .button--primary, .sidebar--secondary .button--secondary, .sidebar--secondary .button--neutral, .sidebar--secondary .paginate_button {
+    color: #631010; }
   .sidebar--secondary a:hover {
     border-bottom-color: #fff; }
   .sidebar--secondary h1,
@@ -1308,6 +1327,8 @@ body {
   .hero--primary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .hero--primary .button, .hero--primary .button--primary, .hero--primary .button--secondary, .hero--primary .button--neutral, .hero--primary .paginate_button {
+    color: #022C53; }
   .hero--primary a:hover {
     border-bottom-color: #fff; }
   .hero--primary h1,
@@ -1363,6 +1384,8 @@ body {
   .hero--secondary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
+  .hero--secondary .button, .hero--secondary .button--primary, .hero--secondary .button--secondary, .hero--secondary .button--neutral, .hero--secondary .paginate_button {
+    color: #631010; }
   .hero--secondary a:hover {
     border-bottom-color: #fff; }
   .hero--secondary h1,
@@ -1395,11 +1418,30 @@ body {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 48.82117%;
-      margin-left: 25.58941%;
+      width: 82.94039%;
+      margin-left: 8.5298%;
       padding-top: 6rem; }
       .hero__content:last-child {
-        margin-right: 0; } }
+        margin-right: 0; }
+      .hero__content .search__radio {
+        float: left;
+        display: block;
+        margin-right: 2.84259%;
+        width: 38.29445%; }
+        .hero__content .search__radio:last-child {
+          margin-right: 0; }
+        .hero__content .search__radio .button--primary {
+          font-size: 2rem;
+          height: 6rem;
+          line-height: 1;
+          padding: 2rem; }
+      .hero__content .combo--search {
+        float: left;
+        display: block;
+        margin-right: 2.84259%;
+        width: 58.86297%; }
+        .hero__content .combo--search:last-child {
+          margin-right: 0; } }
 
 .combo--search .combo__button {
   background-image: url("../img/i-search--primary.png");
@@ -1439,6 +1481,13 @@ body {
 @media screen and (min-width: 40em) {
   .combo--search--large .tt-dropdown-menu {
     top: 5.9rem !important; } }
+
+.search__radio {
+  margin-bottom: 0; }
+  .search__radio .button--primary {
+    height: 3.6rem; }
+  .search__radio label {
+    width: 50%; }
 
 .tt-dropdown-menu {
   font-size: 1.6rem;
@@ -2440,6 +2489,8 @@ path.shape {
   .footer input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .footer .button, .footer .button--primary, .footer .button--secondary, .footer .button--neutral, .footer .paginate_button {
+    color: #022C53; }
   .footer a:hover {
     border-bottom-color: #fff; }
   .footer h1,
@@ -2769,6 +2820,8 @@ path.shape {
   .page-controls--primary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .page-controls--primary .button, .page-controls--primary .button--primary, .page-controls--primary .button--secondary, .page-controls--primary .button--neutral, .page-controls--primary .paginate_button {
+    color: #022C53; }
   .page-controls--primary a:hover {
     border-bottom-color: #fff; }
   .page-controls--primary .page-tabs__item a[aria-selected="true"] {
@@ -2802,6 +2855,8 @@ path.shape {
   .page-controls--secondary input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
+  .page-controls--secondary .button, .page-controls--secondary .button--primary, .page-controls--secondary .button--secondary, .page-controls--secondary .button--neutral, .page-controls--secondary .paginate_button {
+    color: #631010; }
   .page-controls--secondary a:hover {
     border-bottom-color: #fff; }
   .page-controls--secondary .page-tabs__item a[aria-selected="true"] {
@@ -2870,6 +2925,8 @@ path.shape {
   .entity__header input[type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
+  .entity__header .button, .entity__header .button--primary, .entity__header .button--secondary, .entity__header .button--neutral, .entity__header .paginate_button {
+    color: #022C53; }
   .entity__header a:hover {
     border-bottom-color: #fff; }
 

@@ -74,6 +74,18 @@
   }
 }
 
+.search__radio {
+  margin-bottom: 0;
+
+  .button--primary {
+    height: 3.6rem;
+  }
+
+  label {
+    width: 50%;
+  }
+}
+
 .tt-dropdown-menu {
   font-size: 1.6rem;
   top: 3.5rem !important;

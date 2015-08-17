@@ -114,6 +114,10 @@
     background-image: url('../img/i-check--' + $icon-color + '.png');
     background-image: url('../img/i-check--' + $icon-color + '.svg');
   }
+
+  .button {
+    color: $background-color;
+  }
 }
 
 // u-bg--primary()

@@ -49,8 +49,23 @@
   padding-top: 2rem;
 
   @include media($med) {
-    @include span-columns(6);
-    @include shift(3);
+    @include span-columns(10);
+    @include shift(1);
     padding-top: 6rem;
+
+    .search__radio {
+      @include span-columns(4 of 10);
+
+      .button--primary {
+        font-size: 2rem;
+        height: 6rem;
+        line-height: 1;
+        padding: 2rem;
+      }
+    }
+
+    .combo--search {
+      @include span-columns(6 of 10);
+    }
   }
 }

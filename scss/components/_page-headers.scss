@@ -24,17 +24,25 @@
     margin-bottom: 0;
   }
 
-  .combo--search {
+  .search__container {
     display: none;
   }
 
   @include media($med) {
     .page-header__title {
-      @include span-columns(8);
+      @include span-columns(6);
+    }
+
+    .search__container {
+      @include span-columns(6);
+    }
+
+    .search__radio {
+      @include span-columns(3 of 6, table);
     }
 
     .combo--search {
-      @include span-columns(4);
-    }
+      @include span-columns(3 of 6, table);
+    }    
   }
 }
