@@ -61,7 +61,7 @@
   top: 100%;
 
   &:hover {
-
+      // @TODO: Create styles
   }
 
   @include media($lg) {
@@ -74,13 +74,9 @@
     height: 3rem;
 
     &:hover, &:focus {
-
+      // @TODO: Create styles
     }
   }
-}
-
-.filters__header {
-
 }
 
 .filters__subheader {
@@ -104,6 +100,7 @@
   }
 
   .filters__toggle {
+    // @TODO: Create styles
   }
 
   @include media($lg) {

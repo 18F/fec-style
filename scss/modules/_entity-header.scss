@@ -38,9 +38,6 @@
   display: block;
   padding: .5rem 0;
   float: left;
-
-  @include media($med) {
-  }
 }
 
 .entity__info {
