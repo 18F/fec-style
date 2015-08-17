@@ -7,7 +7,7 @@
 //   <legend class="label">Election Years</legend>
 //   <ul class="dropdown__selected"></ul>
 //   <div class="dropdown">
-//     <button class="js-toggle js-dropdown button--dropdown button--neutral" data-toggles="cycle-dropdown">More</button>
+//     <button class="js-toggle js-dropdown dropdown__button button--neutral" data-toggles="cycle-dropdown">More</button>
 //     <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
 //       <ul class="dropdown__list">
 //         <li>
@@ -21,7 +21,11 @@
 // 
 // Styleguide components.dropdowns
 
-.button--dropdown {
+.dropdown {
+  position: relative;
+}
+
+.dropdown__button {
   position: relative;
   max-width: 20rem;
   text-align: left;
@@ -41,10 +45,6 @@
     right: 1.5rem;
     top: .5rem;
   }
-}
-
-.dropdown {
-  position: relative;
 }
 
 .dropdown__value {

@@ -1571,12 +1571,15 @@ span.tt-suggestion__office {
 .dataTables_wrapper .results-info .dataTables_paginate {
   padding-top: 0; }
 
-.button--dropdown {
+.dropdown {
+  position: relative; }
+
+.dropdown__button {
   position: relative;
   max-width: 20rem;
   text-align: left;
   width: 100%; }
-  .button--dropdown:after {
+  .dropdown__button:after {
     background-image: url("../img/i-down--primary.png");
     background-image: url("../img/i-down--primary.svg");
     background-repeat: no-repeat;
@@ -1589,9 +1592,6 @@ span.tt-suggestion__office {
     position: absolute;
     right: 1.5rem;
     top: .5rem; }
-
-.dropdown {
-  position: relative; }
 
 .dropdown__value {
   margin: 0; }
