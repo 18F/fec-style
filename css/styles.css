@@ -1665,15 +1665,27 @@ span.tt-suggestion__office {
   right: 1rem;
   top: 1rem; }
 
-.accordion__button.button, .accordion__button.button--primary, .accordion__button.button--secondary, .accordion__button.button--neutral, .accordion__button.paginate_button {
+.accordion--collapsed .accordion__button.button, .accordion--collapsed .accordion__button.button--primary, .accordion--collapsed .accordion__button.button--secondary, .accordion--collapsed .accordion__button.button--neutral, .accordion--collapsed .accordion__button.paginate_button {
   background-image: url("../img/i-plus--primary.png");
   background-image: url("../img/i-plus--primary.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%; }
 
-.accordion__button.button--primary {
+.accordion--collapsed .accordion__button.button--primary {
   background-image: url("../img/i-plus--primary.png");
   background-image: url("../img/i-plus--primary.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+.accordion__button.button, .accordion__button.button--primary, .accordion__button.button--secondary, .accordion__button.button--neutral, .accordion__button.paginate_button {
+  background-image: url("../img/i-minus--primary.png");
+  background-image: url("../img/i-minus--primary.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+.accordion__button.button--primary {
+  background-image: url("../img/i-minus--primary.png");
+  background-image: url("../img/i-minus--primary.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 3rem;
