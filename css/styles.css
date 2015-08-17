@@ -1430,18 +1430,18 @@ body {
         width: 38.29445%; }
         .hero__content .search__radio:last-child {
           margin-right: 0; }
-        .hero__content .search__radio .button--primary {
-          font-size: 2rem;
-          height: 6rem;
-          line-height: 1;
-          padding: 2rem; }
       .hero__content .combo--search {
         float: left;
         display: block;
         margin-right: 2.84259%;
         width: 58.86297%; }
         .hero__content .combo--search:last-child {
-          margin-right: 0; } }
+          margin-right: 0; }
+      .hero__content .search__radio__button {
+        font-size: 2rem;
+        height: 6rem;
+        line-height: 1;
+        padding: 2rem; } }
 
 .combo--search .combo__button {
   background-image: url("../img/i-search--primary.png");
@@ -1484,10 +1484,12 @@ body {
 
 .search__radio {
   margin-bottom: 0; }
-  .search__radio .button--primary {
-    height: 3.6rem; }
-  .search__radio label {
-    width: 50%; }
+
+.search__radio__item {
+  width: 50%; }
+
+.search__radio__button {
+  height: 3.6rem; }
 
 .tt-dropdown-menu {
   font-size: 1.6rem;

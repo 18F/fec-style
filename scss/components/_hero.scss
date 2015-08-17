@@ -55,17 +55,17 @@
 
     .search__radio {
       @include span-columns(4 of 10);
-
-      .button--primary {
-        font-size: 2rem;
-        height: 6rem;
-        line-height: 1;
-        padding: 2rem;
-      }
     }
 
     .combo--search {
       @include span-columns(6 of 10);
+    }
+
+    .search__radio__button {
+      font-size: 2rem;
+      height: 6rem;
+      line-height: 1;
+      padding: 2rem;
     }
   }
 }
