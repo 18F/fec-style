@@ -425,14 +425,14 @@ body {
   .slab--primary select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .slab--primary input[type="checkbox"] + label::before,
-  .slab--primary input[type="radio"] + label::before {
+  .slab--primary [type="checkbox"] + label::before,
+  .slab--primary [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .slab--primary input[type="checkbox"]:checked + label::before,
-  .slab--primary input[type="radio"]:checked + label::before {
+  .slab--primary [type="checkbox"]:checked + label::before,
+  .slab--primary [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .slab--primary input[type="checkbox"]:checked + label::before {
+  .slab--primary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .slab--primary .button, .slab--primary .button--primary, .slab--primary .button--secondary, .slab--primary .button--neutral, .slab--primary .paginate_button {
@@ -481,14 +481,14 @@ body {
   .slab--secondary select {
     background-image: url("../img/i-down--secondary-contrast.png");
     background-image: url("../img/i-down--secondary-contrast.svg"); }
-  .slab--secondary input[type="checkbox"] + label::before,
-  .slab--secondary input[type="radio"] + label::before {
+  .slab--secondary [type="checkbox"] + label::before,
+  .slab--secondary [type="radio"] + label::before {
     background-color: #631010;
     border-color: #F77B42; }
-  .slab--secondary input[type="checkbox"]:checked + label::before,
-  .slab--secondary input[type="radio"]:checked + label::before {
+  .slab--secondary [type="checkbox"]:checked + label::before,
+  .slab--secondary [type="radio"]:checked + label::before {
     background-color: #F77B42; }
-  .slab--secondary input[type="checkbox"]:checked + label::before {
+  .slab--secondary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
   .slab--secondary .button, .slab--secondary .button--primary, .slab--secondary .button--secondary, .slab--secondary .button--neutral, .slab--secondary .paginate_button {
@@ -1001,14 +1001,14 @@ body {
   .card--primary select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .card--primary input[type="checkbox"] + label::before,
-  .card--primary input[type="radio"] + label::before {
+  .card--primary [type="checkbox"] + label::before,
+  .card--primary [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .card--primary input[type="checkbox"]:checked + label::before,
-  .card--primary input[type="radio"]:checked + label::before {
+  .card--primary [type="checkbox"]:checked + label::before,
+  .card--primary [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .card--primary input[type="checkbox"]:checked + label::before {
+  .card--primary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .card--primary .button, .card--primary .button--primary, .card--primary .button--secondary, .card--primary .button--neutral, .card--primary .paginate_button {
@@ -1057,14 +1057,14 @@ body {
   .card--secondary select {
     background-image: url("../img/i-down--secondary-contrast.png");
     background-image: url("../img/i-down--secondary-contrast.svg"); }
-  .card--secondary input[type="checkbox"] + label::before,
-  .card--secondary input[type="radio"] + label::before {
+  .card--secondary [type="checkbox"] + label::before,
+  .card--secondary [type="radio"] + label::before {
     background-color: #631010;
     border-color: #F77B42; }
-  .card--secondary input[type="checkbox"]:checked + label::before,
-  .card--secondary input[type="radio"]:checked + label::before {
+  .card--secondary [type="checkbox"]:checked + label::before,
+  .card--secondary [type="radio"]:checked + label::before {
     background-color: #F77B42; }
-  .card--secondary input[type="checkbox"]:checked + label::before {
+  .card--secondary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
   .card--secondary .button, .card--secondary .button--primary, .card--secondary .button--secondary, .card--secondary .button--neutral, .card--secondary .paginate_button {
@@ -1167,14 +1167,14 @@ body {
   .sidebar--primary select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .sidebar--primary input[type="checkbox"] + label::before,
-  .sidebar--primary input[type="radio"] + label::before {
+  .sidebar--primary [type="checkbox"] + label::before,
+  .sidebar--primary [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .sidebar--primary input[type="checkbox"]:checked + label::before,
-  .sidebar--primary input[type="radio"]:checked + label::before {
+  .sidebar--primary [type="checkbox"]:checked + label::before,
+  .sidebar--primary [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .sidebar--primary input[type="checkbox"]:checked + label::before {
+  .sidebar--primary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .sidebar--primary .button, .sidebar--primary .button--primary, .sidebar--primary .button--secondary, .sidebar--primary .button--neutral, .sidebar--primary .paginate_button {
@@ -1226,14 +1226,14 @@ body {
   .sidebar--secondary select {
     background-image: url("../img/i-down--secondary-contrast.png");
     background-image: url("../img/i-down--secondary-contrast.svg"); }
-  .sidebar--secondary input[type="checkbox"] + label::before,
-  .sidebar--secondary input[type="radio"] + label::before {
+  .sidebar--secondary [type="checkbox"] + label::before,
+  .sidebar--secondary [type="radio"] + label::before {
     background-color: #631010;
     border-color: #F77B42; }
-  .sidebar--secondary input[type="checkbox"]:checked + label::before,
-  .sidebar--secondary input[type="radio"]:checked + label::before {
+  .sidebar--secondary [type="checkbox"]:checked + label::before,
+  .sidebar--secondary [type="radio"]:checked + label::before {
     background-color: #F77B42; }
-  .sidebar--secondary input[type="checkbox"]:checked + label::before {
+  .sidebar--secondary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
   .sidebar--secondary .button, .sidebar--secondary .button--primary, .sidebar--secondary .button--secondary, .sidebar--secondary .button--neutral, .sidebar--secondary .paginate_button {
@@ -1317,14 +1317,14 @@ body {
   .hero--primary select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .hero--primary input[type="checkbox"] + label::before,
-  .hero--primary input[type="radio"] + label::before {
+  .hero--primary [type="checkbox"] + label::before,
+  .hero--primary [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .hero--primary input[type="checkbox"]:checked + label::before,
-  .hero--primary input[type="radio"]:checked + label::before {
+  .hero--primary [type="checkbox"]:checked + label::before,
+  .hero--primary [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .hero--primary input[type="checkbox"]:checked + label::before {
+  .hero--primary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .hero--primary .button, .hero--primary .button--primary, .hero--primary .button--secondary, .hero--primary .button--neutral, .hero--primary .paginate_button {
@@ -1374,14 +1374,14 @@ body {
   .hero--secondary select {
     background-image: url("../img/i-down--secondary-contrast.png");
     background-image: url("../img/i-down--secondary-contrast.svg"); }
-  .hero--secondary input[type="checkbox"] + label::before,
-  .hero--secondary input[type="radio"] + label::before {
+  .hero--secondary [type="checkbox"] + label::before,
+  .hero--secondary [type="radio"] + label::before {
     background-color: #631010;
     border-color: #F77B42; }
-  .hero--secondary input[type="checkbox"]:checked + label::before,
-  .hero--secondary input[type="radio"]:checked + label::before {
+  .hero--secondary [type="checkbox"]:checked + label::before,
+  .hero--secondary [type="radio"]:checked + label::before {
     background-color: #F77B42; }
-  .hero--secondary input[type="checkbox"]:checked + label::before {
+  .hero--secondary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
   .hero--secondary .button, .hero--secondary .button--primary, .hero--secondary .button--secondary, .hero--secondary .button--neutral, .hero--secondary .paginate_button {
@@ -2493,14 +2493,14 @@ path.shape {
   .footer select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .footer input[type="checkbox"] + label::before,
-  .footer input[type="radio"] + label::before {
+  .footer [type="checkbox"] + label::before,
+  .footer [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .footer input[type="checkbox"]:checked + label::before,
-  .footer input[type="radio"]:checked + label::before {
+  .footer [type="checkbox"]:checked + label::before,
+  .footer [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .footer input[type="checkbox"]:checked + label::before {
+  .footer [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .footer .button, .footer .button--primary, .footer .button--secondary, .footer .button--neutral, .footer .paginate_button {
@@ -2824,14 +2824,14 @@ path.shape {
   .page-controls--primary select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .page-controls--primary input[type="checkbox"] + label::before,
-  .page-controls--primary input[type="radio"] + label::before {
+  .page-controls--primary [type="checkbox"] + label::before,
+  .page-controls--primary [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .page-controls--primary input[type="checkbox"]:checked + label::before,
-  .page-controls--primary input[type="radio"]:checked + label::before {
+  .page-controls--primary [type="checkbox"]:checked + label::before,
+  .page-controls--primary [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .page-controls--primary input[type="checkbox"]:checked + label::before {
+  .page-controls--primary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .page-controls--primary .button, .page-controls--primary .button--primary, .page-controls--primary .button--secondary, .page-controls--primary .button--neutral, .page-controls--primary .paginate_button {
@@ -2859,14 +2859,14 @@ path.shape {
   .page-controls--secondary select {
     background-image: url("../img/i-down--secondary-contrast.png");
     background-image: url("../img/i-down--secondary-contrast.svg"); }
-  .page-controls--secondary input[type="checkbox"] + label::before,
-  .page-controls--secondary input[type="radio"] + label::before {
+  .page-controls--secondary [type="checkbox"] + label::before,
+  .page-controls--secondary [type="radio"] + label::before {
     background-color: #631010;
     border-color: #F77B42; }
-  .page-controls--secondary input[type="checkbox"]:checked + label::before,
-  .page-controls--secondary input[type="radio"]:checked + label::before {
+  .page-controls--secondary [type="checkbox"]:checked + label::before,
+  .page-controls--secondary [type="radio"]:checked + label::before {
     background-color: #F77B42; }
-  .page-controls--secondary input[type="checkbox"]:checked + label::before {
+  .page-controls--secondary [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--secondary.png");
     background-image: url("../img/i-check--secondary.svg"); }
   .page-controls--secondary .button, .page-controls--secondary .button--primary, .page-controls--secondary .button--secondary, .page-controls--secondary .button--neutral, .page-controls--secondary .paginate_button {
@@ -2929,14 +2929,14 @@ path.shape {
   .entity__header select {
     background-image: url("../img/i-down--primary-contrast.png");
     background-image: url("../img/i-down--primary-contrast.svg"); }
-  .entity__header input[type="checkbox"] + label::before,
-  .entity__header input[type="radio"] + label::before {
+  .entity__header [type="checkbox"] + label::before,
+  .entity__header [type="radio"] + label::before {
     background-color: #022C53;
     border-color: #36BDBB; }
-  .entity__header input[type="checkbox"]:checked + label::before,
-  .entity__header input[type="radio"]:checked + label::before {
+  .entity__header [type="checkbox"]:checked + label::before,
+  .entity__header [type="radio"]:checked + label::before {
     background-color: #36BDBB; }
-  .entity__header input[type="checkbox"]:checked + label::before {
+  .entity__header [type="checkbox"]:checked + label::before {
     background-image: url("../img/i-check--primary.png");
     background-image: url("../img/i-check--primary.svg"); }
   .entity__header .button, .entity__header .button--primary, .entity__header .button--secondary, .entity__header .button--neutral, .entity__header .paginate_button {

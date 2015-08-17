@@ -99,18 +99,18 @@
     background-image: url('../img/i-down--' + $icon-color + '-contrast.svg');
   }
 
-  input[type="checkbox"] + label::before,
-  input[type="radio"] + label::before {
+  [type="checkbox"] + label::before,
+  [type="radio"] + label::before {
     background-color: $background-color;
     border-color: $contrast-color;
   }
 
-  input[type="checkbox"]:checked + label::before,
-  input[type="radio"]:checked + label::before {
+  [type="checkbox"]:checked + label::before,
+  [type="radio"]:checked + label::before {
     background-color: $contrast-color;
   }
 
-  input[type="checkbox"]:checked + label::before {
+  [type="checkbox"]:checked + label::before {
     background-image: url('../img/i-check--' + $icon-color + '.png');
     background-image: url('../img/i-check--' + $icon-color + '.svg');
   }
