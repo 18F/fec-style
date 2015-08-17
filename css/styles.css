@@ -2962,9 +2962,6 @@ path.shape {
 .entity__name {
   font-weight: bold; }
 
-.entity__id {
-  color: #dde7f4; }
-
 .entity__type {
   line-height: 1.2;
   display: block;
