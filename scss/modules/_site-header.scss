@@ -1,6 +1,99 @@
 // Site Header
 // 
+// Styleguide modules.site-header
 
 .site-header {
   position: relative;
+}
+
+// US Bar
+// 
+// Markup:
+// <div class="disclaimer">
+//   <span class="disclaimer__left">Looking for fec.gov? <a href="http://www.fec.gov">Click here.</a></span>
+//   <span class="disclaimer__center">
+//     An official website of the United States Government.
+//     <img alt="US flag signifying that this is a United States Federal Government website" src="../img/us_flag_small.png">
+//   </span>
+//   <span class="disclaimer__right">This site is currently in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>.</span>
+// </div>
+//
+// Styleguide modules.site-header.disclaimer
+
+.disclaimer {
+  @include clearfix();
+  border-bottom: 1px solid $primary;
+  font-size: 1.2rem;
+  padding: .5rem 2rem;
+  text-align: center;
+}
+
+.disclaimer__left {
+  display: none;
+  float: left;
+
+  @include media($med) {
+    display: block;
+  }
+}
+
+.disclaimer__center {
+  display: none;
+
+  @include media($med) {
+    display: inline-block;
+  }
+}
+
+.disclaimer__right {
+  text-align: center;
+  @include media($med) {
+    float: right;
+  }  
+}
+
+// Masthead
+// 
+// The combination of the logo, site title and utility nav
+//
+// Markup:
+// <div class="masthead">
+//   <span class="site-title">Federal Election Commission</span>
+//   <ul class="utility-nav">
+//     <li class="utility-nav__item">About</li>
+//     <li class="utility-nav__item">Contact</li>
+//   </ul>
+// </div>
+//
+// Styleguide modules.site-header.masthead
+
+.masthead {
+  @include clearfix();
+  border-bottom: 1px solid $neutral;
+  padding: 2rem;
+}
+
+.site-title {
+  @include heading(h1);
+  margin-bottom: 0;
+  border-bottom: 0;
+  float: left;
+}
+
+.utility-nav {
+  display: none;
+  float: right;
+  padding: .55rem 0;
+
+  @include media($med) {
+    display: block;
+  }
+}
+
+.utility-nav__item {
+  padding: 0 2rem;
+
+  &:last-child {
+    padding-right: 0;
+  }
 }

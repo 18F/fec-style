@@ -1,0 +1,71 @@
+// Hero
+//
+// Hero units are special slabs that have a thick bottom border and centered content.
+// They are used on landing pages for top-level sections
+//
+// .hero--primary      - Blue background
+// .hero--secondary    - Crimson background
+//
+// Markup:
+// <section class="hero {{modifier_class}}">
+//  <div class="container">
+//    <h1 class="t-display">Explore campaign finance data</h1>
+//    <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
+//    <div class="hero__content">
+//      <button>Centered call out component</p>
+//    </div>
+//    </div>
+//  </div>
+// </section>
+//
+// Styleguide components.hero
+
+.hero {
+  padding: 3rem 0;
+  text-align: center;
+
+  .t-display {
+    margin-bottom: 0;
+  }
+
+  @include media($med) {
+    padding: 7rem 0;
+  }
+}
+
+.hero--primary {
+  @include u-bg--primary();
+  @include u-font-color($ivory);
+  border-bottom: 10px solid $primary-contrast;
+}
+
+.hero--secondary {
+  @include u-bg--secondary();
+  @include u-font-color($ivory);
+  border-bottom: 10px solid $secondary-contrast;
+}
+
+.hero__content {
+  padding-top: 2rem;
+
+  @include media($med) {
+    @include span-columns(10);
+    @include shift(1);
+    padding-top: 6rem;
+
+    .search__radio {
+      @include span-columns(4 of 10);
+    }
+
+    .combo--search {
+      @include span-columns(6 of 10);
+    }
+
+    .search__radio__button {
+      font-size: 2rem;
+      height: 6rem;
+      line-height: 1;
+      padding: 2rem;
+    }
+  }
+}

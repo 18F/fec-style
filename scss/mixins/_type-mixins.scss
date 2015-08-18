@@ -1,0 +1,60 @@
+// Typography Mixins
+
+@mixin heading($level) {
+  margin: 0 0 1em 0;
+  color: $primary;
+
+  @if $level == display {
+    border-bottom: 0;
+    font-family: $serif;
+    font-size: 4.8rem;
+    font-weight: bold;
+    line-height: 1;
+    padding: 1.2rem 0;
+  }
+
+  @if $level == h1 {
+    border-bottom: 1px solid $primary;
+    font-family: $serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.15;
+  }
+
+  @if $level == h2 {
+    font-family: $serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  @if $level == h3 {
+    font-family: $serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.14;  
+  }
+
+  @if $level == h4 {
+    font-family: $sans-serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.14;
+  }
+
+  @if $level == h5 {
+    font-family: $serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.33;
+  }
+
+  @if $level == h6 {
+    border-bottom: 1px solid $primary;
+    font-family: $sans-serif;
+    font-size: 1.3rem;
+    font-weight: normal;
+    line-height: 1.63;
+    text-transform: uppercase;
+  }
+}

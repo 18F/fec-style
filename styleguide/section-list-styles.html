@@ -31,15 +31,15 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-buttons.html">
+        <a href="section-elements.html">
           <span class="kss-nav__ref">1</span
-          ><span class="kss-nav__name">Buttons</span>
+          ><span class="kss-nav__name">Elements</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-elements.html">
+        <a href="section-mixins.html">
           <span class="kss-nav__ref">2</span
-          ><span class="kss-nav__name">Elements</span>
+          ><span class="kss-nav__name">Utility Mixins</span>
         </a>
       </li>
       <li class="kss-nav__menu-item">
@@ -49,35 +49,15 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-list-styles.html">
+        <a href="section-components.html">
           <span class="kss-nav__ref">4</span
-          ><span class="kss-nav__name">List Styles</span>
+          ><span class="kss-nav__name">Components</span>
         </a>
-        <ul class="kss-nav__menu-child">
-        </ul>
       </li>
       <li class="kss-nav__menu-item">
-        <a href="section-mixins.html">
+        <a href="section-modules.html">
           <span class="kss-nav__ref">5</span
-          ><span class="kss-nav__name">Utility Mixins</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-navigation.html">
-          <span class="kss-nav__ref">6</span
-          ><span class="kss-nav__name">Navigation</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-pagination.html">
-          <span class="kss-nav__ref">7</span
-          ><span class="kss-nav__name">Pagination</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
-        <a href="section-toggles.html">
-          <span class="kss-nav__ref">8</span
-          ><span class="kss-nav__name">Toggles</span>
+          ><span class="kss-nav__name">Modules</span>
         </a>
       </li>
     </ul>
@@ -85,40 +65,66 @@
 </div>
 <article role="main" class="kss-main">
 
-      <div     id="kssref-list-styles" class="kss-section kss-section--depth-1">
+      <section id="kssref-list-styles-checkboxes" class="kss-section kss-section--depth-2">
 
     <div class="kss-style">
-      <h1 class="kss-title kss-title--level-1">
-        <a class="kss-title__permalink" href="#kssref-list-styles">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-list-styles-checkboxes">
           <span class="kss-title__ref">
-              4
+              9.1
             <span class="kss-title__permalink-hash">
-                #list-styles
+                #list-styles.checkboxes
             </span>
           </span>
-          List Styles
+          Checkbox Lists
         </a>
-      </h1>
+      </h2>
 
-      <ul class="kss-parameters">
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">.list--flat</code>
-          <div class="kss-parameters__description">Lay out items horizontally</div>
-        </li>
-        <li class="kss-parameters__item">
-          <code class="kss-parameters__name">.list--check</code>
-          <div class="kss-parameters__description">Use checkboxes for the list bullets</div>
-        </li>
-      </ul>
 
       <div class="kss-description">
-        <p>These are classes to be applied to lists to give them particular styles</p>
+        <p>For showing a list of completed or uncompleted features</p>
 
       </div>
     </div>
 
-
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+        </div>
+        <div class="kss-modifier__default-name kss-style">
+          Default styling
+        </div>
+        <div class="kss-modifier__example">
+          <ul class="list--checkboxes">
+ <li class="list--checkboxes__item [modifier class]">Unordered list item 1</li>
+ <li class="list--checkboxes__item [modifier class]">Unordered list item 2</li>
+ <li class="list--checkboxes__item [modifier class]">Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.is-completed</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Checkbox inside
+        </div>
+        <div class="kss-modifier__example">
+          <ul class="list--checkboxes">
+ <li class="list--checkboxes__item is-completed">Unordered list item 1</li>
+ <li class="list--checkboxes__item is-completed">Unordered list item 2</li>
+ <li class="list--checkboxes__item is-completed">Unordered list item 2</li>
+</ul>
+        </div>
       </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list--checkboxes&quot;&gt;
+ &lt;li class=&quot;list--checkboxes__item [modifier class]&quot;&gt;Unordered list item 1&lt;/li&gt;
+ &lt;li class=&quot;list--checkboxes__item [modifier class]&quot;&gt;Unordered list item 2&lt;/li&gt;
+ &lt;li class=&quot;list--checkboxes__item [modifier class]&quot;&gt;Unordered list item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
 </article>
 
 <!-- SCRIPTS -->

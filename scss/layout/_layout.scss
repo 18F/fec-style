@@ -2,8 +2,55 @@
 //
 // These are basic grid and color styles to be applied to components
 //
+// Weight: -80
+//
 // Styleguide layout
 
 @import "grid";
-@import "backgrounds";
 @import "slabs";
+
+// Layout elements
+//
+// .container     - Used to set group grid items
+// .main          - The main content area below heros
+// .main__content - The area below page headers
+// .row           - Clearfixes a group of divs / wraps grid columns
+//
+// Styleguide layout.elements
+
+.container {
+  @include outer-container();
+  padding: 0 2rem;
+
+  @include media($lg) {
+    padding: 0;
+  }
+}
+
+.main {
+  @include clearfix();
+  padding: 2rem 0;
+
+  @include media($lg) {
+    padding: 4rem 0;
+  }
+}
+
+.main__content {
+  @include clearfix();
+  position: relative;
+
+  @include media($med) {
+    @include span-columns(9);
+  }
+}
+
+.main__content--full {
+  @include clearfix();
+  position: relative;
+} 
+
+
+.row {
+  @include clearfix();
+}

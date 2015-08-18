@@ -1,0 +1,184 @@
+// Utility Mixins 
+// 
+// Weight: -90
+//
+// Styleguide mixins
+
+// u-visually-hidden() 
+//
+// Used to visually hide components but keep them visible to screenreaders. Also includes a utility class .u-visually-hidden.
+//
+// Styleguide mixins.visually-hidden
+
+@mixin u-visually_hidden {
+  position: absolute !important;
+  top: auto;
+  left: -9999px !important;
+}
+
+.u-visually-hidden {
+  @include u-visually-hidden();
+}
+
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
+}
+
+// u-font-color()
+//
+// Used to set the color of all child elements
+//
+// $color     - The color of the font and (if applicable) border-color
+//
+// Styleguide mixins.font-color
+
+@mixin u-font-color($color) {
+  color: $color;
+
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6,
+  a, 
+  p, 
+  span, 
+  li, 
+  dt, 
+  dd, 
+  label,
+  blockquote,
+  .label {
+    color: $color;
+  }
+
+  h1,
+  h6,
+  a {
+    border-color: $color;
+  }
+
+  .t-ruled {
+    border-color: $color;
+  }
+}
+
+// u-form-color()
+//
+// Used to set the color of the form elements
+//
+// $background-color      - The color of the background of the inputs
+// $contrast-color        - Border and font colors
+// $focus-color           - Focus color
+// $icon-color            - A string that will be appended to the background-image url for checkboxes (e.g. 'primary', 'secondary')
+//
+// Styleguide mixins.font-colo
+
+@mixin u-form-color($background-color, $contrast-color, $focus-color, $icon-color) {
+  #{$all-text-inputs},
+  select,
+  select[multiple=multiple],
+  textarea {
+    color: $contrast-color;
+    border-color: $contrast-color;
+    background-color: $background-color;
+
+    &:focus {
+      border-color: $focus-color;
+      color: $focus-color;
+    }
+  }
+  
+  select {
+    background-image: url('../img/i-down--' + $icon-color + '-contrast.png');
+    background-image: url('../img/i-down--' + $icon-color + '-contrast.svg');
+  }
+
+  [type="checkbox"] + label::before,
+  [type="radio"] + label::before {
+    background-color: $background-color;
+    border-color: $contrast-color;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  [type="radio"]:checked + label::before {
+    background-color: $contrast-color;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    background-image: url('../img/i-check--' + $icon-color + '.png');
+    background-image: url('../img/i-check--' + $icon-color + '.svg');
+  }
+
+  .button {
+    color: $background-color;
+  }
+}
+
+// u-bg--primary()
+//
+// Used to set generate all of the styles for a bg--primary element
+//
+// Styleguide mixins.bg-primary
+
+@mixin u-bg--primary() {
+  @include u-font-color($ivory);
+  @include u-form-color($primary, $primary-contrast, $ivory, 'primary');
+  background-color: $primary;
+  
+  a {
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }  
+}
+
+// u-bg--primary()
+//
+// Used to set generate all of the styles for a bg--primary element
+//
+// Styleguide mixins.bg-secondary
+
+@mixin u-bg--secondary(){
+  @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
+  background-color: $secondary;
+
+  a {
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+// u-truncate()
+//
+// Truncate text to a single line with an ellipsis
+// Thanks to http://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+//
+// Styleguide mixins.truncate
+@mixin u-truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// u-bg-background-image()
+//
+// Generates everything you need for a background image
+//
+// $image     - Name of the image file. It will create two calls, one to a png and one to an svg
+// $position: - Will set the background-position property, defaults to 50% 50%
+// 
+// Styleguide mixins.background-image
+
+@mixin u-background-image($image, $position: 50% 50%) {
+  background-image: url('../img/' + $image + '.png');
+  background-image: url('../img/' + $image + '.svg');
+  background-repeat: no-repeat;
+  background-position: $position;
+}

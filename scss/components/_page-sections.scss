@@ -1,0 +1,33 @@
+// Page sections
+// 
+// .page-subsection    - A subsection of a tab or page, adds padding and clearfix
+// .page-section__intro - The title and intro blurb for a tab area
+// 
+// Styleguide components.page-sections
+
+.page-subsection {
+  @include clearfix();
+  padding: 2rem 0;
+}
+
+.page-subsection--ruled {
+  border-top: 1px solid $neutral;
+  margin-top: 2rem;
+}
+
+.page-section__intro {
+  @include clearfix();
+
+  .time-period {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+
+.section-heading {
+  border-bottom: 1px solid;
+}
+
+.section-heading--primary {
+  border-color: $primary;
+}

@@ -5,7 +5,7 @@
 //
 // Markup:
 // <div class="dataTables_paginate paging_simple_numbers" id="results_paginate">
-//   <a class="paginate_button previous" aria-controls="results" data-dt-idx="0" tabindex="0" id="results_previous">Previous</a>
+//   <a class="paginate_button previous">Previous</a>
 //   <span>
 //     <a class="paginate_button">1</a>
 //     <a class="paginate_button">2</a>
@@ -18,12 +18,13 @@
 //   <a class="paginate_button next">Next</a>
 // </div>
 //
-// Styleguide pagination
+// Styleguide components.pagination
 
 .paginate_button {
   @extend .button--neutral;
   @extend .button--sm;
   display: inline-block;
+  margin-left: .5rem;
 
   &.previous,
   &.next {
@@ -46,4 +47,5 @@
   &.current {
     background-color: $beige;
   }
+
 }

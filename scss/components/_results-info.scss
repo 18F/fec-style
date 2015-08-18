@@ -1,0 +1,60 @@
+// Results Info
+// 
+// The box of controls and info above and below datatables
+//
+// Styleguide components.results-info
+
+.results-info {
+  @include clearfix();
+  border-top: 2px solid $primary;
+  border-bottom: 2px solid $primary;
+  padding: 2rem 0;
+}
+
+.results-info__null {
+  float: right;
+}
+
+.dataTables_wrapper {
+  .results-info {
+
+    .dataTables_length,
+    .dataTables_info,
+    .dataTables_paginate {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    @include media($med) {
+      .dataTables_length,
+      .dataTables_info {
+        float: left;
+        margin-left: 0;
+      }
+
+      .dataTables_paginate {
+        margin-left: 1.5em;
+        float: right;
+        clear: right;
+      }
+    }
+
+    .dataTables_length {
+      padding: 1rem 0 0 0;
+
+      select {
+        display: inline;
+      }
+    }
+
+    .dataTables_info {
+      padding-top: 0;
+    }
+
+    .dataTables_paginate {
+      padding-top: 0;
+    }
+  }
+}

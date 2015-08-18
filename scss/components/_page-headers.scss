@@ -1,0 +1,48 @@
+// Page Header
+//
+// The band of color at the top of a page that contains the parent category. 
+// Consists of an h1 within a container within a slab. h1 may have an icon.
+//
+// .slab--primary     - Primary background with primary-contrast accents and type
+// .slab--secondary   - Secondary background with secondary-contrast accents and type
+//
+// Markup:
+// <div class="page-header {{ modifier_class }}">
+//  <div class="container">
+//    <h1 class="page-header__title">Page heading</h1>
+//  </div>
+// </div>
+//
+// Styleguide components.page-header
+
+.page-header {
+  @include clearfix();
+  padding: 2rem;
+
+  .page-header__title {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .search__container {
+    display: none;
+  }
+
+  @include media($med) {
+    .page-header__title {
+      @include span-columns(6);
+    }
+
+    .search__container {
+      @include span-columns(6);
+    }
+
+    .search__radio {
+      @include span-columns(3 of 6, table);
+    }
+
+    .combo--search {
+      @include span-columns(3 of 6, table);
+    }    
+  }
+}

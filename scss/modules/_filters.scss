@@ -1,0 +1,161 @@
+// Filters Panel
+//
+// Markup:
+// <section class="layout--browse">
+// <div class="filters is-open">
+//   <button class="filters__toggle"></button>
+//   <div class="filters__hider">
+//     <h4 class="filter__header">Filters</h4>
+//     <div class="filter">
+//      Some filter
+//     </div>
+//     <div class="filter">
+//      Some filter
+//     </div>
+//   </div>
+//  </div>
+// </section>
+//
+// Styleguide modules.filters
+
+.filters {
+  @include clearfix();
+  @include transition(margin-left .2s);  
+  background: $neutral;
+  bottom: 0;
+  height: 0;
+  margin-right: 3%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include media($lg) {
+    height: auto;
+    float: left;
+    margin-left: -20%;
+    padding: 2rem;
+    position: relative;
+    width: 20%;
+  }
+}
+
+.filters__hider {
+  height: 0;
+  overflow: hidden;
+
+  @include media($lg) {
+    overflow: visible;
+  }
+}
+
+
+.filters__toggle {
+  @include transform(translateX(-50%));
+  background-color: $neutral;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: 50%;
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+
+  &:hover {
+      // @TODO: Create styles
+  }
+
+  @include media($lg) {
+    @include transform(translateX(0));
+    background-image: url('../img/i-right-2--primary.png');
+    background-image: url('../img/i-right-2--primary.svg');
+    left: 100%;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+
+    &:hover, &:focus {
+      // @TODO: Create styles
+    }
+  }
+}
+
+.filters__subheader {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid $primary;
+
+  & + .filter {
+    padding-top: 0;
+  }
+}
+// Styles for when the filters are open
+.is-open {
+  position: relative;
+  left: 0;
+  height: auto;
+  margin-left: 0%;
+  
+  .filters__hider {
+    height: auto;
+  }
+
+  .filters__toggle {
+    // @TODO: Create styles
+  }
+
+  @include media($lg) {
+    .filters__toggle {
+      background-image: url('../img/i-left-2--primary.png');
+      background-image: url('../img/i-left-2--primary.svg');
+      &:hover, 
+      &:focus {
+      }      
+    }
+  }
+}
+
+.filter {
+  border-bottom: 1px solid darken($neutral, 10%);
+  padding: 2rem 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+// Horizontal layout 
+
+.filters--horizontal {
+  background-color: $neutral;
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  @include media($lg) {
+    form {
+      @include display(flex);
+      @include justify-content(flex-start);
+    }
+
+    .filter {
+      border-bottom: none;
+      border-top: none;
+      border-right: 1px solid $cream;
+      margin-right: 0;
+      padding: 0 1rem;
+      width: 100%;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+  }
+}

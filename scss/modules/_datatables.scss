@@ -1,0 +1,103 @@
+// Datatables
+//
+// .is-showing-filters    - Class applied to body when the filters are open, causing the datatable to shrink slightly
+//
+// Styleguide modules.datatables
+
+// Wraps the datatable on browse pages
+
+.datatable__container {
+  @include clearfix();
+  float: left;
+  margin-top: 2rem;
+  width: 100%;
+
+  @include media($lg) {
+    @include transition(width .5s);
+    border-top: 0;
+    margin: 0 1% 0 0;
+    padding: 2rem 0;
+    width: 96%;    
+  }
+}
+
+.is-showing-filters {
+  .datatable__container {
+
+  }
+  
+  @include media($lg) {
+    .datatable__container {
+      width: 76%;
+      float: left;
+      margin: 0 1% 0 0;
+    }
+  }
+}
+
+.data-table {
+  font-family: $sans-serif;
+  position: relative;
+
+  th {
+    padding: 2rem 0 0 0;
+    border-bottom: 1px solid $primary;
+  }
+
+  tr {
+    @include transition(border-left-width, .2s);
+    border-left-width: 0;
+    background-color: $cream;
+    cursor: pointer;
+    border-bottom: 1px solid $neutral;
+
+    // &:hover {
+    //   border-left: 5px solid $aqua;
+      
+    //   // Reveal truncated text
+    //   td {
+    //     white-space: pre-wrap;
+    //     overflow: visible;
+
+    //     &:first-child {
+    //       padding-left: 1rem;
+    //     }
+    //   }
+    // }
+
+    &.row-active {
+      background-color: $ivory;
+    }
+  }
+  
+  td {
+    @include transition(padding-left, .2s);
+    @include u-truncate();    
+    padding: 1rem 0;
+  }
+
+  .sorting,
+  .sorting_asc,
+  .sorting_desc {
+    background-position: 0 2.5rem;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-left: 1rem;
+  }   
+}
+
+// Sortable headers
+.sorting {
+  background-image: url('../img/i-sort--neutral.png');
+  background-image: url('../img/i-sort--neutral.svg');
+}
+
+.sorting_asc {
+  background-image: url('../img/i-sort-up--neutral.png');
+  background-image: url('../img/i-sort-up--neutral.svg'); 
+}
+
+.sorting_desc {
+  background-image: url('../img/i-sort-down--neutral.png');
+  background-image: url('../img/i-sort-down--neutral.svg'); 
+}
