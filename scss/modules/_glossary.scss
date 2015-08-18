@@ -1,0 +1,67 @@
+// Glossary
+//
+// Styleguide modules.glossary
+
+.glossary {
+  @include u-bg--primary();
+  @include transition(right, .3s);
+  border-left: 4px solid $primary-contrast;
+  bottom: 0;
+  max-width: 30rem;
+  overflow-y: scroll;
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  width: 50%;
+
+  &[aria-hidden=true] {
+    display: block !important;
+    right: -100%;
+  }
+
+  &[aria-hidden=false] {
+    @include transition(right, .3s);
+    right: 0;
+  }
+
+  .button--close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.glossary__content {
+  padding: 4rem 0;
+}
+
+.glossary__item {
+  border-bottom: 1px solid $primary-contrast;
+
+  .glossary-term {
+    margin: 0;
+  }
+
+  .glossary-definition {
+    font-family: $sans-serif;
+  }
+
+  .accordion__header {
+    padding: 1rem 0;
+  }
+
+  .accordion__button {
+    background-size: 50%;
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+.term {
+  @include u-background-image('i-term--primary', 100% 0);
+  padding-right: 2rem;
+}
+
+.page-header .term {
+  @include u-background-image('i-term--neutral', 100% 0);
+}

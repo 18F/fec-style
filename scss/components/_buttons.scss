@@ -205,3 +205,16 @@
     }
   }
 }
+
+// Close button
+//
+// Defaults to primary-contrast colored x. Used on the glossary
+//
+// <button class="button button--close"><span class="u-visually-hidden">Hide glossary</span></button>
+//
+// Styleguide 
+.button--close {
+  @include u-background-image('../img/i-x--primary-contrast');
+  width: 4rem;
+  height: 4rem;
+}
