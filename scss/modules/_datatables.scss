@@ -40,7 +40,7 @@
   position: relative;
 
   th {
-    padding: 2rem 0 0 0;
+    padding: 2rem 0 .5rem 0;
     border-bottom: 1px solid $primary;
   }
 
@@ -66,7 +66,16 @@
     // }
 
     &.row-active {
-      background-color: $ivory;
+      td {
+        background-color: rgba($ivory, .3);
+        border-top: 1px solid $ivory;
+        border-bottom: 1px solid $ivory;        
+      }
+
+      td:first-child {
+        padding-left: 1rem;
+        border-left: 1px solid $ivory;
+      }
     }
   }
   

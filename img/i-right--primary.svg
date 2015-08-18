@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="8px" height="10px" viewBox="0 0 8 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>i-right--primary</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Simple-Copy" sketch:type="MSArtboardGroup" transform="translate(-262.000000, -392.000000)" fill="#022C53">
+            <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(254.000000, 106.000000)">
+                <path d="M15.527952,291.275393 L9.29439,294.959907 C9.15760071,295.041097 9.0094596,295.084247 8.85138566,295.084247 C8.38113698,295.084247 8,294.702993 8,294.232599 L8,286.851648 C8,286.381538 8.38113698,286 8.85138566,286 C9.0094596,286 9.15760071,286.043434 9.28445717,286.118663 C9.29013307,286.121786 15.527952,289.808855 15.527952,289.808855 C15.7782594,289.957325 15.9462662,290.230137 15.9462662,290.542124 C15.9462662,290.854395 15.7782594,291.127206 15.527952,291.275393 Z" id="i-right--primary" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

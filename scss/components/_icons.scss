@@ -6,3 +6,13 @@
   max-height: 6rem;
   max-width: 6rem;
 }
+
+.icon {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+
+  &.arrow--right {
+    @include u-background-image('i-right--primary');
+  }
+}
