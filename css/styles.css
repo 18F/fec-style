@@ -2243,13 +2243,20 @@ path.shape {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #EFDECD;
+  -webkit-transition: width, 0.1s;
+  -moz-transition: width, 0.1s;
+  transition: width, 0.1s;
+  background-image: url("../img/i-down-2--primary.png");
+  background-image: url("../img/i-down-2--primary.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 1rem 50%;
+  background-color: #EFDECD;
   left: 50%;
   position: absolute;
   z-index: 100;
-  top: 100%; }
+  top: 100%;
+  height: 4rem;
+  padding: 1rem 1rem 1rem 3rem; }
   @media screen and (min-width: 53.75em) {
     .filters__toggle {
       -webkit-transform: translateX(0);
@@ -2257,12 +2264,31 @@ path.shape {
       -ms-transform: translateX(0);
       -o-transform: translateX(0);
       transform: translateX(0);
+      -webkit-transition: width, 0.1s;
+      -moz-transition: width, 0.1s;
+      transition: width, 0.1s;
       background-image: url("../img/i-right-2--primary.png");
       background-image: url("../img/i-right-2--primary.svg");
+      background-repeat: no-repeat;
+      background-position: 1rem 50%;
       left: 100%;
       top: 0;
       width: 3rem;
-      height: 3rem; } }
+      overflow: hidden; }
+      .filters__toggle:hover, .filters__toggle:focus {
+        width: 13rem; }
+        .filters__toggle:hover .filters__toggle__text, .filters__toggle:focus .filters__toggle__text {
+          display: block;
+          margin-left: 0;
+          width: 8rem; } }
+
+.filters__toggle__text {
+  font-size: 1.4rem;
+  white-space: nowrap; }
+  @media screen and (min-width: 53.75em) {
+    .filters__toggle__text {
+      display: block;
+      margin-left: 2rem; } }
 
 .filters__subheader {
   margin-top: 3rem;
@@ -2278,10 +2304,17 @@ path.shape {
   margin-left: 0%; }
   .is-open .filters__hider {
     height: auto; }
+  .is-open .filters__toggle {
+    background-image: url("../img/i-up-2--primary.png");
+    background-image: url("../img/i-up-2--primary.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem 50%; }
   @media screen and (min-width: 53.75em) {
     .is-open .filters__toggle {
       background-image: url("../img/i-left-2--primary.png");
-      background-image: url("../img/i-left-2--primary.svg"); } }
+      background-image: url("../img/i-left-2--primary.svg");
+      background-repeat: no-repeat;
+      background-position: 1rem 50%; } }
 
 .filter {
   border-bottom: 1px solid #e3c5a6;

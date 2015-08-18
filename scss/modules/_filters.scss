@@ -52,30 +52,44 @@
 
 .filters__toggle {
   @include transform(translateX(-50%));
+  @include transition(width, .1s);
+  @include u-background-image('i-down-2--primary', 1rem 50%);
   background-color: $neutral;
-  background-repeat: no-repeat;
-  background-position: center center;
   left: 50%;
   position: absolute;
   z-index: 100;
   top: 100%;
-
-  &:hover {
-      // @TODO: Create styles
-  }
+  height: 4rem;
+  padding: 1rem 1rem 1rem 3rem;
 
   @include media($lg) {
     @include transform(translateX(0));
-    background-image: url('../img/i-right-2--primary.png');
-    background-image: url('../img/i-right-2--primary.svg');
+    @include transition(width, .1s);
+    @include u-background-image('i-right-2--primary', 1rem 50%);
     left: 100%;
     top: 0;
     width: 3rem;
-    height: 3rem;
+    overflow: hidden;
 
     &:hover, &:focus {
-      // @TODO: Create styles
+      width: 13rem;
+
+      .filters__toggle__text {
+        display: block;
+        margin-left: 0;
+        width: 8rem;
+      }
     }
+  }
+} 
+
+.filters__toggle__text {
+  font-size: 1.4rem;
+  white-space: nowrap;
+
+  @include media($lg) {
+    display: block;
+    margin-left: 2rem; // Hides it out of the box
   }
 }
 
@@ -100,16 +114,12 @@
   }
 
   .filters__toggle {
-    // @TODO: Create styles
+    @include u-background-image('i-up-2--primary', 1rem 50%);
   }
 
   @include media($lg) {
     .filters__toggle {
-      background-image: url('../img/i-left-2--primary.png');
-      background-image: url('../img/i-left-2--primary.svg');
-      &:hover, 
-      &:focus {
-      }      
+      @include u-background-image('i-left-2--primary', 1rem 50%);    
     }
   }
 }
