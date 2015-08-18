@@ -61,7 +61,7 @@
   overflow: hidden;
   z-index: 999;
 
-  li {
+  .dropdown__item {
     border-bottom: 2px solid $ivory-dark;
     white-space: nowrap;
     padding: .5rem 1rem;

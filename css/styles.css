@@ -1607,11 +1607,11 @@ span.tt-suggestion__office {
   max-height: 30rem;
   overflow: hidden;
   z-index: 999; }
-  .dropdown__panel li {
+  .dropdown__panel .dropdown__item {
     border-bottom: 2px solid #D8C4B1;
     white-space: nowrap;
     padding: 0.5rem 1rem; }
-    .dropdown__panel li:hover {
+    .dropdown__panel .dropdown__item:hover {
       background-color: #EFDECD;
       cursor: pointer; }
   .dropdown__panel .dropdown__subhead {
