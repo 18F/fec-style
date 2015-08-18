@@ -882,6 +882,16 @@ body {
   max-height: 6rem;
   max-width: 6rem; }
 
+.icon {
+  display: block;
+  height: 2rem;
+  width: 2rem; }
+  .icon.arrow--right {
+    background-image: url("../img/i-right--primary.png");
+    background-image: url("../img/i-right--primary.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
+
 .card {
   background-color: #EFDECD;
   border-radius: 4px;
@@ -2597,7 +2607,7 @@ path.shape {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 200; }
+  background-color: #FFFFF9; }
   .panel__overlay[aria-hidden="false"] {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
@@ -2606,9 +2616,10 @@ path.shape {
     transform: translateX(0%); }
   @media screen and (min-width: 40em) {
     .panel__overlay {
-      border: 1px solid #022C53;
-      margin-top: 2rem;
-      width: 100%; }
+      background-color: rgba(239, 222, 205, 0.3);
+      border-left: 1px solid #EFDECD;
+      width: 100%;
+      left: 3px; }
       .panel__overlay[aria-hidden="false"] {
         -webkit-transform: translateX(99.5%);
         -moz-transform: translateX(99.5%);
@@ -2617,7 +2628,6 @@ path.shape {
         transform: translateX(99.5%); } }
 
 .panel {
-  background: #FFFFF9;
   padding: 2rem 1rem; }
   @media screen and (min-width: 40em) {
     .panel {
@@ -2668,7 +2678,9 @@ path.shape {
     padding-left: 0 !important; } }
 
 .panel__navigation {
-  text-align: right; }
+  border-bottom: 1px solid #EFDECD;
+  text-align: right;
+  padding: 0.6rem 2rem 0.6rem 2rem; }
   .panel__navigation::after {
     clear: both;
     content: "";
@@ -2729,7 +2741,7 @@ path.shape {
   font-family: "Karla Sans", sans-serif;
   position: relative; }
   .data-table th {
-    padding: 2rem 0 0 0;
+    padding: 2rem 0 0.5rem 0;
     border-bottom: 1px solid #022C53; }
   .data-table tr {
     -webkit-transition: border-left-width, 0.2s;
@@ -2739,8 +2751,13 @@ path.shape {
     background-color: #FFFFF9;
     cursor: pointer;
     border-bottom: 1px solid #EFDECD; }
-    .data-table tr.row-active {
-      background-color: #EFDECD; }
+    .data-table tr.row-active td {
+      background-color: rgba(239, 222, 205, 0.3);
+      border-top: 1px solid #EFDECD;
+      border-bottom: 1px solid #EFDECD; }
+    .data-table tr.row-active td:first-child {
+      padding-left: 1rem;
+      border-left: 1px solid #EFDECD; }
   .data-table td {
     -webkit-transition: padding-left, 0.2s;
     -moz-transition: padding-left, 0.2s;

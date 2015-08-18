@@ -9,16 +9,17 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 200;
+  background-color: $cream;
 
   &[aria-hidden="false"] {
     @include transform(translateX(0%));
   }
 
   @include media($med) {
-    border: 1px solid $primary;
-    margin-top: 2rem;
+    background-color: rgba($ivory, .3);
+    border-left: 1px solid $ivory;
     width: 100%;
+    left: 3px;
 
     &[aria-hidden="false"] {
       // 99.5 to ensure when container is not an even number.
@@ -28,7 +29,6 @@
 }
 
 .panel {
-  background: $cream;
   padding: 2rem 1rem;
 
   @include media($med) {
@@ -117,7 +117,9 @@
 
 .panel__navigation {
   @include clearfix();
+  border-bottom: 1px solid $ivory;
   text-align: right;
+  padding: .6rem 2rem .6rem 2rem;
 
   @include media($med) {
     text-align: left;

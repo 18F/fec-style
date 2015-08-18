@@ -3,7 +3,9 @@
 // Markup:
 // <section class="layout--browse">
 // <div class="filters is-open">
-//   <button class="filters__toggle"></button>
+//   <button class="filters__toggle">
+//     <span class="filters__toggle__text">Show filters</span>
+//   </button>
 //   <div class="filters__hider">
 //     <h4 class="filter__header">Filters</h4>
 //     <div class="filter">
