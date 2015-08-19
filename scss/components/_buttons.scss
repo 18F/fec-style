@@ -9,13 +9,14 @@
 
 .button {
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
+  display: inline-block;
   border-radius: 2px;
   border: 2px solid transparent;
   line-height: 1;
   font-size: 1.4rem;
   padding: 8px 2rem;
+  text-align: center;
   vertical-align: middle;
-  white-space: nowrap;
 
   &:hover {
     border-color: transparent;
