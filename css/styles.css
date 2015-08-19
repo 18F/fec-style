@@ -750,6 +750,12 @@ a {
 .t-block {
   display: block; }
 
+.t-italic {
+  font-style: italic; }
+
+.t-bold {
+  font-weight: bold; }
+
 .is-centered {
   text-align: center; }
 
@@ -1084,7 +1090,7 @@ a {
   border-radius: 4px;
   margin-bottom: 2rem;
   padding: 2rem;
-  text-align: left; }
+  text-align: center; }
   .card::after {
     clear: both;
     content: "";
@@ -2603,6 +2609,39 @@ path.shape {
   .billboard__content {
     display: table-cell;
     width: 66.66667%; } }
+
+@media screen and (min-width: 40em) {
+  .feature {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .feature:last-child {
+      margin-right: 0; }
+    .feature .card {
+      float: left;
+      display: block;
+      margin-right: 4.82916%;
+      width: 100%; }
+      .feature .card:last-child {
+        margin-right: 0; } }
+
+@media screen and (min-width: 53.75em) {
+  .feature {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .feature:last-child {
+      margin-right: 0; }
+    .feature .card {
+      float: left;
+      display: block;
+      margin-right: 10.1484%;
+      width: 100%;
+      min-height: 20rem; }
+      .feature .card:last-child {
+        margin-right: 0; } }
 
 .site-header {
   position: relative; }

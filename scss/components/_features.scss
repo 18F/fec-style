@@ -1,0 +1,20 @@
+// Feature callouts
+
+.feature {
+  @include media($med) {
+    @include span-columns(6);
+    
+    .card {
+      @include span-columns(6 of 6);
+    }    
+  }
+
+  @include media($lg) {
+    @include span-columns(3);
+
+    .card {
+      @include span-columns(3 of 3);
+      min-height: 20rem;
+    }
+  }
+}
