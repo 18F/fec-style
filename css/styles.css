@@ -79,6 +79,10 @@ html {
 .u-float-right {
   float: right; }
 
+.is-disabled {
+  opacity: .5;
+  cursor: default; }
+
 html {
   font-size: 62.5%; }
 
@@ -1087,9 +1091,6 @@ a {
     display: table; }
   .card .card__content {
     text-align: left; }
-  .card.is-disabled {
-    opacity: .5;
-    cursor: default; }
   @media screen and (min-width: 40em) {
     .card {
       float: left;
@@ -2656,6 +2657,7 @@ path.shape {
   float: left; }
 
 .utility-nav {
+  font-family: "karla", sans-serif;
   display: none;
   float: right;
   padding: .55rem 0; }
@@ -2878,13 +2880,10 @@ path.shape {
   .site-nav__link.is-active {
     background-color: #022C53;
     color: #36BDBB; }
-  .site-nav__link.is-disabled {
-    opacity: .5;
-    cursor: default; }
-    .site-nav__link.is-disabled:hover,
-    .site-nav__link.is-disabled:active {
-      background: none;
-      border-bottom-color: transparent; }
+  .site-nav__link.is-disabled:hover,
+  .site-nav__link.is-disabled:active {
+    background: none;
+    border-bottom-color: transparent; }
 
 .site-nav__dropdown {
   color: #022C53;

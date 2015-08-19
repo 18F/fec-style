@@ -28,6 +28,11 @@
   float: right;
 }
 
+.is-disabled {
+  opacity: .5;
+  cursor: default;
+}
+
 // u-font-color()
 //
 // Used to set the color of all child elements

@@ -30,11 +30,6 @@
   .card__content {
     text-align: left;
   }
-
-  &.is-disabled {
-    opacity: .5;
-    cursor: default;
-  }
   
   @include media($med) {
     @include span-columns(2)
