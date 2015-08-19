@@ -26,7 +26,7 @@
 
   @include media($med) {
     .combo__input {
-      width: calc(100% - 4.6rem);
+      width: calc(100% - 16.6rem);
     }
 
     .combo__button {
@@ -41,14 +41,42 @@
     .combo__input {
       font-size: 2.8rem;
       height: 6rem;
-      width: calc(100% - 6.6rem);
+      width: calc(100% - 18.6rem);
     }
 
     .combo__button {
       height: 6rem;
       width: 6rem;
     }
+
+    .search__select {
+      height: 6rem;
+    }
+
+    .tt-dropdown-menu {
+      top: 5.9rem !important;
+    }
   }
+}
+
+.search__select {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2px;
+  height: 3.6rem;
+  width: 12rem;
+  float: left;
+}
+
+.search__radio {
+  margin-bottom: 0;
+}
+
+.search__radio__item {
+  width: 50%;
+}
+
+.search__radio__button {
+  height: 3.6rem;
 }
 
 // Typeahead styles
@@ -64,26 +92,6 @@
   text-align: left;
   position: absolute;
   width: calc(100% - 6.6rem);
-}
-
-.combo--search--large {
-  @include media($med) {
-    .tt-dropdown-menu {
-      top: 5.9rem !important;
-    }
-  }
-}
-
-.search__radio {
-  margin-bottom: 0;
-}
-
-.search__radio__item {
-  width: 50%;
-}
-
-.search__radio__button {
-  height: 3.6rem;
 }
 
 .tt-dropdown-menu {
