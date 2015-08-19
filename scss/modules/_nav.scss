@@ -137,8 +137,7 @@
 // .site-nav__button--right     - Glossary toggle
 
 .site-nav__button {
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-color: $ivory;
   border-width: 0;
   border-radius: 0;
   line-height: 2rem;
@@ -147,9 +146,7 @@
 }
 
 .site-nav__button--left {
-  background-color: $ivory;
-  background-image: url('../img/i-menu--primary.png');
-  background-image: url('../img/i-menu--primary.svg');
+  @include u-background-image('i-menu--primary');
   float: left;
 
   &:hover {
@@ -162,12 +159,11 @@
 }
 
 .site-nav__button--right {
-  background-color: $ivory;
-  background-image: url('../img/i-book--neutral.png');
-  background-image: url('../img/i-book--neutral.svg');
+  @include u-background-image('i-book--secondary');
   float: right;
   
   &:hover {
+    @include u-background-image('i-book--neutral');    
     background-color: lighten($secondary, 10%);
   }  
 }

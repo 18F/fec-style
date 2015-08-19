@@ -152,6 +152,7 @@
 // Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary(){
+  @include u-font-color($ivory);
   @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
   background-color: $secondary;
   
