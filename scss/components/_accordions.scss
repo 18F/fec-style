@@ -15,26 +15,35 @@
 
 .accordion--collapsed {
   .accordion__button {
-   &.button {
-     @include u-background-image('i-plus--primary');
-   }
+     &.button {
+       @include u-background-image('i-plus--neutral');
+     }
 
-   &.button--primary {
-     @include u-background-image('i-plus--primary');
-   }
+     &.button--primary {
+       @include u-background-image('i-plus--primary');
+     }
+
+    &.button--secondary {
+      @include u-background-image('i-plus--secondary');
+    }   
   }
 }
 
 .accordion__button {
-  &.button {
-    @include u-background-image('i-minus--primary');
-  }
 
-  &.button--primary {
-    @include u-background-image('i-minus--primary');
+  &.button {
+    @include u-background-image('i-minus--neutral');
     border-radius: 3rem;
     height: 4rem;
     padding: 0;
     width: 4rem;
+  }
+
+  &.button--primary {
+    @include u-background-image('i-minus--primary');
+  }
+
+  &.button--secondary {
+    @include u-background-image('i-minus--secondary');
   }
 }

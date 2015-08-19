@@ -3,9 +3,9 @@
 // Styleguide modules.glossary
 
 .glossary {
-  @include u-bg--primary();
+  @include u-bg--secondary();
   @include transition(right, .3s);
-  border-left: 4px solid $primary-contrast;
+  border-left: 4px solid $secondary-contrast;
   bottom: 0;
   max-width: 30rem;
   overflow-y: scroll;
@@ -36,7 +36,7 @@
 }
 
 .glossary__item {
-  border-bottom: 1px solid $primary-contrast;
+  border-bottom: 1px solid $secondary-contrast;
 
   .glossary-term {
     margin: 0;
