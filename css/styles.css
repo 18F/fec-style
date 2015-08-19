@@ -561,6 +561,11 @@ a {
     .container {
       padding: 0; } }
 
+.row::after {
+  clear: both;
+  content: "";
+  display: table; }
+
 .main {
   padding: 2rem 0; }
   .main::after {
@@ -603,11 +608,6 @@ a {
 .content__section--ruled {
   border-top: 1px solid #022C53;
   padding-top: 2rem; }
-
-.row::after {
-  clear: both;
-  content: "";
-  display: table; }
 
 .t-display {
   margin: 0 0 1em 0;
@@ -1263,13 +1263,12 @@ a {
       float: right; }
       .sidebar .card:last-child {
         margin-right: 0; }
-    .sidebar .card--horizontal {
+    .sidebar .card--mini {
       float: left;
       display: block;
       margin-right: 10.1484%;
-      width: 100%;
-      padding: 1rem; }
-      .sidebar .card--horizontal:last-child {
+      width: 100%; }
+      .sidebar .card--mini:last-child {
         margin-right: 0; } }
 
 .sidebar__section {

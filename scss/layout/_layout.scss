@@ -11,11 +11,17 @@
 
 // Layout elements
 //
-// .container     - Used to set group grid items
-// .main          - The main content area below heros
-// .main__content - The area below page headers
-// .row           - Clearfixes a group of divs / wraps grid columns
+// Used for dividing up and grouping general chunks of content on a page
+// Work in progress as we finalize layouts
 //
+// .container                 - Used to center and group grid items
+// .row                       - Clearfixes a group of divs / wraps grid columns
+// .main                      - The main content area below heros
+// .main__content             - The area below page headers, next to sidebar
+// .main__content--full       - Full-width main content area
+// .content__section          - Adds padding for breaking up sections of body content
+// .content__section--ruled   - Adds a border
+// 
 // Styleguide layout.elements
 
 .container {
@@ -25,6 +31,10 @@
   @include media($lg) {
     padding: 0;
   }
+}
+
+.row {
+  @include clearfix();
 }
 
 .main {
@@ -50,10 +60,6 @@
   position: relative;
 } 
 
-// Content Sections
-// 
-// For subdividing chunks of content with padding and borders
-
 .content__section {
   @include clearfix();
   padding: 0 0 2rem 0;
@@ -62,8 +68,4 @@
 .content__section--ruled {
   border-top: 1px solid $primary;
   padding-top: 2rem;
-}
-
-.row {
-  @include clearfix();
 }

@@ -36,9 +36,8 @@
       float: right;
     }    
 
-    .card--horizontal {
+    .card--mini {
       @include span-columns(3 of 3);
-      padding: 1rem;
     }
   }
 }
