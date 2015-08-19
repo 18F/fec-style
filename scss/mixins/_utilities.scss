@@ -58,13 +58,20 @@
   }
 
   h1,
+  .h1,
   h6,
+  .h6
   a {
     border-color: $color;
   }
 
   .t-ruled {
     border-color: $color;
+  }
+
+  .button,
+  .button:hover {
+    border-color: transparent;
   }
 }
 
@@ -148,7 +155,7 @@
   @include u-font-color($ivory);
   @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
   background-color: $secondary;
-
+  
   a {
     &:hover {
       border-bottom-color: #fff;

@@ -3,6 +3,7 @@
 // Small boxes that contain content
 // Default layout is image stacked on text
 //
+// .card--mini            - For use in sidebars
 // .card--horizontal      - Image next to text
 // .card--wide            - Card takes up half of grid
 //
@@ -26,10 +27,6 @@
   padding: 2rem;
   text-align: left;
 
-  .card__image {
-    
-  }
-
   .card__content {
     text-align: left;
   }
@@ -37,10 +34,9 @@
   @include media($med) {
     @include span-columns(2)
   }
-
 }
 
-.card--horizontal {
+.card--mini {
   padding: 1rem;
   text-align: left;
 
@@ -54,6 +50,23 @@
 
   @include media($med) {
     @include span-columns(3)
+  }
+}
+
+.card--horizontal {
+  padding: 1rem 2rem;
+  text-align: left;
+
+  .card__image {
+    @include span-columns(2 of 4);
+  }
+
+  .card__content {
+    @include span-columns(2 of 4);
+  }
+
+  @include media($med) {
+    @include span-columns(4)
   }
 }
 

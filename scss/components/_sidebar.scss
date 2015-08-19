@@ -27,12 +27,18 @@
 // Styleguide components.sidebar
 
 .sidebar {  
-  .card {
-    @include span-columns(12);
-  }
 
   @include media($med) {
     @include span-columns(3);
+
+    .card {
+      @include span-columns(2 of 3);
+      float: right;
+    }    
+
+    .card--mini {
+      @include span-columns(3 of 3);
+    }
   }
 }
 
@@ -67,5 +73,10 @@
 
   .sidebar__section {
     border-bottom-color: $secondary-contrast;
+  }
+
+  .card {
+    @include u-font-color($ivory);
+    background-color: #DD3900;
   }
 }

@@ -30,13 +30,12 @@
 }
 
 .accordion__button {
-
   &.button {
     @include u-background-image('i-minus--neutral');
     border-radius: 3rem;
-    height: 4rem;
+    height: 3rem;
     padding: 0;
-    width: 4rem;
+    width: 3rem;
   }
 
   &.button--primary {
@@ -45,5 +44,22 @@
 
   &.button--secondary {
     @include u-background-image('i-minus--secondary');
+  }
+}
+
+.accordion--secondary {
+  .accordion__header {
+    border-top: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    padding: 1rem;
+
+    .accordion__title {
+      margin: 0;
+    }
+  }
+  
+  .accordion__item {
+    padding: 2rem;
+    background-color: $ivory;
   }
 }
