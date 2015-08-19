@@ -2134,9 +2134,9 @@ span.tt-suggestion__office {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   border-radius: 3rem;
-  height: 4rem;
+  height: 3rem;
   padding: 0;
-  width: 4rem; }
+  width: 3rem; }
 
 .accordion__button.button--primary {
   background-image: url("../img/i-minus--primary.png");
