@@ -45,6 +45,17 @@
 
 .site-nav__item {
   border-bottom: 1px solid $beige;
+  position: relative;
+
+  &:hover,
+  &:focus {
+    background-color: $ivory;
+
+    & > .site-nav__dropdown {
+      display: block;
+    }
+  }
+
   @include media($med) {
     float: left;
     border-bottom: none;
@@ -60,9 +71,10 @@
   padding: 2rem 2rem 1.5rem 2rem;
 
   &:hover,
+  &:focus
   &:active {
     border-bottom-color: transparent;
-    background-color: $beige;
+    background-color: $ivory;
   }
 
   &.is-current {
@@ -86,48 +98,27 @@
   }
 }
 
-// Dropdown
-//
-// Primary site navigation
-//
-// Markup:
-// <nav class="site-nav__dropdown" id="dropdown-1" aria-hidden="false">
-//  <ul class="site-nav__dropdown__section">
-//    <li>
-//      <a href="#">Search for candidates &raquo;</a>
-//    </li>
-//    <li>
-//      <a href="#">Search by ZIP code &raquo;</a>
-//    </li>
-//  </ul>
-//  <ul class="site-nav__dropdown__section">
-//    <li><h4>Browse the Data</h4></li>
-//    <li>
-//      <a href="#">Browse candidates &raquo;</a>
-//    </li>
-//    <li>
-//      <a href="#">Browse committees &raquo;</a>
-//    </li>
-//  </ul>
-//  <div class="site-nav__dropdown__section">
-//    <p>About this section</p>
-//  </div>
-// </nav> 
-//
-// Styleguide modules.navigation.dropdown
-
 .site-nav__dropdown {
-  @include u-font-color($primary-contrast);
-  background-color: $primary;
-  padding: 2rem;
+  @include u-font-color($primary);
+  display: none;
+  background-color: $cream;
+  border: 1px solid $beige;
+  border-top: none;
   position: absolute;
   top: 6rem;
-  width: 100%;
+  z-index: $z-navigation;
+
+  .site-nav__item {
+    width: 100%;
+  }
+
+  .site-nav__link {
+    border-bottom: 1px solid $beige;
+    padding: 1rem;
+    width: 100%;
+  }
 }
 
-.site-nav__dropdown__section {
-  @include span-columns(4);
-}
 
 // Nav Buttons
 //
