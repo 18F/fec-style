@@ -51,6 +51,7 @@
 // Styleguide type-styles.ruled-headings
 
 .t-ruled {
+  @include clearfix();
   border-bottom: 1px solid $primary;
   border-top: 1px solid $primary;
   padding: 1rem 0;
@@ -65,6 +66,10 @@
 .t-note {
   font-weight: normal;
   font-size: 1.4rem;   
+}
+
+.t-block {
+  display: block;
 }
 
 // Modifier styles for text
@@ -88,4 +93,26 @@
 
 .is-left-aligned {
   text-align: left;
+}
+
+// Pseudo-Header styles
+
+.h1 {
+  @include heading(h1);
+}
+
+.h2 {
+  @include heading(h2);
+}
+
+.h3 {
+  @include heading(h3);
+}
+
+.h4 {
+  @include heading(h4);
+}
+
+.h5 {
+  @include heading(h5);
 }

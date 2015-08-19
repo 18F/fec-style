@@ -50,6 +50,19 @@
   position: relative;
 } 
 
+// Content Sections
+// 
+// For subdividing chunks of content with padding and borders
+
+.content__section {
+  @include clearfix();
+  padding: 0 0 2rem 0;
+}
+
+.content__section--ruled {
+  border-top: 1px solid $primary;
+  padding-top: 2rem;
+}
 
 .row {
   @include clearfix();

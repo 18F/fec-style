@@ -38,3 +38,19 @@
     width: 4rem;
   }
 }
+
+.accordion--secondary {
+  .accordion__header {
+    border-top: 2px solid $primary;
+    border-bottom: 2px solid $primary;
+    padding: 1rem;
+
+    .accordion__title {
+      margin: 0;
+    }
+  }
+  .accordion__item {
+    padding: 2rem;
+    background-color: $ivory;
+  }
+}
