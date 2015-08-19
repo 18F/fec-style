@@ -1087,6 +1087,9 @@ a {
     display: table; }
   .card .card__content {
     text-align: left; }
+  .card.is-disabled {
+    opacity: .5;
+    cursor: default; }
   @media screen and (min-width: 40em) {
     .card {
       float: left;
