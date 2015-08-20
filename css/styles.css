@@ -2711,7 +2711,7 @@ path.shape {
   left: 2rem;
   padding: 1rem 2rem;
   position: absolute;
-  top: -100px;
+  top: -10rem;
   z-index: 400; }
   .skip-nav:focus {
     border-bottom-color: #36BDBB;
@@ -3926,7 +3926,10 @@ a {
   background-image: url("../img/i-term--primary.svg");
   background-repeat: no-repeat;
   background-position: 100% 0;
-  padding-right: 2rem; }
+  padding-right: 2rem;
+  cursor: pointer; }
+  .term:focus {
+    outline: none; }
 
 .page-header .term {
   background-image: url("../img/i-term--neutral.png");

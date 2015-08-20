@@ -61,6 +61,11 @@
 .term {
   @include u-background-image('i-term--primary', 100% 0);
   padding-right: 2rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .page-header .term {
