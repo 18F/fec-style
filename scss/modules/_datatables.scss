@@ -17,7 +17,7 @@
     border-top: 0;
     margin: 0 1% 0 0;
     padding: 2rem 0;
-    width: 96%;    
+    width: 96%;
   }
 }
 
@@ -25,7 +25,7 @@
   .datatable__container {
 
   }
-  
+
   @include media($lg) {
     .datatable__container {
       width: 76%;
@@ -53,7 +53,7 @@
 
     // &:hover {
     //   border-left: 5px solid $aqua;
-      
+
     //   // Reveal truncated text
     //   td {
     //     white-space: pre-wrap;
@@ -69,7 +69,7 @@
       td {
         background-color: rgba($ivory, .3);
         border-top: 1px solid $ivory;
-        border-bottom: 1px solid $ivory;        
+        border-bottom: 1px solid $ivory;
       }
 
       td:first-child {
@@ -78,10 +78,10 @@
       }
     }
   }
-  
+
   td {
     @include transition(padding-left, .2s);
-    @include u-truncate();    
+    @include u-truncate();
     padding: 1rem 0;
   }
 
@@ -92,7 +92,12 @@
     background-repeat: no-repeat;
     cursor: pointer;
     padding-left: 1rem;
-  }   
+  }
+
+  .value-bar {
+    height: 5px;
+    background-color: #205683;
+  }
 }
 
 // Sortable headers
@@ -103,10 +108,10 @@
 
 .sorting_asc {
   background-image: url('../img/i-sort-up--neutral.png');
-  background-image: url('../img/i-sort-up--neutral.svg'); 
+  background-image: url('../img/i-sort-up--neutral.svg');
 }
 
 .sorting_desc {
   background-image: url('../img/i-sort-down--neutral.png');
-  background-image: url('../img/i-sort-down--neutral.svg'); 
+  background-image: url('../img/i-sort-down--neutral.svg');
 }
