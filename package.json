@@ -14,6 +14,7 @@
     "watch-sass": "node-sass scss/ -o css/ --watch"
   },
   "dependencies": {
+    "eventemitter2": "0.4.14",
     "jquery": "2.1.4",
     "list.js": "git://github.com/jmcarp/list.js.git",
     "node-bourbon": "4.2.2",
