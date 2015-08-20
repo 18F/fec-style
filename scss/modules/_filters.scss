@@ -23,7 +23,7 @@
 .filters {
   @include clearfix();
   @include transition(margin-left .2s);  
-  background: $neutral;
+  @include u-bg--neutral();
   bottom: 0;
   height: 0;
   margin-right: 3%;

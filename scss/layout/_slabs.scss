@@ -23,14 +23,12 @@
 
 .slab--primary {
   @include u-bg--primary();
-  @include u-font-color($ivory)
 }
 
 .slab--secondary {
   @include u-bg--secondary();
-  @include u-font-color($ivory)
 }
 
 .slab--neutral {
-  background-color: $neutral;
+  @include u-bg--neutral();
 }
