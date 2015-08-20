@@ -2874,17 +2874,20 @@ a {
       background-position: 1rem 50%; }
   @media screen and (min-width: 53.75em) {
     .filters {
-      height: auto;
       float: left;
       margin-left: -20%;
       padding: 2rem;
       position: relative;
-      width: 20%; }
-      .filters.is-open .filters__toggle {
-        background-image: url("../img/i-left-2--primary.png");
-        background-image: url("../img/i-left-2--primary.svg");
-        background-repeat: no-repeat;
-        background-position: 1rem 50%; } }
+      width: 20%;
+      vertical-align: top; }
+      .filters.is-open {
+        display: table-cell;
+        float: none; }
+        .filters.is-open .filters__toggle {
+          background-image: url("../img/i-left-2--primary.png");
+          background-image: url("../img/i-left-2--primary.svg");
+          background-repeat: no-repeat;
+          background-position: 1rem 50%; } }
 
 .filters__hider {
   height: 0;
@@ -2907,12 +2910,16 @@ a {
   background-repeat: no-repeat;
   background-position: 1rem 50%;
   background-color: #EFDECD;
+  border: 2px solid transparent;
   left: 50%;
   position: absolute;
   z-index: 100;
   top: 100%;
   height: 4rem;
   padding: 1rem 1rem 1rem 3rem; }
+  .filters__toggle:focus {
+    outline: none;
+    border-color: #022C53; }
   @media screen and (min-width: 53.75em) {
     .filters__toggle {
       -webkit-transform: translateX(0);
@@ -3386,8 +3393,6 @@ a {
         background-image: url("../img/i-x--primary-contrast.svg"); } }
 
 .datatable__container {
-  float: left;
-  margin-top: 2rem;
   width: 100%; }
   .datatable__container::after {
     clear: both;
@@ -3399,15 +3404,11 @@ a {
       -moz-transition: width 0.5s;
       transition: width 0.5s;
       border-top: 0;
-      margin: 0 1% 0 0;
-      padding: 2rem 0;
-      width: 96%; } }
+      padding: 2rem 2rem 2rem 5rem; } }
 
 @media screen and (min-width: 53.75em) {
   .is-showing-filters .datatable__container {
-    width: 76%;
-    float: left;
-    margin: 0 1% 0 0; } }
+    display: table-cell; } }
 
 .data-table {
   font-family: "karla", sans-serif;
