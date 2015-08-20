@@ -21,6 +21,10 @@
   &:hover {
     border-color: transparent;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 // Primary buttons
@@ -43,6 +47,10 @@
     background-color: lighten($primary-contrast, 10%);
   }
 
+  &:focus {
+    border-color: $primary-focus;
+  }
+  
   &:active,
   &.is-active {
     background-color: $navy;
@@ -71,6 +79,10 @@
     background-color: lighten($secondary-contrast, 10%);
   }  
 
+  &:focus {
+    border-color: $secondary-focus;
+  }
+
   &:active,
   &.is-active {
     background-color: $deep-red;
@@ -92,17 +104,20 @@
 
 .button--neutral {
   @extend .button;
-  background-color: $neutral;
-  border: 2px solid $brown;
+  background-color: $brown;
   color: $primary;
 
   &:hover {
-    background-color: lighten($beige, 10%);
+    background-color: $brown-light;
+  }
+
+  &:focus {
+    border-color: $neutral-focus;
   }
 
   &:active,
   &.is-active {
-    background-color: $beige;
+    background-color: $brown-dark;
     border: 2px solid $primary; 
   }  
 }
@@ -175,10 +190,7 @@
 // Styleguide components.buttons.remove
 
 .button--remove {
-  background-image: url('../img/i-x--primary.png');
-  background-image: url('../img/i-x--primary.png');
-  background-repeat: no-repeat;
-  background-position: center center;
+  @include u-background-image('i-x--primary');
   display: none;
   height: 4rem;
   padding: .6rem;
@@ -190,6 +202,11 @@
   &:hover {
     padding: .6rem;
     text-decoration: none;
+  }
+
+  &:focus {
+    @include u-background-image('i-x--primary-contrast');
+    border: none;
   }
 }
 
@@ -209,13 +226,13 @@
 
 // Close button
 //
-// Defaults to primary-contrast colored x. Used on the glossary
+// Defaults to secondary-contrast colored x. Used on the glossary
 //
 // <button class="button button--close"><span class="u-visually-hidden">Hide glossary</span></button>
 //
 // Styleguide 
 .button--close {
-  @include u-background-image('../img/i-x--primary-contrast');
+  @include u-background-image('../img/i-x--secondary-contrast');
   width: 4rem;
   height: 4rem;
 }

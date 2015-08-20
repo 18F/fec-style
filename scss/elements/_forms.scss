@@ -104,12 +104,12 @@ input[type="file"] {
 //     <legend class="label">Select any</legend>
 //     <ul>
 //       <li>
-//         <input type="checkbox" id="checkbox-1" checked>
-//         <label for="checkbox-1">Option 1</label>
+//         <input type="checkbox" id="checkbox-{{modifier_class}}-A" checked>
+//         <label for="checkbox-{{modifier_class}}-A">Option 1</label>
 //       </li>
 //       <li>
-//         <input type="checkbox" id="checkbox-2">
-//         <label for="checkbox-2">Option 2</label>
+//         <input type="checkbox" id="checkbox-{{modifier_class}}-B">
+//         <label for="checkbox-{{modifier_class}}-B">Option 2</label>
 //       </li>
 //     </ul>
 //   </fieldset>
@@ -117,12 +117,12 @@ input[type="file"] {
 //     <legend class="label">Select one</legend>
 //     <ul>
 //       <li>
-//         <input type="radio" id="radio-1" name="radio" checked>
-//         <label for="radio-1">Option 1</label>
+//         <input type="radio" id="radio-{{modifier_class}}-A" name="radio" tab-index="0" checked>
+//         <label for="radio-{{modifier_class}}-A">Option 1</label>
 //       </li>
 //       <li>
-//         <input type="radio" id="radio-2" name="radio">
-//         <label for="radio-2" >Option 2</label>
+//         <input type="radio" id="radio-{{modifier_class}}-B" name="radio" tab-index="0">
+//         <label for="radio-{{modifier_class}}-B" >Option 2</label>
 //       </li>
 //     </ul>
 //   </fieldset>
@@ -180,12 +180,11 @@ input[type="checkbox"]:checked + label::before {
 }
 
 input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary-contrast;
 }
 
 input[type="checkbox"]:disabled + label::before,
 input[type="radio"]:disabled + label::before {
-  // background: $color-grey-600;
-  // color: $color-grey-600;
   cursor: not-allowed;
 }
 

@@ -23,7 +23,7 @@
 .filters {
   @include clearfix();
   @include transition(margin-left .2s);  
-  background: $neutral;
+  @include u-bg--neutral();
   bottom: 0;
   height: 0;
   margin-right: 3%;
@@ -49,14 +49,16 @@
   }
 
   @include media($lg) {
-    height: auto;
     float: left;
     margin-left: -20%;
     padding: 2rem;
     position: relative;
     width: 20%;
+    vertical-align: top;
 
     &.is-open {
+      display: table-cell;
+      float: none;
       .filters__toggle {
         @include u-background-image('i-left-2--primary', 1rem 50%);    
       }
@@ -79,12 +81,18 @@
   @include transition(width, .1s);
   @include u-background-image('i-down-2--primary', 1rem 50%);
   background-color: $neutral;
+  border: 2px solid transparent;
   left: 50%;
   position: absolute;
   z-index: 100;
   top: 100%;
   height: 4rem;
   padding: 1rem 1rem 1rem 3rem;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+  }
 
   @include media($lg) {
     @include transform(translateX(0));

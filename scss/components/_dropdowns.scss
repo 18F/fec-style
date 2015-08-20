@@ -71,6 +71,15 @@
       cursor: pointer;
     }    
   }
+ 
+  .dropdown__value {
+    margin-bottom: 0;
+    
+    &:before {
+      display: none;
+    }
+  }
+     
   
   // For labeling a group of options
   .dropdown__subhead {

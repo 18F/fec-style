@@ -78,6 +78,10 @@
   .button:hover {
     border-color: transparent;
   }
+
+  .button:focus {
+    border-color: #fff;
+  }
 }
 
 // u-form-color()
@@ -88,10 +92,11 @@
 // $contrast-color        - Border and font colors
 // $focus-color           - Focus color
 // $icon-color            - A string that will be appended to the background-image url for checkboxes (e.g. 'primary', 'secondary')
+// $fill-color            - Color for checkbox and radio backgrounds when checked
 //
 // Styleguide mixins.font-colo
 
-@mixin u-form-color($background-color, $contrast-color, $focus-color, $icon-color) {
+@mixin u-form-color($background-color, $contrast-color, $focus-color, $icon-color, $fill-color) {
   #{$all-text-inputs},
   select,
   select[multiple=multiple],
@@ -119,7 +124,7 @@
 
   [type="checkbox"]:checked + label::before,
   [type="radio"]:checked + label::before {
-    background-color: $contrast-color;
+    background-color: $fill-color;
   }
 
   [type="checkbox"]:checked + label::before {
@@ -127,8 +132,8 @@
     background-image: url('../img/i-check--' + $icon-color + '.svg');
   }
 
-  .button {
-    color: $background-color;
+  [type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $focus-color;
   }
 }
 
@@ -140,7 +145,7 @@
 
 @mixin u-bg--primary() {
   @include u-font-color($ivory);
-  @include u-form-color($primary, $primary-contrast, $ivory, 'primary');
+  @include u-form-color($primary, $primary-contrast, $ivory, 'primary', $primary-contrast);
   background-color: $primary;
   
   a {
@@ -158,8 +163,20 @@
 
 @mixin u-bg--secondary(){
   @include u-font-color($ivory);
-  @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary');
+  @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary', $secondary-contrast);
   background-color: $secondary;
+  
+  a {
+    &:hover {
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+@mixin u-bg--neutral(){
+  @include u-font-color($primary);
+  @include u-form-color($cream, $primary, $primary, 'neutral', $primary);
+  background-color: $ivory;
   
   a {
     &:hover {
