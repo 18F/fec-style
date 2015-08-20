@@ -4,10 +4,11 @@
 
 var $ = require('jquery');
 var _ = require('underscore');
-var keyboard = require('keyboardjs');
 var List = require('list.js');
 
 var terms = require('./terms');
+
+var KEYCODE_ESC = 27;
 
 var ITEM_TEMPLATE =
   '<li id="glossary-list-item" class="glossary__item">' +
@@ -64,7 +65,7 @@ Glossary.prototype.linkTerms = function() {
   var $terms = $(self.termSelector || '.term');
   $terms.each(function(){
     var $term = $(this);
-    $(this).attr('title', 'Click to define')
+    $term.attr('title', 'Click to define')
       .attr('tabindex', 0)
       .data('term', $term.data('term').toLowerCase());
   });
@@ -125,7 +126,7 @@ Glossary.prototype.handleInput = function(e) {
 
 /** Close glossary on escape keypress */
 Glossary.prototype.handleKeyup = function(e) {
-  if (e.keyCode == keyboard.key.code('escape')) {
+  if (e.keyCode == KEYCODE_ESC) {
     if (this.isOpen) {
       this.hide();
     }

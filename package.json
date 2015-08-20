@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "jquery": "2.1.4",
-    "keyboardjs": "2.1.1",
     "list.js": "git://github.com/jmcarp/list.js.git",
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
