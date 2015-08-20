@@ -155,5 +155,11 @@
     &:after {
       content: "Close";
     }
+
+    &:focus {
+      background-image: url('../img/i-x--primary-contrast.png');
+      background-image: url('../img/i-x--primary-contrast.svg');
+    }
+
   }
 }

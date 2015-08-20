@@ -3380,7 +3380,10 @@ a {
       background-image: url("../img/i-x--primary.svg");
       float: right; }
       .panel__close:after {
-        content: "Close"; } }
+        content: "Close"; }
+      .panel__close:focus {
+        background-image: url("../img/i-x--primary-contrast.png");
+        background-image: url("../img/i-x--primary-contrast.svg"); } }
 
 .datatable__container {
   float: left;
@@ -3423,6 +3426,10 @@ a {
     background-color: #FFFFF9;
     cursor: pointer;
     border-bottom: 1px solid #EFDECD; }
+    .data-table tr:focus {
+      outline: none; }
+      .data-table tr:focus td {
+        background-color: rgba(239, 222, 205, 0.3); }
     .data-table tr.row-active td {
       background-color: rgba(239, 222, 205, 0.3);
       border-top: 1px solid #EFDECD;
