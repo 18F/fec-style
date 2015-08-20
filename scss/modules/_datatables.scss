@@ -42,6 +42,11 @@
   th {
     padding: 2rem 0 .5rem 0;
     border-bottom: 1px solid $primary;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $primary-contrast;
+    }
   }
 
   tr {

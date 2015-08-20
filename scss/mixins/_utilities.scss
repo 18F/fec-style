@@ -78,6 +78,10 @@
   .button:hover {
     border-color: transparent;
   }
+
+  .button:focus {
+    border-color: #fff;
+  }
 }
 
 // u-form-color()
@@ -125,6 +129,10 @@
   [type="checkbox"]:checked + label::before {
     background-image: url('../img/i-check--' + $icon-color + '.png');
     background-image: url('../img/i-check--' + $icon-color + '.svg');
+  }
+
+  [type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $focus-color;
   }
 
   .button {

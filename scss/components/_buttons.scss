@@ -21,6 +21,10 @@
   &:hover {
     border-color: transparent;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 // Primary buttons
@@ -43,6 +47,10 @@
     background-color: lighten($primary-contrast, 10%);
   }
 
+  &:focus {
+    border-color: $primary-focus;
+  }
+  
   &:active,
   &.is-active {
     background-color: $navy;
@@ -71,6 +79,10 @@
     background-color: lighten($secondary-contrast, 10%);
   }  
 
+  &:focus {
+    border-color: $secondary-focus;
+  }
+
   &:active,
   &.is-active {
     background-color: $deep-red;
@@ -93,11 +105,14 @@
 .button--neutral {
   @extend .button;
   background-color: $neutral;
-  border: 2px solid $brown;
   color: $primary;
 
   &:hover {
     background-color: lighten($beige, 10%);
+  }
+
+  &:focus {
+    border-color: $neutral-focus;
   }
 
   &:active,

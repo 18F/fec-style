@@ -26,6 +26,8 @@
 }
 
 .dropdown__button {
+  background-color: $ivory-dark;
+  border: 2px solid $brown;
   position: relative;
   max-width: 20rem;
   text-align: left;
@@ -44,6 +46,10 @@
     position: absolute;
     right: 1.5rem;
     top: .5rem;
+  }
+
+  &:hover {
+    border-color: $brown;
   }
 }
 
