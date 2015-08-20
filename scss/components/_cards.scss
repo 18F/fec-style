@@ -26,14 +26,18 @@
   margin-bottom: 2rem;
   padding: 2rem;
   text-align: center;
-
-  .card__content {
-    text-align: left;
-  }
   
   @include media($med) {
     @include span-columns(2)
   }
+}
+
+.card__image:hover {
+  border-bottom: none;
+}
+
+.card__content {
+  text-align: left;
 }
 
 .card--mini {

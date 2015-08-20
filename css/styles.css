@@ -1095,8 +1095,6 @@ a {
     clear: both;
     content: "";
     display: table; }
-  .card .card__content {
-    text-align: left; }
   @media screen and (min-width: 40em) {
     .card {
       float: left;
@@ -1105,6 +1103,12 @@ a {
       width: 14.70196%; }
       .card:last-child {
         margin-right: 0; } }
+
+.card__image:hover {
+  border-bottom: none; }
+
+.card__content {
+  text-align: left; }
 
 .card--mini {
   padding: 1rem;
