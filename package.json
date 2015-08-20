@@ -14,8 +14,11 @@
     "watch-sass": "node-sass scss/ -o css/ --watch"
   },
   "dependencies": {
+    "jquery": "2.1.4",
+    "list.js": "git://github.com/jmcarp/list.js.git",
     "node-bourbon": "4.2.2",
-    "node-neat": "1.7.1-beta1"
+    "node-neat": "1.7.1-beta1",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
     "kss": "^2.1.0",
