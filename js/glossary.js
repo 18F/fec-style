@@ -6,8 +6,6 @@ var $ = require('jquery');
 var _ = require('underscore');
 var List = require('list.js');
 
-var terms = require('./terms');
-
 var KEYCODE_ESC = 27;
 
 var ITEM_TEMPLATE =
@@ -19,18 +17,26 @@ var ITEM_TEMPLATE =
     '<p class="glossary-definition js-accordion_item"></p>' +
   '</li>';
 
+var defaultSelectors = {
+  body: '#glossary',
+  toggle: '#glossary-toggle',
+  term: '.term'
+};
+
 /**
  * Glossary widget
  * @constructor
- * @param {string} bodySelector - CSS selector for glossary body
- * @param {string} toggleSelector - CSS selector for glossary toggle
- * @param {string} termSelector - CSS selector for glossary terms in document
+ * @param {Array} terms - Term objects with "glossary-term" and "glossary-definition" keys
+ * @param {Object} selectors = CSS selectors for glossary components
  */
-function Glossary(bodySelector, toggleSelector, termSelector) {
+function Glossary(terms, selectors) {
   var self = this;
 
-  self.$body = $(bodySelector);
-  self.$toggle = $(toggleSelector);
+  self.terms = terms;
+  self.selectors = _.extend({}, defaultSelectors, selectors);
+
+  self.$body = $(self.selectors.body);
+  self.$toggle = $(self.selectors.toggle);
   self.$search = this.$body.find('.glossary__search');
 
   // Initialize state
@@ -55,14 +61,14 @@ Glossary.prototype.populate = function() {
     listClass: 'glossary__list',
     searchClass: 'glossary__search'
   };
-  this.list = new List('glossary', options, terms);
+  this.list = new List('glossary', options, this.terms);
   this.list.sort('glossary-term', {order: 'asc'});
 };
 
 /** Add links to terms in body */
 Glossary.prototype.linkTerms = function() {
   var self = this;
-  var $terms = $(self.termSelector || '.term');
+  var $terms = $(self.selectors.term);
   $terms.each(function(){
     var $term = $(this);
     $term.attr('title', 'Click to define')

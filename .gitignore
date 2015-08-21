@@ -1,4 +1,4 @@
-node_modules
-
+coverage
 styleguide
+node_modules
 fec-template/public/main.js
