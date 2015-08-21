@@ -14,7 +14,7 @@ $(SLT_ACCORDION).each(function() {
   Object.create(accordion).init($(this));
 });
 
-$('.js-checkbox-filters').each(function() {
+$('.js-dropdown').each(function() {
   new dropdown.Dropdown(this);
 })
 },{"../../js/accordion.js":2,"../../js/dropdowns.js":3,"../../js/glossary.js":5,"jquery":8}],2:[function(require,module,exports){
@@ -176,12 +176,19 @@ module.exports = accordion;
 /* global require, module, document */
 
 var $ = require('jquery');
-var _ = require('underscore');
 
 var KEYCODE_ESC = 27;
 
+/**
+ * Dropdown toggles
+ * @constructor
+ * @param {string} mainSelector - CSS selector for the fieldset that contains everything
+ */
+
 function Dropdown(mainSelector) {
     var self = this;
+
+    self.isOpen = false;
 
     self.$body = $(mainSelector);
     self.$selected = this.$body.find('.dropdown__selected');
@@ -190,14 +197,15 @@ function Dropdown(mainSelector) {
     self.$items = this.$panel.find('.dropdown__item');
     self.$checkboxes = this.$panel.find('input[type="checkbox"]');
 
-    self.isOpen = false;
-
     self.$button.on('click', this.toggle.bind(this));
     self.$checkboxes.each(function(){
         $(this).on('change', self.selectItem.bind(self));
     });
-
     $(document.body).on('click keyup', this.handleExit.bind(this));
+
+    // Set ARIA attributes
+    self.$button.attr('aria-haspopup', 'true');
+    self.$panel.attr('aria-label','More options');
 }
 
 Dropdown.prototype.toggle = function() {
@@ -237,7 +245,7 @@ Dropdown.prototype.selectItem = function() {
         $next.find('input[type="checkbox"]').focus();
     } else if ( $prev.length ) {
         $prev.find('input[type="checkbox"]').focus();
-    } else {
+    } else if ( this.$panel.find('.dropdown__item').length === 0 ) {
         this.removePanel();
     }
 }
@@ -245,11 +253,12 @@ Dropdown.prototype.selectItem = function() {
 Dropdown.prototype.removePanel = function() {
     this.$selected.find('input[type="checkbox"]').focus();
     this.$panel.remove();
-    this.$button.addClass('is-disabled').unbind('click').attr('tabindex','-1');
+    this.$button.remove();
+
 }
 
 module.exports = {Dropdown: Dropdown};
-},{"jquery":8,"underscore":27}],4:[function(require,module,exports){
+},{"jquery":8}],4:[function(require,module,exports){
 'use strict';
 
 /* global require, module, window */

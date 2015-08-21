@@ -13,6 +13,6 @@ $(SLT_ACCORDION).each(function() {
   Object.create(accordion).init($(this));
 });
 
-$('.js-checkbox-filters').each(function() {
+$('.js-dropdown').each(function() {
   new dropdown.Dropdown(this);
 })

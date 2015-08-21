@@ -724,7 +724,7 @@ Default layout is image stacked on text</p>
           Example
         </div>
         <div class="kss-modifier__example">
-          <fieldset class="js-checkbox-filters">
+          <fieldset class="js-dropdown">
   <legend class="label">Election Years</legend>
   <ul class="dropdown__selected"></ul>
   <div class="dropdown">
@@ -747,34 +747,11 @@ Default layout is image stacked on text</p>
     </div>
   </div>
 </fieldset>
-<fieldset class="js-checkbox-filters">
-  <legend class="label">Another Field</legend>
-  <ul class="dropdown__selected"></ul>
-  <div class="dropdown">
-    <button class="dropdown__button button--neutral">More</button>
-    <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
-      <ul class="dropdown__list">
-        <li class="dropdown__item">
-          <input id="D" name="cycle" type="checkbox" value="D" />
-          <label class="dropdown__value" for="D">D</label>
-        </li>
-        <li class="dropdown__item">
-          <input id="E" name="cycle" type="checkbox" value="E" />
-          <label class="dropdown__value" for="E">E</label>
-        </li>
-        <li class="dropdown__item">
-          <input id="F" name="cycle" type="checkbox" value="F" />
-          <label class="dropdown__value" for="F">F</label>
-        </li>
-      </ul>
-    </div>
-  </div>
-</fieldset>
         </div>
       </div>
 
       <div class="kss-markup kss-style">
-        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;js-checkbox-filters&quot;&gt;
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;js-dropdown&quot;&gt;
   &lt;legend class=&quot;label&quot;&gt;Election Years&lt;/legend&gt;
   &lt;ul class=&quot;dropdown__selected&quot;&gt;&lt;/ul&gt;
   &lt;div class=&quot;dropdown&quot;&gt;
@@ -792,29 +769,6 @@ Default layout is image stacked on text</p>
         &lt;li class=&quot;dropdown__item&quot;&gt;
           &lt;input id=&quot;C&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;C&quot; /&gt;
           &lt;label class=&quot;dropdown__value&quot; for=&quot;C&quot;&gt;C&lt;/label&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;
-&lt;fieldset class=&quot;js-checkbox-filters&quot;&gt;
-  &lt;legend class=&quot;label&quot;&gt;Another Field&lt;/legend&gt;
-  &lt;ul class=&quot;dropdown__selected&quot;&gt;&lt;/ul&gt;
-  &lt;div class=&quot;dropdown&quot;&gt;
-    &lt;button class=&quot;dropdown__button button--neutral&quot;&gt;More&lt;/button&gt;
-    &lt;div id=&quot;cycle-dropdown&quot; class=&quot;dropdown__panel&quot; aria-hidden=&quot;true&quot;&gt;
-      &lt;ul class=&quot;dropdown__list&quot;&gt;
-        &lt;li class=&quot;dropdown__item&quot;&gt;
-          &lt;input id=&quot;D&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;D&quot; /&gt;
-          &lt;label class=&quot;dropdown__value&quot; for=&quot;D&quot;&gt;D&lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;dropdown__item&quot;&gt;
-          &lt;input id=&quot;E&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;E&quot; /&gt;
-          &lt;label class=&quot;dropdown__value&quot; for=&quot;E&quot;&gt;E&lt;/label&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;dropdown__item&quot;&gt;
-          &lt;input id=&quot;F&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;F&quot; /&gt;
-          &lt;label class=&quot;dropdown__value&quot; for=&quot;F&quot;&gt;F&lt;/label&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
