@@ -3,9 +3,9 @@
 /* global require */
 
 var $ = require('jquery');
-var accordion = require('../../js/accordion.js');
-var glossary = require('../../js/glossary.js');
-var dropdown = require('../../js/dropdowns.js');
+var accordion = require('../../js/accordion');
+var glossary = require('../../js/glossary');
+var dropdown = require('../../js/dropdowns');
 
 var SLT_ACCORDION = '.js-accordion';
 
