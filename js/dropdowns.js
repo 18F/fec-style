@@ -3,7 +3,6 @@
 /* global require, module, document */
 
 var $ = require('jquery');
-var _ = require('underscore');
 
 var KEYCODE_ESC = 27;
 
@@ -73,7 +72,7 @@ Dropdown.prototype.selectItem = function() {
         $next.find('input[type="checkbox"]').focus();
     } else if ( $prev.length ) {
         $prev.find('input[type="checkbox"]').focus();
-    } else {
+    } else if ( this.$panel.find('.dropdown__item').length === 0 ) {
         this.removePanel();
     }
 }
@@ -81,7 +80,8 @@ Dropdown.prototype.selectItem = function() {
 Dropdown.prototype.removePanel = function() {
     this.$selected.find('input[type="checkbox"]').focus();
     this.$panel.remove();
-    this.$button.addClass('is-disabled').unbind('click').attr('tabindex','-1');
+    this.$button.remove();
+
 }
 
 module.exports = {Dropdown: Dropdown};
