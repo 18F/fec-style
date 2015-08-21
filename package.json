@@ -12,7 +12,7 @@
     "build-styleguide": "kss-node --config kss-config.json && cd fec-template/ && npm run less",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
-    "test": "mochify tests/*.js"
+    "test": "mochify tests/*.js --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' ]"
   },
   "dependencies": {
     "eventemitter2": "0.4.14",
@@ -28,6 +28,7 @@
     "less": "^2.5.1",
     "mocha": "^2.2.5",
     "mochify": "^2.13.0",
+    "mochify-istanbul": "^2.3.0",
     "node-sass": "^3.2.0",
     "watch": "^0.16.0"
   }
