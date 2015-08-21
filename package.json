@@ -20,6 +20,7 @@
     "list.js": "git://github.com/jmcarp/list.js.git",
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
+    "perfect-scrollbar": "0.6.2",
     "underscore": "1.8.3"
   },
   "devDependencies": {

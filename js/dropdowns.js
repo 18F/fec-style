@@ -47,7 +47,6 @@ Dropdown.prototype.show = function() {
     var checkboxes = this.$panel.find('input[type="checkbox"]');
     checkboxes[0].focus();
     this.isOpen = true;
-
 }
 
 Dropdown.prototype.hide = function() {
