@@ -15,12 +15,15 @@
     "watch-sass": "node-sass scss/ -o css/ --watch"
   },
   "dependencies": {
+    "URIjs": "1.16.0",
     "eventemitter2": "0.4.14",
+    "handlebars": "3.0.3",
     "jquery": "2.1.4",
     "list.js": "git://github.com/jmcarp/list.js.git",
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
     "perfect-scrollbar": "0.6.2",
+    "typeahead.js": "0.10.5",
     "underscore": "1.8.3"
   },
   "devDependencies": {
