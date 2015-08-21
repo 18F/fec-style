@@ -53,7 +53,7 @@ Dropdown.prototype.hide = function() {
 
 Dropdown.prototype.handleClick = function(ev) {
   var $target = $(ev.target);
-  if ( !this.$panel.has($target).length ) {
+  if ( !this.$body.has($target).length ) {
     this.hide.apply(this);
   }
 }
