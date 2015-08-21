@@ -1,10 +1,26 @@
-// Accordions/
+// Accordions
+//
+// Markup:
+// <div class="js-accordion">
+//   <div class="js-accordion_header accordion__header">
+//     <h2 class="accordion__title">Acccordion header</h2>
+//     <button class="js-accordion_button accordion__button button--primary"></button>
+//   </div>
+//   <div class="js-accordion_item accordion__item">
+//     <p>Accordion content</p>
+//   </div>
+// </div>
 //
 // Styleguide components.accordions
 
 .accordion__header {
   position: relative;
   clear: both;
+  padding: 1rem 0;
+}
+
+.accordion__title {
+  margin: 0;
 }
 
 .accordion__button {
@@ -52,10 +68,6 @@
     border-top: 2px solid $primary;
     border-bottom: 2px solid $primary;
     padding: 1rem;
-
-    .accordion__title {
-      margin: 0;
-    }
   }
   
   .accordion__item {
