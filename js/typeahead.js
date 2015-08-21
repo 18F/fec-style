@@ -135,4 +135,7 @@ Typeahead.prototype.select = function(event, datum, name) {
   window.location = this.url + name + '/' + datum.id;
 };
 
-module.exports = {Typeahead: Typeahead};
+module.exports = {
+  Typeahead: Typeahead,
+  datasets: datasets
+};
