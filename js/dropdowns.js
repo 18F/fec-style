@@ -35,7 +35,8 @@ function Dropdown(mainSelector) {
     self.$panel.attr('aria-label','More options');
 }
 
-Dropdown.prototype.toggle = function() {
+Dropdown.prototype.toggle = function(ev) {
+  ev.preventDefault();
   var method = this.isOpen ? this.hide : this.show;
   method.apply(this);
 }
