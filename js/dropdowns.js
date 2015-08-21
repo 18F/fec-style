@@ -3,7 +3,7 @@
 /* global require, module, document */
 
 var $ = require('jquery');
-
+var perfectScrollbar = require('perfect-scrollbar/jquery') ($);
 var KEYCODE_ESC = 27;
 
 /**
@@ -16,12 +16,12 @@ function Dropdown(mainSelector) {
     var self = this;
 
     self.isOpen = false;
+    self.hasPanel = true;
 
     self.$body = $(mainSelector);
     self.$selected = this.$body.find('.dropdown__selected');
     self.$button = this.$body.find('.dropdown__button');
     self.$panel = this.$body.find('.dropdown__panel');
-    self.$items = this.$panel.find('.dropdown__item');
     self.$checkboxes = this.$panel.find('input[type="checkbox"]');
 
     self.$button.on('click', this.toggle.bind(this));
@@ -43,9 +43,11 @@ Dropdown.prototype.toggle = function(ev) {
 
 Dropdown.prototype.show = function() {
     this.$panel.attr('aria-hidden', 'false');
+    this.$panel.perfectScrollbar({ 'suppressScrollX': true });
     var checkboxes = this.$panel.find('input[type="checkbox"]');
     checkboxes[0].focus();
     this.isOpen = true;
+
 }
 
 Dropdown.prototype.hide = function() {
@@ -73,16 +75,18 @@ Dropdown.prototype.selectItem = function() {
         $next.find('input[type="checkbox"]').focus();
     } else if ( $prev.length ) {
         $prev.find('input[type="checkbox"]').focus();
-    } else if ( this.$panel.find('.dropdown__item').length === 0 ) {
+    } else if ( !this.$panel.find('.dropdown__item').length ) {
         this.removePanel();
-    }
+    }        
 }
 
 Dropdown.prototype.removePanel = function() {
-    this.$selected.find('input[type="checkbox"]').focus();
-    this.$panel.remove();
-    this.$button.remove();
-
+    if ( this.hasPanel ) {
+      this.$selected.find('input[type="checkbox"]').focus();
+      this.$panel.remove();
+      this.$button.remove();
+      this.hasPanel = false;
+    }
 }
 
 module.exports = {Dropdown: Dropdown};
