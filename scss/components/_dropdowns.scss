@@ -3,16 +3,24 @@
 // Default styling is for the filter panels
 //
 // Markup:
-// <fieldset class="js-checkbox-filters">
+// <fieldset class="js-dropdown">
 //   <legend class="label">Election Years</legend>
 //   <ul class="dropdown__selected"></ul>
 //   <div class="dropdown">
-//     <button class="js-toggle js-dropdown dropdown__button button--neutral" data-toggles="cycle-dropdown">More</button>
+//     <button class="dropdown__button button--neutral">More</button>
 //     <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
 //       <ul class="dropdown__list">
-//         <li>
-//           <input id="cycle-checkbox-year" name="cycle" type="checkbox" value="2011" />
-//           <label class="dropdown__value" for="cycle-checkbox-year">2011 - 2012</label>
+//         <li class="dropdown__item">
+//           <input id="A" name="cycle" type="checkbox" value="A" />
+//           <label class="dropdown__value" for="A">A</label>
+//         </li>
+//         <li class="dropdown__item">
+//           <input id="B" name="cycle" type="checkbox" value="B" />
+//           <label class="dropdown__value" for="B">B</label>
+//         </li>
+//         <li class="dropdown__item">
+//           <input id="C" name="cycle" type="checkbox" value="C" />
+//           <label class="dropdown__value" for="C">C</label>
 //         </li>
 //       </ul>
 //     </div>
@@ -61,23 +69,24 @@
   overflow: hidden;
   z-index: 999;
 
-  .dropdown__item {
+  .dropdown__value {
     border-bottom: 2px solid $ivory-dark;
-    white-space: nowrap;
+    margin-bottom: 0;
     padding: .5rem 1rem;
+    white-space: nowrap;
 
     &:hover {
       background-color: $ivory;
       cursor: pointer;
     }    
-  }
- 
-  .dropdown__value {
-    margin-bottom: 0;
-    
+
     &:before {
       display: none;
     }
+  }
+ 
+  input:focus + .dropdown__value {
+    background-color: $ivory;
   }
      
   
