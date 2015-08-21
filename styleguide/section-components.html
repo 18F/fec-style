@@ -57,7 +57,7 @@
             <li class="kss-nav__menu-item">
               <a href="section-components.html#kssref-components-accordions">
                 <span class="kss-nav__ref">4.1</span
-                ><span class="kss-nav__name">Accordions/</span>
+                ><span class="kss-nav__name">Accordions</span>
               </a>
             </li>
             <li class="kss-nav__menu-item">
@@ -212,13 +212,41 @@
                 #components.accordions
             </span>
           </span>
-          Accordions/
+          Accordions
         </a>
       </h2>
 
 
     </div>
 
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+        </div>
+        <div class="kss-modifier__example">
+          <div class="js-accordion">
+  <div class="js-accordion_header accordion__header">
+    <h2 class="accordion__title">Acccordion header</h2>
+    <button class="js-accordion_button accordion__button button--primary"></button>
+  </div>
+  <div class="js-accordion_item accordion__item">
+    <p>Accordion content</p>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;js-accordion&quot;&gt;
+  &lt;div class=&quot;js-accordion_header accordion__header&quot;&gt;
+    &lt;h2 class=&quot;accordion__title&quot;&gt;Acccordion header&lt;/h2&gt;
+    &lt;button class=&quot;js-accordion_button accordion__button button--primary&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;js-accordion_item accordion__item&quot;&gt;
+    &lt;p&gt;Accordion content&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
 
       </section>
       <section id="kssref-components-billboards" class="kss-section kss-section--depth-2">
@@ -700,12 +728,43 @@ Default layout is image stacked on text</p>
   <legend class="label">Election Years</legend>
   <ul class="dropdown__selected"></ul>
   <div class="dropdown">
-    <button class="js-toggle js-dropdown dropdown__button button--neutral" data-toggles="cycle-dropdown">More</button>
+    <button class="dropdown__button button--neutral">More</button>
     <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
       <ul class="dropdown__list">
-        <li>
-          <input id="cycle-checkbox-year" name="cycle" type="checkbox" value="2011" />
-          <label class="dropdown__value" for="cycle-checkbox-year">2011 - 2012</label>
+        <li class="dropdown__item">
+          <input id="A" name="cycle" type="checkbox" value="A" />
+          <label class="dropdown__value" for="A">A</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="B" name="cycle" type="checkbox" value="B" />
+          <label class="dropdown__value" for="B">B</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="C" name="cycle" type="checkbox" value="C" />
+          <label class="dropdown__value" for="C">C</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</fieldset>
+<fieldset class="js-checkbox-filters">
+  <legend class="label">Another Field</legend>
+  <ul class="dropdown__selected"></ul>
+  <div class="dropdown">
+    <button class="dropdown__button button--neutral">More</button>
+    <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
+      <ul class="dropdown__list">
+        <li class="dropdown__item">
+          <input id="D" name="cycle" type="checkbox" value="D" />
+          <label class="dropdown__value" for="D">D</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="E" name="cycle" type="checkbox" value="E" />
+          <label class="dropdown__value" for="E">E</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="F" name="cycle" type="checkbox" value="F" />
+          <label class="dropdown__value" for="F">F</label>
         </li>
       </ul>
     </div>
@@ -719,12 +778,43 @@ Default layout is image stacked on text</p>
   &lt;legend class=&quot;label&quot;&gt;Election Years&lt;/legend&gt;
   &lt;ul class=&quot;dropdown__selected&quot;&gt;&lt;/ul&gt;
   &lt;div class=&quot;dropdown&quot;&gt;
-    &lt;button class=&quot;js-toggle js-dropdown dropdown__button button--neutral&quot; data-toggles=&quot;cycle-dropdown&quot;&gt;More&lt;/button&gt;
+    &lt;button class=&quot;dropdown__button button--neutral&quot;&gt;More&lt;/button&gt;
     &lt;div id=&quot;cycle-dropdown&quot; class=&quot;dropdown__panel&quot; aria-hidden=&quot;true&quot;&gt;
       &lt;ul class=&quot;dropdown__list&quot;&gt;
-        &lt;li&gt;
-          &lt;input id=&quot;cycle-checkbox-year&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;2011&quot; /&gt;
-          &lt;label class=&quot;dropdown__value&quot; for=&quot;cycle-checkbox-year&quot;&gt;2011 - 2012&lt;/label&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;A&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;A&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;A&quot;&gt;A&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;B&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;B&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;B&quot;&gt;B&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;C&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;C&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;C&quot;&gt;C&lt;/label&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;js-checkbox-filters&quot;&gt;
+  &lt;legend class=&quot;label&quot;&gt;Another Field&lt;/legend&gt;
+  &lt;ul class=&quot;dropdown__selected&quot;&gt;&lt;/ul&gt;
+  &lt;div class=&quot;dropdown&quot;&gt;
+    &lt;button class=&quot;dropdown__button button--neutral&quot;&gt;More&lt;/button&gt;
+    &lt;div id=&quot;cycle-dropdown&quot; class=&quot;dropdown__panel&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;ul class=&quot;dropdown__list&quot;&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;D&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;D&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;D&quot;&gt;D&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;E&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;E&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;E&quot;&gt;E&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;F&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;F&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;F&quot;&gt;F&lt;/label&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -1613,6 +1703,7 @@ This component is focused on the styling.</p>
 <!-- SCRIPTS -->
 <script src="public/kss.js"></script>
 <script src="public/prettify.js"></script>
+<script src="public/main.js"></script>
 <script>
   prettyPrint();
 </script>

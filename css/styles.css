@@ -2104,17 +2104,18 @@ span.tt-suggestion__office {
   max-height: 30rem;
   overflow: hidden;
   z-index: 999; }
-  .dropdown__panel .dropdown__item {
+  .dropdown__panel .dropdown__value {
     border-bottom: 2px solid #D8C4B1;
-    white-space: nowrap;
-    padding: 0.5rem 1rem; }
-    .dropdown__panel .dropdown__item:hover {
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    white-space: nowrap; }
+    .dropdown__panel .dropdown__value:hover {
       background-color: #EFDECD;
       cursor: pointer; }
-  .dropdown__panel .dropdown__value {
-    margin-bottom: 0; }
     .dropdown__panel .dropdown__value:before {
       display: none; }
+  .dropdown__panel input:focus + .dropdown__value {
+    background-color: #EFDECD; }
   .dropdown__panel .dropdown__subhead {
     font-size: 1.4rem;
     font-weight: bold; }
@@ -2161,7 +2162,11 @@ span.tt-suggestion__office {
 
 .accordion__header {
   position: relative;
-  clear: both; }
+  clear: both;
+  padding: 1rem 0; }
+
+.accordion__title {
+  margin: 0; }
 
 .accordion__button {
   position: absolute;
@@ -2212,8 +2217,6 @@ span.tt-suggestion__office {
   border-top: 2px solid #022C53;
   border-bottom: 2px solid #022C53;
   padding: 1rem; }
-  .accordion--secondary .accordion__header .accordion__title {
-    margin: 0; }
 
 .accordion--secondary .accordion__item {
   padding: 2rem;

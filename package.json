@@ -7,7 +7,8 @@
     "url": "git://github.com/18F/fec-style.git"
   },
   "scripts": {
-    "build": "npm run build-sass && npm run build-styleguide",
+    "build": "npm run build-sass && npm run build-js && npm run build-styleguide",
+    "build-js": "browserify fec-template/public/init.js > fec-template/public/main.js",
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "kss-node --config kss-config.json && cd fec-template/ && npm run less",
     "watch": "watch 'npm run build' ./scss",
@@ -22,6 +23,7 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
+    "browserify": "^11.0.1",    
     "kss": "^2.1.0",
     "less": "^2.5.1",
     "node-sass": "^3.2.0",
