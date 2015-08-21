@@ -28,7 +28,7 @@ function Dropdown(mainSelector) {
     self.$checkboxes.each(function(){
         $(this).on('change', self.selectItem.bind(self));
     });
-    $(document.body).on('click keyup', this.handleExit.bind(this));
+    // $(document.body).on('click keyup', this.handleExit.bind(this));
 
     // Set ARIA attributes
     self.$button.attr('aria-haspopup', 'true');
