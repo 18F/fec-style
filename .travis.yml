@@ -1,0 +1,12 @@
+language: node_js
+node_js: "0.12"
+
+sudo: false
+
+before_script:
+  - travis_retry npm install codecov.io
+
+script: npm test
+
+after_success:
+  - cat ./coverage/coverage-final.json | ./node_modules/codecov.io/bin/codecov.io.js
