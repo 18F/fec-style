@@ -16,7 +16,6 @@ function Dropdown(selector) {
   var self = this;
 
   self.isOpen = false;
-  self.hasPanel = true;
 
   self.$body = $(selector);
   self.$selected = this.$body.find('.dropdown__selected');
@@ -24,7 +23,7 @@ function Dropdown(selector) {
   self.$panel = this.$body.find('.dropdown__panel');
 
   self.$button.on('click', this.toggle.bind(this));
-  self.$panel.on('change', 'input[type="checkbox"]', this.selectItem.bind(this));
+  self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
   $(document.body).on('click', this.handleClick.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
@@ -66,9 +65,15 @@ Dropdown.prototype.handleKeyup = function(e) {
   }
 };
 
-Dropdown.prototype.selectItem = function() {
-  var $checked = this.$panel.find('input:checked');
-  var $item = $checked.parent('.dropdown__item');
+Dropdown.prototype.handleCheck = function(e) {
+  var $input = $(e.target);
+  if ($input.is(':checked')) {
+    this.selectItem($input);
+  }
+};
+
+Dropdown.prototype.selectItem = function($input) {
+  var $item = $input.parent('.dropdown__item');
   var $prev = $item.prev('.dropdown__item');
   var $next = $item.next('.dropdown__item');
   this.$selected.append($item);
@@ -76,18 +81,15 @@ Dropdown.prototype.selectItem = function() {
     $next.find('input[type="checkbox"]').focus();
   } else if ($prev.length) {
     $prev.find('input[type="checkbox"]').focus();
-  } else if (!this.$panel.find('.dropdown__item').length) {
+  } else {
     this.removePanel();
   }
 };
 
 Dropdown.prototype.removePanel = function() {
-  if (this.hasPanel) {
-    this.$selected.find('input[type="checkbox"]').focus();
-    this.$panel.remove();
-    this.$button.remove();
-    this.hasPanel = false;
-  }
+  this.$selected.find('input[type="checkbox"]').focus();
+  this.$panel.remove();
+  this.$button.remove();
 };
 
 module.exports = {Dropdown: Dropdown};
