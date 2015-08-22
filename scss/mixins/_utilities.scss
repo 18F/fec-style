@@ -79,6 +79,14 @@
     border-color: transparent;
   }
 
+  .button--primary {
+    color: $primary;
+  }
+  
+  .button--secondary {
+    color: $secondary;
+  }
+
   .button:focus {
     border-color: #fff;
   }

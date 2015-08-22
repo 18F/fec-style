@@ -3,7 +3,7 @@
 // For classes that define type styles
 // Prefix these styles with t-
 //
-// Styleguide comopnents.type-styles
+// Styleguide components.type-styles
 
 // Display
 //
@@ -31,7 +31,7 @@
 // Markup:
 // <span class="t-display--sans">$2,010</span>
 //
-// Styleguide type-styles.display-sans
+// Styleguide components.type-styles.display-sans
 
 .t-display--sans {
   @include heading(display);
@@ -48,7 +48,7 @@
 // Markup:
 // <h2 class="t-ruled {{ modifier_class }}">Another heading</h2>
 //
-// Styleguide type-styles.ruled-headings
+// Styleguide components.type-styles.ruled-headings
 
 .t-ruled {
   @include clearfix();
@@ -89,7 +89,7 @@
 // Markup:
 // <p class="{{ modifier_class }}"">Some sample text</p>
 //
-// Styleguide type-styles.modifiers
+// Styleguide components.type-styles.modifiers
 
 .is-centered {
   text-align: center;

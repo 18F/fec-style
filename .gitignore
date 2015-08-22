@@ -2,3 +2,5 @@ coverage
 styleguide
 node_modules
 fec-template/public/main.js
+
+css/styles.css

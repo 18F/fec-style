@@ -23,9 +23,11 @@
   @include clearfix();
   background-color: $neutral;
   border-radius: 4px;
+  font-size: 1.6rem;
   margin-bottom: 2rem;
   padding: 2rem;
   text-align: center;
+  font-weight: bold;
   
   @include media($med) {
     @include span-columns(2)
@@ -112,7 +114,7 @@
 //  </aside>
 // </div>
 //
-// Styleguide cards.primary
+// Styleguide components.cards.primary
 
 .card--primary {
   @include u-bg--primary();
@@ -137,7 +139,7 @@
 //  </aside>
 // </div>
 //
-// Styleguide cards.alternate-colors
+// Styleguide components.cards.alternate-colors
 
 .card--secondary {
   @include u-bg--secondary();
@@ -150,7 +152,7 @@
 // 
 // .card--tiled
 //
-// Styleguide cards.tiled-cards
+// Styleguide components.cards.tiled-cards
 
 .card--tiled {  
   &:nth-child(even) {
