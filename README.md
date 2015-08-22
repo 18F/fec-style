@@ -33,7 +33,7 @@ Run unit tests:
 
 Watching the Sass:
 
-  $ npm run watch-sass
+    $ npm run watch-sass
 
 Note: in order for css changes to be visible on the styleguide, you need to run `npm run copy-css`, which will copy it to the styleguide directory.
 
@@ -49,13 +49,13 @@ And then we're using a custom template for the styleguide, which lives in
 
 Host the styleguide on a local server:
 
-  $ npm install http-server
-  $ http-server
+    $ npm install http-server
+    $ http-server
 
 To upload screenshots to [percy.io](https://percy.io):
 
-  $ gem install percy
-  $ npm run percy
+    $ gem install percy
+    $ npm run percy
 
 ## Using KSS
 We use the KSS standard for documenting our Sass. This is both readable to humans and can be used to automatically generate styleguides. Here's an example:
