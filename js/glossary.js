@@ -27,7 +27,7 @@ var defaultSelectors = {
  * Glossary widget
  * @constructor
  * @param {Array} terms - Term objects with "glossary-term" and "glossary-definition" keys
- * @param {Object} selectors = CSS selectors for glossary components
+ * @param {Object} selectors - CSS selectors for glossary components
  */
 function Glossary(terms, selectors) {
   var self = this;

@@ -1,12 +1,14 @@
-'use strict'
+'use strict';
 
-/* global require, window, describe, before, beforeEach, after, afterEach, it */
+/* global require, document, describe, before, beforeEach, after, afterEach, it */
 
 var chai = require('chai');
+var sinon = require('sinon');
+var sinonChai = require('sinon-chai');
 var expect = chai.expect;
+chai.use(sinonChai);
 
 var $ = require('jquery');
-var _ = require('underscore');
 
 var Dropdown = require('../js/dropdowns').Dropdown;
 
@@ -74,16 +76,34 @@ describe('dropdown', function() {
 
   it('handles a check', function() {
     var checkbox = this.dropdown.$panel.find('#A');
-    checkbox.click();   
+    checkbox.click();
     expect(checkbox.is(':checked')).to.be.true;
   });
 
-  it('selects inputs', function() {
+  it('selects input when checked', function() {
     this.dropdown.selectItem($('#A'));
     var selectedItems = this.dropdown.$selected.find('.dropdown__item');
     var panelItems = this.dropdown.$panel.find('.dropdown__item');
     expect(selectedItems.length).to.equal(1);
     expect(panelItems.length).to.equal(1);
+  });
+
+  it('focuses next input', function() {
+    this.dropdown.selectItem($('#A'));
+    expect(document.activeElement).to.equal($('#B').get(0));
+  });
+
+  it('focuses previous input when selecting the bottom item', function() {
+    this.dropdown.selectItem($('#B'));
+    expect(document.activeElement).to.equal($('#A').get(0));
+  });
+
+  it('calls remove on selecting the last item', function(){
+    sinon.spy(this.dropdown, 'removePanel');
+    this.dropdown.selectItem($('#A'));
+    expect(this.dropdown.removePanel).to.have.not.been.called;
+    this.dropdown.selectItem($('#B'));
+    expect(this.dropdown.removePanel).to.have.been.called;
   });
 
   it('removes the panel', function(){

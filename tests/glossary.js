@@ -1,12 +1,11 @@
-'use strict'
+'use strict';
 
-/* global require, window, describe, before, beforeEach, after, afterEach, it */
+/* global require, describe, before, beforeEach, after, afterEach, it */
 
 var chai = require('chai');
 var expect = chai.expect;
 
 var $ = require('jquery');
-var _ = require('underscore');
 
 var Glossary = require('../js/glossary').Glossary;
 
