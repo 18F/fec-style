@@ -3,6 +3,9 @@ path.shape {
   &.active {
     fill: $primary-contrast;
   }
+  &:hover {
+    stroke: $secondary-contrast;
+  }
 }
 
 .legend {
