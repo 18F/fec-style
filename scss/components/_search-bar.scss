@@ -23,13 +23,6 @@
 // Styleguide components.search-bar
 
 .combo--search {
-  .combo__button {
-    background-image: url('../img/i-search--primary.png');
-    background-image: url('../img/i-search--primary.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
   @include media($med) {
     .combo__input {
       width: calc(100% - 16.6rem);
@@ -65,6 +58,24 @@
   }
 }
 
+.combo__button {
+  &.button--primary {
+    @include u-background-image('i-search--primary');
+  }
+
+  &.button--primary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+
+  &.secondary {
+    @include u-background-image('i-search--secondary');
+  }
+
+  &.button--secondary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+}
+
 .search__select {
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
@@ -92,7 +103,7 @@
 
 .tt-dropdown-menu {
   background-color: $cream;
-  border: 1px solid $ivory;
+  border: 1px solid;
   font-family: $sans-serif;
   left: 0;
   text-align: left;
@@ -142,5 +153,34 @@ span.tt-suggestion__office {
 
   .tt-suggestion__office {
     color: $primary;
+  }
+}
+
+// Mini Search Bar
+//
+// Markup:
+// <div class="slab slab--neutral">
+//   <div class="container">
+//     <form id="mini-search" autocomplete="off" class="search__container usa-width-one-fourth js-search">
+//       <div class="combo combo--search combo--search--mini">
+//         <input type="text" class="combo__input js-search-input">
+//         <button type="submit" class="button--primary-contrast combo__button">
+//          <span class="u-visually-hidden">Search</span>
+//         </button>
+//       </div>
+//     </form>
+//   </div>
+// </div>
+//
+// Styleguide components.search-bar-mini
+
+.combo--search--mini {
+  .combo__input {
+    width: calc(100% - 4.4rem);
+  }
+
+  .tt-dropdown-menu {
+    font-size: 1.2rem;
+    width: 100%;
   }
 }
