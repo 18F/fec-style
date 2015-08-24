@@ -73,6 +73,14 @@
   .t-ruled {
     border-color: $color;
   }
+
+  .button--primary {
+    color: $primary;
+  }
+  
+  .button--secondary {
+    color: $secondary;
+  }
 }
 
 // u-form-color()
