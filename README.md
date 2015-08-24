@@ -54,7 +54,9 @@ Host the styleguide on a local server:
 
 To upload screenshots to [percy.io](https://percy.io):
 
-    $ gem install percy
+    $ gem install percy-cli
+    $ export PERCY_TOKEN="<Percy API token>"
+    $ export PERCY_REPO_SLUG="<GitHub repository slug>"
     $ npm run percy
 
 ## Using KSS
