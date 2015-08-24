@@ -7,10 +7,13 @@
     "url": "git://github.com/18F/fec-style.git"
   },
   "scripts": {
-    "build": "npm run build-sass && npm run build-js && npm run build-styleguide",
+    "build": "npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images",
     "build-js": "browserify fec-template/public/init.js > fec-template/public/main.js",
     "build-sass": "node-sass scss/ -o css/",
-    "build-styleguide": "kss-node --config kss-config.json && cd fec-template/ && npm run less",
+    "build-styleguide": "rm -rf styleguide && kss-node --config kss-config.json && cd fec-template/ && npm run less",
+    "copy-images": "cp -R img styleguide/img",
+    "copy-css": "cp -R css styleguide/css",
+    "percy": "percy snapshot styleguide",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
     "test": "mochify tests/*.js --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' ]"
