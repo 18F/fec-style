@@ -108,7 +108,7 @@
   left: 0;
   text-align: left;
   position: absolute;
-  width: calc(100% - 6.6rem);
+  width: calc(100% - 6.8rem);
 }
 
 .tt-dropdown-menu {
@@ -117,30 +117,29 @@
 }
 
 .tt-suggestion {
-  @include clearfix();
+  display: table;
   position: relative;
   padding: 1rem 1rem;
   margin-bottom: 0;
   line-height: 1;
   border-bottom: 1px solid $ivory;
+  width: 100%;
 }
 
 span.tt-suggestion__name {
   @include u-truncate();
   color: $primary;
-  display: block;
+  display: table-cell;
   float: left;
-  width: 65%;
 }
 
 span.tt-suggestion__office {
   color: $primary;
   font-size: 1.2rem;
   text-align: right;
-  display: block;
-  width: 35%;
-  float: right;
+  display: table-cell;
   font-style: italic;
+  float: right;
 }
 
 .tt-cursor {
@@ -183,7 +182,7 @@ span.tt-suggestion__office {
   .combo__button {
     height: 4rem;
   }
-  
+
   .tt-dropdown-menu {
     font-size: 1.2rem;
     width: 100%;

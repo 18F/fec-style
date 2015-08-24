@@ -1957,40 +1957,36 @@ a {
   left: 0;
   text-align: left;
   position: absolute;
-  width: calc(100% - 6.6rem); }
+  width: calc(100% - 6.8rem); }
 
 .tt-dropdown-menu {
   font-size: 1.6rem;
   top: 3.5rem !important; }
 
 .tt-suggestion {
+  display: table;
   position: relative;
   padding: 1rem 1rem;
   margin-bottom: 0;
   line-height: 1;
-  border-bottom: 1px solid #EFDECD; }
-  .tt-suggestion::after {
-    clear: both;
-    content: "";
-    display: table; }
+  border-bottom: 1px solid #EFDECD;
+  width: 100%; }
 
 span.tt-suggestion__name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #022C53;
-  display: block;
-  float: left;
-  width: 65%; }
+  display: table-cell;
+  float: left; }
 
 span.tt-suggestion__office {
   color: #022C53;
   font-size: 1.2rem;
   text-align: right;
-  display: block;
-  width: 35%;
-  float: right;
-  font-style: italic; }
+  display: table-cell;
+  font-style: italic;
+  float: right; }
 
 .tt-cursor {
   cursor: pointer;
@@ -2858,6 +2854,7 @@ a {
     .filters {
       float: left;
       margin-left: -20%;
+      min-width: 25rem;
       padding: 2rem;
       position: relative;
       width: 20%;
