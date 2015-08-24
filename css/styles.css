@@ -2001,7 +2001,11 @@ span.tt-suggestion__office {
     color: #022C53; }
 
 .combo--search--mini .combo__input {
-  width: calc(100% - 4.4rem); }
+  width: calc(100% - 4.4rem);
+  height: 4rem; }
+
+.combo--search--mini .combo__button {
+  height: 4rem; }
 
 .combo--search--mini .tt-dropdown-menu {
   font-size: 1.2rem;

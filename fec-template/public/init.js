@@ -20,6 +20,6 @@ $(SLT_ACCORDION).each(function() {
 
 $('.js-dropdown').each(function() {
   new dropdown.Dropdown(this);
-})
+});
 
 new typeahead.Typeahead('.js-search-input', $('.js-search-type').val());

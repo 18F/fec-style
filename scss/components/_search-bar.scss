@@ -177,8 +177,13 @@ span.tt-suggestion__office {
 .combo--search--mini {
   .combo__input {
     width: calc(100% - 4.4rem);
+    height: 4rem;
   }
 
+  .combo__button {
+    height: 4rem;
+  }
+  
   .tt-dropdown-menu {
     font-size: 1.2rem;
     width: 100%;
