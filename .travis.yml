@@ -3,10 +3,16 @@ node_js: "0.12"
 
 sudo: false
 
+env:
+  global:
+    secure: JSsg0tlPP+07nZovHVb5WfPF1HxmlWPQ1nVNyncowDgi/tJLo8WqINDuHMWqlMdFU2lsMYOKR4fSRxYO0upRncYp2eFNCL13y8f8u25XPoXVAhR6j50ekMZ5E3Cfx4F9OaxbI8OKs8SA7/4ISQhlOES2x2/0RCsl7FXGP3WnOOYM9gyk4fDBeShKXqztMcJEJjqq8DyPGFsq+8auIw33JT3mqHcQZoye49h8IIw/mSF3+DGx4DD3fdRq0z5BTEpOm7n4oLxmvElamuGRshU2IKm2xpZmHM/T6FqyyxbOEeRFWfKWNoiArNy7lNiQjJP8vLiCneRkLR6Xx1mTHlncxb5HCIxbBXBD2w2yyldaQJ6RGt2TnR8SB+Rt6zM+Es1TmhyRMkqusTvR1sz0hNXs/Mima4UmQElZeXfYFhg9aJUPNXPFw0nN+xdn58J90NHvgyEqYeEW8pjmtoV/WBlvg7L5mVK6u5qxPG4R8PZCR1qjTt6z3zVPHOa+i6TOqbns27T5d7FK54UHYitXA0XfPCQVnJEXhxhgF6gWN92AvtKW7120gdhioedE3xiKWjsm4KNowMe8XosEylnHj9XGalhzjJjHbUPSpgEp6ZrxhJXzsN7z1hnO8ZtnxiXojdlrp85E1iT817vTZORr0cZYlhTG2Y/lB4sdpgVKz2da7jM=
+
 before_script:
   - travis_retry npm install codecov.io
+  - travis_retry gem install percy-cli
 
 script: npm test
 
 after_success:
   - cat ./coverage/coverage-final.json | ./node_modules/codecov.io/bin/codecov.io.js
+  - npm run build && npm run percy
