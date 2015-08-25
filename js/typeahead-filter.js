@@ -17,7 +17,8 @@ var TypeaheadFilter = function(selector, dataset) {
   self.$selected = self.$body.find('.dropdown__selected');
   self.$field.on('typeahead:selected', this.handleSelect.bind(this));
   self.$field.typeahead({}, this.dataset);
-  $(window).on('load', this.getFilters.bind(this));
+  self.$tempField = self.$body.find('#' + self.$field.data('temp'));
+  self.$tempField.on('change', this.getFilters.bind(this));
 };
 
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
@@ -55,23 +56,28 @@ TypeaheadFilter.prototype.appendCheckbox = function(opts) {
 
 TypeaheadFilter.prototype.getFilters = function() {
   var self = this;
-  var ids = this.$field.val().split(',');
+  var value = this.$tempField.val();
+  var ids = value ? value.split(',') : [];
   var dataset = this.dataset.name + 's';
+  var idKey = self.dataset.name + '_id';
   if (ids.length) {
     _.each(ids, function(id) {
-      $.getJSON(
-        URI(API_LOCATION)
-          .path([API_VERSION, 'names', dataset].join('/'))
-          .addQuery('api_key', API_KEY)
-          .addQuery('q', id)
-          .toString()
-      ).done(function(response) {
-        self.appendCheckbox({
-          name: self.fieldName,
-          id: id + '-checkbox',
-          value: id,
-          label: response.results[0].name
-        });
+      var checkbox = self.appendCheckbox({
+        name: self.fieldName,
+        id: id + '-checkbox',
+        value: id,
+        label: 'Loading...'
+      });
+    });
+    $.getJSON(
+      URI(API_LOCATION)
+        .path([API_VERSION, dataset].join('/'))
+        .addQuery('api_key', API_KEY)
+        .addQuery(idKey, ids)
+        .toString()
+    ).done(function(response) {
+      _.each(response.results, function(result) {
+        self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(result.name);
       });
     });
   }
