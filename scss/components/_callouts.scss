@@ -5,6 +5,7 @@
 // Styleguide components.callouts
 
 .callout {
+  @include clearfix();
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 4px;
@@ -12,21 +13,24 @@
 
 .callout--primary {
   @include u-bg--primary();
-  @include u-background-image('i-arrow-right--primary-contrast', 90% 50%);
 }
 
 .callout--secondary {
   @include u-bg--secondary();
-  @include u-background-image('i-arrow-right--secondary-contrast', 90% 50%);  
 }
 
 .callout--neutral {
   @include u-bg--neutral();
-  @include u-background-image('i-arrow-right--neutral-contrast', 90% 50%);  
 }
 
 .callout__content {
+  float: left;
   width: 80%;
+}
+
+.callout__icon {
+  float: left;
+  width: 20%;
 }
 
 .callout__title {
