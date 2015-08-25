@@ -74,21 +74,12 @@
     border-color: $color;
   }
 
-  .button,
-  .button:hover {
-    border-color: transparent;
-  }
-
   .button--primary {
     color: $primary;
   }
   
   .button--secondary {
     color: $secondary;
-  }
-
-  .button:focus {
-    border-color: #fff;
   }
 }
 
@@ -142,6 +133,10 @@
 
   [type="checkbox"]:focus + label::before {
     box-shadow: 0 0 0 1px #fff, 0 0 0 3px $focus-color;
+  }
+
+  .tt-dropdown-menu {
+    border-color: $contrast-color;
   }
 }
 
