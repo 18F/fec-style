@@ -1997,11 +1997,16 @@ span.tt-suggestion__office {
     color: #022C53; }
 
 .combo--search--mini .combo__input {
-  width: calc(100% - 4.4rem);
+  background-image: url("../img/i-search--neutral.png");
+  background-image: url("../img/i-search--neutral.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem 50%;
+  width: 100%;
   height: 4rem; }
-
-.combo--search--mini .combo__button {
-  height: 4rem; }
+  .combo--search--mini .combo__input:focus {
+    background-image: none; }
+  .combo--search--mini .combo__input.tt-hint {
+    background-image: none !important; }
 
 .combo--search--mini .tt-dropdown-menu {
   font-size: 1.2rem;

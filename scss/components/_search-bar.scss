@@ -157,15 +157,14 @@ span.tt-suggestion__office {
 
 // Mini Search Bar
 //
+// Mini search bar without the button
+//
 // Markup:
 // <div class="slab slab--neutral">
 //   <div class="container">
 //     <form id="mini-search" autocomplete="off" class="search__container usa-width-one-fourth js-search">
-//       <div class="combo combo--search combo--search--mini">
+//       <div class="combo--search--mini">
 //         <input type="text" class="combo__input js-search-input">
-//         <button type="submit" class="button--primary-contrast combo__button">
-//          <span class="u-visually-hidden">Search</span>
-//         </button>
 //       </div>
 //     </form>
 //   </div>
@@ -175,12 +174,17 @@ span.tt-suggestion__office {
 
 .combo--search--mini {
   .combo__input {
-    width: calc(100% - 4.4rem);
+    @include u-background-image('i-search--neutral', 1rem 50%);
+    width: 100%;
     height: 4rem;
-  }
 
-  .combo__button {
-    height: 4rem;
+    &:focus {
+      background-image: none;
+    }
+
+    &.tt-hint {
+      background-image: none !important; // !important to override typeahead inline style
+    }
   }
 
   .tt-dropdown-menu {
