@@ -11,6 +11,7 @@ var accordion = require('../../js/accordion');
 var glossary = require('../../js/glossary');
 var dropdown = require('../../js/dropdowns');
 var typeahead = require('../../js/typeahead');
+var typeaheadFilter = require('../../js/typeahead-filter');
 
 var SLT_ACCORDION = '.js-accordion';
 
@@ -23,3 +24,5 @@ $('.js-dropdown').each(function() {
 });
 
 new typeahead.Typeahead('.js-search-input', $('.js-search-type').val());
+
+new typeaheadFilter.TypeaheadFilter('.js-committee-typeahead-filter', typeahead.datasets.committees);

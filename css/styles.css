@@ -1996,21 +1996,17 @@ span.tt-suggestion__office {
   .tt-cursor .tt-suggestion__office {
     color: #022C53; }
 
-.combo--search--mini .combo__input {
+.search-input--mini {
   background-image: url("../img/i-search--neutral.png");
   background-image: url("../img/i-search--neutral.svg");
   background-repeat: no-repeat;
   background-position: 1rem 50%;
   width: 100%;
   height: 4rem; }
-  .combo--search--mini .combo__input:focus {
+  .search-input--mini:focus {
     background-image: none; }
-  .combo--search--mini .combo__input.tt-hint {
+  .search-input--mini.tt-hint {
     background-image: none !important; }
-
-.combo--search--mini .tt-dropdown-menu {
-  font-size: 1.2rem;
-  width: 100%; }
 
 .results-info {
   border-top: 2px solid #022C53;
@@ -2951,6 +2947,9 @@ a {
     padding-top: 0; }
   .filter:last-child {
     border-bottom: 0; }
+  .filter .tt-dropdown-menu {
+    font-size: 1.2rem;
+    width: 100%; }
 
 .filters--horizontal {
   background-color: #EFDECD;

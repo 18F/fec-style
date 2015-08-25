@@ -162,33 +162,24 @@ span.tt-suggestion__office {
 // Markup:
 // <div class="slab slab--neutral">
 //   <div class="container">
-//     <form id="mini-search" autocomplete="off" class="search__container usa-width-one-fourth js-search">
-//       <div class="combo--search--mini">
-//         <input type="text" class="combo__input js-search-input">
-//       </div>
-//     </form>
+//     <div class="filter js-committee-typeahead-filter usa-width-one-fourth">
+//       <input type="text" name="committee_id" class="search-input--mini">
+//     </div>
 //   </div>
 // </div>
 //
 // Styleguide components.search-bar-mini
 
-.combo--search--mini {
-  .combo__input {
-    @include u-background-image('i-search--neutral', 1rem 50%);
-    width: 100%;
-    height: 4rem;
+.search-input--mini {
+  @include u-background-image('i-search--neutral', 1rem 50%);
+  width: 100%;
+  height: 4rem;
 
-    &:focus {
-      background-image: none;
-    }
-
-    &.tt-hint {
-      background-image: none !important; // !important to override typeahead inline style
-    }
+  &:focus {
+    background-image: none;
   }
 
-  .tt-dropdown-menu {
-    font-size: 1.2rem;
-    width: 100%;
+  &.tt-hint {
+    background-image: none !important; // !important to override typeahead inline style
   }
 }
