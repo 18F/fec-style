@@ -52,8 +52,7 @@ Dropdown.prototype.hide = function() {
 
 Dropdown.prototype.handleClickAndFocus = function(e) {
   var $target = $(e.target);
-  if (!this.$body.has($target).length ||
-      this.$selected.has($target).length) {
+  if (!this.$body.has($target).length) {
     this.hide();
   }
 };
