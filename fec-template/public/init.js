@@ -25,4 +25,4 @@ $('.js-dropdown').each(function() {
 
 new typeahead.Typeahead('.js-search-input', $('.js-search-type').val());
 
-new typeaheadFilter.TypeaheadFilter('.js-committee-typeahead-filter', typeahead.datasets.committees);
+new typeaheadFilter.TypeaheadFilter('.js-typeahead-filter', typeahead.datasets.committees);
