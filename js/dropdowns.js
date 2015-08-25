@@ -24,7 +24,7 @@ function Dropdown(selector) {
 
   self.$button.on('click', this.toggle.bind(this));
   self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-  $(document.body).on('click focusin', this.handleClickAndFocus.bind(this));
+  $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
   // Set ARIA attributes
