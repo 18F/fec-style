@@ -17,11 +17,12 @@
 
 .page-header {
   @include clearfix();
-  padding: 2rem;
+  padding: 1.5rem;
 
   .page-header__title {
     border-bottom: none;
     margin-bottom: 0;
+    line-height: 4rem;
   }
 
   .search__container {
@@ -30,11 +31,20 @@
 
   @include media($med) {
     .page-header__title {
-      @include span-columns(7);
+      float: left;
+      width: calc(50% - 4rem);
     }
 
     .search__container {
-      @include span-columns(5);
+      display: block;
+      float: left;
+      width: 50%;
     }  
   }
+}
+
+.page-header__icon {
+  float: left;
+  margin-right: 0;
+  width: 4rem;  
 }

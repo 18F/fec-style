@@ -1,0 +1,19 @@
+// Cycle Select
+//
+// Styling for when it's inline with a heading
+//
+// Markup:
+// <h2>Section title
+//   <select class="cycle-select js-cycle" aria-label="Two-Year Period" name="cycle">
+//     <option>2012 - 2013</option>
+//     <option>2012 - 2013</option>
+//     <option>2012 - 2013</option>
+//   </select>
+// </h2>
+//
+// Styleguide components.cycle-select
+
+.cycle-select {
+  display: inline-block;
+  margin-bottom: 1rem;
+}

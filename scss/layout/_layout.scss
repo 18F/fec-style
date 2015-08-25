@@ -65,6 +65,12 @@
   padding: 0 0 2rem 0;
 }
 
+.content__section__heading {
+  @include clearfix();
+  border-bottom: 2px solid;
+  margin-bottom: 1rem;
+}
+
 .content__section--ruled {
   border-top: 1px solid $primary;
   padding-top: 2rem;

@@ -1,0 +1,44 @@
+// Callout
+// 
+// Action-oriented components
+//
+// Styleguide components.callouts
+
+.callout {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.callout--primary {
+  @include u-bg--primary();
+  @include u-background-image('i-arrow-right--primary-contrast', 90% 50%);
+}
+
+.callout--secondary {
+  @include u-bg--secondary();
+  @include u-background-image('i-arrow-right--secondary-contrast', 90% 50%);  
+}
+
+.callout--neutral {
+  @include u-bg--neutral();
+  @include u-background-image('i-arrow-right--neutral-contrast', 90% 50%);  
+}
+
+.callout__content {
+  width: 80%;
+}
+
+.callout__title {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.callout__sublinks {
+  font-family: $sans-serif;
+  padding-top: 1rem;
+
+  a {
+    border-bottom: none;
+  }
+}

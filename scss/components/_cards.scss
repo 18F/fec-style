@@ -68,7 +68,8 @@
   }
 
   .card__content {
-    @include span-columns(2 of 4);
+    float: left;
+    width: calc(100% - 8rem); // Minus the max-width + gutter of the icons
   }
 
   @include media($med) {
@@ -150,12 +151,19 @@
 // 
 // For showing multiple rows of cards, use:
 // 
-// .card--tiled
+// .tiled-cards
 //
 // Styleguide components.cards.tiled-cards
 
-.card--tiled {  
-  &:nth-child(even) {
+
+.tiled-cards--2-wide {
+  .card:nth-child(even) {
+    margin-right: 0;
+  }
+}
+
+.tiled-cards--3-wide {
+  .card:nth-child(3n) {
     margin-right: 0;
   }
 }

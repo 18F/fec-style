@@ -35,8 +35,9 @@
 
 .t-display--sans {
   @include heading(display);
-  font-family: $sans-serif;
   border: none;
+  font-family: $sans-serif;
+  margin-bottom: 0;
 }
 
 // Ruled Headings
@@ -61,15 +62,27 @@
   border-width: 2px;
 }
 
+.t-ruled--bottom {
+  border-bottom: 1px solid $primary;
+  padding-bottom: 1rem;
+}
+
 // Miscellaneous
 
 .t-note {
+  display: inline-block;
+  font-family: $sans-serif;
   font-weight: normal;
   font-size: 1.4rem;   
+  line-height: 1;
 }
 
 .t-block {
   display: block;
+}
+
+.t-inline-block {
+  display: inline-block;
 }
 
 .t-italic {
@@ -78,6 +91,21 @@
 
 .t-bold {
   font-weight: bold;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-data-header {
+  font-family: $sans-serif;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.t-data {
+  font-family: $sans-serif;
+  text-transform: uppercase;
 }
 
 // Modifier styles for text

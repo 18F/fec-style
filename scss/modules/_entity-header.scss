@@ -3,57 +3,52 @@
 // Styleguide modules.entity-header
 
 .entity__header {
-  @include u-bg--primary();
-  border-top: 1px solid $ivory;
-}
+  padding: 3rem 0;
 
-.entity__header--top {
-  padding: 1rem 0;
-
-  @include media($lg) {
-    padding: 2rem 0;
+  @include media($med) {
+    .entity__term {
+      max-width: 200px;
+    }
   }
 }
 
-.entity__header--bottom {
-  padding-bottom: 1rem;
-
-  @include media($lg) {
-    padding-bottom: 2rem;
-  }
-}
-
-.entity__header {
-  &.page-header {
-    padding: 1rem 0;
-  }
+.entity__header__top {
+  border-bottom: 2px solid;
+  padding-bottom: .5rem;
 }
 
 .entity__name {
+  border-bottom: none;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .entity__type {
-  line-height: 1.2;
-  display: block;
-  padding: .5rem 0;
-  float: left;
+  display: inline-block;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid;
 }
+
 
 .entity__info {
   @include clearfix(); 
-  margin: 1rem 0;
+  font-family: $sans-serif;
+  padding-top: 1rem;
   width: 100%;
 
   @include media($med) {
     display: table;
+    max-width: 100%;
+    padding-top: 2rem;
+    width: auto;
   }
 }
 
 .entity__term {
   @include clearfix();
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -63,14 +58,7 @@
     display: table-cell;
     width: auto;
     margin-bottom: 0;
-  }
-}
-
-.entity__header {
-  @include media($med) {
-    .entity__term {
-      max-width: 200px;
-    }
+    padding-right: 3rem;
   }
 }
 
@@ -87,21 +75,43 @@
 }
 
 .entity__term__label {
-  color: #fff;
+  @include span-columns(6);
   font-weight: bold;
 
   @include media($med) {
-    display: block;
+    float: none;
     width: 100%;
-    border-bottom: 1px solid $ivory;
-    padding: 0 1rem;
+    margin: 0;
   }
 }
 
 .entity__term__data {
+  @include span-columns(6);
+
   @include media($med) {
-    display: block;
+    float: none;
     width: 100%;
-    padding: 0 1rem;
+    margin: 0;
+  }
+}
+
+// Color rules
+
+.entity__header--neutral {
+  @include u-bg--neutral();
+
+  .entity__header__top,
+  .entity__type  {
+    border-color: $primary;
+  }
+}
+
+.entity__header--primary {
+  @include u-bg--primary();
+  border-top: 1px solid $primary-contrast;
+
+  .entity__header__top,
+  .entity__type {
+    border-color: $primary-contrast;
   }
 }

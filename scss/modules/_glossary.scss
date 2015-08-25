@@ -60,11 +60,18 @@
 
 .term {
   @include u-background-image('i-term--primary', 100% 0);
-  padding-right: 2rem;
+  display: inline-block;
+  // border-bottom: 2px dotted;
   cursor: pointer;
+  padding-right: 2rem;
 
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    background-color: $primary;
+    color: $cream;
   }
 }
 

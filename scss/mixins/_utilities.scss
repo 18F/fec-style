@@ -157,6 +157,8 @@
   background-color: $primary;
   
   a {
+    border-bottom-color: $primary-contrast;
+    
     &:hover {
       border-bottom-color: #fff;
     }
@@ -188,7 +190,7 @@
   
   a {
     &:hover {
-      border-bottom-color: #fff;
+      border-bottom-color: $primary-contrast;
     }
   }
 }
