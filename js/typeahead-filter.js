@@ -16,7 +16,7 @@ var TypeaheadFilter = function(selector, dataset) {
   self.fieldName = self.$field.attr('name');
   self.$selected = self.$body.find('.dropdown__selected');
   self.$field.on('typeahead:selected', this.handleSelect.bind(this));
-  self.$field.typeahead({}, this.dataset);
+  self.$field.typeahead({minLength: 3}, this.dataset);
   self.$tempField = self.$body.find('#' + self.$field.data('temp'));
   self.$tempField.on('change', this.getFilters.bind(this));
 };
