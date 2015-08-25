@@ -1,17 +1,23 @@
 'use strict';
 
-/* global require, document, describe, before, beforeEach, after, afterEach, it */
+/* global require, window, document, describe, before, beforeEach, after, afterEach, it */
+
 var $ = require('jquery');
+var _ = require('underscore');
+
 window.$ = window.jQuery = $;
+_.extend(window, {
+  API_LOCATION: '',
+  API_VERSION: '/v1',
+});
 
 var chai = require('chai');
 var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var expect = chai.expect;
-var typeahead = require('../js/typeahead');
-
 chai.use(sinonChai);
 
+var typeahead = require('../js/typeahead');
 
 var TypeaheadFilter = require('../js/typeahead-filter').TypeaheadFilter;
 
@@ -27,14 +33,14 @@ describe('typeaheadFilter', function() {
         '<ul class="dropdown__selected"></ul>' +
         '<input type="text" class="search-input--mini" name="commite_id">' +
       '</div>'
-    )
+    );
 
     this.typeaheadFilter = new TypeaheadFilter('.js-typeahead-filter', typeahead.datasets.committees);
   });
 
   it('should initialize', function() {
-    var typeahead = this.typeaheadFilter.find('.twitter-typeahead');
+    var typeahead = this.typeaheadFilter.$body.find('.twitter-typeahead');
     expect(typeahead.length).to.equal(1);
-  })
+  });
 
 });
