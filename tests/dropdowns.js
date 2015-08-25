@@ -112,9 +112,9 @@ describe('dropdown', function() {
     expect(this.dropdown.$body.find('.dropdown__button').length).to.equal(0);
   });
 
-  it('hides when clicking somewhere else', function(){
+  it('hides when clicking somewhere else', function() {
     this.dropdown.show();
-    this.dropdown.handleClick({target: 'other'});
+    this.dropdown.handleClickAndFocus({target: 'other'});
     expect(isClosed(this.dropdown)).to.be.true;
   });
 

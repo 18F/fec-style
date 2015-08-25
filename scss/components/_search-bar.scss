@@ -3,27 +3,26 @@
 // .combo--search--large      - 6rem tall
 //
 // Markup:
-// <div class="slab bg--primary">
+// <div class="slab slab--primary">
 //   <div class="container">
-//   <div class="combo combo--search {{modifier_class}}">
-//     <input type="text" class="combo__input">
-//     <button type="submit" class="button--primary combo__button">
-//      <span class="u-visually-hidden">Search</span>
-//     </button>
+//     <form id="large-search" autocomplete="off" class="search__container js-search">
+//       <div class="combo combo--search {{modifier_class}}">
+//         <select class="search__select js-search-type" name="search_type">
+//           <option value="candidates">Candidates</option>
+//           <option value="committees">Committees</option>
+//         </select>
+//         <input type="text" class="combo__input js-search-input">
+//         <button type="submit" class="button--primary combo__button">
+//          <span class="u-visually-hidden">Search</span>
+//         </button>
+//       </div>
+//     </form>
 //   </div>
-// </div>
 // </div>
 //
 // Styleguide components.search-bar
 
 .combo--search {
-  .combo__button {
-    background-image: url('../img/i-search--primary.png');
-    background-image: url('../img/i-search--primary.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-
   @include media($med) {
     .combo__input {
       width: calc(100% - 16.6rem);
@@ -59,6 +58,24 @@
   }
 }
 
+.combo__button {
+  &.button--primary {
+    @include u-background-image('i-search--primary');
+  }
+
+  &.button--primary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+
+  &.secondary {
+    @include u-background-image('i-search--secondary');
+  }
+
+  &.button--secondary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+}
+
 .search__select {
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
@@ -86,12 +103,12 @@
 
 .tt-dropdown-menu {
   background-color: $cream;
-  border: 1px solid $ivory;
+  border: 1px solid;
   font-family: $sans-serif;
   left: 0;
   text-align: left;
   position: absolute;
-  width: calc(100% - 6.6rem);
+  width: calc(100% - 6.8rem);
 }
 
 .tt-dropdown-menu {
@@ -100,30 +117,29 @@
 }
 
 .tt-suggestion {
-  @include clearfix();
+  display: table;
   position: relative;
   padding: 1rem 1rem;
   margin-bottom: 0;
   line-height: 1;
   border-bottom: 1px solid $ivory;
+  width: 100%;
 }
 
 span.tt-suggestion__name {
   @include u-truncate();
   color: $primary;
-  display: block;
+  display: table-cell;
   float: left;
-  width: 65%;
 }
 
 span.tt-suggestion__office {
   color: $primary;
   font-size: 1.2rem;
   text-align: right;
-  display: block;
-  width: 35%;
-  float: right;
+  display: table-cell;
   font-style: italic;
+  float: right;
 }
 
 .tt-cursor {
@@ -136,5 +152,36 @@ span.tt-suggestion__office {
 
   .tt-suggestion__office {
     color: $primary;
+  }
+}
+
+// Mini Search Bar
+//
+// Mini search bar without the button
+//
+// Markup:
+// <div class="slab slab--neutral">
+//   <div class="container">
+//     <div class="filter js-typeahead-filter usa-width-one-fourth" data-dataset="committees">
+//       <label class="label">Committee</label>
+//       <ul class="dropdown__selected"></ul>
+//       <input type="text" name="committee_id" class="search-input--mini">
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide components.search-bar-mini
+
+.search-input--mini {
+  @include u-background-image('i-search--neutral', 1rem 50%);
+  width: 100%;
+  height: 4rem;
+
+  &:focus {
+    background-image: none;
+  }
+
+  &.tt-hint {
+    background-image: none !important; // !important to override typeahead inline style
   }
 }
