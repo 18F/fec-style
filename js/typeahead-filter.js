@@ -12,14 +12,9 @@ var TypeaheadFilter = function(selector, dataset) {
 
   self.$body = $(selector);
 
-  self.$body.prepend('<ul class="dropdown__selected"></ul>');
-
   self.$field = self.$body.find('input[type="text"]');
   self.fieldName = self.$field.attr('name');
   self.$selected = self.$body.find('.dropdown__selected');
-  self.$hiddenField = self.$body.append('<input type="hidden" name="' +
-                                        self.hiddenFieldName + '"' +
-                                        'id="committee_id">');
   self.$field.on('typeahead:selected', this.handleSelect.bind(this));
   self.$field.typeahead({}, dataset);
 }
@@ -30,12 +25,13 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   var value = datum.id;
   var id = value + '-checkbox';
   this.$selected
-    .append('<li class="dropdown__item"><input ' + 
+    .append('<li><input ' + 
             ' name="' + name + '"' +
             ' type="checkbox"' +
             ' id="' + id + '"' +
-            ' value="' + value + '">' + 
-            '<label class="dropdown__value" for="' + id + '">' + label + '</li>');
+            ' value="' + value + '" checked>' + 
+            '<label for="' + id + '">' + label + '</li>');
+  this.$field.val(id).change();
   this.clearInput();
 }
 
