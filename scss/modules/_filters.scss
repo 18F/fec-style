@@ -51,6 +51,7 @@
   @include media($lg) {
     float: left;
     margin-left: -20%;
+    min-width: 25rem;
     padding: 2rem;
     position: relative;
     width: 20%;
@@ -145,6 +146,11 @@
 
   &:last-child {
     border-bottom: 0;
+  }
+
+  .tt-dropdown-menu {
+    font-size: 1.2rem;
+    width: 100%;
   }
 }
 

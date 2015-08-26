@@ -145,6 +145,38 @@
   }
 }
 
+// Primary Contrast buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--primary {{ modifier_class }}">Button</button>
+//
+// Styleguide components.buttons.primary
+
+.button--primary-contrast {
+  @extend .button;
+  background-color: $primary;
+  color: $primary-contrast;
+
+  &:hover {
+    background-color: lighten($primary, 10%);
+  }
+
+  &:focus {
+    border-color: $primary-focus;
+  }
+  
+  &:active,
+  &.is-active {
+    background-color: $navy;
+    border: 2px solid $primary-contrast; 
+    color: $cream;
+  }
+}
+
 // Icon Buttons
 //
 // Icon color matches text color

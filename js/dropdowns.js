@@ -24,7 +24,7 @@ function Dropdown(selector) {
 
   self.$button.on('click', this.toggle.bind(this));
   self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-  $(document.body).on('click', this.handleClick.bind(this));
+  $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
   // Set ARIA attributes
@@ -50,7 +50,7 @@ Dropdown.prototype.hide = function() {
   this.isOpen = false;
 };
 
-Dropdown.prototype.handleClick = function(e) {
+Dropdown.prototype.handleClickAndFocus = function(e) {
   var $target = $(e.target);
   if (!this.$body.has($target).length) {
     this.hide();

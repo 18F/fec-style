@@ -1,6 +1,6 @@
 'use strict';
 
-/* global require, module, window, document, Bloodhound, API_LOCATION, API_VERSION, API_KEY */
+/* global require, module, window, document, Bloodhound */
 
 var $ = require('jquery');
 var URI = require('URIjs');
@@ -26,11 +26,11 @@ function formatCandidate(result) {
 }
 
 function getUrl(resource) {
-  return URI(API_LOCATION)
-    .path([API_VERSION, 'names', resource].join('/'))
+  return URI(window.API_LOCATION)
+    .path([window.API_VERSION, 'names', resource].join('/'))
     .query({
       q: '%QUERY',
-      api_key: API_KEY
+      api_key: window.API_KEY
     })
     .readable();
 }
