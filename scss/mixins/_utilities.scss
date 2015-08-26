@@ -158,11 +158,6 @@
       border-bottom-color: #fff;
     }
   }
-
-  .button,
-  .button:hover {
-    border-bottom-color: transparent;
-  }  
 }
 
 // u-bg--primary()
@@ -182,12 +177,7 @@
     &:hover {
       border-bottom-color: #fff;
     }
-  }
-
-  .button,
-  .button:hover {
-    border-bottom-color: transparent;
-  }    
+  } 
 }
 
 @mixin u-bg--neutral(){
@@ -199,12 +189,7 @@
     &:hover {
       border-bottom-color: $primary-contrast;
     }
-  }
-
-  .button,
-  .button:hover {
-    border-bottom-color: transparent;
-  }  
+  } 
 }
 
 // u-truncate()
