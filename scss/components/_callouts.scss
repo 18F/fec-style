@@ -6,7 +6,7 @@
 
 .callout {
   @include clearfix();
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 4px;
 }
@@ -24,25 +24,29 @@
 }
 
 .callout__content {
-  float: left;
-  width: 80%;
+  @include span-columns(3 of 6);
+}
+
+.callout__action {
+  @include span-columns(3 of 6);
 }
 
 .callout__icon {
-  float: left;
-  width: 20%;
+  @include span-columns(1 of 3);
+  padding: 1rem;
 }
 
 .callout__title {
   font-weight: bold;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
+}
+
+.callout__subtitle {
+  font-family: $sans-serif;
+  font-size: 1.2rem;
 }
 
 .callout__sublinks {
+  @include span-columns(2 of 3);
   font-family: $sans-serif;
-  padding-top: 1rem;
-
-  a {
-    border-bottom: none;
-  }
 }

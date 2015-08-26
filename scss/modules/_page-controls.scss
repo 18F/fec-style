@@ -105,6 +105,15 @@
   }
 }
 
+.page-controls--neutral {
+  @include u-bg--neutral();
+
+  .page-tabs__item {
+    a[aria-selected="true"]  {
+      color: $neutral;
+    }
+  }  
+}
 // To stick to the top of the page
 .is-fixed {
   @include transition(top, .2s);

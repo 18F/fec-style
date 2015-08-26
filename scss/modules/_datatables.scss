@@ -34,7 +34,8 @@
 .data-table {
   font-family: $sans-serif;
   position: relative;
-
+  border-top: 2px solid $primary;
+  
   th {
     padding: 2rem 0 .5rem 0;
     border-bottom: 1px solid $primary;

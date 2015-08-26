@@ -8,6 +8,11 @@
   @include clearfix();
   border-top: 2px solid $primary;
   border-bottom: 2px solid $primary;
+  padding: 1rem 0;
+}
+
+.results-info--top {
+  border-bottom: none;
   padding: 2rem 0;
 }
 
@@ -17,6 +22,7 @@
 
 .dataTables_wrapper {
   .results-info {
+    font-family: $sans-serif;
 
     .dataTables_length,
     .dataTables_info,

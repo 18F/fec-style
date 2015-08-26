@@ -157,6 +157,11 @@
     &:hover {
       border-bottom-color: #fff;
     }
+  }
+
+  .button,
+  .button:hover {
+    border-bottom-color: transparent;
   }  
 }
 
@@ -172,10 +177,17 @@
   background-color: $secondary;
   
   a {
+    border-bottom-color: $secondary-contrast;
+
     &:hover {
       border-bottom-color: #fff;
     }
   }
+
+  .button,
+  .button:hover {
+    border-bottom-color: transparent;
+  }    
 }
 
 @mixin u-bg--neutral(){
@@ -188,6 +200,11 @@
       border-bottom-color: $primary-contrast;
     }
   }
+
+  .button,
+  .button:hover {
+    border-bottom-color: transparent;
+  }  
 }
 
 // u-truncate()
