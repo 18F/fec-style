@@ -8,7 +8,9 @@
 
 .datatable__container {
   @include clearfix();
+  position: relative;
   width: 100%;
+  padding-top: 8rem;
 
   @include media($lg) {
     @include transition(width .5s);
@@ -24,20 +26,20 @@
 
   @include media($lg) {
     .datatable__container {
-      // width: 76%;
-      // float: left;
-      display: table-cell;
+      width: calc(100% - 30rem);
+      float: left;
     }
   }
 }
 
 .data-table {
+  border-top: 2px solid $primary;
+  height: 100%;
   font-family: $sans-serif;
   position: relative;
-  border-top: 2px solid $primary;
-  
+
   th {
-    padding: 2rem 0 .5rem 0;
+    padding: 2rem 1rem .5rem 1rem;
     border-bottom: 1px solid $primary;
 
     &:focus {
@@ -78,7 +80,7 @@
   td {
     @include transition(padding-left, .2s);
     @include u-truncate();
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   .sorting,
@@ -94,6 +96,14 @@
     height: 5px;
     background-color: $primary;
   }
+ 
+  @include media($lg) {
+    th,
+    td {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }  
 }
 
 // Sortable headers

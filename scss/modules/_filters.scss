@@ -26,7 +26,6 @@
   @include u-bg--neutral();
   bottom: 0;
   height: 0;
-  margin-right: 3%;
   padding: 1rem;
   position: absolute;
   top: 0;
@@ -50,16 +49,15 @@
 
   @include media($lg) {
     float: left;
-    margin-left: -20%;
-    min-width: 25rem;
+    margin-left: -30rem;
     padding: 2rem;
     position: relative;
-    width: 20%;
+    width: 30rem;
     vertical-align: top;
 
     &.is-open {
-      display: table-cell;
-      float: none;
+      float: left;
+
       .filters__toggle {
         @include u-background-image('i-left-2--primary', 1rem 50%);    
       }
@@ -85,7 +83,7 @@
   border: 2px solid transparent;
   left: 50%;
   position: absolute;
-  z-index: 100;
+  z-index: $z4;
   top: 100%;
   height: 4rem;
   padding: 1rem 1rem 1rem 3rem;

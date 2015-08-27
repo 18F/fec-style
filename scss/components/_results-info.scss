@@ -8,12 +8,20 @@
   @include clearfix();
   border-top: 2px solid $primary;
   border-bottom: 2px solid $primary;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
+
+  @include media($lg) {
+    padding: 1rem 0;
+  }
 }
 
 .results-info--top {
   border-bottom: none;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
+
+  @include media($lg) {
+    padding: 2rem 0;
+  }
 }
 
 .results-info__null {

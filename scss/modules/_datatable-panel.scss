@@ -10,6 +10,8 @@
   top: 0;
   width: 100%;
   background-color: $cream;
+  border-top: 2px solid $primary;
+  overflow: hidden;
 
   &[aria-hidden="false"] {
     @include transform(translateX(0%));
@@ -18,8 +20,11 @@
   @include media($med) {
     background-color: rgba($ivory, .3);
     border-left: 1px solid $ivory;
+    min-height: 70vh;
+    height: 100%;
     width: 100%;
-    left: 3px;
+    left: 2px;
+    top: -1px; // Hack to get it to line up
 
     &[aria-hidden="false"] {
       // 99.5 to ensure when container is not an even number.
@@ -38,12 +43,18 @@
 
 .panel__main {
   clear: both;
+
+  @include media($med) {
+    min-height: 70vh;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 // Open panel
 .panel-active {
   .dataTables_wrapper {
-    height: 118vh;
+    height: auto;
     overflow: hidden;
   }
 
@@ -53,7 +64,7 @@
     }  
 
     .dataTables_wrapper {
-      height: auto;
+      min-height: 70vh;
       overflow: visible;
     }
   }
