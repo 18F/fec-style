@@ -90,9 +90,13 @@
     padding-left: 1rem;
   }
 
+  .value-bar__container {
+    background: $ivory;
+  }
+
   .value-bar {
     height: 5px;
-    background-color: $primary;
+    background-color: $primary-contrast;
   }
 }
 

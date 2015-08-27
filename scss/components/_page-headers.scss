@@ -19,27 +19,30 @@
   @include clearfix();
   padding: 1.5rem;
 
-  .page-header__title {
-    border-bottom: none;
-    margin-bottom: 0;
-    line-height: 4rem;
-  }
-
   .search__container {
     display: none;
   }
 
   @include media($med) {
-    .page-header__title {
-      float: left;
-      width: calc(50% - 4rem);
-    }
 
     .search__container {
       display: block;
-      float: left;
+      float: right;
       width: 50%;
     }  
+  }
+}
+
+.page-header__title {
+  border-bottom: none;
+  font-family: $sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+  line-height: 4rem;
+
+  @include media($med) {
+    float: left;
+    width: calc(50% - 4rem);
   }
 }
 
@@ -47,4 +50,9 @@
   float: left;
   margin-right: 0;
   width: 4rem;  
+}
+
+.page-header--primary {
+  @include u-bg--primary();
+  @include u-font-color($primary-contrast);
 }
