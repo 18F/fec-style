@@ -184,35 +184,38 @@
 
 // Icon Buttons
 //
-// Icon color matches text color
-// Small vertical line between icon and text. Buttons that have “forward” actions have icons to the right of the text, and those with “back” actions have icons to the left.
+// Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
+// Defaults to the styles for button--neutral and button--primary, with overrides for other classes
+//
+// .button--previous    - Go back
+// .button--next        - Go next
+// .button--browse      - For links to the datatable view
 //
 // Markup:
-// <button class="button--icon button--secondary"><img alt="arrow-left" src="../img/i-arrow-left--secondary.svg">Previous</button>
-// <button class="button--icon button--secondary button--icon--right">Next<img alt="arrow-right" src="../img/i-arrow-right--secondary.svg"></button>
-// <button class="button--icon button--secondary"><img alt="charts" src="../img/i-chart--secondary.svg">View charts</button>
+// <button class="button--neutral {{ modifier_class }}">Button</button>
+// <button class="button--primary {{ modifier_class }}">Button</button>
+// <button class="button--secondary {{ modifier_class }}">Button</button>
 //
 // Styleguide components.buttons.icon-buttons
-//
 
-.button--icon {
-  img {
-    border-right: 1px solid;
-    height: 1em;
-    margin-right: 5px;
-    padding-right: 5px;
+.button--previous {
+  @include u-icon-button('i-left--primary', $primary);
+
+  &.button--secondary {
+    @include u-icon-button('i-left--secondary', $secondary);
   }
 }
 
-.button--icon--right {
-  img {
-    border-right: none;
-    border-left: 1px solid;    
-    margin-right: none;
-    margin-left: 5px;
-    padding-right: none;
-    padding-left: 5px;
-  }
+.button--next {
+  @include u-icon-button('i-right--primary', $primary, right);
+
+  &.button--secondary {
+    @include u-icon-button('i-right--secondary', $secondary, right);    
+  }  
+}
+
+.button--browse {
+  @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
 }
 
 // Remove button
@@ -261,13 +264,14 @@
   }
 }
 
-// Close button
+// Special Buttons
 //
-// Defaults to secondary-contrast colored x. Used on the glossary
+// Common icon buttons for various purposes
 //
 // <button class="button button--close"><span class="u-visually-hidden">Hide glossary</span></button>
 //
-// Styleguide 
+// Styleguide components.buttons.special-buttons
+
 .button--close {
   @include u-background-image('../img/i-x--secondary-contrast');
   width: 4rem;
