@@ -88,14 +88,18 @@
 .masthead {
   @include clearfix();
   border-bottom: 1px solid $neutral;
-  padding: 2rem;
+  padding: 2rem 2rem 0 0;
 }
 
 .site-title {
-  @include heading(h1);
   margin-bottom: 0;
   border-bottom: 0;
+  display: block;
   float: left;
+}
+
+.site-brand {
+  display: block;
 }
 
 .utility-nav {

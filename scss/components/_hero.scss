@@ -69,3 +69,39 @@
     }
   }
 }
+
+.hero--home {
+  @include u-bg--neutral();
+  padding: 0;
+
+  .hero__content {
+    padding: 2rem 0;
+  }
+}
+
+.hero__banner {
+  background-image: url('../img/monument.jpg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 32rem;
+
+  .hero__title {
+    border-bottom: 2px solid $primary;
+  }
+
+  .hero__subtitle {
+    padding: 2rem 0;
+  }
+
+  .hero__heading {
+    padding-top: 4rem;
+  }
+
+  @include media($lg) {
+    .hero__heading {
+      @include span-columns(6);
+      @include shift(3);
+    }
+  } 
+}

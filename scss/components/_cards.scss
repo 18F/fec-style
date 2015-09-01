@@ -34,8 +34,12 @@
   }
 }
 
-.card__image:hover {
+.card__image-link {
   border-bottom: none;
+
+  &:hover {
+    border-bottom: none;
+  }
 }
 
 .card__content {
