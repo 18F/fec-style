@@ -85,6 +85,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 32rem;
+  position: relative;
 
   .hero__title {
     border-bottom: 2px solid $primary;
@@ -98,10 +99,20 @@
     padding-top: 4rem;
   }
 
+  .photo-credit {
+    background: rgba($ivory, .8);
+    font-size: 1rem;
+    font-family: $sans-serif;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: .5rem;
+  }  
+
   @include media($lg) {
     .hero__heading {
       @include span-columns(6);
       @include shift(3);
     }
-  } 
+  }   
 }
