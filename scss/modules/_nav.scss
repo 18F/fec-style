@@ -57,7 +57,7 @@
   position: relative;
   border-bottom: 1px solid $primary-contrast;
 
-  &:last-child {
+  &:last-child .site-nav__link {
     border-bottom: 0;
   }
 
@@ -134,6 +134,7 @@
     @include u-bg--neutral();
     border: 1px solid $beige;
     border-top: none;
+    padding-bottom: 0;
     position: absolute;
     top: 6rem;
     z-index: $z-navigation;
