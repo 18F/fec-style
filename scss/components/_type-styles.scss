@@ -60,6 +60,10 @@
 
 .t-ruled--bold {
   border-width: 2px;
+
+  &.h1 {
+    border-width: 2px;
+  }
 }
 
 .t-ruled--bottom {
