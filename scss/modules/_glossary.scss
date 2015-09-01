@@ -11,8 +11,8 @@
   overflow-y: scroll;
   padding: 2rem;
   position: fixed;
-  top: 0;
-  width: 50%;
+  top: 7rem;
+  width: 75%;
   z-index: $z-glossary;
   
   &[aria-hidden=true] {
@@ -29,6 +29,15 @@
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  @include media($med) {
+    top: 17rem;
+    width: 50%;
+  }
+
+  @include media($lg) {
+    top: 19rem;
   }
 }
 
