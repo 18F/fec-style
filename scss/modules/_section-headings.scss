@@ -1,0 +1,36 @@
+// Section headings
+//
+// Contain the title, date select and action button
+//
+// Markup:
+// <div class="section__heading">
+//  <h2 class="heading__title">Heading title
+//     <select class="cycle-select">
+//       <option>Option 1</option>
+//     </select>
+//   </h2>
+//   <a class="heading__action button--neutral button--browse">Browse</a>
+// </div>
+//
+// Styleguide modules.section-headings
+
+.section__heading {
+  @include clearfix();
+  border-bottom: 2px solid;
+  margin-bottom: 1rem;
+}
+
+.heading__title {
+  border-bottom: 0;
+  margin-bottom: 0;
+
+  @include media($lg) {
+    float: left;
+  }
+}
+
+.heading__action {
+  @include media($lg) {
+    float: right;
+  }
+}
