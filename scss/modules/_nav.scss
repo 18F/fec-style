@@ -2,28 +2,17 @@
 //
 // Primary site navigation
 //
-// Markup:
-// <nav class="site-nav">
-//   <button class="site-nav__button site-nav__button--left">Glossary</button>
-//   <ul class="site-nav__list">
-//     <li class="site-nav__item">
-//       <a href="#" class="site-nav__link is-current">Campaign Finance Data</a>
-//     </li>
-//     <li class="site-nav__item">
-//       <a href="#" class="site-nav__link">Reporting &amp; Registration</a>
-//     </li>
-//     <li class="site-nav__item">
-//       <a href="#" class="site-nav__link is-disabled">TBD</a>
-//     </li>
-//   </ul>
-//   <button class="site-nav__button site-nav__button--right">Glossary</button>
-// </nav>
+// Elements:
+// .site-nav                  - The outer nav element
+// .site-nav__list            - ul that displays horizontally on desktop and is hidden on mobile until revealed
+// .site-nav__item            - Each li inside the ul
+// .site-nav__link            - Styles for the links inside the items
+// .site-nav__dropdown        - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
 //
 // Styleguide modules.navigation
 
 .site-nav {
   @include clearfix();
-  border-bottom: 1px solid $neutral;
 }
 
 .site-nav__list {
@@ -89,6 +78,7 @@
   }
 }
 
+// .site-nav__link 
 .site-nav__link {
   @include transition(background-color, .1s);
   display: block;
@@ -127,6 +117,7 @@
   }
 }
 
+
 .site-nav__dropdown {
   display: none;
   padding-bottom: 2rem;
@@ -155,6 +146,13 @@
       border-bottom: 1px solid $beige;
       padding: 1rem;
       width: 100%;
+
+      &:hover,
+      &:focus {
+        border-bottom: 1px solid $primary;
+        background-color: $primary;
+        color: $ivory;
+      }
     }    
   }
 }
@@ -212,11 +210,23 @@
     @include u-background-image('i-book--neutral');    
     background-color: lighten($secondary, 10%);
   }  
+
+  @include media($lg) {
+    height: 6rem;
+  }
 }
 
-// Toggle
-.site-nav__item--with-dropdown {
+// Toggle controls for the mobile menu
+// 
+// We use the same logic to show the entire menu as well as the sub-menus (site-nav__dropdown)
+// When on mobile, we hide the site-nav__link in the site-nav__item--with-dropdown elements so that tapping on the toggle opens the dropdown, instead of taking you to the page
+//
+// Elements:
+// .nav-toggle__input                       - The checkbox that controls whether adjacent lists are shown or hidden
+// .nav-toggle__label                       - The label attached to the checkbox (not applied to the main menu button)
+// .site-nav__item--with-dropdown           - The outer li that contains the dropdown list and toggle
 
+.site-nav__item--with-dropdown {
   & > a.site-nav__link {
     display: none;
   }
@@ -227,13 +237,13 @@
     }
 
     & > .nav-toggle__input,
-    & > .dropdown__toggle {
+    & > .nav-toggle__label {
       display: none;
     }
   }
 }
 
-.dropdown__toggle {
+.nav-toggle__label {
   position: relative;
   font-family: $serif;
 
@@ -271,7 +281,7 @@
       }
     }
 
-    & + .dropdown__toggle {
+    & + .nav-toggle__label {
       color: $primary-contrast;
 
       &::after {

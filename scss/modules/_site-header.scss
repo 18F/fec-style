@@ -73,7 +73,7 @@
 // Markup:
 // <div class="masthead">
 //   <a href="/" title="Home" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
-//   <ul class="utility-nav">
+//   <ul class="utility-nav list--flat">
 //     <li class="utility-nav__item">About</li>
 //     <li class="utility-nav__item">Contact</li>
 //   </ul>
@@ -84,7 +84,7 @@
 .masthead {
   @include clearfix();
   border-bottom: 2px solid $neutral;
-  padding: 2rem 2rem 0 0;
+  padding: 1.9rem 2rem 0 0;
   display: none;
 
   @include media($med) {
@@ -125,8 +125,7 @@
   float: left;
 }
 
-// Mobile site title
-
+// Mobile site title is included in the .site-nav nav element
 .site-nav {
   .site-title {
     @include u-background-image('wordmark', 0% 50%);
