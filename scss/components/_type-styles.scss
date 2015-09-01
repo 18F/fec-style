@@ -71,6 +71,16 @@
   padding-bottom: 1rem;
 }
 
+.t-no-rules {
+  border-bottom: none;
+  border-top: none;
+
+  &.h1 {
+    border-bottom: none;
+    border-top: none;
+  }
+}
+
 // Miscellaneous
 
 .t-note {
@@ -87,6 +97,10 @@
 
 .t-inline-block {
   display: inline-block;
+}
+
+.t-sans {
+  font-family: $sans-serif;
 }
 
 .t-italic {

@@ -39,7 +39,7 @@
   position: relative;
 
   th {
-    padding: 2rem 1rem .5rem 1rem;
+    padding: .5rem 1rem;
     border-bottom: 1px solid $primary;
 
     &:focus {
@@ -86,10 +86,14 @@
   .sorting,
   .sorting_asc,
   .sorting_desc {
-    background-position: 0 2.5rem;
+    background-position: 0 1rem;
     background-repeat: no-repeat;
     cursor: pointer;
     padding-left: 1rem;
+  }
+
+  .sorting_disabled {
+    cursor: default;
   }
 
   .value-bar {
