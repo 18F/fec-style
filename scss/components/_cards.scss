@@ -82,16 +82,24 @@
 }
 
 .card--wide {
-  padding: 2rem;
+  padding: 0;
   text-align: left;
 
-  .card__image {
-    @include span-columns(3 of 6);
+  .card__image__container {
+    @include span-columns(2 of 6);
+    background-color: $primary;
+    border-radius: 4px 0 0 4px;
+    padding: 7rem 2rem;
+    text-align: center;
+  }
+
+  .card__title {
+    margin-bottom: 0;
   }
 
   .card__content {
-    @include span-columns(3 of 6);
-    padding: 2rem 0;
+    @include span-columns(4 of 6);
+    padding: 2rem 2rem 2rem 0;
   }
 
   .icon--complex {
@@ -100,8 +108,16 @@
   }
 
   @include media($med) {
-    @include span-columns(6)
+    @include span-columns(6);
+    min-height: 22rem;
   }
+}
+
+// For lists of links, such as on data landing page cards 
+.card__links {
+  font-family: $sans-serif;
+  font-weight: normal;
+  margin-bottom: 2rem;
 }
 
 // Primary cards

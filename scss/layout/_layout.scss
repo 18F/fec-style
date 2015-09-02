@@ -65,6 +65,11 @@
   padding: 0 0 2rem 0;
 }
 
+.content__section--extra {
+  @include clearfix();
+  padding: 4rem 0;
+}
+
 .content__section--ruled {
   border-top: 1px solid $primary;
   padding-top: 2rem;
