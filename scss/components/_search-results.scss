@@ -1,0 +1,46 @@
+.results__count {
+  margin-bottom: 2rem;
+}
+
+.results__title {
+  margin-top: 2rem;
+}
+
+.result {
+  border-top: 2px solid $beige;
+  padding: 3rem 0;
+}
+
+.result__header {
+  @include clearfix();
+}
+
+.result__title {
+  @include span-columns(6 of 9);
+}
+
+.result__years {
+  @include span-columns(3 of 9);
+}
+
+.result__column {
+  @include span-columns(3 of 9);
+  border-right: 1px solid $beige;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.result__left {
+  @include span-columns(5 of 9);
+  border-right: 1px solid $beige;
+}
+
+.result__right {
+  @include span-columns(4 of 9);
+}
+
+.result__related {
+  padding: 1rem 0;
+}

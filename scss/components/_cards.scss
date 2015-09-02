@@ -27,7 +27,6 @@
   margin-bottom: 2rem;
   padding: 2rem;
   text-align: center;
-  font-weight: bold;
   
   @include media($med) {
     @include span-columns(2)
@@ -44,6 +43,11 @@
 
 .card__content {
   text-align: left;
+  padding: 2rem 0 0 0;
+}
+
+.card__content--small {
+  font-size: 1.4rem;
 }
 
 .card--mini {
@@ -56,6 +60,7 @@
 
   .card__content {
     @include span-columns(2 of 3);
+    padding: 0;
   }
 
   @include media($med) {
@@ -73,11 +78,18 @@
 
   .card__content {
     float: left;
+    padding: 0;
     width: calc(100% - 8rem); // Minus the max-width + gutter of the icons
   }
 
   @include media($med) {
     @include span-columns(4)
+  }
+}
+
+.card--vertical {
+  .card__content {
+    padding: 0;
   }
 }
 
@@ -140,6 +152,7 @@
 .card--primary {
   @include u-bg--primary();
   @include u-font-color($ivory);
+  font-weight: bold;
 }
 
 
@@ -165,6 +178,7 @@
 .card--secondary {
   @include u-bg--secondary();
   @include u-font-color($ivory);
+  font-weight: bold;
 }
 
 // Tiled cards

@@ -59,7 +59,8 @@
 }
 
 .combo__button {
-  &.button--primary {
+  &.button--primary,
+  &.button--neutral {
     @include u-background-image('i-search--primary');
   }
 
