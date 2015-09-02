@@ -31,14 +31,15 @@
   @include media($med) {
     @include span-columns(3);
 
-    .card {
-      @include span-columns(2 of 3);
-      float: right;
-    }    
-
+    .card,
     .card--mini {
       @include span-columns(3 of 3);
     }
+
+    .card--vertical {
+      @include span-columns(2 of 3);
+      float: right;
+    }        
   }
 }
 

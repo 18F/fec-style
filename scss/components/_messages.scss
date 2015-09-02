@@ -17,18 +17,18 @@
 
 .message {
   @include clearfix();
-  border: 1px solid;
+  border-top: 1px solid;
   margin: 2rem 0;
   padding: 2rem;
 }
 
 .message--alert {
-  background-color: rgba($neutral, .3);
-  border-color: $neutral;
+  background-color: rgba($neutral, .5);
+  border-color: $beige;
 }
 
 .message--alert__bottom {
-  border-top: 1px solid $neutral;
+  border-top: 1px solid $ivory;
   margin-top: 1rem;
   padding-top: 1rem;
   text-align: center;
