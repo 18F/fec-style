@@ -65,10 +65,9 @@
   padding: 0 0 2rem 0;
 }
 
-.content__section__heading {
+.content__section--extra {
   @include clearfix();
-  border-bottom: 2px solid;
-  margin-bottom: 1rem;
+  padding: 4rem 0;
 }
 
 .content__section--ruled {

@@ -60,11 +60,25 @@
 
 .t-ruled--bold {
   border-width: 2px;
+
+  &.h1 {
+    border-width: 2px;
+  }
 }
 
 .t-ruled--bottom {
   border-bottom: 1px solid $primary;
   padding-bottom: 1rem;
+}
+
+.t-no-rules {
+  border-bottom: none;
+  border-top: none;
+
+  &.h1 {
+    border-bottom: none;
+    border-top: none;
+  }
 }
 
 // Miscellaneous
@@ -83,6 +97,10 @@
 
 .t-inline-block {
   display: inline-block;
+}
+
+.t-sans {
+  font-family: $sans-serif;
 }
 
 .t-italic {

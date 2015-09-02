@@ -2,10 +2,6 @@
 // 
 // Styleguide modules.site-header
 
-.site-header {
-  position: relative;
-}
-
 .skip-nav {
   @include transition(top, .2s);
   background-color: $primary;
@@ -76,8 +72,8 @@
 //
 // Markup:
 // <div class="masthead">
-//   <span class="site-title">Federal Election Commission</span>
-//   <ul class="utility-nav">
+//   <a href="/" title="Home" class="site-title"><span class="u-visually-hidden">Federal Election Commission | United States of America</span></a>
+//   <ul class="utility-nav list--flat">
 //     <li class="utility-nav__item">About</li>
 //     <li class="utility-nav__item">Contact</li>
 //   </ul>
@@ -87,15 +83,20 @@
 
 .masthead {
   @include clearfix();
-  border-bottom: 1px solid $neutral;
-  padding: 2rem;
-}
+  border-bottom: 2px solid $neutral;
+  padding: 1.9rem 2rem 0 0;
+  display: none;
 
-.site-title {
-  @include heading(h1);
-  margin-bottom: 0;
-  border-bottom: 0;
-  float: left;
+  @include media($med) {
+    display: block;
+
+    .site-title {
+      @include u-background-image('lockup', 0% 0%);
+      background-size: contain;
+      height: 8rem;
+      width: 70%;
+    }
+  }
 }
 
 .utility-nav {
@@ -104,7 +105,7 @@
   float: right;
   padding: .55rem 0;
 
-  @include media($med) {
+  @include media($lg) {
     display: block;
   }
 }
@@ -114,5 +115,27 @@
 
   &:last-child {
     padding-right: 0;
+  }
+}
+
+.site-title {
+  margin-bottom: 0;
+  border-bottom: 0;
+  display: block;
+  float: left;
+}
+
+// Mobile site title is included in the .site-nav nav element
+.site-nav {
+  .site-title {
+    @include u-background-image('wordmark', 0% 50%);
+    background-size: contain;
+    height: 3rem;
+    margin: .5rem 1rem;
+    width: calc(100% - 15rem);
+    max-width: 40rem;
+    @include media($med) {
+      display: none;
+    }
   }
 }

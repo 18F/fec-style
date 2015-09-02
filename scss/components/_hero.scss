@@ -69,3 +69,50 @@
     }
   }
 }
+
+.hero--home {
+  @include u-bg--neutral();
+  padding: 0;
+
+  .hero__content {
+    padding: 2rem 0;
+  }
+}
+
+.hero__banner {
+  background-image: url('../img/monument.jpg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 32rem;
+  position: relative;
+
+  .hero__title {
+    border-bottom: 2px solid $primary;
+  }
+
+  .hero__subtitle {
+    padding: 2rem 0;
+  }
+
+  .hero__heading {
+    padding-top: 4rem;
+  }
+
+  .photo-credit {
+    background: rgba($ivory, .8);
+    font-size: 1rem;
+    font-family: $sans-serif;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: .5rem;
+  }  
+
+  @include media($lg) {
+    .hero__heading {
+      @include span-columns(6);
+      @include shift(3);
+    }
+  }   
+}

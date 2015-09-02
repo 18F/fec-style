@@ -16,9 +16,10 @@
 // Styleguide components.list-styles
 
 .list--bulleted {
-  list-style-type: disc;
-  margin: 0;
-  padding-left: 1rem;
+  li {
+    list-style-type: disc;
+    margin-left: 2rem;
+  }
 }
 
 .list--numbered {

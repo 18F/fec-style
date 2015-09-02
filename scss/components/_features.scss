@@ -1,9 +1,16 @@
 // Feature callouts
+//
+// Used on the home page
+// Use .feature--no-title to add extra padding to items that don't have a title above the card to get them to line up
+//
+// Styleguide components.features
 
 .feature {
+  padding-top: 2rem;
+
   @include media($med) {
     @include span-columns(6);
-    
+
     .card {
       @include span-columns(6 of 6);
     }    
@@ -11,10 +18,39 @@
 
   @include media($lg) {
     @include span-columns(3);
+    padding-top: 0;
 
     .card {
       @include span-columns(3 of 3);
-      min-height: 20rem;
+      min-height: 32rem;
+    }
+
+    .card__image {
+      margin: 2rem 0;
+      width: 12rem;
     }
   }
+}
+
+.feature__title {
+  @include heading(h1);
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.feature--no-title { 
+  @include media($med) {
+    padding-top: 6.2rem;
+  }
+
+  @include media($lg) {
+    padding-top: 4.2rem;
+  }
+}
+
+.feature--bulleted {
+  display: list-item;
+  list-style-type: disc;
+  padding-right: 2rem;
+  padding-left: 0;
 }

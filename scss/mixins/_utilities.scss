@@ -219,3 +219,45 @@
   background-repeat: no-repeat;
   background-position: $position;
 }
+
+
+// u-icon-button()
+//
+// $image         - Name of the image file
+// $color         - Border color
+// $side          - Icon on the left or right? Defaults to left
+// $width         - Width of the icon, defaults to 2rem
+// $height        - Height of the icon, defaults to 2rem
+//
+// Styleguide mixins.icon-button
+
+@mixin u-icon-button($image, $color, $side: left, $width: 2rem, $height: 2rem) {
+  position: relative;
+  @if $side == left {
+    padding-left: $width + 2rem;
+  } 
+  @else {
+    padding-right: $width + 2rem;
+  }
+
+  &:after {
+    @include u-background-image($image);
+    content: '';
+    display: block;
+    height: $height;
+    width: $width;
+    position: absolute;
+    top: 50%;
+    margin-top: -1 * ($height / 2);
+
+    @if $side == left {
+      left: .5rem;
+      border-right: 1px solid $color;
+    }
+    @else {
+      right: .5rem;
+      border-left: 1px solid $color;
+    }
+  }
+
+}

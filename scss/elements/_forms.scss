@@ -131,20 +131,20 @@ input[type="file"] {
 //
 // Styleguide elements.forms.checkboxes
 
-input[type="checkbox"],
-input[type="radio"] {
+[type="checkbox"],
+[type="radio"] {
   @include u-visually-hidden();
 }
 
-input[type="checkbox"] + label,
-input[type="radio"] + label {
+[type="checkbox"] + label,
+[type="radio"] + label {
   cursor: pointer;
   line-height: 2rem;
   margin-bottom: 1rem;
 }
 
-input[type="checkbox"] + label::before,
-input[type="radio"] + label::before {
+[type="checkbox"] + label::before,
+[type="radio"] + label::before {
   background: $cream;
   border: 2px solid $primary;
   border-radius: 2px;
@@ -157,21 +157,21 @@ input[type="radio"] + label::before {
   vertical-align: -4px;
 }
 
-input[type="radio"] + label::before {  
+[type="radio"] + label::before {  
   height: 1.6rem;  
   width: 1.6rem;  
 }
 
-input[type="radio"] + label::before {
+[type="radio"] + label::before {
   border-radius: 1.6rem;
 }
 
-input[type="checkbox"]:checked + label::before,
-input[type="radio"]:checked + label::before {
+[type="checkbox"]:checked + label::before,
+[type="radio"]:checked + label::before {
   background-color: $primary;
 }
 
-input[type="checkbox"]:checked + label::before {
+[type="checkbox"]:checked + label::before {
   background-image: url('../img/i-check--neutral.png');
   background-image: url('../img/i-check--neutral.svg');
   background-position: 50%;
@@ -179,12 +179,12 @@ input[type="checkbox"]:checked + label::before {
   background-repeat: no-repeat;
 }
 
-input[type="checkbox"]:focus + label::before {
+[type="checkbox"]:focus + label::before {
   box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary-contrast;
 }
 
-input[type="checkbox"]:disabled + label::before,
-input[type="radio"]:disabled + label::before {
+[type="checkbox"]:disabled + label::before,
+[type="radio"]:disabled + label::before {
   cursor: not-allowed;
 }
 
