@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="11px" viewBox="0 0 17 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>i-two-candidates--primary</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Simple-Copy" sketch:type="MSArtboardGroup" transform="translate(-260.000000, -967.000000)" fill="#022C53">
+            <g id="i-two-candidates--primary" sketch:type="MSLayerGroup" transform="translate(259.000000, 967.000000)">
+                <g id="candidate-icon-copy-4" transform="translate(9.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <g id="Oval-14-+-Rectangle-124" transform="translate(0.925926, 0.074074)">
+                        <path d="M4.07407407,4.55555556 L4.07407407,4.55555556 C4.95363868,4.55555556 5.66666667,3.84252756 5.66666667,2.96296296 C5.66666667,2.08339836 4.95363868,1.37037037 4.07407407,1.37037037 C3.19450947,1.37037037 2.48148148,2.08339836 2.48148148,2.96296296 C2.48148148,3.84252756 3.19450947,4.55555556 4.07407407,4.55555556 L4.07407407,4.55555556 Z M4.07407407,5.55555556 L4.07407407,5.55555556 C2.64222472,5.55555556 1.48148148,4.39481231 1.48148148,2.96296296 C1.48148148,1.53111361 2.64222472,0.37037037 4.07407407,0.37037037 C5.50592343,0.37037037 6.66666667,1.53111361 6.66666667,2.96296296 C6.66666667,4.39481231 5.50592343,5.55555556 4.07407407,5.55555556 L4.07407407,5.55555556 Z" id="Shape"></path>
+                        <path d="M1.37037037,8.51851852 L1.37037037,8.51851852 L1.37037037,10.7407407 L0.37037037,9.74074074 L7.77777778,9.74074074 L6.77777778,10.7407407 L6.77777778,8.51851852 C6.77777778,7.83852423 6.23404411,7.2962963 5.55531131,7.2962963 L2.59283684,7.2962963 C1.91998207,7.2962963 1.37037037,7.84517141 1.37037037,8.51851852 L1.37037037,8.51851852 Z M0.37037037,8.51851852 C0.37037037,7.29121907 1.36936629,6.2962963 2.59283684,6.2962963 L5.55531131,6.2962963 C6.78274565,6.2962963 7.77777778,7.28266257 7.77777778,8.51851852 L7.77777778,10.7407407 L0.37037037,10.7407407 L0.37037037,8.51851852 L0.37037037,8.51851852 Z" id="Shape"></path>
+                    </g>
+                </g>
+                <g id="candidate-icon-copy-5" sketch:type="MSShapeGroup">
+                    <g id="Oval-14-+-Rectangle-124" transform="translate(0.925926, 0.074074)">
+                        <ellipse id="Oval-14" cx="4.07407407" cy="2.96296296" rx="2.59259259" ry="2.59259259"></ellipse>
+                        <rect id="Rectangle-124" x="0.37037037" y="6.2962963" width="7.40740741" height="4.44444444"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

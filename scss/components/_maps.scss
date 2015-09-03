@@ -1,3 +1,19 @@
+.state-map {
+  padding-top: 2rem;
+
+  .button {
+    float: right;
+  }
+
+  .candidate-select {
+    float: left;
+  }
+
+  @include media($lg) {
+    @include span-columns(6);
+  }
+}
+
 path.shape {
   stroke: #ccc;
   &.active {

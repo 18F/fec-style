@@ -15,14 +15,11 @@
 .entity__header--map {
   position: relative;
 
-  .entity__header--info {
-
-  }
-
   .map {
     height: 30rem;
     width: 100%;
   }
+  
   @include media($med) {
     height: 30rem;
     

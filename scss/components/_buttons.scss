@@ -110,7 +110,7 @@
 
 .button--neutral {
   @extend .button;
-  background-color: $brown;
+  background-color: $beige;
   color: $primary;
 
   &:hover {
@@ -123,9 +123,37 @@
 
   &:active,
   &.is-active {
-    background-color: $brown-dark;
+    background-color: $brown;
     border: 2px solid $primary; 
   }  
+}
+
+// Empty buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--empty {{ modifier_class }}">Button</button>
+//
+// Styleguide components.buttons.empty
+
+.button--empty {
+  @extend .button;
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+
+  &:hover {
+    border-color: $primary-contrast;
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $primary;
+    color: $cream;
+  }
 }
 
 // Alt sizes
@@ -219,6 +247,18 @@
   @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
 }
 
+.button--map {
+  @include u-icon-button('i-map--primary', transparent)
+}
+
+.button--table {
+  @include u-icon-button('i-table--primary', transparent, left, 2.5rem)
+}
+
+.button--two-candidates {
+  @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
+}
+
 // Remove button
 //
 // For clearing form inputs
@@ -277,4 +317,8 @@
   @include u-background-image('../img/i-x--secondary-contrast');
   width: 4rem;
   height: 4rem;
+}
+
+.button--close--primary {
+  @include u-background-image('../img/i-x--primary');
 }
