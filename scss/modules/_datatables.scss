@@ -88,8 +88,8 @@
   @include media($lg) {
     th,
     td {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: .5rem;
+      padding-right: .5rem;
     }
   }  
 }

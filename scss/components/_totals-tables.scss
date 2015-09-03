@@ -9,15 +9,11 @@
 .totals-table {
   font-family: $sans-serif;
   font-size: 1.6rem;
-
-  &:last-of-type {
-    border-bottom: 1px solid $primary;
-  }
 }
 
 .totals-table__row {
   @include clearfix();
-  border-top: 1px solid $primary;
+  border-bottom: 1px solid $primary;
 }
 
 .totals-table__cell {
@@ -50,10 +46,6 @@
   .totals-table__cell:first-child {
     font-weight: normal;
   }  
-
-  &:nth-child(2) {
-    border-top: 1px solid $primary;
-  }
 }
 
 @include media($med) {
