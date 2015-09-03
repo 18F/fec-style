@@ -80,13 +80,9 @@
     cursor: default;
   }
   
-  .value-bar__container {
-    background: $ivory;
-  }
-
   .value-bar {
-    height: 5px;
-    background-color: $primary-contrast;
+    margin-top: .5rem;
+    height: .5rem;
   }
  
   @include media($lg) {

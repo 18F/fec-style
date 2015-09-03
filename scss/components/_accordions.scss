@@ -24,9 +24,11 @@
 }
 
 .accordion__button {
+  margin-top: -1.5rem;
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 50%;
+
 }
 
 .accordion--collapsed {

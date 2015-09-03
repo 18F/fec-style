@@ -8,7 +8,6 @@ $tooltip-border-color: #999;
 
 .chart-container {
   font-family: $sans-serif;
-  border: 1px solid $neutral;
 
   .chart-series {
     margin: 1rem;
@@ -21,6 +20,7 @@ $tooltip-border-color: #999;
 
 .chart-series__bar {
   background: $primary;
+  position: relative;
 }
 
 .data--disbursement,
@@ -274,9 +274,9 @@ $tooltip-border-color: #999;
 
 // Key
 .chart__header {
+  @extend .results-info;
+  @extend .results-info--simple;
   @include clearfix();
-  border-bottom: 1px solid $neutral;
-  padding: 1rem;
 }
 
 .chart__title {
@@ -310,4 +310,14 @@ $tooltip-border-color: #999;
   @include media($med) {
     float: left;
   }
+}
+
+// Styles shared by the jinja bars and the datatables bars
+.bar-container {
+  width: 100%;
+  background: $ivory;
+}
+
+.value-bar {
+  background-color: $primary;
 }
