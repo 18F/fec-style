@@ -113,12 +113,18 @@
 .dropdown__selected {
   margin-bottom: .5rem;
 
-  li {
+  .dropdown__item {
     @include animation(fadeIn .2s ease-in);
   }
 
   input {
     margin-left: 0;
+  }
+
+  @include media($med) {
+    &.list--flat .dropdown__item {
+      width: 30%;
+    }
   }
 }
 

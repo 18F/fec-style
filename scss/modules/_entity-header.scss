@@ -12,6 +12,32 @@
   }
 }
 
+.entity__header--map {
+  position: relative;
+
+  .map {
+    height: 30rem;
+    width: 100%;
+  }
+  
+  @include media($med) {
+    height: 30rem;
+    
+    .entity__header--info {
+      width: 50%;
+    }
+
+    .map {
+      position: absolute;
+      width: 50%;
+      height: 34rem;
+      top: 0;
+      bottom: 0;
+      right: 0; 
+    }
+  }
+}
+
 .entity__header__top {
   border-bottom: 2px solid;
   padding-bottom: .5rem;

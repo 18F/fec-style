@@ -50,6 +50,20 @@
       background-color: $brown;
       border: 2px solid $primary; 
     }
+
+    & + .button--empty {
+      background-color: $primary;
+      border: 2px solid $primary;
+      color: $cream;
+    }
+
+    & + .button--map {
+      @include u-icon-button('i-map--cream', transparent)
+    }
+
+    & + .button--table {
+      @include u-icon-button('i-table--cream', transparent, left, 2.5rem)
+    }
   }
 
   label {
@@ -67,14 +81,26 @@
 
   label:first-of-type {
     .button {
-      border-radius: 2px 0 0 2px;
+      border-radius: 4px 0 0 4px;
     }
   }
 
   label:last-of-type {
     .button {
-      border-radius: 0 2px 2px 0;
+      border-radius: 0 4px 4px 0;
       margin-right: 0;
     }
+  }
+}
+
+.toggles--small {
+  margin-bottom: 0;
+  
+  .label {
+    float: left;
+    margin: .5rem 1rem 0 0;
+  }
+  .button {
+    margin-right: -1px;
   }
 }

@@ -67,18 +67,35 @@
   }
 }
 
+// Term classes
+//
+// Wrap glossary terms with these classes
+//
+// .term          - Standard class -- adds the book icon
+// .term--p       - Used when the term is in a body paragaraph of text, reduces padding and adds margin
+
 .term {
-  @include u-background-image('i-term--primary', 100% 0);
+  @include u-background-image('i-term--primary', 100% 40%);
+  @include transition(background-color, .2s, box-shadow, .2s, color, .2s);
+  background-color: transparent;
+  box-shadow: 0 0 0 4px transparent;
   display: inline-block;
-  border-bottom: 2px dotted;
+  border-bottom: none;
   cursor: pointer;
   padding-right: 2rem;
 
-  &:focus {
+  &:focus,
+  &:hover {
+    @include u-background-image('i-term--secondary', 100% 40%);
     outline: none;
+    box-shadow: 0 0 0 4px rgba($secondary-contrast, .7);
+    background-color: rgba($secondary-contrast, .7);
+    color: $secondary;
   }
 }
 
-.page-header .term {
-  @include u-background-image('i-term--neutral', 100% 0);
+.term--p {
+  padding-right: 1.5rem;
+  margin-right: .5rem;
+  box-shadow: none;
 }
