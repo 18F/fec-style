@@ -47,11 +47,9 @@
     }
   }
 
-  tr.js-panel-trigger {
-    @include transition(border-left-width, .2s);
+  tr {
     border-left-width: 0;
     background-color: $cream;
-    cursor: pointer;
     border-bottom: 1px solid $neutral;
 
     &:focus {
@@ -59,19 +57,6 @@
 
       td {
         background-color: rgba($ivory, .3);
-      }
-    }
-
-    &.row-active {
-      td {
-        background-color: rgba($ivory, .3);
-        border-top: 1px solid $ivory;
-        border-bottom: 1px solid $ivory;
-      }
-
-      td:first-child {
-        padding-left: 1rem;
-        border-left: 1px solid $ivory;
       }
     }
   }
@@ -111,6 +96,25 @@
       padding-right: 0;
     }
   }  
+}
+
+// Special styles for rows that trigger panels
+.row--has-panel {
+    @include transition(border-left-width, .2s);
+    cursor: pointer;
+
+  &.row-active {
+    td {
+      background-color: rgba($ivory, .3);
+      border-top: 1px solid $ivory;
+      border-bottom: 1px solid $ivory;
+    }
+
+    td:first-child {
+      padding-left: 1rem;
+      border-left: 1px solid $ivory;
+    }
+  }
 }
 
 // Sortable headers
