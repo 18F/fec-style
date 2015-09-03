@@ -47,7 +47,7 @@
     }
   }
 
-  tr {
+  tr.js-panel-trigger {
     @include transition(border-left-width, .2s);
     border-left-width: 0;
     background-color: $cream;
