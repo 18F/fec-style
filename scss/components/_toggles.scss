@@ -27,7 +27,6 @@
 
 .toggles {
   @include clearfix();
-  margin-bottom: 2rem;
 
   input[type="radio"] {
     @include u-visually-hidden();

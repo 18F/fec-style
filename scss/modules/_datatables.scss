@@ -80,20 +80,16 @@
     cursor: default;
   }
   
-  .value-bar__container {
-    background: $ivory;
-  }
-
   .value-bar {
-    height: 5px;
-    background-color: $primary-contrast;
+    margin-top: .5rem;
+    height: .5rem;
   }
  
   @include media($lg) {
     th,
     td {
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: .5rem;
+      padding-right: .5rem;
     }
   }  
 }

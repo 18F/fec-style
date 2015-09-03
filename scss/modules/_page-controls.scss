@@ -30,6 +30,7 @@
 
 .page-controls {
   @include clearfix();
+  @include transition(top, .8s);  
   width: 100%;
   top: -200px; // Setting this property so we can animate it when .is-fixed is applied
 }
@@ -110,7 +111,7 @@
 }
 // To stick to the top of the page
 .is-fixed {
-  @include transition(top, .2s);
+  @include transition(top, .8s);
   position: fixed;
   top: 0;
   left: 0;
