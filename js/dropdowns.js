@@ -27,6 +27,8 @@ function Dropdown(selector) {
   $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
+  self.checkIfEmpty();
+
   // Set ARIA attributes
   self.$button.attr('aria-haspopup', 'true');
   self.$panel.attr('aria-label','More options');
@@ -83,13 +85,19 @@ Dropdown.prototype.selectItem = function($input) {
     $prev.find('input[type="checkbox"]').focus();
   } else {
     this.removePanel();
+    this.$selected.find('input[type="checkbox"]').focus();
   }
 };
 
 Dropdown.prototype.removePanel = function() {
-  this.$selected.find('input[type="checkbox"]').focus();
   this.$panel.remove();
   this.$button.remove();
 };
+
+Dropdown.prototype.checkIfEmpty = function() {
+  if (this.$panel.find('.dropdown__item').length === 0) {
+    this.removePanel();
+  }
+}
 
 module.exports = {Dropdown: Dropdown};
