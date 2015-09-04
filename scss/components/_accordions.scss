@@ -65,14 +65,19 @@
 }
 
 .accordion--secondary {
+  border-top: 2px solid $primary;
+
   .accordion__header {
-    border-top: 2px solid $primary;
-    border-bottom: 2px solid $primary;
     padding: 1rem;
   }
   
   .accordion__item {
     padding: 2rem;
     background-color: $ivory;
+    border-top: 2px solid $primary;
+  }
+
+  &:last-of-type {
+    border-bottom: 2px solid $primary;
   }
 }
