@@ -20,6 +20,7 @@
 
 .label {
   color: $primary;
+  display: block;
   font-family: $sans-serif;
   font-weight: bold;
   margin-bottom: .5rem;
@@ -47,6 +48,7 @@
 
   .combo__input {
     height: 3.6rem;
+    margin-bottom: 1rem;
   }
 
   .combo__button {
@@ -59,6 +61,7 @@
       height: 3.6rem;
       border-radius: 2px 0 0 2px;
       float: left;
+      margin-bottom: 0;
       width: 80%;
     }
 
@@ -67,5 +70,32 @@
       float: left;
       width: 20%;
     } 
+  }
+}
+
+// Inline forms
+//
+// For displaying multiple form elements in a row
+//
+// Markup:
+//  <div class="row">
+//  <input class="form-element--inline" type="text">
+//  <select class="form-element--inline" ><option>Select an option</option></select>
+//  <button class="form-element--inline button--primary">Submit</button>
+// </div>
+//
+// Styleguide components.form-styles.inline-form
+
+.form-element--inline {
+  margin-bottom: 1rem;
+
+  @include media($med) {
+    display: inline;
+    margin: 0 1rem 0 0;
+    width: auto;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

@@ -29,6 +29,10 @@
   }
 }
 
+.heading__subtitle {
+  margin-bottom: 1rem;
+}
+
 .heading__action {
   @include media($lg) {
     float: right;

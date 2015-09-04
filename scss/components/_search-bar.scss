@@ -58,25 +58,6 @@
   }
 }
 
-.combo__button {
-  &.button--primary,
-  &.button--neutral {
-    @include u-background-image('i-search--primary');
-  }
-
-  &.button--primary-contrast {
-    @include u-background-image('i-search--primary-contrast');
-  }
-
-  &.secondary {
-    @include u-background-image('i-search--secondary');
-  }
-
-  &.button--secondary-contrast {
-    @include u-background-image('i-search--primary-contrast');
-  }
-}
-
 .search__select {
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
