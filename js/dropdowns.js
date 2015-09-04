@@ -27,7 +27,9 @@ function Dropdown(selector) {
   $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
-  self.checkIfEmpty();
+  if (self.checkIfEmpty()) {
+    self.removePanel();
+  }
 
   // Set ARIA attributes
   self.$button.attr('aria-haspopup', 'true');
@@ -76,13 +78,15 @@ Dropdown.prototype.handleCheck = function(e) {
 
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
-  var $prev = $item.prev('.dropdown__item');
-  var $next = $item.next('.dropdown__item');
+  var prev = $item.prevAll('.dropdown__item');
+  var next = $item.nextAll('.dropdown__item');
   this.$selected.append($item);
-  if ($next.length) {
-    $next.find('input[type="checkbox"]').focus();
-  } else if ($prev.length) {
-    $prev.find('input[type="checkbox"]').focus();
+  if (!this.checkIfEmpty()) {
+    if (next.length) {
+      $(next[0]).find('input[type="checkbox"]').focus();
+    } else if (prev.length) {
+      $(prev[0]).find('input[type="checkbox"]').focus();
+    } 
   } else {
     this.removePanel();
     this.$selected.find('input[type="checkbox"]').focus();
@@ -95,8 +99,8 @@ Dropdown.prototype.removePanel = function() {
 };
 
 Dropdown.prototype.checkIfEmpty = function() {
-  if (this.$panel.find('.dropdown__item').length === 0) {
-    this.removePanel();
+  if (this.$panel.find('input').length === 0) {
+    return true;
   }
 }
 
