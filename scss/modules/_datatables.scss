@@ -128,3 +128,12 @@
   background-image: url('../img/i-sort-down--neutral.png');
   background-image: url('../img/i-sort-down--neutral.svg');
 }
+
+// Miscellaneous classes
+//
+// .is-incumbent      - If used, applied to candidate that currently holds the office in election tables
+
+.is-incumbent {
+  @include u-background-image('i-star--primary', 0% 50%);
+  padding-left: 2rem;
+}
