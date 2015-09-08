@@ -38,18 +38,21 @@
   @include media($med) {
     height: 6rem;
     .combo__input {
-      font-size: 2rem;
+      font-size: 1.8rem;
       height: 6rem;
-      width: calc(100% - 18.6rem);
+      width: calc(100% - 26rem);
     }
 
     .combo__button {
       height: 6rem;
-      width: 6rem;
+      width: 10rem;
     }
 
     .search__select {
       height: 6rem;
+      width: 16rem;
+      font-size: 1.8rem;
+      
     }
 
     .tt-dropdown-menu {
