@@ -27,7 +27,7 @@ function Dropdown(selector) {
   $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
-  if (self.checkIfEmpty()) {
+  if (self.isEmpty()) {
     self.removePanel();
   }
 
@@ -81,12 +81,12 @@ Dropdown.prototype.selectItem = function($input) {
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
   this.$selected.append($item);
-  if (!this.checkIfEmpty()) {
+  if (!this.isEmpty()) {
     if (next.length) {
       $(next[0]).find('input[type="checkbox"]').focus();
     } else if (prev.length) {
       $(prev[0]).find('input[type="checkbox"]').focus();
-    } 
+    }
   } else {
     this.removePanel();
     this.$selected.find('input[type="checkbox"]').focus();
@@ -98,10 +98,8 @@ Dropdown.prototype.removePanel = function() {
   this.$button.remove();
 };
 
-Dropdown.prototype.checkIfEmpty = function() {
-  if (this.$panel.find('input').length === 0) {
-    return true;
-  }
-}
+Dropdown.prototype.isEmpty = function() {
+  return this.$panel.find('input').length === 0;
+};
 
 module.exports = {Dropdown: Dropdown};
