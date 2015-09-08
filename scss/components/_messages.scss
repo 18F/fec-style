@@ -33,3 +33,13 @@
   padding-top: 1rem;
   text-align: center;
 }
+
+.message__icon {
+  @include u-background-image('i-alert--neutral', 0% 0%);
+  display: table-cell;
+  min-width: 4rem;
+}
+
+.message__content {
+  display: table-cell;
+}
