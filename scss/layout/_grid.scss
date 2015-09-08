@@ -47,3 +47,21 @@ $xl: new-breakpoint(min-width $x-large-screen 12);
     @include omega();
   }      
 }
+
+// Utilities for hiding things at certain breakpoints
+// 
+// Use sparingly
+
+.u-under-lg-only {
+  @include media($lg) {
+    display: none;
+  } 
+}
+
+.u-lg-only {
+  display: none;
+
+  @include media($lg) {
+    display: inherit;
+  }
+}
