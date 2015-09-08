@@ -1,0 +1,48 @@
+// Tooltips
+//
+// Tooltips for maps
+//
+// Markup:
+// <div class="tooltip">
+//  <div class="tooltip__title">Michigan</div>
+//  <div class="tooltip__value">$100,000</div>
+// </div>
+//
+// Styleguide components.tooltips
+
+.tooltip {
+  border-radius: 4px;
+  border: 2px solid $primary;
+  background-color: #fff;
+  color: $primary;
+  font-family: $sans-serif;
+  padding: .3rem .5rem;
+  text-align: center;
+
+  &:before {
+    @include triangle(2rem, $primary, down);
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -1rem;
+    bottom: -1rem;
+  }
+
+  &:after {
+    @include triangle(1.6rem, #fff, down);
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -.8rem;
+    bottom: -.8rem;
+  }
+
+}
+
+.tooltip__title {
+  border-bottom: 1px solid $primary;
+  text-transform: uppercase;
+  font-weight: bold;
+}
