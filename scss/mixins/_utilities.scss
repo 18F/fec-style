@@ -85,6 +85,10 @@
   .button--secondary {
     color: $secondary;
   }
+
+  .button:hover {
+    border-color: transparent;
+  }
 }
 
 // u-form-color()
