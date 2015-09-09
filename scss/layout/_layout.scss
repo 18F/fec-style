@@ -46,6 +46,11 @@
   }
 }
 
+.content--blank {
+  border-top: 1px solid $neutral;
+  padding: 4rem 0;
+}
+
 .main__content {
   @include clearfix();
   position: relative;
