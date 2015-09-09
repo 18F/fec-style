@@ -43,3 +43,10 @@
 .message__content {
   display: table-cell;
 }
+
+.message--big {
+  @include media($lg) {
+    @include span-columns(8);
+    @include shift(2);
+  }
+}
