@@ -64,8 +64,7 @@
   td {
     @include transition(padding-left, .2s);
     @include u-truncate();
-    padding: 1rem .5rem;
-    background: red;
+    padding: 1rem;
   }
 
   .sorting,
@@ -94,7 +93,7 @@
     th,
     td {
       padding-left: 1rem;
-      padding-right: 0;
+      padding-right: 1rem;
     }
   }  
 }
