@@ -16,7 +16,9 @@
   background-color: #fff;
   color: $primary;
   font-family: $sans-serif;
+  max-width: 30rem;
   padding: .3rem .5rem;
+  position: absolute;
   text-align: center;
 
   &:before {
