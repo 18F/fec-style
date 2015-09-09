@@ -55,12 +55,12 @@
   @include media($lg) {
     @include span-columns(1);
     margin: 3.5rem 0;
-    text-align: left;
+    text-align: center;
 
     &:before,
     &:after {
       height: 5.5rem;
-      left: .5rem;
+      left: 50%;
       width: 1px;
     }
 
