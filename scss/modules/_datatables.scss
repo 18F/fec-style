@@ -80,13 +80,9 @@
     cursor: default;
   }
   
-  .value-bar__container {
-    background: $ivory;
-  }
-
   .value-bar {
-    height: 5px;
-    background-color: $primary-contrast;
+    margin-top: .5rem;
+    height: .5rem;
   }
  
   @include media($lg) {
@@ -131,4 +127,13 @@
 .sorting_desc {
   background-image: url('../img/i-sort-down--neutral.png');
   background-image: url('../img/i-sort-down--neutral.svg');
+}
+
+// Miscellaneous classes
+//
+// .is-incumbent      - If used, applied to candidate that currently holds the office in election tables
+
+.is-incumbent {
+  @include u-background-image('i-star--primary', 0% 0%);
+  padding-left: 2rem;
 }

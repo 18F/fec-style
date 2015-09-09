@@ -34,12 +34,7 @@
     .card,
     .card--mini {
       @include span-columns(3 of 3);
-    }
-
-    .card--vertical {
-      @include span-columns(2 of 3);
-      float: right;
-    }        
+    }  
   }
 }
 
@@ -54,6 +49,20 @@
   &:last-child {
     border-bottom: none;
     padding-bottom: 0;
+  }
+}
+
+.sidebar__section--skinny {
+  padding: 2rem 0;
+
+  @include media($med) {
+    @include span-columns(2 of 3);
+    @include shift(1);
+    
+    .card--vertical {
+      @include span-columns(2 of 2);
+      float: right;
+    }      
   }
 }
 

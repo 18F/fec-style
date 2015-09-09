@@ -9,6 +9,10 @@
 .result {
   border-top: 2px solid $beige;
   padding: 3rem 0;
+
+  &:first-of-type {
+    border-top: none;
+  }
 }
 
 .result__header {
@@ -43,4 +47,14 @@
 
 .result__related {
   padding: 1rem 0;
+}
+
+.result__term {
+  display: inline-block;
+  margin-right: 2%;
+  width: 30%;
+}
+
+.result__definition {
+  display: inline-block;
 }

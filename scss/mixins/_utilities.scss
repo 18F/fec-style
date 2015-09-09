@@ -28,9 +28,18 @@
   float: right;
 }
 
-.is-disabled {
+.is-disabled,
+[disabled] {
   opacity: .5;
   cursor: default;
+}
+
+.u-no-padding {
+  padding: 0 !important;
+}
+
+.u-no-border {
+  border-bottom: none;
 }
 
 // u-font-color()
@@ -80,6 +89,10 @@
   
   .button--secondary {
     color: $secondary;
+  }
+
+  .button:hover {
+    border-color: transparent;
   }
 }
 

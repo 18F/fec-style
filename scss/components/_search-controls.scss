@@ -1,0 +1,76 @@
+// Search Controls
+//
+// Used at the top of election lookpu page
+//
+// Styleguide components.search-controls
+
+.search-controls__row {
+  @include clearfix();
+  border-bottom: 1px solid $beige;
+  padding: 2rem 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+}
+
+// Either / Or
+//
+// Component with two halves, separated by an "or"
+
+.search-controls__either {
+  @include media($lg) {
+    @include span-columns(5.5);
+  }
+}
+
+.search-controls__or {
+  margin: 1rem 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &:before,
+  &:after {
+    background-color: $beige;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 45%;
+    top: 1rem;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+
+}
+
+.search-controls__or--vertical {
+  @include media($lg) {
+    @include span-columns(1);
+    margin: 3.5rem 0;
+    text-align: center;
+
+    &:before,
+    &:after {
+      height: 5.5rem;
+      left: 50%;
+      width: 1px;
+    }
+
+    &:before {
+      top: -5.5rem;
+    }
+
+    &:after {
+      top: auto;
+      bottom: -5.5rem;
+    }
+  }
+}

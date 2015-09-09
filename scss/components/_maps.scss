@@ -1,3 +1,12 @@
+.election-map {
+  border: 1px solid $beige;
+  height: 40rem;
+
+  svg path {
+    stroke-width: 1px;
+  }
+}
+
 .state-map {
   padding-top: 2rem;
 

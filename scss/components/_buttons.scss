@@ -9,12 +9,12 @@
 
 .button {
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
-  display: inline-block;
   border-radius: 2px;
   border: 2px solid transparent;
-  line-height: 1;
+  display: inline-block;
   font-family: $sans-serif;
   font-size: 1.4rem;
+  line-height: 1;
   padding: 8px 2rem;
   text-align: center;
   vertical-align: middle;
@@ -30,6 +30,10 @@
   &.disabled {
     opacity: .3;
     cursor: default;
+  }
+
+  &.form-element--inline {
+    min-height: 3.6rem;
   }
 }
 
@@ -257,6 +261,29 @@
 
 .button--two-candidates {
   @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
+}
+
+.button--search {
+  &.button--primary,
+  &.button--neutral {
+    @include u-background-image('i-search--primary');
+  }
+
+  &.button--primary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+
+  &.secondary {
+    @include u-background-image('i-search--secondary');
+  }
+
+  &.button--secondary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+}
+
+.button--election {
+  @include u-icon-button('i-election--primary', $primary, left, 4rem);
 }
 
 // Remove button

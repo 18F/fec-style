@@ -24,6 +24,7 @@
   @extend .button--neutral;
   @extend .button--sm;
   display: inline-block;
+  height: auto;
   margin-left: .5rem;
 
   &.previous,

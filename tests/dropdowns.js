@@ -98,7 +98,7 @@ describe('dropdown', function() {
     expect(document.activeElement).to.equal($('#A').get(0));
   });
 
-  it('calls remove on selecting the last item', function(){
+  it('calls remove on selecting the last item', function() {
     sinon.spy(this.dropdown, 'removePanel');
     this.dropdown.selectItem($('#A'));
     expect(this.dropdown.removePanel).to.have.not.been.called;
@@ -106,10 +106,26 @@ describe('dropdown', function() {
     expect(this.dropdown.removePanel).to.have.been.called;
   });
 
-  it('removes the panel', function(){
+  it('removes the panel', function() {
     this.dropdown.removePanel();
     expect(this.dropdown.$body.find('.dropdown__panel').length).to.equal(0);
     expect(this.dropdown.$body.find('.dropdown__button').length).to.equal(0);
+  });
+
+  it('removes the panel on init if empty', function() {
+    this.$fixture.empty().append(
+      '<fieldset class="js-dropdown">' +
+        '<legend class="label">Election Years</legend>' +
+        '<ul class="dropdown__selected"></ul>' +
+        '<div class="dropdown">' +
+          '<button class="dropdown__button button--neutral">More</button>' +
+          '<div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true"></div>' +
+        '</div>' +
+      '</fieldset>'
+    );
+    sinon.spy(Dropdown.prototype, 'removePanel');
+    var dropdown = new Dropdown('.js-dropdown');
+    expect(Dropdown.prototype.removePanel).to.have.been.called;
   });
 
   it('hides when clicking somewhere else', function() {
