@@ -51,7 +51,7 @@
   @include media($med) {
     @include span-columns(8);
     @include shift(2);
-    padding-top: 6rem;
+    padding-top: 4rem;
 
     // .search__radio {
     //   @include span-columns(4 of 10);

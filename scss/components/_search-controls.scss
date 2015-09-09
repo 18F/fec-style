@@ -49,6 +49,9 @@
     right: 0;
   }
 
+}
+
+.search-controls__or--vertical {
   @include media($lg) {
     @include span-columns(1);
     margin: 3.5rem 0;
@@ -71,4 +74,3 @@
     }
   }
 }
-

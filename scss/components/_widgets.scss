@@ -1,0 +1,43 @@
+// Widgets
+//
+// Large components such as the election lookup on the data landing page
+//
+// Styleguide component.widgets
+
+.widget {
+  padding: 3rem;
+
+  @include media($lg) {
+    @include span-columns(6);
+    min-height: 52rem;
+
+    .icon-heading {
+      width: 100%;
+    }
+
+    .icon-heading__image {
+      @include span-columns(1 of 6);
+    }
+
+    .icon-heading__title {
+      @include span-columns(5 of 6);
+    }
+  }
+}
+
+.widget__title {
+  border-bottom: 2px solid;
+  padding-bottom: 1rem;
+}
+
+.widget__content {
+  padding: 3rem 0 0 0;
+}
+
+.widget--neutral {
+  @include u-bg--neutral();
+
+  .widget__title {
+    border-bottom-color: $primary;
+  }
+}

@@ -282,6 +282,10 @@
   }
 }
 
+.button--election {
+  @include u-icon-button('i-election--primary', $primary, left, 4rem);
+}
+
 // Remove button
 //
 // For clearing form inputs

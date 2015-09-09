@@ -28,7 +28,8 @@
   float: right;
 }
 
-.is-disabled {
+.is-disabled,
+[disabled] {
   opacity: .5;
   cursor: default;
 }
