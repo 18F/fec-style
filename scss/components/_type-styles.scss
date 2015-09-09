@@ -18,7 +18,7 @@
 
 .t-display {
   @include heading(display);
-
+  
   &.t-ruled {
     border-width: 2px;
   }
@@ -132,6 +132,15 @@
   font-family: $sans-serif;
   font-size: 3.6rem;
   margin-bottom: 1rem;
+}
+
+// .t-short: Used when we want a heading to break onto two lines
+
+.t-short {
+  @include media($lg) {
+    display: block;
+    width: 70%;
+  }
 }
 
 // Modifier styles for text

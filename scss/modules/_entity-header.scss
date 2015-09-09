@@ -18,6 +18,10 @@
   .map {
     height: 30rem;
     width: 100%;
+
+    a {
+      color: $primary;
+    }
   }
   
   @include media($med) {
