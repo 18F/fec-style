@@ -134,6 +134,6 @@
 // .is-incumbent      - If used, applied to candidate that currently holds the office in election tables
 
 .is-incumbent {
-  @include u-background-image('i-star--primary', 0% 50%);
+  @include u-background-image('i-star--primary', 0% 0%);
   padding-left: 2rem;
 }
