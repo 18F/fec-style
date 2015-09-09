@@ -15,7 +15,6 @@
   font-family: $sans-serif;
   font-size: 1.4rem;
   line-height: 1;
-  height: 3.6rem;
   padding: 8px 2rem;
   text-align: center;
   vertical-align: middle;
@@ -31,6 +30,10 @@
   &.disabled {
     opacity: .3;
     cursor: default;
+  }
+
+  &.form-element--inline {
+    min-height: 3.6rem;
   }
 }
 

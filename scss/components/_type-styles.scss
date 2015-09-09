@@ -18,7 +18,7 @@
 
 .t-display {
   @include heading(display);
-
+  
   &.t-ruled {
     border-width: 2px;
   }

@@ -13,6 +13,10 @@
 
 .site-nav {
   @include clearfix();
+
+  @include media($lg) {
+    padding-left: 2rem;
+  }
 }
 
 .site-nav__list {

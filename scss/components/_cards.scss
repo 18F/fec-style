@@ -51,6 +51,7 @@
 }
 
 .card--mini {
+  font-size: 1.4rem;
   padding: 1rem;
   text-align: left;
 
@@ -69,6 +70,7 @@
 }
 
 .card--horizontal {
+  font-size: 1.4rem;
   padding: 1rem 2rem;
   text-align: left;
 
@@ -88,6 +90,8 @@
 }
 
 .card--vertical {
+  font-size: 1.4rem;
+
   .card__content {
     padding: 0;
   }
