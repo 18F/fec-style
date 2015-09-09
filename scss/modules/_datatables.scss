@@ -65,6 +65,7 @@
     @include transition(padding-left, .2s);
     @include u-truncate();
     padding: 1rem .5rem;
+    background: red;
   }
 
   .sorting,
@@ -92,7 +93,7 @@
   @include media($lg) {
     th,
     td {
-      padding-left: 0;
+      padding-left: 1rem;
       padding-right: 0;
     }
   }  
