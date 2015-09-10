@@ -29,7 +29,7 @@ describe('SiteNav', function() {
         '<li class="site-nav__item site-nav__item--with-dropdown">' +
           '<a href="/" class="site-nav__link is-current js-nav-drop-link">' +
             'Campaign Finance Data</a>' +
-          '<input class="nav-toggle__input" id="dropdown-toggle-1" type="checkbox">' +
+          '<input class="nav-toggle__input js-toggle" id="dropdown-toggle-1" type="checkbox">' +
           '<label for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">' +
             'Campaign Finance Data</label>' +
           '<ul class="site-nav__dropdown">' +
@@ -91,6 +91,20 @@ describe('SiteNav', function() {
       var $nav = this.$fixture.find('.js-site-nav');
       expect($nav.length).to.be.ok;
       expect($nav.attr('aria-label')).to.be.ok;
+    });
+  });
+
+  describe('onChange()', function() {
+    it('should set the list aria hidden label to the opposite of checked',
+        function() {
+      var $toggle = this.$fixture.find('.js-toggle'),
+          $list = this.$fixture.find('#site-menu ul'),
+          testEv = {
+            currentTarget: $toggle
+          };
+
+      this.siteNav.onChange(testEv);
+      expect($list.attr('aria-hidden')).to.not.equal($toggle.is(':checked'));
     });
   });
 });
