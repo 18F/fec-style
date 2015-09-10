@@ -24,15 +24,20 @@
 }
 
 path.shape {
-  stroke: #ccc;
+  stroke: $primary;
+  stroke-width: .5px;
+
   &.active {
-    fill: $primary-contrast;
+    fill: rgba($primary, .5);
+    stroke: $primary;
+    stroke-width: 2px;    
   }
 }
 
 .state--hover {
   &:hover {
-    stroke: $secondary-contrast;
+    stroke: $primary;
+    stroke-width: 2px;
     cursor: pointer;
   }
 }
@@ -61,6 +66,10 @@ path.shape {
 
   tr {
     cursor: pointer;
+  }
+
+  .row-active {
+    border-left: 1rem solid $primary;
   }
 }
 
