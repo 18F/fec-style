@@ -42,16 +42,16 @@ path.shape {
   }
 }
 
-.legend {
+.legend-container {
   font-family: $sans-serif;
 
   rect {
     stroke: $primary;
   }
-}
 
-.legend svg {
-  height: 75px;
+  svg {
+    height: 40px;
+  }
 }
 
 .map-table,
@@ -75,6 +75,7 @@ path.shape {
 
 .map-panel {
   padding: 2rem;
+  position: relative;
 
   .state-map {
     width: 100%;
