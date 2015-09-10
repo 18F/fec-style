@@ -54,3 +54,8 @@
   padding-right: 2rem;
   padding-left: 0;
 }
+
+.feature-list {
+  @include clearfix();
+  padding-left: 2rem;
+}
