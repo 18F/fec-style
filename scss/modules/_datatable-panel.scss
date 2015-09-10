@@ -10,7 +10,6 @@
   top: 0;
   width: 100%;
   background-color: $cream;
-  border-top: 2px solid $primary;
   overflow: hidden;
 
   &[aria-hidden="false"] {
@@ -45,7 +44,6 @@
   clear: both;
 
   @include media($med) {
-    min-height: 70vh;
     height: 100%;
     width: 100%;
   }
@@ -61,6 +59,7 @@
   @include media($med) {
     .panel__main {
       width: 50%;
+      min-height: 70vh;
     }  
 
     .dataTables_wrapper {
