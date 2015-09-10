@@ -187,3 +187,10 @@
 .h5 {
   @include heading(h5);
 }
+
+// Alternate paragraph styles
+.p--lead {
+  font-weight: regular;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
