@@ -30,6 +30,7 @@ SiteNav.prototype.onChange = function(ev) {
       $list = $(ev.currentTarget).siblings('ul');
 
   $list.attr('aria-hidden', !checked);
+  $list.find('li a').first().focus();
 }
 
 module.exports = {SiteNav: SiteNav};
