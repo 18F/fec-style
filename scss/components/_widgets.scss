@@ -8,7 +8,8 @@
   padding: 3rem;
 
   @include media($lg) {
-    @include span-columns(6);
+    width: 50%;
+    float: left;
     min-height: 52rem;
 
     .icon-heading {
@@ -22,6 +23,11 @@
     .icon-heading__title {
       @include span-columns(5 of 6);
     }
+  }
+
+  &:first-child {
+    border-right: 1px solid $beige;
+    padding-left: 0;
   }
 }
 
