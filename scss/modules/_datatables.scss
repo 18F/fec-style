@@ -98,21 +98,21 @@
 .row--has-panel {
     @include transition(border-left-width, .2s);
     cursor: pointer;
-
-  &.row-active {
-    td {
-      background-color: rgba($ivory, .3);
-      border-top: 1px solid $ivory;
-      border-bottom: 1px solid $ivory;
-    }
-
-    td:first-child {
-      padding-left: 1rem;
-      border-left: 1px solid $ivory;
-    }
-  }
 }
 
+.row-active {
+  td {
+    background-color: rgba($ivory, .3);
+    border-top: 1px solid $ivory;
+    border-bottom: 1px solid $ivory;
+  }
+
+  td:first-child {
+    padding-left: 1rem;
+    border-left: 1px solid $ivory;
+  }
+}
+  
 // Sortable headers
 .sorting {
   background-image: url('../img/i-sort--neutral.png');
@@ -137,3 +137,35 @@
   @include u-background-image('i-star--primary', 0% 0%);
   padding-left: 2rem;
 }
+
+// For wrapping long table cells instead of truncating
+.data-table--wrapped {
+  td {
+    white-space: pre-wrap;
+    overflow: visible;
+  }
+}
+
+// Scrolling tables
+.dataTables_scroll {
+  position: relative;
+}
+
+.dataTables_scrollBody {
+ 
+  .data-table {
+    position: static;
+
+    &:after {
+      @include linear-gradient(to top, $ivory, $cream);
+      bottom: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      height: 10px;
+      opacity: .4;
+      width: 100%;
+    }
+  }
+}
+

@@ -28,12 +28,18 @@ path.shape {
   &.active {
     fill: $primary-contrast;
   }
+}
+
+.state--hover {
   &:hover {
     stroke: $secondary-contrast;
+    cursor: pointer;
   }
 }
 
 .legend {
+  font-family: $sans-serif;
+
   rect {
     stroke: $primary;
   }
@@ -41,4 +47,33 @@ path.shape {
 
 .legend svg {
   height: 75px;
+}
+
+.map-table,
+.map-panel {
+  @include media($med) {
+    @include span-columns(6, block-collapse);  
+  }
+}
+
+.map-table {
+  border-bottom: 1px solid $ivory;
+
+  tr {
+    cursor: pointer;
+  }
+}
+
+.map-panel {
+  padding: 2rem;
+
+  .state-map {
+    width: 100%;
+  }
+
+  @include media($med) {
+    background-color: rgba($ivory, .3);
+    border: 1px solid $ivory;
+    height: 432px;
+  }
 }
