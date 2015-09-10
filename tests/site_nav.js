@@ -27,7 +27,7 @@ describe('SiteNav', function() {
         'Menu</label>' +
       '<ul id="site-menu" class="site-nav__list">' +
         '<li class="site-nav__item site-nav__item--with-dropdown">' +
-          '<a href="/" class="site-nav__link is-current">' +
+          '<a href="/" class="site-nav__link is-current js-nav-drop-link">' +
             'Campaign Finance Data</a>' +
           '<input class="nav-toggle__input" id="dropdown-toggle-1" type="checkbox">' +
           '<label for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">' +
@@ -61,16 +61,36 @@ describe('SiteNav', function() {
 
   describe('constructor()', function() {
     it('should set body to jqueryized selector', function() {
-      expect(this.siteNav).to.be.ok;
       expect(this.siteNav.$body).to.be.ok;
+      expect(this.siteNav.$body.length).to.be.ok;
     });
   });
 
   describe('assignAria()', function() {
+    beforeEach(function() {
+      this.$subLists = this.$fixture.find('#site-menu ul');
+    });
+
     it('should assign an aria label of submenu to sub lists', function() {
-      var subLists = this.siteNav.$body.find('ul > ul');
-      expect(subLists).to.be.ok;
-      //expect(subLists.attr('aria-label')).to.equal('submenu');
+      expect(this.$subLists.length).to.be.ok;
+      expect(this.$subLists.first().attr('aria-label')).to.equal('submenu');
+    });
+
+    it('should assign aria hidden to sub lists', function() {
+      expect(this.$subLists.first().attr('aria-hidden')).to.equal('true');
+      expect(this.$subLists.last().attr('aria-hidden')).to.equal('true');
+    });
+
+    it('should assign aria-haspopup to all links to the sub lists', function() {
+      var $link = this.$fixture.find('#site-menu .js-nav-drop-link');
+      expect($link.length).to.be.ok;
+      expect($link.first().attr('aria-haspopup')).to.equal('true');
+    });
+
+    it('should assign an aria label to the whole nav', function() {
+      var $nav = this.$fixture.find('.js-site-nav');
+      expect($nav.length).to.be.ok;
+      expect($nav.attr('aria-label')).to.be.ok;
     });
   });
 });

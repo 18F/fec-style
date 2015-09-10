@@ -10,6 +10,7 @@ window.$ = window.jQuery = $;
 var accordion = require('../../js/accordion');
 var glossary = require('../../js/glossary');
 var dropdown = require('../../js/dropdowns');
+var siteNav = require('../../js/site_nav');
 var typeahead = require('../../js/typeahead');
 var typeaheadFilter = require('../../js/typeahead-filter');
 
@@ -21,6 +22,10 @@ $(SLT_ACCORDION).each(function() {
 
 $('.js-dropdown').each(function() {
   new dropdown.Dropdown(this);
+});
+
+$('.js-site-nav').each(function() {
+  new siteNav.SiteNav(this);
 });
 
 new typeahead.Typeahead('.js-search-input', $('.js-search-type').val());
