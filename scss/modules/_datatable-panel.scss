@@ -33,7 +33,7 @@
 }
 
 .panel {
-  padding: 2rem 1rem;
+  padding: 1rem;
 
   @include media($med) {
     padding: 0;
@@ -53,6 +53,14 @@
 .panel-active {
   .dataTables_wrapper {
     height: auto;
+  }
+
+  .panel__overlay {
+    min-height: 70vh;
+  }
+
+  .panel__main {
+    min-height: 100vh;
     overflow: hidden;
   }
 
@@ -60,10 +68,10 @@
     .panel__main {
       width: 50%;
       min-height: 70vh;
+      overflow: visible;
     }  
 
     .dataTables_wrapper {
-      min-height: 70vh;
       overflow: visible;
     }
   }
@@ -129,9 +137,10 @@
   @include clearfix();
   border-bottom: 1px solid $ivory;
   text-align: right;
-  padding: .6rem 2rem .6rem 2rem;
+  padding: 0;
 
   @include media($med) {
+    padding: .6rem 2rem .6rem 2rem;
     text-align: left;
   }
 }
