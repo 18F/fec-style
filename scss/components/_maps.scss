@@ -24,21 +24,66 @@
 }
 
 path.shape {
-  stroke: #ccc;
+  stroke: $primary;
+  stroke-width: .5px;
+
   &.active {
-    fill: $primary-contrast;
-  }
-  &:hover {
-    stroke: $secondary-contrast;
+    fill: rgba($primary, .5);
+    stroke: $primary;
+    stroke-width: 2px;    
   }
 }
 
-.legend {
+.state--hover {
+  &:hover {
+    stroke: $primary;
+    stroke-width: 2px;
+    cursor: pointer;
+  }
+}
+
+.legend-container {
+  font-family: $sans-serif;
+
   rect {
     stroke: $primary;
   }
+
+  svg {
+    height: 40px;
+  }
 }
 
-.legend svg {
-  height: 75px;
+.map-table,
+.map-panel {
+  @include media($med) {
+    @include span-columns(6, block-collapse);  
+  }
+}
+
+.map-table {
+  border-bottom: 1px solid $ivory;
+
+  tr {
+    cursor: pointer;
+  }
+
+  .row-active {
+    border-left: 1rem solid $primary;
+  }
+}
+
+.map-panel {
+  padding: 2rem;
+  position: relative;
+
+  .state-map {
+    width: 100%;
+  }
+
+  @include media($med) {
+    background-color: rgba($ivory, .3);
+    border: 1px solid $ivory;
+    height: 432px;
+  }
 }

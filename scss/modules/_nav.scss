@@ -121,6 +121,15 @@
   }
 }
 
+.site-nav__subtitle {
+  display: block;
+  margin: 0;
+  padding: 1rem;
+
+  @include media($lg) {
+    border-bottom: 1px solid $beige;
+  }
+}
 
 .site-nav__dropdown {
   display: none;
@@ -132,6 +141,7 @@
 
   .site-nav__link {
     padding: .5rem 1rem;
+    white-space: nowrap;
   }
 
   @include media($lg) {

@@ -54,23 +54,23 @@
 .search-controls__or--vertical {
   @include media($lg) {
     @include span-columns(1);
-    margin: 3.5rem 0;
+    margin: 5.5rem 0;
     text-align: center;
 
     &:before,
     &:after {
-      height: 5.5rem;
+      height: 6.5rem;
       left: 50%;
       width: 1px;
     }
 
     &:before {
-      top: -5.5rem;
+      top: -6.5rem;
     }
 
     &:after {
       top: auto;
-      bottom: -5.5rem;
+      bottom: -6.5rem;
     }
   }
 }

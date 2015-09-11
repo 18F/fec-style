@@ -273,11 +273,11 @@
     margin-top: -1 * ($height / 2);
 
     @if $side == left {
-      left: .5rem;
+      left: 1rem;
       border-right: 1px solid $color;
     }
     @else {
-      right: .5rem;
+      right: 1rem;
       border-left: 1px solid $color;
     }
   }

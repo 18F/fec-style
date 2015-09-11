@@ -282,6 +282,19 @@
   }
 }
 
+// .button--search--text    - Positions the icon correctly when showing the "search" word in the button
+
+.button--search--text {
+  &.button--primary,
+  &.button--neutral {
+    @include u-icon-button('i-search--primary', transparent, left);
+  }
+
+  &.button--primary-contrast {
+    @include u-icon-button('i-search--primary-contrast', transparent, left);
+  }
+}
+
 .button--election {
   @include u-icon-button('i-election--primary', $primary, left, 4rem);
 }

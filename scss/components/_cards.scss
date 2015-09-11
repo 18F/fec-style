@@ -105,7 +105,7 @@
     @include span-columns(2 of 6);
     background-color: $primary;
     border-radius: 4px 0 0 4px;
-    padding: 7rem 2rem;
+    padding: 9rem 2rem;
     text-align: center;
   }
 
@@ -125,7 +125,7 @@
 
   @include media($med) {
     @include span-columns(6);
-    min-height: 22rem;
+    min-height: 26rem;
   }
 }
 
