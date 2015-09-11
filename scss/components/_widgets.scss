@@ -10,7 +10,6 @@
   @include media($lg) {
     width: 50%;
     float: left;
-    min-height: 52rem;
 
     .icon-heading {
       width: 100%;
@@ -25,9 +24,8 @@
     }
   }
 
-  &:first-child {
-    border-right: 1px solid $beige;
-    padding-left: 0;
+  &:nth-child(2) {
+    border-left: 1px solid $beige;
   }
 }
 
