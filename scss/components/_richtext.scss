@@ -1,0 +1,31 @@
+// Rich Text styles
+//
+// These are styles specifically for content output by the CMS
+
+.rich-text {  
+  padding-top: 2rem;
+  
+  ul {
+    margin-bottom: 1rem;
+
+    li {
+      list-style-type: disc;
+      margin-left: 2rem;
+      padding: 0 0 .5rem 0;
+      margin-bottom: 0;
+
+      // Hack because the editor is putting all text in <p>s
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+      margin: 0;
+      padding-left: 1rem;      
+    }
+  }
+}
