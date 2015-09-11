@@ -9,10 +9,6 @@
   border-top: 2px solid $primary;
   border-bottom: 2px solid $primary;
   padding: 1rem 1rem;
-
-  @include media($lg) {
-    padding: 1rem 0;
-  }
 }
 
 .results-info__title {
@@ -21,18 +17,10 @@
 
 .results-info--top {
   padding: 2rem 1rem;
-
-  @include media($lg) {
-    padding: 2rem 0;
-  }
 }
 
 .results-info--simple {
   border-top: none;
-}
-
-.results-info__null {
-  float: right;
 }
 
 .dataTables_wrapper {
@@ -45,10 +33,32 @@
       float: none;
       margin-left: auto;
       margin-right: auto;
-      text-align: center;
+      text-align: left;
     }
 
-    @include media($med) {
+    .dataTables_info {
+      margin-bottom: 1rem;
+    }
+
+    .dataTables_length {
+      margin-bottom: 1rem;
+
+      select {
+        display: inline;
+      }
+    }
+  }
+}
+
+// BREAKPOINT: MEDIUM
+
+@include media($med) {
+  .results-info__null {
+    float: right;
+  }  
+  
+  .dataTables_wrapper {
+    .results-info {
       .dataTables_length,
       .dataTables_info {
         float: left;
@@ -63,19 +73,27 @@
     }
 
     .dataTables_length {
-      padding: 1rem 0 0 0;
-
-      select {
-        display: inline;
-      }
+      padding: 0 0 0 0;
     }
 
     .dataTables_info {
       padding-top: 0;
+      margin-bottom: 0;
     }
 
     .dataTables_paginate {
       padding-top: 0;
     }
+  }    
+}
+
+// BREAKPOINT: LARGE
+@include media($lg) {
+  .results-info {
+    padding: 1rem 0;
+  }
+
+  .results-info--top {
+    padding: 2rem 0;
   }
 }

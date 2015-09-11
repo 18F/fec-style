@@ -40,6 +40,7 @@
     
     .filters__hider {
       height: auto;
+      overflow: visible;
     }
 
     .filters__toggle {
@@ -181,6 +182,58 @@
         border-right: none;
         padding-right: 0;
       }
+    }
+  }
+}
+
+// BREAKPOINT: MEDIUM 
+// Use flexbox to get the filters into rows of equal height
+
+@include media($med) {
+  .filters {
+    form {
+      @include display(flex);
+      @include justify-content(flex-start);    
+      @include flex-wrap(wrap);
+    }
+  }
+
+  .filter {
+    border-bottom: none;
+    border-right: 1px solid darken($neutral, 10%);
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    width: 33.3333%;
+
+    &:nth-child(3n) {
+      border-right: none;
+    }
+  }
+}
+
+// BREAKPOINT: LARGE
+// Stack filters vertically
+
+@include media($lg) {
+  .filters {
+    form {
+      display: block;
+    }
+  }
+
+  .filter {
+    border-bottom: 1px solid darken($neutral, 10%);
+    border-right: none;
+    margin-bottom: 0;
+    padding: 2rem 0;
+    width: 100%;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
     }
   }
 }
