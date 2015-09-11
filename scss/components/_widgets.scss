@@ -5,11 +5,17 @@
 // Styleguide component.widgets
 
 .widget {
-  padding: 3rem;
+  padding: 1rem;
+
+  &:nth-child(2) {
+    border-top: 1px solid $beige;
+    padding-top: 2rem;
+  }
 
   @include media($lg) {
     width: 50%;
     float: left;
+    padding: 3rem;
 
     .icon-heading {
       width: 100%;
@@ -22,10 +28,11 @@
     .icon-heading__title {
       @include span-columns(5 of 6);
     }
-  }
 
-  &:nth-child(2) {
-    border-left: 1px solid $beige;
+    &:nth-child(2) {
+      border-left: 1px solid $beige;
+      border-top: none;
+    }
   }
 }
 
@@ -35,7 +42,9 @@
 }
 
 .widget__content {
-  padding: 3rem 0 0 0;
+  @include media($lg) {
+    padding: 3rem 0 0 0;
+  }
 }
 
 .widget--neutral {

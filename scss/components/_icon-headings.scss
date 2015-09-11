@@ -1,13 +1,23 @@
 // For combinations of icons + headings
 
-.icon-heading {
-  @include span-columns(4);
-}
-
 .icon-heading__image {
-  @include span-columns(1 of 4);
+  @include span-columns(3);
 }
 
 .icon-heading__title {
-  @include span-columns(3 of 4);
+  @include span-columns(9);
+}
+
+@include media($med) {
+  .icon-heading {
+    @include span-columns(4);
+  }
+
+  .icon-heading__image {
+    @include span-columns(1 of 4);
+  }
+
+  .icon-heading__title {
+    @include span-columns(3 of 4);
+  }
 }
