@@ -10,7 +10,7 @@ window.$ = window.jQuery = $;
 var accordion = require('../../js/accordion');
 var glossary = require('../../js/glossary');
 var dropdown = require('../../js/dropdowns');
-var siteNav = require('../../js/site_nav');
+var siteNav = require('../../js/site-nav');
 var typeahead = require('../../js/typeahead');
 var typeaheadFilter = require('../../js/typeahead-filter');
 

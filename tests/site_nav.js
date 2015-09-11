@@ -4,14 +4,11 @@
 /* global require, document, describe, before, beforeEach, after, afterEach, it */
 
 var chai = require('chai');
-var sinon = require('sinon');
-var sinonChai = require('sinon-chai');
 var expect = chai.expect;
-chai.use(sinonChai);
 
 var $ = require('jquery');
 
-var SiteNav = require('../js/site_nav').SiteNav;
+var SiteNav = require('../js/site-nav').SiteNav;
 
 describe('SiteNav', function() {
   before(function() {
@@ -63,6 +60,7 @@ describe('SiteNav', function() {
     it('should set body to jqueryized selector', function() {
       expect(this.siteNav.$body).to.be.ok;
       expect(this.siteNav.$body.length).to.be.ok;
+      expect(this.siteNav.$body.is(this.$fixture.find('nav'))).to.be.true;
     });
   });
 
@@ -94,16 +92,16 @@ describe('SiteNav', function() {
     });
   });
 
-  describe('onChange()', function() {
+  describe('handleChange()', function() {
     it('should set the list aria hidden label to the opposite of checked',
         function() {
-      var $toggle = this.$fixture.find('.js-toggle'),
-          $list = this.$fixture.find('#site-menu ul'),
-          testEv = {
-            currentTarget: $toggle
-          };
+      var $toggle = this.$fixture.find('.js-toggle');
+      var $list = this.$fixture.find('#site-menu ul');
+      var testEv = {
+        currentTarget: $toggle
+      };
 
-      this.siteNav.onChange(testEv);
+      this.siteNav.handleChange(testEv);
       expect($list.attr('aria-hidden')).to.not.equal($toggle.is(':checked'));
     });
   });
