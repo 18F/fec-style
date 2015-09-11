@@ -78,6 +78,11 @@
   }
 }
 
+// BREAKPOINT: MEDIUM
+// .search-controls__either go side by side
+// .search-controls__or goes vertical between the eithers
+// Zip and button line up
+
 @include media($med) {
   .search-controls__row {
     padding: 2rem 0;
@@ -93,9 +98,6 @@
 
   .search-controls__zip {
     @include span-columns(3.5 of 5.5);
-  }
-
-  .search-controls__state {
   }
 
   .search-controls__or--vertical {
@@ -120,6 +122,9 @@
     }
   }  
 }
+
+// BREAKPOINT: MEDIUM
+// All form elements go in rows
 
 @include media($lg) {
   .search-controls__state,
