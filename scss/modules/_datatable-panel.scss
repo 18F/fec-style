@@ -3,9 +3,10 @@
 // Styleguide modules.datatable-panel
 
 .panel__main {
-  @include transform(translateX(0%));
+  @include transform(translate3D(0%, 0, 0));
   @include transition-property(transform);
-  @include transition-duration(.5s);
+  @include transition-duration(.2s);
+  @include transition-timing-function(ease-in);
   clear: both;
   position: relative;
   overflow: hidden;
@@ -17,6 +18,7 @@
 }
 
 .panel__overlay {
+  @include transition(opacity .2s);
   background-color: $cream;
   display: block !important; // Overriding default [aria-hidden=true] styling
   overflow: hidden;
@@ -24,26 +26,31 @@
   top: 0;
   right: 0;
   width: 50%;
+  opacity: 0;
 }
 
 // Open panel
 .panel-active {
   .dataTables_wrapper {
     height: auto;
+    overflow: hidden;
+    position: relative;
   }
 
   .panel__overlay {
     min-height: 70vh;
+    opacity: 1;
   }
 
   .panel__main {
-    @include transform(translateX(-50%));
+    @include transform(translate3D(-50%, 0, 0));
     height: 100vh;
     overflow: hidden;
   }    
 }
 
 .panel {
+  font-family: $sans-serif;
   padding: 1rem;
 }
 
