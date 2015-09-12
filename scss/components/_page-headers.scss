@@ -17,19 +17,10 @@
 
 .page-header {
   @include clearfix();
-  padding: 1.5rem 4rem;
+  padding: 1rem 2rem;
 
   .search__container {
     display: none;
-  }
-
-  @include media($med) {
-
-    .search__container {
-      display: block;
-      float: right;
-      width: 50%;
-    }  
   }
 }
 
@@ -38,12 +29,7 @@
   font-family: $sans-serif;
   font-size: 1.6rem;
   margin-bottom: 0;
-  line-height: 4rem;
-
-  @include media($med) {
-    float: left;
-    width: calc(50% - 4rem);
-  }
+  line-height: 1;
 }
 
 .page-header__icon {
@@ -55,4 +41,28 @@
 .page-header--primary {
   @include u-bg--primary();
   @include u-font-color($primary-contrast);
+}
+
+// BREAKPOINT: MEDIUM
+// Add padding
+// Show the search bar in line with the page title
+
+@include media($med) {
+  .page-header {
+    padding: 1rem 4rem;
+
+    .search__container {
+      display: block;
+      float: right;
+      width: 50%;
+    }  
+  }
+
+  .page-header__title {
+    @include media($med) {
+    float: left;
+    line-height: 4rem;
+    width: calc(50% - 4rem);
+  }
+  }
 }

@@ -22,7 +22,6 @@
 
 .filters {
   @include clearfix();
-  @include transition(margin-left .2s);  
   @include u-bg--neutral();
   bottom: 0;
   height: 0;
@@ -47,32 +46,11 @@
       @include u-background-image('i-up-2--primary', 1rem 50%);
     }
   }
-
-  @include media($lg) {
-    float: left;
-    margin-left: -30rem;
-    padding: 2rem;
-    position: relative;
-    width: 30rem;
-    vertical-align: top;
-
-    &.is-open {
-      float: left;
-
-      .filters__toggle {
-        @include u-background-image('i-left-2--primary', 1rem 50%);    
-      }
-    }
-  }
 }
 
 .filters__hider {
   height: 0;
   overflow: hidden;
-
-  @include media($lg) {
-    overflow: visible;
-  }
 }
 
 
@@ -159,31 +137,6 @@
   background-color: $neutral;
   margin-bottom: 2rem;
   padding: 2rem;
-
-  @include media($lg) {
-    form {
-      @include display(flex);
-      @include justify-content(flex-start);
-    }
-
-    .filter {
-      border-bottom: none;
-      border-top: none;
-      border-right: 1px solid $cream;
-      margin-right: 0;
-      padding: 0 1rem;
-      width: 100%;
-
-      &:first-child {
-        padding-left: 0;
-      }
-
-      &:last-child {
-        border-right: none;
-        padding-right: 0;
-      }
-    }
-  }
 }
 
 // BREAKPOINT: MEDIUM 
@@ -216,9 +169,29 @@
 
 @include media($lg) {
   .filters {
+    @include transition(margin-left .2s);  
+    float: left;
+    margin-left: -30rem;
+    padding: 2rem;
+    position: relative;
+    width: 30rem;
+    vertical-align: top;
+
+    &.is-open {
+      float: left;
+
+      .filters__toggle {
+        @include u-background-image('i-left-2--primary', 1rem 50%);    
+      }
+    }
+
     form {
       display: block;
     }
+  }
+
+  .filters__hider {
+    overflow: visible;
   }
 
   .filter {
@@ -235,5 +208,30 @@
     &:last-child {
       border-bottom: 0;
     }
+  }
+
+  .filters--horizontal {
+    form {
+      @include display(flex);
+      @include justify-content(flex-start);
+    }
+
+    .filter {
+      border-bottom: none;
+      border-top: none;
+      border-right: 1px solid $cream;
+      margin-right: 0;
+      padding: 0 1rem;
+      width: 100%;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+    }    
   }
 }

@@ -51,19 +51,21 @@
 
 .result__term {
   display: inline-block;
+  font-family: $sans-serif;
   margin-right: 2%;
   width: 50%;
 }
 
 .result__definition {
   display: inline-block;
+  font-family: $sans-serif;
 }
 
 @include media($lg) {
   .result {
     padding: 3rem 0;
   }
-  
+
   .result__term {
     width: 30%;
   }

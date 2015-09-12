@@ -2,51 +2,28 @@
 // 
 // Styleguide modules.datatable-panel
 
+.panel__main {
+  @include transform(translateX(0%));
+  @include transition-property(transform);
+  @include transition-duration(.5s);
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  width: 200%;
+
+  .data-table {
+    width: 50% !important;
+  }
+}
+
 .panel__overlay {
-  @include transform(translateX(100%));
-  bottom: 0;
-  left: 0;
+  background-color: $cream;
+  display: block !important; // Overriding default [aria-hidden=true] styling
+  overflow: hidden;
   position: absolute;
   top: 0;
-  width: 100%;
-  background-color: $cream;
-  overflow: hidden;
-
-  &[aria-hidden="false"] {
-    @include transform(translateX(0%));
-  }
-
-  @include media($med) {
-    background-color: rgba($ivory, .3);
-    border-left: 1px solid $ivory;
-    min-height: 70vh;
-    height: 100%;
-    width: 100%;
-    left: 2px;
-    top: -1px; // Hack to get it to line up
-
-    &[aria-hidden="false"] {
-      // 99.5 to ensure when container is not an even number.
-      @include transform(translateX(99.5%));
-    }
-  }
-}
-
-.panel {
-  padding: 1rem;
-
-  @include media($med) {
-    padding: 0;
-  }
-}
-
-.panel__main {
-  clear: both;
-
-  @include media($med) {
-    height: 100%;
-    width: 100%;
-  }
+  right: 0;
+  width: 50%;
 }
 
 // Open panel
@@ -60,28 +37,72 @@
   }
 
   .panel__main {
-    min-height: 100vh;
+    @include transform(translateX(-50%));
+    height: 100vh;
     overflow: hidden;
-  }
+  }    
+}
 
-  @include media($med) {
-    .panel__main {
-      width: 50%;
-      min-height: 70vh;
-      overflow: visible;
-    }  
-
-    .dataTables_wrapper {
-      overflow: visible;
-    }
-  }
+.panel {
+  padding: 1rem;
 }
 
 .panel__row {
   margin-top: 3px;
   padding: .65rem 1.5rem;
+}
 
-  @include media($med) {
+// BREAKPOINT: MEDIUM
+// Panel slides next to the table
+
+@include media($med) {
+  .panel__main {
+    @include transform(translateX(0));
+    height: 100%;
+    width: 100%;
+
+    .data-table {
+      width: 100% !important;
+    }
+  }
+
+  .panel__overlay {
+    background-color: rgba($ivory, .3);
+    border-left: 1px solid $ivory;
+    min-height: 70vh;
+    height: 100%;
+    width: 50%;
+    left: 100%;
+
+    &[aria-hidden="false"] {
+      left: 50%;
+    }
+  }
+
+  .panel {
+    padding: 0;
+  }
+
+  .panel-active {
+    .panel__main {
+      @include transform(translateX(0%));
+      width: 100%;
+      min-height: 70vh;
+      height: auto;
+      overflow: visible;
+    }  
+
+    .data-table {
+      @include transform(translateX(0));
+      width: 50% !important;
+    }
+
+    .dataTables_wrapper {
+      overflow: visible;
+    }
+  }
+
+  .panel__row {
     border-bottom: 1px solid $neutral;
     padding: 10px 18px;
     margin-top: 0;

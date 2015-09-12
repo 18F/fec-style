@@ -11,6 +11,7 @@
   @include transition(opacity, .2s);
   position: relative;
   opacity: 0;
+  overflow: hidden;
   width: 100%;
   padding-top: 8rem;
 
@@ -35,6 +36,9 @@
 }
 
 .data-table {
+  @include transform(translateX(0%));
+  @include transition-property(transform);
+  @include transition-duration(.5s);
   height: 100%;
   font-family: $sans-serif;
   position: relative;
