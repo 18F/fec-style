@@ -4,9 +4,12 @@
 
 .panel__main {
   @include transform(translate3D(0%, 0, 0));
-  @include transition-property(transform);
-  @include transition-duration(.2s);
-  @include transition-timing-function(ease-in);
+  // Still working out bugs but keeping this in for now:
+  // @include transition-property(transform); 
+  // @include transition-duration(.2s);
+  // @include transition-timing-function(ease-in);
+  @include transition(left .2s ease-in);
+  left: 0;
   clear: both;
   position: relative;
   overflow: hidden;
@@ -17,11 +20,16 @@
   }
 }
 
+.results-info {
+  position: relative;
+  
+}
 .panel__overlay {
   @include transition(opacity .2s);
   background-color: $cream;
   display: block !important; // Overriding default [aria-hidden=true] styling
   overflow: hidden;
+  padding: 1rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -38,25 +46,96 @@
   }
 
   .panel__overlay {
-    min-height: 70vh;
+    min-height: 100vh;
     opacity: 1;
   }
 
   .panel__main {
-    @include transform(translate3D(-50%, 0, 0));
-    height: 100vh;
+    // @include transform(translate3D(-50%, 0, 0));
+    left: -100%;
+    max-height: 130vh;
     overflow: hidden;
-  }    
+  } 
+
+  .panel {
+    min-height: 100vh;
+  }   
 }
 
 .panel {
+  background-color: rgba($ivory, .3);
+  border: 1px solid $ivory;  
   font-family: $sans-serif;
   padding: 1rem;
+
+  td {
+    padding-bottom: 1rem;
+    vertical-align: top;
+  }
+}
+
+.panel__heading {
+  border-bottom: 1px solid $neutral;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+
+  .panel__title {
+    margin-bottom: 0;
+  }
+}
+
+.panel__title {
+  font-weight: bold;
+}
+
+.panel__subtitle {
+  font-family: $sans-serif;
 }
 
 .panel__row {
-  margin-top: 3px;
-  padding: .65rem 1.5rem;
+  padding: 2rem 0 1rem 0;
+  border-bottom: 1px solid $neutral;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.panel__term {
+  font-weight: bold;
+  vertical-align: top;
+}
+
+// Panel Navigation
+// 
+// The top bar of the panel
+// 
+// .panel__link   - Link to source page or document. Floats to the left on desktop and to the right on mobile 
+// .panel__close  - Closes the panel. Shows up as a back arrow on the left on mobile and an x on the right on desktop
+
+.panel__navigation {
+  @include clearfix();
+  border-bottom: 1px solid $ivory;
+  padding: 0 0 1rem 0;
+  text-align: right;
+}
+
+.panel__link {
+  float: right;
+}
+
+.panel__close {
+  background-image: url('../img/i-left-2--primary.png');
+  background-image: url('../img/i-left-2--primary.svg');  
+  background-position: 1rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  float: left;
+  padding-left: 3rem;
+
+  &:after {
+    content: "View all";
+  }
 }
 
 // BREAKPOINT: MEDIUM
@@ -88,7 +167,36 @@
 
   .panel {
     padding: 0;
+    background: none;
+    border: none;
   }
+
+  .panel__navigation {
+    padding: .6rem 2rem .6rem 2rem;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  
+  .panel__link {
+    float: left;
+  }
+
+  .panel__close {
+    background-image: url('../img/i-x--primary.png');
+    background-image: url('../img/i-x--primary.svg');
+    float: right;
+
+    &:after {
+      content: "Close";
+    }
+
+    &:focus {
+      background-image: url('../img/i-x--primary-contrast.png');
+      background-image: url('../img/i-x--primary-contrast.svg');
+    }
+  }
+
+// Open panel
 
   .panel-active {
     .panel__main {
@@ -110,8 +218,7 @@
   }
 
   .panel__row {
-    border-bottom: 1px solid $neutral;
-    padding: 10px 18px;
+    padding: 1rem 1.8rem;
     margin-top: 0;
 
     &:last-child {
@@ -120,8 +227,17 @@
   }
 }
 
-// Specifying in order to override datatable styles
+// BREAKPOINT: LARGE
+// - Panel terms take up less space
 
+@include media($lg) {
+  .panel__term {
+    width: 30%;
+  }
+}
+
+
+// Specifying in order to override datatable styles
 .data-table .panel__row {
   table {
     border: 0;
@@ -151,62 +267,5 @@
     td {
       padding-left: 0 !important;
     }
-  }
-}
-
-// Panel Navigation
-// 
-// The top bar of the panel
-// 
-// .panel__link   - Link to source page or document. Floats to the left on desktop and to the right on mobile 
-// .panel__close  - Closes the panel. Shows up as a back arrow on the left on mobile and an x on the right on desktop
-
-.panel__navigation {
-  @include clearfix();
-  border-bottom: 1px solid $ivory;
-  text-align: right;
-  padding: 0;
-
-  @include media($med) {
-    padding: .6rem 2rem .6rem 2rem;
-    text-align: left;
-  }
-}
-
-.panel__link {
-  float: right;
-
-  @include media($med) {
-    float: left;
-  }
-}
-
-.panel__close {
-  background-image: url('../img/i-left-2--primary.png');
-  background-image: url('../img/i-left-2--primary.svg');  
-  background-position: 1rem;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  float: left;
-  padding-left: 3rem;
-
-  &:after {
-    content: "View all";
-  }
-
-  @include media($med) {
-    background-image: url('../img/i-x--primary.png');
-    background-image: url('../img/i-x--primary.svg');
-    float: right;
-
-    &:after {
-      content: "Close";
-    }
-
-    &:focus {
-      background-image: url('../img/i-x--primary-contrast.png');
-      background-image: url('../img/i-x--primary-contrast.svg');
-    }
-
   }
 }
