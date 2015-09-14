@@ -75,23 +75,29 @@
     cursor: pointer;
     padding-left: 1rem;
   }
-  
+
   .sorting_disabled {
     cursor: default;
   }
-  
+
   .value-bar {
     margin-top: .5rem;
     height: .5rem;
   }
- 
+
   @include media($lg) {
     th,
     td {
       padding-left: 1rem;
       padding-right: 1rem;
     }
-  }  
+  }
+
+  // Special styles for tables that use `offsetX: true`
+  &.scrollX {
+    border-collapse: separate;
+    table-layout: auto;
+  }
 }
 
 // Special styles for rows that trigger panels
@@ -152,7 +158,7 @@
 }
 
 .dataTables_scrollBody {
- 
+
   .data-table {
     position: static;
 
@@ -173,4 +179,3 @@
     }
   }
 }
-
