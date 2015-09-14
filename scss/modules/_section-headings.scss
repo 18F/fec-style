@@ -38,11 +38,11 @@
   margin-bottom: 1rem;
 }
 
-// BREAKPOINT: LARGE
+// BREAKPOINT: MEDIUM
 // Float the action button to the right
 // Cycle select goes inline with the title
 
-@include media($lg) {
+@include media($med) {
   .section__heading {
     .cycle-select {
       display: inline-block;
