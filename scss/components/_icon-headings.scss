@@ -9,6 +9,16 @@
 }
 
 @include media($med) {
+  .icon-heading__image {
+    @include span-columns(1);
+  }
+
+  .icon-heading__title {
+    @include span-columns(11);
+  }
+}
+
+@include media($lg) {
   .icon-heading {
     @include span-columns(4);
   }

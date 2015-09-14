@@ -19,6 +19,10 @@
   padding-bottom: 1rem;
 }
 
+.widget__content {
+  padding: 2rem 0;
+}
+
 .widget--neutral {
   @include u-bg--neutral();
 
