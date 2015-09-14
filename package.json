@@ -16,6 +16,7 @@
     "percy": "percy snapshot styleguide",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
+    "test-debug": "mochify tests/*.js",
     "test": "mochify tests/*.js --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' ]"
   },
   "dependencies": {
