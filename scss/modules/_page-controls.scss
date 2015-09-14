@@ -49,18 +49,27 @@
 }
 
 .page-tabs {
+  box-shadow: inset -11px 0 4px 0 rgba($ivory, .5);
   text-align: left;
   padding: 0;
+  overflow-x: scroll;
+}
+
+.page-tabs__list {
+  white-space: nowrap;
 }
 
 .page-tabs__item {
+  display: inline-block;
+  margin-left: -4px;
+
   a {
     @include heading(h3);
     color: $ivory;
     border-bottom: 0;
     border-color: $cream;
     border-top-width: 1px;
-    border-right-width: 0;
+    border-right-width: 1px;
     border-left-width: 0;
     border-style: solid;
     font-family: $sans-serif;
@@ -81,6 +90,19 @@
   }
 }
 
+// To stick to the top of the page
+.is-fixed {
+  @include transition(top, .8s);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  
+  .page-controls__top {
+    display: block;
+  }
+}
+
 // Primary and secondary styles
 .page-controls--primary {
   @include u-bg--primary();
@@ -89,6 +111,10 @@
     a[aria-selected="true"]  {
       color: $primary;
     }
+  }
+
+  &.is-fixed {
+    border-bottom: 1px solid $primary;
   }
 }
 
@@ -108,36 +134,34 @@
 
 // BREAKPOINT: MEDIUM
 // - Display tabs in a row
-
-@include media($lg) {
-  .page-controls {
-    .container {
-      padding: 0 2rem;
-    }
+@include media($med) {
+  .page-tabs {
+    box-shadow: none;
   }
 
   .page-tabs__item {
-    float: left;
-    &:first-of-type a {
-      border-left-width: 1px;
+    &:first-of-type {
+      margin-left: 0;
+    
+      a {
+        border-left-width: 1px;
+      }
     }
 
     a {
-      font-size: 1.6rem;
-      border-right-width: 1px;
-      padding: 1rem 2rem;      
+      padding: 1rem;
     }
   }
-  // To stick to the top of the page
-  .is-fixed {
-    @include transition(top, .8s);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    
-    .page-controls__top {
-      display: block;
+}
+
+// BREAKPOINT: LARGE
+// - More padding
+@include media($lg) {
+  .page-tabs__item {
+
+    a {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;      
     }
   }
 }
