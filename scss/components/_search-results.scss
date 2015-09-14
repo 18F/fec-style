@@ -1,9 +1,20 @@
+.results__title {
+  margin: 2rem 0 0 0;
+}
+
 .results__count {
   margin-bottom: 2rem;
 }
 
-.results__title {
+.result__title {
   margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.result__years {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .result {
@@ -12,6 +23,7 @@
 
   &:first-of-type {
     border-top: none;
+    padding-top: 0;
   }
 }
 
@@ -19,21 +31,7 @@
   @include clearfix();
 }
 
-.result__title {
-  @include span-columns(6 of 9);
-}
-
-.result__years {
-  @include span-columns(3 of 9);
-}
-
 .result__column {
-  @include span-columns(3 of 9);
-  border-right: 1px solid $beige;
-
-  &:last-child {
-    border-right: none;
-  }
 }
 
 .result__left {
@@ -66,7 +64,26 @@
     padding: 3rem 0;
   }
 
+  .result__title {
+    @include span-columns(6 of 9);
+  }
+
+  .result__years {
+    @include span-columns(3 of 9);
+    margin-bottom: 0;
+  }
+
   .result__term {
     width: 30%;
+  }
+
+  .result__column {
+    @include span-columns(3 of 9);
+    border-right: 1px solid $beige;
+    border-bottom: none;
+
+    &:last-child {
+      border-right: none;
+    }
   }
 }

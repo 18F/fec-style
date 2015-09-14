@@ -143,7 +143,6 @@
 
 @include media($med) {
   .panel__main {
-    @include transform(translateX(0));
     height: 100%;
     width: 100%;
 
@@ -200,7 +199,7 @@
 
   .panel-active {
     .panel__main {
-      @include transform(translateX(0%));
+      left: 0;
       width: 100%;
       min-height: 70vh;
       height: auto;
