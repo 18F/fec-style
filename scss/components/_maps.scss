@@ -73,6 +73,10 @@ path.shape {
   }
 }
 
+.map-toggles {
+  margin-top: 1rem;
+}
+
 .map-panel {
   padding: 2rem;
   position: relative;
@@ -85,5 +89,12 @@ path.shape {
     background-color: rgba($ivory, .3);
     border: 1px solid $ivory;
     height: 432px;
+  }
+}
+
+@include media($med) {
+  .map-toggles {
+    float: right;
+    margin-top: 0;
   }
 }

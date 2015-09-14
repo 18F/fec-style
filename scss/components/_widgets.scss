@@ -11,8 +11,24 @@
     border-top: 1px solid $beige;
     padding-top: 2rem;
   }
+}
 
-  @include media($lg) {
+.widget__title {
+  border-bottom: 2px solid;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.widget--neutral {
+  @include u-bg--neutral();
+
+  .widget__title {
+    border-bottom-color: $primary;
+  }
+}
+
+@include media($lg) {
+  .widget {
     width: 50%;
     float: left;
     padding: 3rem;
@@ -32,25 +48,14 @@
     &:nth-child(2) {
       border-left: 1px solid $beige;
       border-top: none;
-    }
+    }    
   }
-}
 
-.widget__title {
-  border-bottom: 2px solid;
-  padding-bottom: 1rem;
-}
+  .widget:nth-child(2) {
+    padding-top: 3rem;
+  }
 
-.widget__content {
-  @include media($lg) {
+  .widget__content {
     padding: 3rem 0 0 0;
-  }
-}
-
-.widget--neutral {
-  @include u-bg--neutral();
-
-  .widget__title {
-    border-bottom-color: $primary;
   }
 }

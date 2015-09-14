@@ -133,6 +133,9 @@
 
   @include media($med) {
     @include span-columns(6);
+  }
+
+  @include media($lg) {
     min-height: 26rem;
 
     .card__image__container {

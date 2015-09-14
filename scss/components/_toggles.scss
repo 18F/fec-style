@@ -67,8 +67,7 @@
 
   label {
     cursor: pointer;
-    float: left;
-    margin-top: 0;
+    margin-bottom: 2px;
   }
 
   .button {
@@ -77,23 +76,14 @@
     font-weight: normal;
     margin-right: 1px;
   }
-
-  label:first-of-type {
-    .button {
-      border-radius: 4px 0 0 4px;
-    }
-  }
-
-  label:last-of-type {
-    .button {
-      border-radius: 0 4px 4px 0;
-      margin-right: 0;
-    }
-  }
 }
 
 .toggles--small {
   margin-bottom: 0;
+  
+  label {
+    float: left;
+  }
   
   .label {
     float: left;
@@ -101,5 +91,30 @@
   }
   .button {
     margin-right: -1px;
+  }
+}
+
+// BREAKPOINT: MEDIUM
+// - Display toggles in a row
+
+@include media($med) {
+  .toggles {
+    label {
+      float: left;
+      margin-top: 0;
+    }
+
+    label:first-of-type {
+      .button {
+        border-radius: 4px 0 0 4px;
+      }
+    }
+
+    label:last-of-type {
+      .button {
+        border-radius: 0 4px 4px 0;
+        margin-right: 0;
+      }
+    }
   }
 }

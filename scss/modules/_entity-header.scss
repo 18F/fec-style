@@ -54,10 +54,7 @@
 }
 
 .entity__type {
-  display: inline-block;
-  margin-right: 1rem;
-  padding-right: 1rem;
-  border-right: 1px solid;
+  display: block;
 }
 
 
@@ -143,5 +140,15 @@
   .entity__header__top,
   .entity__type {
     border-color: $primary-contrast;
+  }
+}
+
+// BREAKPOINT: MEDIUM
+@include media($med) {
+  .entity__type {
+    display: inline-block;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid;
   }
 }

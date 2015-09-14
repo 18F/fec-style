@@ -22,18 +22,6 @@
 //
 // Styleguide components.search-bar
 
-.combo--search {
-  @include media($med) {
-    .combo__input {
-      width: calc(100% - 16.6rem);
-    }
-
-    .combo__button {
-      width: 4rem; 
-    }
-  }
-}
-
 .combo--search--large {
   .combo__select {
     width: 12rem;
@@ -42,9 +30,31 @@
   .combo__input {
     width: calc(100% - 12rem)
   }
+}
 
-  @include media($med) {
+.search__select {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2px;
+  height: 3.6rem;
+  width: 12rem;
+  float: left;
+}
+
+// BREAKPOINT: MEDIUM
+@include media($med) {
+  .combo--search {
+    .combo__input {
+      width: calc(100% - 16.6rem);
+    }
+
+    .combo__button {
+      width: 4rem; 
+    }
+  }
+  
+  .combo--search--large {
     height: 6rem;
+    
     .combo__input {
       font-size: 1.8rem;
       height: 6rem;
@@ -67,26 +77,6 @@
       top: 5.9rem !important;
     }
   }
-}
-
-.search__select {
-  border-radius: 4px 0 0 4px;
-  margin-right: -2px;
-  height: 3.6rem;
-  width: 12rem;
-  float: left;
-}
-
-.search__radio {
-  margin-bottom: 0;
-}
-
-.search__radio__item {
-  width: 50%;
-}
-
-.search__radio__button {
-  height: 3.6rem;
 }
 
 // Typeahead styles
