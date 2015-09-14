@@ -9,6 +9,36 @@
 // .site-nav__link            - Styles for the links inside the items
 // .site-nav__dropdown        - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
 //
+// Markup:
+// <nav class="site-nav js-site-nav">
+//   <input class="nav-toggle__input js-toggle" id="nav-toggle" type="checkbox">
+//   <label for="nav-toggle" class="site-nav__button site-nav__button--left">
+//     Menu</label>
+//   <ul id="site-menu" class="site-nav__list">
+//     <li class="site-nav__item site-nav__item--with-dropdown">
+//       <a href="#" class="site-nav__link is-current js-nav-drop-link">
+//           Campaign Finance Data</a>
+//       <input class="nav-toggle__input js-toggle" id="dropdown-toggle-1" type="checkbox">
+//       <label tab-index="0" for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">
+//           Campaign Finance Data</label>
+//       <ul class="site-nav__dropdown">
+//         <li class="site-nav__item">
+//           <a class="site-nav__link" href="#">Search for candidates »</a>
+//         </li>
+//         <li class="site-nav__item">
+//           <a class="site-nav__link" href="#">Search for elections »</a>
+//         </li>
+//       </ul>
+//     </li>
+//     <li class="site-nav__item">
+//       <a href="#" class="site-nav__link is-disabled">Calendar</a>
+//     </li>
+//     <li class="site-nav__item">
+//       <a href="#" class="site-nav__link is-disabled">TBD</a>
+//     </li>
+//   </ul>
+// </nav>
+//
 // Styleguide modules.navigation
 
 .site-nav {
