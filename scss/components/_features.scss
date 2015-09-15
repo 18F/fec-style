@@ -51,7 +51,6 @@
   &.feature--bulleted {
     display: list-item;
     font-family: $serif;
-    }    
   }
 }
 
@@ -76,14 +75,13 @@
       margin-top: 2rem;
       width: 12rem;
     }
-  }    
+  }
 
   .feature--no-title {
     padding-top: 4.2rem;
-  }  
+  }
 
   &.feature--bulleted {
     display: list-item;
   }
 }
-
