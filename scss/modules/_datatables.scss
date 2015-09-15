@@ -6,6 +6,10 @@
 
 // Wraps the datatable on browse pages
 
+.dataTables_wrapper {
+  overflow-x: scroll;
+}
+
 .datatable__container {
   @include clearfix();
   @include transition(opacity, .2s);
