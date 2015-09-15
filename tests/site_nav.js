@@ -97,12 +97,28 @@ describe('SiteNav', function() {
         function() {
       var $toggle = this.$fixture.find('.js-toggle');
       var $list = this.$fixture.find('#site-menu ul');
-      var testEv = {
-        currentTarget: $toggle
-      };
+      var testEv = {currentTarget: $toggle};
 
       this.siteNav.handleChange(testEv);
       expect($list.attr('aria-hidden')).to.not.equal($toggle.is(':checked'));
+    });
+  });
+
+  describe('hover()', function() {
+
+    beforeEach(function() {
+      this.$withDropdown = this.$fixture.find('.site-nav__item--with-dropdown');
+      this.$list = this.$fixture.find('#site-menu ul');
+    });
+
+    it('should show items on mouseenter', function() {
+      this.siteNav.handleMouseEnter({currentTarget: this.$withDropdown.get(0)});
+      expect(this.$list.attr('aria-hidden')).to.equal('false');
+    });
+
+    it('should hide items on mouseexit', function() {
+      this.siteNav.handleMouseExit({currentTarget: this.$withDropdown.get(0)});
+      expect(this.$list.attr('aria-hidden')).to.equal('true');
     });
   });
 });
