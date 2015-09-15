@@ -85,10 +85,12 @@
 
   .button--primary {
     color: $primary;
+    border: transparent;
   }
   
   .button--secondary {
     color: $secondary;
+    border: transparent;
   }
 
   .button:hover {
@@ -165,10 +167,10 @@
   background-color: $primary;
   
   a {
-    border-bottom-color: $primary-contrast;
+    border-bottom-color: $ivory;
     
     &:hover {
-      border-bottom-color: #fff;
+      border-bottom-color: $primary-contrast;
     }
   }
 
@@ -189,10 +191,10 @@
   background-color: $secondary;
   
   a {
-    border-bottom-color: $secondary-contrast;
+    border-bottom-color: $ivory;
 
     &:hover {
-      border-bottom-color: #fff;
+      border-bottom-color: $secondary-contrast;
     }
   } 
 
