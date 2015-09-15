@@ -6,7 +6,10 @@ sudo: false
 before_script:
   - travis_retry npm install codecov.io
 
-script: npm test
+script:
+  - npm run build-js
+  - npm run build-sass
+  - npm test
 
 after_success:
   - cat ./coverage/coverage-final.json | ./node_modules/codecov.io/bin/codecov.io.js
