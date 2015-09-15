@@ -85,10 +85,12 @@
 
   .button--primary {
     color: $primary;
+    border: transparent;
   }
   
   .button--secondary {
     color: $secondary;
+    border: transparent;
   }
 
   .button:hover {
