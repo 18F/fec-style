@@ -6,6 +6,7 @@
 // Styleguide components.features
 
 .feature {
+  font-family: $sans-serif;
   padding-top: 2rem;
 }
 
@@ -49,6 +50,8 @@
 
   &.feature--bulleted {
     display: list-item;
+    font-family: $serif;
+    }    
   }
 }
 

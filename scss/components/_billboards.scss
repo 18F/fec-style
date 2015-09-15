@@ -5,38 +5,29 @@
 // Styleguide components.billboards
 
 .billboard {
-  border-bottom: 3px solid;
-  border-color: $primary;
-  border-top: 3px solid;
-  background-color: $secondary;
+  padding: 3rem 0;
 }
 
 .billboard__image {
-  background-size: contain;
-  background-color: $secondary;
-  min-height: 10rem;
-  margin: 2rem 0;
+  max-width: 10rem;
 }
 
 .billboard__content {
-  background-color: $neutral;
-  margin-bottom: 2rem;
-  padding: 4rem;
-}
-
-.billboard__image--glossary {
-  @include u-background-image('i-glossary--lg');
 }
 
 @include media($med) {
   @include display-context(table) {
+    .billboard__image__container {
+      @include span-columns(3);
+    }
+
     .billboard__image {
-      @include span-columns(4);
-      background-size: auto auto;
+      max-width: 19rem;
     }
 
     .billboard__content {
       @include span-columns(8);
+      vertical-align: middle;
     }
   }  
 }
