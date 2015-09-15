@@ -22,8 +22,25 @@
 //
 // Styleguide components.search-bar
 
-.combo--search {
-  @include media($med) {
+.search__select {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2px;
+  height: 3.6rem;
+  width: 12rem;
+  float: left;
+}
+
+.combo__select {
+  width: 12rem;
+}
+
+.combo__input {
+  width: calc(100% - 12rem)
+}
+
+// BREAKPOINT: MEDIUM
+@include media($med) {
+  .combo--search {
     .combo__input {
       width: calc(100% - 16.6rem);
     }
@@ -32,11 +49,10 @@
       width: 4rem; 
     }
   }
-}
-
-.combo--search--large {
-  @include media($med) {
+  
+  .combo--search--large {
     height: 6rem;
+    
     .combo__input {
       font-size: 1.8rem;
       height: 6rem;
@@ -61,26 +77,6 @@
   }
 }
 
-.search__select {
-  border-radius: 4px 0 0 4px;
-  margin-right: -2px;
-  height: 3.6rem;
-  width: 12rem;
-  float: left;
-}
-
-.search__radio {
-  margin-bottom: 0;
-}
-
-.search__radio__item {
-  width: 50%;
-}
-
-.search__radio__button {
-  height: 3.6rem;
-}
-
 // Typeahead styles
 .twitter-typeahead {
   width: 100%;
@@ -93,7 +89,11 @@
   left: 0;
   text-align: left;
   position: absolute;
-  width: calc(100% - 6.8rem);
+  width: 100%;
+  
+  @include media($med) {
+    width: calc(100% - 6.8rem);
+  }
 }
 
 .tt-dropdown-menu {

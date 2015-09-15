@@ -6,30 +6,8 @@
 // Styleguide components.features
 
 .feature {
+  font-family: $sans-serif;
   padding-top: 2rem;
-
-  @include media($med) {
-    @include span-columns(6);
-
-    .card {
-      @include span-columns(6 of 6);
-    }    
-  }
-
-  @include media($lg) {
-    @include span-columns(3);
-    padding-top: 0;
-
-    .card {
-      @include span-columns(3 of 3);
-      min-height: 32rem;
-    }
-
-    .card__image {
-      margin-top: 2rem;
-      width: 12rem;
-    }
-  }
 }
 
 .feature__title {
@@ -38,24 +16,72 @@
   margin-bottom: 1rem;
 }
 
-.feature--no-title { 
-  @include media($med) {
-    padding-top: 6.2rem;
-  }
-
-  @include media($lg) {
-    padding-top: 4.2rem;
-  }
-}
-
 .feature--bulleted {
   display: list-item;
   list-style-type: disc;
-  padding-right: 2rem;
-  padding-left: 0;
+  padding: 0 2rem 0 0;
 }
 
 .feature-list {
   @include clearfix();
   padding-left: 2rem;
+}
+
+// BREAKPOINT: MEDIUM
+// Features span half the screen
+
+@include media($med) {
+  .feature {
+    @include span-columns(6);
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+
+    .card {
+      @include span-columns(6 of 6);
+      min-height: 19.5rem;
+    }
+  }
+
+  .feature--no-title {
+    padding-top: 6.2rem;
+  }
+
+  &.feature--bulleted {
+    display: list-item;
+    font-family: $serif;
+  }
+}
+
+// BREAKPOIN: LARGE
+// Features go four to a row
+
+@include media($lg) {
+  .feature {
+    @include span-columns(3);
+    padding-top: 0;
+
+    &:nth-child(2) {
+      margin-right: flex-gutter();
+    }
+
+    .card {
+      @include span-columns(3 of 3);
+      min-height: 34rem;
+    }
+
+    .card__image {
+      margin-top: 2rem;
+      width: 12rem;
+    }
+  }
+
+  .feature--no-title {
+    padding-top: 4.2rem;
+  }
+
+  &.feature--bulleted {
+    display: list-item;
+  }
 }

@@ -79,7 +79,6 @@
   @include transition(background-color, .2s, box-shadow, .2s, color, .2s);
   background-color: transparent;
   box-shadow: 0 0 0 4px transparent;
-  display: inline-block;
   border-bottom: none;
   cursor: pointer;
   padding-right: 2rem;

@@ -33,6 +33,10 @@
   @include transition(top, .8s);  
   width: 100%;
   top: -200px; // Setting this property so we can animate it when .is-fixed is applied
+
+  .container {
+    padding: 0;
+  }
 }
 
 .page-controls__bottom {
@@ -47,12 +51,16 @@
 .page-tabs {
   text-align: left;
   padding: 0;
+  overflow-x: scroll;
+}
+
+.page-tabs__list {
+  white-space: nowrap;
 }
 
 .page-tabs__item {
-  &:first-of-type a {
-    border-left-width: 1px;
-  }
+  display: inline-block;
+  margin-left: -4px;
 
   a {
     @include heading(h3);
@@ -63,10 +71,12 @@
     border-right-width: 1px;
     border-left-width: 0;
     border-style: solid;
+    font-family: $sans-serif;
+    font-size: 1.4rem;    
     display: block;
     line-height: 2rem;
     margin-bottom: 0;
-    padding: 1rem 2rem;
+    padding: .5rem;
     text-decoration: none;
 
     &[aria-selected="true"] {
@@ -79,9 +89,16 @@
   }
 }
 
-.list--flat {
-  .page-tabs__item {
-    margin-right: 0;
+// To stick to the top of the page
+.is-fixed {
+  @include transition(top, .8s);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  
+  .page-controls__top {
+    display: block;
   }
 }
 
@@ -93,6 +110,10 @@
     a[aria-selected="true"]  {
       color: $primary;
     }
+  }
+
+  &.is-fixed {
+    border-bottom: 1px solid $primary;
   }
 }
 
@@ -109,15 +130,33 @@
 .page-controls--neutral {
   @include u-bg--neutral();
 }
-// To stick to the top of the page
-.is-fixed {
-  @include transition(top, .8s);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  
-  .page-controls__top {
-    display: block;
+
+// BREAKPOINT: MEDIUM
+// - Display tabs in a row
+@include media($med) {
+  .page-tabs__item {
+    &:first-of-type {
+      margin-left: 0;
+    
+      a {
+        border-left-width: 1px;
+      }
+    }
+
+    a {
+      padding: 1rem;
+    }
+  }
+}
+
+// BREAKPOINT: LARGE
+// - More padding
+@include media($lg) {
+  .page-tabs__item {
+
+    a {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;      
+    }
   }
 }

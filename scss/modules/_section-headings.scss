@@ -18,15 +18,16 @@
   @include clearfix();
   border-bottom: 2px solid;
   margin-bottom: 1rem;
+
+  .cycle-select {
+    display: block;
+    margin-top: 1rem;
+  }
 }
 
 .heading__title {
   border-bottom: 0;
   margin-bottom: 0;
-
-  @include media($lg) {
-    float: left;
-  }
 }
 
 .heading__subtitle {
@@ -34,7 +35,27 @@
 }
 
 .heading__action {
-  @include media($lg) {
+  margin-bottom: 1rem;
+}
+
+// BREAKPOINT: MEDIUM
+// Float the action button to the right
+// Cycle select goes inline with the title
+
+@include media($med) {
+  .section__heading {
+    .cycle-select {
+      display: inline-block;
+      margin-top: 0;
+    }
+  }
+
+  .heading__title {
+    float: left;
+  }
+
+  .heading__action {
     float: right;
+    margin-bottom: 0;
   }
 }

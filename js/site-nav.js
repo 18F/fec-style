@@ -2,11 +2,15 @@
 
 /* global require, module, document */
 
+var $ = require('jquery');
+
 function SiteNav(selector) {
   this.$body = $(selector);
   this.assignAria();
 
   this.$body.on('change', '.js-toggle', this.handleChange.bind(this));
+  this.$body.on('mouseenter', 'li:has(.js-toggle)', this.handleMouseEnter.bind(this));
+  this.$body.on('mouseleave', 'li:has(.js-toggle)', this.handleMouseExit.bind(this));
 }
 
 SiteNav.prototype.assignAria = function() {
@@ -21,15 +25,23 @@ SiteNav.prototype.assignAria = function() {
   });
 
   $links.attr('aria-haspopup', true);
-}
+};
 
-SiteNav.prototype.handleChange = function(ev) {
-  var $toggle = $(ev.currentTarget);
-  var checked = $toggle.is(":checked");
-  var $list = $(ev.currentTarget).siblings('ul');
+SiteNav.prototype.handleChange = function(e) {
+  var $toggle = $(e.currentTarget);
+  var checked = $toggle.is(':checked');
+  var $list = $(e.currentTarget).siblings('ul');
 
   $list.attr('aria-hidden', !checked);
   $list.find('li a').first().focus();
-}
+};
+
+SiteNav.prototype.handleMouseEnter = function(e) {
+  $(e.currentTarget).find('.js-toggle').prop('checked', true).change();
+};
+
+SiteNav.prototype.handleMouseExit = function(e) {
+  $(e.currentTarget).find('.js-toggle').prop('checked', false).change();
+};
 
 module.exports = {SiteNav: SiteNav};

@@ -5,12 +5,37 @@
 // Styleguide component.widgets
 
 .widget {
-  padding: 3rem;
+  padding: 1rem;
 
-  @include media($lg) {
+  &:nth-child(2) {
+    border-top: 1px solid $beige;
+    padding-top: 2rem;
+  }
+}
+
+.widget__title {
+  border-bottom: 2px solid;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.widget__content {
+  padding: 2rem 0;
+}
+
+.widget--neutral {
+  @include u-bg--neutral();
+
+  .widget__title {
+    border-bottom-color: $primary;
+  }
+}
+
+@include media($lg) {
+  .widget {
     width: 50%;
     float: left;
-    min-height: 52rem;
+    padding: 3rem;
 
     .icon-heading {
       width: 100%;
@@ -23,27 +48,18 @@
     .icon-heading__title {
       @include span-columns(5 of 6);
     }
+
+    &:nth-child(2) {
+      border-left: 1px solid $beige;
+      border-top: none;
+    }    
   }
 
-  &:first-child {
-    border-right: 1px solid $beige;
-    padding-left: 0;
+  .widget:nth-child(2) {
+    padding-top: 3rem;
   }
-}
 
-.widget__title {
-  border-bottom: 2px solid;
-  padding-bottom: 1rem;
-}
-
-.widget__content {
-  padding: 3rem 0 0 0;
-}
-
-.widget--neutral {
-  @include u-bg--neutral();
-
-  .widget__title {
-    border-bottom-color: $primary;
+  .widget__content {
+    padding: 3rem 0 0 0;
   }
 }

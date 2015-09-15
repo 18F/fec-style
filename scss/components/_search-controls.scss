@@ -7,22 +7,20 @@
 .search-controls__row {
   @include clearfix();
   border-bottom: 1px solid $beige;
-  padding: 2rem 0;
+  padding: 1rem 0;
 
   &:first-of-type {
     padding-top: 0;
+  }
+
+  .cycle-select {
+    margin-bottom: 0;
   }
 }
 
 // Either / Or
 //
 // Component with two halves, separated by an "or"
-
-.search-controls__either {
-  @include media($lg) {
-    @include span-columns(5.5);
-  }
-}
 
 .search-controls__or {
   margin: 1rem 0;
@@ -51,8 +49,58 @@
 
 }
 
-.search-controls__or--vertical {
-  @include media($lg) {
+.search-controls__submit {
+  @include span-columns(6);
+}
+
+.search-controls__zip {
+  @include span-columns(6);
+
+  input {
+    width: 100%;
+  }
+}
+
+.search-controls__state {
+  @include span-columns(6);
+  margin-bottom: 1rem;
+
+  select {
+    width: 100%;
+  }
+}
+
+.search-controls__district {
+  @include span-columns(6);
+
+  select {
+    width: 100%;
+  }
+}
+
+// BREAKPOINT: MEDIUM
+// .search-controls__either go side by side
+// .search-controls__or goes vertical between the eithers
+// Zip and button line up
+
+@include media($med) {
+  .search-controls__row {
+    padding: 2rem 0;
+  }
+
+  .search-controls__either {
+    @include span-columns(5.5);
+  }
+
+  .search-controls__submit {
+    @include span-columns(1.5 of 5.5);
+  }
+
+  .search-controls__zip {
+    @include span-columns(3.5 of 5.5);
+  }
+
+  .search-controls__or--vertical {
     @include span-columns(1);
     margin: 5.5rem 0;
     text-align: center;
@@ -72,5 +120,15 @@
       top: auto;
       bottom: -6.5rem;
     }
+  }  
+}
+
+// BREAKPOINT: MEDIUM
+// All form elements go in rows
+
+@include media($lg) {
+  .search-controls__state,
+  .search-controls__district {
+    @include span-columns(2 of 5.5);
   }
 }

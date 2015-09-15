@@ -6,7 +6,6 @@
 //
 // Styleguide layout
 
-@import "grid";
 @import "slabs";
 
 // Layout elements
@@ -72,7 +71,11 @@
 
 .content__section--extra {
   @include clearfix();
-  padding: 4rem 0;
+  padding: 2rem 0;
+
+  @include media($lg) {
+    padding: 4rem 0;
+  }
 }
 
 .content__section--ruled {

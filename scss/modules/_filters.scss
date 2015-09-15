@@ -22,7 +22,6 @@
 
 .filters {
   @include clearfix();
-  @include transition(margin-left .2s);  
   @include u-bg--neutral();
   bottom: 0;
   height: 0;
@@ -40,27 +39,11 @@
     
     .filters__hider {
       height: auto;
+      overflow: visible;
     }
 
     .filters__toggle {
       @include u-background-image('i-up-2--primary', 1rem 50%);
-    }
-  }
-
-  @include media($lg) {
-    float: left;
-    margin-left: -30rem;
-    padding: 2rem;
-    position: relative;
-    width: 30rem;
-    vertical-align: top;
-
-    &.is-open {
-      float: left;
-
-      .filters__toggle {
-        @include u-background-image('i-left-2--primary', 1rem 50%);    
-      }
     }
   }
 }
@@ -68,10 +51,6 @@
 .filters__hider {
   height: 0;
   overflow: hidden;
-
-  @include media($lg) {
-    overflow: visible;
-  }
 }
 
 
@@ -158,8 +137,80 @@
   background-color: $neutral;
   margin-bottom: 2rem;
   padding: 2rem;
+}
 
-  @include media($lg) {
+// BREAKPOINT: MEDIUM 
+// Use flexbox to get the filters into rows of equal height
+
+@include media($med) {
+  .filters {
+    form {
+      @include display(flex);
+      @include justify-content(flex-start);    
+      @include flex-wrap(wrap);
+    }
+  }
+
+  .filter {
+    border-bottom: none;
+    border-right: 1px solid darken($neutral, 10%);
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    width: 33.3333%;
+
+    &:nth-child(3n) {
+      border-right: none;
+    }
+  }
+}
+
+// BREAKPOINT: LARGE
+// Stack filters vertically
+
+@include media($lg) {
+  .filters {
+    @include transition(margin-left .2s);  
+    float: left;
+    margin-left: -30rem;
+    padding: 2rem;
+    position: relative;
+    width: 30rem;
+    vertical-align: top;
+
+    &.is-open {
+      float: left;
+
+      .filters__toggle {
+        @include u-background-image('i-left-2--primary', 1rem 50%);    
+      }
+    }
+
+    form {
+      display: block;
+    }
+  }
+
+  .filters__hider {
+    overflow: visible;
+  }
+
+  .filter {
+    border-bottom: 1px solid darken($neutral, 10%);
+    border-right: none;
+    margin-bottom: 0;
+    padding: 2rem 0;
+    width: 100%;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .filters--horizontal {
     form {
       @include display(flex);
       @include justify-content(flex-start);
@@ -181,6 +232,6 @@
         border-right: none;
         padding-right: 0;
       }
-    }
+    }    
   }
 }
