@@ -207,11 +207,15 @@
     .panel__main {
       left: 0;
       width: 100%;
-      min-height: 70vh;
+      min-height: 150rem;
       height: auto;
       overflow: visible;
     }  
 
+    .panel__overlay {
+      min-height: 150rem;
+    }
+    
     .data-table {
       @include transform(translateX(0));
       width: 50% !important;
