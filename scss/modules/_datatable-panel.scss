@@ -164,6 +164,12 @@
     }
   }
 
+  .panel-active {
+    .panel__main {
+      max-height: 100%;
+    }
+  }
+
   .panel {
     padding: 0;
     background: none;
