@@ -53,6 +53,7 @@
   .panel__main {
     // @include transform(translate3D(-50%, 0, 0));
     left: -100%;
+    min-height: 110vh;
     max-height: 130vh;
     overflow: hidden;
   } 
@@ -215,7 +216,7 @@
     .panel__overlay {
       min-height: 150rem;
     }
-    
+
     .data-table {
       @include transform(translateX(0));
       width: 50% !important;
