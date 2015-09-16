@@ -143,24 +143,28 @@
 // Use flexbox to get the filters into rows of equal height
 
 @include media($med) {
-  .filters {
-    form {
-      @include display(flex);
-      @include justify-content(flex-start);    
-      @include flex-wrap(wrap);
-    }
-  }
+  // .filters {
+  //   form {
+  //     @include display(flex);
+  //     @include justify-content(flex-start);    
+  //     @include flex-wrap(wrap);
+  //   }
+  // }
+
+  // .filter {
+  //   border-bottom: none;
+  //   border-right: 1px solid darken($neutral, 10%);
+  //   margin-bottom: 2rem;
+  //   padding: 1rem 2rem;
+  //   width: 33.3333%;
+
+  //   &:nth-child(3n) {
+  //     border-right: none;
+  //   }
+  // }
 
   .filter {
-    border-bottom: none;
-    border-right: 1px solid darken($neutral, 10%);
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
-    width: 33.3333%;
-
-    &:nth-child(3n) {
-      border-right: none;
-    }
+    max-width: 50%;
   }
 }
 
