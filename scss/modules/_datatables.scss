@@ -158,6 +158,7 @@
 .data-table--wrapped {
   td {
     white-space: pre-wrap;
+    text-overflow: ellipsis;
     overflow: visible;
   }
 }
