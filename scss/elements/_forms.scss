@@ -75,6 +75,10 @@ select {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 textarea {
