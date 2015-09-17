@@ -150,8 +150,21 @@
 // .is-incumbent      - If used, applied to candidate that currently holds the office in election tables
 
 .is-incumbent {
-  @include u-background-image('i-star--primary', 0% 0%);
-  padding-left: 2rem;
+  margin-left: 1.5rem;
+  position: relative;
+
+  &:before {
+    background-color: $primary;
+    border-radius: 1rem;
+    content: '';
+    display: block;
+    height: 1rem;
+    left: -1.5rem;
+    margin-top: -.5rem;
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+  }
 }
 
 // For wrapping long table cells instead of truncating
