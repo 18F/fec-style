@@ -4,7 +4,7 @@
 //
 // Markup:
 // <a href="...">Link</a>
-//  
+// 
 // Styleguide elements.links
 
 a {
@@ -23,5 +23,10 @@ a {
   &:active,
   &:focus {
     outline: none;
+  }
+
+  img {
+    outline: none;
+    border: none;
   }
 }
