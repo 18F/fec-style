@@ -1,6 +1,9 @@
 // Tooltips
 //
 // Tooltips for maps
+// 
+// .tooltip--above        - When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
+// .tooltip--under        - When the tooltip is under the content. Puts the arrow at the top left of the tooltip
 //
 // Markup:
 // <div class="tooltip">
@@ -13,14 +16,31 @@
 .tooltip {
   border-radius: 4px;
   border: 2px solid $primary;
-  background-color: #fff;
+  background-color: $cream;
   color: $primary;
   font-family: $sans-serif;
   max-width: 30rem;
   padding: .3rem .5rem;
   position: absolute;
   text-align: center;
+  z-index: $z-tooltip;
+}
 
+.tooltip__title {
+  border-bottom: 1px solid $primary;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+// .tooltip__content      - Use to add extra padding and left align a paragraph of text in a tooltip
+.tooltip__content {
+  text-align: left;
+  line-height: 1.2;
+  margin-bottom: 0;
+  padding: .5rem;
+}
+
+.tooltip--above {
   &:before {
     @include triangle(2rem, $primary, down);
     content: '';
@@ -32,7 +52,7 @@
   }
 
   &:after {
-    @include triangle(1.6rem, #fff, down);
+    @include triangle(1.6rem, $cream, down);
     content: '';
     display: block;
     position: absolute;
@@ -40,11 +60,36 @@
     margin-left: -.8rem;
     bottom: -.8rem;
   }
-
 }
 
-.tooltip__title {
-  border-bottom: 1px solid $primary;
-  text-transform: uppercase;
-  font-weight: bold;
+.tooltip--under {
+  &:before {
+    @include triangle(20px, $primary, up);
+    content: '';
+    display: block;
+    position: absolute;
+    left: 40px;
+    top: -10px;
+  }
+
+  &:after {
+    @include triangle(18px, $cream, up);
+    content: '';
+    display: block;
+    position: absolute;
+    left: 42px;
+    top: -7px;
+  }  
+}
+
+// For tooltips on regular DOM elements (rather than on maps), 
+// apply the .tooltip-trigger class to the triggering element
+
+.tooltip-trigger + .tooltip {
+  display: none;
+}
+
+.tooltip-trigger:hover ~ .tooltip,
+.tooltip-trigger:focus ~ .tooltip {
+  display: block;
 }
