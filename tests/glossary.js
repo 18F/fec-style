@@ -44,7 +44,7 @@ describe('glossary', function() {
 
   beforeEach(function() {
     this.$fixture.empty().append(
-      '<button id="glossary-toggle"></button>' +
+      '<button class="js-glossary-toggle"></button>' +
       '<span class="term" data-term="party"></span>' +
       '<div id="glossary">' +
         '<button class="toggle"></button>' +
@@ -52,7 +52,7 @@ describe('glossary', function() {
         '<ul class="glossary__list js-accordion"></ul>' +
       '</div>'
     );
-    this.glossary = new Glossary(this.terms, {body: '#glossary', toggle: '#glossary-toggle'});
+    this.glossary = new Glossary(this.terms, {body: '#glossary'});
   });
 
   it('initializes', function() {
