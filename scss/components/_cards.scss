@@ -39,6 +39,12 @@
   &:hover {
     border-bottom: none;
   }
+
+  &:focus {
+    .card__image {
+      outline: 2px solid;
+    }
+  }
 }
 
 .card__content {
