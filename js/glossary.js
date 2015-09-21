@@ -19,7 +19,7 @@ var ITEM_TEMPLATE =
 
 var defaultSelectors = {
   body: '#glossary',
-  toggle: '#glossary-toggle',
+  toggle: '.js-glossary-toggle',
   term: '.term'
 };
 
