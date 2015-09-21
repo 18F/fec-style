@@ -205,7 +205,7 @@
 
 @mixin u-bg--neutral(){
   @include u-font-color($primary);
-  @include u-form-color($cream, $primary, $primary, 'neutral', $primary);
+  @include u-form-color($cream, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $ivory;
   
   a {
