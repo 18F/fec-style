@@ -70,6 +70,20 @@
     margin-bottom: 2px;
   }
 
+  label:first-of-type {
+    .button {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  label:last-of-type {
+    margin-bottom: 0;
+    
+    .button {
+      border-radius: 0 0 4px 4px;
+    }
+  }  
+
   .button {
     border-radius: 0 0 0 0;
     display: block;
