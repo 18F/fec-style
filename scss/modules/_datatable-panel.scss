@@ -237,16 +237,6 @@
   }
 }
 
-// BREAKPOINT: LARGE
-// - Panel terms take up less space
-
-@include media($lg) {
-  .panel__term {
-    width: 30%;
-  }
-}
-
-
 // Specifying in order to override datatable styles
 .data-table .panel__row {
   table {
