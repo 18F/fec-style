@@ -8,6 +8,7 @@
 
 .dataTables_wrapper {
   overflow-x: scroll;
+  position: relative;
 }
 
 .datatable__container {
@@ -52,7 +53,7 @@
     border-bottom: 1px solid $primary;
 
     &:focus {
-      outline: none;
+      // outline: none;
       border: 2px solid $primary-contrast;
     }
   }

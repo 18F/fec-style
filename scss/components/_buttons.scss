@@ -23,9 +23,9 @@
     border-color: transparent;
   }
 
-  &:focus {
-    outline: none;
-  }
+  // &:focus {
+  //   outline: none;
+  // }
 
   &.disabled {
     opacity: .3;
@@ -358,9 +358,9 @@
   width: 4rem;
   height: 4rem;
 
-  &:focus {
-    outline: 2px solid;
-  }
+  // &:focus {
+  //   outline: 2px solid;
+  // }
 }
 
 .button--close--primary {
