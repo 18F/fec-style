@@ -138,7 +138,7 @@ describe('dropdown', function() {
     this.dropdown.show();
     this.dropdown.handleFocusAway({target: 'other'});
     expect(isClosed(this.dropdown)).to.be.true;
-  })
+  });
 
   it('hides on ESC', function(){
     this.dropdown.show();
