@@ -131,6 +131,12 @@
       border-color: $focus-color;
     }
   }
+
+  #{$all-text-inputs} {
+    @include placeholder() {
+      color: $contrast-color;
+    }
+  }
   
   select {
     background-image: url('../img/i-down--' + $icon-color + '-contrast.png');
