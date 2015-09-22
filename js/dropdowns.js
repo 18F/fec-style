@@ -6,6 +6,7 @@ var $ = require('jquery');
 var perfectScrollbar = require('perfect-scrollbar/jquery')($);
 
 var KEYCODE_ESC = 27;
+var KEYCODE_ENTER = 13;
 
 /**
  * Dropdown toggles
@@ -23,6 +24,7 @@ function Dropdown(selector) {
   self.$panel = this.$body.find('.dropdown__panel');
 
   self.$button.on('click', this.toggle.bind(this));
+  self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
   self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
   $(document.body).on('click', this.handleClickAndFocus.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
@@ -62,10 +64,16 @@ Dropdown.prototype.handleClickAndFocus = function(e) {
 };
 
 Dropdown.prototype.handleKeyup = function(e) {
-  if (e.keyCode == KEYCODE_ESC) {
+  if (e.keyCode === KEYCODE_ESC) {
     if (this.isOpen) {
       this.hide();
     }
+  }
+};
+
+Dropdown.prototype.handleCheckKeyup = function(e) {
+  if (e.keyCode === KEYCODE_ENTER) {
+    $(e.target).prop('checked', true).change();
   }
 };
 
