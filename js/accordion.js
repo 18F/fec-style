@@ -102,6 +102,7 @@ var accordion = {
    */
   hide: function($el) {
     $el.attr('aria-hidden', true);
+    this.$buttons.attr('aria-expanded', false);
     $el[0].style.display = 'none';
     this.$text.html('Expand');
   },
@@ -113,6 +114,7 @@ var accordion = {
    */
   show: function($el) {
     $el.attr('aria-hidden', false);
+    this.$buttons.attr('aria-expanded', true);
     $el[0].style.display = 'block';
     this.$text.html('Show');
   },
