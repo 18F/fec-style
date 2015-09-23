@@ -8,6 +8,7 @@
 
 .dataTables_wrapper {
   overflow-x: scroll;
+  position: relative;
 }
 
 .datatable__container {
@@ -50,11 +51,6 @@
   th {
     padding: .5rem 1rem;
     border-bottom: 1px solid $primary;
-
-    &:focus {
-      outline: none;
-      border: 2px solid $primary-contrast;
-    }
   }
 
   tr {
@@ -62,12 +58,8 @@
     background-color: $cream;
     border-bottom: 1px solid $neutral;
 
-    &:focus {
-      outline: none;
-
-      td {
-        background-color: rgba($ivory, .3);
-      }
+    &.row-active {
+      border-left: .5rem solid $primary;
     }
   }
 
@@ -117,6 +109,7 @@
 }
 
 .row-active {
+
   td {
     background-color: rgba($ivory, .3);
     border-top: 1px solid $ivory;

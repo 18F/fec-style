@@ -85,12 +85,20 @@
 
   .button--primary {
     color: $primary;
-    border: transparent;
+    border-color: transparent;
+
+    &:focus {
+      border-color: $primary-focus;
+    }
   }
   
   .button--secondary {
     color: $secondary;
-    border: transparent;
+    border-color: transparent;
+    
+    &:focus {
+      border-color: $secondary-focus;
+    }    
   }
 
   .button:hover {
@@ -121,7 +129,12 @@
 
     &:focus {
       border-color: $focus-color;
-      color: $focus-color;
+    }
+  }
+
+  #{$all-text-inputs} {
+    @include placeholder() {
+      color: $contrast-color;
     }
   }
   
@@ -169,7 +182,8 @@
   a {
     border-bottom-color: $ivory;
     
-    &:hover {
+    &:hover,
+    &:focus {
       border-bottom-color: $primary-contrast;
     }
   }
@@ -193,7 +207,8 @@
   a {
     border-bottom-color: $ivory;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-bottom-color: $secondary-contrast;
     }
   } 
@@ -205,11 +220,12 @@
 
 @mixin u-bg--neutral(){
   @include u-font-color($primary);
-  @include u-form-color($cream, $primary, $primary, 'neutral', $primary);
+  @include u-form-color($cream, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $ivory;
   
   a {
-    &:hover {
+    &:hover,
+    &:focus {
       border-bottom-color: $primary-contrast;
     }
   } 

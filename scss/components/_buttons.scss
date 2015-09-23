@@ -23,9 +23,9 @@
     border-color: transparent;
   }
 
-  &:focus {
-    outline: none;
-  }
+  // &:focus {
+  //   outline: none;
+  // }
 
   &.disabled {
     opacity: .3;
@@ -58,7 +58,7 @@
   }
 
   &:focus {
-    border-color: $primary-focus;
+    border:2px solid $primary-focus;
   }
   
   &:active,
@@ -357,6 +357,10 @@
   @include u-background-image('../img/i-x--secondary-contrast');
   width: 4rem;
   height: 4rem;
+
+  // &:focus {
+  //   outline: 2px solid;
+  // }
 }
 
 .button--close--primary {

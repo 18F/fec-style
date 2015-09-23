@@ -20,10 +20,10 @@ a {
     border-bottom-color: $primary-contrast;
   }
 
-  &:active,
-  &:focus {
-    outline: none;
-  }
+  // &:active,
+  // &:focus {
+  //   outline-width: 0;
+  // }
 
   img {
     outline: none;

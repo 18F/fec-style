@@ -143,10 +143,11 @@
     padding: 2rem;
 
     &:hover,
-    &:focus
+    &:focus,
     &:active {
       border-bottom-color: transparent;
       background-color: $ivory;
+      outline: 2px;
     }
   }
 }

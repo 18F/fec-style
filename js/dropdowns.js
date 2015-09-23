@@ -26,7 +26,8 @@ function Dropdown(selector) {
   self.$button.on('click', this.toggle.bind(this));
   self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
   self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-  $(document.body).on('click', this.handleClickAndFocus.bind(this));
+  $(document.body).on('click', this.handleClickAway.bind(this));
+  $(document.body).on('focusin', this.handleFocusAway.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
 
   if (self.isEmpty()) {
@@ -56,9 +57,16 @@ Dropdown.prototype.hide = function() {
   this.isOpen = false;
 };
 
-Dropdown.prototype.handleClickAndFocus = function(e) {
+Dropdown.prototype.handleClickAway = function(e) {
   var $target = $(e.target);
   if (!this.$body.has($target).length) {
+    this.hide();
+  }
+};
+
+Dropdown.prototype.handleFocusAway = function(e) {
+  var $target = $(e.target);
+  if (this.isOpen && !this.$panel.has($target).length) {
     this.hide();
   }
 };
@@ -67,6 +75,7 @@ Dropdown.prototype.handleKeyup = function(e) {
   if (e.keyCode === KEYCODE_ESC) {
     if (this.isOpen) {
       this.hide();
+      this.$button.focus();
     }
   }
 };

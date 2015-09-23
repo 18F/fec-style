@@ -14,6 +14,7 @@ var accordion = {
   SLT_HEADER: '.js-accordion_header',
   SLT_ITEM: '.js-accordion_item',
   SLT_BUTTON: '.js-accordion_button',
+  SLT_TEXT: '.js-accordion_text',
   CLS_COLLAPSED: 'accordion--collapsed',
   EV_EXPAND: 'accordion:expand',
   EV_COLLAPSE: 'accordion:collapse',
@@ -35,6 +36,7 @@ var accordion = {
     this.$headers = this.findHeaders($base);
     this.$items = this.findItems($base);
     this.$buttons = this.findButtons(this.$headers);
+    this.$text = this.findText(this.$headers);
 
     this.hideAll();
 
@@ -65,6 +67,9 @@ var accordion = {
   },
   findButtons: function($headers) {
     return $headers.find(this.SLT_BUTTON);
+  },
+  findText: function($headers) {
+    return $headers.find(this.SLT_TEXT);
   },
   findItems: function($base) {
     return $base.find(this.SLT_ITEM);
@@ -97,7 +102,9 @@ var accordion = {
    */
   hide: function($el) {
     $el.attr('aria-hidden', true);
+    this.$buttons.attr('aria-expanded', false);
     $el[0].style.display = 'none';
+    this.$text.html('Expand');
   },
   /**
    * Show an element visually.
@@ -107,7 +114,9 @@ var accordion = {
    */
   show: function($el) {
     $el.attr('aria-hidden', false);
+    this.$buttons.attr('aria-expanded', true);
     $el[0].style.display = 'block';
+    this.$text.html('Show');
   },
   /**
    * Hide all items for the current accordion.
