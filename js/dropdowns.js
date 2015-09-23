@@ -65,7 +65,7 @@ Dropdown.prototype.handleClickAway = function(e) {
 };
 
 Dropdown.prototype.handleFocusAway = function(e) {
-  var $target = $(e.target);
+  var $target = $(e.relatedTarget);
   if (this.isOpen && !this.$panel.has($target).length) {
     this.hide();
   }
