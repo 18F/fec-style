@@ -28,4 +28,20 @@
       padding-left: 1rem;      
     }
   }
+
+  table {
+    @extend .simple-table;
+  }
+
+  thead {
+    @extend .simple-table__header;
+  }
+
+  tr {
+    @extend .simple-table__row;
+  }
+
+  td {
+    @extend .simple-table__cell;
+  }
 }

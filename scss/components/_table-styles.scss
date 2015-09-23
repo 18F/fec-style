@@ -1,0 +1,28 @@
+// Table styles
+
+.simple-table {
+  color: $primary;
+  margin: 2rem 0;
+}
+
+.simple-table__header {
+  border-bottom: 1px solid $primary;
+}
+
+.simple-table__cell {
+  padding: 1rem 0;
+  border-bottom: 1px solid $neutral;
+  vertical-align: top;
+
+  &:only-child {
+    border-bottom: none;
+  }
+}
+
+.simple-table__row {
+  &:last-of-type {
+    .simple-table__cell {
+      border-bottom: none;
+    }
+  }
+}
