@@ -20,3 +20,5 @@ Skipnav.prototype.focusOnTarget = function(e) {
     this.$target.focus();
   }
 };
+
+module.exports = {Skipnav: Skipnav};
