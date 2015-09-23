@@ -74,5 +74,9 @@
   {
     "glossary-term": "None",
     "glossary-definition":" If data appears as 'None', it is best to check the source document. Common reasons that the data appears as 'None' are:<ul class='default-ul'><li>Data is not processed yet; often, paper filings cause delays and inconsistent upload times.</li><li>Data is from an amendment that did not properly identify the form it was amending.</li><li>The filer did not fill out the information on the form.</li></ul>If you think there is an error, you can report that via <a href='mailto:18F-FEC@gsa.gov'>email</a>."
+   },
+   {
+    "glossary-term": "Independent Expenditure",
+    "glossary-definition": "An independent expenditure is an expenditure for a communication \"expressly advocating the election or defeat of a clearly identified candidate that is not made in cooperation, consultation, or concert with, or at the request or suggestion of, a candidate, a candidate’s authorized committee, or their agents, or a political party or its agents.\" <a href='http://www.ecfr.gov/cgi-bin/text-idx?SID=a8f74e22426c2a67f75a4884e2b2348f&mc=true&node=se11.1.100_116&rgn=div8'>11 CFR 100.16(a)</a> ",
    }
 ]
