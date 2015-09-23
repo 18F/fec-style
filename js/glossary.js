@@ -12,7 +12,9 @@ var ITEM_TEMPLATE =
   '<li id="glossary-list-item" class="glossary__item">' +
     '<div class="js-accordion_header accordion__header">' +
       '<h4 class="glossary-term"></h4>' +
-      '<button class="button button--secondary accordion__button js-accordion_button"><span class="u-accordion_text u-visually-hidden">Expand</span></button>' +
+      '<button class="button button--secondary accordion__button js-accordion_button">' +
+        '<span class="u-accordion_text u-visually-hidden">Expand</span>' +
+      '</button>' +
     '</div>' +
     '<p class="glossary-definition js-accordion_item"></p>' +
   '</li>';

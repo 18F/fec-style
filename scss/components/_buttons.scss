@@ -1,5 +1,5 @@
 // Buttons
-// 
+//
 // .button      - The basic styled button that contains the properties that get extended by more specific classes
 //
 // Markup:
@@ -22,10 +22,6 @@
   &:hover {
     border-color: transparent;
   }
-
-  // &:focus {
-  //   outline: none;
-  // }
 
   &.disabled {
     opacity: .3;
@@ -58,13 +54,13 @@
   }
 
   &:focus {
-    border:2px solid $primary-focus;
+    border: 2px solid $primary-focus;
   }
-  
+
   &:active,
   &.is-active {
     background-color: $navy;
-    border: 2px solid $primary-contrast; 
+    border: 2px solid $primary-contrast;
     color: $cream;
   }
 }
@@ -81,13 +77,13 @@
 // Styleguide components.buttons.secondary
 
 .button--secondary {
-  @extend .button;  
+  @extend .button;
   background-color: $secondary-contrast;
   color: $secondary;
 
   &:hover {
     background-color: lighten($secondary-contrast, 10%);
-  }  
+  }
 
   &:focus {
     border-color: $secondary-focus;
@@ -96,9 +92,9 @@
   &:active,
   &.is-active {
     background-color: $deep-red;
-    border: 2px solid $secondary-contrast; 
+    border: 2px solid $secondary-contrast;
     color: $cream;
-  }  
+  }
 }
 
 // Neutral buttons
@@ -128,8 +124,8 @@
   &:active,
   &.is-active {
     background-color: $brown;
-    border: 2px solid $primary; 
-  }  
+    border: 2px solid $primary;
+  }
 }
 
 // Empty buttons
@@ -206,11 +202,11 @@
   &:focus {
     border-color: $primary-focus;
   }
-  
+
   &:active,
   &.is-active {
     background-color: $navy;
-    border: 2px solid $primary-contrast; 
+    border: 2px solid $primary-contrast;
     color: $cream;
   }
 }
@@ -243,8 +239,8 @@
   @include u-icon-button('i-right--primary', $primary, right);
 
   &.button--secondary {
-    @include u-icon-button('i-right--secondary', $secondary, right);    
-  }  
+    @include u-icon-button('i-right--secondary', $secondary, right);
+  }
 }
 
 .button--browse {
@@ -357,10 +353,6 @@
   @include u-background-image('../img/i-x--secondary-contrast');
   width: 4rem;
   height: 4rem;
-
-  // &:focus {
-  //   outline: 2px solid;
-  // }
 }
 
 .button--close--primary {
