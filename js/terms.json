@@ -73,7 +73,7 @@
   },
   {
     "glossary-term": "None",
-    "glossary-definition":" If data appears as 'None', it is best to check the source document. Common reasons that the data appears as 'None' are:<ul class='default-ul'><li>Data is not processed yet; often, paper filings cause delays and inconsistent upload times.</li><li>Data is from an amendment that did not properly identify the form it was amending.</li><li>The filer did not fill out the information on the form.</li></ul>If you think there is an error, you can report that via <a href='mailto:18F-FEC@gsa.gov'>email</a>."
+    "glossary-definition":" If data appears as 'None', it is best to check the source document. Common reasons that the data appears as 'None' are:<ul class='default-ul'><li>Data is not processed yet; often, paper filings cause delays and inconsistent upload times.</li><li>Data is from an amendment that did not properly identify the form it was amending.</li><li>The filer did not fill out the information on the form.</li></ul>If you think there is an error, you can report that via <a href='mailto:betafeedback@fec.gov'>email</a>."
    },
    {
     "glossary-term": "Independent expenditure",
@@ -88,6 +88,6 @@
    },
    {
     "glossary-definition": "Communication cost",
-    "glossary-term": "52 U.S.C. 30118 allows “communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject,” including the express advocacy of the election or defeat of any Federal candidate.  The costs of such communications must be reported to the Federal Election Commission under certain circumstances",
+    "glossary-term": "52 U.S.C. 30118 allows “communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject,” including the express advocacy of the election or defeat of any Federal candidate.  The costs of such communications must be reported to the Federal Election Commission under certain circumstances"
    }
 ]
