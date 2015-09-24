@@ -5,7 +5,7 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var List = require('list.js');
-var accessibility = require('accessibility');
+var accessibility = require('./accessibility');
 
 var KEYCODE_ESC = 27;
 
