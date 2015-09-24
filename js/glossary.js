@@ -13,7 +13,7 @@ var ITEM_TEMPLATE =
     '<div class="js-accordion_header accordion__header">' +
       '<h4 class="glossary-term"></h4>' +
       '<button class="button button--secondary accordion__button js-accordion_button">' +
-        '<span class="u-accordion_text u-visually-hidden" data-show="Show definition" data-hide="Hide definition"></span>' +
+        '<span class="js-accordion_text u-visually-hidden" data-show="Show definition" data-hide="Hide definition"></span>' +
       '</button>' +
     '</div>' +
     '<p class="glossary-definition js-accordion_item"></p>' +
