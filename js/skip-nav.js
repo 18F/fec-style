@@ -16,14 +16,14 @@ function Skipnav(anchor, targetBody) {
   this.$targetBody = $(targetBody);
   this.$target = this.findTarget();
   $(document.body).on('click keyup', this.anchor, this.focusOnTarget.bind(this));
-};
+}
 
 Skipnav.prototype.findTarget = function() {
   return this.$targetBody.find('a, button, :input, [tabindex]').filter(':visible')[0];
 };
 
 Skipnav.prototype.focusOnTarget = function(e) {
-  if (e.keyCode === 13 || e.type === 'click') {    
+  if (e.keyCode === 13 || e.type === 'click') {
     this.$target.focus();
   }
 };

@@ -73,21 +73,18 @@
   },
   {
     "glossary-term": "None",
-    "glossary-definition":" If data appears as 'None', it is best to check the source document. Common reasons that the data appears as 'None' are:<ul class='default-ul'><li>Data is not processed yet; often, paper filings cause delays and inconsistent upload times.</li><li>Data is from an amendment that did not properly identify the form it was amending.</li><li>The filer did not fill out the information on the form.</li></ul>If you think there is an error, you can report that via <a href='mailto:betafeedback@fec.gov'>email</a>."
+    "glossary-definition": "If data appears as \"None\", it is best to check the source document. Common reasons that the data appears as \"None\" are:<ul class='default-ul'><li>Data is not processed yet; often, paper filings cause delays and inconsistent upload times.</li><li>Data is from an amendment that did not properly identify the form it was amending.</li><li>The filer did not fill out the information on the form.</li></ul>If you think there is an error, you can report that via <a href='mailto:betafeedback@fec.gov'>email</a>."
    },
    {
     "glossary-term": "Independent expenditure",
-    "glossary-definition": "An independent expenditure is an expenditure for a communication \"expressly advocating the election or defeat of a clearly identified candidate that is not made in cooperation, consultation, or concert with, or at the request or suggestion of, a candidate, a candidate’s authorized committee, or their agents, or a political party or its agents.\" <a href='http://www.ecfr.gov/cgi-bin/text-idx?SID=a8f74e22426c2a67f75a4884e2b2348f&mc=true&node=se11.1.100_116&rgn=div8'>11 CFR 100.16(a)</a> ",
+    "glossary-definition": "An independent expenditure is an expenditure for a communication \"expressly advocating the election or defeat of a clearly identified candidate that is not made in cooperation, consultation, or concert with, or at the request or suggestion of, a candidate, a candidate’s authorized committee, or their agents, or a political party or its agents.\" <a href='http://www.ecfr.gov/cgi-bin/text-idx?SID=a8f74e22426c2a67f75a4884e2b2348f&mc=true&node=se11.1.100_116&rgn=div8'>11 CFR 100.16(a)</a>."
    },
    {
     "glossary-term": "Electioneering",
-    "glossary-definition": "An electioneering communication is any broadcast, cable or satellite communication that fulfills <em>each</em> of the following conditions:<ul class='default-ul'>
-        <li>The communication refers to a clearly identified candidate for federal office;</li>
-        <li>The communication is publicly distributed shortly before an election for the office that candidate is seeking; and</li>
-        <li>The communication is targeted to the relevant electorate (U.S. House and Senate candidates only).</li></ul>",
+    "glossary-definition": "An electioneering communication is any broadcast, cable or satellite communication that fulfills <em>each</em> of the following conditions:<ul class='default-ul'><li>The communication refers to a clearly identified candidate for federal office;</li><li>The communication is publicly distributed shortly before an election for the office that candidate is seeking; and</li><li>The communication is targeted to the relevant electorate (U.S. House and Senate candidates only).</li></ul>"
    },
    {
     "glossary-definition": "Communication cost",
-    "glossary-term": "52 U.S.C. 30118 allows “communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject,” including the express advocacy of the election or defeat of any Federal candidate.  The costs of such communications must be reported to the Federal Election Commission under certain circumstances"
+    "glossary-term": "52 U.S.C. 30118 allows \"communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject,\" including the express advocacy of the election or defeat of any Federal candidate. The costs of such communications must be reported to the Federal Election Commission under certain circumstances."
    }
 ]
