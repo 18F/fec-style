@@ -19,9 +19,9 @@ var restoreTabindex = function($elm) {
   $elm.find('a, button, :input, [tabindex]').each(function(){
     $(this).attr('tabindex', '0');
   })
-}
+};
 
 module.exports = {
-  removeTabindex: removeTabindex;
-  restoreTabindex: restoreTabindex;
+  removeTabindex: removeTabindex,
+  restoreTabindex: restoreTabindex
 }
