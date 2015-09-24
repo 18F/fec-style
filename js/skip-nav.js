@@ -15,7 +15,7 @@ function Skipnav(anchor, targetBody) {
   this.anchor = anchor;
   this.$targetBody = $(targetBody);
   this.$target = this.findTarget();
-  $(document.body).on('click, keyup', this.anchor, this.focusOnTarget.bind(this));
+  $(document.body).on('click keyup', this.anchor, this.focusOnTarget.bind(this));
 };
 
 Skipnav.prototype.findTarget = function() {
