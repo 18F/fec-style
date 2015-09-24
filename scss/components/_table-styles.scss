@@ -1,0 +1,43 @@
+// Table styles
+
+.simple-table {
+  border-color: $primary;
+  border-style: solid;
+  border-width: 2px 0;
+  color: $primary;
+  font-family: $sans-serif;
+  margin: 2rem 0;
+}
+
+.simple-table__header {
+  border-bottom: 1px solid $primary;
+
+  th {
+    padding: .5rem 0;
+  }
+}
+
+.simple-table__cell {
+  padding: 1rem 0;
+  border-bottom: 1px solid $neutral;
+  vertical-align: top;
+
+  &:only-child {
+    border-bottom: none;
+  }
+}
+
+.simple-table__row {
+  &:last-of-type {
+    .simple-table__cell {
+      border-bottom: none;
+    }
+  }
+}
+
+// Table titles in content are h3, but those have bottom margins.
+// This closes that gap
+
+h3 + .simple-table { 
+  margin-top: -1rem; 
+}
