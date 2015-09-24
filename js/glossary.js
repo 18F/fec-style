@@ -49,6 +49,9 @@ function Glossary(terms, selectors) {
   self.populate();
   self.linkTerms();
 
+  // Remove tabindices 
+  accessibility.removeTabindex(self.$body);
+  
   // Bind listeners
   self.$toggle.on('click', this.toggle.bind(this));
   self.$body.on('click', '.toggle', this.toggle.bind(this));
