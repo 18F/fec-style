@@ -37,7 +37,8 @@ var accordion = {
     this.$items = this.findItems($base);
     this.$buttons = this.findButtons(this.$headers);
     this.$text = this.findText(this.$headers);
-
+    this.hideText = this.$text.data('hide');
+    this.showText = this.$text.data('show');
     this.hideAll();
 
     this.$buttons.on('click', $.proxy(self.itemClickHandler, this));
@@ -104,7 +105,7 @@ var accordion = {
     $el.attr('aria-hidden', true);
     this.$buttons.attr('aria-expanded', false);
     $el[0].style.display = 'none';
-    this.$text.html('Expand');
+    this.$text.html(this.showText);
   },
   /**
    * Show an element visually.
@@ -116,7 +117,7 @@ var accordion = {
     $el.attr('aria-hidden', false);
     this.$buttons.attr('aria-expanded', true);
     $el[0].style.display = 'block';
-    this.$text.html('Show');
+    this.$text.html(this.hideText);
   },
   /**
    * Hide all items for the current accordion.
