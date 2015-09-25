@@ -34,6 +34,10 @@
   text-align: center;
 }
 
+.message__title {
+  border-bottom: none;
+}
+
 .message__icon {
   @include u-background-image('i-alert--neutral', 0% 0%);
   display: table-cell;
