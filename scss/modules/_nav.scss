@@ -109,6 +109,25 @@
         display: block;
       }
     }
+
+    &.is-disabled {
+      opacity: 1;
+
+      .site-nav__link {
+        color: #737373;
+        cursor: default;
+        
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
   }
 }
 
@@ -128,15 +147,6 @@
   &.is-active {
     background-color: $primary;
     color: $primary-contrast;
-  }
-
-  &.is-disabled {
-
-    &:hover,
-    &:active {
-      background: none;
-      border-bottom-color: transparent;
-    }
   }
 
   @include media($lg) {
@@ -341,6 +351,10 @@
     & ~ .site-nav__dropdown {
       display: block;
     }
+  }
+
+  @include media($lg) {
+    display: none;
   }
 }
 
