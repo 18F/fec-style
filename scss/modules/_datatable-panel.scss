@@ -27,7 +27,6 @@
 .panel__overlay {
   @include transition(opacity .2s);
   background-color: $cream;
-  display: block !important; // Overriding default [aria-hidden=true] styling
   overflow: hidden;
   padding: 1rem;
   position: absolute;
