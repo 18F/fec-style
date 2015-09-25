@@ -95,6 +95,14 @@
     border-bottom: 0;
   }
 
+  &.is-disabled {
+    opacity: 1;
+
+    .site-nav__link {
+      color: #929292;
+    }
+  }
+
   @include media($lg) {
     float: left;
     border-bottom: none;
@@ -111,12 +119,10 @@
     }
 
     &.is-disabled {
-      opacity: 1;
-
       .site-nav__link {
         color: #737373;
         cursor: default;
-        
+
         &:hover,
         &:focus {
           background-color: transparent;
