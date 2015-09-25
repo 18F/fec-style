@@ -25,6 +25,8 @@ Skipnav.prototype.findTarget = function() {
 };
 
 Skipnav.prototype.focusOnTarget = function(e) {
+  e.preventDefault();
+  
   if (e.keyCode === 13 || e.type === 'click') {
     this.$target.attr('tabindex','0');
     this.$target.focus();
