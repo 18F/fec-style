@@ -15,13 +15,11 @@ a {
   transition: color 0.1s linear;
 
   &:active,
-  &:focus,
   &:hover {
     border-bottom-color: $primary-contrast;
   }
 
   img {
-    outline: none;
     border: none;
   }
 }

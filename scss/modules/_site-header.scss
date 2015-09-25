@@ -119,10 +119,6 @@
 
   a {
     border: none;
-
-    &:focus {
-      outline: 2px solid $primary;
-    }
   }
 }
 
@@ -131,10 +127,6 @@
   border-bottom: 0;
   display: block;
   float: left;
-
-  &:focus {
-    outline: 2px solid $primary;
-  }
 }
 
 // Mobile site title is included in the .site-nav nav element

@@ -67,11 +67,6 @@
   height: 4rem;
   padding: 1rem 1rem 1rem 3rem;
 
-  &:focus {
-    outline: none;
-    border-color: $primary;
-  }
-
   @include media($lg) {
     @include transform(translateX(0));
     @include transition(width, .1s);

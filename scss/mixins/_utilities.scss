@@ -86,19 +86,11 @@
   .button--primary {
     color: $primary;
     border-color: transparent;
-
-    &:focus {
-      border-color: $primary-focus;
-    }
   }
   
   .button--secondary {
     color: $secondary;
-    border-color: transparent;
-    
-    &:focus {
-      border-color: $secondary-focus;
-    }    
+    border-color: transparent;  
   }
 
   .button:hover {
@@ -126,10 +118,6 @@
     color: $contrast-color;
     border-color: $contrast-color;
     background-color: $background-color;
-
-    &:focus {
-      border-color: $focus-color;
-    }
   }
 
   #{$all-text-inputs} {
@@ -182,8 +170,7 @@
   a {
     border-bottom-color: $ivory;
     
-    &:hover,
-    &:focus {
+    &:hover {
       border-bottom-color: $primary-contrast;
     }
   }
@@ -207,8 +194,7 @@
   a {
     border-bottom-color: $ivory;
 
-    &:hover,
-    &:focus {
+    &:hover {
       border-bottom-color: $secondary-contrast;
     }
   } 
@@ -224,8 +210,7 @@
   background-color: $ivory;
   
   a {
-    &:hover,
-    &:focus {
+    &:hover {
       border-bottom-color: $primary-contrast;
     }
   } 

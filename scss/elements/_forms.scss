@@ -58,7 +58,6 @@ select {
   width: 100%;
 
   &:focus {
-    outline: none;
     border-color: $primary;
     color: $primary;
   }
