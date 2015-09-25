@@ -37,8 +37,8 @@ var accordion = {
     this.$items = this.findItems($base);
     this.$buttons = this.findButtons(this.$headers);
     this.$text = this.findText(this.$headers);
-    this.hideText = this.$text.data('hide') || "Hide";
-    this.showText = this.$text.data('show') || "Show";
+    this.hideText = this.$text.data('hide') || 'Hide';
+    this.showText = this.$text.data('show') || 'Show';
     this.hideAll();
 
     this.$buttons.on('click', $.proxy(self.itemClickHandler, this));
