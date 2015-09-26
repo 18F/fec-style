@@ -41,6 +41,7 @@
 @include media($med) {
   .combo--search {
     .combo__input {
+      border-radius: 0 0 0 0;
       width: calc(100% - 20.6rem);
     }
 
