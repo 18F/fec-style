@@ -21,3 +21,17 @@
   }
 }
 
+.overlay--neutral {
+  background-color: transparent;
+
+  &.is-loading {
+    background-image: url('../img/loading--primary.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+  }
+}
+
+.overlay__container {
+  position: relative;
+  min-height: 50rem;
+}
