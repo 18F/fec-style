@@ -56,7 +56,7 @@
     .search__container {
       display: block;
       float: right;
-      width: 50%;
+      width: 40rem;
     }  
   }
 
@@ -64,7 +64,17 @@
     @include media($med) {
     float: left;
     line-height: 4rem;
-    width: calc(50% - 4rem);
   }
+  }
+}
+
+// BREAKPOINT: Large
+// Wider search bar
+
+@include media($lg) {
+  .page-header {
+    .search__container {
+      width: 50rem;
+    }
   }
 }
