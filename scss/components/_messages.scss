@@ -17,27 +17,34 @@
 
 .message {
   @include clearfix();
-  border-top: 1px solid;
+  background-size: 2rem;
+  background-color: rgba($ivory-dark, .5);
+  border-color: $beige;
+  border-top: 2px solid $beige;
+  padding: 5rem 2rem 2rem 2rem;
   margin: 2rem 0;
-  padding: 2rem;
 }
 
 .message--alert {
-  background-color: rgba($neutral, .5);
-  border-color: $beige;
+  @include u-background-image('i-alert--neutral', 50% 2rem);
+}
+
+.message--info {
+  @include u-background-image('i-info--neutral', 50% 2rem);
 }
 
 .message--alert__bottom {
   border-top: 1px solid $ivory;
   margin-top: 1rem;
   padding-top: 1rem;
-  text-align: center;
 }
 
-.message__icon {
-  @include u-background-image('i-alert--neutral', 0% 0%);
-  display: table-cell;
-  min-width: 4rem;
+.message--small {
+  padding: 1rem;
+}
+
+.message__title {
+  border-bottom: none;
 }
 
 .message__content {
@@ -48,5 +55,20 @@
   @include media($lg) {
     @include span-columns(8);
     @include shift(2);
+  }
+}
+
+@include media($med) {
+  .message {
+    background-position: 2rem 2rem;
+    background-size: 4rem;
+    min-height: 8rem;
+    padding: 2rem 2rem 2rem 8rem;
+  }
+
+  .message--small {
+    background-size: 2rem;
+    background-position: 1rem 1rem;
+    padding: 1rem 1rem 1rem 4rem;
   }
 }
