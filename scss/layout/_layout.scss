@@ -39,7 +39,8 @@
 .main {
   @include clearfix();
   padding: 2rem 0;
-
+  position: relative;
+  
   @include media($lg) {
     padding: 4rem 0;
   }
