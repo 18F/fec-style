@@ -28,7 +28,9 @@
   border-bottom: none;
   font-family: $sans-serif;
   font-size: 1.6rem;
+  text-transform: uppercase;
   margin-bottom: 0;
+  margin-left: 2rem;
   line-height: 1;
 }
 
@@ -49,12 +51,12 @@
 
 @include media($med) {
   .page-header {
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
 
     .search__container {
       display: block;
       float: right;
-      width: 50%;
+      width: 40rem;
     }  
   }
 
@@ -62,7 +64,17 @@
     @include media($med) {
     float: left;
     line-height: 4rem;
-    width: calc(50% - 4rem);
   }
+  }
+}
+
+// BREAKPOINT: Large
+// Wider search bar
+
+@include media($lg) {
+  .page-header {
+    .search__container {
+      width: 50rem;
+    }
   }
 }
