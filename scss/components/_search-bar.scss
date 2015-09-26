@@ -42,11 +42,11 @@
 @include media($med) {
   .combo--search {
     .combo__input {
-      width: calc(100% - 21.6rem);
+      width: calc(100% - 20.6rem);
     }
 
     .combo__button {
-      width: 6.6rem; 
+      width: 5.6rem; 
     }
   }
   
