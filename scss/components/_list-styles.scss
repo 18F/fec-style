@@ -43,6 +43,10 @@
   }
 }
 
+.list--columns {
+  @include columns(3)
+}
+
 // Checkbox Lists
 // 
 // For showing a list of completed or uncompleted features
