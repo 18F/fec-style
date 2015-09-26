@@ -26,27 +26,27 @@
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
   height: 3.6rem;
-  width: 12rem;
+  width: 14rem;
   float: left;
 }
 
 .combo__select {
-  width: 12rem;
+  width: 14rem;
 }
 
 .combo__input {
-  width: calc(100% - 12rem)
+  width: calc(100% - 14rem)
 }
 
 // BREAKPOINT: MEDIUM
 @include media($med) {
   .combo--search {
     .combo__input {
-      width: calc(100% - 16.6rem);
+      width: calc(100% - 21.6rem);
     }
 
     .combo__button {
-      width: 3.6rem; 
+      width: 6.6rem; 
     }
   }
   
@@ -69,7 +69,6 @@
       height: 6rem;
       width: 16rem;
       font-size: 1.8rem;
-      
     }
 
     .tt-dropdown-menu {
