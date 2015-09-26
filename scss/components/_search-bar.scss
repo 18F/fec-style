@@ -30,12 +30,11 @@
   float: left;
 }
 
-.combo__select {
-  width: 14rem;
-}
-
-.combo__input {
-  width: calc(100% - 14rem)
+.combo--search {
+  .combo__input {
+    border-radius: 0 4px 4px 0;
+    width: calc(100% - 14rem)
+  }
 }
 
 // BREAKPOINT: MEDIUM
