@@ -83,6 +83,13 @@
 // For tooltips on regular DOM elements (rather than on maps), 
 // apply the .tooltip-trigger class to the triggering element
 
+.tooltip-trigger {
+  @include u-background-image('i-info--primary--small', 100% 50%);
+  background-size: 1em;
+  display: inline-block;
+  padding-right: 1.5em;
+}
+
 .tooltip-trigger + .tooltip {
   display: none;
 }

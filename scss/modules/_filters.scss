@@ -46,6 +46,10 @@
       @include u-background-image('i-up-2--primary', 1rem 50%);
     }
   }
+
+  .message {
+    margin-bottom: 0;
+  }
 }
 
 .filters__hider {
