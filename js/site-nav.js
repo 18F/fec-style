@@ -6,8 +6,11 @@ var $ = require('jquery');
 
 function SiteNav(selector) {
   this.$body = $(selector);
+  this.$toggle = this.$body.find('.js-nav-toggle');
+
   this.assignAria();
 
+  this.$toggle.on('click', this.toggle.bind(this));
   this.$body.on('change', '.js-toggle', this.handleChange.bind(this));
   this.$body.on('mouseenter', 'li:has(.js-toggle)', this.handleMouseEnter.bind(this));
   this.$body.on('mouseleave', 'li:has(.js-toggle)', this.handleMouseExit.bind(this));
@@ -27,9 +30,26 @@ SiteNav.prototype.assignAria = function() {
   $links.attr('aria-haspopup', true);
 };
 
+SiteNav.prototype.toggle = function() {
+  var method = this.isOpen ? this.hide : this.show;
+  method.apply(this);    
+};
+
+SiteNav.prototype.show = function() {
+  this.$body.addClass('is-open');
+  this.$toggle.addClass('active');
+  this.isOpen = true;
+};
+
+SiteNav.prototype.hide = function() {
+  this.$body.removeClass('is-open');
+  this.$toggle.removeClass('active');
+  this.isOpen = false;
+};
+
 SiteNav.prototype.handleChange = function(e) {
-  var $toggle = $(e.currentTarget);
-  var checked = $toggle.is(':checked');
+  var $subToggle = $(e.currentTarget);
+  var checked = $subToggle.is(':checked');
   var $list = $(e.currentTarget).siblings('ul');
 
   $list.attr('aria-hidden', !checked);

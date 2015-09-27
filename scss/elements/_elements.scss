@@ -31,9 +31,10 @@ html {
 }
 
 body {
-  padding: 0;
-  margin: 0;
   background-color: $cream;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 [aria-hidden=true] {

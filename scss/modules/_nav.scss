@@ -44,6 +44,16 @@
 .site-nav {
   @include clearfix();
 
+  &.is-open {
+    .site-nav__list {
+      @include transform(translateX(0));
+    }
+
+    .site-nav__dropdown {
+      display: block;
+    }
+  }
+
   @include media($lg) {
     padding-left: 2rem;
   }
@@ -75,6 +85,7 @@
     @include transform(translateX(0));
     background: none;
     border: none;
+    min-height: 0;
     display: block;
     float: left;
     padding: 0;
@@ -251,10 +262,21 @@
     background-color: $cream;
   }  
 
+  &.active {
+    @include u-background-image('i-menu--neutral');
+    background-color: $primary;
+    color: $neutral;
+  }
+
   @include media($med) {
     background-position: 90% 1rem;
+    font-size: 1.4rem;
     text-indent: 0;
     padding: 1rem 4rem 1rem 1rem;
+
+    &.active {
+      background-position: 90% 1rem;
+    }
   }
 
   @include media($lg) {
@@ -332,16 +354,6 @@
   }
 
   &:checked {
-    & + .site-nav__button {
-      @include u-background-image('i-menu--neutral');
-      background-color: $primary;
-      color: $neutral;
-
-      @include media($med) {
-        background-position: 90% 1rem;
-      }
-    }
-
     & + .nav-toggle__label {
       color: $primary-contrast;
 
@@ -349,20 +361,9 @@
         @include u-background-image('i-down--primary-contrast');
       }
     }
-
-    & ~ .site-nav__list {
-      @include transform(translateX(0));
-    }
-
-    & ~ .site-nav__dropdown {
-      display: block;
-    }
   }
 
   @include media($lg) {
     display: none;
   }
 }
-
-
-  
