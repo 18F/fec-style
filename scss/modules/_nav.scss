@@ -118,14 +118,15 @@
     float: left;
     border-bottom: none;
     
-    &:hover,
-    &:focus {
-      background-color: $ivory;
-    }
-
     &:hover {
       & > .site-nav__dropdown {
         display: block;
+      }
+
+      .site-nav__link {
+        border-bottom-color: $primary-contrast;
+        background-color: $primary;
+        color: $ivory;
       }
     }
 
@@ -172,8 +173,9 @@
     &:hover,
     &:focus,
     &:active {
-      border-bottom-color: transparent;
-      background-color: $ivory;
+      border-bottom-color: $primary-contrast;
+      background-color: $primary;
+      color: $ivory;
     }
   }
 }
@@ -181,14 +183,12 @@
 .site-nav__subtitle {
   display: block;
   margin: 0;
+  font-size: 1.4rem;
   padding: 1rem;
-
-  @include media($lg) {
-    border-bottom: 1px solid $beige;
-  }
 }
 
 .site-nav__dropdown {
+  font-family: $sans-serif;
   display: none;
   padding-bottom: 2rem;
 
@@ -198,12 +198,17 @@
 
   .site-nav__link {
     padding: .5rem 1rem;
+    font-size: 1.4rem;
     white-space: nowrap;
   }
 
+  .site-nav__sublink {
+    padding-left: 2rem;
+  }
+
   @include media($lg) {
-    @include u-bg--neutral();
-    border: 1px solid $beige;
+    @include u-bg--primary();
+    border: 1px solid $primary-contrast;
     border-top: none;
     padding-bottom: 0;
     position: absolute;
@@ -214,18 +219,32 @@
       width: 100%;
     }
 
+    .site-nav__subtitle {
+      border-top: 1px solid $primary-contrast;
+      padding: 2rem 2rem 0 2rem;
+    }
+
     .site-nav__link {
-      border-bottom: 1px solid $beige;
-      padding: 1rem;
+      border-top: 1px solid $primary-contrast;
+      padding: 2rem;
       width: 100%;
 
       &:hover,
       &:focus {
-        border-bottom: 1px solid $primary;
-        background-color: $primary;
-        color: $ivory;
+        background-color: $primary-contrast;
+        color: $primary;
       }
-    }    
+    }
+    
+    .site-nav__sublink {
+      padding: 1rem 2rem 1rem 4rem;
+      border-top: none;
+    }
+
+    .site-nav__sublink--last {
+      padding-bottom: 2rem;
+    }
+
   }
 }
 
