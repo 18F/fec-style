@@ -145,7 +145,7 @@ input[type="file"] {
 [type="radio"] + label {
   cursor: pointer;
   line-height: 2rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem .25rem;
 }
 
 [type="checkbox"] + label::before,
