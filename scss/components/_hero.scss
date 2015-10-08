@@ -76,7 +76,6 @@
 }
 
 .hero__banner {
-  background-image: url('../img/monument.jpg');
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -111,4 +110,26 @@
       @include shift(3);
     }
   }   
+}
+
+.hero__banner--monument {
+  background-image: url('../img/monument.jpg');
+}
+
+.hero__banner--office {
+  display: none;
+
+  @include media($med) {
+    display: block;
+    background-image: url('../img/fec-office.jpg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;    
+    height: 20rem;
+  }
+
+  @include media($lg) {
+    background-size: cover;
+    height: 28rem;
+  }
 }
