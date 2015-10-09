@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images",
-    "build-js": "browserify fec-template/public/init.js > fec-template/public/main.js",
+    "build-js": "browserify -t stringify fec-template/public/init.js > fec-template/public/main.js",
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "rm -rf styleguide && kss-node --config kss-config.json && cd fec-template/ && npm run less",
     "copy-images": "cp -R img styleguide/img",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "browserify": "^11.0.1",
+    "stringify": "^3.1.0",
     "chai": "^3.2.0",
     "kss": "^2.1.0",
     "less": "^2.5.1",

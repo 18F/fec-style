@@ -1,0 +1,50 @@
+// Feedback module
+
+.feedback {
+  @include transition(bottom .5s);
+  @include u-font-color($cream);
+  @include u-form-color($navy, $primary-contrast, $ivory, 'primary', $primary-contrast);
+  background-color: $navy;
+  bottom: 0;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: $z-feedback;
+
+  legend {
+    color: $cream;
+  }
+
+  textarea {
+    height: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .button--close--primary-contrast {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  &[aria-hidden="true"] {
+    display: block !important;
+    bottom: -100%;
+  }
+
+  @include media($lg) {
+    padding: 3rem;
+    width: 40%;
+    right: 4rem;
+  }
+}
+
+.feedback__title {
+  @include heading(h2);
+  margin-bottom: 0;
+}
+
+.feedback__button {
+  position: fixed;
+  bottom: 0;
+  right: 4rem;
+}

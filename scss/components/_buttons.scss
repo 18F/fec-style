@@ -341,4 +341,12 @@
 
 .button--close--primary {
   @include u-background-image('../img/i-x--primary');
+  width: 4rem;
+  height: 4rem;  
+}
+
+.button--close--primary-contrast {
+  @include u-background-image('../img/i-x--primary-contrast');
+  width: 4rem;
+  height: 4rem;  
 }
