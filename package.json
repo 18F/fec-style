@@ -16,9 +16,8 @@
     "percy": "percy snapshot styleguide",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
-    "test-debug": "mochify tests/*.js",
-    "test": "mochify tests/*.js --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' ]"
-  },
+    "test-debug": "mochify --transform [ stringify ] tests/*.js",
+    "test": "mochify --transform [ stringify ] --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' --exclude '**/*.html' ] tests/*.js"},
   "dependencies": {
     "URIjs": "1.16.0",
     "eventemitter2": "0.4.14",
