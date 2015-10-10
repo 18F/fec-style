@@ -16,9 +16,9 @@ function Feedback(url) {
   this.url = url;
   this.$button = this.getButton();
   this.$box = this.getBox();
-  this.$action = this.$box.find('[name=action]');
-  this.$response = this.$box.find('[name=response');
-  this.$feedback = this.$box.find('[name=feedback]');
+  this.$action = this.$box.find('[name="action"]');
+  this.$response = this.$box.find('[name="response"]');
+  this.$feedback = this.$box.find('[name="feedback"]');
 
   this.$button.on('click', this.toggle.bind(this));
 };
