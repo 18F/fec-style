@@ -24,6 +24,7 @@ function Feedback(url, parent) {
   this.$button = this.$feedback.find('.js-feedback');
   this.$box = this.$feedback.find('.js-feedback-box');
   this.$status = this.$box.find('.js-status');
+  this.$form = this.$feedback.find('form');
 
   this.$button.on('click', this.toggle.bind(this));
   this.$form.on('submit', this.submit.bind(this));
