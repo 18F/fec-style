@@ -52,7 +52,7 @@ Feedback.prototype.submit = function() {
   e.preventDefault();
   var promise = $.ajax({
     method: 'POST',
-    url: url,
+    url: this.url,
     data: {
       url: this.url,
       action: this.$action.val(),
