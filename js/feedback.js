@@ -1,36 +1,32 @@
 'use strict';
 
-/* global require, module, document */
-
 var $ = require('jquery');
+var _ = require('underscore');
 var feedback = require('./templates/feedback.html');
 
-/** Feedback widget
-  * @constructor
-  * @param {string} url - URL to submit the form to
-  */
+var statusClasses = {
+  success: 'success',
+  error: 'error'
+};
 
-function Feedback(url) {
-  $('body').append(feedback);
-
+/**
+ * Feedback widget
+ * @constructor
+ * @param {String} url - AJAX URL
+ * @param {String} parent - Optional parent selector; defaults to 'body'
+ */
+function Feedback(url, parent) {
   this.url = url;
-  this.$button = this.getButton();
-  this.$box = this.getBox();
-  this.$form = this.$box.find('form');
-  this.$action = this.$form.find('[name="action"]');
-  this.$response = this.$form.find('[name="response"]');
-  this.$feedback = this.$form.find('[name="feedback"]');
+  this.$feedback = $(feedback);
+
+  $(parent || 'body').append(this.$feedback);
+
+  this.$button = this.$feedback('.js-feedback');
+  this.$box = this.$feedback('.js-feedback-box');
+  this.$status = this.$box.find('.js-status');
 
   this.$button.on('click', this.toggle.bind(this));
   this.$form.on('submit', this.submit.bind(this));
-};
-
-Feedback.prototype.getButton = function() {
-  return $('.js-feedback');
-};
-
-Feedback.prototype.getBox = function() {
-  return $('.js-feedback-box');
 }
 
 Feedback.prototype.toggle = function() {
@@ -52,16 +48,38 @@ Feedback.prototype.hide = function() {
 
 Feedback.prototype.submit = function(e) {
   e.preventDefault();
+  var data = _.chain(this.$box.find('textarea'))
+    .map(function(elm) {
+      var $elm = $(elm);
+      return [$elm.attr('name'), $elm.val()];
+    })
+    .object()
+    .value();
   var promise = $.ajax({
     method: 'POST',
     url: this.url,
-    data: {
-      url: this.url,
-      action: this.$action.val(),
-      response: this.$response.val(),
-      feedback: this.$feedback.val()
-    }
+    data: JSON.stringify(data),
+    contentType: 'application/json'
   });
+  promise.done(this.handleSuccess.bind(this));
+  promise.fail(this.handleError.bind(this));
+};
+
+Feedback.prototype.handleSuccess = function(response) {
+  this.$box.find('textarea').val('');
+  this.message('Issue submitted.');
+};
+
+Feedback.prototype.handleError = function() {
+  this.message('Error submitting issue. Please try again.');
+};
+
+Feedback.prototype.message = function(text, style) {
+  this.$status.text(text);
+  _.each(statusClasses, function(value, key) {
+    this.$status.removeClass(value);
+  });
+  this.$status.addClass(statusClasses[style]);
 };
 
 module.exports = {Feedback: Feedback};
