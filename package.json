@@ -28,7 +28,6 @@
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
     "perfect-scrollbar": "0.6.2",
-    "stringify": "^3.1.0",
     "typeahead.js": "0.10.5",
     "underscore": "1.8.3"
   },
@@ -43,6 +42,7 @@
     "node-sass": "^3.2.0",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
+    "stringify": "^3.1.0",
     "watch": "^0.16.0"
   }
 }
