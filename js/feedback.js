@@ -66,21 +66,22 @@ Feedback.prototype.submit = function(e) {
   promise.fail(this.handleError.bind(this));
 };
 
-Feedback.prototype.handleSuccess = function(response) {
+Feedback.prototype.handleSuccess = function() {
   this.$box.find('textarea').val('');
-  this.message('Issue submitted.');
+  this.message('Issue submitted.', 'success');
 };
 
 Feedback.prototype.handleError = function() {
-  this.message('Error submitting issue. Please try again.');
+  this.message('Error submitting issue. Please try again.', 'error');
 };
 
 Feedback.prototype.message = function(text, style) {
-  this.$status.text(text);
-  _.each(statusClasses, function(value, key) {
-    this.$status.removeClass(value);
+  var self = this;
+  self.$status.text(text);
+  _.each(statusClasses, function(value) {
+    self.$status.removeClass(value);
   });
-  this.$status.addClass(statusClasses[style]);
+  self.$status.addClass(statusClasses[style]);
 };
 
 module.exports = {Feedback: Feedback};
