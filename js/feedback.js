@@ -5,6 +5,11 @@
 var $ = require('jquery');
 var feedback = require('./templates/feedback.html');
 
+/** Feedback widget
+  * @constructor
+  * @param {string} url - URL to submit the form to
+  */
+
 function Feedback(url) {
   $('body').append(feedback);
 
