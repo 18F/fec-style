@@ -16,11 +16,13 @@ function Feedback(url) {
   this.url = url;
   this.$button = this.getButton();
   this.$box = this.getBox();
-  this.$action = this.$box.find('[name="action"]');
-  this.$response = this.$box.find('[name="response"]');
-  this.$feedback = this.$box.find('[name="feedback"]');
+  this.$form = this.$box.find('form');
+  this.$action = this.$form.find('[name="action"]');
+  this.$response = this.$form.find('[name="response"]');
+  this.$feedback = this.$form.find('[name="feedback"]');
 
   this.$button.on('click', this.toggle.bind(this));
+  this.$form.on('submit', this.submit.bind(this));
 };
 
 Feedback.prototype.getButton = function() {
@@ -48,7 +50,7 @@ Feedback.prototype.hide = function() {
   this.isOpen = false;
 };
 
-Feedback.prototype.submit = function() {
+Feedback.prototype.submit = function(e) {
   e.preventDefault();
   var promise = $.ajax({
     method: 'POST',
