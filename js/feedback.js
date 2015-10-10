@@ -1,7 +1,5 @@
 'use strict';
 
-/* global require, module */
-
 var $ = require('jquery');
 var _ = require('underscore');
 var feedback = require('./templates/feedback.html');
