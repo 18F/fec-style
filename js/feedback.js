@@ -21,8 +21,8 @@ function Feedback(url, parent) {
 
   $(parent || 'body').append(this.$feedback);
 
-  this.$button = this.$feedback('.js-feedback');
-  this.$box = this.$feedback('.js-feedback-box');
+  this.$button = this.$feedback.find('.js-feedback');
+  this.$box = this.$feedback.find('.js-feedback-box');
   this.$status = this.$box.find('.js-status');
 
   this.$button.on('click', this.toggle.bind(this));
