@@ -17,6 +17,7 @@ var statusClasses = {
  */
 function Feedback(url, parent) {
   this.url = url;
+  this.isOpen = false;
   this.$feedback = $(feedback);
 
   $(parent || 'body').append(this.$feedback);

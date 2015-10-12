@@ -11,25 +11,78 @@ var $ = require('jquery');
 var Feedback = require('../js/feedback').Feedback;
 
 describe('feedback', function() {
-
   beforeEach(function() {
     this.feedback = new Feedback('http://localhost:3000/issue/');
   });
 
   describe('constructor', function() {
+    it('memorizes its url', function() {
+      expect(this.feedback.url).to.equal('http://localhost:3000/issue/');
+    });
 
+    it('appends the feedback widget', function() {
+      expect($(document.body).has(this.feedback.$feedback).length).to.equal(1);
+    });
   });
 
   describe('toggle', function() {
+    it('starts closed', function() {
+      expect(this.feedback.isOpen).to.be.false;
+    });
 
+    it('opens on toggle', function() {
+      this.feedback.toggle();
+      expect(this.feedback.$box.attr('aria-hidden')).to.equal('false');
+      expect(this.feedback.$button.attr('aria-expanded')).to.equal('true');
+      expect(this.feedback.isOpen).to.be.true;
+    });
+
+    it('closes on second toggle', function() {
+      this.feedback.toggle();
+      this.feedback.toggle();
+      expect(this.feedback.$box.attr('aria-hidden')).to.equal('true');
+      expect(this.feedback.$button.attr('aria-expanded')).to.equal('false');
+      expect(this.feedback.isOpen).to.be.false;
+    });
+  });
+
+  describe('callbacks', function() {
+    beforeEach(function() {
+      this.event = {preventDefault: sinon.spy()};
+      this.message = sinon.spy(this.feedback, 'message');
+    });
+
+    afterEach(function() {
+      this.message.restore();
+    });
+
+    it('clears text on success', function() {
+      this.feedback.handleSuccess(this.event);
+      expect(this.feedback.$box.find('textarea').val()).to.equal('');
+      expect(this.feedback.message).to.have.been.called;
+    });
+
+    it('shows message on error', function() {
+      this.feedback.handleError(this.event);
+      expect(this.feedback.message).to.have.been.called;
+    });
   });
 
   describe('messages', function() {
+    it('shows a message with expected class', function() {
+      this.feedback.message('foo', 'bar', 'success');
+      expect(this.feedback.$status.hasClass('message--success')).to.be.true;
+    });
 
+    it('hides previous classes', function() {
+      this.feedback.message('foo', 'bar', 'success');
+      this.feedback.message('foo', 'bar', 'error');
+      expect(this.feedback.$status.hasClass('message--success')).to.be.false;
+      expect(this.feedback.$status.hasClass('message--error')).to.be.true;
+    });
   });
 
   describe('submission', function() {
-
     beforeEach(function() {
       this.ajaxStub = sinon.stub($, 'ajax');
       sinon.stub(this.feedback, 'handleSuccess');
@@ -58,7 +111,5 @@ describe('feedback', function() {
       expect(this.feedback.handleSuccess).to.have.not.been.called;
       expect(this.feedback.handleError).to.have.been.called;
     });
-
   });
-
 });
