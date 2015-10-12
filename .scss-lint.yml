@@ -1,0 +1,6 @@
+linters:
+  SelectorFormat:
+    enabled: false
+
+  StringQuotes:
+    enabled: false
