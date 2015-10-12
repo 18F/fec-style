@@ -48,7 +48,6 @@ describe('feedback', function() {
 
   describe('callbacks', function() {
     beforeEach(function() {
-      this.event = {preventDefault: sinon.spy()};
       this.message = sinon.spy(this.feedback, 'message');
     });
 
@@ -57,7 +56,7 @@ describe('feedback', function() {
     });
 
     it('clears text on success', function() {
-      this.feedback.handleSuccess(this.event);
+      this.feedback.handleSuccess();
       expect(this.feedback.$box.find('textarea').val()).to.equal('');
       expect(this.feedback.message).to.have.been.called;
     });

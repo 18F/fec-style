@@ -69,9 +69,8 @@ Feedback.prototype.submit = function(e) {
   promise.fail(this.handleError.bind(this));
 };
 
-Feedback.prototype.handleSuccess = function(e) {
-  e.preventDefault();
-  var message = 
+Feedback.prototype.handleSuccess = function() {
+  var message =
     '<h2>Thank you for helping us improve betaFEC</h2>' +
     '<p>This information has been reported on GitHub, where it is publicly visible.' +
     'You can review all reported feedback on <a href="https://github.com/18f/fec/issues">our GitHub page</a>.</p>';
