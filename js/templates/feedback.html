@@ -1,7 +1,11 @@
 <div>
-  <button class="js-feedback feedback__button button--navy" aria-controls="feedback" aria-expanded="false">Feedback</button>
+  <button class="js-feedback feedback__button button--navy" aria-controls="feedback" aria-expanded="false" type="button">Feedback</button>
   <div id="feedback" class="js-feedback-box feedback" aria-hidden="true">
     <button class="js-feedback button--down feedback__close"><span class="u-visually-hidden">Close</span></button>
+    <div class="js-status message" aria-hidden="true">
+      <div class="js-status-content"></div>
+      <button class="button--navy js-reset" type="button"></button>
+    </div>
     <form id="feedback-form" class="container">
       <fieldset>
         <legend class="feedback__title">Help us improve betaFEC</legend>
@@ -16,6 +20,5 @@
         <button type="submit" class="button--primary">Submit</button>
       </fieldset>
     </form>
-    <p class="js-status"></p>
   </div>
 </div>

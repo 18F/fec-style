@@ -33,6 +33,20 @@
   @include u-background-image('i-info--neutral', 50% 2rem);
 }
 
+.message--success {
+  border-color: $primary-contrast;
+  @include u-background-image('i-check--primary-contrast', 50% 2rem);
+}
+
+.message--error {
+  @include u-background-image('i-alert--secondary', 50% 2rem);
+  border-color: $secondary;
+
+  &.message { // Forcing it to override .message styles
+    background-size: 2rem;
+  }
+}
+
 .message--alert__bottom {
   border-top: 1px solid $ivory;
   margin-top: 1rem;

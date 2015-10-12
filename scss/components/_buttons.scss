@@ -382,7 +382,7 @@
 
 .button--down {
   @include u-background-image('../img/i-down-2--primary-contrast');
-  background-position: 50%;
+  background-size: 50%;
   height: 4rem;
   width: 4rem;
 }

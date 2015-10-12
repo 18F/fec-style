@@ -31,6 +31,15 @@
     bottom: -100%;
   }
 
+  .message {
+    @include u-font-color($navy);
+    background-color: rgba($cream, .8);
+  }
+
+  .message--error {
+    @include u-font-color($secondary);
+  }
+
   @include media($lg) {
     padding: 3rem;
     width: 40%;
