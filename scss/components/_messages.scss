@@ -35,16 +35,12 @@
 
 .message--success {
   border-color: $primary-contrast;
-  @include u-background-image('i-check--primary-contrast', 50% 2rem);
+  @include u-background-image('i-success', 50% 2rem);
 }
 
 .message--error {
-  @include u-background-image('i-alert--secondary', 50% 2rem);
+  @include u-background-image('i-error', 50% 2rem);
   border-color: $secondary;
-
-  &.message { // Forcing it to override .message styles
-    background-size: 2rem;
-  }
 }
 
 .message--alert__bottom {

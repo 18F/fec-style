@@ -20,6 +20,10 @@
     margin-bottom: 2rem;
   }
 
+  a {
+    border-color: $cream;
+  }
+
   .feedback__close {
     position: absolute;
     right: 1rem;
@@ -32,12 +36,10 @@
   }
 
   .message {
-    @include u-font-color($navy);
-    background-color: rgba($cream, .8);
-  }
-
-  .message--error {
-    @include u-font-color($secondary);
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   @include media($lg) {
@@ -49,11 +51,15 @@
 
 .feedback__title {
   @include heading(h2);
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .feedback__button {
   position: fixed;
   bottom: 0;
   right: 4rem;
+}
+
+.feedback__reset {
+  margin-top: 1rem;
 }

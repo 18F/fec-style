@@ -71,7 +71,7 @@ Feedback.prototype.submit = function(e) {
 
 Feedback.prototype.handleSuccess = function() {
   var message =
-    '<h2>Thank you for helping us improve betaFEC</h2>' +
+    '<h2 class="feedback__title">Thank you for helping us improve betaFEC</h2>' +
     '<p>This information has been reported on GitHub, where it is publicly visible.' +
     'You can review all reported feedback on <a href="https://github.com/18f/fec/issues">our GitHub page</a>.</p>';
   var buttonText = 'Submit another issue';
@@ -81,7 +81,7 @@ Feedback.prototype.handleSuccess = function() {
 
 Feedback.prototype.handleError = function() {
   var message =
-    '<h2>There was an error</h2>' +
+    '<h2 class="feedback__title">There was an error</h2>' +
     '<p>Please try submitting your issue again.</p>';
   var buttonText = 'Try again';
   this.message(message, buttonText, 'error');
