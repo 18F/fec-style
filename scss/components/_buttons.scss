@@ -176,7 +176,7 @@
 // Markup:
 // <button class="button--primary {{ modifier_class }}">Button</button>
 //
-// Styleguide components.buttons.primary
+// Styleguide components.buttons.primary-contrast
 
 .button--primary-contrast {
   @extend .button;
@@ -190,6 +190,35 @@
   &:active,
   &.is-active {
     background-color: $navy;
+    border: 2px solid $primary-contrast;
+    color: $cream;
+  }
+}
+
+// Navy buttons
+// Specialty button for the feedback widget
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--navy {{ modifier_class }}">Button</button>
+//
+// Styleguide components.buttons.navy
+
+.button--navy {
+  @extend .button;
+  background-color: $navy;
+  color: $cream;
+
+  &:hover {
+    background-color: lighten($navy, 10%);
+  }
+
+  &:active,
+  &.is-active {
+    background-color: $primary;
     border: 2px solid $primary-contrast;
     color: $cream;
   }
@@ -335,18 +364,25 @@
 
 .button--close {
   @include u-background-image('../img/i-x--secondary-contrast');
-  width: 4rem;
   height: 4rem;
+  width: 4rem;
 }
 
 .button--close--primary {
   @include u-background-image('../img/i-x--primary');
-  width: 4rem;
   height: 4rem;  
+  width: 4rem;
 }
 
 .button--close--primary-contrast {
   @include u-background-image('../img/i-x--primary-contrast');
-  width: 4rem;
   height: 4rem;  
+  width: 4rem;
+}
+
+.button--down {
+  @include u-background-image('../img/i-down-2--primary-contrast');
+  background-position: 50%;
+  height: 4rem;
+  width: 4rem;
 }
