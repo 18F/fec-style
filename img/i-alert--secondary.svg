@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="3px" height="12px" viewBox="0 0 3 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>i-alert--secondary</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Simple-Copy" sketch:type="MSArtboardGroup" transform="translate(-512.000000, -270.000000)" fill="#631010">
+            <path d="M513.628767,278.280994 C513.903086,276.566503 514.606027,271.885941 514.606027,271.131564 C514.606027,270.377188 514.0231,270 513.285869,270 C512.548637,270 512,270.377188 512,271.131564 C512,271.885941 512.702942,276.566503 512.97726,278.280994 L513.628767,278.280994 Z M513.285869,281.967151 C514.005955,281.967151 514.571737,281.384224 514.571737,280.715572 C514.571737,279.978341 514.005955,279.446849 513.285869,279.446849 C512.565782,279.446849 512,280.029776 512,280.698427 C512,281.435659 512.565782,281.967151 513.285869,281.967151 L513.285869,281.967151 Z" id="i-alert--secondary" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
