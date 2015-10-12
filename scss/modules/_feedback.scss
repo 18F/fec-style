@@ -37,16 +37,19 @@
 
   .message {
     background-color: transparent;
-    background-position: 2rem 0;
     border: none;
     margin-top: 0;
-    padding-top: 0;
   }
 
   @include media($lg) {
     padding: 3rem;
     width: 40%;
     right: 4rem;
+
+    .message {
+      background-position: 2rem 0;
+      padding-top: 0;
+    }
   }
 }
 
