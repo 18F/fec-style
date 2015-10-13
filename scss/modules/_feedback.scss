@@ -1,14 +1,17 @@
 // Feedback module
 
 .feedback {
-  @include transition(bottom .5s);
   @include u-font-color($cream);
   @include u-form-color($navy, $primary-contrast, $ivory, 'primary', $primary-contrast);
   background-color: $navy;
-  bottom: 0;
-  padding: 1rem;
+  display: block;
+  overflow-y: scroll;
+  padding: .5rem;
   position: fixed;
-  width: 100%;
+  bottom: .5rem;
+  top: .5rem;
+  left: .5rem;
+  right: .5rem;
   z-index: $z-feedback;
 
   legend {
@@ -31,8 +34,6 @@
   }
 
   &[aria-hidden="true"] {
-    display: block !important;
-    bottom: -100%;
   }
 
   .message {
@@ -42,9 +43,18 @@
   }
 
   @include media($lg) {
+    @include transition(bottom .5s);  
+    bottom: 0;
+    left: auto;
     padding: 3rem;
-    width: 40%;
     right: 4rem;
+    top: auto;
+    width: 40%;
+
+    &[aria-hidden="true"] {
+      bottom: -100%;
+      display: block !important;
+    }
 
     .message {
       background-position: 2rem 0;
