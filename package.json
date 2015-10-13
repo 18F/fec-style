@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images",
-    "build-js": "browserify fec-template/public/init.js > fec-template/public/main.js",
+    "build-js": "browserify -t stringify --debug fec-template/public/init.js > fec-template/public/main.js",
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "rm -rf styleguide && kss-node --config kss-config.json && cd fec-template/ && npm run less",
     "copy-images": "cp -R img styleguide/img",
@@ -16,9 +16,8 @@
     "percy": "percy snapshot styleguide",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
-    "test-debug": "mochify tests/*.js",
-    "test": "mochify tests/*.js --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' ]"
-  },
+    "test-debug": "mochify --transform [ stringify ] tests/*.js",
+    "test": "mochify --transform [ stringify ] --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' --exclude '**/*.html' ] tests/*.js"},
   "dependencies": {
     "URIjs": "1.16.0",
     "eventemitter2": "0.4.14",
@@ -42,6 +41,7 @@
     "node-sass": "^3.2.0",
     "sinon": "^1.16.1",
     "sinon-chai": "^2.8.0",
+    "stringify": "^3.1.0",
     "watch": "^0.16.0"
   }
 }

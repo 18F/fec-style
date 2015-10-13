@@ -1,0 +1,80 @@
+// Feedback module
+
+.feedback {
+  @include u-font-color($cream);
+  @include u-form-color($navy, $primary-contrast, $ivory, 'primary', $primary-contrast);
+  background-color: $navy;
+  display: block;
+  overflow-y: scroll;
+  padding: .5rem;
+  position: fixed;
+  bottom: .5rem;
+  top: .5rem;
+  left: .5rem;
+  right: .5rem;
+  z-index: $z-feedback;
+
+  legend {
+    color: $cream;
+  }
+
+  textarea {
+    height: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    border-color: $cream;
+  }
+
+  .feedback__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  &[aria-hidden="true"] {
+  }
+
+  .message {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+  }
+
+  @include media($lg) {
+    @include transition(bottom .5s);  
+    bottom: 0;
+    left: auto;
+    overflow: auto;
+    padding: 3rem;
+    right: 4rem;
+    top: auto;
+    width: 40%;
+
+    &[aria-hidden="true"] {
+      bottom: -100%;
+      display: block !important;
+    }
+
+    .message {
+      background-position: 2rem 0;
+      padding-top: 0;
+    }
+  }
+}
+
+.feedback__title {
+  @include heading(h2);
+  margin-bottom: .5rem;
+}
+
+.feedback__button {
+  position: fixed;
+  bottom: 0;
+  right: 4rem;
+}
+
+.feedback__reset {
+  margin-top: 1rem;
+}

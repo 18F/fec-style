@@ -1,0 +1,24 @@
+<div>
+  <button class="js-feedback feedback__button button--navy" aria-controls="feedback" aria-expanded="false" type="button">Feedback</button>
+  <div id="feedback" class="js-feedback-box feedback" aria-hidden="true">
+    <button class="js-feedback button--down feedback__close"><span class="u-visually-hidden">Close</span></button>
+    <div class="js-status message" aria-hidden="true">
+      <div class="js-status-content"></div>
+      <button class="button--primary feedback__reset js-reset" type="button"></button>
+    </div>
+    <form id="feedback-form" class="container">
+      <fieldset>
+        <legend class="feedback__title">Help us improve betaFEC</legend>
+        <p class="t-sans">Don't include sensitive information like your name, contact information or social security number.</p>
+        <label for="feedback-1" class="label">What were you doing?</label>
+        <textarea id="feedback-1" name="action"></textarea>
+        <label for="feedback-2" class="label">What happened?</label>
+        <textarea id="feedback-2" name="response"></textarea>
+        <label for="feedback-3" class="label">Or, just give us some feedback</label>
+        <textarea id="feedback-3" name="feedback"></textarea>
+        <p class="t-sans">This information will be reported on Github where it will be publicly visible. You can review all reported feedback on <a href="https://github.com/18f/fec/issues">our Github page</a>.</p>
+        <button type="submit" class="button--primary">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+</div>

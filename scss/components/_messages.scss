@@ -33,6 +33,16 @@
   @include u-background-image('i-info--neutral', 50% 2rem);
 }
 
+.message--success {
+  border-color: $primary-contrast;
+  @include u-background-image('i-success', 50% 2rem);
+}
+
+.message--error {
+  @include u-background-image('i-error', 50% 2rem);
+  border-color: $secondary;
+}
+
 .message--alert__bottom {
   border-top: 1px solid $ivory;
   margin-top: 1rem;
