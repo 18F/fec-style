@@ -59,6 +59,14 @@ Feedback.prototype.submit = function(e) {
     })
     .object()
     .value();
+  if (!_.some(_.values(data))) {
+    var message =
+      '<h2 class="feedback__title">Input required</h2>' +
+      '<p>To submit your feedback, please fill out at least one field.</p>';
+    var buttonText = 'Try again';
+    this.message(message, buttonText, 'error');
+    return;
+  }
   var promise = $.ajax({
     method: 'POST',
     url: this.url,
@@ -69,11 +77,11 @@ Feedback.prototype.submit = function(e) {
   promise.fail(this.handleError.bind(this));
 };
 
-Feedback.prototype.handleSuccess = function() {
+Feedback.prototype.handleSuccess = function(response) {
   var message =
     '<h2 class="feedback__title">Thank you for helping us improve betaFEC</h2>' +
     '<p>This information has been reported on GitHub, where it is publicly visible. ' +
-    'You can review all reported feedback on <a href="https://github.com/18f/fec/issues">our GitHub page</a>.</p>';
+    'You can track the status of your feedback <a target="_blank" href="' + response.html_url + '">here</a>.</p>';
   var buttonText = 'Submit another issue';
   this.$box.find('textarea').val('');
   this.message(message, buttonText, 'success');
