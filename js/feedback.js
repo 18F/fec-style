@@ -59,6 +59,14 @@ Feedback.prototype.submit = function(e) {
     })
     .object()
     .value();
+  if (!_.some(_.values(data))) {
+    var message =
+      '<h2 class="feedback__title">Input required</h2>' +
+      '<p>To submit your feedback, please fill out at least one field.</p>';
+    var buttonText = 'Try again';
+    this.message(message, buttonText, 'error');
+    return;
+  }
   var promise = $.ajax({
     method: 'POST',
     url: this.url,

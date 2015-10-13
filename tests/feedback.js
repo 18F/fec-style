@@ -87,12 +87,21 @@ describe('feedback', function() {
       sinon.stub(this.feedback, 'handleSuccess');
       sinon.stub(this.feedback, 'handleError');
       this.event = {preventDefault: sinon.spy()};
+      this.feedback.$box.find('textarea').val('awesome site good job');
     });
 
     afterEach(function() {
       $.ajax.restore();
       this.feedback.handleSuccess.restore();
       this.feedback.handleError.restore();
+    });
+
+    it('skips submit on empty inputs', function() {
+      var message = sinon.spy(this.feedback, 'message');
+      this.feedback.$box.find('textarea').val('');
+      this.feedback.submit(this.event);
+      expect(message).to.have.been.called;
+      expect(this.ajaxStub).to.have.not.been.called;
     });
 
     it('calls handleSuccess on success', function() {
