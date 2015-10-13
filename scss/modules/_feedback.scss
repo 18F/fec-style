@@ -46,6 +46,7 @@
     @include transition(bottom .5s);  
     bottom: 0;
     left: auto;
+    overflow: auto;
     padding: 3rem;
     right: 4rem;
     top: auto;
