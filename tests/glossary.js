@@ -1,6 +1,6 @@
 'use strict';
 
-/* global require, describe, before, beforeEach, after, afterEach, it */
+/* global require, describe, before, beforeEach, it */
 
 var chai = require('chai');
 var expect = chai.expect;
@@ -30,19 +30,6 @@ describe('glossary', function() {
     $('body').append(this.$fixture);
   });
 
-  before(function() {
-    this.terms = [
-      {
-        'glossary-term': 'Party',
-        'glossary-definition': 'Party affiliation'
-      },
-      {
-        'glossary-term': 'District',
-        'glossary-definition': 'House of Representatives District'
-      }
-    ];
-  });
-
   beforeEach(function() {
     this.$fixture.empty().append(
       '<button class="js-glossary-toggle"></button>' +
@@ -53,7 +40,7 @@ describe('glossary', function() {
         '<ul class="glossary__list js-accordion"></ul>' +
       '</div>'
     );
-    this.glossary = new Glossary(this.terms, {body: '#glossary'});
+    this.glossary = new Glossary(terms, {body: '#glossary'});
   });
 
   it('initializes', function() {
