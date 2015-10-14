@@ -7,6 +7,7 @@ var expect = chai.expect;
 
 var $ = require('jquery');
 
+var terms = require('../js/terms.json');
 var Glossary = require('../js/glossary').Glossary;
 
 function isOpen(glossary) {
