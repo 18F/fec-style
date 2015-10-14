@@ -1,10 +1,10 @@
 <div>
-  <button class="js-feedback feedback__button button--navy" aria-controls="feedback" aria-expanded="false" type="button">Feedback</button>
+  <button class="js-feedback feedback__toggle button--navy" aria-controls="feedback" aria-expanded="false" type="button">Feedback</button>
   <div id="feedback" class="js-feedback-box feedback" aria-hidden="true">
     <button class="js-feedback button--down feedback__close"><span class="u-visually-hidden">Close</span></button>
     <div class="js-status message" aria-hidden="true">
       <div class="js-status-content"></div>
-      <button class="button--primary feedback__reset js-reset" type="button"></button>
+      <button class="js-reset button--primary feedback__button" type="button"></button>
     </div>
     <form id="feedback-form" class="container">
       <fieldset>
@@ -17,7 +17,7 @@
         <label for="feedback-3" class="label">Or, just give us some feedback</label>
         <textarea id="feedback-3" name="feedback"></textarea>
         <p class="t-sans">This information will be reported on Github where it will be publicly visible. You can review all reported feedback on <a href="https://github.com/18f/fec/issues">our Github page</a>.</p>
-        <button type="submit" class="button--primary">Submit</button>
+        <button type="submit" class="button--primary feedback__button">Submit</button>
       </fieldset>
     </form>
   </div>

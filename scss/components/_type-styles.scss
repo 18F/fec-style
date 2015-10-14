@@ -58,17 +58,17 @@
   padding: 1rem 0;
 }
 
+.t-ruled--bottom {
+  border-bottom: 1px solid $primary;
+  padding-bottom: 1rem;
+}
+
 .t-ruled--bold {
   border-width: 2px;
 
   &.h1 {
     border-width: 2px;
   }
-}
-
-.t-ruled--bottom {
-  border-bottom: 1px solid $primary;
-  padding-bottom: 1rem;
 }
 
 .t-no-rules {

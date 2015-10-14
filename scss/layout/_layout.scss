@@ -93,6 +93,23 @@
   }
 }
 
+// Utility padding classes
+
+.u-padding--top {
+  padding-top: 2rem;
+}
+
+.u-padding--bottom {
+  padding-bottom: 2rem;
+}
+
+.u-padding-left {
+  padding-left: 2rem;
+}
+
+.u-padding--right {
+  padding-right: 2rem;
+}
 // Class applied to candidate and committee pages with tabs
 .tab-interface {
   overflow-x: hidden;
