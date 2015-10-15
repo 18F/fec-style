@@ -5,28 +5,28 @@ $base-font-family: $serif;
 
 // Primary colors
 $crimson: #631010;
-$orange: #F77B42;
+$orange: #f77b42;
 
-$federal-blue: #022C53;
-$aqua: #36BDBB;
+$federal-blue: #022c53;
+$aqua: #36bdbb;
 
-$ivory: #F7EEE3;
-$cream: #FFFFF9;
-$ivory-dark: #D8C4B1;
+$ivory: #f7eee3;
+$cream: #fffff9;
+$ivory-dark: #d8c4b1;
 
 // Accent colors
-$bright-red: #DD1400;
-$deep-orange: #E36641;
-$deep-red: #961A16;
+$bright-red: #dd1400;
+$deep-orange: #e36641;
+$deep-red: #961a16;
 
-$bright-blue: #0AACFA;
-$deep-aqua: #3E8A9A;
-$navy: #164F85;
+$bright-blue: #0aacfa;
+$deep-aqua: #3e8a9a;
+$navy: #164f85;
 
-$beige: #CEB59C;
-$brown: #C09C7C;
+$beige: #ceb59c;
+$brown: #c09c7c;
 $black: #000205;
-$brown-light: #D8C4B1;
+$brown-light: #d8c4b1;
 $brown-dark: #c09c7c;
 
 // Color aliases
@@ -50,10 +50,11 @@ $z3: 300;
 $z4: 400;
 $z5: 500;
 $z6: 600;
+$z-max: 9000000;
 
 $z-overlay: $z2;
 $z-tooltip: $z4;
 $z-page-controls: $z4;
 $z-navigation: $z5;
 $z-glossary: $z5;
-$z-feedback: $z6;
+$z-feedback: $z-max;
