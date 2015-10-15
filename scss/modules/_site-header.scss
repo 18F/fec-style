@@ -1,7 +1,21 @@
 // Site Header
-// 
+//
 // Styleguide modules.site-header
 
+// Staging banner
+.banner {
+  background-color: $navy;
+  color: $cream;
+  font-family: $sans-serif;
+  padding: 1rem 0;
+
+  a {
+    color: $cream;
+    border-bottom-color: $cream;
+  }
+}
+
+// Skip nav
 .skip-nav {
   @include transition(top, .2s);
   background-color: $primary;
@@ -21,7 +35,7 @@
 }
 
 // US Bar
-// 
+//
 // Markup:
 // <div class="disclaimer">
 //   <span class="disclaimer__left">Looking for fec.gov? <a href="http://www.fec.gov">Click here.</a></span>
@@ -63,11 +77,11 @@
   text-align: center;
   @include media($med) {
     float: right;
-  }  
+  }
 }
 
 // Masthead
-// 
+//
 // The combination of the logo, site title and utility nav
 //
 // Markup:
