@@ -16,7 +16,7 @@ linters:
   DebugStatement:
     enabled: true
   DeclarationOrder:
-    enabled: true
+    enabled: false
   DuplicateProperty:
     enabled: true
   ElsePlacement:
@@ -58,9 +58,9 @@ linters:
     enabled: true
     force_nesting: true
   NameFormat:
-    enabled: false
+    enabled: true
     allow_leading_underscore: true
-    convention: hyphenated_lowercase
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
   NestingDepth:
     enabled: true
     max_depth: 4
@@ -90,10 +90,11 @@ linters:
     max_depth: 2
     severity: warning
   SelectorFormat:
-    enabled: true
-    convention: hyphenated_lowercase
+    enabled: false # strict_BEM doesn't seem to be supported by Hound
+    convention: strict_BEM
   Shorthand:
     enabled: true
+    allowed_shorthands: [1, 2]
     severity: warning
   SingleLinePerProperty:
     enabled: true

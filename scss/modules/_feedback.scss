@@ -4,14 +4,14 @@
   @include u-font-color($cream);
   @include u-form-color($navy, $primary-contrast, $ivory, 'primary', $primary-contrast);
   background-color: $navy;
-  display: block;
-  overflow-y: scroll;
-  padding: .5rem;
-  position: fixed;
   bottom: .5rem;
-  top: .5rem;
+  display: block;
   left: .5rem;
+  overflow-y: scroll;
+  padding: 2rem .5rem;
+  position: fixed;
   right: .5rem;
+  top: .5rem;
   z-index: $z-feedback;
 
   legend {
@@ -19,12 +19,22 @@
   }
 
   textarea {
-    height: 8rem;
+    height: 7rem;
     margin-bottom: 2rem;
+
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
   }
 
   a {
     border-color: $cream;
+  }
+
+  .label {
+    &:first-of-type {
+      margin-top: 2rem;
+    }
   }
 
   .feedback__close {
@@ -33,28 +43,25 @@
     top: 1rem;
   }
 
-  &[aria-hidden="true"] {
-  }
-
   .message {
     background-color: transparent;
-    border: none;
+    border: 0;
     margin-top: 0;
   }
 
   @include media($lg) {
-    @include transition(bottom .5s);  
-    bottom: 0;
+    @include transition(top .5s);
+    height: 95vh;
     left: auto;
     overflow: auto;
-    padding: 3rem;
+    padding: 3rem 3rem 0 3rem;
     right: 4rem;
-    top: auto;
+    top: 5vh;
     width: 40%;
 
-    &[aria-hidden="true"] {
-      bottom: -100%;
+    &[aria-hidden='true'] {
       display: block !important;
+      top: 100%;
     }
 
     .message {
@@ -69,12 +76,12 @@
   margin-bottom: .5rem;
 }
 
-.feedback__button {
-  position: fixed;
+.feedback__toggle {
   bottom: 0;
+  position: fixed;
   right: 4rem;
 }
 
-.feedback__reset {
+.feedback__button {
   margin-top: 1rem;
 }

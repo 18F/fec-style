@@ -17,7 +17,7 @@
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
     "test-debug": "mochify --transform [ stringify ] tests/*.js",
-    "test": "mochify --transform [ stringify ] --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' --exclude '**/*.html' ] tests/*.js"},
+    "test": "mochify --transform [ stringify ] --plugin [ mochify-istanbul --report text --report json --dir ./coverage --exclude '**/tests/**' --exclude '**/*.html' --exclude '**/*.json' ] tests/*.js"},
   "dependencies": {
     "URIjs": "1.16.0",
     "eventemitter2": "0.4.14",
