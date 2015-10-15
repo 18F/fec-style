@@ -6,7 +6,7 @@
 //
 // Styleguide layout
 
-@import "slabs";
+@import 'slabs';
 
 // Layout elements
 //
@@ -20,7 +20,7 @@
 // .main__content--full       - Full-width main content area
 // .content__section          - Adds padding for breaking up sections of body content
 // .content__section--ruled   - Adds a border
-// 
+//
 // Styleguide layout.elements
 
 .container {
@@ -40,7 +40,7 @@
   @include clearfix();
   padding: 2rem 0;
   position: relative;
-  
+
   @include media($lg) {
     padding: 4rem 0;
   }
@@ -63,7 +63,7 @@
 .main__content--full {
   @include clearfix();
   position: relative;
-} 
+}
 
 .content__section {
   @include clearfix();
@@ -114,4 +114,4 @@
 .tab-interface {
   overflow-x: hidden;
   position: relative;
-} 
+}
