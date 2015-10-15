@@ -1,7 +1,7 @@
 // Toggles
 //
 // We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.
-// 
+//
 // Markup:
 // <fieldset class="toggles">
 //   <legend class="label">View by:</legend>
@@ -35,19 +35,19 @@
   input:checked {
     & + .button--primary {
       background-color: $navy;
-      border: 2px solid $primary-contrast; 
+      border: 2px solid $primary-contrast;
       color: $cream;
     }
 
     & + .button--secondary {
       background-color: $deep-red;
-      border: 2px solid $secondary-contrast; 
+      border: 2px solid $secondary-contrast;
       color: $cream;
     }
 
     & + .button--neutral {
       background-color: $brown;
-      border: 2px solid $primary; 
+      border: 2px solid $primary;
     }
 
     & + .button--empty {
@@ -78,11 +78,11 @@
 
   label:last-of-type {
     margin-bottom: 0;
-    
+
     .button {
       border-radius: 0 0 4px 4px;
     }
-  }  
+  }
 
   .button {
     border-radius: 0 0 0 0;
@@ -94,15 +94,28 @@
 
 .toggles--small {
   margin-bottom: 0;
-  
+
   label {
     float: left;
   }
-  
+
+  label:first-of-type {
+    .button {
+      border-radius: 4px 0 0 4px;
+    }
+  }
+
+  label:last-of-type {
+    .button {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
   .label {
     float: left;
     margin: .5rem 1rem 0 0;
   }
+
   .button {
     margin-right: -1px;
   }
