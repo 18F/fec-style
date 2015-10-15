@@ -7,10 +7,18 @@
   }
 }
 
+.choropleths {
+  position: relative;
+}
+
 .state-map {
   padding-top: 2rem;
 
-  .button {
+  .button--two-candidates {
+    margin-bottom: 1rem;
+  }
+
+  .button--close {
     float: right;
   }
 
@@ -20,6 +28,12 @@
 
   @include media($lg) {
     @include span-columns(6);
+
+    .button--two-candidates {
+      position: absolute;
+      right: 0;
+      top: 1rem;
+    }
   }
 }
 
@@ -30,7 +44,7 @@ path.shape {
   &.active {
     fill: rgba($primary, .5);
     stroke: $primary;
-    stroke-width: 2px;    
+    stroke-width: 2px;
   }
 }
 
@@ -57,7 +71,7 @@ path.shape {
 .map-table,
 .map-panel {
   @include media($med) {
-    @include span-columns(6, block-collapse);  
+    @include span-columns(6, block-collapse);
   }
 }
 
