@@ -14,20 +14,21 @@
 .state-map {
   padding-top: 2rem;
 
-  .button--two-candidates {
-    margin-bottom: 1rem;
-  }
-
   .button--close {
     float: right;
   }
 
   .candidate-select {
     float: left;
+    margin-bottom: 1rem;
   }
 
   @include media($lg) {
     @include span-columns(6);
+
+    .candidate-select {
+      margin-bottom: 0;
+    }
 
     .button--two-candidates {
       position: absolute;
