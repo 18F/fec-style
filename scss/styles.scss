@@ -1,22 +1,22 @@
 // Libraries
-@import 'lib/bourbon/_bourbon';
-@import 'lib/neat/_neat';
+@import 'lib/bourbon/bourbon';
+@import 'lib/neat/neat';
 @import 'fonts';
 
 // Variables and mixins
 @import 'variables';
 @import 'grid';
-@import 'mixins/_utilities';
-@import 'mixins/_type-mixins';
+@import 'mixins/utilities';
+@import 'mixins/type-mixins';
 
 // Base styling for html elements
-@import 'elements/_elements';
+@import 'elements/elements';
 
 // Layout: Basic grid and background styles
-@import 'layout/_layout';
+@import 'layout/layout';
 
 // Components: Small atomic bits
-@import 'components/_components';
+@import 'components/components';
 
 // Modules: Complex pieces made of components and elements
-@import 'modules/_modules';
+@import 'modules/modules';
