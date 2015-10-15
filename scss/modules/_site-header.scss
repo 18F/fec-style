@@ -8,10 +8,23 @@
   color: $cream;
   font-family: $sans-serif;
   padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $z-max;
 
   a {
-    color: $cream;
     border-bottom-color: $cream;
+    color: $cream;
+  }
+}
+
+// Class to apply to body to give it the right amount of padding
+.has-banner {
+  padding-top: 8rem;
+
+  @include media($med) {
+    padding-top: 6rem;
   }
 }
 
@@ -20,7 +33,7 @@
   @include transition(top, .2s);
   background-color: $primary;
   border: 2px solid $primary-contrast;
-  color: #fff;
+  color: $cream;
   font-family: $sans-serif;
   left: 2rem;
   padding: 1rem 2rem;
