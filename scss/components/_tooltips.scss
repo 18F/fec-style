@@ -1,6 +1,6 @@
 //
 // Tooltips for maps
-// 
+//
 // .tooltip--above        - When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
 // .tooltip--under        - When the tooltip is under the content. Puts the arrow at the top left of the tooltip
 //
@@ -16,7 +16,6 @@
   border-radius: 4px;
   border: 2px solid $primary;
   background-color: $cream;
-  color: $primary;
   font-family: $sans-serif;
   padding: .3rem .5rem;
   position: absolute;
@@ -31,11 +30,17 @@
 }
 
 // .tooltip__content      - Use to add extra padding and left align a paragraph of text in a tooltip
-.tooltip__content {
+.tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
+  color: $primary;
   text-align: left;
   line-height: 1.2;
   margin-bottom: 0;
   padding: .5rem;
+
+  a {
+    border-bottom-color: $primary;
+    color: $primary;
+  }
 }
 
 .tooltip--above {
@@ -43,11 +48,11 @@
 
   &:before {
     @include triangle(2rem, $primary, down);
+    bottom: -1rem;
     content: '';
     display: block;
-    position: absolute;
     left: 5rem;
-    bottom: -1rem;
+    position: absolute;
   }
 
   &:after {
@@ -61,6 +66,8 @@
 }
 
 .tooltip--under {
+  max-width: 30rem;
+
   &:before {
     @include triangle(2rem, $primary, up);
     content: '';
@@ -77,24 +84,39 @@
     position: absolute;
     left: 4.2rem;
     top: -.7rem;
-  }  
+  }
 }
 
-// For tooltips on regular DOM elements (rather than on maps), 
-// apply the .tooltip-trigger class to the triggering element
+// For tooltips on regular DOM elements (rather than on maps),
+// Wrap the .tooltip-trigger and .tooltip in .tooltip__container
+// And apply the .tooltip-trigger class to the triggering element
 
-.tooltip-trigger {
+.tooltip__trigger {
   @include u-background-image('i-info--primary--small', 100% 50%);
   background-size: 1em;
+  cursor: pointer;
   display: inline-block;
   padding-right: 1.5em;
 }
 
-.tooltip-trigger + .tooltip {
-  display: none;
+.tooltip__container {
+  .tooltip {
+    display: none;
+  }
+
+  &:hover {
+    .tooltip {
+      display: block;
+    }
+  }
 }
 
-.tooltip-trigger:hover ~ .tooltip,
-.tooltip-trigger:focus ~ .tooltip {
-  display: block;
-}
+
+// .tooltip-trigger + .tooltip {
+//   display: none;
+// }
+
+// .tooltip-trigger:hover ~ .tooltip,
+// .tooltip-trigger:focus ~ .tooltip {
+//   display: block;
+// }
