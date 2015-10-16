@@ -54,9 +54,9 @@
   .combo__button {
     width: 100%;
     height: 3.6rem;
-  }  
+  }
 
-  @include media($med) {    
+  @include media($med) {
     .combo__input {
       height: 3.6rem;
       border-radius: 2px 0 0 2px;
@@ -69,7 +69,7 @@
       border-radius: 0 4px 4px 0;
       float: left;
       width: 20%;
-    } 
+    }
   }
 }
 
@@ -98,4 +98,11 @@
       margin-right: 0;
     }
   }
+}
+
+// Date range inputs
+// Combination of radio buttons and text inputs for selecting date ranges
+
+.date-range-input {
+  padding-left: 2.5rem;
 }
