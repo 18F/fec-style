@@ -46,13 +46,13 @@
     }
 
     .combo__button {
-      width: 5.6rem; 
+      width: 5.6rem;
     }
   }
-  
+
   .combo--search--large {
     height: 6rem;
-    
+
     .combo__input {
       font-size: 1.8rem;
       height: 6rem;
@@ -80,6 +80,7 @@
 
 // Typeahead styles
 .twitter-typeahead {
+  height: 0;
   width: 100%;
 }
 
@@ -91,7 +92,7 @@
   text-align: left;
   position: absolute;
   width: 100%;
-  
+
   @include media($med) {
     width: calc(100% - 6.8rem);
   }
@@ -131,7 +132,7 @@ span.tt-suggestion__office {
 .tt-cursor {
   cursor: pointer;
   background: $ivory;
-  
+
   .tt-suggestion__name {
     color: $primary;
   }

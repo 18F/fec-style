@@ -48,12 +48,12 @@
 
   .combo__input {
     height: 3.6rem;
-    margin-bottom: 1rem;
   }
 
   .combo__button {
-    width: 100%;
     height: 3.6rem;
+    margin-top: 1rem;
+    width: 100%;
   }
 
   @include media($med) {
@@ -61,13 +61,13 @@
       height: 3.6rem;
       border-radius: 2px 0 0 2px;
       float: left;
-      margin-bottom: 0;
       width: 80%;
     }
 
     .combo__button {
       border-radius: 0 4px 4px 0;
       float: left;
+      margin-top: 0;
       width: 20%;
     }
   }
