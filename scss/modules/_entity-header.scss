@@ -23,12 +23,12 @@
       color: $primary;
     }
   }
-  
+
   @include media($med) {
     height: 30rem;
-    
+
     .entity__header--info {
-      width: 50%;
+      @include span-columns(6);
     }
 
     .map {
@@ -37,7 +37,7 @@
       height: 34rem;
       top: 0;
       bottom: 0;
-      right: 0; 
+      right: 0;
     }
   }
 }
@@ -59,7 +59,7 @@
 
 
 .entity__info {
-  @include clearfix(); 
+  @include clearfix();
   font-family: $sans-serif;
   padding-top: 1rem;
   width: 100%;
@@ -80,7 +80,7 @@
   &:last-child {
     margin-bottom: 0;
   }
-  
+
   @include media($med) {
     display: table-cell;
     width: auto;
