@@ -82,12 +82,12 @@
 .disclaimer__center {
   display: none;
 
-  @include media($med) {
-    display: inline-block;
-  }
-
   img {
     vertical-align: middle;
+  }
+
+  @include media($med) {
+    display: inline-block;
   }
 }
 
