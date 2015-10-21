@@ -85,6 +85,10 @@
   @include media($med) {
     display: inline-block;
   }
+
+  img {
+    vertical-align: middle;
+  }
 }
 
 .disclaimer__right {
