@@ -1,5 +1,5 @@
 // Messages
-// 
+//
 // Banners and alerts
 //
 // Markup:
@@ -71,9 +71,9 @@
 @include media($med) {
   .message {
     background-position: 2rem 2rem;
-    background-size: 4rem;
+    background-size: 3rem;
     min-height: 8rem;
-    padding: 2rem 2rem 2rem 8rem;
+    padding: 2rem 2rem 2rem 6rem;
   }
 
   .message--small {
