@@ -64,6 +64,7 @@
 .disclaimer {
   @include clearfix();
   border-bottom: 1px solid $primary;
+  font-family: $sans-serif;
   font-size: 1.2rem;
   padding: .5rem 2rem;
   text-align: center;
@@ -81,6 +82,10 @@
 .disclaimer__center {
   display: none;
 
+  img {
+    vertical-align: middle;
+  }
+
   @include media($med) {
     display: inline-block;
   }
@@ -88,6 +93,7 @@
 
 .disclaimer__right {
   text-align: center;
+
   @include media($med) {
     float: right;
   }
