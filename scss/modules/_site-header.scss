@@ -93,6 +93,7 @@
 
 .disclaimer__right {
   text-align: center;
+
   @include media($med) {
     float: right;
   }
