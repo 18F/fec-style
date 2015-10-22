@@ -17,6 +17,7 @@
 .section__heading {
   @include clearfix();
   border-bottom: 2px solid;
+  margin-bottom: 1rem;
 
   .cycle-select {
     display: block;
