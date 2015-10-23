@@ -43,12 +43,6 @@
     top: 1rem;
   }
 
-  .message {
-    background-color: transparent;
-    border: 0;
-    margin-top: 0;
-  }
-
   @include media($lg) {
     @include transition(top .5s);
     height: 95vh;
@@ -62,11 +56,6 @@
     &[aria-hidden='true'] {
       display: block !important;
       top: 100%;
-    }
-
-    .message {
-      background-position: 2rem 0;
-      padding-top: 0;
     }
   }
 }

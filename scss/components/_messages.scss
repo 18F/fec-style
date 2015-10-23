@@ -25,27 +25,28 @@
   background-size: 2rem;
   background-color: #eee6dd;
   border-color: $beige;
-  border-left: 3px solid $beige;
-  padding: 2rem 2rem 2rem 2rem;
+  border-style: solid;
+  border-width: 0 0 0 3px;
   margin: 2rem 0;
+  padding: 5rem 2rem 2rem 2rem;
 }
 
 .message--success {
-  @include u-background-image('i-success', 50% 2rem);
+  @include u-background-image('i-success', 2rem 2rem);
   border-color: $primary-contrast;
 }
 
 .message--error {
-  @include u-background-image('i-error', 50% 2rem);
+  @include u-background-image('i-error', 2rem 2rem);
   border-color: $secondary-contrast;
 }
 
 .message--alert {
-  @include u-background-image('i-alert', 50% 2rem);
+  @include u-background-image('i-alert', 2rem 2rem);
 }
 
 .message--info {
-  @include u-background-image('i-info--neutral', 50% 2rem);
+  @include u-background-image('i-info--neutral', 2rem 2rem);
 }
 
 .message--alert__bottom {
@@ -55,7 +56,8 @@
 }
 
 .message--small {
-  padding: 1rem;
+  background-position: 1rem 1rem;
+  padding: 4rem 1rem 1rem 1rem;
 }
 
 .message__title {
@@ -102,10 +104,12 @@
 
   &.message--success {
     @include u-background-image('i-success--inverse', 50% 2rem);
+    border-color: $primary-contrast;
   }
 
   &.message--error {
     @include u-background-image('i-error--inverse', 50% 2rem);
+    border-color: $secondary-contrast;
   }
 
   &.message--alert {
