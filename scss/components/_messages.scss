@@ -2,8 +2,13 @@
 //
 // Banners and alerts
 //
+// .message--no-icon  - No icon
+// .message--success  - Success message
+// .message--error    - Error message
+// .message--alert    - Alert message
+//
 // Markup:
-// <div class="message message--alert">
+// <div class="message {{ modifier_class }}">
 //   <h2 id="section-1-header" tabindex="0">No results</h2>
 //   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
 //   <p>For complete data, search the <a href="http://www.fec.gov/finance/disclosure/candcmte_info.shtml">FEC Candidate and Committee Viewer</a>.</p>
@@ -18,29 +23,29 @@
 .message {
   @include clearfix();
   background-size: 2rem;
-  background-color: rgba($ivory-dark, .5);
+  background-color: #eee6dd;
   border-color: $beige;
-  border-top: 2px solid $beige;
-  padding: 5rem 2rem 2rem 2rem;
+  border-left: 3px solid $beige;
+  padding: 2rem 2rem 2rem 2rem;
   margin: 2rem 0;
 }
 
-.message--alert {
-  @include u-background-image('i-alert--neutral', 50% 2rem);
-}
-
-.message--info {
-  @include u-background-image('i-info--neutral', 50% 2rem);
-}
-
 .message--success {
-  border-color: $primary-contrast;
   @include u-background-image('i-success', 50% 2rem);
+  border-color: $primary-contrast;
 }
 
 .message--error {
   @include u-background-image('i-error', 50% 2rem);
-  border-color: $secondary;
+  border-color: $secondary-contrast;
+}
+
+.message--alert {
+  @include u-background-image('i-alert', 50% 2rem);
+}
+
+.message--info {
+  @include u-background-image('i-info--neutral', 50% 2rem);
 }
 
 .message--alert__bottom {
@@ -72,12 +77,55 @@
   padding: 2rem;
 }
 
+// Primary messages
+//
+// Use this style for secondary messages as well
+//
+// .message--success  - Success message
+// .message--error    - Error message
+// .message--alert   - Alert message
+//
+// Markup:
+// <div class="slab slab--primary" style="padding: 2rem;">
+// <div class="message message--primary {{ modifier_class }}">
+//   <p>Sample message content.</p>
+// </div>
+// </div>
+//
+// Styleguide components.messages.primary-messages
+
+.message--primary,
+.message--secondary {
+  @include u-font-color($cream);
+  background-color: rgba($cream, .1);
+  border-color: $cream;
+
+  &.message--success {
+    @include u-background-image('i-success--inverse', 50% 2rem);
+  }
+
+  &.message--error {
+    @include u-background-image('i-error--inverse', 50% 2rem);
+  }
+
+  &.message--alert {
+    @include u-background-image('i-alert--inverse', 50% 2rem);
+    border-color: $cream;
+  }
+}
+
+
 @include media($med) {
   .message {
     background-position: 2rem 2rem;
     background-size: 3rem;
     min-height: 8rem;
     padding: 2rem 2rem 2rem 6rem;
+
+    &.message--primary,
+    &.message--secondary {
+      background-position: 2rem 2rem;
+    }
   }
 
   .message--small {
