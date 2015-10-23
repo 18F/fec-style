@@ -36,7 +36,7 @@
     left: 0;
     height: auto;
     margin-left: 0%;
-    
+
     .filters__hider {
       height: auto;
       overflow: visible;
@@ -90,7 +90,7 @@
       }
     }
   }
-} 
+}
 
 .filters__toggle__text {
   font-size: 1.4rem;
@@ -124,13 +124,17 @@
     border-bottom: 0;
   }
 
+  .twitter-typeahead {
+    height: auto;
+  }
+
   .tt-dropdown-menu {
     font-size: 1.2rem;
     width: 100%;
   }
 }
 
-// Horizontal layout 
+// Horizontal layout
 
 .filters--horizontal {
   background-color: $neutral;
@@ -138,14 +142,14 @@
   padding: 2rem;
 }
 
-// BREAKPOINT: MEDIUM 
+// BREAKPOINT: MEDIUM
 // Use flexbox to get the filters into rows of equal height
 
 @include media($med) {
   // .filters {
   //   form {
   //     @include display(flex);
-  //     @include justify-content(flex-start);    
+  //     @include justify-content(flex-start);
   //     @include flex-wrap(wrap);
   //   }
   // }
@@ -172,7 +176,7 @@
 
 @include media($lg) {
   .filters {
-    @include transition(margin-left .2s);  
+    @include transition(margin-left .2s);
     float: left;
     margin-left: -30rem;
     padding: 2rem;
@@ -184,7 +188,7 @@
       float: left;
 
       .filters__toggle {
-        @include u-background-image('i-left-2--primary', 1rem 50%);    
+        @include u-background-image('i-left-2--primary', 1rem 50%);
       }
     }
 
@@ -236,6 +240,6 @@
         border-right: none;
         padding-right: 0;
       }
-    }    
+    }
   }
 }

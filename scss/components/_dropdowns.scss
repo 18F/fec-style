@@ -26,7 +26,7 @@
 //     </div>
 //   </div>
 // </fieldset>
-// 
+//
 // Styleguide components.dropdowns
 
 .dropdown {
@@ -71,25 +71,25 @@
 
   .dropdown__value {
     border-bottom: 2px solid $beige;
-    margin-bottom: 0;
+    margin: 0;
     padding: .5rem 1rem;
     white-space: nowrap;
 
     &:hover {
       background-color: $ivory;
       cursor: pointer;
-    }    
+    }
 
     &:before {
       display: none;
     }
   }
- 
+
   input:focus + .dropdown__value {
     background-color: $ivory;
   }
-     
-  
+
+
   // For labeling a group of options
   .dropdown__subhead {
     font-size: 1.4rem;
@@ -98,7 +98,7 @@
     &:hover {
       background-color: #fff;
     }
-  }  
+  }
 }
 
 @include keyframes(fadeIn) {
@@ -128,7 +128,7 @@
   }
 }
 
-.ps-scrollbar-y-rail { 
+.ps-scrollbar-y-rail {
   position: absolute;
   background: $ivory;
   width: 4px;

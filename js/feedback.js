@@ -62,7 +62,7 @@ Feedback.prototype.submit = function(e) {
   if (!_.some(_.values(data))) {
     var message =
       '<h2 class="feedback__title">Input required</h2>' +
-      '<p>To submit your feedback, please fill out at least one field.</p>';
+      '<p>To submit feedback, please fill out at least one field.</p>';
     var buttonText = 'Try again';
     this.message(message, buttonText, 'error');
     return;
@@ -79,9 +79,9 @@ Feedback.prototype.submit = function(e) {
 
 Feedback.prototype.handleSuccess = function(response) {
   var message =
-    '<h2 class="feedback__title">Thank you for helping us improve betaFEC</h2>' +
+    '<h2 class="feedback__title">Thanks for helping us improve betaFEC</h2>' +
     '<p>This information has been reported on GitHub, where it is publicly visible. ' +
-    'You can track the status of your feedback <a target="_blank" href="' + response.html_url + '">here</a>.</p>';
+    '<a target="_blank" href="' + response.html_url + '">Track</a> the status of your feedback.</p>';
   var buttonText = 'Submit another issue';
   this.$box.find('textarea').val('');
   this.message(message, buttonText, 'success');

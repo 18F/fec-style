@@ -38,6 +38,7 @@
 
 .main {
   @include clearfix();
+  color: $primary;
   padding: 2rem 0;
   position: relative;
 
