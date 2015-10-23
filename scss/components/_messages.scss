@@ -18,7 +18,7 @@
 .message {
   @include clearfix();
   background-size: 2rem;
-  background-color: rgba($ivory-dark, .5);
+  background-color: $ivory;
   border-color: $beige;
   border-top: 2px solid $beige;
   padding: 5rem 2rem 2rem 2rem;
