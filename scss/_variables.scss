@@ -10,9 +10,8 @@ $orange: #f77b42;
 $federal-blue: #022c53;
 $aqua: #36bdbb;
 
-$ivory: #f7eee3;
+$ivory: #f5f0e4;
 $cream: #ffffff;
-$ivory-dark: #d8c4b1;
 
 // Accent colors
 $bright-red: #dd1400;
@@ -24,10 +23,9 @@ $deep-aqua: #3e8a9a;
 $navy: #164f85;
 
 $beige: #ceb59c;
-$brown: #c09c7c;
+$beige-light: #d8c4b1;
+$beige-dark: #c09c7c;
 $black: #000205;
-$brown-light: #d8c4b1;
-$brown-dark: #c09c7c;
 
 // Color aliases
 $primary: $federal-blue;
@@ -39,7 +37,7 @@ $secondary-contrast: $orange;
 $secondary-focus: $deep-red;
 
 $neutral: $ivory;
-$neutral-contrast: $brown;
+$neutral-contrast: $beige-dark;
 $neutral-focus: $primary;
 
 // Z-Indices

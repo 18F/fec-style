@@ -106,12 +106,12 @@
   color: $primary;
 
   &:hover {
-    background-color: $brown-light;
+    background-color: $beige-light;
   }
 
   &:active,
   &.is-active {
-    background-color: $brown;
+    background-color: $beige-dark;
     border: 2px solid $primary;
   }
 }
