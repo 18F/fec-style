@@ -17,7 +17,7 @@
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
     "test": "karma start",
-    "test-single": "karma start --single-run"
+    "test-single": "karma start --single-run --browsers PhantomJS2"
   },
   "dependencies": {
     "URIjs": "1.16.0",
@@ -38,6 +38,7 @@
     "karma": "^0.13.14",
     "karma-browserify": "^4.4.0",
     "karma-chai-sinon": "^0.1.5",
+    "karma-chrome-launcher": "^0.2.1",
     "karma-coverage": "^0.5.3",
     "karma-mocha": "^0.2.0",
     "karma-phantomjs2-launcher": "^0.3.2",

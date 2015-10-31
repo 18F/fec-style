@@ -36,7 +36,7 @@ module.exports = function(config) {
     },
 
     reporters: ['progress', 'coverage'],
-    browsers: ['PhantomJS2'],
+    browsers: ['Chrome'],
     port: 9876
   });
 };
