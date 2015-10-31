@@ -2,7 +2,7 @@ var istanbul = require('browserify-istanbul');
 
 module.exports = function(config) {
   config.set({
-    frameworks: ['browserify', 'mocha', 'chai-sinon'],
+    frameworks: ['browserify', 'phantomjs-shim', 'mocha', 'chai-sinon'],
 
     files: [
       'tests/**/*.js'
