@@ -5,12 +5,13 @@ module.exports = function(config) {
     frameworks: ['browserify', 'phantomjs-shim', 'mocha', 'chai-sinon'],
 
     files: [
-      'tests/**/*.js'
+      'tests/**/*.js',
+      'js/**/*.js'
     ],
 
     preprocessors: {
-      'js/**/*.js': ['browserify'],
-      'tests/**/*.js': ['browserify']
+      'tests/**/*.js': ['browserify'],
+      'js/**/*.js': ['browserify']
     },
 
     browserify: {
