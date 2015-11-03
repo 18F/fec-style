@@ -117,12 +117,9 @@
   @include media($lg) {
     float: left;
     border-bottom: none;
-    
-    &:hover {
-      & > .site-nav__dropdown {
-        display: block;
-      }
 
+    &.is-open,
+    &:hover {
       .site-nav__link {
         border-bottom-color: $primary-contrast;
         background-color: $primary;
@@ -149,7 +146,7 @@
   }
 }
 
-// .site-nav__link 
+// .site-nav__link
 .site-nav__link {
   @include transition(background-color, .1s);
   display: block;
@@ -191,6 +188,10 @@
   font-family: $sans-serif;
   display: none;
   padding-bottom: 2rem;
+
+  &[aria-hidden='false'] {
+    display: block;
+  }
 
   .site-nav__item {
     border-bottom: 0;
@@ -235,7 +236,7 @@
         color: $primary;
       }
     }
-    
+
     .site-nav__sublink {
       padding: 1rem 2rem 1rem 4rem;
       border-top: none;
@@ -279,7 +280,7 @@
 
   &:hover {
     background-color: $cream;
-  }  
+  }
 
   &.active {
     @include u-background-image('i-menu--neutral');
@@ -309,9 +310,9 @@
   height: 3.6rem;
 
   &:hover {
-    @include u-background-image('i-book--neutral');    
+    @include u-background-image('i-book--neutral');
     background-color: lighten($secondary, 10%);
-  }  
+  }
 
   @include media($lg) {
     height: 6rem;
@@ -319,7 +320,7 @@
 }
 
 // Toggle controls for the mobile menu
-// 
+//
 // We use the same logic to show the entire menu as well as the sub-menus (site-nav__dropdown)
 // When on mobile, we hide the site-nav__link in the site-nav__item--with-dropdown elements so that tapping on the toggle opens the dropdown, instead of taking you to the page
 //
@@ -329,51 +330,29 @@
 // .site-nav__item--with-dropdown           - The outer li that contains the dropdown list and toggle
 
 .site-nav__item--with-dropdown {
-  & > a.site-nav__link {
+  & > .site-nav__link {
     display: none;
   }
 
-  @include media($lg) {
-    & > a.site-nav__link {
-      display: block;
-    }
-
-    & > .nav-toggle__input,
-    & > .nav-toggle__label {
-      display: none;
-    }
-  }
-}
-
-.nav-toggle__label {
-  position: relative;
-  font-family: $serif;
-
-  &::after {
-    @include u-background-image('i-right--neutral');
-    content: '';
+  & > .site-nav__toggle {
     display: block;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: -1rem;
-    top: 1rem;
-  }
-}
+    font-family: $serif;
+    position: relative;
 
-.nav-toggle__input {
-  @include u-visually-hidden();
-
-  & + label {
-    margin-bottom: 0;
-
-    &::before {
-      display: none;
+    &::after {
+      @include u-background-image('i-right--neutral');
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      left: -1rem;
+      top: 1rem;
     }
   }
 
-  &:checked {
-    & + .nav-toggle__label {
+  &.is-open {
+    .site-nav__toggle {
       color: $primary-contrast;
 
       &::after {
@@ -383,6 +362,12 @@
   }
 
   @include media($lg) {
-    display: none;
+    & > .site-nav__link {
+      display: block;
+    }
+
+    & > .site-nav__toggle {
+      display: none;
+    }
   }
 }
