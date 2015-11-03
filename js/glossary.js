@@ -49,9 +49,9 @@ function Glossary(terms, selectors) {
   self.populate();
   self.linkTerms();
 
-  // Remove tabindices 
+  // Remove tabindices
   accessibility.removeTabindex(self.$body);
-  
+
   // Bind listeners
   self.$toggle.on('click', this.toggle.bind(this));
   self.$body.on('click', '.toggle', this.toggle.bind(this));
@@ -83,7 +83,7 @@ Glossary.prototype.linkTerms = function() {
   });
   $terms.on('click keypress', function(e) {
     if (e.which === 13 || e.type === 'click') {
-      self.show();
+      self.show(e);
       self.findTerm($(this).data('term'));
     }
   });
@@ -110,12 +110,13 @@ Glossary.prototype.findTerm = function(term) {
   });
 };
 
-Glossary.prototype.toggle = function() {
+Glossary.prototype.toggle = function(e) {
   var method = this.isOpen ? this.hide : this.show;
-  method.apply(this);
+  method.call(this, e);
 };
 
-Glossary.prototype.show = function() {
+Glossary.prototype.show = function(e) {
+  this.$trigger = $(e.target);
   this.$body.addClass('is-open').attr('aria-hidden', 'false');
   this.$toggle.addClass('active');
   this.$search.focus();
@@ -126,7 +127,7 @@ Glossary.prototype.show = function() {
 Glossary.prototype.hide = function() {
   this.$body.removeClass('is-open').attr('aria-hidden', 'true');
   this.$toggle.removeClass('active');
-  this.$toggle.focus();
+  this.$trigger.focus();
   this.isOpen = false;
   accessibility.removeTabindex(this.$body);
 };
