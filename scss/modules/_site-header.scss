@@ -8,23 +8,11 @@
   color: $cream;
   font-family: $sans-serif;
   padding: 1rem 0;
-  position: fixed;
-  top: 0;
   width: 100%;
-  z-index: $z-max;
 
   a {
     border-bottom-color: $cream;
     color: $cream;
-  }
-}
-
-// Class to apply to body to give it the right amount of padding
-.has-banner {
-  padding-top: 8rem;
-
-  @include media($med) {
-    padding-top: 6rem;
   }
 }
 
