@@ -41,6 +41,7 @@ function Glossary(terms, selectors) {
   self.$body = $(self.selectors.body);
   self.$toggle = $(self.selectors.toggle);
   self.$search = this.$body.find('.glossary__search');
+  self.$trigger = null;
 
   // Initialize state
   self.isOpen = false;
@@ -127,13 +128,13 @@ Glossary.prototype.show = function(e) {
 Glossary.prototype.hide = function() {
   this.$body.removeClass('is-open').attr('aria-hidden', 'true');
   this.$toggle.removeClass('active');
-  this.$trigger.focus();
+  this.$trigger && this.$trigger.focus();
   this.isOpen = false;
   accessibility.removeTabindex(this.$body);
 };
 
 /** Remove existing filters on input */
-Glossary.prototype.handleInput = function(e) {
+Glossary.prototype.handleInput = function() {
   if (this.list.filtered) {
     this.list.filter();
   }

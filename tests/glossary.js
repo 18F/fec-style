@@ -48,7 +48,7 @@ describe('glossary', function() {
   });
 
   it('shows', function() {
-    this.glossary.show();
+    this.glossary.show({target: this.glossary.$toggle});
     expect(isOpen(this.glossary)).to.be.true;
   });
 
@@ -58,10 +58,12 @@ describe('glossary', function() {
   });
 
   it('toggles', function() {
-    this.glossary.toggle();
+    this.glossary.toggle({target: this.glossary.$toggle});
     expect(isOpen(this.glossary)).to.be.true;
+    expect(this.glossary.$trigger.is(this.glossary.$toggle)).to.be.true;
     this.glossary.toggle();
     expect(isClosed(this.glossary)).to.be.true;
+    expect(this.glossary.$toggle.is(document.activeElement)).to.be.true;
   });
 
   it('linkifies terms in the document', function() {
