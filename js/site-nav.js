@@ -7,15 +7,15 @@ var $ = require('jquery');
 function SiteNav(selector) {
   this.$body = $(selector);
   this.$toggle = this.$body.find('.js-nav-toggle');
+  this.$openSublist = null;
 
   this.assignAria();
 
   this.$toggle.on('click', this.toggle.bind(this));
   this.$body.on('click', '.js-sublist-toggle', this.toggleSublist.bind(this));
-  this.$body.on('mouseenter', '.js-sublist', this.toggleSublist.bind(this));
-  this.$body.on('mouseleave', '.js-sublist', this.toggleSublist.bind(this));
-  this.$body.on('focusin', this.handleFocus.bind(this));
-  $(document.body).on('focusin', this.handleFocusAway.bind(this));
+  this.$body.on('mouseenter', '.js-sublist-parent', this.toggleSublist.bind(this));
+  this.$body.on('mouseleave', '.js-sublist-parent', this.toggleSublist.bind(this));
+  $(document.body).on('focusin', this.handleFocus.bind(this));
 }
 
 SiteNav.prototype.assignAria = function() {
@@ -50,38 +50,31 @@ SiteNav.prototype.hide = function() {
 };
 
 SiteNav.prototype.toggleSublist = function(e) {
-  var method = this.$openList ? this.hideSublist : this.showSublist;
+  var method = this.$openSublist ? this.hideSublist : this.showSublist;
   var $target = $(e.target);
-  var $sublistParent = $target.hasClass('js-sublist') ? $target : $target.closest('.js-sublist');
+  var $sublistParent = $target.hasClass('js-sublist-parent') ? $target : $target.closest('.js-sublist-parent');
   method.call(this, $sublistParent);
 };
 
 SiteNav.prototype.showSublist = function($sublistParent) {
   $sublistParent.addClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', false);
-  this.$openList = $sublistParent;
+  this.$openSublist = $sublistParent;
 };
 
 SiteNav.prototype.hideSublist = function($sublistParent) {
   $sublistParent.removeClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', true);
-  this.$openList = null;
+  this.$openSublist = null;
 };
 
 SiteNav.prototype.handleFocus = function(e) {
   var $target = $(e.target);
-  var $sublistParent = $target.closest('.js-sublist') || false;
-  if ( this.$openList && !this.$openList.has($target).length ) {
-    this.hideSublist(this.$openList);
+  var $sublistParent = $target.closest('.js-sublist-parent') || false;
+  if ( this.$openSublist && !this.$openSublist.has($target).length ) {
+    this.hideSublist(this.$openSublist);
   } else if ( $sublistParent ) {
     this.showSublist($sublistParent);
-  }
-};
-
-SiteNav.prototype.handleFocusAway = function(e) {
-  var $target = $(e.target);
-  if ( this.$openList && !this.$body.has($target).length ) {
-    this.hideSublist(this.$openList);
   }
 };
 
