@@ -4,6 +4,13 @@
 
 var $ = require('jquery');
 
+/** SiteNav module
+  * On mobile: Controls the visibility of the the hamburger menu and sublists
+  * On desktop: Controls the visibility of dropdown sublists on hover and focus
+  * @constructor
+  * @param {object} selector - CSS selector for the nav component
+  */
+
 function SiteNav(selector) {
   this.$body = $(selector);
   this.$toggle = this.$body.find('.js-nav-toggle');
@@ -11,25 +18,25 @@ function SiteNav(selector) {
 
   this.assignAria();
 
+  /** Open and close the menu on mobile **/
   this.$toggle.on('click', this.toggle.bind(this));
+
+  /** Mobile: open sublists with the toggle buttons **/
   this.$body.on('click', '.js-sublist-toggle', this.toggleSublist.bind(this));
-  this.$body.on('mouseenter', '.js-sublist-parent', this.toggleSublist.bind(this));
-  this.$body.on('mouseleave', '.js-sublist-parent', this.toggleSublist.bind(this));
-  $(document.body).on('focusin', this.handleFocus.bind(this));
+
+  /** Desktop: open and close sublists on hover and focus **/
+  this.$body.on('mouseenter', '.js-sublist-parent', this.showSublist.bind(this));
+  this.$body.on('mouseleave', '.js-sublist-parent', this.hideSublist.bind(this));
+  $(document.body).on('focusin', this.handleFocusBody.bind(this));
 }
 
 SiteNav.prototype.assignAria = function() {
-  var $subLists = this.$body.find('ul ul');
-  var $links = this.$body.find('.js-sublist-toggle');
-
+  this.$body.find('.js-sublist-toggle').attr('aria-haspopup', true);
   this.$body.attr('aria-label', 'Site wide navigation');
-
-  $subLists.attr({
+  this.$body.find('ul ul').attr({
     'aria-label': 'submenu',
     'aria-hidden': 'true'
   });
-
-  $links.attr('aria-haspopup', true);
 };
 
 SiteNav.prototype.toggle = function() {
@@ -51,23 +58,30 @@ SiteNav.prototype.hide = function() {
 
 SiteNav.prototype.toggleSublist = function(e) {
   var method = this.$openSublist ? this.hideSublist : this.showSublist;
-  var $target = $(e.target);
-  var $sublistParent = $target.hasClass('js-sublist-parent') ? $target : $target.closest('.js-sublist-parent');
-  method.call(this, $sublistParent);
+  method.call(this, e);
 };
 
+SiteNav.prototype.showSublist = function(e, $selector) {
+  var $sublistParent = $selector || $(e.target).closest('.js-sublist-parent');
   $sublistParent.addClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', false);
   this.$openSublist = $sublistParent;
 };
 
+SiteNav.prototype.hideSublist = function(e, $selector) {
+  var $sublistParent = $selector || $(e.target).closest('.js-sublist-parent');
   $sublistParent.removeClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', true);
   this.$openSublist = null;
 };
 
+SiteNav.prototype.handleFocusBody = function(e) {
   var $target = $(e.target);
+  var $sublistParent = $target.closest('.js-sublist-parent');
+  if ( this.$openSublist !== null && !this.$openSublist.has($target).length ) {
+    this.hideSublist(e, this.$openSublist);
   } else if ( $sublistParent ) {
+    this.showSublist(e);
   }
 };
 
