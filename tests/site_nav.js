@@ -24,7 +24,7 @@ describe('SiteNav', function() {
         '<li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">' +
           '<a href="/" class="site-nav__link is-current">' +
             'Campaign Finance Data</a>' +
-          '<span class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</span>' +
+          '<button class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</button>' +
           '<ul class="site-nav__dropdown">' +
             '<li class="site-nav__item">' +
               '<a class="site-nav__link" href="/">Search for candidates »</a>' +
@@ -75,8 +75,8 @@ describe('SiteNav', function() {
       expect(this.$subLists.last().attr('aria-hidden')).to.equal('true');
     });
 
-    it('should assign aria-haspopup to all links to the sub lists', function() {
-      var $link = this.$fixture.find('#site-menu .js-nav-drop-link');
+    it('should assign aria-haspopup to all toggle buttons for the sub lists', function() {
+      var $link = this.$fixture.find('.js-sublist-toggle');
       expect($link.length).to.be.ok;
       expect($link.first().attr('aria-haspopup')).to.equal('true');
     });

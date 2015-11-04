@@ -20,7 +20,7 @@ function SiteNav(selector) {
 
 SiteNav.prototype.assignAria = function() {
   var $subLists = this.$body.find('ul ul');
-  var $links = this.$body.find('.js-nav-drop-link');
+  var $links = this.$body.find('.js-sublist-toggle');
 
   this.$body.attr('aria-label', 'Site wide navigation');
 
