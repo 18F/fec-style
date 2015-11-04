@@ -56,25 +56,18 @@ SiteNav.prototype.toggleSublist = function(e) {
   method.call(this, $sublistParent);
 };
 
-SiteNav.prototype.showSublist = function($sublistParent) {
   $sublistParent.addClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', false);
   this.$openSublist = $sublistParent;
 };
 
-SiteNav.prototype.hideSublist = function($sublistParent) {
   $sublistParent.removeClass('is-open');
   $sublistParent.find('ul').attr('aria-hidden', true);
   this.$openSublist = null;
 };
 
-SiteNav.prototype.handleFocus = function(e) {
   var $target = $(e.target);
-  var $sublistParent = $target.closest('.js-sublist-parent') || false;
-  if ( this.$openSublist && !this.$openSublist.has($target).length ) {
-    this.hideSublist(this.$openSublist);
   } else if ( $sublistParent ) {
-    this.showSublist($sublistParent);
   }
 };
 
