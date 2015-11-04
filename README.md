@@ -1,3 +1,7 @@
+[![Build Status](https://img.shields.io/travis/18F/fec-style/master.svg)](https://travis-ci.org/18F/fec-style)
+[![Test Coverage](https://img.shields.io/codecov/c/github/18F/fec-style/master.svg)](https://codecov.io/github/18F/fec-style)
+
+
 ## Campaign finance for everyone
 The Federal Election Commission (FEC) releases information to the public about money that’s raised and spent in federal elections — that’s elections for US president, Senate, and House of Representatives. 
 
@@ -26,9 +30,6 @@ This project is in the public domain within the United States, and we waive worl
 A few restrictions limit the way you can use FEC data. For example, you can’t use contributor lists for commercial purposes or to solicit donations. Learn more on FEC.gov.
 
 ---
-
-[![Build Status](https://img.shields.io/travis/18F/fec-style/master.svg)](https://travis-ci.org/18F/fec-style)
-[![Test Coverage](https://img.shields.io/codecov/c/github/18F/fec-style/master.svg)](https://codecov.io/github/18F/fec-style)
 
 ### View the style guide
 Clone the repo to your machine and open `styleguide/index.html`. Voila.
