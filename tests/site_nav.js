@@ -19,16 +19,12 @@ describe('SiteNav', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
     '<nav class="site-nav js-site-nav">' +
-      '<input class="nav-toggle__input" id="nav-toggle" type="checkbox">' +
-      '<label for="nav-toggle" class="site-nav__button site-nav__button--left">' +
-        'Menu</label>' +
+      '<button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>' +
       '<ul id="site-menu" class="site-nav__list">' +
-        '<li class="site-nav__item site-nav__item--with-dropdown">' +
-          '<a href="/" class="site-nav__link is-current js-nav-drop-link">' +
+        '<li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">' +
+          '<a href="/" class="site-nav__link is-current">' +
             'Campaign Finance Data</a>' +
-          '<input class="nav-toggle__input js-toggle" id="dropdown-toggle-1" type="checkbox">' +
-          '<label for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">' +
-            'Campaign Finance Data</label>' +
+          '<span class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</span>' +
           '<ul class="site-nav__dropdown">' +
             '<li class="site-nav__item">' +
               '<a class="site-nav__link" href="/">Search for candidates »</a>' +
@@ -92,33 +88,44 @@ describe('SiteNav', function() {
     });
   });
 
-  describe('handleChange()', function() {
-    it('should set the list aria hidden label to the opposite of checked',
-        function() {
-      var $toggle = this.$fixture.find('.js-toggle');
-      var $list = this.$fixture.find('#site-menu ul');
-      var testEv = {currentTarget: $toggle};
-
-      this.siteNav.handleChange(testEv);
-      expect($list.attr('aria-hidden')).to.not.equal($toggle.is(':checked'));
+  describe('toggle()', function() {
+    it('should show and hide the menu', function() {
+      var $nav = this.$fixture.find('.js-site-nav');
+      this.siteNav.toggle();
+      expect($nav.attr('class')).to.include('is-open');
+      this.siteNav.toggle();
+      expect($nav.attr('class')).to.not.include('is-open');
     });
   });
 
-  describe('hover()', function() {
+  describe('toggleSublist()', function() {
+    it('should show and hide the sublist', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $sublistToggle = this.$fixture.find('.js-sublist-toggle');
+      var testEv = {target: $sublistToggle};
+      this.siteNav.toggleSublist(testEv);
+      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('false');
+      this.siteNav.toggleSublist(testEv);
+      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('true');
+    });
+  });
 
-    beforeEach(function() {
-      this.$withDropdown = this.$fixture.find('.site-nav__item--with-dropdown');
-      this.$list = this.$fixture.find('#site-menu ul');
+  describe('handleFocus()', function() {
+    it('should show the sublist when focused', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $link = $sublistParent.find('a')[0];
+      var testEv = {target: $link};
+      this.siteNav.handleFocus(testEv);
+      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('false');
     });
 
-    it('should show items on mouseenter', function() {
-      this.siteNav.handleMouseEnter({currentTarget: this.$withDropdown.get(0)});
-      expect(this.$list.attr('aria-hidden')).to.equal('false');
-    });
-
-    it('should hide items on mouseexit', function() {
-      this.siteNav.handleMouseExit({currentTarget: this.$withDropdown.get(0)});
-      expect(this.$list.attr('aria-hidden')).to.equal('true');
+    it('should hide the sublist when focus leaves the parent', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $otherLink = this.$fixture.find('.site-nav__item .is-disabled')[0];
+      var testEv = {target: $otherLink};
+      this.siteNav.showSublist($sublistParent);
+      this.siteNav.handleFocus(testEv);
+      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('true');
     });
   });
 });
