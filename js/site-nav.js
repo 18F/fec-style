@@ -11,9 +11,11 @@ function SiteNav(selector) {
   this.assignAria();
 
   this.$toggle.on('click', this.toggle.bind(this));
-  this.$body.on('change', '.js-toggle', this.handleChange.bind(this));
-  this.$body.on('mouseenter', 'li:has(.js-toggle)', this.handleMouseEnter.bind(this));
-  this.$body.on('mouseleave', 'li:has(.js-toggle)', this.handleMouseExit.bind(this));
+  this.$body.on('click', '.js-sublist-toggle', this.toggleSublist.bind(this));
+  this.$body.on('mouseenter', '.js-sublist', this.toggleSublist.bind(this));
+  this.$body.on('mouseleave', '.js-sublist', this.toggleSublist.bind(this));
+  this.$body.on('focusin', this.handleFocus.bind(this));
+  $(document.body).on('focusin', this.handleFocusAway.bind(this));
 }
 
 SiteNav.prototype.assignAria = function() {
@@ -32,7 +34,7 @@ SiteNav.prototype.assignAria = function() {
 
 SiteNav.prototype.toggle = function() {
   var method = this.isOpen ? this.hide : this.show;
-  method.apply(this);    
+  method.apply(this);
 };
 
 SiteNav.prototype.show = function() {
@@ -47,21 +49,40 @@ SiteNav.prototype.hide = function() {
   this.isOpen = false;
 };
 
-SiteNav.prototype.handleChange = function(e) {
-  var $subToggle = $(e.currentTarget);
-  var checked = $subToggle.is(':checked');
-  var $list = $(e.currentTarget).siblings('ul');
-
-  $list.attr('aria-hidden', !checked);
-  $list.find('li a').first().focus();
+SiteNav.prototype.toggleSublist = function(e) {
+  var method = this.$openList ? this.hideSublist : this.showSublist;
+  var $target = $(e.target);
+  var $sublistParent = $target.hasClass('js-sublist') ? $target : $target.closest('.js-sublist');
+  method.call(this, $sublistParent);
 };
 
-SiteNav.prototype.handleMouseEnter = function(e) {
-  $(e.currentTarget).find('.js-toggle').prop('checked', true).change();
+SiteNav.prototype.showSublist = function($sublistParent) {
+  $sublistParent.addClass('is-open');
+  $sublistParent.find('ul').attr('aria-hidden', false);
+  this.$openList = $sublistParent;
 };
 
-SiteNav.prototype.handleMouseExit = function(e) {
-  $(e.currentTarget).find('.js-toggle').prop('checked', false).change();
+SiteNav.prototype.hideSublist = function($sublistParent) {
+  $sublistParent.removeClass('is-open');
+  $sublistParent.find('ul').attr('aria-hidden', true);
+  this.$openList = null;
+};
+
+SiteNav.prototype.handleFocus = function(e) {
+  var $target = $(e.target);
+  var $sublistParent = $target.closest('.js-sublist') || false;
+  if ( this.$openList && !this.$openList.has($target).length ) {
+    this.hideSublist(this.$openList);
+  } else if ( $sublistParent ) {
+    this.showSublist($sublistParent);
+  }
+};
+
+SiteNav.prototype.handleFocusAway = function(e) {
+  var $target = $(e.target);
+  if ( this.$openList && !this.$body.has($target).length ) {
+    this.hideSublist(this.$openList);
+  }
 };
 
 module.exports = {SiteNav: SiteNav};
