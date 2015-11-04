@@ -285,7 +285,7 @@
 
     &.is-disabled {
       .site-nav__link {
-        color: #737373;
+        color: $disabled;
         cursor: default;
 
         &:hover,
