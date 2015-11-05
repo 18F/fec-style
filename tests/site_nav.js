@@ -24,13 +24,13 @@ function isClosed(siteNav) {
 
 function sublistIsOpen(siteNav, sublistParent) {
   return siteNav.$openSublist &&
-    sublistParent.hasClass('is-open')
+    sublistParent.hasClass('is-open') &&
     sublistParent.find('ul').attr('aria-hidden') == 'false';
 };
 
 function sublistIsClosed(siteNav, sublistParent) {
   return siteNav.$openSublist == null &&
-    !sublistParent.hasClass('is-open')
+    !sublistParent.hasClass('is-open') &&
     sublistParent.find('ul').attr('aria-hidden') == 'true';
 };
 
@@ -115,7 +115,6 @@ describe('SiteNav', function() {
 
   describe('toggle()', function() {
     it('should show and hide the menu', function() {
-      var $nav = this.$fixture.find('.js-site-nav');
       this.siteNav.toggle();
       expect(isOpen(this.siteNav)).to.be.true;
       this.siteNav.toggle();
