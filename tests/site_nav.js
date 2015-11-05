@@ -10,6 +10,30 @@ var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
 
+function isOpen(siteNav) {
+  return siteNav.isOpen &&
+    siteNav.$body.hasClass('is-open') &&
+    siteNav.$toggle.hasClass('active');
+}
+
+function isClosed(siteNav) {
+  return !siteNav.isOpen &&
+    !siteNav.$body.hasClass('is-open') &&
+    !siteNav.$toggle.hasClass('active');
+}
+
+function sublistIsOpen(siteNav, sublistParent) {
+  return siteNav.$openSublist &&
+    sublistParent.hasClass('is-open')
+    sublistParent.find('ul').attr('aria-hidden') == 'false';
+}
+
+function sublistIsClosed(siteNav, sublistParent) {
+  return siteNav.$openSublist == null &&
+    !sublistParent.hasClass('is-open')
+    sublistParent.find('ul').attr('aria-hidden') == 'true';
+}
+
 describe('SiteNav', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
@@ -76,9 +100,10 @@ describe('SiteNav', function() {
     });
 
     it('should assign aria-haspopup to all toggle buttons for the sub lists', function() {
-      var $link = this.$fixture.find('.js-sublist-toggle');
-      expect($link.length).to.be.ok;
-      expect($link.first().attr('aria-haspopup')).to.equal('true');
+      var $toggles = this.$fixture.find('.js-sublist-toggle');
+      var $popupToggles = this.$fixture.find('.js-sublist-toggle[aria-haspopup="true"]');
+      expect($toggles.length).to.be.ok;
+      expect($toggles.length).to.equal($popupToggles.length);
     });
 
     it('should assign an aria label to the whole nav', function() {
@@ -92,9 +117,9 @@ describe('SiteNav', function() {
     it('should show and hide the menu', function() {
       var $nav = this.$fixture.find('.js-site-nav');
       this.siteNav.toggle();
-      expect($nav.attr('class')).to.include('is-open');
+      expect(isOpen(this.siteNav)).to.be.true;
       this.siteNav.toggle();
-      expect($nav.attr('class')).to.not.include('is-open');
+      expect(isClosed(this.siteNav)).to.be.true;
     });
   });
 
@@ -104,19 +129,19 @@ describe('SiteNav', function() {
       var $sublistToggle = this.$fixture.find('.js-sublist-toggle');
       var testEv = {target: $sublistToggle};
       this.siteNav.toggleSublist(testEv);
-      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('false');
+      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
       this.siteNav.toggleSublist(testEv);
-      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('true');
+      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
     });
   });
 
-  describe('handleFocus()', function() {
+  describe('handleFocusBody()', function() {
     it('should show the sublist when focused', function() {
       var $sublistParent = this.$fixture.find('.js-sublist-parent');
       var $link = $sublistParent.find('a')[0];
       var testEv = {target: $link};
-      this.siteNav.handleFocus(testEv);
-      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('false');
+      this.siteNav.handleFocusBody(testEv);
+      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
     });
 
     it('should hide the sublist when focus leaves the parent', function() {
@@ -124,8 +149,8 @@ describe('SiteNav', function() {
       var $otherLink = this.$fixture.find('.site-nav__item .is-disabled')[0];
       var testEv = {target: $otherLink};
       this.siteNav.showSublist($sublistParent);
-      this.siteNav.handleFocus(testEv);
-      expect($sublistParent.find('ul').attr('aria-hidden')).to.equal('true');
+      this.siteNav.handleFocusBody(testEv);
+      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
     });
   });
 });
