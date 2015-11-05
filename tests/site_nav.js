@@ -14,25 +14,25 @@ function isOpen(siteNav) {
   return siteNav.isOpen &&
     siteNav.$body.hasClass('is-open') &&
     siteNav.$toggle.hasClass('active');
-}
+};
 
 function isClosed(siteNav) {
   return !siteNav.isOpen &&
     !siteNav.$body.hasClass('is-open') &&
     !siteNav.$toggle.hasClass('active');
-}
+};
 
 function sublistIsOpen(siteNav, sublistParent) {
   return siteNav.$openSublist &&
     sublistParent.hasClass('is-open')
     sublistParent.find('ul').attr('aria-hidden') == 'false';
-}
+};
 
 function sublistIsClosed(siteNav, sublistParent) {
   return siteNav.$openSublist == null &&
     !sublistParent.hasClass('is-open')
     sublistParent.find('ul').attr('aria-hidden') == 'true';
-}
+};
 
 describe('SiteNav', function() {
   before(function() {
