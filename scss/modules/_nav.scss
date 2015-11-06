@@ -3,30 +3,28 @@
 // Primary site navigation
 //
 // Elements:
-// .site-nav                  - The outer nav element
-// .site-nav__list            - ul that displays horizontally on desktop and is hidden on mobile until revealed
-// .site-nav__item            - Each li inside the ul
-// .site-nav__link            - Styles for the links inside the items
-// .site-nav__dropdown        - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
+// .site-nav                        - The outer nav element
+// .site-nav__list                  - ul that displays horizontally on desktop and is hidden on mobile until revealed
+// .site-nav__item                  - Each li inside the ul
+// .site-nav__link                  - Styles for the links inside the items
+// .site-nav__dropdown              - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
+// .site-nav__item--with-dropdown   - Parent items that have a submenu dropdown
+// .site-nav__toggle                - A button inside each .site-nav__item--with-dropdown that controls visibility of the submenu
 //
 // Markup:
 // <nav class="site-nav js-site-nav">
-//   <input class="nav-toggle__input js-toggle" id="nav-toggle" type="checkbox">
-//   <label for="nav-toggle" class="site-nav__button site-nav__button--left">
-//     Menu</label>
+//   <button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>
 //   <ul id="site-menu" class="site-nav__list">
-//     <li class="site-nav__item site-nav__item--with-dropdown">
+//     <li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">
 //       <a href="#" class="site-nav__link is-current js-nav-drop-link">
-//           Campaign Finance Data</a>
-//       <input class="nav-toggle__input js-toggle" id="dropdown-toggle-1" type="checkbox">
-//       <label tab-index="0" for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">
-//           Campaign Finance Data</label>
+//           Campaign finance data</a>
+//       <span class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</span>
 //       <ul class="site-nav__dropdown">
 //         <li class="site-nav__item">
-//           <a class="site-nav__link" href="#">Search for candidates »</a>
+//           <a class="site-nav__link site-nav__sublink" href="#">Search for candidates »</a>
 //         </li>
 //         <li class="site-nav__item">
-//           <a class="site-nav__link" href="#">Search for elections »</a>
+//           <a class="site-nav__link site-nav__sublink" href="#">Search for elections »</a>
 //         </li>
 //       </ul>
 //     </li>
@@ -53,10 +51,6 @@
       display: block;
     }
   }
-
-  @include media($lg) {
-    padding-left: 2rem;
-  }
 }
 
 .site-nav__list {
@@ -73,28 +67,6 @@
 
   .utility-nav__item {
     padding: 0;
-  }
-
-  @include media($med) {
-    top: 17rem;
-  }
-
-  @include media($lg) {
-    @include clearfix();
-    @include u-bg--neutral();
-    @include transform(translateX(0));
-    background: none;
-    border: none;
-    min-height: 0;
-    display: block;
-    float: left;
-    padding: 0;
-    position: relative;
-    top: 0;
-
-    .utility-nav__item {
-      display: none;
-    }
   }
 }
 
@@ -113,43 +85,9 @@
       color: #929292;
     }
   }
-
-  @include media($lg) {
-    float: left;
-    border-bottom: none;
-    
-    &:hover {
-      & > .site-nav__dropdown {
-        display: block;
-      }
-
-      .site-nav__link {
-        border-bottom-color: $primary-contrast;
-        background-color: $primary;
-        color: $ivory;
-      }
-    }
-
-    &.is-disabled {
-      .site-nav__link {
-        color: #737373;
-        cursor: default;
-
-        &:hover,
-        &:focus {
-          background-color: transparent;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-    }
-  }
 }
 
-// .site-nav__link 
+// .site-nav__link
 .site-nav__link {
   @include transition(background-color, .1s);
   display: block;
@@ -166,18 +104,6 @@
     background-color: $primary;
     color: $primary-contrast;
   }
-
-  @include media($lg) {
-    padding: 2rem;
-
-    &:hover,
-    &:focus,
-    &:active {
-      border-bottom-color: $primary-contrast;
-      background-color: $primary;
-      color: $ivory;
-    }
-  }
 }
 
 .site-nav__subtitle {
@@ -192,6 +118,10 @@
   display: none;
   padding-bottom: 2rem;
 
+  &[aria-hidden='false'] {
+    display: block;
+  }
+
   .site-nav__item {
     border-bottom: 0;
   }
@@ -205,8 +135,185 @@
   .site-nav__sublink {
     padding-left: 2rem;
   }
+}
 
-  @include media($lg) {
+.site-nav__toggle {
+  color: $cream;
+  font-family: $serif;
+  text-align: left;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    @include u-background-image('i-right--neutral');
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: -1rem;
+    top: 1rem;
+  }
+}
+
+.site-nav__item--with-dropdown {
+  & > .site-nav__link {
+    display: none;
+  }
+
+  .site-nav__toggle {
+    display: block;
+  }
+
+  &.is-open {
+    .site-nav__toggle {
+      color: $primary-contrast;
+
+      &::after {
+        @include u-background-image('i-down--primary-contrast');
+      }
+    }
+  }
+}
+
+
+// Nav Buttons
+//
+// For the mobile menu toggle and glossary toggle
+//
+// .site-nav__button--left      - Mobile toggle
+// .site-nav__button--right     - Glossary toggle
+
+.site-nav__button {
+  background-color: $ivory;
+  border-radius: 0;
+  margin: 0;
+  padding: 1.8rem 2rem;
+  text-indent: -99999px;
+}
+
+.site-nav__button--left {
+  @include u-background-image('i-menu--primary');
+  float: left;
+  height: 4rem;
+
+  &:hover {
+    background-color: $cream;
+  }
+
+  &.active {
+    @include u-background-image('i-menu--neutral');
+    background-color: $primary;
+    color: $neutral;
+  }
+}
+
+.site-nav__button--right {
+  @include u-background-image('i-book--secondary');
+  float: right;
+  height: 3.6rem;
+
+  &:hover {
+    @include u-background-image('i-book--neutral');
+    background-color: lighten($secondary, 10%);
+  }
+}
+
+// BREAKPOINT: MEDIUM
+// Mostly stays the same except the menu button now has the word menu in it
+
+@include media($med) {
+  .site-nav__list {
+    top: 17rem;
+  }
+
+  .site-nav__button {
+    width: 9rem;
+  }
+
+  .site-nav__button--left {
+    background-position: 90% 1rem;
+    font-size: 1.4rem;
+    text-indent: 0;
+    padding: 1rem 4rem 1rem 1rem;
+
+    &.active {
+      background-position: 90% 1rem;
+    }
+  }
+}
+
+// BREAKPOINT: LARGE
+// Switches to traditional dropdown menu
+// Hide the submenu toggles
+
+@include media($lg) {
+  .site-nav {
+    padding-left: 2rem;
+  }
+
+  .site-nav__list {
+    @include clearfix();
+    @include u-bg--neutral();
+    @include transform(translateX(0));
+    background: none;
+    border: none;
+    min-height: 0;
+    display: block;
+    float: left;
+    padding: 0;
+    position: relative;
+    top: 0;
+
+    .utility-nav__item {
+      display: none;
+    }
+  }
+
+  .site-nav__item {
+    float: left;
+    border-bottom: none;
+
+    &.is-open,
+    &:hover {
+      .site-nav__link {
+        border-bottom-color: $primary-contrast;
+        background-color: $primary;
+        color: $ivory;
+      }
+    }
+
+    &.is-disabled {
+      .site-nav__link {
+        color: $disabled;
+        cursor: default;
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .site-nav__link {
+    padding: 2rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-bottom-color: $primary-contrast;
+      background-color: $primary;
+      color: $ivory;
+    }
+  }
+
+  .site-nav__dropdown {
     @include u-bg--primary();
     border: 1px solid $primary-contrast;
     border-top: none;
@@ -235,7 +342,7 @@
         color: $primary;
       }
     }
-    
+
     .site-nav__sublink {
       padding: 1rem 2rem 1rem 4rem;
       border-top: none;
@@ -244,145 +351,24 @@
     .site-nav__sublink--last {
       padding-bottom: 2rem;
     }
-
-  }
-}
-
-
-// Nav Buttons
-//
-// For the mobile menu toggle and glossary toggle
-//
-// .site-nav__button--left      - Mobile toggle
-// .site-nav__button--right     - Glossary toggle
-
-.site-nav__button {
-  background-color: $ivory;
-  border-radius: 0;
-  margin: 0;
-  padding: 1.8rem 2rem;
-  text-indent: -99999px;
-
-  @include media($med) {
-    width: 9rem;
   }
 
-  @include media($lg) {
-    height: 6rem;
-  }
-}
-
-.site-nav__button--left {
-  @include u-background-image('i-menu--primary');
-  float: left;
-  height: 4rem;
-
-  &:hover {
-    background-color: $cream;
-  }  
-
-  &.active {
-    @include u-background-image('i-menu--neutral');
-    background-color: $primary;
-    color: $neutral;
-  }
-
-  @include media($med) {
-    background-position: 90% 1rem;
-    font-size: 1.4rem;
-    text-indent: 0;
-    padding: 1rem 4rem 1rem 1rem;
-
-    &.active {
-      background-position: 90% 1rem;
-    }
-  }
-
-  @include media($lg) {
-    display: none;
-  }
-}
-
-.site-nav__button--right {
-  @include u-background-image('i-book--secondary');
-  float: right;
-  height: 3.6rem;
-
-  &:hover {
-    @include u-background-image('i-book--neutral');    
-    background-color: lighten($secondary, 10%);
-  }  
-
-  @include media($lg) {
-    height: 6rem;
-  }
-}
-
-// Toggle controls for the mobile menu
-// 
-// We use the same logic to show the entire menu as well as the sub-menus (site-nav__dropdown)
-// When on mobile, we hide the site-nav__link in the site-nav__item--with-dropdown elements so that tapping on the toggle opens the dropdown, instead of taking you to the page
-//
-// Elements:
-// .nav-toggle__input                       - The checkbox that controls whether adjacent lists are shown or hidden
-// .nav-toggle__label                       - The label attached to the checkbox (not applied to the main menu button)
-// .site-nav__item--with-dropdown           - The outer li that contains the dropdown list and toggle
-
-.site-nav__item--with-dropdown {
-  & > a.site-nav__link {
-    display: none;
-  }
-
-  @include media($lg) {
-    & > a.site-nav__link {
+  .site-nav__item--with-dropdown {
+    .site-nav__link {
       display: block;
     }
 
-    & > .nav-toggle__input,
-    & > .nav-toggle__label {
-      display: none;
-    }
-  }
-}
-
-.nav-toggle__label {
-  position: relative;
-  font-family: $serif;
-
-  &::after {
-    @include u-background-image('i-right--neutral');
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: -1rem;
-    top: 1rem;
-  }
-}
-
-.nav-toggle__input {
-  @include u-visually-hidden();
-
-  & + label {
-    margin-bottom: 0;
-
-    &::before {
+    .site-nav__toggle {
       display: none;
     }
   }
 
-  &:checked {
-    & + .nav-toggle__label {
-      color: $primary-contrast;
-
-      &::after {
-        @include u-background-image('i-down--primary-contrast');
-      }
-    }
+  .site-nav__button,
+  .site-nav__button--right {
+    height: 6rem;
   }
 
-  @include media($lg) {
+  .site-nav__button--left {
     display: none;
   }
 }

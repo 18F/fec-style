@@ -10,6 +10,30 @@ var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
 
+function isOpen(siteNav) {
+  return siteNav.isOpen &&
+    siteNav.$body.hasClass('is-open') &&
+    siteNav.$toggle.hasClass('active');
+};
+
+function isClosed(siteNav) {
+  return !siteNav.isOpen &&
+    !siteNav.$body.hasClass('is-open') &&
+    !siteNav.$toggle.hasClass('active');
+};
+
+function sublistIsOpen(siteNav, sublistParent) {
+  return siteNav.$openSublist &&
+    sublistParent.hasClass('is-open') &&
+    sublistParent.find('ul').attr('aria-hidden') == 'false';
+};
+
+function sublistIsClosed(siteNav, sublistParent) {
+  return siteNav.$openSublist == null &&
+    !sublistParent.hasClass('is-open') &&
+    sublistParent.find('ul').attr('aria-hidden') == 'true';
+};
+
 describe('SiteNav', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
@@ -19,16 +43,12 @@ describe('SiteNav', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
     '<nav class="site-nav js-site-nav">' +
-      '<input class="nav-toggle__input" id="nav-toggle" type="checkbox">' +
-      '<label for="nav-toggle" class="site-nav__button site-nav__button--left">' +
-        'Menu</label>' +
+      '<button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>' +
       '<ul id="site-menu" class="site-nav__list">' +
-        '<li class="site-nav__item site-nav__item--with-dropdown">' +
-          '<a href="/" class="site-nav__link is-current js-nav-drop-link">' +
+        '<li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">' +
+          '<a href="/" class="site-nav__link is-current">' +
             'Campaign Finance Data</a>' +
-          '<input class="nav-toggle__input js-toggle" id="dropdown-toggle-1" type="checkbox">' +
-          '<label for="dropdown-toggle-1" class="site-nav__link nav-toggle__label">' +
-            'Campaign Finance Data</label>' +
+          '<button class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</button>' +
           '<ul class="site-nav__dropdown">' +
             '<li class="site-nav__item">' +
               '<a class="site-nav__link" href="/">Search for candidates »</a>' +
@@ -79,10 +99,11 @@ describe('SiteNav', function() {
       expect(this.$subLists.last().attr('aria-hidden')).to.equal('true');
     });
 
-    it('should assign aria-haspopup to all links to the sub lists', function() {
-      var $link = this.$fixture.find('#site-menu .js-nav-drop-link');
-      expect($link.length).to.be.ok;
-      expect($link.first().attr('aria-haspopup')).to.equal('true');
+    it('should assign aria-haspopup to all toggle buttons for the sub lists', function() {
+      var $toggles = this.$fixture.find('.js-sublist-toggle');
+      var $popupToggles = this.$fixture.find('.js-sublist-toggle[aria-haspopup="true"]');
+      expect($toggles.length).to.be.ok;
+      expect($toggles.length).to.equal($popupToggles.length);
     });
 
     it('should assign an aria label to the whole nav', function() {
@@ -92,33 +113,43 @@ describe('SiteNav', function() {
     });
   });
 
-  describe('handleChange()', function() {
-    it('should set the list aria hidden label to the opposite of checked',
-        function() {
-      var $toggle = this.$fixture.find('.js-toggle');
-      var $list = this.$fixture.find('#site-menu ul');
-      var testEv = {currentTarget: $toggle};
-
-      this.siteNav.handleChange(testEv);
-      expect($list.attr('aria-hidden')).to.not.equal($toggle.is(':checked'));
+  describe('toggle()', function() {
+    it('should show and hide the menu', function() {
+      this.siteNav.toggle();
+      expect(isOpen(this.siteNav)).to.be.true;
+      this.siteNav.toggle();
+      expect(isClosed(this.siteNav)).to.be.true;
     });
   });
 
-  describe('hover()', function() {
+  describe('toggleSublist()', function() {
+    it('should show and hide the sublist', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $sublistToggle = this.$fixture.find('.js-sublist-toggle');
+      var testEv = {target: $sublistToggle};
+      this.siteNav.toggleSublist(testEv);
+      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
+      this.siteNav.toggleSublist(testEv);
+      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
+    });
+  });
 
-    beforeEach(function() {
-      this.$withDropdown = this.$fixture.find('.site-nav__item--with-dropdown');
-      this.$list = this.$fixture.find('#site-menu ul');
+  describe('handleFocusBody()', function() {
+    it('should show the sublist when focused', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $link = $sublistParent.find('a')[0];
+      var testEv = {target: $link};
+      this.siteNav.handleFocusBody(testEv);
+      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
     });
 
-    it('should show items on mouseenter', function() {
-      this.siteNav.handleMouseEnter({currentTarget: this.$withDropdown.get(0)});
-      expect(this.$list.attr('aria-hidden')).to.equal('false');
-    });
-
-    it('should hide items on mouseexit', function() {
-      this.siteNav.handleMouseExit({currentTarget: this.$withDropdown.get(0)});
-      expect(this.$list.attr('aria-hidden')).to.equal('true');
+    it('should hide the sublist when focus leaves the parent', function() {
+      var $sublistParent = this.$fixture.find('.js-sublist-parent');
+      var $otherLink = this.$fixture.find('.site-nav__item .is-disabled')[0];
+      var testEv = {target: $otherLink};
+      this.siteNav.showSublist($sublistParent);
+      this.siteNav.handleFocusBody(testEv);
+      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
     });
   });
 });
