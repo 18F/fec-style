@@ -1,15 +1,15 @@
 'use strict';
 
-/* global require, module, document */
+/* global document */
 
 var $ = require('jquery');
 
 /** SiteNav module
-  * On mobile: Controls the visibility of the the hamburger menu and sublists
-  * On desktop: Controls the visibility of dropdown sublists on hover and focus
-  * @constructor
-  * @param {object} selector - CSS selector for the nav component
-  */
+ * On mobile: Controls the visibility of the the hamburger menu and sublists
+ * On desktop: Controls the visibility of dropdown sublists on hover and focus
+ * @constructor
+ * @param {object} selector - CSS selector for the nav component
+ */
 
 function SiteNav(selector) {
   this.$body = $(selector);
@@ -18,13 +18,13 @@ function SiteNav(selector) {
 
   this.assignAria();
 
-  /** Open and close the menu on mobile **/
+  // Open and close the menu on mobile
   this.$toggle.on('click', this.toggle.bind(this));
 
-  /** Mobile: open sublists with the toggle buttons **/
+  // Mobile: open sublists with the toggle buttons
   this.$body.on('click', '.js-sublist-toggle', this.toggleSublist.bind(this));
 
-  /** Desktop: open and close sublists on hover and focus **/
+  // Desktop: open and close sublists on hover and focus
   this.$body.on('mouseenter', '.js-sublist-parent', this.showSublist.bind(this));
   this.$body.on('mouseleave', '.js-sublist-parent', this.hideSublist.bind(this));
   $(document.body).on('focusin', this.handleFocusBody.bind(this));
@@ -78,9 +78,9 @@ SiteNav.prototype.hideSublist = function(e, $selector) {
 SiteNav.prototype.handleFocusBody = function(e) {
   var $target = $(e.target);
   var $sublistParent = $target.closest('.js-sublist-parent');
-  if ( this.$openSublist !== null && !this.$openSublist.has($target).length ) {
+  if (this.$openSublist && !this.$openSublist.has($target).length) {
     this.hideSublist(e, this.$openSublist);
-  } else if ( $sublistParent ) {
+  } else if ($sublistParent) {
     this.showSublist(e);
   }
 };
