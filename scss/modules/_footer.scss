@@ -27,6 +27,12 @@
     font-weight: bold;
   }
 
+  .address__subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 2rem;
+  }  
+
   @include media($med) {
     .seal {
       @include span-columns(6);
