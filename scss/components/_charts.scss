@@ -18,49 +18,34 @@ $tooltip-border-color: #999;
   }
 }
 
+.chart__key__item {
+  &:nth-of-type(1) .swatch {
+    background: $primary;
+  }
+
+  &:nth-of-type(2) .swatch {
+    background: $primary-contrast;
+  }
+}
+
 .chart-series__bar {
   background: $primary;
   position: relative;
-}
 
-.data--disbursement,
-.data--disbursements,
-.data--total_disbursements_period,
-.data--independent_contributions_period {
-  background: $primary;
-  .chart-series__bar__tooltip {
-    color: $primary;
-  }
-}
-
-.data--receipts,
-.data--total_receipts_period,
-.data--independent_expenditures_period {
-  background: $primary-contrast;
-  .chart-series__bar__tooltip {
-    color: $primary-contrast;
-  }
-}
-
-.data--cash,
-.data--cash_on_hand_end_period {
-  background: $primary-contrast;
-  .chart-series__bar__tooltip {
-    color: $primary-contrast;
+  &:nth-of-type(1) {
+    background: $primary;
+    .chart-series__bar__tooltip {
+      color: $primary;
+    }
   }
 
-}
-
-.data--debt,
-.data--debts_owed_by_committee {
-  background: $primary;
-  .chart-series__bar__tooltip {
-    color: $primary;
+  &:nth-of-type(2) {
+    background: $primary-contrast;
+    .chart-series__bar__tooltip {
+      color: $primary-contrast;
+    }
   }
 }
-
-.data--support { background: $primary; }
-.data--oppose { background: $primary-contrast; }
 
 .chart-series {
   position: relative;
