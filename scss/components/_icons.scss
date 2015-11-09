@@ -16,3 +16,16 @@
     @include u-background-image('i-right--primary');
   }
 }
+
+
+// Classes for vertically centering and adding slight margin to inline icons
+
+.icon--inline--right {
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.icon--inline--left {
+  margin-right: 1rem;
+  vertical-align: middle;
+}
