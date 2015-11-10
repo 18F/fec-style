@@ -1,6 +1,27 @@
+/* global process */
+
 var istanbul = require('browserify-istanbul');
 
 module.exports = function(config) {
+  var browserify = {
+    debug: true,
+    transform: ['stringify']
+  };
+
+  var reporters = ['progress'];
+
+  if (process.argv.indexOf('--debug') === -1) {
+    browserify.transform.push(
+      istanbul({
+        ignore: [
+          'tests/unit/**/*',
+          '**/templates/**'
+        ]
+      })
+    );
+    reporters.push('coverage');
+  }
+
   config.set({
     frameworks: ['browserify', 'phantomjs-shim', 'mocha', 'chai-sinon'],
 
@@ -14,18 +35,7 @@ module.exports = function(config) {
       'js/**/*.js': ['browserify']
     },
 
-    browserify: {
-      debug: true,
-      transform: [
-        'stringify',
-        istanbul({
-          ignore: [
-            'tests/unit/**',
-            '**/templates/**'
-          ]
-        })
-      ]
-    },
+    browserify: browserify,
 
     coverageReporter: {
       subdir: '.',
@@ -36,7 +46,7 @@ module.exports = function(config) {
       ]
     },
 
-    reporters: ['progress', 'coverage'],
+    reporters: reporters,
     browsers: ['Chrome'],
     port: 9876
   });
