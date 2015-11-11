@@ -4,7 +4,6 @@ var $ = require('jquery');
 var modal = require('./templates/modal.html');
 
 function Modal(trigger, parent) {
-  this.isOpen = false;
   this.$body = $(modal);
   this.$parent = $(parent || 'body');
 
