@@ -16,13 +16,9 @@
 }
 
 .modal__title {
-  font-family: $sans-serif;
-  margin-bottom: .5rem;
-}
-
-.modal__subtitle {
-  font-family: $sans-serif;
   border-bottom: 1px solid;
+  font-family: $sans-serif;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
 }
 

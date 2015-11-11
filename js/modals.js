@@ -14,16 +14,10 @@ function Modal(trigger, parent) {
 
 Modal.prototype.addModal = function() {
   this.$parent.append(this.$body);
-  this.timeToDownload();
 }
 
 Modal.prototype.destroyModal = function() {
   this.$body.remove();
-}
-
-Modal.prototype.timeToDownload = function() {
-  var time = Math.floor(Math.random() * (15 - 2)) + 2;
-  this.$body.find('.js-random-time').text(time + ' minutes');
 }
 
 module.exports = {Modal: Modal};
