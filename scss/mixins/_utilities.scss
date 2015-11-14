@@ -46,6 +46,12 @@
   margin: 0 !important;
 }
 
+.u-blank-space {
+  display: inline-block;
+  border-bottom: 1px solid $cream;
+  width: 5rem;
+}
+
 // u-font-color()
 //
 // Used to set the color of all child elements

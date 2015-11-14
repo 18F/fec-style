@@ -27,6 +27,12 @@
   text-transform: uppercase;
 }
 
+.label--help {
+  display: block;
+  font-family: $sans-serif;
+  font-style: italic;
+  margin-bottom: .5rem;
+}
 // Combo
 //
 // On medium and up, displays input and button right next to each other. On small screens they're stacked.
