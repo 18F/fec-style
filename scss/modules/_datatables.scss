@@ -11,6 +11,10 @@
   position: relative;
 }
 
+.dataTables_wrapper--panel {
+  overflow-x: hidden;
+}
+
 .datatable__container {
   @include clearfix();
   @include transition(opacity, .2s);
