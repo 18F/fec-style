@@ -87,36 +87,44 @@
   }
 }
 
-// For tooltips on regular DOM elements (rather than on maps),
-// Wrap the .tooltip-trigger and .tooltip in .tooltip__container
-// And apply the .tooltip-trigger class to the triggering element
-
-.tooltip__trigger {
-  @include u-background-image('i-info--primary--small', 100% 50%);
-  background-size: 1em;
-  cursor: pointer;
-  display: inline-block;
-  padding-right: 1.5em;
-}
+// Tooltips to learn more
+//
+// For tooltips on regular DOM elements (rather than on maps) that contain additional info
+//
+// Markup:
+// <div class="tooltip__container">
+//   <label class="label tooltip__trigger-text">Select something</label>
+//   <button class="tooltip__trigger"><span class="u-visually-hidden">Learn more</span></button>
+//   <div class="tooltip tooltip--under">
+//     <p class="tooltip__content">Learn more about this thing!</p>
+//   </div>
+//   <select><option>Select one</option></select>
+// </div>
+//
+// Styleguide components.learn-tooltips
 
 .tooltip__container {
+  display: block;
+
+  .tooltip__trigger-text {
+    display: inline-block;
+  }
+
   .tooltip {
     display: none;
   }
-
-  &:hover {
-    .tooltip {
-      display: block;
-    }
-  }
 }
 
+.tooltip__trigger {
+  @include u-background-image('i-info--primary--small', 100% 50%);
+  background-size: contain;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.5em;
+  padding-right: 1.5em;
 
-// .tooltip-trigger + .tooltip {
-//   display: none;
-// }
-
-// .tooltip-trigger:hover ~ .tooltip,
-// .tooltip-trigger:focus ~ .tooltip {
-//   display: block;
-// }
+  &:hover + .tooltip,
+  &:focus + .tooltip {
+    display: block;
+  }
+}
