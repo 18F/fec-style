@@ -122,6 +122,8 @@
   display: inline-block;
   height: 1.5em;
   padding-right: 1.5em;
+  vertical-align: middle;
+  width: 1.5em;
 
   &:hover + .tooltip,
   &:focus + .tooltip {
