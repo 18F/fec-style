@@ -1,5 +1,5 @@
 // Results Info
-// 
+//
 // The box of controls and info above and below datatables
 //
 // Styleguide components.results-info
@@ -55,8 +55,12 @@
 @include media($med) {
   .results-info__null {
     float: right;
-  }  
-  
+  }
+
+  .results-info__download {
+    float: left;
+  }
+
   .dataTables_wrapper {
     .results-info {
       .dataTables_length,
@@ -73,7 +77,9 @@
     }
 
     .dataTables_length {
-      padding: 0 0 0 0;
+      clear: left;
+      margin-top: 1rem;
+      padding: 0;
     }
 
     .dataTables_info {
@@ -82,9 +88,10 @@
     }
 
     .dataTables_paginate {
+      margin-top: 1rem;
       padding-top: 0;
     }
-  }    
+  }
 }
 
 // BREAKPOINT: LARGE

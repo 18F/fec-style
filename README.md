@@ -2,14 +2,14 @@
 [![Test Coverage](https://img.shields.io/codecov/c/github/18F/fec-style/master.svg)](https://codecov.io/github/18F/fec-style)
 
 ## Campaign finance for everyone
-The Federal Election Commission (FEC) releases information to the public about money that’s raised and spent in federal elections — that’s elections for US president, Senate, and House of Representatives. 
+The Federal Election Commission (FEC) releases information to the public about money that’s raised and spent in federal elections — that’s elections for US president, Senate, and House of Representatives.
 
 Are you interested in seeing how much money a candidate raised? Or spent? How much debt they took on? Who contributed to their campaign? The FEC is the authoritative source for that information.
 
-betaFEC is a collaboration between [18F](http://18f.gsa.gov) and the FEC. It aims to make campaign finance information more accessible (and understandable) to all users. 
+betaFEC is a collaboration between [18F](http://18f.gsa.gov) and the FEC. It aims to make campaign finance information more accessible (and understandable) to all users.
 
 ## FEC repositories
-We welcome you to explore, make suggestions, and contribute to our code. 
+We welcome you to explore, make suggestions, and contribute to our code.
 
 This repository, [fec-style](https://github.com/18F/fec-style), houses our shared styles and user interface components.
 
@@ -21,7 +21,7 @@ This repository, [fec-style](https://github.com/18F/fec-style), houses our share
 - [fec-cms](https://github.com/18F/fec-cms): the content management system (CMS) for betaFEC
 
 ## Get involved
-We’re thrilled you want to get involved! 
+We’re thrilled you want to get involved!
 - Read our [contributing guidelines](https://github.com/18F/openfec/blob/master/CONTRIBUTING.md). Then, [file an issue](https://github.com/18F/fec/issues) or submit a pull request.
 - [Send us an email](mailto:betafeedback@fec.gov).
 - If you’re a developer, follow the installation instructions in the README.md page of each repository to run the apps on your computer.
@@ -99,6 +99,32 @@ We use the KSS standard for documenting our Sass. This is both readable to human
 // Styleguide 2.1.3.
 //
 ```
+
+### Versioning
+We use [Semantic Versioning](http://semver.org/):
+
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+>
+> MAJOR version when you make incompatible API changes,
+> MINOR version when you add functionality in a backwards-compatible manner, and
+> PATCH version when you make backwards-compatible bug fixes.
+> Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+When merging into master, update the package version and push to npm:
+
+    npm version patch
+    npm publish
+    git push --tags
+
+Use `npm version minor` or `npm version major` for minor and major updates, respectively. For details on npm versioning, see `npm version --help`.
+
+Downstream applications should pin versions as appropriate. For example, to get bug fixes but not new features, pin to the minor version:
+
+    {
+        "dependencies": {
+            "fec-style": "~1.0.0"
+        }
+    }
 
 ## Copyright and licensing
 This project is in the public domain within the United States, and we waive worldwide copyright and related rights through [CC0 universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/). Read more on our license page.
