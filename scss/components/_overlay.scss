@@ -21,6 +21,10 @@
   }
 }
 
+.overlay--modal {
+  z-index: $z6;
+}
+
 .overlay--neutral {
   background-color: transparent;
 
