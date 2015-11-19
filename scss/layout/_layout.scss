@@ -57,8 +57,14 @@
   position: relative;
 
   @include media($med) {
-    @include span-columns(9);
+    @include span-columns(8);
   }
+}
+
+.main__title {
+  @include heading(display);
+  border-bottom: 2px solid $primary;
+  margin-bottom: 3rem;
 }
 
 .main__content--full {
