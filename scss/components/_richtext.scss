@@ -2,9 +2,13 @@
 //
 // These are styles specifically for content output by the CMS
 
-.rich-text {  
+.rich-text {
   padding-top: 2rem;
-  
+
+  li {
+    font-size: 1.6rem;
+  }
+
   ul {
     margin-bottom: 1rem;
 
@@ -25,7 +29,7 @@
     li {
       list-style-type: decimal;
       margin: 0;
-      padding-left: 1rem;      
+      padding-left: 1rem;
     }
   }
 
