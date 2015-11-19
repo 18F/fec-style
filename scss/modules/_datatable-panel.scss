@@ -1,13 +1,9 @@
 // Datatable Panel
-// 
+//
 // Styleguide modules.datatable-panel
 
 .panel__main {
   @include transform(translate3D(0%, 0, 0));
-  // Still working out bugs but keeping this in for now:
-  // @include transition-property(transform); 
-  // @include transition-duration(.2s);
-  // @include transition-timing-function(ease-in);
   @include transition(left .2s ease-in);
   left: 0;
   clear: both;
@@ -16,22 +12,21 @@
   width: 200%;
 
   .data-table {
+    float: left;
     width: 50% !important;
   }
 }
 
 .results-info {
   position: relative;
-  
+
 }
 .panel__overlay {
   @include transition(opacity .2s);
   background-color: $cream;
   overflow: hidden;
   padding: 1rem;
-  position: absolute;
-  top: 0;
-  right: 0;
+  float: right;
   width: 50%;
   opacity: 0;
 }
@@ -44,27 +39,28 @@
     position: relative;
   }
 
+  .data-table {
+    position: absolute;
+  }
+
   .panel__overlay {
     min-height: 100vh;
     opacity: 1;
   }
 
   .panel__main {
-    // @include transform(translate3D(-50%, 0, 0));
     left: -100%;
-    min-height: 110vh;
-    max-height: 130vh;
     overflow: hidden;
-  } 
+  }
 
   .panel {
     min-height: 100vh;
-  }   
+  }
 }
 
 .panel {
   background-color: rgba($ivory, .3);
-  border: 1px solid $ivory;  
+  border: 1px solid $ivory;
   font-family: $sans-serif;
   padding: 1rem;
 
@@ -107,10 +103,10 @@
 }
 
 // Panel Navigation
-// 
+//
 // The top bar of the panel
-// 
-// .panel__link   - Link to source page or document. Floats to the left on desktop and to the right on mobile 
+//
+// .panel__link   - Link to source page or document. Floats to the left on desktop and to the right on mobile
 // .panel__close  - Closes the panel. Shows up as a back arrow on the left on mobile and an x on the right on desktop
 
 .panel__navigation {
@@ -126,7 +122,6 @@
 
 .panel__close {
   background-image: url('../img/i-left-2--primary.png');
-  background-image: url('../img/i-left-2--primary.svg');  
   background-position: 1rem;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -181,7 +176,7 @@
     text-align: left;
     margin-bottom: 0;
   }
-  
+
   .panel__link {
     float: left;
   }
@@ -210,7 +205,7 @@
       min-height: 150rem;
       height: auto;
       overflow: visible;
-    }  
+    }
 
     .panel__overlay {
       min-height: 150rem;
