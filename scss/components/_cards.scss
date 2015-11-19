@@ -5,6 +5,7 @@
 //
 // .card--mini            - For use in sidebars
 // .card--horizontal      - Image next to text
+// .card--feature         - Image in a block next to content
 // .card--wide            - Card takes up half of grid
 //
 // Markup:
@@ -27,7 +28,7 @@
   margin-bottom: 2rem;
   padding: 2rem;
   text-align: center;
-  
+
   @include media($med) {
     @include span-columns(2)
   }
@@ -39,6 +40,11 @@
   &:hover {
     border-bottom: none;
   }
+}
+
+.card--full {
+  width: 100%;
+  margin: 0;
 }
 
 .card__content {
@@ -96,6 +102,26 @@
 
   .card__content {
     padding: 0;
+  }
+}
+
+.card--feature {
+  border-radius: 4px;
+  border: none;
+  padding: 0;
+
+  .card__image__container {
+    @include span-columns(1 of 4);
+    border-radius: 4px 0 0 4px;
+  }
+
+  .card__image {
+    max-width: 100%;
+  }
+
+  .card__content {
+    @include span-columns(3 of 4);
+    padding: 1rem 1rem 1rem 0;
   }
 }
 
@@ -165,11 +191,11 @@
       max-width: 10rem;
       display: inline;
       float: none;
-    }    
+    }
   }
 }
 
-// For lists of links, such as on data landing page cards 
+// For lists of links, such as on data landing page cards
 .card__links {
   font-family: $sans-serif;
   font-weight: normal;
@@ -225,10 +251,20 @@
   font-weight: bold;
 }
 
+// Neutral cards
+
+.card--neutral {
+  background-color: $beige;
+
+  .card__image__container {
+    background-color: $primary;
+  }
+}
+
 // Tiled cards
-// 
+//
 // For showing multiple rows of cards, use:
-// 
+//
 // .tiled-cards
 //
 // Styleguide components.cards.tiled-cards
