@@ -116,6 +116,8 @@ When merging into master, update the package version and push to npm:
     npm publish
     git push --tags
 
+Use `npm version minor` or `npm version major` for minor and major updates, respectively. For details on npm versioning, see `npm version --help`.
+
 Downstream applications should pin versions as appropriate. For example, to get bug fixes but not new features, pin to the minor version:
 
     {
