@@ -26,13 +26,13 @@
     line-height: 1.15;
 
     @include media($med) {
-      font-size: 3.0rem;
+      font-size: 3rem;
     }
   }
 
   @if $level == h2 {
     font-family: $serif;
-    font-size: 2.0rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 1.2;
 
