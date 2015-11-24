@@ -28,6 +28,17 @@
   }
 }
 
+// BREAKPOINT: MEDIUm
+@include media($med) {
+  .cycle-select {
+    @include span-columns(2 of 12);
+  }
+
+  .subcycle-select {
+    @include span-columns(10 of 12);
+  }
+}
+
 // BREAKPOINT: LARGE
 @include media($lg) {
   .cycle-select {
