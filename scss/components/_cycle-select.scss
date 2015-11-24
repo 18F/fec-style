@@ -28,32 +28,24 @@
   }
 }
 
-.subcycle--all-selected {
-  .button--neutral {
-    background-color: $beige-dark;
-    border: 2px solid $primary;
+// BREAKPOINT: MEDIUm
+@include media($med) {
+  .cycle-select {
+    @include span-columns(2 of 12);
   }
 
-  .button--primary {
-    @extend .button--primary.is-active;
+  .subcycle-select {
+    @include span-columns(10 of 12);
   }
 }
 
-// BREAKPOINT: MEDIUM
-@include media($med) {
+// BREAKPOINT: LARGE
+@include media($lg) {
   .cycle-select {
     @include span-columns(2 of 8);
   }
 
   .subcycle-select {
     @include span-columns(6 of 8);
-  }
-}
-
-// BREAKPOINT: LARGE
-@include media($lg) {
-  .subcycle-select label:first-child {
-    @include span-columns(2 of 8);
-    margin: 0;
   }
 }
