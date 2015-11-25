@@ -164,6 +164,13 @@
     border-right: 1px solid;
   }
 
+  .entity__election {
+    @include span-columns(6);
+  }
+}
+
+// BREAKPOINT: LARGE
+@include media($lg) {
   .entity__cycle {
     @include span-columns(8);
   }
@@ -173,9 +180,4 @@
     clear: none;
     padding-top: 0;
   }
-}
-
-// BREAKPOINT: LARGE
-@include media($lg) {
-
 }
