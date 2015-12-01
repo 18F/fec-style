@@ -256,6 +256,14 @@
   }
 }
 
+.button--go {
+  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
+
+  &.button--secondary {
+    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
+  }
+}
+
 .button--browse {
   @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
 }
@@ -370,13 +378,13 @@
 
 .button--close--primary {
   @include u-background-image('../img/i-x--primary');
-  height: 4rem;  
+  height: 4rem;
   width: 4rem;
 }
 
 .button--close--primary-contrast {
   @include u-background-image('../img/i-x--primary-contrast');
-  height: 4rem;  
+  height: 4rem;
   width: 4rem;
 }
 

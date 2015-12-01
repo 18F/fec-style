@@ -1,0 +1,27 @@
+// Side nav
+
+.side-nav__item {
+  padding: 1rem 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.side-nav__link {
+  border-bottom: none;
+  display: block;
+  font-family: $sans-serif;
+  padding: 4px;
+  text-transform: uppercase;
+
+  &:hover,
+  &.is-active {
+    background-color: $beige;
+    font-weight: bold;
+  }
+}

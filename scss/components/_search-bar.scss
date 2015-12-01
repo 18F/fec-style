@@ -22,18 +22,25 @@
 //
 // Styleguide components.search-bar
 
-.search__select {
-  border-radius: 4px 0 0 4px;
-  margin-right: -2px;
-  height: 3.6rem;
-  width: 14rem;
-  float: left;
-}
-
 .combo--search {
   .combo__input {
     border-radius: 0 4px 4px 0;
-    width: calc(100% - 14rem)
+    width: calc(100% - 14rem);
+  }
+}
+
+.combo--search--mini {
+  .combo__input {
+    border-radius: 4px 0 0 4px;
+    float: left;
+    width: calc(100% - 5.6rem);
+  }
+
+  .combo__button {
+    border-radius: 0 4px 4px 0;
+    float: left;
+    height: 3.6rem;
+    width: 5.6rem;
   }
 }
 

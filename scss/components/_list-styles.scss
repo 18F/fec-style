@@ -1,5 +1,5 @@
 // List Styles
-// 
+//
 // These are classes to be applied to lists to give them particular styles
 //
 // .list--bulleted  - Bulleted list (for ul)
@@ -32,7 +32,7 @@
 .list--flat {
   @include clearfix();
   padding: 0;
-  
+
   li {
     float: left;
     margin-right: 1rem;
@@ -54,7 +54,7 @@
 }
 
 // Checkbox Lists
-// 
+//
 // For showing a list of completed or uncompleted features
 //
 // .is-completed     - Checkbox inside
