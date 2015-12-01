@@ -290,12 +290,12 @@
     @include u-background-image('i-search--primary-contrast');
   }
 
-  &.secondary {
+  &.button--secondary {
     @include u-background-image('i-search--secondary');
   }
 
   &.button--secondary-contrast {
-    @include u-background-image('i-search--primary-contrast');
+    @include u-background-image('i-search--secondary-contrast');
   }
 }
 
