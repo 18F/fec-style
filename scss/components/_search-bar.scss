@@ -22,6 +22,14 @@
 //
 // Styleguide components.search-bar
 
+.search__select {
+  border-radius: 4px 0 0 4px;
+  margin-right: -2px;
+  height: 3.6rem;
+  width: 14rem;
+  float: left;
+}
+
 .combo--search {
   .combo__input {
     border-radius: 0 4px 4px 0;
