@@ -8,6 +8,7 @@
 //
 // Markup:
 // <div class="container">
+// <div class="sidebar-container">
 // <aside class="sidebar {{modifier_class}}">
 //  <h4 class="sidebar__title">Sidebar title</h4>
 //  <div class="sidebar__content">
@@ -20,18 +21,31 @@
 //  </div>
 // </aside>
 // </div>
+// </div>
 //
 // Styleguide components.sidebar
 
-.sidebar {
+.sidebar-container {
+  @include clearfix();
+  position: relative;
+  min-height: 1px;
+
   @include media($med) {
     @include span-columns(3);
     @include shift(1);
 
-    .card,
-    .card--mini {
-      @include span-columns(3 of 3);
+    .card {
+      width: 100%;
+      margin: 0;
     }
+  }
+}
+
+.sidebar {
+  &.is-fixed {
+    position: fixed;
+    top: 2rem;
+    left: auto;
   }
 }
 
@@ -46,7 +60,7 @@
   padding: 2rem;
 }
 
-.sidebar--left {
+.sidebar-container--left {
   @include media($med) {
     @include shift(0);
   }
