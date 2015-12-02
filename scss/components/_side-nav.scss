@@ -22,6 +22,9 @@
   &:hover,
   &.is-active {
     background-color: $beige;
+  }
+
+  &.is-active {
     font-weight: bold;
   }
 }
