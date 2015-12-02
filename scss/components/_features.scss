@@ -32,15 +32,15 @@
 
 @include media($med) {
   .feature {
-    @include span-columns(6);
-
-    &:nth-child(2) {
-      margin-right: 0;
-    }
-
     .card {
-      @include span-columns(6 of 6);
+      margin-bottom: 2rem;
       min-height: 19.5rem;
+    }
+  }
+
+  .feature--mini {
+    .card {
+      min-height: 0;
     }
   }
 
@@ -49,17 +49,16 @@
   }
 
   &.feature--bulleted {
-    display: list-item;
+    display: list-item !important; // Necessary to override span-column calls
     font-family: $serif;
   }
 }
 
-// BREAKPOIN: LARGE
+// BREAKPOINT: LARGE
 // Features go four to a row
 
 @include media($lg) {
   .feature {
-    @include span-columns(3);
     padding-top: 0;
 
     &:nth-child(2) {
@@ -67,7 +66,6 @@
     }
 
     .card {
-      @include span-columns(3 of 3);
       min-height: 34rem;
     }
 
