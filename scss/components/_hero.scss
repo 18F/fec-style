@@ -50,6 +50,8 @@
 }
 
 .hero__action {
+  @include span-columns(10);
+  @include shift(1);
   border: none;
   font-family: $sans-serif;
   text-align: center;

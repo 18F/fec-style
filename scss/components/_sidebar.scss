@@ -37,6 +37,8 @@
 }
 
 .sidebar {
+  font-family: $sans-serif;
+
   &.is-fixed {
     position: fixed;
     top: 2rem;
@@ -45,11 +47,11 @@
 }
 
 .sidebar__title {
-  font-family: $sans-serif;
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0;
   padding: 1rem 2rem;
+  text-transform: uppercase;
 }
 
 .sidebar__content {
