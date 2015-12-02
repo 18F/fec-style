@@ -11,7 +11,12 @@
   padding: 2rem 0;
 }
 
-@include media($med) {
+.option__aside {
+  @include span-columns(4);
+  padding-top: 2rem;
+}
+
+@include media($lg) {
   .option__content {
     @include span-columns(6 of 9);
   }
@@ -19,5 +24,6 @@
   .option__aside {
     @include span-columns(2 of 9);
     @include shift(1);
+    padding-top: 0;
   }
 }
