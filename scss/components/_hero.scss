@@ -12,7 +12,7 @@
 //    <h1 class="t-display">Explore campaign finance data</h1>
 //    <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
 //    <div class="hero__content">
-//      <button>Centered call out component</p>
+//      <a class="hero__action hero__down">Centered call out component</a>
 //    </div>
 //    </div>
 //  </div>
@@ -43,6 +43,29 @@
   @include u-bg--secondary();
   @include u-font-color($ivory);
   border-bottom: 10px solid $secondary-contrast;
+
+  .hero__action {
+    color: $secondary-contrast;
+  }
+}
+
+.hero__action {
+  @include span-columns(10);
+  @include shift(1);
+  border: none;
+  font-family: $sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include media($lg) {
+    @include span-columns(3 of 8);
+    @include shift(2.5);
+  }
+}
+
+.hero__down {
+  @include u-background-image('i-arrow--down--secondary-contrast', 50% 100%);
+  padding-bottom: 3rem;
 }
 
 .hero__content {
@@ -102,14 +125,14 @@
     right: 0;
     bottom: 0;
     padding: .5rem;
-  }  
+  }
 
   @include media($lg) {
     .hero__heading {
       @include span-columns(6);
       @include shift(3);
     }
-  }   
+  }
 }
 
 .hero__banner--monument {
@@ -124,7 +147,7 @@
     background-image: url('../img/fec-office.jpg');
     background-position: right center;
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: cover;
     height: 20rem;
   }
 

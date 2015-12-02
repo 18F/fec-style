@@ -1,0 +1,29 @@
+// Option components
+//
+// Used for presenting a list of options, each of which is a row with main
+// content and an aside. Used on the landing_page template.
+//
+//
+
+.option {
+  @include clearfix();
+  border-top: 1px solid $primary;
+  padding: 2rem 0;
+}
+
+.option__aside {
+  @include span-columns(4);
+  padding-top: 2rem;
+}
+
+@include media($lg) {
+  .option__content {
+    @include span-columns(6 of 9);
+  }
+
+  .option__aside {
+    @include span-columns(2 of 9);
+    @include shift(1);
+    padding-top: 0;
+  }
+}

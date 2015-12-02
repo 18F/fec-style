@@ -61,6 +61,15 @@
   }
 }
 
+.main__content--right {
+  @include clearfix();
+  position: relative;
+
+  @include media($med) {
+    @include span-columns(9);
+  }
+}
+
 .main__title {
   @include heading(display);
   border-bottom: 2px solid $primary;

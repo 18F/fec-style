@@ -14,7 +14,7 @@
   top: 0;
   width: 75%;
   z-index: $z-glossary;
-  
+
   &[aria-hidden=true] {
     display: block !important;
     right: -100%;
@@ -67,17 +67,18 @@
 // .term--p       - Used when the term is in a body paragaraph of text, reduces padding and adds margin
 
 .term {
-  @include u-background-image('i-term--primary', 100% 40%);
+  @include u-background-image('i-term--primary', 100% 50%);
   @include transition(background-color, .2s, box-shadow, .2s, color, .2s);
   background-color: transparent;
   box-shadow: 0 0 0 4px transparent;
   border-bottom: none;
   cursor: pointer;
-  padding-right: 1em;
+  margin-right: 2px;
+  padding-right: .9em;
 
   &:focus,
   &:hover {
-    @include u-background-image('i-term--secondary', 100% 40%);
+    @include u-background-image('i-term--secondary', 100% 50%);
     box-shadow: 0 0 0 4px rgba($secondary-contrast, .7);
     background-color: rgba($secondary-contrast, .7);
     color: $secondary;
