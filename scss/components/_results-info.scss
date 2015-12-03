@@ -12,11 +12,13 @@
 }
 
 .results-info__title {
+  border: none;
+  float: left;
   margin: 0;
 }
 
 .results-info--top {
-  padding: 2rem 1rem;
+  border-top: none;
 }
 
 .results-info--simple {
@@ -54,11 +56,13 @@
 
 @include media($med) {
   .results-info__null {
+    clear: right;
     float: right;
+    margin-top: 1.2rem;
   }
 
   .results-info__download {
-    float: left;
+    float: right;
   }
 
   .dataTables_wrapper {
@@ -78,7 +82,7 @@
 
     .dataTables_length {
       clear: left;
-      margin-top: 1rem;
+      margin-top: .5rem;
       padding: 0;
     }
 
@@ -88,7 +92,6 @@
     }
 
     .dataTables_paginate {
-      margin-top: 1rem;
       padding-top: 0;
     }
   }
@@ -98,9 +101,5 @@
 @include media($lg) {
   .results-info {
     padding: 1rem 0;
-  }
-
-  .results-info--top {
-    padding: 2rem 0;
   }
 }
