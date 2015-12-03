@@ -1,0 +1,57 @@
+// Downloads
+
+.downloads {
+  background-color: #efdecd; // Rename to variable
+  border-top: 3px solid $primary;
+  bottom: 0;
+  color: $primary;
+  font-family: $sans-serif;
+  padding: 1.5rem 0;
+  position: fixed;
+  width: 100%;
+}
+
+.downloads__title {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.download {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+
+  &.is-pending {
+    @include u-background-image('i-ellipsis--primary', 0% 50%);
+  }
+
+  &.is-complete {
+    @include u-background-image('i-check--primary', 0% 50%);
+  }
+}
+
+.download__button {
+  margin: 0 1rem;
+}
+
+@include media($med) {
+  .downloads__list {
+    @include span-columns(6);
+  }
+
+  .downloads__message {
+    @include span-columns(6);
+  }
+}
+
+@include media($med) {
+  .downloads__list {
+    @include span-columns(4);
+  }
+
+  .downloads__message {
+    @include span-columns(8);
+  }
+}
+
