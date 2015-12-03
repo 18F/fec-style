@@ -241,18 +241,18 @@
 // Styleguide components.buttons.icon-buttons
 
 .button--previous {
-  @include u-icon-button('i-left--primary', $primary);
+  @include u-icon-button('i-left--primary', transparent);
 
   &.button--secondary {
-    @include u-icon-button('i-left--secondary', $secondary);
+    @include u-icon-button('i-left--secondary', transparent);
   }
 }
 
 .button--next {
-  @include u-icon-button('i-right--primary', $primary, right);
+  @include u-icon-button('i-right--primary', transparent, right);
 
   &.button--secondary {
-    @include u-icon-button('i-right--secondary', $secondary, right);
+    @include u-icon-button('i-right--secondary', transparent, right);
   }
 }
 

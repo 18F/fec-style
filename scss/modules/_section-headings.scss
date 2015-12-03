@@ -32,6 +32,26 @@
   margin-bottom: 1rem;
 }
 
+.heading__action__top {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.heading__action__left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.heading__action__right {
+  float: left;
+  text-align: right;
+}
+
+.heading__link-name {
+  display: block;
+}
+
 .heading__message {
   border-top: 0;
   margin-top: -1rem;

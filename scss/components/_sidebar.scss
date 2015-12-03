@@ -58,6 +58,10 @@
   @include clearfix();
   background-color: $neutral;
   padding: 2rem;
+
+  p {
+    font-size: 1.4rem;
+  }
 }
 
 .sidebar-container--left {
