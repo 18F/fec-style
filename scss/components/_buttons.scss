@@ -394,3 +394,11 @@
   height: 4rem;
   width: 4rem;
 }
+
+.button--cancel {
+  @include u-background-image('../img/i-x--primary-contrast');
+  background-color: $primary;
+  border-radius: 2rem;
+  height: 2rem;
+  width: 2rem;
+}

@@ -14,6 +14,7 @@
 .downloads__title {
   display: block;
   font-size: 1.6rem;
+  font-weight: bold;
   margin-bottom: 2rem;
 }
 
@@ -23,35 +24,30 @@
   padding-left: 2rem;
 
   &.is-pending {
-    @include u-background-image('i-ellipsis--primary', 0% 50%);
+    @include u-background-image('../img/i-ellipsis--primary', 0% 30%);
   }
 
   &.is-complete {
-    @include u-background-image('i-check--primary', 0% 50%);
+    @include u-background-image('../img/i-check--primary', 0% 30%);
   }
+}
+
+.download__name {
+  text-decoration: underline;
 }
 
 .download__button {
-  margin: 0 1rem;
+  margin: 0 2rem;
+  padding: .5rem;
 }
 
-@include media($med) {
-  .downloads__list {
-    @include span-columns(6);
-  }
-
-  .downloads__message {
-    @include span-columns(6);
-  }
+.download__cancel {
+  position: relative;
+  top: 4px;
 }
 
-@include media($med) {
-  .downloads__list {
-    @include span-columns(4);
-  }
-
-  .downloads__message {
-    @include span-columns(8);
-  }
+.download__message {
+  display: inline-block;
+  margin-left: 4rem;
+  width: auto;
 }
-
