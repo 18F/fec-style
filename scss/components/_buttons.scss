@@ -402,3 +402,8 @@
   height: 2rem;
   width: 2rem;
 }
+
+.button--export {
+  @include u-background-image('../img/i-export--primary-contrast', 1rem .5rem);
+  padding-left: 4rem;
+}
