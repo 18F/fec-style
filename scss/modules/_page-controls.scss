@@ -30,8 +30,9 @@
 
 .page-controls {
   @include clearfix();
-  width: 100%;
+  padding: 0 2rem;
   top: -200px; // Setting this property so we can animate it when .is-fixed is applied
+  width: 100%;
 
   .container {
     padding: 0;
@@ -71,8 +72,8 @@
     border-bottom: 0;
     border-color: $cream;
     border-top-width: 1px;
-    border-right-width: 1px;
-    border-left-width: 0;
+    border-right-width: 0;
+    border-left-width: 1px;
     border-style: solid;
     font-family: $sans-serif;
     font-size: 1.4rem;
@@ -85,6 +86,14 @@
 
     &[aria-selected="true"] {
       background-color: $cream;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+
+    a {
+      border-right-width: 1px;
     }
   }
 }
@@ -138,14 +147,6 @@
   }
 
   .page-tabs__item {
-    &:first-of-type {
-      margin-left: 0;
-
-      a {
-        border-left-width: 1px;
-      }
-    }
-
     a {
       padding: 1rem;
     }
@@ -155,6 +156,10 @@
 // BREAKPOINT: LARGE
 // - More padding
 @include media($lg) {
+  .page-controls {
+    padding: 0;
+  }
+
   .page-tabs__years {
     padding: 1rem 2rem 1rem 0;
 

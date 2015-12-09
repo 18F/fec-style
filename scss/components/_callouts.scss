@@ -6,7 +6,7 @@
 
 .callout {
   @include clearfix();
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: 4px;
 }
@@ -37,25 +37,20 @@
   padding-top: 1rem;
 }
 
-.callout__icon {
-  @include span-columns(1 of 3);
-  padding: 1rem;
-  border-bottom: none;
-}
-
 .callout__sublinks {
-@include span-columns(2 of 3);
 font-family: $sans-serif;
 }
 
 // BREAKPOINT: MEDIUM
 @include media($med){
   .callout__content {
-    @include span-columns(3 of 6);
+    @include span-columns(4 of 6);
   }
 
   .callout__action {
-    @include span-columns(3 of 6);
+    @include span-columns(2 of 6);
+    border-left: 1px solid;
+    padding-left: 1rem;
     padding-top: 0;
   }
 

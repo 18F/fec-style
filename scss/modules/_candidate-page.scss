@@ -3,10 +3,10 @@
 
 @include media($lg) {
   .candidate__totals {
-    @include span-columns(5);
+    @include span-columns(6);
   }
 
   .candidate__committees {
-    @include span-columns(7);
+    @include span-columns(6);
   }
 }
