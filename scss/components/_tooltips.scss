@@ -78,7 +78,7 @@
   }
 
   &:after {
-    @include triangle(1.8rem, $cream, up);
+    @include triangle(1.6rem, $cream, up);
     content: '';
     display: block;
     position: absolute;
