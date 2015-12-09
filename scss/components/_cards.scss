@@ -24,6 +24,7 @@
   font-size: 1.6rem;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 .card__image-link {
@@ -57,6 +58,18 @@
     @include span-columns(1 of 3);
   }
 
+  .card__image__container {
+    @include span-columns(1 of 3);
+    text-align: center;
+
+    .card__image {
+      display: inline;
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
   .card__content {
     @include span-columns(2 of 3);
     padding: 0;
@@ -64,8 +77,10 @@
 
   // Option: .card--full-bleed makes the image full height
   &.card--full-bleed {
+    border: none;
     padding: 0;
 
+    .card__image__container,
     .card__image img {
       border-radius: 4px 0 0 4px;
       display: block;
@@ -212,6 +227,7 @@
   background-color: $beige;
 
   .card__image__container {
+    @include clearfix();
     background-color: $primary;
   }
 }
