@@ -1,0 +1,12 @@
+// Candidate page
+// Specific styles for parts of the candidate page
+
+@include media($lg) {
+  .candidate__totals {
+    @include span-columns(5);
+  }
+
+  .candidate__committees {
+    @include span-columns(7);
+  }
+}
