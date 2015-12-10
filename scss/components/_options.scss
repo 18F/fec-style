@@ -9,6 +9,10 @@
   @include clearfix();
   border-top: 1px solid $primary;
   padding: 2rem 0;
+
+  &.option--border-bottom {
+    border-bottom: 1px solid $primary;
+  }
 }
 
 .option__aside {

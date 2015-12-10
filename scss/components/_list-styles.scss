@@ -55,9 +55,7 @@
 
 // Checkbox Lists
 //
-// For showing a list of completed or uncompleted features
-//
-// .is-completed     - Checkbox inside
+// For check marks as list bullets
 //
 // Markup:
 // <ul class="list--checkboxes">
@@ -68,34 +66,18 @@
 //
 // Styleguide components.list-styles.checkboxes
 
-.list--checkboxes {
-  .is-completed {
-    &:before {
-      background-color: $primary;
-      background-image: url('../img/i-check--neutral.png');
-      background-image: url('../img/i-check--neutral.svg');
+.list--checks {
+  li {
+    @include u-background-image('i-check--primary', 0 1.4rem);
+    padding: 1rem 0 1rem 2.5rem;
+    position: relative;
+  }
+
+  &.list--checks--secondary {
+    li {
+      @include u-background-image('i-check--secondary-contrast', 0 1.4rem);
     }
   }
-}
-
-.list--checkboxes__item {
-  margin-bottom: 1rem;
-   padding-left: 2.5rem;
-   position: relative;
-
-   &:before {
-    background-repeat: no-repeat;
-    background-position: center center;
-    border: 2px solid $primary;
-    border-radius: 2px;
-    content: '';
-    display: block;
-    height: 1.5rem;
-    left: 0;
-    position: absolute;
-    top: .3rem;
-    width: 1.5rem;
-   }
 }
 
 // Button lists
