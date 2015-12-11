@@ -49,11 +49,11 @@
   background-color: $primary-contrast;
   color: $primary;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background-color: lighten($primary-contrast, 10%);
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
@@ -77,11 +77,11 @@
   background-color: $secondary-contrast;
   color: $secondary;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background-color: lighten($secondary-contrast, 10%);
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
@@ -105,11 +105,11 @@
   background-color: $beige;
   color: $primary;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background-color: $beige-light;
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $beige-dark;
     border: 2px solid $primary;
@@ -133,11 +133,11 @@
   border-color: $primary;
   color: $primary;
 
-  &:hover {
+  &:hover:not(.disabled) {
     border-color: $primary-contrast;
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $primary;
     color: $cream;
@@ -183,11 +183,11 @@
   background-color: $primary;
   color: $primary-contrast;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background-color: lighten($primary, 10%);
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
@@ -212,11 +212,11 @@
   background-color: $navy;
   color: $cream;
 
-  &:hover {
+  &:hover:not(.disabled) {
     background-color: lighten($navy, 10%);
   }
 
-  &:active,
+  &:active:not(.disabled),
   &.is-active {
     background-color: $primary;
     border: 2px solid $primary-contrast;
