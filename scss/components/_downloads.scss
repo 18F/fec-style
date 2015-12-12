@@ -22,10 +22,13 @@
   @include clearfix();
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  padding-left: 2rem;
+  padding-left: 3rem;
 
   &.is-pending {
-    @include u-background-image('../img/i-ellipsis--primary', 0% 1rem);
+    background-image: url('../img/loading-ellipsis.gif');
+    background-position: 0 .4rem;
+    background-repeat: no-repeat;
+    background-size: 2rem;
   }
 
   &.is-complete {
