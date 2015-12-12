@@ -69,12 +69,12 @@
   .dataTables_wrapper {
     .results-info {
       .dataTables_length,
-      .dataTables_info {
+      .dataTables_paginate {
         float: left;
         margin-left: 0;
       }
 
-      .dataTables_paginate {
+      .dataTables_info {
         margin-left: 1.5em;
         float: right;
         clear: right;
@@ -87,12 +87,12 @@
       padding: 0;
     }
 
-    .dataTables_info {
+    .dataTables_paginate {
       padding-top: 0;
       margin-bottom: 0;
     }
 
-    .dataTables_paginate {
+    .dataTables_info {
       padding-top: 0;
     }
   }
