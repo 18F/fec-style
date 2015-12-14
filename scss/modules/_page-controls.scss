@@ -142,9 +142,6 @@
 // BREAKPOINT: MEDIUM
 // - Display tabs in a row
 @include media($med) {
-  .page-tabs {
-    overflow-x: visible;
-  }
 
   .page-tabs__item {
     a {
@@ -156,6 +153,10 @@
 // BREAKPOINT: LARGE
 // - More padding
 @include media($lg) {
+  .page-tabs {
+    overflow-x: visible;
+  }
+
   .page-controls {
     padding: 0;
   }
