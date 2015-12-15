@@ -1,4 +1,7 @@
 // Side nav
+.side-nav {
+  display: none;
+}
 
 .side-nav__item {
   padding: 1rem 0;
@@ -26,5 +29,11 @@
 
   &.is-active {
     font-weight: bold;
+  }
+}
+
+@include media($med) {
+  .side-nav {
+    display: block;
   }
 }
