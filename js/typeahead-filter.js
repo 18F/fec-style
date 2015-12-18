@@ -1,9 +1,9 @@
 'use strict';
 
-/* global require, module, window, document, API_LOCATION, API_VERSION, API_KEY */
+/* global API_LOCATION, API_VERSION, API_KEY */
 
 var $ = require('jquery');
-var URI = require('URIjs');
+var URI = require('urijs');
 var _ = require('underscore');
 
 var TypeaheadFilter = function(selector, dataset) {
@@ -62,7 +62,7 @@ TypeaheadFilter.prototype.getFilters = function() {
   var idKey = self.dataset.name + '_id';
   if (ids.length) {
     _.each(ids, function(id) {
-      var checkbox = self.appendCheckbox({
+      self.appendCheckbox({
         name: self.fieldName,
         id: id + '-checkbox',
         value: id,
