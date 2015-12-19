@@ -4,6 +4,7 @@
   "browser": true,
   "camelcase": true,
   "curly": true,
+  "expr": true,
   "forin": true,
   "immed": true,
   "latedef": "nofunc",
@@ -15,6 +16,8 @@
   "predef": [
     "require",
     "module",
+    "window",
+    "document",
     "describe",
     "before",
     "beforeEach",

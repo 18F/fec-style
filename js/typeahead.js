@@ -1,9 +1,9 @@
 'use strict';
 
-/* global require, module, window, document, Bloodhound */
+/* global Bloodhound */
 
 var $ = require('jquery');
-var URI = require('URIjs');
+var URI = require('urijs');
 var _ = require('underscore');
 var Handlebars = require('handlebars');
 
