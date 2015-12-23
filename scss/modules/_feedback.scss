@@ -69,6 +69,7 @@
   bottom: 0;
   position: fixed;
   right: 4rem;
+  z-index: $z-feedback;
 }
 
 .feedback__button {
