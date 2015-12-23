@@ -17,9 +17,7 @@
 
 .datatable__container {
   @include clearfix();
-  @include transition(opacity, .2s);
   position: relative;
-  opacity: 0;
   overflow: hidden;
   width: 100%;
   padding-top: 8rem;

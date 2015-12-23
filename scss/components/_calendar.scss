@@ -1,0 +1,87 @@
+// Calendar
+
+.fc-view-container {
+  font-family: $sans-serif;
+}
+
+// Controls
+.fc-toolbar {
+  @include clearfix();
+  border-top: 2px solid $primary;
+  padding: .5rem 0;
+}
+
+.fc-left {
+  float: left;
+}
+
+.fc-right {
+  float: right;
+}
+
+.fc-center {
+  text-align: center;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.fc-today-button {
+  float: left;
+}
+
+// Body
+.fc-head {
+  border-top: 2px solid $neutral;
+}
+
+.fc-day-header {
+  color: $primary;
+  font-weight: normal;
+  padding-top: .5rem;
+}
+
+.fc-content-skeleton {
+  height: 100%;
+
+  table {
+    height: 100%;
+  }
+}
+
+.fc-week {
+  td:not(.fc-day-number) {
+    border-width: 0 2px;
+    border-style: solid;
+    border-color: $neutral;
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: 2px solid $neutral;
+  }
+}
+
+.fc-day-number {
+  border: 2px solid $neutral;
+  border-bottom: none;
+  color: $primary;
+  font-weight: bold;
+  padding: .5rem 1rem;
+}
+
+.fc-event-container {
+  padding: 2px;
+  vertical-align: top;
+}
+
+.fc-content {
+  @include u-truncate();
+  background: $primary;
+  border-radius: 4px;
+  color: $cream;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  padding: 4px;
+}
