@@ -78,5 +78,65 @@
   {
     "glossary-term": "Independent expenditure",
     "glossary-definition": "An expenditure for a communication <ul class='list--bulleted'><li>That expressly advocates the election or defeat of a clearly identified candidate and</li><li>that is not made in cooperation, consultation or concert with, or at the request or suggestion of, any candidate, or his or her authorized committees or agents, or a political party committee or its agents. 11 CFR 100.16.</li></ul>"
+  },
+  {
+    "glossary-term": "Contribution",
+    "glossary-definition": "A gift, subscription, loan, advance or deposit of money or anything of value given to influence a federal election; or the payment by any person of compensation for the personal services of another person if those services are rendered without charge to a political committee for any purpose. 100.52(a) and 100.54."
+  },
+   {
+    "glossary-term": "Corporation",
+    "glossary-definition": "Any separately incorporated entity (other than a political committee that has incorporated for liability purposes only). 100.134(l) and 114.12(a). The term corporation covers both for-profit and nonprofit corporations and includes nonstock corporations, incorporated membership organizations, incorporated cooperatives, incorporated trade associations, professional corporations and, under certain circumstances, limited liability companies."
+  },
+   {
+    "glossary-term": "Disbursement",
+    "glossary-definition": "Any purchase or payment made by a political committee or any other person that is subject to the Act. 300.2(d)."
+  },
+   {
+    "glossary-term": "Donation",
+    "glossary-definition": "A payment, gift, subscription, loan, advance, deposit or anything of value given to a person but does not include contributions. 300.2(e)."
+  },
+   {
+    "glossary-term": "Electioneering communication",
+    "glossary-definition": "Any broadcast, cable or satellite communication that (1) refers to a clearly identified candidate for federal office; (2) is publicly distributed within certain time periods before an election and (3) is targeted to the relevant electorate. 100.29."
+  },
+   {
+    "glossary-term": "Expenditure",
+    "glossary-definition": "A purchase, payment, distribution, loan, advance, deposit, or gift of money or anything of value made for the purpose of influencing a federal election. A written agreement to make an expenditure is also considered an expenditure. 100.111 and 100.112."
+  },
+   {
+    "glossary-term": "Independent expenditure only committee",
+    "glossary-definition": "Political committees that make only independent expenditures that may solicit and accept unlimited contributions from individuals, corporations, labor organizations and other political committees. They may not accept contributions from foreign nationals, federal contractors, national banks or federally chartered corporations. See AO 2010-11. Such committees, popularly known as super PACs, must register with the Commission and comply with all applicable reporting requirements of the Act."
+  },
+   {
+    "glossary-term": "Labor organization",
+    "glossary-definition": "An organization, agency or employee representative committee or plan, in which employees participate and which exists for the purpose of dealing with employers on grievances, labor disputes, wages, hours of employment or working conditions. 114.1(d)."
+  },
+   {
+    "glossary-term": "Person",
+    "glossary-definition": "An individual, partnership, political committee, corporation, labor organization, or any other organization or group of persons, not including the federal government. 100.10."
+  },
+   {
+    "glossary-term": "Political action committee (PAC)",
+    "glossary-definition": "Popular term for a political committee that is neither a party committee nor an authorized committee of a candidate. PACs directly or indirectly established, administered or financially supported by a corporation or labor organization are called separate segregated funds (SSFs). PACs without such a corporate or labor sponsor are called nonconnected PACs."
+  },
+   {
+    "glossary-term": "Public communication",
+    "glossary-definition": "A communication by means of any broadcast, cable or satellite communication, newspaper, magazine, outdoor advertising facility, mass mailing or telephone bank to the general public, or any other form of general public political advertising. The term general public political advertising does not include communications made over the internet, except for communications placed for a fee on another person’s website. 100.26, 100.27 (definition of mass mailing) and 100.28 (definition of telephone bank)."
+  },
+   {
+    "glossary-term": "Receipt",
+    "glossary-definition": "Anything of value (money, goods, services or property) received by a political committee."
+  },
+   {
+    "glossary-term": "Special election",
+    "glossary-definition": "A primary, general or runoff election that is not a regularly scheduled election and that is held to fill a vacant seat in the House of Representatives or the Senate. 100.2(f)."
+  },
+   {
+    "glossary-term": "Separate segregated fund (SSF)",
+    "glossary-definition": "A political committee established, administered or financially supported by a corporation or labor organization, popularly called a corporate or labor political action committee (PAC). See 114.1(a)(2)(iii). The term \"financially supported\" does not include contributions to the SSF, but does include the payment of establishment, administration or solicitation costs. 100.6(b)."
+  },
+   {
+    "glossary-term": "Trade association",
+    "glossary-definition": "A membership organization consisting of persons engaged in a similar or related line of commerce. A trade association is organized to promote and improve business conditions in that line of commerce and not to engage in a regular business for profit. No part of the net earnings of a trade association may inure to the benefit of any member."
   }
 ]
