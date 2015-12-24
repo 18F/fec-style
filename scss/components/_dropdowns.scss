@@ -30,6 +30,7 @@
 // Styleguide components.dropdowns
 
 .dropdown {
+  font-family: $sans-serif;
   position: relative;
 }
 
@@ -96,6 +97,11 @@
     background-color: $ivory;
   }
 
+  .dropdown__item:last-of-type {
+    .dropdown__value {
+      border-bottom: none;
+    }
+  }
 
   // For labeling a group of options
   .dropdown__subhead {
@@ -103,14 +109,14 @@
     font-weight: bold;
 
     &:hover {
-      background-color: #fff;
+      background-color: $cream;
     }
   }
 }
 
 .dropdown--secondary {
   .dropdown__panel {
-    background: $primary-contrast;
+    background: lighten($secondary-contrast, 10%);
     border-color: $deep-orange;
 
     .dropdown__value {
