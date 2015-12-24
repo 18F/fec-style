@@ -53,9 +53,16 @@
     right: 1.5rem;
     top: .5rem;
   }
+
+  &.button--secondary:after {
+    background-image: url('../img/i-down--secondary.png');
+    background-image: url('../img/i-down--secondary.svg');
+    border-left: 1px solid $secondary;
+  }
 }
 
 .dropdown__value {
+  display: block;
   margin: 0;
 }
 
@@ -97,6 +104,22 @@
 
     &:hover {
       background-color: #fff;
+    }
+  }
+}
+
+.dropdown--secondary {
+  .dropdown__panel {
+    background: $primary-contrast;
+    border-color: $deep-orange;
+
+    .dropdown__value {
+      border-color: $deep-orange;
+      color: $secondary;
+
+      &:hover {
+        background-color: $deep-orange;
+      }
     }
   }
 }

@@ -8,31 +8,40 @@ var perfectScrollbar = require('perfect-scrollbar/jquery')($);
 var KEYCODE_ESC = 27;
 var KEYCODE_ENTER = 13;
 
+var defaultOpts = {
+  checkboxes: true,
+};
+
 /**
  * Dropdown toggles
  * @constructor
  * @param {string} selector - CSS selector for the fieldset that contains everything
+ * @param {object} opts - Options
  */
-function Dropdown(selector) {
+function Dropdown(selector, opts) {
   var self = this;
+  self.opts = $.extend({}, defaultOpts, opts);
 
   self.isOpen = false;
 
   self.$body = $(selector);
-  self.$selected = this.$body.find('.dropdown__selected');
   self.$button = this.$body.find('.dropdown__button');
   self.$panel = this.$body.find('.dropdown__panel');
 
+  if (self.opts.checkboxes === true) {
+    self.$selected = this.$body.find('.dropdown__selected');
+    self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
+    self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
+
+    if (self.isEmpty()) {
+      self.removePanel();
+    }
+  }
+
   self.$button.on('click', this.toggle.bind(this));
-  self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
-  self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
   $(document.body).on('click', this.handleClickAway.bind(this));
   $(document.body).on('focusin', this.handleFocusAway.bind(this));
   $(document.body).on('keyup', this.handleKeyup.bind(this));
-
-  if (self.isEmpty()) {
-    self.removePanel();
-  }
 
   // Set ARIA attributes
   self.$button.attr('aria-haspopup', 'true');
