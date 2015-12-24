@@ -13,6 +13,40 @@
 
 .fc-left {
   float: left;
+
+  .fc-button-group {
+    float: left;
+    margin-right: 1rem;
+  }
+
+  .fc-today-button {
+    float: left;
+  }
+
+  .fc-prev-button,
+  .fc-next-button {
+    margin-right: 1px;
+    text-indent: -9999px;
+    padding: .8rem 1rem;
+
+    &:first-of-type {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-of-type {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:after {
+      left: .5rem;
+      right: .5rem;
+    }
+  }
+}
+
+.fc-state-active.button--neutral {
+  background-color: $beige-dark;
+  border: 2px solid $primary;
 }
 
 .fc-right {
@@ -25,10 +59,6 @@
   h2 {
     margin: 0;
   }
-}
-
-.fc-today-button {
-  float: left;
 }
 
 // Body

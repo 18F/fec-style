@@ -85,7 +85,7 @@
   }
 
   .button {
-    border-radius: 0 0 0 0;
+    border-radius: 0;
     display: block;
     font-weight: normal;
     margin-right: 1px;
@@ -121,6 +121,47 @@
   }
 }
 
+// If the toggle group is actually buttons and not radios
+.toggles--buttons {
+  .button {
+    border-radius: 0;
+    display: block;
+    font-weight: normal;
+    margin-right: 1px;
+
+    &:first-of-type {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  .is-active.button--primary {
+    background-color: $navy;
+    border: 2px solid $primary-contrast;
+    color: $cream;
+  }
+
+  .is-active.button--secondary {
+    background-color: $deep-red;
+    border: 2px solid $secondary-contrast;
+    color: $cream;
+  }
+
+  .is-active.button--neutral {
+    background-color: $beige-dark;
+    border: 2px solid $primary;
+  }
+
+  .is-active.button--empty {
+    background-color: $primary;
+    border: 2px solid $primary;
+    color: $cream;
+  }
+}
+
 // BREAKPOINT: MEDIUM
 // - Display toggles in a row
 
@@ -142,6 +183,23 @@
         border-radius: 0 4px 4px 0;
         margin-right: 0;
       }
+    }
+  }
+
+  .toggles--buttons {
+    .button {
+      border-radius: 0;
+      float: left;
+      margin-top: 0;
+
+      &:first-of-type {
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-of-type {
+        border-radius: 0 4px 4px 0;
+      }
+
     }
   }
 }
