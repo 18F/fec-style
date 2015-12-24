@@ -1,0 +1,79 @@
+// Data Container module
+//
+// The body area that goes with the filter panels
+// Contains a widget area for tags and export controls
+// And a body area for the datatable or calendar
+
+.data-container {
+  @include clearfix();
+  border-top: 2px solid $neutral;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 2rem;
+
+  @include media($lg) {
+    // @include transition(width .1s);
+  }
+}
+
+.data-container__widgets {
+  @include clearfix();
+  background-color: $primary;
+  padding: 2rem;
+}
+
+.data-container__widgets--secondary {
+  background-color: $secondary;
+}
+
+.data-container__body {
+  padding: 2rem;
+
+  &.fade-in {
+    opacity: 0;
+  }
+}
+
+// BREAKPOINT: LARGE
+// Data-container shrinks and floats
+
+@include media($lg) {
+  .data-container {
+    padding: 0;
+  }
+
+  .is-showing-filters {
+    .data-container {
+      width: calc(100% - 30rem);
+      float: left;
+    }
+  }
+
+  .data-container__body {
+    border-top: 0;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+
+  .data-container__export {
+    @include span-columns(3);
+    float: right;
+  }
+
+  .export-widget {
+    clear: right;
+    float: right;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    .dropdown {
+      float: right;
+      width: 100%;
+    }
+  }
+
+}
