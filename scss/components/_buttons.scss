@@ -407,3 +407,13 @@
   @include u-background-image('../img/i-export--primary-contrast', 1rem .5rem);
   padding-left: 4rem;
 }
+
+.button--download {
+  @include u-background-image('../img/i-download--secondary', 1rem .5rem);
+  padding-left: 4rem;
+}
+
+.button--subscribe {
+  @include u-background-image('../img/i-subscribe--secondary', 1rem .5rem);
+  padding-left: 4rem;
+}
