@@ -14,3 +14,14 @@
   @include u-background-image('../img/i-x--primary');
   padding: 1rem;
 }
+
+.data-container__widgets--secondary {
+  .tag {
+    background-color: $secondary-contrast;
+    color: $secondary;
+  }
+
+  .tag__remove {
+    @include u-background-image('../img/i-x--secondary');
+  }
+}
