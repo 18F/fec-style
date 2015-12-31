@@ -96,9 +96,7 @@ Filter.prototype.addTag = function($input) {
 
 Filter.prototype.removeTag = function($input) {
   if (this.tags.length > 0) {
-    var self = this;
-    // I'm sure there's a better way to find the matching object in the this.tags array
-    _.each(self.tags, function(tag) {
+    _.each(this.tags, function(tag) {
       if (tag.key === $input.attr('id')) {
         tag.remove();
       }

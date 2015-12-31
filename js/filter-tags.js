@@ -17,7 +17,7 @@ function Tag($input, filter) {
   this.$input = $input;
   this.key = $input.attr('id');
   this.filter = filter;
-  this.checkOrRadio = $input.attr('type') === 'checkbox' || 'radio';
+  this.checkOrRadio = $input.attr('type') === 'checkbox' || $input.attr('type') === 'radio';
   this.text = this.getText($input);
 
   this.$content = $(TAGTEMPLATE({text: this.text}));
@@ -38,7 +38,9 @@ Tag.prototype.getText = function($input) {
 Tag.prototype.remove = function(e) {
   this.$content.remove();
   this.filter.tags.pop(this);
-  this.checkOrRadio ? this.$input.attr('checked', false).trigger('change') : this.val('').trigger('change');
+  this.checkOrRadio ?
+    this.$input.attr('checked', false).trigger('change') :
+    this.$input.val('').trigger('change');
 }
 
 module.exports = {

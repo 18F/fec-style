@@ -14,7 +14,6 @@ function FilterSet(elm, $tagContainer) {
   this.$tagContainer = $tagContainer;
 
   this.$clear.on('click keypress', this.handleClear.bind(this));
-  this.$body.on('change', this.toggleTags.bind(this));
 
   this.filters = {};
   this.fields = [];
@@ -61,9 +60,5 @@ FilterSet.prototype.clear = function() {
     filter.setValue();
   });
 };
-
-FilterSet.prototype.toggleTags = function(e) {
-  console.log('changed');
-}
 
 module.exports = {FilterSet: FilterSet};

@@ -25,6 +25,11 @@
 
 .data-container__widgets--secondary {
   background-color: $secondary;
+
+  .tag {
+    background-color: $secondary-contrast;
+    color: $secondary;
+  }
 }
 
 .data-container__body {

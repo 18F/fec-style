@@ -2,8 +2,9 @@
 
 .tag  {
   display: inline-block;
-  background-color: $cream;
+  background-color: $primary-contrast;
   border-radius: 4px;
+  color: $primary;
   margin: 0 2px 2px 0;
   padding: .5rem;
   font-family: $sans-serif;
