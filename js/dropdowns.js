@@ -28,6 +28,8 @@ function Dropdown(selector, opts) {
   self.$button = this.$body.find('.dropdown__button');
   self.$panel = this.$body.find('.dropdown__panel');
 
+  self.listeners = [];
+
   if (self.opts.checkboxes) {
     self.$selected = this.$body.find('.dropdown__selected');
     self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
@@ -39,9 +41,10 @@ function Dropdown(selector, opts) {
   }
 
   self.$button.on('click', this.toggle.bind(this));
-  $(document.body).on('click', this.handleClickAway.bind(this));
-  $(document.body).on('focusin', this.handleFocusAway.bind(this));
-  $(document.body).on('keyup', this.handleKeyup.bind(this));
+
+  this.addEventListener(document.body, 'click', this.handleClickAway.bind(this));
+  this.addEventListener(document.body, 'focusin', this.handleFocusAway.bind(this));
+  this.addEventListener(document.body, 'keyup', this.handleKeyup.bind(this));
 
   // Set ARIA attributes
   self.$button.attr('aria-haspopup', 'true');
@@ -126,6 +129,23 @@ Dropdown.prototype.removePanel = function() {
 
 Dropdown.prototype.isEmpty = function() {
   return this.$panel.find('input').length === 0;
+};
+
+Dropdown.prototype.addEventListener = function(elm, event, callback) {
+  if (elm) {
+    elm.addEventListener(event, callback);
+    this.listeners.push({
+      elm: elm,
+      event: event,
+      callback: callback
+    });
+  }
+};
+
+Dropdown.prototype.destroy = function() {
+  this.listeners.forEach(function(listener) {
+    listener.elm.removeEventListener(listener.event, listener.callback);
+  });
 };
 
 module.exports = {Dropdown: Dropdown};
