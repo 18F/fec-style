@@ -28,7 +28,7 @@ function Dropdown(selector, opts) {
   self.$button = this.$body.find('.dropdown__button');
   self.$panel = this.$body.find('.dropdown__panel');
 
-  if (self.opts.checkboxes === true) {
+  if (self.opts.checkboxes) {
     self.$selected = this.$body.find('.dropdown__selected');
     self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
