@@ -89,7 +89,6 @@ Filter.prototype.toggleTags = function($input) {
 
 Filter.prototype.addTag = function($input) {
   var tag = new filterTags.Tag($input, this);
-  var key = tag.key;
   this.tags.push(tag);
   $('.js-tag-container').append(tag.$content);
 };
@@ -102,7 +101,7 @@ Filter.prototype.removeTag = function($input) {
       }
     });
   }
-}
+};
 
 function DateFilter(elm) {
   Filter.call(this, elm);

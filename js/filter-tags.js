@@ -23,26 +23,24 @@ function Tag($input, filter) {
   this.$content = $(TAGTEMPLATE({text: this.text}));
 
   this.$content.on('click', 'button', this.remove.bind(this));
-};
+}
 
 Tag.prototype.getText = function($input) {
-  var text;
   if (this.checkOrRadio) {
-    text = this.filter.$body.find('label[for="' + $input.attr('id') + '"]').text();
+    return this.filter.$body.find('label[for="' + $input.attr('id') + '"]').text();
   } else {
-    text = $input.val();
+    return $input.val();
   }
-  return text;
 };
 
-Tag.prototype.remove = function(e) {
+Tag.prototype.remove = function() {
   this.$content.remove();
   this.filter.tags.pop(this);
   this.checkOrRadio ?
     this.$input.attr('checked', false).trigger('change') :
     this.$input.val('').trigger('change');
-}
+};
 
 module.exports = {
   Tag: Tag,
-}
+};
