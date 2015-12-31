@@ -8,6 +8,7 @@ window.$ = window.jQuery = $;
 
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
+var filterTags = require('./filter-tags');
 
 var KEYCODE_ENTER = 13;
 
@@ -25,6 +26,8 @@ function Filter(elm) {
   this.$body = $(elm);
   this.$input = this.$body.find('input[name]');
   this.$remove = this.$body.find('.button--remove');
+
+  this.tags = [];
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
@@ -69,9 +72,39 @@ Filter.prototype.handleKeydown = function(e) {
   }
 };
 
-Filter.prototype.handleChange = function() {
+Filter.prototype.handleChange = function(e) {
+  this.toggleTags($(e.target));
   this.$remove.css('display', this.$input.val() ? 'block' : 'none');
 };
+
+Filter.prototype.toggleTags = function($input) {
+  if ($input.attr('type') === 'checkbox' || 'radio') {
+    $input.is(':checked') ? this.addTag($input) : this.removeTag($input);
+  }
+
+  if ($input.attr('type') === 'text') {
+    $input.val().length > 0 ? this.addTag($input) : this.removeTag($input);
+  }
+};
+
+Filter.prototype.addTag = function($input) {
+  var tag = new filterTags.Tag($input, this);
+  var key = tag.key;
+  this.tags.push(tag);
+  $('.js-tag-container').append(tag.$content);
+};
+
+Filter.prototype.removeTag = function($input) {
+  if (this.tags.length > 0) {
+    var self = this;
+    // I'm sure there's a better way to find the matching object in the this.tags array
+    _.each(self.tags, function(tag) {
+      if (tag.key === $input.attr('id')) {
+        tag.remove();
+      }
+    });
+  }
+}
 
 function DateFilter(elm) {
   Filter.call(this, elm);

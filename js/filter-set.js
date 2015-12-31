@@ -8,11 +8,13 @@ var Filter = require('./filters').Filter;
 
 var KEYCODE_ENTER = 13;
 
-function FilterSet(elm) {
+function FilterSet(elm, $tagContainer) {
   this.$body = $(elm);
   this.$clear = this.$body.find('.js-clear-filters');
+  this.$tagContainer = $tagContainer;
 
   this.$clear.on('click keypress', this.handleClear.bind(this));
+  this.$body.on('change', this.toggleTags.bind(this));
 
   this.filters = {};
   this.fields = [];
@@ -20,7 +22,7 @@ function FilterSet(elm) {
 
 FilterSet.prototype.activate = function() {
   var query = URI.parseQuery(window.location.search);
-  this.filters = _.chain(this.$body.find('.filter'))
+  this.filters = _.chain(this.$body.find('.js-filter'))
     .map(function(elm) {
       var filter = Filter.build($(elm)).fromQuery(query);
       return [filter.name, filter];
@@ -59,5 +61,9 @@ FilterSet.prototype.clear = function() {
     filter.setValue();
   });
 };
+
+FilterSet.prototype.toggleTags = function(e) {
+  console.log('changed');
+}
 
 module.exports = {FilterSet: FilterSet};

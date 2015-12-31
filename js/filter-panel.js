@@ -9,6 +9,7 @@ var accessibility = require('./accessibility');
 var defaultOptions = {
   body: '.filters',
   dataContainer: '.data-container',
+  tagContainer: '.js-tag-container',
   form: '#category-filters',
   focus: '#results tr:first-child',
   toggle: '#filter-toggle'
@@ -24,9 +25,11 @@ function FilterPanel(options) {
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
 
+  this.$tagContainer = $(this.options.tagContainer) || null;
+
   this.$toggle.on('click', this.toggle.bind(this));
 
-  this.filterSet = new FilterSet(this.$form).activate();
+  this.filterSet = new FilterSet(this.$form, this.$tagContainer).activate();
   if (!_.isEmpty(this.filterSet.serialize())) {
     this.show();
   }
