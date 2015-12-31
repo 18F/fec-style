@@ -47,7 +47,7 @@ FilterPanel.prototype.adjust = function() {
 
 FilterPanel.prototype.setHeight = function() {
   if ( this.$dataContainer.height() > this.$body.height() ) {
-    this.$body.height(this.$dataContainer.height())
+    this.$body.height(this.$dataContainer.height());
   }
 };
 
