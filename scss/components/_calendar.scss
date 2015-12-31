@@ -107,10 +107,79 @@
 
 .fc-content {
   @include u-truncate();
-  background: $primary;
-  border-radius: 4px;
-  color: $cream;
+  color: $primary;
   font-size: 1.4rem;
   line-height: 1.2;
   padding: 4px;
+}
+
+.fc--allday {
+  .fc-content {
+    border-radius: 4px;
+    color: $cream;
+  }
+}
+
+.fc--election {
+  color: $cal-election;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-election;
+    }
+  }
+}
+
+.fc--deadline {
+  color: $cal-deadline;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-deadline;
+    }
+  }
+}
+
+.fc--outreach {
+ color: $cal-outreach;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-outreach;
+    }
+  }
+}
+
+.fc--meeting {
+  color: $cal-meeting;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-meeting;
+    }
+  }
+}
+
+.fc--other {
+  color: $cal-other;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-other;
+    }
+  }
+}
+
+// Event details
+.calendar__details {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding: 2rem;
+  text-align: left;
+
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }

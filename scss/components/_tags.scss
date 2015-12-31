@@ -1,0 +1,15 @@
+// Tags
+
+.tag  {
+  display: inline-block;
+  background-color: $cream;
+  border-radius: 4px;
+  margin: 0 2px 2px 0;
+  padding: .5rem;
+  font-family: $sans-serif;
+}
+
+.tag__remove {
+  @include u-background-image('../img/i-x--primary');
+  padding: 1rem;
+}

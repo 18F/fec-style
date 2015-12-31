@@ -60,6 +60,11 @@
     float: right;
   }
 
+   .data-container__tags {
+    @include span-columns(9);
+  }
+
+
   .export-widget {
     clear: right;
     float: right;

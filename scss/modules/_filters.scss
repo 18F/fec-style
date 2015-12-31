@@ -103,9 +103,15 @@
 }
 
 .filters__subheader {
-  margin-top: 3rem;
-  padding-top: 2rem;
   border-top: 2px solid $primary;
+  display: block;
+  font-family: $sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 3rem 0 1rem 0;
+  padding-top: 2rem;
+  text-transform: uppercase;
+  width: 100%;
 
   & + .filter {
     padding-top: 0;
@@ -132,6 +138,70 @@
     font-size: 1.2rem;
     width: 100%;
   }
+}
+
+// Color-coding
+
+.filter--election {
+  [type="checkbox"] + label::before {
+    border-color: $cal-election;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  .filter__swatch {
+    background-color: $cal-election;
+  }
+}
+
+.filter--deadline {
+  [type="checkbox"] + label::before {
+    border-color: $cal-deadline;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  .filter__swatch {
+    background-color: $cal-deadline;
+  }
+}
+
+.filter--meeting {
+  [type="checkbox"] + label::before {
+    border-color: $cal-meeting;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  .filter__swatch {
+    background-color: $cal-meeting;
+  }
+}
+
+.filter--outreach {
+  [type="checkbox"] + label::before {
+    border-color: $cal-outreach;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  .filter__swatch {
+    background-color: $cal-outreach;
+  }
+}
+
+.filter--other {
+  [type="checkbox"] + label::before {
+    border-color: $cal-other;
+  }
+
+  [type="checkbox"]:checked + label::before,
+  .filter__swatch {
+    background-color: $cal-other;
+  }
+}
+
+.filter__swatch {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
 }
 
 // Horizontal layout
