@@ -6,9 +6,9 @@ var _ = require('underscore');
 // Hack: Append jQuery to `window` for use by legacy libraries
 window.$ = window.jQuery = $;
 
+var events = require('./events');
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
-var filterTags = require('./filter-tags');
 
 var KEYCODE_ENTER = 13;
 
@@ -73,34 +73,30 @@ Filter.prototype.handleKeydown = function(e) {
 };
 
 Filter.prototype.handleChange = function(e) {
-  this.toggleTags($(e.target));
-  this.$remove.css('display', this.$input.val() ? 'block' : 'none');
-};
+  var $input = $(e.target),
+      type = $input.attr('type'),
+      id = $input.attr('id'),
+      eventName,
+      value;
 
-Filter.prototype.toggleTags = function($input) {
-  if ($input.attr('type') === 'checkbox' || 'radio') {
-    $input.is(':checked') ? this.addTag($input) : this.removeTag($input);
+  this.$remove.css('display', $input.val() ? 'block' : 'none');
+
+  if (type === 'checkbox' || type === 'radio') {
+    eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
+    value = $('label[for="' + id + '"]').text();
   }
 
-  if ($input.attr('type') === 'text') {
-    $input.val().length > 0 ? this.addTag($input) : this.removeTag($input);
+  if (type === 'text') {
+    eventName = $input.val().length > 0 ? 'filter:added' : 'filter:removed';
+    value = $input.val();
   }
-};
 
-Filter.prototype.addTag = function($input) {
-  var tag = new filterTags.Tag($input, this);
-  this.tags.push(tag);
-  $('.js-tag-container').append(tag.$content);
-};
-
-Filter.prototype.removeTag = function($input) {
-  if (this.tags.length > 0) {
-    _.each(this.tags, function(tag) {
-      if (tag.key === $input.attr('id')) {
-        tag.remove();
-      }
+  events.emit(eventName,
+    {
+      key: id,
+      value: value,
+      type: type
     });
-  }
 };
 
 function DateFilter(elm) {

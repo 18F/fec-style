@@ -5,11 +5,12 @@ var _ = require('underscore');
 
 var FilterSet = require('./filter-set').FilterSet;
 var accessibility = require('./accessibility');
+var filterTags = require('./filter-tags');
 
 var defaultOptions = {
   body: '.filters',
   dataContainer: '.data-container',
-  tagContainer: '.js-tag-container',
+  widgetContainer: '.data-container__widgets',
   form: '#category-filters',
   focus: '#results tr:first-child',
   toggle: '#filter-toggle'
@@ -24,16 +25,17 @@ function FilterPanel(options) {
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
+  this.$widgets = $(this.options.widgetContainer);
 
-  this.$tagContainer = $(this.options.tagContainer) || null;
+  this.$tagList = new filterTags.TagList().$body;
+  this.$widgets.prepend(this.$tagList);
 
   this.$toggle.on('click', this.toggle.bind(this));
 
-  this.filterSet = new FilterSet(this.$form, this.$tagContainer).activate();
+  this.filterSet = new FilterSet(this.$form).activate();
   if (!_.isEmpty(this.filterSet.serialize())) {
     this.show();
   }
-
   this.adjust();
 }
 

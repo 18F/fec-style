@@ -3,6 +3,8 @@
 var $ = require('jquery');
 var _ = require('underscore');
 
+var events = require('./events');
+
 var TAGTEMPLATE = _.template(
   '<li class="tag">' +
     '{{ text }}' +
@@ -13,34 +15,53 @@ var TAGTEMPLATE = _.template(
   {interpolate: /\{\{(.+?)\}\}/g}
 );
 
-function Tag($input, filter) {
-  this.$input = $input;
-  this.key = $input.attr('id');
-  this.filter = filter;
-  this.checkOrRadio = $input.attr('type') === 'checkbox' || $input.attr('type') === 'radio';
-  this.text = this.getText($input);
+function TagList() {
+  this.$body = $('<ul class="data-container__tags"></ul>');
+  this.tags = {};
 
-  this.$content = $(TAGTEMPLATE({text: this.text}));
-
-  this.$content.on('click', 'button', this.remove.bind(this));
+  events.on('filter:added', this.addTag.bind(this));
+  events.on('filter:removed', this.removeTag.bind(this));
 }
 
-Tag.prototype.getText = function($input) {
-  if (this.checkOrRadio) {
-    return this.filter.$body.find('label[for="' + $input.attr('id') + '"]').text();
-  } else {
-    return $input.val();
+TagList.prototype.addTag = function(opts) {
+  if (this.findTag(opts.key)) {
+    this.removeTag(opts);
+  }
+
+  var tag = new Tag(opts);
+  this.tags[tag.key] = tag;
+  this.$body.append(tag.$content);
+};
+
+TagList.prototype.removeTag = function(opts) {
+  if (Object.keys(this.tags).length > 0 && this.findTag(opts.key)) {
+    var tag = this.findTag(opts.key);
+    delete this.tags[tag.key];
+    tag.remove();
   }
 };
 
-Tag.prototype.remove = function() {
+TagList.prototype.findTag = function(key) {
+  return this.tags[key] || null;
+};
+
+function Tag(opts) {
+  this.key = opts.key;
+  this.checkOrRadio = opts.type === 'checkbox' || opts.type === 'radio';
+  this.text = opts.value;
+
+  this.$content = $(TAGTEMPLATE({text: this.text}));
+  this.$content.on('click', 'button', this.remove.bind(this, true));
+}
+
+Tag.prototype.remove = function(triggerEvent) {
   this.$content.remove();
-  this.filter.tags.pop(this);
-  this.checkOrRadio ?
-    this.$input.attr('checked', false).trigger('change') :
-    this.$input.val('').trigger('change');
+  if (triggerEvent) {
+    events.emit('tag:removed', {key: this.key});
+  }
 };
 
 module.exports = {
+  TagList: TagList,
   Tag: Tag,
 };
