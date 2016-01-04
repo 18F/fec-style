@@ -24,7 +24,7 @@ function FilterSet(elm, $tagContainer) {
 
 FilterSet.prototype.activate = function() {
   var query = URI.parseQuery(window.location.search);
-  this.filters = _.chain(this.$body.find('.js-filter'))
+  this.filters = _.chain(this.$body.find('.filter'))
     .map(function(elm) {
       var filter = Filter.build($(elm)).fromQuery(query);
       return [filter.name, filter];
