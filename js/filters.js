@@ -137,9 +137,28 @@ function TypeaheadFilter(elm) {
   var key = this.$body.data('dataset');
   var dataset = typeahead.datasets[key];
   this.typeaheadFilter = new typeaheadFilter.TypeaheadFilter(this.$body, dataset);
+  this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
 
 TypeaheadFilter.prototype = Object.create(Filter.prototype);
 TypeaheadFilter.constructor = TypeaheadFilter;
+
+TypeaheadFilter.prototype.handleChange = function() {};
+
+TypeaheadFilter.prototype.handleNestedChange = function(e) {
+  var $input = $(e.target);
+  var type = $input.attr('type');
+  var id = $input.attr('id');
+
+  var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
+  var value = $input.val();
+
+  events.emit(eventName,
+    {
+      key: id,
+      value: value,
+      type: type
+    });
+};
 
 module.exports = {Filter: Filter};

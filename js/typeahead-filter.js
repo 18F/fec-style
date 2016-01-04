@@ -49,7 +49,9 @@ TypeaheadFilter.prototype.checkboxTemplate = _.template(
 );
 
 TypeaheadFilter.prototype.appendCheckbox = function(opts) {
-  $(this.checkboxTemplate(opts)).appendTo(this.$selected);
+  var checkbox = $(this.checkboxTemplate(opts));
+  checkbox.appendTo(this.$selected);
+  checkbox.find('input').change();
   this.$field.val(opts.id).change();
   this.clearInput();
 };
