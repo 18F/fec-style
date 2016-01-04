@@ -20,7 +20,7 @@
 .data-container__widgets {
   @include clearfix();
   background-color: $primary;
-  padding: 2rem;
+  padding: 5rem 2rem 2rem 2rem;
 }
 
 .data-container__widgets--secondary {
