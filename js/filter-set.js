@@ -70,10 +70,8 @@ FilterSet.prototype.handleTagRemove = function(e) {
 
   if (type === 'checkbox' || type === 'radio') {
     $input.attr('checked', false).trigger('change');
-  }
-
-  if (type === 'text') {
-    $input.val().trigger('change');
+  } else if (type === 'text') {
+    $input.val('').trigger('change');
   }
 };
 
