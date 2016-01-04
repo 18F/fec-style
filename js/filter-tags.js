@@ -5,7 +5,7 @@ var _ = require('underscore');
 
 var events = require('./events');
 
-var TAGTEMPLATE = _.template(
+var TAG_TEMPLATE = _.template(
   '<li class="tag">' +
     '{{ text }}' +
     '<button class="button tag__remove">' +
@@ -24,9 +24,7 @@ function TagList() {
 }
 
 TagList.prototype.addTag = function(opts) {
-  if (this.findTag(opts.key)) {
-    this.removeTag(opts);
-  }
+  this.removeTag(opts);
 
   var tag = new Tag(opts);
   this.tags[tag.key] = tag;
@@ -34,23 +32,18 @@ TagList.prototype.addTag = function(opts) {
 };
 
 TagList.prototype.removeTag = function(opts) {
-  if (Object.keys(this.tags).length > 0 && this.findTag(opts.key)) {
-    var tag = this.findTag(opts.key);
+  var tag = this.tags[opts.key];
+  if (tag) {
     delete this.tags[tag.key];
     tag.remove();
   }
 };
 
-TagList.prototype.findTag = function(key) {
-  return this.tags[key] || null;
-};
-
 function Tag(opts) {
   this.key = opts.key;
-  this.checkOrRadio = opts.type === 'checkbox' || opts.type === 'radio';
   this.text = opts.value;
 
-  this.$content = $(TAGTEMPLATE({text: this.text}));
+  this.$content = $(TAG_TEMPLATE({text: this.text}));
   this.$content.on('click', 'button', this.remove.bind(this, true));
 }
 

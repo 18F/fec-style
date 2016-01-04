@@ -27,8 +27,6 @@ function Filter(elm) {
   this.$input = this.$body.find('input[name]');
   this.$remove = this.$body.find('.button--remove');
 
-  this.tags = [];
-
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
   this.$remove.on('click', this.handleClear.bind(this));
@@ -73,21 +71,19 @@ Filter.prototype.handleKeydown = function(e) {
 };
 
 Filter.prototype.handleChange = function(e) {
-  var $input = $(e.target),
-      type = $input.attr('type'),
-      id = $input.attr('id'),
-      eventName,
-      value;
+  var $input = $(e.target);
+  var type = $input.attr('type');
+  var id = $input.attr('id');
+  var eventName;
+  var value;
 
   this.$remove.css('display', $input.val() ? 'block' : 'none');
 
   if (type === 'checkbox' || type === 'radio') {
     eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
     value = $('label[for="' + id + '"]').text();
-  }
-
-  if (type === 'text') {
-    eventName = $input.val().length > 0 ? 'filter:added' : 'filter:removed';
+  } else if (type === 'text') {
+    eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();
   }
 
