@@ -29,14 +29,13 @@
   font-weight: bold;
 }
 
-// .tooltip__content      - Use to add extra padding and left align a paragraph of text in a tooltip
+// .tooltip__content      - Use to left align a paragraph of text in a tooltip
 .tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-bottom: 0;
-  padding: 1.5rem;
 
   a {
     border-bottom-color: $primary;
