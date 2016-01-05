@@ -5,6 +5,16 @@ var _ = require('underscore');
 
 var events = require('./events');
 
+var BODY_TEMPLATE = _.template(
+  '<div class="class="data-container__tags">' +
+    '<h3 class="tags__title">Viewing: ' +
+      '<span class="js-tag-title tags__title__text">{{ title }}</span>' +
+    '</h3>' +
+    '<ul class="tags"></ul>' +
+  '</div>',
+  {interpolate: /\{\{(.+?)\}\}/g}
+);
+
 var TAG_TEMPLATE = _.template(
   '<li class="tag">' +
     '{{ text }}' +
@@ -15,9 +25,14 @@ var TAG_TEMPLATE = _.template(
   {interpolate: /\{\{(.+?)\}\}/g}
 );
 
-function TagList() {
-  this.$body = $('<ul class="data-container__tags"></ul>');
+function TagList(opts) {
+  this.opts = opts;
   this.tags = {};
+  this.title = this.opts.title;
+
+  this.$body = $(BODY_TEMPLATE({title: this.title}));
+  this.$list = this.$body.find('ul');
+  this.$title = this.$body.find('.js-tag-title');
 
   events.on('filter:added', this.addTag.bind(this));
   events.on('filter:removed', this.removeTag.bind(this));
@@ -25,10 +40,11 @@ function TagList() {
 
 TagList.prototype.addTag = function(opts) {
   this.removeTag(opts);
+  this.$title.html('');
 
   var tag = new Tag(opts);
   this.tags[tag.key] = tag;
-  this.$body.append(tag.$content);
+  this.$list.append(tag.$content);
 };
 
 TagList.prototype.removeTag = function(opts) {
@@ -36,6 +52,10 @@ TagList.prototype.removeTag = function(opts) {
   if (tag) {
     delete this.tags[tag.key];
     tag.remove();
+  }
+
+  if (_.size(this.tags) === 0) {
+    this.$title.html(this.opts.title);
   }
 };
 

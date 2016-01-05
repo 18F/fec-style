@@ -10,10 +10,11 @@ var filterTags = require('./filter-tags');
 var defaultOptions = {
   body: '.filters',
   dataContainer: '.data-container',
-  widgetContainer: '.data-container__widgets',
   form: '#category-filters',
   focus: '#results tr:first-child',
-  toggle: '#filter-toggle'
+  tagTitle: 'All records',
+  toggle: '#filter-toggle',
+  widgetContainer: '.data-container__widgets',
 };
 
 function FilterPanel(options) {
@@ -27,7 +28,7 @@ function FilterPanel(options) {
   this.$toggle = $(this.options.toggle);
   this.$widgets = $(this.options.widgetContainer);
 
-  this.$tagList = new filterTags.TagList().$body;
+  this.$tagList = new filterTags.TagList({title: this.options.tagTitle}).$body;
   this.$widgets.prepend(this.$tagList);
 
   this.$toggle.on('click', this.toggle.bind(this));
