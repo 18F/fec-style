@@ -5,7 +5,6 @@ var _ = require('underscore');
 
 var FilterSet = require('./filter-set').FilterSet;
 var accessibility = require('./accessibility');
-var filterTags = require('./filter-tags');
 
 var defaultOptions = {
   body: '.filters',
