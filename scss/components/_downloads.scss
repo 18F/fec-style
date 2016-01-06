@@ -6,9 +6,12 @@
   bottom: 0;
   color: $primary;
   font-family: $sans-serif;
+  max-height: 50vh;
+  overflow: scroll;
   padding: 1.5rem 0;
   position: fixed;
   width: 100%;
+  z-index: $z-downloads;
 }
 
 .downloads__title {
@@ -37,11 +40,11 @@
 }
 
 .download__name {
+  display: block;
   font-weight: bold;
 }
 
 .download__button {
-  margin: 0 2rem;
   padding: .5rem;
 }
 
@@ -52,9 +55,37 @@
 
 .download__message {
   font-size: 1.4rem;
+  margin: 0;
+}
+
+@include media($med) {
+  .download__item {
+    @include span-columns(8);
+  }
+
+  .download__message {
+    @include span-columns(4);
+  }
+
+  .download__name {
+    float: left;
+    min-width: 22rem;
+  }
+
+  .download__button {
+    margin: 0 2rem;
+  }
 }
 
 @include media($lg) {
+  .downloads {
+    max-height: auto;
+  }
+
+  .download {
+    min-height: 4.2rem;
+  }
+
   .download__item {
     @include span-columns(5);
   }

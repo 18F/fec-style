@@ -13,8 +13,11 @@
 
 .results-info__title {
   border: none;
-  float: left;
   margin: 0;
+}
+
+.results-info__download {
+  margin-top: 1rem;
 }
 
 .results-info--top {
@@ -55,6 +58,10 @@
 // BREAKPOINT: MEDIUM
 
 @include media($med) {
+  .results-info__title {
+    float: left;
+  }
+
   .results-info__null {
     clear: right;
     float: right;
@@ -63,6 +70,7 @@
 
   .results-info__download {
     float: right;
+    margin: 0;
     position: relative;
   }
 
