@@ -12,9 +12,7 @@ var defaultOptions = {
   dataContainer: '.data-container',
   form: '#category-filters',
   focus: '#results tr:first-child',
-  tagTitle: 'All records',
-  toggle: '#filter-toggle',
-  widgetContainer: '.data-container__widgets',
+  toggle: '#filter-toggle'
 };
 
 function FilterPanel(options) {
@@ -26,10 +24,6 @@ function FilterPanel(options) {
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
-  this.$widgets = $(this.options.widgetContainer);
-
-  this.$tagList = new filterTags.TagList({title: this.options.tagTitle}).$body;
-  this.$widgets.prepend(this.$tagList);
 
   this.$toggle.on('click', this.toggle.bind(this));
 

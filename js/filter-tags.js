@@ -54,7 +54,7 @@ TagList.prototype.removeTag = function(opts) {
     tag.remove();
   }
 
-  if (_.size(this.tags) === 0) {
+  if (_.isEmpty(this.tags)) {
     this.$title.html(this.opts.title);
   }
 };
