@@ -5,7 +5,13 @@ var Handlebars = require('hbsfy/runtime');
 
 function datetime(value, options) {
   var hash = options.hash || {};
-  var format = hash.pretty ? 'MMM D, YYYY' : 'MM-DD-YYYY';
+  var formatMap = {
+    default: 'MM-DD-YYYY',
+    pretty: 'MMM D, YYYY',
+    time: 'h:mma',
+    dateTime: 'MMM D, h:mma'
+  }
+  var format = formatMap[hash.format];
   var parsed = moment(value, 'YYYY-MM-DDTHH:mm:ss');
   return parsed.isValid() ? parsed.format(format) : null;
 }
