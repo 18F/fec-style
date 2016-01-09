@@ -100,6 +100,10 @@
   padding: .5rem 1rem;
 }
 
+.fc-today {
+  background-color: $neutral;
+}
+
 .fc-event-container {
   padding: 2px;
   vertical-align: top;
@@ -113,8 +117,14 @@
   padding: 4px;
 }
 
+.fc-limited {
+  display: none;
+}
+
+// Events
 .fc--allday {
   .fc-content {
+    background: $beige;
     border-radius: 4px;
     color: $cream;
   }
@@ -150,6 +160,16 @@
   }
 }
 
+.fc--rules {
+ color: $cal-rules;
+
+  &.fc--allday {
+    .fc-content {
+      background: $cal-rules;
+    }
+  }
+}
+
 .fc--meeting {
   color: $cal-meeting;
 
@@ -170,6 +190,14 @@
   }
 }
 
+// Week view
+.fc-slats {
+  tr:not(.fc-minor) {
+    border: 2px solid $neutral;
+    border-bottom: none;
+  }
+}
+
 // Event details
 .calendar__details {
   font-size: 1.4rem;
@@ -180,6 +208,39 @@
   .button {
     position: absolute;
     top: 0;
+    right: 0;
+  }
+}
+
+.fc-popup {
+  background: $cream;
+  border: 2px solid $neutral;
+  position: absolute;
+  max-width: 20rem;
+
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.fc-popup__header {
+  background: $neutral;
+  color: $primary;
+  font-weight: bold;
+  padding: 4px;
+  position: relative;
+}
+
+// Week view
+.fc-time-grid {
+  .fc-content-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
   }
 }
