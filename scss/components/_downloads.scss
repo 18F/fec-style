@@ -6,9 +6,12 @@
   bottom: 0;
   color: $primary;
   font-family: $sans-serif;
+  max-height: 50vh;
+  overflow: scroll;
   padding: 1.5rem 0;
   position: fixed;
   width: 100%;
+  z-index: $z-downloads;
 }
 
 .downloads__title {
@@ -19,25 +22,29 @@
 }
 
 .download {
+  @include clearfix();
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  padding-left: 2rem;
+  padding-left: 3rem;
 
   &.is-pending {
-    @include u-background-image('../img/i-ellipsis--primary', 0% 30%);
+    background-image: url('../img/loading-ellipsis.gif');
+    background-position: 0 .4rem;
+    background-repeat: no-repeat;
+    background-size: 2rem;
   }
 
   &.is-complete {
-    @include u-background-image('../img/i-check--primary', 0% 30%);
+    @include u-background-image('../img/i-check--primary', 0% 1rem);
   }
 }
 
 .download__name {
-  text-decoration: underline;
+  display: block;
+  font-weight: bold;
 }
 
 .download__button {
-  margin: 0 2rem;
   padding: .5rem;
 }
 
@@ -47,7 +54,43 @@
 }
 
 .download__message {
-  display: inline-block;
-  margin-left: 4rem;
-  width: auto;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+@include media($med) {
+  .download__item {
+    @include span-columns(8);
+  }
+
+  .download__message {
+    @include span-columns(4);
+  }
+
+  .download__name {
+    float: left;
+    min-width: 22rem;
+  }
+
+  .download__button {
+    margin: 0 2rem;
+  }
+}
+
+@include media($lg) {
+  .downloads {
+    max-height: auto;
+  }
+
+  .download {
+    min-height: 4.2rem;
+  }
+
+  .download__item {
+    @include span-columns(5);
+  }
+
+  .download__message {
+    @include span-columns(7);
+  }
 }

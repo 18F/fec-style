@@ -18,7 +18,7 @@
   background-color: $cream;
   color: $primary;
   font-family: $sans-serif;
-  padding: .3rem .5rem;
+  padding: 1.5rem;
   position: absolute;
   text-align: center;
   z-index: $z-tooltip;
@@ -30,13 +30,13 @@
   font-weight: bold;
 }
 
-// .tooltip__content      - Use to add extra padding and left align a paragraph of text in a tooltip
+// .tooltip__content      - Use to left align a paragraph of text in a tooltip
 .tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
-  line-height: 1.2;
+  font-size: 1.4rem;
+  line-height: 1.4;
   margin-bottom: 0;
-  padding: .5rem;
 
   a {
     border-bottom-color: $primary;
