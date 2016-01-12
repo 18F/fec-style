@@ -11,7 +11,7 @@ function datetime(value, options) {
     time: 'h:mma',
     dateTime: 'MMM D, h:mma'
   }
-  var format = formatMap[hash.format];
+  var format = hash.format ? formatMap[hash.format] : formatMap['default'];
   var parsed = moment(value, 'YYYY-MM-DDTHH:mm:ss');
   return parsed.isValid() ? parsed.format(format) : null;
 }
