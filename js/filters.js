@@ -149,14 +149,14 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
   var $input = $(e.target);
   var type = $input.attr('type');
   var id = $input.attr('id');
+  var $label = this.$body.find('[for="' + id + '"]');
 
   var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
-  var value = $input.val();
 
   events.emit(eventName,
     {
       key: id,
-      value: value,
+      value: $label.text(),
       type: type
     });
 };

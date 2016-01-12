@@ -16,8 +16,8 @@ var BODY_TEMPLATE = _.template(
 );
 
 var TAG_TEMPLATE = _.template(
-  '<li class="tag">' +
-    '{{ text }}' +
+  '<li id="{{ key }}" class="tag">' +
+    '{{ value }}' +
     '<button class="button tag__remove">' +
       '<span class="u-visually-hidden">Remove</span>' +
     '</button>' +
@@ -27,54 +27,54 @@ var TAG_TEMPLATE = _.template(
 
 function TagList(opts) {
   this.opts = opts;
-  this.tags = {};
-  this.title = this.opts.title;
 
-  this.$body = $(BODY_TEMPLATE({title: this.title}));
+  this.$body = $(BODY_TEMPLATE({title: this.opts.title}));
   this.$list = this.$body.find('ul');
   this.$title = this.$body.find('.js-tag-title');
 
   events.on('filter:added', this.addTag.bind(this));
-  events.on('filter:removed', this.removeTag.bind(this));
+  events.on('filter:removed', this.removeTagEvt.bind(this));
+  events.on('filter:renamed', this.renameTag.bind(this));
+
+  this.$list.on('click', '.tag', this.removeTagDom.bind(this));
 }
 
 TagList.prototype.addTag = function(opts) {
-  this.removeTag(opts);
+  this.removeTag(opts.key, false);
   this.$title.html('');
 
-  var tag = new Tag(opts);
-  this.tags[tag.key] = tag;
-  this.$list.append(tag.$content);
+  var $tag = TAG_TEMPLATE(opts);
+  this.$list.append($tag);
 };
 
-TagList.prototype.removeTag = function(opts) {
-  var tag = this.tags[opts.key];
-  if (tag) {
-    delete this.tags[tag.key];
-    tag.remove();
+TagList.prototype.removeTag = function(key, emit) {
+  var $tag = this.$list.find('#' + key);
+  if ($tag.length) {
+    $tag.remove();
+    if (emit) {
+      events.emit('tag:removed', {key: key});
+    }
   }
 
-  if (_.isEmpty(this.tags)) {
+  if (this.$list.find('.tag').length === 0) {
     this.$title.html(this.opts.title);
   }
 };
 
-function Tag(opts) {
-  this.key = opts.key;
-  this.text = opts.value;
+TagList.prototype.removeTagEvt = function(opts) {
+  this.removeTag(opts.key, false);
+};
 
-  this.$content = $(TAG_TEMPLATE({text: this.text}));
-  this.$content.on('click', 'button', this.remove.bind(this, true));
-}
+TagList.prototype.removeTagDom = function(e) {
+  var key = $(e.target).closest('.tag').attr('id');
+  this.removeTag(key, true);
+};
 
-Tag.prototype.remove = function(triggerEvent) {
-  this.$content.remove();
-  if (triggerEvent) {
-    events.emit('tag:removed', {key: this.key});
+TagList.prototype.renameTag = function(opts) {
+  var $tag = this.$list.find('#' + opts.key);
+  if ($tag.length) {
+    $tag.replaceWith(TAG_TEMPLATE(opts));
   }
 };
 
-module.exports = {
-  TagList: TagList,
-  Tag: Tag,
-};
+module.exports = {TagList: TagList};
