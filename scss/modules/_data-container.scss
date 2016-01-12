@@ -11,15 +11,13 @@
   overflow: hidden;
   width: 100%;
   padding-top: 2rem;
-
-  @include media($lg) {
-    // @include transition(width .1s);
-  }
 }
 
 .data-container__widgets {
   @include clearfix();
+  color: $cream;
   background-color: $primary;
+  font-family: $sans-serif;
   padding: 5rem 2rem 2rem 2rem;
 }
 
@@ -28,11 +26,18 @@
 }
 
 .data-container__body {
-  padding: 2rem;
 
   &.fade-in {
     opacity: 0;
   }
+}
+
+.data-container__tags {
+  @include clearfix();
+}
+
+.data-container__export {
+  margin-top: 1rem;
 }
 
 // BREAKPOINT: LARGE
@@ -52,16 +57,18 @@
 
   .data-container__body {
     border-top: 0;
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
   }
 
   .data-container__export {
-    @include span-columns(3);
+    @include span-columns(4);
     float: right;
+    margin-top: 0;
+    text-align: right;
   }
 
    .data-container__tags {
-    @include span-columns(9);
+    @include span-columns(8);
   }
 
 

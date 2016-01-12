@@ -6,7 +6,7 @@ var _ = require('underscore');
 var events = require('./events');
 
 var BODY_TEMPLATE = _.template(
-  '<div class="class="data-container__tags">' +
+  '<div class="data-container__tags">' +
     '<h3 class="tags__title">Viewing: ' +
       '<span class="js-tag-title tags__title__text">{{ title }}</span>' +
     '</h3>' +
