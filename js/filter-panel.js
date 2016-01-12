@@ -27,14 +27,12 @@ function FilterPanel(options) {
   this.$toggle.on('click', this.toggle.bind(this));
 
   this.filterSet = new FilterSet(this.$form).activate();
-  if (!_.isEmpty(this.filterSet.serialize())) {
-    this.show();
-  }
+
   this.adjust();
 }
 
 FilterPanel.prototype.adjust = function() {
-  if ($('body').width() > 768) {
+  if ($(document).width() > 768) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
@@ -42,7 +40,7 @@ FilterPanel.prototype.adjust = function() {
 };
 
 FilterPanel.prototype.setHeight = function() {
-  if ( this.$dataContainer.height() > this.$body.height() ) {
+  if ( $(document).width() > 768 && this.$dataContainer.height() > this.$body.height() ) {
     this.$body.height(this.$dataContainer.height());
   }
 };
