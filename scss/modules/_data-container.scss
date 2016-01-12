@@ -18,7 +18,7 @@
   color: $cream;
   background-color: $primary;
   font-family: $sans-serif;
-  padding: 5rem 2rem 2rem 2rem;
+  padding: 2rem;
 }
 
 .data-container__widgets--secondary {
@@ -63,12 +63,13 @@
   .data-container__export {
     @include span-columns(4);
     float: right;
-    margin-top: 0;
+    margin-top: 1rem;
     text-align: right;
   }
 
    .data-container__tags {
     @include span-columns(8);
+    margin-top: 3rem;
   }
 
 
