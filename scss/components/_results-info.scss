@@ -11,6 +11,15 @@
   padding: 1rem 1rem;
 }
 
+.results-info__left {
+  @include clearfix();
+  margin-bottom: 1rem;
+}
+
+.results-info__right {
+  @include clearfix();
+}
+
 .results-info__title {
   border: none;
   margin: 0;
@@ -32,21 +41,14 @@
   .results-info {
     font-family: $sans-serif;
 
-    .dataTables_length,
-    .dataTables_info,
     .dataTables_paginate {
-      float: none;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    .dataTables_info {
-      margin-bottom: 0;
+      float: right;
+      padding: .5rem 0;
     }
 
     .dataTables_length {
-      margin-bottom: 1rem;
+      float: left;
+      line-height: 2rem;
 
       select {
         display: inline;
@@ -58,14 +60,13 @@
 // BREAKPOINT: MEDIUM
 
 @include media($med) {
-  .results-info__title {
+  .results-info__left {
     float: left;
+    margin-bottom: 0;
   }
 
-  .results-info__null {
-    clear: right;
+  .results-info__right {
     float: right;
-    margin-top: 1.2rem;
   }
 
   .results-info__download {
@@ -90,18 +91,11 @@
     }
 
     .dataTables_length {
-      clear: left;
-      margin-top: .5rem;
       padding: 0;
     }
 
     .dataTables_paginate {
-      padding-top: 0;
-      margin-bottom: 0;
-    }
-
-    .dataTables_info {
-      padding-top: 0;
+      padding: .5rem 0;
     }
   }
 }

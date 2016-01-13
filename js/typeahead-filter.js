@@ -6,6 +6,8 @@ var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
 
+var events = require('./events');
+
 var TypeaheadFilter = function(selector, dataset) {
   var self = this;
 
@@ -49,7 +51,9 @@ TypeaheadFilter.prototype.checkboxTemplate = _.template(
 );
 
 TypeaheadFilter.prototype.appendCheckbox = function(opts) {
-  $(this.checkboxTemplate(opts)).appendTo(this.$selected);
+  var checkbox = $(this.checkboxTemplate(opts));
+  checkbox.appendTo(this.$selected);
+  checkbox.find('input').change();
   this.$field.val(opts.id).change();
   this.clearInput();
 };
@@ -78,6 +82,7 @@ TypeaheadFilter.prototype.getFilters = function() {
     ).done(function(response) {
       _.each(response.results, function(result) {
         self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(result.name);
+        events.emit('filter:renamed', {key: result[idKey] + '-checkbox', value: result.name});
       });
     });
   }

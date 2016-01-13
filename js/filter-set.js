@@ -5,14 +5,18 @@ var _ = require('underscore');
 var URI = require('urijs');
 
 var Filter = require('./filters').Filter;
+var events = require('./events');
 
 var KEYCODE_ENTER = 13;
 
-function FilterSet(elm) {
+function FilterSet(elm, $tagContainer) {
   this.$body = $(elm);
   this.$clear = this.$body.find('.js-clear-filters');
+  this.$tagContainer = $tagContainer;
 
   this.$clear.on('click keypress', this.handleClear.bind(this));
+
+  events.on('tag:removed', this.handleTagRemove.bind(this));
 
   this.filters = {};
   this.fields = [];
@@ -20,7 +24,7 @@ function FilterSet(elm) {
 
 FilterSet.prototype.activate = function() {
   var query = URI.parseQuery(window.location.search);
-  this.filters = _.chain(this.$body.find('.filter'))
+  this.filters = _.chain(this.$body.find('.js-filter'))
     .map(function(elm) {
       var filter = Filter.build($(elm)).fromQuery(query);
       return [filter.name, filter];
@@ -58,6 +62,17 @@ FilterSet.prototype.clear = function() {
   _.each(this.filters, function(filter) {
     filter.setValue();
   });
+};
+
+FilterSet.prototype.handleTagRemove = function(e) {
+  var $input = this.$body.find('#' + e.key);
+  var type = $input.attr('type');
+
+  if (type === 'checkbox' || type === 'radio') {
+    $input.attr('checked', false).trigger('change');
+  } else if (type === 'text') {
+    $input.val('').trigger('change');
+  }
 };
 
 module.exports = {FilterSet: FilterSet};

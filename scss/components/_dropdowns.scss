@@ -30,6 +30,7 @@
 // Styleguide components.dropdowns
 
 .dropdown {
+  font-family: $sans-serif;
   position: relative;
 }
 
@@ -53,15 +54,21 @@
     right: 1.5rem;
     top: .5rem;
   }
+
+  &.button--secondary:after {
+    background-image: url('../img/i-down--secondary.png');
+    background-image: url('../img/i-down--secondary.svg');
+    border-left: 1px solid $secondary;
+  }
 }
 
 .dropdown__value {
+  display: block;
   margin: 0;
 }
 
 .dropdown__panel {
   position: absolute;
-  top: 3.2rem;
   min-width: 100%;
   background: $cream;
   border: 2px solid $beige;
@@ -89,6 +96,11 @@
     background-color: $ivory;
   }
 
+  .dropdown__item:last-of-type {
+    .dropdown__value {
+      border-bottom: none;
+    }
+  }
 
   // For labeling a group of options
   .dropdown__subhead {
@@ -96,7 +108,23 @@
     font-weight: bold;
 
     &:hover {
-      background-color: #fff;
+      background-color: $cream;
+    }
+  }
+}
+
+.dropdown--secondary {
+  .dropdown__panel {
+    background: lighten($secondary-contrast, 10%);
+    border-color: $deep-orange;
+
+    .dropdown__value {
+      border-color: $deep-orange;
+      color: $secondary;
+
+      &:hover {
+        background-color: $deep-orange;
+      }
     }
   }
 }

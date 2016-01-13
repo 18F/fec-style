@@ -8,6 +8,7 @@ var accessibility = require('./accessibility');
 
 var defaultOptions = {
   body: '.filters',
+  dataContainer: '.data-container',
   form: '#category-filters',
   focus: '#results tr:first-child',
   toggle: '#filter-toggle'
@@ -18,6 +19,7 @@ function FilterPanel(options) {
   this.options = _.extend({}, defaultOptions, options);
 
   this.$body = $(this.options.body);
+  this.$dataContainer = $(this.options.dataContainer);
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
@@ -25,18 +27,21 @@ function FilterPanel(options) {
   this.$toggle.on('click', this.toggle.bind(this));
 
   this.filterSet = new FilterSet(this.$form).activate();
-  if (!_.isEmpty(this.filterSet.serialize())) {
-    this.show();
-  }
 
   this.adjust();
 }
 
 FilterPanel.prototype.adjust = function() {
-  if ($('body').width() > 768) {
+  if ($(document).width() > 768) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
+  }
+};
+
+FilterPanel.prototype.setHeight = function() {
+  if ( $(document).width() > 768 && this.$dataContainer.height() > this.$body.height() ) {
+    this.$body.height(this.$dataContainer.height());
   }
 };
 
