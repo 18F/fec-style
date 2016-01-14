@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="17px" height="13px" viewBox="0 0 17 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>i-addcalendar--primary</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Alpha-Wireframes-Styled" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Calendar_monthly" sketch:type="MSArtboardGroup" transform="translate(-404.000000, -994.000000)" fill="#022C53">
+            <g id="i-addcalendar--primary" sketch:type="MSLayerGroup" transform="translate(404.000000, 994.000000)">
+                <rect id="Rectangle-203" sketch:type="MSShapeGroup" x="0" y="0" width="14" height="4"></rect>
+                <rect id="Rectangle-1223" sketch:type="MSShapeGroup" x="0" y="0" width="1" height="12"></rect>
+                <rect id="Rectangle-1224" sketch:type="MSShapeGroup" x="0" y="11" width="12" height="1"></rect>
+                <rect id="Rectangle-1225" sketch:type="MSShapeGroup" x="13" y="0" width="1" height="6"></rect>
+                <rect id="Rectangle-1226" sketch:type="MSShapeGroup" x="0" y="0" width="14" height="1"></rect>
+                <path d="M12.5581055,13 C15.0112961,13 17,11.0112961 17,8.55810547 C17,6.10491486 15.0112961,4.11621094 12.5581055,4.11621094 C10.1049149,4.11621094 8.11621094,6.10491486 8.11621094,8.55810547 C8.11621094,11.0112961 10.1049149,13 12.5581055,13 Z M13.0265245,6.52627034 L13.0265245,8.11266124 L14.5879213,8.11266124 C14.8466447,8.11266124 15.0563403,8.32571354 15.0563403,8.58857851 C15.0563403,8.85144349 14.8466447,9.06449579 14.5879213,9.06449579 L13.0265245,9.06449579 L13.0265245,10.6508867 C13.0265245,10.9137517 12.8168289,11.126804 12.5581055,11.126804 C12.299382,11.126804 12.0896864,10.9137517 12.0896864,10.6508867 L12.0896864,9.06449579 L10.5282896,9.06449579 C10.2695662,9.06449579 10.0598706,8.85144349 10.0598706,8.58857851 C10.0598706,8.32571354 10.2695662,8.11266124 10.5282896,8.11266124 L12.0896864,8.11266124 L12.0896864,6.52627034 C12.0896864,6.26340537 12.299382,6.05035307 12.5581055,6.05035307 C12.8168289,6.05035307 13.0265245,6.26340537 13.0265245,6.52627034 Z" id="Oval-284-Copy-2" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
