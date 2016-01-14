@@ -418,3 +418,8 @@
   @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
   padding-left: 3rem;
 }
+
+.button--calendar {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  padding-left: 3rem;
+}
