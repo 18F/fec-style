@@ -195,6 +195,34 @@
   }
 }
 
+// Secondary Contrast buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--secondary {{ modifier_class }}">Button</button>
+//
+// Styleguide components.buttons.secondary-contrast
+
+.button--secondary-contrast {
+  @extend .button;
+  background-color: $secondary;
+  color: $secondary-contrast;
+
+  &:hover:not(.disabled) {
+    background-color: lighten($secondary, 10%);
+  }
+
+  &:active:not(.disabled),
+  &.is-active {
+    background-color: $deep-red;
+    border: 2px solid $secondary-contrast;
+    color: $cream;
+  }
+}
+
 // Navy buttons
 // Specialty button for the feedback widget
 //
