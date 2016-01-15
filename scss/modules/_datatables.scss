@@ -15,35 +15,6 @@
   overflow-x: hidden;
 }
 
-.datatable__container {
-  @include clearfix();
-  @include transition(opacity, .2s);
-  position: relative;
-  opacity: 0;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 8rem;
-
-  @include media($lg) {
-    @include transition(width .5s);
-    border-top: 0;
-    padding: 2rem 2rem 2rem 5rem;
-  }
-}
-
-.is-showing-filters {
-  .datatable__container {
-
-  }
-
-  @include media($lg) {
-    .datatable__container {
-      width: calc(100% - 30rem);
-      float: left;
-    }
-  }
-}
-
 .data-table {
   @include transform(translateX(0%));
   @include transition-property(transform);

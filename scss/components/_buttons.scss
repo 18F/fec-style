@@ -195,6 +195,34 @@
   }
 }
 
+// Secondary Contrast buttons
+//
+// .button--lg      - Large button
+// .button--sm      - Small button
+// .is-active       - Darkens with a border when active it's active
+//
+// Markup:
+// <button class="button--secondary {{ modifier_class }}">Button</button>
+//
+// Styleguide components.buttons.secondary-contrast
+
+.button--secondary-contrast {
+  @extend .button;
+  background-color: $secondary;
+  color: $secondary-contrast;
+
+  &:hover:not(.disabled) {
+    background-color: lighten($secondary, 10%);
+  }
+
+  &:active:not(.disabled),
+  &.is-active {
+    background-color: $deep-red;
+    border: 2px solid $secondary-contrast;
+    color: $cream;
+  }
+}
+
 // Navy buttons
 // Specialty button for the feedback widget
 //
@@ -404,6 +432,22 @@
 }
 
 .button--export {
-  @include u-background-image('../img/i-export--primary-contrast', 1rem .5rem);
+  @include u-background-image('../img/i-export--primary', 1rem .5rem);
+  background-size: 2rem;
   padding-left: 4rem;
+}
+
+.button--download {
+  @include u-background-image('../img/i-download--secondary', 1rem 1rem);
+  padding-left: 3rem;
+}
+
+.button--subscribe {
+  @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
+  padding-left: 3rem;
+}
+
+.button--calendar {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  padding-left: 3rem;
 }

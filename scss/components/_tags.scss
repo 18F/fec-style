@@ -1,0 +1,47 @@
+// Tags
+
+.tags__title {
+  font-family: $sans-serif;
+  font-size: 1em;
+  float: left;
+  color: $ivory;
+  margin: 0;
+  padding: .5rem 1rem .5rem 0;
+}
+
+.tags__title__text {
+  color: $secondary-contrast;
+}
+
+.tags {
+  float: left;
+}
+
+.tag  {
+  display: inline-block;
+  background-color: $neutral;
+  border-radius: 4px;
+  color: $primary;
+  font-family: $sans-serif;
+  margin: 0 2px 2px 0;
+  padding: 2px .5rem;
+}
+
+.tag__remove {
+  @include u-background-image('../img/i-x--primary');
+  padding: 1rem;
+}
+
+.data-container__widgets--secondary {
+  .tag {
+    color: $secondary;
+  }
+
+  .tags__title {
+    color: $secondary-contrast;
+  }
+
+  .tag__remove {
+    @include u-background-image('../img/i-x--secondary');
+  }
+}

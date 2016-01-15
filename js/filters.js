@@ -6,6 +6,7 @@ var _ = require('underscore');
 // Hack: Append jQuery to `window` for use by legacy libraries
 window.$ = window.jQuery = $;
 
+var events = require('./events');
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 
@@ -69,8 +70,29 @@ Filter.prototype.handleKeydown = function(e) {
   }
 };
 
-Filter.prototype.handleChange = function() {
-  this.$remove.css('display', this.$input.val() ? 'block' : 'none');
+Filter.prototype.handleChange = function(e) {
+  var $input = $(e.target);
+  var type = $input.attr('type');
+  var id = $input.attr('id');
+  var eventName;
+  var value;
+
+  this.$remove.css('display', $input.val() ? 'block' : 'none');
+
+  if (type === 'checkbox' || type === 'radio') {
+    eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
+    value = $('label[for="' + id + '"]').text();
+  } else if (type === 'text') {
+    eventName = $input.val().length ? 'filter:added' : 'filter:removed';
+    value = $input.val();
+  }
+
+  events.emit(eventName,
+    {
+      key: id,
+      value: value,
+      type: type
+    });
 };
 
 function DateFilter(elm) {
@@ -115,9 +137,28 @@ function TypeaheadFilter(elm) {
   var key = this.$body.data('dataset');
   var dataset = typeahead.datasets[key];
   this.typeaheadFilter = new typeaheadFilter.TypeaheadFilter(this.$body, dataset);
+  this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
 
 TypeaheadFilter.prototype = Object.create(Filter.prototype);
 TypeaheadFilter.constructor = TypeaheadFilter;
+
+TypeaheadFilter.prototype.handleChange = function() {};
+
+TypeaheadFilter.prototype.handleNestedChange = function(e) {
+  var $input = $(e.target);
+  var type = $input.attr('type');
+  var id = $input.attr('id');
+  var $label = this.$body.find('[for="' + id + '"]');
+
+  var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
+
+  events.emit(eventName,
+    {
+      key: id,
+      value: $label.text(),
+      type: type
+    });
+};
 
 module.exports = {Filter: Filter};
