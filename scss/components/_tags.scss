@@ -3,7 +3,7 @@
 .tags__title {
   font-family: $sans-serif;
   float: left;
-  color: $primary-contrast;
+  color: $ivory;
   margin: 0;
   padding: .5rem 1rem .5rem 0;
 }
@@ -34,6 +34,7 @@
 .data-container__widgets--secondary {
   .tag {
     color: $secondary;
+    margin-bottom: 2rem;
   }
 
   .tags__title {
