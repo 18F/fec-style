@@ -24,7 +24,7 @@ function prepareValue($elm, value) {
 
 function Filter(elm) {
   this.$body = $(elm);
-  this.$input = this.$body.find('input[name]');
+  this.$input = this.$body.find('input:not([name^="_"])');
   this.$remove = this.$body.find('.button--remove');
 
   this.$input.on('change', this.handleChange.bind(this));
@@ -73,6 +73,8 @@ Filter.prototype.handleKeydown = function(e) {
 Filter.prototype.handleChange = function(e) {
   var $input = $(e.target);
   var type = $input.attr('type');
+  var prefix = $input.data('prefix');
+  var suffix = $input.data('suffix');
   var id = $input.attr('id');
   var eventName;
   var value;
@@ -85,6 +87,13 @@ Filter.prototype.handleChange = function(e) {
   } else if (type === 'text') {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();
+  }
+
+  if (prefix) {
+    value = prefix + ' ' + value;
+  }
+  if (suffix) {
+    value = value + ' ' + suffix;
   }
 
   events.emit(eventName,
