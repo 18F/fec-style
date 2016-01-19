@@ -19,13 +19,13 @@ describe('filter set', function() {
     this.$fixture.empty().append(
       '<form>' +
         '<div class="button js-clear-filters"></button>' +
-        '<div class="filter">' +
+        '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="name" />' +
             '<button class="button button-remove"></button>' +
           '</div>' +
         '</div>' +
-        '<div class="filter">' +
+        '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="cycle" type="checkbox" value="2012" />' +
             '<input name="cycle" type="checkbox" value="2014" />' +

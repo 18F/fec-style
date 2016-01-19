@@ -3,7 +3,7 @@
 var chai = require('chai');
 var expect = chai.expect;
 
-var analytics = require('../../../static/js/modules/analytics');
+var analytics = require('../js/analytics');
 
 describe('analytics', function() {
   it('sorts query parameters', function() {

@@ -22,8 +22,10 @@
   "dependencies": {
     "eventemitter2": "0.4.14",
     "handlebars": "3.0.3",
+    "hbsfy": "2.2.1",
     "jquery": "2.1.4",
     "list.js": "git://github.com/jmcarp/list.js.git",
+    "moment": "2.10.3",
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
     "perfect-scrollbar": "0.6.2",
