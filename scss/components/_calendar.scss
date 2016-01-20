@@ -252,3 +252,86 @@
     margin: 0;
   }
 }
+
+// Copied from fullcalendar.io
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-popover {
+  border-color: #ddd;
+}
+
+.fc-unthemed .fc-popover {
+  background-color: #fff;
+}
+
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-popover .fc-header {
+  background: #eee;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+  color: #666;
+}
+
+.fc-popover {
+  position: absolute;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.fc-popover .fc-header { /* TODO: be more consistent with fc-head/fc-body */
+  padding: 2px 4px;
+}
+
+.fc-popover .fc-header .fc-title {
+  margin: 0 2px;
+}
+
+.fc-popover .fc-header .fc-close {
+  cursor: pointer;
+}
+
+.fc-ltr .fc-popover .fc-header .fc-title,
+.fc-rtl .fc-popover .fc-header .fc-close {
+  float: left;
+}
+
+.fc-rtl .fc-popover .fc-header .fc-title,
+.fc-ltr .fc-popover .fc-header .fc-close {
+  float: right;
+}
+
+/* unthemed */
+
+.fc-unthemed .fc-popover {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+  font-size: .9em;
+  margin-top: 2px;
+}
+
+/* jqui themed */
+
+.fc-popover > .ui-widget-header + .ui-widget-content {
+  border-top: 0; /* where they meet, let the header have the border */
+}
+
+.fc-more-popover {
+  z-index: 2;
+  width: 220px;
+}
+
+.fc-more-popover .fc-event-container {
+  padding: 10px;
+}
+
+.fc-clear {
+  clear: both;
+}
+
+.fc-icon-x:after {
+  content: "\000D7";
+  font-size: 200%;
+  top: 6%;
+}
