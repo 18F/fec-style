@@ -16,7 +16,7 @@ var BODY_TEMPLATE = _.template(
 var TAG_TEMPLATE = _.template(
   '<li data-id="{{ key }}" class="tag">' +
     '{{ value }}' +
-    '<button class="button tag__remove">' +
+    '<button class="button js-close tag__remove">' +
       '<span class="u-visually-hidden">Remove</span>' +
     '</button>' +
   '</li>',
@@ -35,7 +35,7 @@ function TagList(opts) {
     .on('filter:removed', this.removeTagEvt.bind(this))
     .on('filter:renamed', this.renameTag.bind(this));
 
-  this.$list.on('click', '.tag', this.removeTagDom.bind(this));
+  this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
 }
 
 TagList.prototype.addTag = function(e, opts) {
@@ -47,7 +47,7 @@ TagList.prototype.addTag = function(e, opts) {
 };
 
 TagList.prototype.removeTag = function(key, emit) {
-  var $tag = this.$list.find('#' + key);
+  var $tag = this.$list.find('[data-id="' + key + '"]');
   if ($tag.length) {
     if (emit) {
       $tag.trigger('tag:removed', [{key: key}]);
@@ -65,7 +65,7 @@ TagList.prototype.removeTagEvt = function(e, opts) {
 };
 
 TagList.prototype.removeTagDom = function(e) {
-  var key = $(e.target).closest('.tag').attr('id');
+  var key = $(e.target).closest('.tag').data('id');
   this.removeTag(key, true);
 };
 
