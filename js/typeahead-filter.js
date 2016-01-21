@@ -6,8 +6,6 @@ var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
 
-var events = require('./events');
-
 var TypeaheadFilter = function(selector, dataset) {
   var self = this;
 
@@ -82,7 +80,12 @@ TypeaheadFilter.prototype.getFilters = function() {
     ).done(function(response) {
       _.each(response.results, function(result) {
         self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(result.name);
-        events.emit('filter:renamed', {key: result[idKey] + '-checkbox', value: result.name});
+        self.$body.find('#' + idKey).trigger('filter:renamed', [
+          {
+            key: result[idKey] + '-checkbox',
+            value: result.name
+          }
+        ]);
       });
     });
   }

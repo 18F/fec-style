@@ -3,8 +3,6 @@
 var $ = require('jquery');
 var _ = require('underscore');
 
-var events = require('./events');
-
 var BODY_TEMPLATE = _.template(
   '<div class="data-container__tags">' +
     '<h3 class="tags__title">Viewing: ' +
@@ -16,7 +14,7 @@ var BODY_TEMPLATE = _.template(
 );
 
 var TAG_TEMPLATE = _.template(
-  '<li id="{{ key }}" class="tag">' +
+  '<li data-id="{{ key }}" class="tag">' +
     '{{ value }}' +
     '<button class="button tag__remove">' +
       '<span class="u-visually-hidden">Remove</span>' +
@@ -32,14 +30,15 @@ function TagList(opts) {
   this.$list = this.$body.find('ul');
   this.$title = this.$body.find('.js-tag-title');
 
-  events.on('filter:added', this.addTag.bind(this));
-  events.on('filter:removed', this.removeTagEvt.bind(this));
-  events.on('filter:renamed', this.renameTag.bind(this));
+  $(document.body)
+    .on('filter:added', this.addTag.bind(this))
+    .on('filter:removed', this.removeTagEvt.bind(this))
+    .on('filter:renamed', this.renameTag.bind(this));
 
   this.$list.on('click', '.tag', this.removeTagDom.bind(this));
 }
 
-TagList.prototype.addTag = function(opts) {
+TagList.prototype.addTag = function(e, opts) {
   this.removeTag(opts.key, false);
   this.$title.html('');
 
@@ -50,10 +49,10 @@ TagList.prototype.addTag = function(opts) {
 TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('#' + key);
   if ($tag.length) {
-    $tag.remove();
     if (emit) {
-      events.emit('tag:removed', {key: key});
+      $tag.trigger('tag:removed', [{key: key}]);
     }
+    $tag.remove();
   }
 
   if (this.$list.find('.tag').length === 0) {
@@ -61,7 +60,7 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 };
 
-TagList.prototype.removeTagEvt = function(opts) {
+TagList.prototype.removeTagEvt = function(e, opts) {
   this.removeTag(opts.key, false);
 };
 
@@ -70,7 +69,7 @@ TagList.prototype.removeTagDom = function(e) {
   this.removeTag(key, true);
 };
 
-TagList.prototype.renameTag = function(opts) {
+TagList.prototype.renameTag = function(e, opts) {
   var $tag = this.$list.find('#' + opts.key);
   if ($tag.length) {
     $tag.replaceWith(TAG_TEMPLATE(opts));
