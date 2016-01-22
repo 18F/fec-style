@@ -6,7 +6,6 @@ var _ = require('underscore');
 // Hack: Append jQuery to `window` for use by legacy libraries
 window.$ = window.jQuery = $;
 
-var events = require('./events');
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 
@@ -72,7 +71,7 @@ Filter.prototype.handleKeydown = function(e) {
 
 Filter.prototype.handleChange = function(e) {
   var $input = $(e.target);
-  var type = $input.attr('type');
+  var type = $input.attr('type') || 'text';
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
   var id = $input.attr('id');
@@ -96,12 +95,12 @@ Filter.prototype.handleChange = function(e) {
     value = value + ' ' + suffix;
   }
 
-  events.emit(eventName,
+  $input.trigger(eventName, [
     {
       key: id,
       value: value,
-      type: type
-    });
+    }
+  ]);
 };
 
 function DateFilter(elm) {
@@ -156,18 +155,17 @@ TypeaheadFilter.prototype.handleChange = function() {};
 
 TypeaheadFilter.prototype.handleNestedChange = function(e) {
   var $input = $(e.target);
-  var type = $input.attr('type');
   var id = $input.attr('id');
   var $label = this.$body.find('[for="' + id + '"]');
 
   var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
 
-  events.emit(eventName,
+  $input.trigger(eventName, [
     {
       key: id,
       value: $label.text(),
-      type: type
-    });
+    }
+  ]);
 };
 
 module.exports = {Filter: Filter};

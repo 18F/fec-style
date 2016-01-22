@@ -5,7 +5,6 @@ var _ = require('underscore');
 var URI = require('urijs');
 
 var Filter = require('./filters').Filter;
-var events = require('./events');
 
 var KEYCODE_ENTER = 13;
 
@@ -16,7 +15,7 @@ function FilterSet(elm, $tagContainer) {
 
   this.$clear.on('click keypress', this.handleClear.bind(this));
 
-  events.on('tag:removed', this.handleTagRemove.bind(this));
+  $(document.body).on('tag:removed', this.handleTagRemove.bind(this));
 
   this.filters = {};
   this.fields = [];
@@ -64,9 +63,9 @@ FilterSet.prototype.clear = function() {
   });
 };
 
-FilterSet.prototype.handleTagRemove = function(e) {
-  var $input = this.$body.find('#' + e.key);
-  var type = $input.attr('type');
+FilterSet.prototype.handleTagRemove = function(e, opts) {
+  var $input = this.$body.find('#' + opts.key);
+  var type = $input.get(0).type;
 
   if (type === 'checkbox' || type === 'radio') {
     $input.attr('checked', false).trigger('change');
