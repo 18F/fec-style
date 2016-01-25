@@ -70,7 +70,7 @@ TagList.prototype.removeTagDom = function(e) {
 };
 
 TagList.prototype.renameTag = function(e, opts) {
-  var $tag = this.$list.find('#' + opts.key);
+  var $tag = this.$list.find('[data-id="' + opts.key + '"]');
   if ($tag.length) {
     $tag.replaceWith(TAG_TEMPLATE(opts));
   }
