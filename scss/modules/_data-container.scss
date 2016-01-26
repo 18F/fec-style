@@ -66,11 +66,10 @@
     text-align: right;
   }
 
-   .data-container__tags {
+  .data-container__tags {
     @include span-columns(8);
     margin-top: 3rem;
   }
-
 
   .export-widget {
     clear: right;

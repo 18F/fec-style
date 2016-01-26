@@ -281,10 +281,15 @@
 }
 
 // Week view
+.fc-time-grid-container {
+  overflow: scroll;
+}
+
 .fc-time-grid {
   position: relative;
 
   .fc-content-skeleton {
+    border-bottom: 2px solid $neutral;
     position: absolute;
     top: 0;
     left: 0;
@@ -293,9 +298,39 @@
 }
 
 .fc-slats {
-  tr:not(.fc-minor) {
+  td {
+    height: 1.5rem;
+  }
+
+  tr {
     border: 2px solid $neutral;
     border-bottom: none;
+  }
+
+  .fc-minor {
+    border-bottom: none;
+    border-top: none;
+  }
+}
+
+.fc-agenda-view {
+  .fc-bg {
+    display: none;   // Temporary hack to remove mis-aligned background in agenda view
+  }
+
+  .fc-axis {
+    padding: .5rem 1rem 0 1rem;
+    text-align: right;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .fc-divider {
+    display: none;
+  }
+
+  .fc-week {
+    border-top: 2px solid $neutral;
   }
 }
 
@@ -321,6 +356,7 @@
 
 .cal-list__add {
   @include span-columns(1.5);
+  padding-right: 5rem;
 }
 
 .cal-list__date {
