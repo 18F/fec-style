@@ -212,18 +212,6 @@
   }
 }
 
-// Week view
-.fc-time-grid {
-  position: relative;
-}
-
-.fc-slats {
-  tr:not(.fc-minor) {
-    border: 2px solid $neutral;
-    border-bottom: none;
-  }
-}
-
 // Event details
 .cal-details {
   font-size: 1.4rem;
@@ -294,11 +282,20 @@
 
 // Week view
 .fc-time-grid {
+  position: relative;
+
   .fc-content-skeleton {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+  }
+}
+
+.fc-slats {
+  tr:not(.fc-minor) {
+    border: 2px solid $neutral;
+    border-bottom: none;
   }
 }
 
