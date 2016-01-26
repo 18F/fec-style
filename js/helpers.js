@@ -9,7 +9,8 @@ function datetime(value, options) {
     default: 'MM-DD-YYYY',
     pretty: 'MMM D, YYYY',
     time: 'h:mma',
-    dateTime: 'MMM D, h:mma'
+    dateTime: 'MMM D, h:mma',
+    dayOfWeek: 'ddd'
   }
   var format = hash.format ? formatMap[hash.format] : formatMap['default'];
   var parsed = moment(value, 'YYYY-MM-DDTHH:mm:ss');

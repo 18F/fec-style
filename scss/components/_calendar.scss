@@ -4,9 +4,27 @@
   font-family: $sans-serif;
 }
 
+.fc-bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .fc-day {
+    font-weight: bold;
+    padding: .7rem 1rem 0 2rem;
+  }
+}
+
+.fc-row {
+  position: relative;
+}
+
 // Controls
 .fc-toolbar {
   @include clearfix();
+  border-bottom: 2px solid $neutral;
   padding: 2rem 0 1.5rem 0;
 }
 
@@ -61,9 +79,6 @@
 }
 
 // Body
-.fc-head {
-  border-top: 2px solid $neutral;
-}
 
 .fc-day-header {
   color: $primary;
@@ -76,6 +91,13 @@
 
   table {
     height: 100%;
+  }
+}
+
+.fc-other-month {
+  &.fc-day-number,
+  &.fc-day {
+    opacity: .5;
   }
 }
 
@@ -151,7 +173,7 @@
 }
 
 .fc--outreach {
- color: $cal-outreach;
+  color: $cal-outreach;
 
   &.fc--allday {
     .fc-content {
@@ -161,7 +183,7 @@
 }
 
 .fc--rules {
- color: $cal-rules;
+  color: $cal-rules;
 
   &.fc--allday {
     .fc-content {
@@ -191,6 +213,10 @@
 }
 
 // Week view
+.fc-time-grid {
+  position: relative;
+}
+
 .fc-slats {
   tr:not(.fc-minor) {
     border: 2px solid $neutral;
@@ -199,17 +225,48 @@
 }
 
 // Event details
-.calendar__details {
+.cal-details {
   font-size: 1.4rem;
   margin-top: 1rem;
   padding: 2rem;
   text-align: left;
+  width: 26rem;
+  white-space: initial;
 
   .button--close--primary {
     position: absolute;
     top: 0;
     right: 0;
   }
+}
+
+.cal-details__date {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.cal-details__title {
+  display: block;
+  font-weight: bold;
+  line-height: 1.4;
+  padding-bottom: .5rem;
+}
+
+.cal-details__summary {
+  display: block;
+  line-height: 1.2;
+  padding-bottom: .5rem;
+}
+
+.cal-details__location {
+  display: block;
+  line-height: 1.2;
+  padding-bottom: .5rem;
+}
+
+.cal-details__add {
+  padding-top: 1rem;
 }
 
 .fc-popup {
@@ -246,92 +303,88 @@
 }
 
 // List view
-.ev-list {
-  margin-bottom: 1rem;
-  h5 {
-    margin: 0;
+.cal-list__group {
+  border-top: 1px solid $primary;
+
+  &:first-child {
+    border-top: none;
+    padding-top: 2rem;
   }
 }
 
-// Copied from fullcalendar.io
-.fc-unthemed .fc-row,
-.fc-unthemed .fc-popover {
-  border-color: #ddd;
+.cal-list__title {
+  margin: 0;
+  padding: 2rem 0;
 }
 
-.fc-unthemed .fc-popover {
-  background-color: #fff;
+.cal-list__event {
+  @include clearfix();
+  padding-bottom: 4rem;
 }
 
-.fc-unthemed .fc-divider,
-.fc-unthemed .fc-popover .fc-header {
-  background: #eee;
+.cal-list__add {
+  @include span-columns(1.5);
 }
 
-.fc-unthemed .fc-popover .fc-header .fc-close {
-  color: #666;
+.cal-list__date {
+  @include span-columns(1.5);
+  font-weight: bold;
+  line-height: 1.7rem;
 }
 
+.cal-list__time {
+  @include span-columns(1.5);
+  line-height: 1.7rem;
+}
+
+.cal-list__description {
+  @include span-columns(6);
+}
+
+.cal-list__event-title {
+  margin: 0;
+}
+
+.cal-list__location {
+  @include span-columns(1.5);
+}
+
+// Popover
 .fc-popover {
+  background-color: $cream;
+  border: 2px solid $neutral;
   position: absolute;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
-}
+  width: 22rem;
 
-.fc-popover .fc-header { /* TODO: be more consistent with fc-head/fc-body */
-  padding: 2px 4px;
-}
+  .fc-header {
+    background: $neutral;
+    padding: 3px .5rem;
 
-.fc-popover .fc-header .fc-title {
-  margin: 0 2px;
-}
+    .fc-title {
+      float: left;
+      font-weight: bold;
+      line-height: 2rem;
+    }
+  }
 
-.fc-popover .fc-header .fc-close {
-  cursor: pointer;
-}
+  .fc-close {
+    @include u-background-image('../img/i-x--primary');
+    color: $primary;
+    cursor: pointer;
+    float: right;
+    height: 2rem;
+    width: 2rem;
+  }
 
-.fc-ltr .fc-popover .fc-header .fc-title,
-.fc-rtl .fc-popover .fc-header .fc-close {
-  float: left;
-}
+  .fc-event-container {
+    padding: .5rem;
+  }
 
-.fc-rtl .fc-popover .fc-header .fc-title,
-.fc-ltr .fc-popover .fc-header .fc-close {
-  float: right;
-}
-
-/* unthemed */
-
-.fc-unthemed .fc-popover {
-  border-width: 1px;
-  border-style: solid;
-}
-
-.fc-unthemed .fc-popover .fc-header .fc-close {
-  font-size: .9em;
-  margin-top: 2px;
-}
-
-/* jqui themed */
-
-.fc-popover > .ui-widget-header + .ui-widget-content {
-  border-top: 0; /* where they meet, let the header have the border */
-}
-
-.fc-more-popover {
-  z-index: 2;
-  width: 220px;
-}
-
-.fc-more-popover .fc-event-container {
-  padding: 10px;
+  .fc-content {
+    margin-bottom: .5rem;
+  }
 }
 
 .fc-clear {
   clear: both;
-}
-
-.fc-icon-x:after {
-  content: "\000D7";
-  font-size: 200%;
-  top: 6%;
 }

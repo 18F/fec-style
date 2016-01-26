@@ -32,12 +32,14 @@
 .dropdown {
   font-family: $sans-serif;
   position: relative;
+  max-width: 21rem;
+  width: 100%;
 }
 
 .dropdown__button {
   position: relative;
-  max-width: 20rem;
   text-align: left;
+  min-height: 3.4rem;
   width: 100%;
 
   &:after {
@@ -62,6 +64,13 @@
   }
 }
 
+.dropdown__button--mini {
+  &:after {
+    padding: 1rem .5rem 1rem 1.5rem;
+    right: .5rem;
+  }
+}
+
 .dropdown__value {
   display: block;
   margin: 0;
@@ -74,6 +83,8 @@
   border: 2px solid $beige;
   max-height: 30rem;
   overflow: hidden;
+  text-align: left;
+  top: 3.4rem;
   z-index: 999;
 
   .dropdown__value {

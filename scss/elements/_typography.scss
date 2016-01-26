@@ -18,6 +18,7 @@ html {
 body {
   @include font-feature-settings("kern", "liga", "pnum");
   // -webkit-font-smoothing: antialiased;
+  color: $primary;
   font-family: $base-font-family;
   font-size: 1.4rem;
   line-height: 1.5;
