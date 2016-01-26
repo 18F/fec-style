@@ -29,7 +29,7 @@
 }
 
 .fc-left {
-  float: left;
+  float: right;
 
   .fc-button-group {
     float: left;
@@ -67,11 +67,11 @@
 }
 
 .fc-right {
-  float: right;
+  display: none;
 }
 
 .fc-center {
-  text-align: center;
+  text-align: left;
 
   h2 {
     margin: 0;
@@ -153,61 +153,79 @@
 }
 
 .fc--election {
-  color: $cal-election;
+  .fc-content {
+    color: $cal-election;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-election;
+      color: $cream;
     }
   }
 }
 
 .fc--deadline {
-  color: $cal-deadline;
+  .fc-content {
+    color: $cal-deadline;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-deadline;
+      color: $cream;
     }
   }
 }
 
 .fc--outreach {
-  color: $cal-outreach;
+  .fc-content {
+    color: $cal-outreach;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-outreach;
+      color: $cream;
     }
   }
 }
 
 .fc--rules {
-  color: $cal-rules;
+  .fc-content {
+    color: $cal-rules;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-rules;
+      color: $cream;
     }
   }
 }
 
 .fc--meeting {
-  color: $cal-meeting;
+  .fc-content {
+    color: $cal-meeting;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-meeting;
+      color: $cream;
     }
   }
 }
 
 .fc--other {
-  color: $cal-other;
+  .fc-content {
+    color: $cal-other;
+  }
 
   &.fc--allday {
     .fc-content {
       background: $cal-other;
+      color: $cream;
     }
   }
 }
@@ -351,27 +369,30 @@
 
 .cal-list__event {
   @include clearfix();
-  padding-bottom: 4rem;
+  border-bottom: 1px solid $primary;
+  padding: 2rem 0;
 }
 
 .cal-list__add {
-  @include span-columns(1.5);
+  @include span-columns(4);
   padding-right: 5rem;
 }
 
 .cal-list__date {
-  @include span-columns(1.5);
+  @include span-columns(4);
   font-weight: bold;
   line-height: 1.7rem;
 }
 
 .cal-list__time {
-  @include span-columns(1.5);
+  @include span-columns(4);
+  @include omega();
   line-height: 1.7rem;
 }
 
 .cal-list__description {
-  @include span-columns(6);
+  @include span-columns(12);
+  padding-top: 2rem;
 }
 
 .cal-list__event-title {
@@ -379,7 +400,7 @@
 }
 
 .cal-list__location {
-  @include span-columns(1.5);
+  @include span-columns(12);
 }
 
 // Popover
@@ -420,4 +441,58 @@
 
 .fc-clear {
   clear: both;
+}
+
+// BREAKPOINT: MEDIUM
+// - Navigation buttons on the left
+// - Title in the center
+// - View buttons on the right
+
+@include media($med) {
+  .fc-left {
+    float: left;
+  }
+
+  .fc-center {
+    text-align: center;
+  }
+
+  .fc-right {
+    display: block;
+    float: right;
+  }
+}
+
+// BREAKPOINT: LARGE
+// - List events line up horizontally
+
+@include media($lg) {
+  .cal-list__event {
+    @include clearfix();
+    border-bottom: none;
+    padding-bottom: 4rem;
+  }
+
+  .cal-list__add {
+    @include span-columns(1.5);
+    padding-right: 5rem;
+  }
+
+  .cal-list__date {
+    @include span-columns(1.5);
+    font-weight: bold;
+  }
+
+  .cal-list__time {
+    @include span-columns(1.5);
+  }
+
+  .cal-list__description {
+    @include span-columns(6);
+    padding-top: 0;
+  }
+
+  .cal-list__location {
+    @include span-columns(1.5);
+  }
 }

@@ -12,12 +12,16 @@
   padding-top: 2rem;
 }
 
+.is-showing-filters {
+  padding-top: 0;
+}
+
 .data-container__widgets {
   @include clearfix();
   color: $cream;
   background-color: $primary;
   font-family: $sans-serif;
-  padding: 2rem;
+  padding: 5rem 2rem 2rem 2rem;
 }
 
 .data-container__widgets--secondary {
@@ -25,6 +29,7 @@
 }
 
 .data-container__body {
+  padding: 0 1rem;
 
   &.fade-in {
     opacity: 0;
@@ -37,6 +42,14 @@
 
 .data-container__export {
   margin-top: 1rem;
+}
+
+.export-widget {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // BREAKPOINT: LARGE
