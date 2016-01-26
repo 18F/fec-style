@@ -26,7 +26,7 @@
     "it"
   ],
   "quotmark": true,
-  "strict": "global"
+  "strict": "global",
   "trailing": true,
   "undef": true,
   "unused": true
