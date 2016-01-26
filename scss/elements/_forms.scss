@@ -1,5 +1,5 @@
 // Forms
-// 
+//
 // .slab--primary     - When the form is on a primary background
 // .slab--secondary   - When the form is on a secondary background
 // .slab--neutral     - When the form is on a neutral background
@@ -146,6 +146,7 @@ input[type="file"] {
   cursor: pointer;
   line-height: 2rem;
   margin: 0 0 1rem .25rem;
+  padding-left: 2.2rem;
 }
 
 [type="checkbox"] + label::before,
@@ -157,14 +158,15 @@ input[type="file"] {
   display: inline-block;
   height: 1.6rem;
   margin-right: .6em;
+  margin-left: -2.4rem;
   text-indent: .15em;
   width: 1.6rem;
   vertical-align: -4px;
 }
 
-[type="radio"] + label::before {  
-  height: 1.6rem;  
-  width: 1.6rem;  
+[type="radio"] + label::before {
+  height: 1.6rem;
+  width: 1.6rem;
 }
 
 [type="radio"] + label::before {
@@ -194,7 +196,7 @@ input[type="file"] {
 }
 
 // Basic button reset
-// 
+//
 // Markup:
 // <button>Unstyled button</button>
 //
