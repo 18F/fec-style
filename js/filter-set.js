@@ -8,10 +8,9 @@ var Filter = require('./filters').Filter;
 
 var KEYCODE_ENTER = 13;
 
-function FilterSet(elm, $tagContainer) {
+function FilterSet(elm) {
   this.$body = $(elm);
   this.$clear = this.$body.find('.js-clear-filters');
-  this.$tagContainer = $tagContainer;
 
   this.$clear.on('click keypress', this.handleClear.bind(this));
 
