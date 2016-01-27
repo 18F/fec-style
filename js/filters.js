@@ -151,6 +151,13 @@ function TypeaheadFilter(elm) {
 TypeaheadFilter.prototype = Object.create(Filter.prototype);
 TypeaheadFilter.constructor = TypeaheadFilter;
 
+TypeaheadFilter.prototype.fromQuery = function(query) {
+  var values = query[this.name] ? ensureArray(query[this.name]) : [];
+  this.typeaheadFilter.getFilters(values);
+  this.typeaheadFilter.$body.find('input[type="checkbox"]').val(values);
+  return this;
+};
+
 TypeaheadFilter.prototype.handleChange = function() {};
 
 TypeaheadFilter.prototype.handleNestedChange = function(e) {
