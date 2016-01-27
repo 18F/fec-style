@@ -58,7 +58,7 @@ describe('filter panel', function() {
   });
 
   it('should start off open on wide windows', function() {
-    $('body').width(769);
+    $('body').width(861);
     var panel = new FilterPanel();
     expectOpen(panel);
   });

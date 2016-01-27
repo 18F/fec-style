@@ -41,7 +41,8 @@ FilterPanel.prototype.adjust = function() {
 };
 
 FilterPanel.prototype.setHeight = function() {
-  if ( $(document).width() > helpers.BREAKPOINTS.LARGE && this.$dataContainer.height() > this.$body.height() ) {
+  if ($(document).width() > helpers.BREAKPOINTS.LARGE &&
+      this.$dataContainer.height() > this.$body.height()) {
     this.$body.height(this.$dataContainer.height());
   }
 };
