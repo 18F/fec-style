@@ -135,8 +135,8 @@ DateFilter.prototype.fromQuery = function(query) {
 
 DateFilter.prototype.setValue = function(value) {
   value = ensureArray(value);
-  this.$minDate.val(value[0]);
-  this.$maxDate.val(value[1]);
+  this.$minDate.val(value[0]).change();
+  this.$maxDate.val(value[1]).change();
 };
 
 function TypeaheadFilter(elm) {
