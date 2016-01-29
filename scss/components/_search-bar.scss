@@ -63,6 +63,10 @@
     .combo__button {
       width: 5.6rem;
     }
+
+    .tt-menu {
+      width: calc(100% - 6.8rem);
+    }
   }
 
   .combo--search--large {
@@ -86,7 +90,7 @@
       font-size: 1.8rem;
     }
 
-    .tt-dropdown-menu {
+    .tt-menu {
       top: 5.9rem !important;
       width: calc(100% - 10.2rem);
     }
@@ -99,21 +103,17 @@
   width: 100%;
 }
 
-.tt-dropdown-menu {
+.tt-menu {
   background-color: $cream;
-  border: 1px solid;
+  border: 1px solid $ivory;
   font-family: $sans-serif;
   left: 0;
   text-align: left;
   position: absolute;
   width: 100%;
-
-  @include media($med) {
-    width: calc(100% - 6.8rem);
-  }
 }
 
-.tt-dropdown-menu {
+.tt-menu {
   font-size: 1.6rem;
   top: 3.5rem !important;
 }
@@ -126,25 +126,26 @@
   line-height: 1;
   border-bottom: 1px solid $ivory;
   width: 100%;
+
+  .tt-suggestion__name,
+  .tt-suggestion__office {
+    display: table-cell;
+  }
 }
 
 span.tt-suggestion__name {
-  @include u-truncate();
   color: $primary;
-  display: table-cell;
-  float: left;
 }
 
 span.tt-suggestion__office {
   color: $primary;
   font-size: 1.2rem;
   text-align: right;
-  display: table-cell;
   font-style: italic;
-  float: right;
 }
 
-.tt-cursor {
+.tt-cursor,
+.tt-suggestion:hover {
   cursor: pointer;
   background: $ivory;
 
