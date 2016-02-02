@@ -26,7 +26,7 @@ function formatCandidate(result) {
 
 function getUrl(resource) {
   return URI(window.API_LOCATION)
-    .path([window.API_VERSION, 'names', resource].join('/'))
+    .path([window.API_VERSION, 'names', resource, ''].join('/'))
     .query({
       q: '%QUERY',
       api_key: window.API_KEY
