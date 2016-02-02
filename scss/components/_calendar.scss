@@ -353,11 +353,24 @@
 }
 
 // List view
-.cal-list__group {
-  border-top: 1px solid $primary;
+.cal-list__toggles {
+  padding-top: 2rem;
 
-  &:first-child {
-    border-top: none;
+  .button {
+    border-bottom: 1px dotted $primary;
+  }
+
+  .is-active {
+    border-bottom: none;
+    font-weight: bold;
+  }
+}
+
+.cal-list__group {
+  border-bottom: 1px solid $primary;
+
+  &:last-child {
+    border-bottom: none;
     padding-top: 2rem;
   }
 }
@@ -379,7 +392,10 @@
 
 .cal-list__add {
   @include span-columns(4);
-  padding-right: 5rem;
+
+  .button {
+    float: right;
+  }
 }
 
 .cal-list__date {
@@ -486,7 +502,6 @@
 
   .cal-list__add {
     @include span-columns(2);
-    padding-right: 5rem;
   }
 
   .cal-list__date {

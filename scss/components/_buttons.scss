@@ -11,6 +11,7 @@
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
   border-radius: 2px;
   border: 2px solid transparent;
+  color: $primary;
   display: inline-block;
   font-family: $sans-serif;
   font-size: 1.4rem;
@@ -455,5 +456,6 @@
 
 .button--calendar--mini {
   @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  max-width: 7.4rem;
   padding-left: 5rem;
 }
