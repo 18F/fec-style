@@ -24,7 +24,7 @@
 // Controls
 .fc-toolbar {
   @include clearfix();
-  border-bottom: 2px solid $neutral;
+  border-bottom: 2px solid $primary;
   padding: 2rem 0 1.5rem 0;
 }
 
@@ -369,8 +369,12 @@
 
 .cal-list__event {
   @include clearfix();
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $neutral;
   padding: 2rem 0;
+}
+
+.cal-list__details {
+  @include span-columns(8);
 }
 
 .cal-list__add {
@@ -379,20 +383,24 @@
 }
 
 .cal-list__date {
-  @include span-columns(4);
+  @include span-columns(4 of 8);
   font-weight: bold;
   line-height: 1.7rem;
 }
 
 .cal-list__time {
-  @include span-columns(4);
+  @include span-columns(4 of 8);
   @include omega();
   line-height: 1.7rem;
 }
 
 .cal-list__description {
-  @include span-columns(12);
+  @include span-columns(8 of 8);
   padding-top: 2rem;
+
+  p {
+    font-size: 1.4rem;
+  }
 }
 
 .cal-list__event-title {
@@ -400,7 +408,7 @@
 }
 
 .cal-list__location {
-  @include span-columns(12);
+  display: block;
 }
 
 // Popover
@@ -469,30 +477,34 @@
 @include media($lg) {
   .cal-list__event {
     @include clearfix();
-    border-bottom: none;
     padding-bottom: 4rem;
   }
 
+  .cal-list__details {
+    @include span-columns(10);
+  }
+
   .cal-list__add {
-    @include span-columns(1.5);
+    @include span-columns(2);
     padding-right: 5rem;
   }
 
   .cal-list__date {
-    @include span-columns(1.5);
+    @include span-columns(2 of 10);
     font-weight: bold;
   }
 
   .cal-list__time {
-    @include span-columns(1.5);
+    @include span-columns(2 of 10);
   }
 
   .cal-list__description {
-    @include span-columns(6);
+    @include span-columns(6 of 10);
     padding-top: 0;
-  }
 
-  .cal-list__location {
-    @include span-columns(1.5);
+    p {
+      font-size: 1.6rem;
+    }
+
   }
 }
