@@ -41,9 +41,7 @@ function TagList(opts) {
 TagList.prototype.addTag = function(e, opts) {
   this.removeTag(opts.key, false);
   this.$title.html('');
-
-  var $tag = TAG_TEMPLATE(opts);
-  this.$list.append($tag);
+  this.$list.append(TAG_TEMPLATE(opts));
 };
 
 TagList.prototype.removeTag = function(key, emit) {

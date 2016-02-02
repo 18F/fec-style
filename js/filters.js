@@ -151,6 +151,7 @@ function TypeaheadFilter(elm) {
 TypeaheadFilter.prototype = Object.create(Filter.prototype);
 TypeaheadFilter.constructor = TypeaheadFilter;
 
+// Ignore changes on typeahead input
 TypeaheadFilter.prototype.handleChange = function() {};
 
 TypeaheadFilter.prototype.handleNestedChange = function(e) {

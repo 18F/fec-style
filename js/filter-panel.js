@@ -29,10 +29,10 @@ function FilterPanel(options) {
 
   this.filterSet = new FilterSet(this.$form).activate();
 
-  this.adjust();
+  this.setInitialDisplay();
 }
 
-FilterPanel.prototype.adjust = function() {
+FilterPanel.prototype.setInitialDisplay = function() {
   if ($(document).width() > helpers.BREAKPOINTS.LARGE) {
     this.show();
   } else if (!this.isOpen) {
