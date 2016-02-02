@@ -53,13 +53,13 @@
 
 @include media($lg) {
   .data-container {
+    float: left;
     padding: 0;
   }
 
   .is-showing-filters {
     .data-container {
       width: calc(100% - 30rem);
-      float: left;
     }
   }
 
