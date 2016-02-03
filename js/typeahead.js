@@ -5,6 +5,9 @@ var URI = require('urijs');
 var _ = require('underscore');
 var Handlebars = require('handlebars');
 
+// Hack: Append jQuery to `window` for use by typeahead.js
+window.$ = window.jQuery = $;
+
 require('typeahead.js/dist/typeahead.jquery');
 var Bloodhound = require('typeahead.js/dist/bloodhound');
 
