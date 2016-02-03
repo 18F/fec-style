@@ -355,15 +355,6 @@
 // List view
 .cal-list__toggles {
   padding-top: 2rem;
-
-  .button {
-    border-bottom: 1px dotted $primary;
-  }
-
-  .is-active {
-    border-bottom: none;
-    font-weight: bold;
-  }
 }
 
 .cal-list__group {

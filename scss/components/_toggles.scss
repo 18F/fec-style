@@ -162,6 +162,18 @@
   }
 }
 
+.toggles--simple {
+  .toggle {
+    border-bottom: 1px dotted $primary;
+    color: $primary;
+  }
+
+  .is-active {
+    border-bottom: none;
+    font-weight: bold;
+  }
+}
+
 // BREAKPOINT: MEDIUM
 // - Display toggles in a row
 
