@@ -5,6 +5,7 @@ var _ = require('underscore');
 
 var FilterSet = require('./filter-set').FilterSet;
 var accessibility = require('./accessibility');
+var helpers = require('./helpers');
 
 var defaultOptions = {
   body: '.filters',
@@ -28,11 +29,11 @@ function FilterPanel(options) {
 
   this.filterSet = new FilterSet(this.$form).activate();
 
-  this.adjust();
+  this.setInitialDisplay();
 }
 
-FilterPanel.prototype.adjust = function() {
-  if ($(document).width() > 768) {
+FilterPanel.prototype.setInitialDisplay = function() {
+  if ($(document).width() > helpers.BREAKPOINTS.LARGE) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
@@ -40,7 +41,8 @@ FilterPanel.prototype.adjust = function() {
 };
 
 FilterPanel.prototype.setHeight = function() {
-  if ( $(document).width() > 768 && this.$dataContainer.height() > this.$body.height() ) {
+  if ($(document).width() > helpers.BREAKPOINTS.LARGE &&
+      this.$dataContainer.height() > this.$body.height()) {
     this.$body.height(this.$dataContainer.height());
   }
 };

@@ -1,13 +1,15 @@
 'use strict';
 
-/* global Bloodhound */
-
 var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
 var Handlebars = require('handlebars');
 
-require('typeahead.js');
+// Hack: Append jQuery to `window` for use by typeahead.js
+window.$ = window.jQuery = $;
+
+require('typeahead.js/dist/typeahead.jquery');
+var Bloodhound = require('typeahead.js/dist/bloodhound');
 
 var events = require('./events');
 
@@ -27,7 +29,7 @@ function formatCandidate(result) {
 
 function getUrl(resource) {
   return URI(window.API_LOCATION)
-    .path([window.API_VERSION, 'names', resource].join('/'))
+    .path([window.API_VERSION, 'names', resource, ''].join('/'))
     .query({
       q: '%QUERY',
       api_key: window.API_KEY
@@ -36,46 +38,39 @@ function getUrl(resource) {
 }
 
 var engineOpts = {
-  datumTokenizer: function(datum) {
-    return Bloodhound.tokenizers.whitespace(datum.name);
-  },
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   limit: 10
 };
 
 function createEngine(opts) {
-  var engine = new Bloodhound(_.extend({}, engineOpts, opts));
-  engine.initialize();
-  return engine;
+  return new Bloodhound(_.extend({}, engineOpts, opts));
 }
 
 var candidateEngine = createEngine({
-  name: 'Candidates',
   remote: {
     url: getUrl('candidates'),
-    filter: function(response) {
+    wildcard: '%QUERY',
+    transform: function(response) {
       return _.map(response.results, formatCandidate);
     }
   }
 });
 
 var committeeEngine = createEngine({
-  name: 'Committees',
   remote: {
     url: getUrl('committees'),
-    filter: function(response) {
+    wildcard: '%QUERY',
+    transform: function(response) {
       return response.results;
     },
-    dupDetector: function(remote, local) {
-      return remote.name === local.name;
-    }
   }
 });
 
 var candidateDataset = {
   name: 'candidate',
-  displayKey: 'name',
-  source: candidateEngine.ttAdapter(),
+  display: 'name',
+  source: candidateEngine,
   templates: {
     suggestion: Handlebars.compile(
       '<span>' +
@@ -88,8 +83,8 @@ var candidateDataset = {
 
 var committeeDataset = {
   name: 'committee',
-  displayKey: 'name',
-  source: committeeEngine.ttAdapter(),
+  display: 'name',
+  source: committeeEngine,
   templates: {
     suggestion: Handlebars.compile(
       '<span class="tt-suggestion__name">{{ name }}</span>'
@@ -122,8 +117,9 @@ Typeahead.prototype.init = function(type) {
   if (this.typeahead) {
     this.$input.typeahead('destroy');
   }
-  this.typeahead = this.$input.typeahead(typeaheadOpts, datasets[type]);
-  this.$input.on('typeahead:selected', this.select.bind(this));
+  this.dataset = datasets[type];
+  this.typeahead = this.$input.typeahead(typeaheadOpts, this.dataset);
+  this.$input.on('typeahead:select', this.select.bind(this));
   $('.twitter-typeahead').css('display', 'block');
 };
 
@@ -131,8 +127,8 @@ Typeahead.prototype.handleChangeEvent = function(data) {
   this.init(data.type);
 };
 
-Typeahead.prototype.select = function(event, datum, name) {
-  window.location = this.url + name + '/' + datum.id;
+Typeahead.prototype.select = function(event, datum) {
+  window.location = this.url + this.dataset.name + '/' + datum.id;
 };
 
 module.exports = {

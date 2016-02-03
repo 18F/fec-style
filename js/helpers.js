@@ -5,6 +5,11 @@
 var moment = require('moment');
 var Handlebars = require('hbsfy/runtime');
 
+var BREAKPOINTS = {
+  MEDIUM: 640,
+  LARGE: 860
+};
+
 var formatMap = {
   default: 'MM-DD-YYYY',
   pretty: 'MMM D, YYYY',
@@ -23,5 +28,6 @@ function datetime(value, options) {
 Handlebars.registerHelper('datetime', datetime);
 
 module.exports = {
-  datetime: datetime
+  datetime: datetime,
+  BREAKPOINTS: BREAKPOINTS
 };
