@@ -143,8 +143,9 @@ function TypeaheadFilter(elm) {
   Filter.call(this, elm);
 
   var key = this.$body.data('dataset');
+  var allowText = this.$body.data('allow-text') !== undefined;
   var dataset = typeahead.datasets[key];
-  this.typeaheadFilter = new typeaheadFilter.TypeaheadFilter(this.$body, dataset);
+  this.typeaheadFilter = new typeaheadFilter.TypeaheadFilter(this.$body, dataset, allowText);
   this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
 

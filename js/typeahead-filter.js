@@ -15,16 +15,31 @@ function slugify(value) {
     .replace(/[^a-z0-9:._-]/gi, '');
 }
 
-var TypeaheadFilter = function(selector, dataset) {
+var textDataset = {
+  display: 'id',
+  source: function(query, syncResults) {
+    syncResults([{id: query}]);
+  },
+  templates: {
+    suggestion: function(datum) {
+      return '<span>"' + datum.id + '"</span>';
+    }
+  }
+};
+
+var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$body = $(selector);
   this.dataset = dataset;
 
   this.$field = this.$body.find('input[type="text"]');
-  this.fieldName = this.$field.attr('name');
+  this.fieldName = this.$body.data('name') || this.$field.attr('name');
   this.$selected = this.$body.find('.dropdown__selected');
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
-  this.$field.on('change', this.handleChange.bind(this));
-  this.$field.typeahead({minLength: 3}, this.dataset);
+  if (allowText) {
+    this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
+  } else {
+    this.$field.typeahead({minLength: 3}, this.dataset);
+  }
 };
 
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
@@ -32,26 +47,8 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     name: this.fieldName,
     label: e.currentTarget.value,
     value: datum.id,
-    id: datum.id + '-checkbox'
+    id: slugify(datum.id) + '-checkbox'
   });
-};
-
-TypeaheadFilter.prototype.handleChange = function(e) {
-  var value = e.target.value;
-  if (!value || this.$body.find('.tt-suggestions').length) {
-    return;
-  }
-  var values = this.$body.find('input[type="checkbox"]').map(function(idx, elm) {
-    return elm.value;
-  }).get();
-  if (values.indexOf(value) === -1) {
-    this.appendCheckbox({
-      name: this.fieldName,
-      label: value,
-      value: value,
-      id: slugify(value) + '-checkbox'
-    });
-  }
 };
 
 TypeaheadFilter.prototype.clearInput = function() {
