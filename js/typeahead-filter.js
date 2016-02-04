@@ -15,6 +15,12 @@ function slugify(value) {
     .replace(/[^a-z0-9:._-]/gi, '');
 }
 
+function formatLabel(datum) {
+  return datum.name ?
+    datum.name + ' (' + datum.id + ')' :
+    '"' + datum.id + '"';
+}
+
 var textDataset = {
   display: 'id',
   source: function(query, syncResults) {
@@ -45,7 +51,7 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   this.appendCheckbox({
     name: this.fieldName,
-    label: e.currentTarget.value,
+    label: formatLabel(datum),
     value: datum.id,
     id: slugify(datum.id) + '-checkbox'
   });
@@ -109,11 +115,12 @@ TypeaheadFilter.prototype.updateFilters = function(response) {
   var self = this;
   var idKey = this.dataset.name + '_id';
   response.results.forEach(function(result) {
-    self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(result.name);
+    var label = result.name + ' (' + result[idKey] + ')';
+    self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
     self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
       {
         key: result[idKey] + '-checkbox',
-        value: result.name
+        value: label
       }
     ]);
   });
