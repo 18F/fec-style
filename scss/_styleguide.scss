@@ -1,0 +1,175 @@
+// Color swatches
+//
+// .crimson        - Crimson
+// .orange         - Orange
+// .federal-blue   - Federal blue
+// .aqua           - Aqua
+// .ivory          - Ivory
+// .cream          - Cream
+// .bright-red     - Bright-red
+// .deep-orange    - Deep-orange
+// .deep-red       - Deep-red
+// .bright-blue    - Bright-blue
+// .deep-aqua      - Deep-aqua
+// .navy           - Navy
+// .beige          - Beige
+// .beige-light    - Beige-light
+// .beige-dark     - Beige-dark
+// .black          - Black
+// .disabled       - Disabled
+// .cal-deadline   - Calendar deadline
+// .cal-election   - Calendar election
+// .cal-meeting    - Calendar meeting
+// .cal-outreach   - Calendar outreach
+// .cal-rules      - Calendar rules
+// .cal-other      - Calendar other
+//
+// Markup:
+// <div class="sg-swatch {{modifier_class}}"></div>
+//
+// Styleguide colors
+
+$colors: (
+  crimson: $crimson,
+  orange: $orange,
+  federal-blue: $federal-blue,
+  aqua: $aqua,
+  ivory: $ivory,
+  cream: $cream,
+  bright-red: $bright-red,
+  deep-orange: $deep-orange,
+  deep-red: $deep-red,
+  bright-blue: $bright-blue,
+  deep-aqua: $deep-aqua,
+  navy: $navy,
+  beige: $beige,
+  beige-light: $beige-light,
+  beige-dark: $beige-dark,
+  black: $black,
+  disabled: $disabled,
+  cal-deadline: $cal-deadline,
+  cal-election: $cal-election,
+  cal-meeting: $cal-meeting,
+  cal-outreach: $cal-outreach,
+  cal-rules: $cal-rules,
+  cal-other: $cal-other
+);
+
+@each $variable, $color in $colors {
+  .sg-swatch.#{$variable} {
+    background-color: $color;
+    display: block;
+    height: 10rem;
+    width: 100%;
+
+    &:after {
+      content: '#{$color};';
+      color: #fff;
+      display: block;
+      font-family: $sans-serif;
+      font-size: 2rem;
+      line-height: 4rem;
+      padding: 3rem;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+  // &.crimson {
+  //   background-color: $crimson;
+  //   &:after {
+  //     content: '#{$crimson};';
+  //     color: #fff;
+  //   }
+  // }
+
+  // &.orange {
+  //   background-color: $orange;
+  // }
+
+  // &.federal-blue {
+  //   background-color: $federal-blue;
+  // }
+
+  // &.aqua {
+  //   background-color: $aqua;
+  // }
+
+  // &.ivory {
+  //   background-color: $ivory;
+  // }
+
+  // &.cream {
+  //   background-color: $cream;
+  // }
+
+  // &.bright-red {
+  //   background-color: $bright-red;
+  // }
+
+  // &.deep-orange {
+  //   background-color: $deep-orange;
+  // }
+
+  // &.deep-red {
+  //   background-color: $deep-red;
+  // }
+
+  // &.bright-blue {
+  //   background-color: $bright-blue;
+  // }
+
+  // &.deep-aqua {
+  //   background-color: $deep-aqua;
+  // }
+
+  // &.navy {
+  //   background-color: $navy;
+  // }
+
+  // &.beige {
+  //   background-color: $beige;
+  // }
+
+  // &.beige-light {
+  //   background-color: $beige-light;
+  // }
+
+  // &.beige-dark {
+  //   background-color: $beige-dark;
+  // }
+
+  // &.black {
+  //   background-color: $black;
+  // }
+
+  // &.disabled {
+  //   background-color: $disabled;
+  // }
+
+  // &.cal-deadline {
+  //   background-color: $cal-deadline;
+  // }
+
+  // &.cal-election {
+  //   background-color: $cal-election;
+  // }
+
+  // &.cal-meeting {
+  //   background-color: $cal-meeting;
+  // }
+
+  // &.cal-outreach {
+  //   background-color: $cal-outreach;
+  // }
+
+  // &.cal-rules {
+  //   background-color: $cal-rules;
+  // }
+
+  // &.cal-other {
+  //   background-color: $cal-other;
+  // }
