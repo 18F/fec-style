@@ -72,9 +72,9 @@ var candidateDataset = {
   display: 'name',
   source: candidateEngine,
   templates: {
-    header: 'Candidates',
-    pending: 'Loading...',
-    notFound: 'No results found',
+    header: '<span class="tt-suggestion__header">Candidates</span>',
+    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
+    notFound: '<span class="tt-suggestion__header">No results found</span>',
     suggestion: Handlebars.compile(
       '<span>' +
         '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
@@ -89,9 +89,9 @@ var committeeDataset = {
   display: 'name',
   source: committeeEngine,
   templates: {
-    header: 'Committees',
-    pending: 'Loading...',
-    notFound: 'No results found',
+    header: '<span class="tt-suggestion__header">Committees</span>',
+    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
+    notFound: '<span class="tt-suggestion__header">No results found</span>',
     suggestion: Handlebars.compile(
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>'
     )
