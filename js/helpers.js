@@ -35,5 +35,6 @@ Handlebars.registerHelper({
 
 module.exports = {
   datetime: datetime,
-  BREAKPOINTS: BREAKPOINTS
+  BREAKPOINTS: BREAKPOINTS,
+  helpers: Handlebars.helpers
 };
