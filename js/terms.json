@@ -33,7 +33,7 @@
   },
   {
     "glossary-term": "Ending cash on hand",
-    "glossary-definition": "The ending cash balance on a report for a particular time period. Cash on hand includes funds held in checking and savings accounts, certificates of deposit, petty cash funds, traveler’s checks, treasury bills and other investments valued at cost."
+    "glossary-definition": "The ending balance of cash and cash equivalents on a report for a particular time period.  Cash on hand includes funds held in checking and savings accounts, certificates of deposit, petty cash funds, traveler’s checks, treasury bills and other investments valued at cost.  This balance is calculated by adding beginning cash on hand for the period to  total receipts for the period then subtracting total disbursements for the period."
   },
   {
     "glossary-term": "Debt",
