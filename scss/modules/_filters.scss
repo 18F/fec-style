@@ -25,7 +25,7 @@
   @include u-bg--neutral();
   bottom: 0;
   height: 0;
-  padding: 1rem;
+  padding: 1rem .5rem;
   position: absolute;
   top: 0;
   width: 100%;
@@ -56,7 +56,6 @@
   height: 0;
   overflow: hidden;
 }
-
 
 .filters__toggle {
   @include transform(translateX(-50%));
@@ -102,6 +101,10 @@
   }
 }
 
+.filter__header {
+  margin-bottom: 1rem;
+}
+
 .filters__subheader {
   border-top: 2px solid $primary;
   display: block;
@@ -120,7 +123,7 @@
 
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
-  padding: 2rem 0;
+  padding: 1.5rem 0 .5rem 0;
 
   &:first-of-type {
     padding-top: 0;
@@ -132,6 +135,15 @@
 
   .twitter-typeahead {
     height: auto;
+  }
+
+  label {
+    line-height: 1;
+  }
+
+  [type="text"],
+  .dropdown__button {
+    margin-bottom: 1rem;
   }
 }
 
@@ -255,7 +267,7 @@
     @include transition(margin-left .2s);
     float: left;
     margin-left: -30rem;
-    padding: 2rem;
+    padding: 2rem 1rem;
     position: relative;
     width: 30rem;
     vertical-align: top;
@@ -281,7 +293,6 @@
     border-bottom: 1px solid darken($neutral, 10%);
     border-right: none;
     margin-bottom: 0;
-    padding: 2rem 0;
     max-width: 100%;
     width: 100%;
 

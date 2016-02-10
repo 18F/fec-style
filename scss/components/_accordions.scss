@@ -13,71 +13,40 @@
 //
 // Styleguide components.accordions
 
-.accordion__header {
-  position: relative;
-  clear: both;
-  padding: 1rem 0;
-}
-
-.accordion__title {
+.accordion__button {
+  @include u-background-image('i-accordion-closed--primary', 100% 50%);
+  border-bottom: 1px solid $primary;
+  color: $primary;
+  font-size: 1.6rem;
+  font-weight: bold;
   margin: 0;
-}
+  padding: 1rem 4rem 1rem 0;
+  text-align: left;
+  width: 100%;
 
-.accordion__button {
-  margin-top: -1.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-}
-
-.accordion--collapsed {
-  .accordion__button {
-     &.button {
-       @include u-background-image('i-plus--neutral');
-     }
-
-     &.button--primary {
-       @include u-background-image('i-plus--primary');
-     }
-
-    &.button--secondary {
-      @include u-background-image('i-plus--secondary');
-    }   
+  &[aria-expanded='true'] {
+    @include u-background-image('i-accordion-open--primary', 100% 50%);
   }
 }
 
-.accordion__button {
-  &.button {
-    @include u-background-image('i-minus--neutral');
-    border-radius: 3rem;
-    height: 3rem;
-    padding: 0;
-    width: 3rem;
-  }
-
-  &.button--primary {
-    @include u-background-image('i-minus--primary');
-  }
-
-  &.button--secondary {
-    @include u-background-image('i-minus--secondary');
-  }
+.accordion__content {
+  border-bottom: 1px solid $primary;
+  padding: 1rem .5rem;
 }
 
 .accordion--secondary {
-  border-top: 2px solid $primary;
+  .accordion__button {
+    @include u-background-image('i-accordion-closed--secondary-contrast', 100% 50%);
+    border-color: $secondary-contrast;
+    color: $secondary-contrast;
 
-  .accordion__header {
-    padding: 1rem;
-  }
-  
-  .accordion__item {
-    padding: 2rem;
-    background-color: $ivory;
-    border-top: 2px solid $primary;
+    &[aria-expanded='true'] {
+      @include u-background-image('i-accordion-open--secondary-contrast', 100% 50%);
+    }
   }
 
-  &:last-of-type {
-    border-bottom: 2px solid $primary;
+  .accordion__content {
+    border-color: $secondary-contrast;
+    color: $secondary-contrast;
   }
 }
