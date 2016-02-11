@@ -2,11 +2,8 @@
 //
 // Markup:
 // <div class="js-accordion">
-//   <div class="js-accordion_header accordion__header">
-//     <h2 class="accordion__title">Acccordion header</h2>
-//     <button class="js-accordion_button accordion__button button--primary"><span class="js-accordion_text u-visually-hidden">Expand</span></button>
-//   </div>
-//   <div class="js-accordion_item accordion__item">
+//   <button class="js-accordion-trigger accordion__button">Accordion button</button>
+//   <div class="accordion__content">
 //     <p>Accordion content</p>
 //   </div>
 // </div>
@@ -16,22 +13,37 @@
 .accordion__button {
   @include u-background-image('i-accordion-closed--primary', 100% 50%);
   border-bottom: 1px solid $primary;
+  border-top: 1px solid $primary;
+  margin: 0 0 -1px 0;
   color: $primary;
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 0;
   padding: 1rem 4rem 1rem 0;
   text-align: left;
   width: 100%;
 
   &[aria-expanded='true'] {
     @include u-background-image('i-accordion-open--primary', 100% 50%);
+    border-bottom: none;
   }
 }
 
 .accordion__content {
   border-bottom: 1px solid $primary;
+  margin-bottom: -1px;
   padding: 1rem .5rem;
+
+  // Still working on animating:
+  // @include transition(all .2s ease-out);
+  // max-height: 1000px;
+  // overflow: hidden;
+
+  // &[aria-hidden='true'] {
+    // @include transition(all .2s ease-out);
+    // display: block !important;
+    // max-height: 0;
+    // padding: 0 .5rem;
+  // }
 }
 
 .accordion--secondary {
@@ -46,7 +58,7 @@
   }
 
   .accordion__content {
+    @include u-font-color($secondary-contrast);
     border-color: $secondary-contrast;
-    color: $secondary-contrast;
   }
 }
