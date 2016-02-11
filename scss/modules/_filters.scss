@@ -25,7 +25,7 @@
   @include u-bg--neutral();
   bottom: 0;
   height: 0;
-  padding: 1rem .5rem;
+  padding: 1rem 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -45,10 +45,6 @@
     .filters__toggle {
       @include u-background-image('i-up-2--primary', 1rem 50%);
     }
-  }
-
-  .message {
-    margin-bottom: 0;
   }
 }
 
@@ -119,6 +115,11 @@
   & + .filter {
     padding-top: 0;
   }
+}
+
+.filters__inner {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .filter {
@@ -267,7 +268,7 @@
     @include transition(margin-left .2s);
     float: left;
     margin-left: -30rem;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     position: relative;
     width: 30rem;
     vertical-align: top;

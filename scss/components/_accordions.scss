@@ -11,27 +11,29 @@
 // Styleguide components.accordions
 
 .accordion__button {
-  @include u-background-image('i-accordion-closed--primary', 100% 50%);
-  border-bottom: 1px solid $primary;
-  border-top: 1px solid $primary;
+  @include u-background-image('i-accordion-closed--primary', 95% 50%);
+  border-bottom: 1px solid $beige;
+  border-top: 1px solid $beige;
   margin: 0 0 -1px 0;
   color: $primary;
   font-size: 1.6rem;
   font-weight: bold;
-  padding: 1rem 4rem 1rem 0;
+  padding: 1rem 4rem 1rem 1rem;
   text-align: left;
   width: 100%;
 
   &[aria-expanded='true'] {
-    @include u-background-image('i-accordion-open--primary', 100% 50%);
+    @include u-background-image('i-accordion-open--primary', 95% 50%);
     border-bottom: none;
+    background-color: rgba($beige, .5);
   }
 }
 
 .accordion__content {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $beige;
   margin-bottom: -1px;
-  padding: 1rem .5rem;
+  padding: 1rem 2rem;
+  background-color: rgba($beige, .5);
 
   // Still working on animating:
   // @include transition(all .2s ease-out);
