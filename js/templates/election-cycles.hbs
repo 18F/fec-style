@@ -1,0 +1,15 @@
+{{#each this}}
+  <label>
+    <input
+        type="radio"
+        name="_{{name}}"
+        value="{{max}}:{{full}}"
+      />
+    <span class="button button--neutral">
+      {{#if full}}
+      Full cycle:
+      {{/if}}
+      {{min}}–{{max}}
+    </span>
+  </label>
+{{/each}}
