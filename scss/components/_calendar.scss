@@ -133,10 +133,13 @@
 
 .fc-content {
   @include u-truncate();
-  color: $primary;
+  background: $beige;
+  border-radius: 4px;
+  color: $cream;
   font-size: 1.4rem;
   line-height: 1.2;
   padding: 4px;
+
 }
 
 .fc-limited {
@@ -144,89 +147,45 @@
 }
 
 // Events
-.fc--allday {
-  .fc-content {
-    background: $beige;
-    border-radius: 4px;
-    color: $cream;
-  }
-}
-
 .fc--election {
   .fc-content {
-    color: $cal-election;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-election;
-      color: $cream;
-    }
+    background: $cal-election;
+    color: $cream;
   }
 }
 
 .fc--deadline {
   .fc-content {
-    color: $cal-deadline;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-deadline;
-      color: $cream;
-    }
+    background: $cal-deadline;
+    color: $cream;
   }
 }
 
 .fc--outreach {
   .fc-content {
-    color: $cal-outreach;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-outreach;
-      color: $cream;
-    }
+    background: $cal-outreach;
+    color: $cream;
   }
 }
 
 .fc--rules {
   .fc-content {
-    color: $cal-rules;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-rules;
-      color: $cream;
-    }
+    background: $cal-rules;
+    color: $cream;
   }
 }
 
 .fc--meeting {
   .fc-content {
-    color: $cal-meeting;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-meeting;
-      color: $cream;
-    }
+    background: $cal-meeting;
+    color: $cream;
   }
 }
 
 .fc--other {
   .fc-content {
-    color: $cal-other;
-  }
-
-  &.fc--allday {
-    .fc-content {
-      background: $cal-other;
-      color: $cream;
-    }
+    background: $cal-other;
+    color: $cream;
   }
 }
 
