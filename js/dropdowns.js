@@ -1,9 +1,9 @@
 'use strict';
 
-/* global require, module, document */
-
 var $ = require('jquery');
-var perfectScrollbar = require('perfect-scrollbar/jquery')($);
+require('perfect-scrollbar/jquery')($);
+
+var listeners = require('./listeners');
 
 var KEYCODE_ESC = 27;
 var KEYCODE_ENTER = 13;
@@ -19,36 +19,34 @@ var defaultOpts = {
  * @param {object} opts - Options
  */
 function Dropdown(selector, opts) {
-  var self = this;
-  self.opts = $.extend({}, defaultOpts, opts);
+  this.opts = $.extend({}, defaultOpts, opts);
 
-  self.isOpen = false;
+  this.isOpen = false;
 
-  self.$body = $(selector);
-  self.$button = this.$body.find('.dropdown__button');
-  self.$panel = this.$body.find('.dropdown__panel');
+  this.$body = $(selector);
+  this.$button = this.$body.find('.dropdown__button');
+  this.$panel = this.$body.find('.dropdown__panel');
 
-  self.listeners = [];
+  if (this.opts.checkboxes) {
+    this.$selected = this.$body.find('.dropdown__selected');
+    this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
+    this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
 
-  if (self.opts.checkboxes) {
-    self.$selected = this.$body.find('.dropdown__selected');
-    self.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
-    self.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-
-    if (self.isEmpty()) {
-      self.removePanel();
+    if (this.isEmpty()) {
+      this.removePanel();
     }
   }
 
-  self.$button.on('click', this.toggle.bind(this));
+  this.$button.on('click', this.toggle.bind(this));
 
-  this.addEventListener(document.body, 'click', this.handleClickAway.bind(this));
-  this.addEventListener(document.body, 'focusin', this.handleFocusAway.bind(this));
-  this.addEventListener(document.body, 'keyup', this.handleKeyup.bind(this));
+  this.events = new listeners.Listeners();
+  this.events.on(document.body, 'click', this.handleClickAway.bind(this));
+  this.events.on(document.body, 'focusin', this.handleFocusAway.bind(this));
+  this.events.on(document.body, 'keyup', this.handleKeyup.bind(this));
 
   // Set ARIA attributes
-  self.$button.attr('aria-haspopup', 'true');
-  self.$panel.attr('aria-label','More options');
+  this.$button.attr('aria-haspopup', 'true');
+  this.$panel.attr('aria-label','More options');
 }
 
 Dropdown.prototype.toggle = function(e) {
@@ -131,21 +129,8 @@ Dropdown.prototype.isEmpty = function() {
   return this.$panel.find('input').length === 0;
 };
 
-Dropdown.prototype.addEventListener = function(elm, event, callback) {
-  if (elm) {
-    elm.addEventListener(event, callback);
-    this.listeners.push({
-      elm: elm,
-      event: event,
-      callback: callback
-    });
-  }
-};
-
 Dropdown.prototype.destroy = function() {
-  this.listeners.forEach(function(listener) {
-    listener.elm.removeEventListener(listener.event, listener.callback);
-  });
+  this.events.off();
 };
 
 module.exports = {Dropdown: Dropdown};
