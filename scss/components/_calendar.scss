@@ -139,7 +139,20 @@
   font-size: 1.4rem;
   line-height: 1.2;
   padding: 4px;
+  position: relative;
+  overflow: visible;
+}
 
+.fc-title {
+  display: inline-block;
+  height: 1.2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.fc-time {
+  display: inline-block;
+  height: 1.2rem;
 }
 
 .fc-limited {
@@ -194,9 +207,20 @@
   font-size: 1.4rem;
   margin-top: 1rem;
   padding: 2rem;
+  right: 0;
   text-align: left;
   width: 26rem;
   white-space: initial;
+
+  &:before {
+    left: auto;
+    right: 1rem;
+  }
+
+  &:after {
+    left: auto;
+    right: 1.2rem;
+  }
 
   .button--close--primary {
     position: absolute;
@@ -391,7 +415,9 @@
     .fc-title {
       float: left;
       font-weight: bold;
+      height: auto;
       line-height: 2rem;
+      width: auto;
     }
   }
 
