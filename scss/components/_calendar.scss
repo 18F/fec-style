@@ -145,14 +145,14 @@
 
 .fc-title {
   display: inline-block;
-  height: 1.2rem;
   width: 100%;
   overflow: hidden;
+  vertical-align: top;
 }
 
 .fc-time {
   display: inline-block;
-  height: 1.2rem;
+  vertical-align: top;
 }
 
 .fc-limited {
