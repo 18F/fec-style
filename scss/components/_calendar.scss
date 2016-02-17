@@ -207,25 +207,30 @@
   font-size: 1.4rem;
   margin-top: 1rem;
   padding: 2rem;
-  right: 0;
   text-align: left;
   width: 26rem;
   white-space: initial;
-
-  &:before {
-    left: auto;
-    right: 1rem;
-  }
-
-  &:after {
-    left: auto;
-    right: 1.2rem;
-  }
 
   .button--close--primary {
     position: absolute;
     top: 0;
     right: 0;
+  }
+}
+
+.fc-event-container:last-child {
+  .cal-details {
+    right: 0;
+
+    &:before {
+      left: auto;
+      right: 1rem;
+    }
+
+    &:after {
+      left: auto;
+      right: 1.2rem;
+    }
   }
 }
 
