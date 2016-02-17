@@ -33,7 +33,7 @@ describe('glossary', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
       '<button class="js-glossary-toggle"></button>' +
-      '<span class="term" data-term="party"></span>' +
+      '<span class="term" data-term="political party"></span>' +
       '<div id="glossary">' +
         '<button class="toggle"></button>' +
         '<input class="glossary__search" />' +
@@ -72,14 +72,14 @@ describe('glossary', function() {
     $term.click();
     var items = this.glossary.list.visibleItems;
     expect(items.length).to.equal(1);
-    expect(items[0].elm.innerText.indexOf('Party')).to.be.greaterThan(-1);
+    expect(items[0].elm.innerText.indexOf('Political party')).to.be.greaterThan(-1);
   });
 
   it('finds a term', function() {
-    this.glossary.findTerm('party');
+    this.glossary.findTerm('political party');
     var items = this.glossary.list.visibleItems;
     expect(items.length).to.equal(1);
-    expect(items[0].elm.innerText.indexOf('Party')).to.be.greaterThan(-1);
+    expect(items[0].elm.innerText.indexOf('Political party')).to.be.greaterThan(-1);
   });
 
 });
