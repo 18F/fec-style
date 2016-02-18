@@ -15,7 +15,7 @@ Listeners.prototype.on = function(elm) {
   $elm.on.apply($elm, args);
 };
 
-Listeners.prototype.off = function() {
+Listeners.prototype.clear = function() {
   this.listeners.forEach(function(listener) {
     var $elm = listener.$elm;
     var args = listener.args;

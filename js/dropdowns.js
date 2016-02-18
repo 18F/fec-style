@@ -130,7 +130,7 @@ Dropdown.prototype.isEmpty = function() {
 };
 
 Dropdown.prototype.destroy = function() {
-  this.events.off();
+  this.events.clear();
 };
 
 module.exports = {Dropdown: Dropdown};
