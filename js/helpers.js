@@ -27,7 +27,14 @@ function datetime(value, options) {
 
 Handlebars.registerHelper('datetime', datetime);
 
+Handlebars.registerHelper({
+  eq: function (v1, v2) {
+    return v1 === v2;
+  }
+});
+
 module.exports = {
   datetime: datetime,
-  BREAKPOINTS: BREAKPOINTS
+  BREAKPOINTS: BREAKPOINTS,
+  helpers: Handlebars.helpers
 };
