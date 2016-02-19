@@ -8,8 +8,8 @@
     "definition": "A unique identifier assigned to each candidate registered with the FEC. The initial character indicates the office sought. (H)ouse, (S)enate, (P)resident. If a person runs for several offices, they will have separate IDs for each office."
   },
   {
-    "term": "Party",
-    "definition": "Party affiliation as stated on a candidate’s \"Statement of Candidacy.\""
+    "term": "Political party",
+    "definition": "An association, committee or organization that nominates or selects a candidate for election to federal office whose name appears on the election ballot as the candidate of the organization."
   },
   {
     "term": "District",
@@ -17,23 +17,23 @@
   },
   {
     "term": "Organization type",
-    "definition": "Certain filers, like separate segregated funds (SSF), certain types of political action committees (PACs) and communication cost filers identify the types of organizations they are associated with. These entities can be associated with corporations, trade associations, labor organizations, cooperatives, membership organizations or corporations without capital stock, or have no association."
+    "definition": "Certain filers, like separate segregated funds and communication cost filers, identify the types of organizations they are connected with. These connected organizations can be identified as corporations, trade associations, labor organizations, cooperatives, membership organizations or corporations without capital stock."
   },
   {
     "term": "Committee type",
-    "definition": "A definition that categorizes groups organized to raise and spend money in federal elections. The basic committee types are principal campaign committee, political party committee and political action committee (PAC)."
+    "definition": "A definition that categorizes groups organized to receive and spend money in federal elections. The basic committee types are authorized committees, political party committees, separate segregated funds (SSFs) and nonconnected committees."
   },
   {
     "term": "Total receipts",
-    "definition": "The sum of all money received by a committee as reported to the FEC — including contributions — during a filing period."
+    "definition": "The sum of all contributions and other receipts received by a committee during a filing period."
   },
   {
     "term": "Total disbursements",
-    "definition": "The sum of all money spent by a committee as reported to the FEC during a filing period."
+    "definition": "The sum of all purchases and payments made during a filing period by a political committee or any other person, including an organization that is not a political committee that is subject to the Act."
   },
   {
     "term": "Ending cash on hand",
-    "definition": "The ending cash balance on a report for a particular time period. Cash on hand includes funds held in checking and savings accounts, certificates of deposit, petty cash funds, traveler’s checks, treasury bills and other investments valued at cost."
+    "definition": "The ending balance of cash and cash equivalents on a report for a particular time period.  Cash on hand includes funds held in checking and savings accounts, certificates of deposit, petty cash funds, traveler’s checks, treasury bills and other investments valued at cost.  This balance is calculated by adding beginning cash on hand for the period to  total receipts for the period then subtracting total disbursements for the period."
   },
   {
     "term": "Debt",
@@ -48,28 +48,29 @@
     "definition": "A committee that has been set up for the purposes of fundraising for multiple committees at the same time or an existing committee that has been authorized to serve that purpose."
   },
   {
-    "term": "Reports and statements",
-    "definition": "All committees registered with the FEC are required to file reports and statements regularly that disclose their financial activity. The contents of those reports and statements, as well as the filing schedule, depend on the type of committee or organization."
+    "term": "Reports, designations and statements",
+    "definition": "All committees registered with the FEC and other persons who make certain expenditures or disbursements are required to file reports, designations and statements that disclose their financial activity. The contents of those reports and statements, as well as the filing schedule, depend on the type of committee or organization, or the type of expenditure or disbursement made.  See also \"Filing.\"."
   },
   {
     "term": "Filing",
-    "definition": "A report or statement submitted to the FEC by a candidate, committee or other filing entity. Entities are required to file to declare their status as a candidate or committee and to report the money they raise and spend."
+    "definition": "A report, designation or statement submitted to the FEC or Secretary of the Senate by a candidate, committee or other entity. Required filings include declarations of candidacy and committee reports of the money they receive and spend.  See also \"Reports, designations and statements\"."
   },
   {
     "term": "Authorized committee",
-    "definition": "A committee that has been authorized by a candidate to raise or spend money on his or her behalf."
+    "definition": "A political committee that has been authorized by a candidate to accept contributions or make expenditures on his or her behalf, or one that accepts contributions or makes expenditures on behalf of a candidate and has not been disavowed by the candidate. "
   },
   {
-    "term": "Committee",
-    "definition": "An entity that meets one of the following conditions:<ul class='list--bulleted'><li>An authorized committee of a candidate (see definition of candidate)</li><li>A state party committee or nonparty committee, club, association or other group of persons that receives contributions or makes expenditures, either of which aggregate over $1,000 during a calendar year</li><li>A local unit of a political party (except a state party committee) that: (1) receives contributions aggregating over $5,000 during a calendar year; (2) makes contributions or expenditures either of which aggregate over $1,000 during a calendar year or (3) makes payments aggregating over $5,000 during a calendar year for certain activities that are exempt from the definitions of contribution and expenditure (11 CFR 100.80, 100.87 and 100.89; 11 CFR 100.140, 100.147 and 100.149)</li><li>Any separate segregated fund upon its establishment. 11 CFR 100.5.</li></ul>"
+    "term": "Political committee",
+    "definition": "An entity that meets one of the following conditions:<ul class='list--bulleted'><li>An authorized committee of a candidate (see definition of candidate)</li><li>Any club, association or other group of persons that receives contributions or makes expenditures, either of which aggregate over $1,000 during a calendar year</li><li>A local unit of a political party (except a state party committee) that: (1) receives contributions aggregating over $5,000 during a calendar year; (2) makes contributions or expenditures either of which aggregate over $1,000 during a calendar year or (3) makes payments aggregating over $5,000 during a calendar year for certain activities that are exempt from the definitions of contribution and expenditure (11 CFR 100.80, 100.87 and 100.89; 11 CFR 100.140, 100.147 and 100.149)</li><li>Any separate segregated fund upon its establishment. 11 CFR 100.5.</li></ul>"
   },
   {
     "term": "Principal campaign committee",
     "definition": "An authorized committee designated by a candidate as the principal committee to raise contributions and make expenditures for his or her campaign for a federal office."
   },
   {
+
     "term": "Candidate",
-    "definition": "An individual seeking election or nomination for election to a federal office becomes a candidate when he or she (or agents working on his or her behalf) raises contributions or makes expenditures that exceed $5,000."
+    "definition": "An individual seeking nomination for election, or election, to a federal office becomes a candidate when he or she (or persons working on his or her behalf) receives contributions or makes expenditures that exceed $5,000."
   },
   {
     "term": "None",
@@ -83,51 +84,51 @@
     "term": "Contribution",
     "definition": "A gift, subscription, loan, advance or deposit of money or anything of value given to influence a federal election; or the payment by any person of compensation for the personal services of another person if those services are rendered without charge to a political committee for any purpose. 100.52(a) and 100.54."
   },
-   {
+  {
     "term": "Corporation",
     "definition": "Any separately incorporated entity (other than a political committee that has incorporated for liability purposes only). 100.134(l) and 114.12(a). The term corporation covers both for-profit and nonprofit corporations and includes nonstock corporations, incorporated membership organizations, incorporated cooperatives, incorporated trade associations, professional corporations and, under certain circumstances, limited liability companies."
   },
-   {
+  {
     "term": "Disbursement",
     "definition": "Any purchase or payment made by a political committee or any other person that is subject to the Act. 300.2(d)."
   },
-   {
+  {
     "term": "Donation",
     "definition": "A payment, gift, subscription, loan, advance, deposit or anything of value given to a person but does not include contributions. 300.2(e)."
   },
-   {
+  {
     "term": "Electioneering communication",
     "definition": "Any broadcast, cable or satellite communication that (1) refers to a clearly identified candidate for federal office; (2) is publicly distributed within certain time periods before an election and (3) is targeted to the relevant electorate. 100.29."
   },
-   {
+  {
     "term": "Expenditure",
-    "definition": "A purchase, payment, distribution, loan, advance, deposit, or gift of money or anything of value made for the purpose of influencing a federal election. A written agreement to make an expenditure is also considered an expenditure. 100.111 and 100.112."
+    "definition": "A purchase, payment, distribution, loan, advance, deposit or gift of money or anything of value made for the purpose of influencing a federal election. A written agreement to make an expenditure is also considered an expenditure. 100.111 and 100.112."
   },
-   {
+  {
     "term": "Independent expenditure only committee",
     "definition": "Political committees that make only independent expenditures that may solicit and accept unlimited contributions from individuals, corporations, labor organizations and other political committees. They may not accept contributions from foreign nationals, federal contractors, national banks or federally chartered corporations. See AO 2010-11. Such committees, popularly known as super PACs, must register with the Commission and comply with all applicable reporting requirements of the Act."
   },
-   {
+  {
     "term": "Labor organization",
     "definition": "An organization, agency or employee representative committee or plan, in which employees participate and which exists for the purpose of dealing with employers on grievances, labor disputes, wages, hours of employment or working conditions. 114.1(d)."
   },
-   {
+  {
     "term": "Person",
-    "definition": "An individual, partnership, political committee, corporation, labor organization, or any other organization or group of persons, not including the federal government. 100.10."
+    "definition": "An individual, partnership, political committee, corporation, labor organization or any other organization or group of persons, not including the federal government. 100.10."
   },
-   {
+  {
     "term": "Political action committee (PAC)",
     "definition": "Popular term for a political committee that is neither a party committee nor an authorized committee of a candidate. PACs directly or indirectly established, administered or financially supported by a corporation or labor organization are called separate segregated funds (SSFs). PACs without such a corporate or labor sponsor are called nonconnected PACs."
   },
-   {
+  {
     "term": "Public communication",
     "definition": "A communication by means of any broadcast, cable or satellite communication, newspaper, magazine, outdoor advertising facility, mass mailing or telephone bank to the general public, or any other form of general public political advertising. The term general public political advertising does not include communications made over the internet, except for communications placed for a fee on another person’s website. 100.26, 100.27 (definition of mass mailing) and 100.28 (definition of telephone bank)."
   },
-   {
+  {
     "term": "Receipt",
     "definition": "Anything of value (money, goods, services or property) received by a political committee."
   },
-   {
+  {
     "term": "Special election",
     "definition": "A primary, general or runoff election that is not a regularly scheduled election and that is held to fill a vacant seat in the House of Representatives or the Senate. 100.2(f)."
   },
@@ -135,7 +136,7 @@
     "term": "Separate segregated fund (SSF)",
     "definition": "A political committee established, administered or financially supported by a corporation or labor organization, popularly called a corporate or labor political action committee (PAC). See 114.1(a)(2)(iii). The term \"financially supported\" does not include contributions to the SSF, but does include the payment of establishment, administration or solicitation costs. 100.6(b)."
   },
-   {
+  {
     "term": "Trade association",
     "definition": "A membership organization consisting of persons engaged in a similar or related line of commerce. A trade association is organized to promote and improve business conditions in that line of commerce and not to engage in a regular business for profit. No part of the net earnings of a trade association may inure to the benefit of any member."
   }
