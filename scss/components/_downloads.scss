@@ -40,8 +40,10 @@
 }
 
 .download__name {
+  @include u-truncate();
   display: block;
   font-weight: bold;
+  padding: .5rem 0;
 }
 
 .download__button {
@@ -60,19 +62,20 @@
 
 @include media($med) {
   .download__item {
-    @include span-columns(8);
+    @include span-columns(9);
   }
 
   .download__message {
-    @include span-columns(4);
+    @include span-columns(3);
   }
 
   .download__name {
+    @include span-columns(5);
     float: left;
-    min-width: 22rem;
   }
 
   .download__button {
+    @include span-columns(3);
     margin: 0 2rem;
   }
 }

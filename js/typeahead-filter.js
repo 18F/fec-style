@@ -6,32 +6,59 @@ var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
 
-var TypeaheadFilter = function(selector, dataset) {
-  var self = this;
+var ID_PATTERN = /^\w{9}$/;
 
-  self.$body = $(selector);
-  self.dataset = dataset;
+function slugify(value) {
+  return value
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9:._-]/gi, '');
+}
 
-  self.$field = self.$body.find('input[type="text"]');
-  self.fieldName = self.$field.attr('name');
-  self.$selected = self.$body.find('.dropdown__selected');
-  self.$field.on('typeahead:selected', this.handleSelect.bind(this));
-  self.$field.typeahead({minLength: 3}, this.dataset);
-  self.$tempField = self.$body.find('#' + self.$field.data('temp'));
-  self.$tempField.on('change', this.getFilters.bind(this));
+function formatLabel(datum) {
+  return datum.name ?
+    datum.name + ' (' + datum.id + ')' :
+    '"' + datum.id + '"';
+}
+
+var textDataset = {
+  display: 'id',
+  source: function(query, syncResults) {
+    syncResults([{id: query}]);
+  },
+  templates: {
+    suggestion: function(datum) {
+      return '<span>"' + datum.id + '"</span>';
+    }
+  }
+};
+
+var TypeaheadFilter = function(selector, dataset, allowText) {
+  this.$body = $(selector);
+  this.dataset = dataset;
+
+  this.$field = this.$body.find('input[type="text"]');
+  this.fieldName = this.$body.data('name') || this.$field.attr('name');
+  this.$selected = this.$body.find('.dropdown__selected');
+  this.$field.on('typeahead:selected', this.handleSelect.bind(this));
+  if (allowText) {
+    this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
+  } else {
+    this.$field.typeahead({minLength: 3}, this.dataset);
+  }
 };
 
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   this.appendCheckbox({
     name: this.fieldName,
-    label: e.currentTarget.value,
+    label: formatLabel(datum),
     value: datum.id,
-    id: datum.id + '-checkbox'
+    id: slugify(datum.id) + '-checkbox'
   });
 };
 
 TypeaheadFilter.prototype.clearInput = function() {
-  this.$field.typeahead('val', null);
+  this.$field.typeahead('val', null).change();
 };
 
 TypeaheadFilter.prototype.checkboxTemplate = _.template(
@@ -49,46 +76,54 @@ TypeaheadFilter.prototype.checkboxTemplate = _.template(
 );
 
 TypeaheadFilter.prototype.appendCheckbox = function(opts) {
+  if (this.$body.find('#' + opts.id).length) {
+    return;
+  }
   var checkbox = $(this.checkboxTemplate(opts));
   checkbox.appendTo(this.$selected);
   checkbox.find('input').change();
-  this.$field.val(opts.id).change();
   this.clearInput();
 };
 
-TypeaheadFilter.prototype.getFilters = function() {
+TypeaheadFilter.prototype.getFilters = function(values) {
   var self = this;
-  var value = this.$tempField.val();
-  var ids = value ? value.split(',') : [];
   var dataset = this.dataset.name + 's';
-  var idKey = self.dataset.name + '_id';
-  if (ids.length) {
-    _.each(ids, function(id) {
-      self.appendCheckbox({
-        name: self.fieldName,
-        id: id + '-checkbox',
-        value: id,
-        label: 'Loading...'
-      });
+  var idKey = this.dataset.name + '_id';
+  var ids = values.filter(function(value) {
+    return ID_PATTERN.test(value);
+  });
+  values.forEach(function(value) {
+    self.appendCheckbox({
+      name: self.fieldName,
+      id: slugify(value) + '-checkbox',
+      value: value,
+      label: ID_PATTERN.test(value) ? 'Loading...' : value
     });
+  });
+  if (ids.length) {
     $.getJSON(
       URI(API_LOCATION)
         .path([API_VERSION, dataset].join('/'))
         .addQuery('api_key', API_KEY)
         .addQuery(idKey, ids)
         .toString()
-    ).done(function(response) {
-      _.each(response.results, function(result) {
-        self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(result.name);
-        self.$body.find('#' + idKey).trigger('filter:renamed', [
-          {
-            key: result[idKey] + '-checkbox',
-            value: result.name
-          }
-        ]);
-      });
-    });
+    ).done(this.updateFilters.bind(this));
   }
+};
+
+TypeaheadFilter.prototype.updateFilters = function(response) {
+  var self = this;
+  var idKey = this.dataset.name + '_id';
+  response.results.forEach(function(result) {
+    var label = result.name + ' (' + result[idKey] + ')';
+    self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
+    self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
+      {
+        key: result[idKey] + '-checkbox',
+        value: label
+      }
+    ]);
+  });
 };
 
 module.exports = {TypeaheadFilter: TypeaheadFilter};
