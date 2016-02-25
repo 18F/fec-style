@@ -74,3 +74,10 @@ $colors: (
     }
   }
 }
+
+.sg-swatch.ivory,
+.sg-swatch.cream {
+  &:after {
+    color: $navy;
+  }
+}
