@@ -14,6 +14,8 @@
     "copy-images": "cp -R img styleguide/img",
     "copy-css": "cp -R css styleguide/css",
     "percy": "percy snapshot styleguide",
+    "quick-build": "npm run build-sass && npm run copy-css",
+    "quick-watch": "watch 'npm run quick-build' ./scss",
     "watch": "watch 'npm run build' ./scss",
     "watch-sass": "node-sass scss/ -o css/ --watch",
     "test": "karma start",
