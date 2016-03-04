@@ -22,17 +22,22 @@ function FilterSet(elm) {
 
 FilterSet.prototype.activate = function() {
   var query = URI.parseQuery(window.location.search);
-  this.filters = _.chain(this.$body.find('.js-filter'))
-    .map(function(elm) {
-      var filter = Filter.build($(elm)).fromQuery(query);
-      return [filter.name, filter];
-    })
-    .object()
-    .value();
-  this.fields = _.chain(this.filters)
-    .pluck('fields')
-    .flatten()
-    .value();
+  if (_.isEmpty(this.filters)) {
+    this.filters = _.chain(this.$body.find('.js-filter'))
+      .map(function(elm) {
+        var filter = Filter.build($(elm)); // .fromQuery(query);
+        return [filter.name, filter];
+      })
+      .object()
+      .value();
+    this.fields = _.chain(this.filters)
+      .pluck('fields')
+      .flatten()
+      .value();
+  }
+  _.each(this.filters, function(filter) {
+    filter.fromQuery(query);
+  });
   return this;
 };
 
