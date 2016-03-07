@@ -459,3 +459,15 @@
   max-width: 7.4rem;
   padding-left: 5rem;
 }
+
+.button--cal {
+  @include u-background-image('../img/i-cal--primary', 1rem .5rem);
+  background-size: 50%;
+  height: 3.4rem;
+}
+
+.button--list {
+  @include u-background-image('../img/i-table--primary', 1rem 1rem);
+  background-size: 1.5rem;
+  height: 3.4rem;
+}
