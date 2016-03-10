@@ -243,7 +243,7 @@ ElectionFilter.prototype.handleElectionChange = function(e) {
     full: true
   });
   this.$cycles.html(cyclesTemplate(bins));
-  this.$cycles.find('input').eq(0).prop('selected', true).change();
+  this.$cycles.find('input').eq(0).prop('checked', true).change();
 };
 
 ElectionFilter.prototype.handleCycleChange = function(e) {
