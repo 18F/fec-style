@@ -225,7 +225,7 @@ ElectionFilter.prototype.handleElectionChange = function(e) {
     return;
   }
   var election = parseInt($(e.target).val());
-  var cycles = _.range(election, election - this.duration, -2);
+  var cycles = _.range(election - this.duration + 2, election + 2, 2);
   var bins = _.map(cycles, function(cycle) {
     return {
       name: this.name,
