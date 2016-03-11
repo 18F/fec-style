@@ -9,6 +9,8 @@ window.$ = window.jQuery = $;
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 
+var cyclesTemplate = require('./templates/election-cycles.hbs');
+
 var KEYCODE_ENTER = 13;
 
 function ensureArray(value) {
@@ -39,6 +41,8 @@ Filter.build = function($elm) {
     return new DateFilter($elm);
   } else if ($elm.hasClass('js-typeahead-filter')) {
     return new TypeaheadFilter($elm);
+  } else if ($elm.hasClass('js-election-filter')) {
+    return new ElectionFilter($elm);
   } else {
     return new Filter($elm);
   }
@@ -86,6 +90,8 @@ Filter.prototype.handleChange = function(e) {
   } else if (type === 'text') {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();
+  } else {
+    return;
   }
 
   if (prefix) {
@@ -175,6 +181,75 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
       value: $label.text(),
     }
   ]);
+};
+
+function ElectionFilter(elm) {
+  Filter.call(this, elm);
+
+  this.duration = parseInt(this.$body.data('duration'));
+  this.cycleName = this.$body.data('cycle-name');
+  this.fullName = this.$body.data('full-name');
+
+  this.$election = this.$body.find('.js-election');
+  this.$cycles = this.$body.find('.js-cycles');
+  this.$cycle = this.$body.find('input[type="hidden"][name="' + this.cycleName + '"]');
+  this.$full = this.$body.find('input[type="hidden"][name="' + this.fullName + '"]');
+
+  this.$election.on('change', this.handleElectionChange.bind(this));
+  this.$cycles.on('change', this.handleCycleChange.bind(this));
+
+  this.fields = [this.name, this.cycleName, this.fullName];
+}
+
+ElectionFilter.prototype = Object.create(Filter.prototype);
+ElectionFilter.constructor = ElectionFilter;
+
+ElectionFilter.prototype.fromQuery = function(query) {
+  var election = query[this.name] || '2016';
+  var cycle = query[this.cycleName] || election;
+  var full = query[this.fullName] !== null ? query[this.fullName] : true;
+  if (election) {
+    this.$election.val(election);
+    this.handleElectionChange({target: this.$election});
+    this.$cycles.find('input[value="' + cycle + ':' + full + '"]')
+      .prop('checked', true)
+      .change();
+  }
+  return this;
+};
+
+ElectionFilter.prototype.handleChange = function() {};
+
+ElectionFilter.prototype.handleElectionChange = function(e) {
+  if (this.duration === 2) {
+    return;
+  }
+  var election = parseInt($(e.target).val());
+  var cycles = _.range(election - this.duration + 2, election + 2, 2);
+  var bins = _.map(cycles, function(cycle) {
+    return {
+      name: this.name,
+      cycle: cycle,
+      min: cycle - 1,
+      max: cycle,
+      full: false
+    };
+  }.bind(this));
+  bins.unshift({
+    name: this.name,
+    cycle: election,
+    min: election - this.duration + 1,
+    max: election,
+    full: true
+  });
+  this.$cycles.html(cyclesTemplate(bins));
+  this.$cycles.find('input').eq(0).prop('checked', true).change();
+};
+
+ElectionFilter.prototype.handleCycleChange = function(e) {
+  var selected = $(e.target).val().split(':');
+  this.$cycle.val(selected[0]).change();
+  this.$full.val(selected[1]).change();
 };
 
 module.exports = {Filter: Filter};
