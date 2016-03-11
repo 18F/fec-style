@@ -31,18 +31,6 @@
   border-bottom: 1px solid $primary;
   margin-bottom: -1px;
   padding: 1rem;
-
-  // Still working on animating:
-  // @include transition(all .2s ease-out);
-  // max-height: 1000px;
-  // overflow: hidden;
-
-  // &[aria-hidden='true'] {
-    // @include transition(all .2s ease-out);
-    // display: block !important;
-    // max-height: 0;
-    // padding: 0 .5rem;
-  // }
 }
 
 .accordion--neutral {
