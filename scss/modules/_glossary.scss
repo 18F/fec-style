@@ -15,12 +15,12 @@
   width: 75%;
   z-index: $z-glossary;
 
-  &[aria-hidden=true] {
+  &[aria-hidden='true'] {
     display: block !important;
     right: -100%;
   }
 
-  &[aria-hidden=false] {
+  &[aria-hidden='false'] {
     @include transition(right, .3s);
     right: 0;
   }
@@ -36,29 +36,8 @@
   padding: 4rem 0;
 }
 
-.glossary__item {
-  border-bottom: 1px solid $secondary-contrast;
-
-  .glossary-term {
-    margin: 0;
-    font-size: 1.6rem;
-    font-weight: bold;
-  }
-
-  .glossary-definition {
-    font-family: $sans-serif;
-  }
-
-  .accordion__header {
-    padding: 1rem 4rem 1rem 0;
-  }
-
-  .accordion__button {
-    background-size: 50%;
-    margin-top: -1rem;
-    height: 2rem;
-    width: 2rem;
-  }
+.glossary__definition {
+  font-family: $sans-serif;
 }
 
 // Term classes

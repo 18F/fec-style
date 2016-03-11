@@ -31,6 +31,16 @@
   display: block;
 }
 
+.totals-table__header-label {
+  display: inline-block;
+  padding-top: 1rem;
+}
+
+.totals-table__header-data {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .totals-table__row--nested {
   font-size: 1.4rem;
   background-color: rgba($ivory, .3);
@@ -45,7 +55,7 @@
 
   .totals-table__cell:first-child {
     font-weight: normal;
-  }  
+  }
 }
 
 @include media($med) {
@@ -66,4 +76,4 @@
       }
     }
   }
-}  
+}
