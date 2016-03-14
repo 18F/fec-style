@@ -62,6 +62,12 @@
     background-image: url('../img/i-down--secondary.svg');
     border-left: 1px solid $secondary;
   }
+
+  &.button--primary-contrast:after {
+    background-image: url('../img/i-down--primary-contrast.png');
+    background-image: url('../img/i-down--primary-contrast.svg');
+    border-left: 1px solid $primary-contrast;
+  }
 }
 
 .dropdown__button--mini {
@@ -80,7 +86,7 @@
   position: absolute;
   min-width: 100%;
   background: $cream;
-  border: 2px solid $beige;
+  border: 2px solid $primary;
   max-height: 30rem;
   overflow: hidden;
   text-align: left;
@@ -88,7 +94,7 @@
   z-index: 999;
 
   .dropdown__value {
-    border-bottom: 2px solid $beige;
+    border-bottom: 1px solid $primary;
     margin: 0;
     padding: .5rem 1rem;
     white-space: nowrap;
@@ -171,11 +177,11 @@
   position: absolute;
   background: $ivory;
   width: 4px;
-  border-left: 1px solid $beige;
+  border-left: 1px solid $primary;
 }
 
 .ps-scrollbar-y {
   position: absolute;
   width: 4px;
-  background: $beige;
+  background: $primary;
 }

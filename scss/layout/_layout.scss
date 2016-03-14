@@ -39,11 +39,13 @@
 .main {
   @include clearfix();
   color: $primary;
-  padding: 2rem 0;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
   position: relative;
 
   @include media($lg) {
-    padding: 4rem 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 

@@ -29,7 +29,6 @@
 
 .accordion__content {
   border-bottom: 1px solid $primary;
-  margin-bottom: -1px;
   padding: 1rem;
 }
 
@@ -40,12 +39,14 @@
 
     &[aria-expanded='true'] {
       background-color: rgba($beige, .5);
+      border-top: 1px solid $primary;
     }
   }
 
   .accordion__content {
     background-color: rgba($beige, .5);
-    border-color: $beige;
+    border-bottom-color: $primary;
+    border-top-color: $beige;
   }
 }
 
