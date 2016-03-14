@@ -161,45 +161,56 @@
 
 // Events
 .fc--election {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-election;
     color: $cream;
   }
 }
 
 .fc--deadline {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-deadline;
     color: $cream;
   }
 }
 
 .fc--outreach {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-outreach;
     color: $cream;
   }
 }
 
 .fc--rules {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-rules;
     color: $cream;
   }
 }
 
 .fc--meeting {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-meeting;
     color: $cream;
   }
 }
 
 .fc--other {
-  .fc-content {
+  .fc-content,
+  .cal__category {
     background: $cal-other;
     color: $cream;
   }
+}
+
+.cal__category {
+  border-radius: 3px;
+  padding: .5rem;
 }
 
 // Event details
@@ -340,6 +351,11 @@
   }
 }
 
+.cal-view__toggles {
+  float: right;
+  padding-left: 1rem;
+}
+
 // List view
 .cal-list__toggles {
   padding-top: 2rem;
@@ -465,6 +481,10 @@
   .fc-right {
     display: block;
     float: right;
+
+    .fc-button-group {
+      float: right;
+    }
   }
 }
 
