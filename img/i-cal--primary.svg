@@ -4,19 +4,23 @@
     <title>i-cal--primary</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Simple-Copy" transform="translate(-267.000000, -1187.000000)">
-            <g id="i-cal--primary" transform="translate(268.000000, 1188.000000)">
-                <g id="i_calview_primary-copy-4">
-                    <rect id="Rectangle-201" stroke="#022C53" fill="#FFFFFF" x="0" y="0" width="13" height="13" rx="0.5"></rect>
-                    <rect id="Rectangle-201-Copy" stroke="#022C53" fill="#FFFFFF" x="0" y="0" width="13" height="13" rx="0.5"></rect>
-                    <rect id="Rectangle-203" fill="#022C53" x="0" y="0" width="13" height="4" rx="0.5"></rect>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i-cal--primary" transform="translate(1.000000, 1.000000)">
+            <g id="Icons">
+                <g id="Simple-Copy">
+                    <g id="i-cal--primary">
+                        <g id="i_calview_primary-copy-4">
+                            <rect id="Rectangle-201" stroke="#022C53" x="0" y="0" width="13" height="13" rx="0.5"></rect>
+                            <rect id="Rectangle-201-Copy" stroke="#022C53" x="0" y="0" width="13" height="13" rx="0.5"></rect>
+                            <rect id="Rectangle-203" fill="#022C53" x="0" y="0" width="13" height="4" rx="0.5"></rect>
+                        </g>
+                        <path d="M6.5,3.5 L6.5,12.5" id="Line-Copy-38" stroke="#022C53"></path>
+                        <path d="M9.5,3.5 L9.5,12.5" id="Line-Copy-40" stroke="#022C53"></path>
+                        <path d="M3.5,3.5 L3.5,12.5" id="Line-Copy-39" stroke="#022C53"></path>
+                        <path d="M0.5,6.5 L12.5,6.5" id="Line-Copy-41" stroke="#022C53"></path>
+                        <path d="M0.5,9.5 L12.5,9.5" id="Line-Copy-42" stroke="#022C53"></path>
+                    </g>
                 </g>
-                <path d="M6.5,3.5 L6.5,12.5" id="Line-Copy-38" stroke="#022C53" stroke-linecap="square"></path>
-                <path d="M9.5,3.5 L9.5,12.5" id="Line-Copy-40" stroke="#022C53" stroke-linecap="square"></path>
-                <path d="M3.5,3.5 L3.5,12.5" id="Line-Copy-39" stroke="#022C53" stroke-linecap="square"></path>
-                <path d="M0.5,6.5 L12.5,6.5" id="Line-Copy-41" stroke="#022C53" stroke-linecap="square"></path>
-                <path d="M0.5,9.5 L12.5,9.5" id="Line-Copy-42" stroke="#022C53" stroke-linecap="square"></path>
             </g>
         </g>
     </g>
