@@ -36,12 +36,17 @@ var textDataset = {
 var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$body = $(selector);
   this.dataset = dataset;
+  this.allowText = allowText;
 
   this.$field = this.$body.find('input[type="text"]');
   this.fieldName = this.$body.data('name') || this.$field.attr('name');
+  this.$button = this.$body.find('button');
   this.$selected = this.$body.find('.dropdown__selected');
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
-  if (allowText) {
+  this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
+  this.$field.on('keyup', this.handleKeypress.bind(this));
+  this.$button.on('click', this.handleSubmit.bind(this));
+  if (this.allowText) {
     this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
   } else {
     this.$field.typeahead({minLength: 3}, this.dataset);
@@ -55,6 +60,24 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     value: datum.id,
     id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
   });
+};
+
+TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
+  this.datum = datum;
+};
+
+TypeaheadFilter.prototype.handleKeypress = function(e) {
+  if (e.keyCode === 13) {
+    this.handleSubmit(e);
+  }
+};
+
+TypeaheadFilter.prototype.handleSubmit = function(e) {
+  if (this.datum) {
+    this.handleSelect(e, this.datum);
+  } else if (this.allowText && this.$field.typeahead('val').length > 0) {
+    this.handleSelect(e, {id: this.$field.typeahead('val')});
+  }
 };
 
 TypeaheadFilter.prototype.clearInput = function() {
