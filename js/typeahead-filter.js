@@ -53,7 +53,7 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     name: this.fieldName,
     label: formatLabel(datum),
     value: datum.id,
-    id: slugify(datum.id) + '-checkbox'
+    id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
   });
 };
 
