@@ -4,6 +4,10 @@ node_js: "5.5.0"
 
 sudo: false
 
+env:
+  GITHUB_REPO: github.com/18F/fec-style
+  secure: "sUu9BPGh41hagnyo7qw4hFCu8lMnpLyJx32/KXOQ9vvdEPuuKdtd3AXJs4RGlJ+A7kRi3ALraxTUcfKamM9wDmtwabTBq0dD8OyGkMtTetyXXWs26H0wD9TUWetyP9t81BhTS+m3RHh15sFXg8LUxbF12usTE/RY6QsexnE1zl1U81Pom0uY0k9Sv0BlqHGv2kcqK1r1UGvhVfSPdN1FV8kN4JPxdou620IdsnPSzDhhwkG99KZDiVC1G89riBjjWWaztGjABgm45fdrNIHa36tnwXtJtFIggbldQGohbm6Cub2luGx36kmZ2aORNSXZCPodUCo3yMlqIeVCagZYIEK0RVTkR0nHyTeNtfPeNxTxmIKCj325dO/0UtbbVhHOQiNp+iAPjn0RVgf3UilfsK3Eq7yZ5wA0XiOT563JaGX3sVqMTMfj2pvd4rdQbSm3Oq1FUv0cwDd056vfX6yxm7K8g8aUPzNro/PpuJwX3mRMLtxcKOqumQL/5YfrwDkOPWO1YANMr+ikZvvfqqjCpO9Fcu0co1jU73uX2asmwU/0x+L0GZOnvvbuGIS20jcCFx5XewNRk8nNfODBqIlpfDChkpw1PCF4slq0C/okdPTyRNQEOCCcLMyi3KOGufAgWWjOUHiwpuRBltQ/IkubCij5yPq8cK05892HXt9Mbf4=" # GITHUB_TOKEN
+
 before_script:
   - travis_retry npm install codecov.io
 
@@ -14,3 +18,10 @@ script:
 
 after_success:
   - cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
+
+deploy:
+  provider: script
+  script: ./deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
