@@ -50,7 +50,7 @@ $colors: (
     height: 10rem;
     width: 100%;
 
-    &:after {
+    &::after {
       content: '#{$color};';
       color: #fff;
       display: block;
@@ -65,7 +65,7 @@ $colors: (
 
 .sg-swatch.ivory,
 .sg-swatch.cream {
-  &:after {
+  &::after {
     color: $navy;
   }
 }

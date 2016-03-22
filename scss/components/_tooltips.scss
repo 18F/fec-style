@@ -48,7 +48,7 @@
 .tooltip--above {
   width: 12rem;
 
-  &:before {
+  &::before {
     @include triangle(2rem, $primary, down);
     bottom: -1rem;
     content: '';
@@ -57,7 +57,7 @@
     position: absolute;
   }
 
-  &:after {
+  &::after {
     @include triangle(1.6rem, $cream, down);
     content: '';
     display: block;
@@ -70,7 +70,7 @@
 .tooltip--under {
   max-width: 30rem;
 
-  &:before {
+  &::before {
     @include triangle(2rem, $primary, up);
     content: '';
     display: block;
@@ -79,7 +79,7 @@
     top: -1rem;
   }
 
-  &:after {
+  &::after {
     @include triangle(1.6rem, $cream, up);
     content: '';
     display: block;
@@ -135,7 +135,7 @@
 
 // Calendar tooltips
 .cal-details {
-  &:after {
+  &::after {
     display: none;
   }
 

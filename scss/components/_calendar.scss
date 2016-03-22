@@ -54,7 +54,7 @@
       border-radius: 0 4px 4px 0;
     }
 
-    &:after {
+    &::after {
       left: .5rem;
       right: .5rem;
     }
@@ -145,7 +145,7 @@
   position: relative;
   overflow: visible;
 
-  &:before {
+  &::before {
     content: "";
     display: block;
     width: .6rem;
@@ -161,6 +161,7 @@
   display: inline-block;
   width: calc(100% - 12px);
   overflow: hidden;
+  text-overflow: ellipsis;
   vertical-align: top;
 }
 
@@ -198,12 +199,12 @@
   .cal-details {
     right: 0;
 
-    &:before {
+    &::before {
       left: auto;
       right: 1rem;
     }
 
-    &:after {
+    &::after {
       left: auto;
       right: 1.2rem;
     }

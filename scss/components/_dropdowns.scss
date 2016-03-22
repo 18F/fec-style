@@ -42,7 +42,7 @@
   min-height: 3.4rem;
   width: 100%;
 
-  &:after {
+  &::after {
     background-image: url('../img/i-down--primary.png');
     background-image: url('../img/i-down--primary.svg');
     background-repeat: no-repeat;
@@ -71,7 +71,7 @@
 }
 
 .dropdown__button--mini {
-  &:after {
+  &::after {
     padding: 1rem .5rem 1rem 1.5rem;
     right: .5rem;
   }
@@ -104,7 +104,7 @@
       cursor: pointer;
     }
 
-    &:before {
+    &::before {
       display: none;
     }
   }

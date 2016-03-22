@@ -128,7 +128,7 @@
   float: left;
   padding-left: 3rem;
 
-  &:after {
+  &::after {
     content: "View all";
   }
 }
@@ -186,7 +186,7 @@
     background-image: url('../img/i-x--primary.svg');
     float: right;
 
-    &:after {
+    &::after {
       content: "Close";
     }
 
