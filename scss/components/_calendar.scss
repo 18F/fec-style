@@ -159,55 +159,6 @@
   display: none;
 }
 
-// Events
-.fc--election {
-  .fc-content,
-  .cal__category {
-    background: $cal-election;
-    color: $cream;
-  }
-}
-
-.fc--deadline {
-  .fc-content,
-  .cal__category {
-    background: $cal-deadline;
-    color: $cream;
-  }
-}
-
-.fc--outreach {
-  .fc-content,
-  .cal__category {
-    background: $cal-outreach;
-    color: $cream;
-  }
-}
-
-.fc--rules {
-  .fc-content,
-  .cal__category {
-    background: $cal-rules;
-    color: $cream;
-  }
-}
-
-.fc--meeting {
-  .fc-content,
-  .cal__category {
-    background: $cal-meeting;
-    color: $cream;
-  }
-}
-
-.fc--other {
-  .fc-content,
-  .cal__category {
-    background: $cal-other;
-    color: $cream;
-  }
-}
-
 .cal__category {
   border-radius: 3px;
   padding: .5rem;

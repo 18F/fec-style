@@ -17,12 +17,6 @@
 // .beige-dark     - Beige-dark
 // .black          - Black
 // .disabled       - Disabled
-// .cal-deadline   - Calendar deadline
-// .cal-election   - Calendar election
-// .cal-meeting    - Calendar meeting
-// .cal-outreach   - Calendar outreach
-// .cal-rules      - Calendar rules
-// .cal-other      - Calendar other
 //
 // Markup:
 // <div class="sg-swatch {{modifier_class}}"></div>
@@ -46,13 +40,7 @@ $colors: (
   beige-light: $beige-light,
   beige-dark: $beige-dark,
   black: $black,
-  disabled: $disabled,
-  cal-deadline: $cal-deadline,
-  cal-election: $cal-election,
-  cal-meeting: $cal-meeting,
-  cal-outreach: $cal-outreach,
-  cal-rules: $cal-rules,
-  cal-other: $cal-other
+  disabled: $disabled
 );
 
 @each $variable, $color in $colors {
