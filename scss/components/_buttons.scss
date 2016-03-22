@@ -445,12 +445,12 @@
 }
 
 .button--download {
-  @include u-background-image('../img/i-download--secondary', 1rem 1rem);
+  @include u-background-image('../img/i-download--primary', 1rem 1rem);
   padding-left: 3rem;
 }
 
 .button--subscribe {
-  @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
+  @include u-background-image('../img/i-subscribe--primary', 1rem .8rem);
   padding-left: 3rem;
 }
 
