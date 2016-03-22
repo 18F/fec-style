@@ -132,3 +132,30 @@
     display: block;
   }
 }
+
+// Calendar tooltips
+.cal-details {
+  &:after {
+    display: none;
+  }
+
+  .tooltip__heading {
+    @include clearfix();
+    background: $primary;
+    color: $cream;
+
+    .button {
+      float: right;
+    }
+  }
+
+  .tooltip__title {
+    line-height: 4rem;
+    padding-left: 1rem;
+    float: left;
+  }
+
+  .tooltip__content {
+    padding: 1rem;
+  }
+}

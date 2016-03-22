@@ -37,7 +37,7 @@
   }
 
   .fc-today-button {
-    float: left;
+    margin-left: 1rem;
   }
 
   .fc-prev-button,
@@ -131,21 +131,35 @@
   vertical-align: top;
 }
 
+.fc-more {
+  margin: 0 4px;
+}
+
 .fc-content {
   @include u-truncate();
-  background: $beige;
-  border-radius: 4px;
-  color: $cream;
+  background: none;
+  color: $primary;
   font-size: 1.4rem;
   line-height: 1.2;
-  padding: 4px;
+  padding: 2px 4px;
   position: relative;
   overflow: visible;
+
+  &:before {
+    content: "";
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    background-color: $primary;
+    border-radius: .8rem;
+    float: left;
+    margin: 5px 5px 5px 0;
+  }
 }
 
 .fc-title {
   display: inline-block;
-  width: 100%;
+  width: calc(100% - 12px);
   overflow: hidden;
   vertical-align: top;
 }
@@ -168,7 +182,7 @@
 .cal-details {
   font-size: 1.4rem;
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 0;
   text-align: left;
   width: 26rem;
   white-space: initial;
@@ -222,7 +236,7 @@
 }
 
 .cal-details__add {
-  padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 .fc-popup {

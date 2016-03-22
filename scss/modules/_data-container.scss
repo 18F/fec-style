@@ -20,6 +20,7 @@
   @include clearfix();
   color: $cream;
   background-color: $primary;
+  border-top: 1px solid $cream;
   font-family: $sans-serif;
   padding: 5rem 2rem 2rem 2rem;
 }
@@ -68,16 +69,19 @@
     padding: 0 2rem 2rem 2rem;
   }
 
+  .data-container__widgets {
+    padding: 1rem 2rem;
+  }
+
   .data-container__export {
     @include span-columns(4);
     float: right;
-    margin-top: 1rem;
+    margin-top: 0;
     text-align: right;
   }
 
   .data-container__tags {
     @include span-columns(8);
-    margin-top: 3rem;
   }
 
   .export-widget {
