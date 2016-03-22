@@ -411,6 +411,12 @@
   width: 4rem;
 }
 
+.button--close--neutral {
+  @include u-background-image('../img/i-x--neutral');
+  height: 4rem;
+  width: 4rem;
+}
+
 .button--close--primary-contrast {
   @include u-background-image('../img/i-x--primary-contrast');
   height: 4rem;
