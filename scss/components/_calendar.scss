@@ -157,6 +157,14 @@
   }
 }
 
+.is-active {
+  .fc-content {
+    background-color: $primary;
+    border-radius: 4px;
+    color: $cream;
+  }
+}
+
 .fc-title {
   display: inline-block;
   width: calc(100% - 12px);
