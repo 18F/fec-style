@@ -100,7 +100,7 @@
     white-space: nowrap;
 
     &:hover {
-      background-color: $gray-lightest;
+      background-color: $gray-light;
       cursor: pointer;
     }
 
@@ -110,7 +110,7 @@
   }
 
   input:focus + .dropdown__value {
-    background-color: $gray-lightest;
+    background-color: $gray-light;
   }
 
   .dropdown__item:last-of-type {
@@ -175,7 +175,7 @@
 
 .ps-scrollbar-y-rail {
   position: absolute;
-  background: $gray-lightest;
+  background: $gray-light;
   width: 4px;
   border-left: 1px solid $primary;
 }
