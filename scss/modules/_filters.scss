@@ -85,6 +85,12 @@
   right: 0;
 }
 
+.filters__clear {
+  @include u-background-image('i-x--primary-contrast');
+  background-position: 95% .5rem;
+  padding-right: 3rem;
+}
+
 .filter__header {
   margin-bottom: 1rem;
 }

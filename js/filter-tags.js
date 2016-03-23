@@ -12,7 +12,9 @@ var BODY_TEMPLATE = _.template(
     '</ul>' +
     '<div class="filters__controls">' +
       '<button class="js-filter-toggle filters__toggle">Add filters +</button>' +
-      '<button class="js-filter-clear filters__toggle" aria-hidden="true">Clear all filters</button>' +
+      '<button class="js-filter-clear filters__toggle filters__clear" aria-hidden="true">' +
+        'Clear all filters' +
+      '</button>' +
     '</div>' +
   '</div>',
   {interpolate: /\{\{(.+?)\}\}/g}
