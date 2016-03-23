@@ -17,7 +17,7 @@
 }
 
 .result {
-  border-top: 2px solid $beige;
+  border-top: 2px solid $gray;
   padding: 2rem 0;
 
   &:first-of-type {
@@ -35,7 +35,7 @@
 
 .result__left {
   @include span-columns(5 of 9);
-  border-right: 1px solid $beige;
+  border-right: 1px solid $gray;
 }
 
 .result__right {
@@ -78,7 +78,7 @@
 
   .result__column {
     @include span-columns(3 of 9);
-    border-right: 1px solid $beige;
+    border-right: 1px solid $gray;
     border-bottom: none;
 
     &:last-child {

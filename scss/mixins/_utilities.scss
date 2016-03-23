@@ -48,7 +48,7 @@
 
 .u-blank-space {
   display: inline-block;
-  border-bottom: 1px solid $cream;
+  border-bottom: 1px solid $white;
   width: 5rem;
 }
 
@@ -173,12 +173,12 @@
 // Styleguide mixins.bg-primary
 
 @mixin u-bg--primary() {
-  @include u-font-color($ivory);
-  @include u-form-color($primary, $primary-contrast, $ivory, 'primary', $primary-contrast);
+  @include u-font-color($gray-lightest);
+  @include u-form-color($primary, $primary-contrast, $gray-lightest, 'primary', $primary-contrast);
   background-color: $primary;
 
   a {
-    border-bottom-color: $ivory;
+    border-bottom-color: $gray-lightest;
 
     &:hover {
       border-bottom-color: $primary-contrast;
@@ -202,12 +202,12 @@
 // Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary(){
-  @include u-font-color($ivory);
-  @include u-form-color($secondary, $secondary-contrast, $ivory, 'secondary', $secondary-contrast);
+  @include u-font-color($gray-lightest);
+  @include u-form-color($secondary, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
   background-color: $secondary;
 
   a {
-    border-bottom-color: $ivory;
+    border-bottom-color: $gray-lightest;
 
     &:hover {
       border-bottom-color: $secondary-contrast;
@@ -221,8 +221,8 @@
 
 @mixin u-bg--neutral(){
   @include u-font-color($primary);
-  @include u-form-color($cream, $primary, $primary-contrast, 'neutral', $primary);
-  background-color: $ivory;
+  @include u-form-color($white, $primary, $primary-contrast, 'neutral', $primary);
+  background-color: $gray-lightest;
 
   a {
     &:hover {

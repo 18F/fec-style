@@ -30,7 +30,7 @@
 
   tr {
     border-left-width: 0;
-    background-color: $cream;
+    background-color: $white;
     border-bottom: 1px solid $neutral;
 
     &.row-active {
@@ -86,14 +86,14 @@
 .row-active {
 
   td {
-    background-color: rgba($ivory, .3);
-    border-top: 1px solid $ivory;
-    border-bottom: 1px solid $ivory;
+    background-color: rgba($gray-lightest, .3);
+    border-top: 1px solid $gray-lightest;
+    border-bottom: 1px solid $gray-lightest;
   }
 
   td:first-child {
     padding-left: 1rem;
-    border-left: 1px solid $ivory;
+    border-left: 1px solid $gray-lightest;
   }
 }
 

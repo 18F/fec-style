@@ -58,7 +58,7 @@
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
-    color: $cream;
+    color: $white;
   }
 }
 
@@ -86,7 +86,7 @@
   &.is-active {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
-    color: $cream;
+    color: $white;
   }
 }
 
@@ -103,16 +103,16 @@
 
 .button--neutral {
   @extend .button;
-  background-color: $beige;
+  background-color: $gray;
   color: $primary;
 
   &:hover:not(.disabled) {
-    background-color: $beige-light;
+    background-color: $gray-light;
   }
 
   &:active:not(.disabled),
   &.is-active {
-    background-color: $beige-dark;
+    background-color: $gray-dark;
     border: 2px solid $primary;
   }
 }
@@ -141,7 +141,7 @@
   &:active:not(.disabled),
   &.is-active {
     background-color: $primary;
-    color: $cream;
+    color: $white;
   }
 }
 
@@ -192,7 +192,7 @@
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
-    color: $cream;
+    color: $white;
   }
 }
 
@@ -220,7 +220,7 @@
   &.is-active {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
-    color: $cream;
+    color: $white;
   }
 }
 
@@ -239,7 +239,7 @@
 .button--navy {
   @extend .button;
   background-color: $navy;
-  color: $cream;
+  color: $white;
 
   &:hover:not(.disabled) {
     background-color: lighten($navy, 10%);
@@ -249,7 +249,7 @@
   &.is-active {
     background-color: $primary;
     border: 2px solid $primary-contrast;
-    color: $cream;
+    color: $white;
   }
 }
 

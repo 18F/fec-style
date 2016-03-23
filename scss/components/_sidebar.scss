@@ -92,7 +92,7 @@
   }
 
   .card {
-    @include u-font-color($cream);
+    @include u-font-color($white);
     background-color: #dd3700;
   }
 }

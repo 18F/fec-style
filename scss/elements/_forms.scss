@@ -43,8 +43,8 @@ input,
 select[multiple=multiple],
 textarea,
 select {
-  background-color: $cream;
-  border-color: $beige-dark;
+  background-color: $white;
+  border-color: $gray-dark;
   border-width: 2px;
   border-style: solid;
   border-radius: 4px;
@@ -151,7 +151,7 @@ input[type="file"] {
 
 [type="checkbox"] + label::before,
 [type="radio"] + label::before {
-  background: $cream;
+  background: $white;
   border: 2px solid $primary;
   border-radius: 2px;
   content: '';

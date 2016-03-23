@@ -25,7 +25,7 @@
   @include clearfix();
   background-size: 2rem;
   background-color: #eee6dd;
-  border-color: $beige;
+  border-color: $gray;
   border-style: solid;
   border-width: 0 0 0 3px;
   margin: 2rem 0;
@@ -51,7 +51,7 @@
 }
 
 .message--alert__bottom {
-  border-top: 1px solid $beige;
+  border-top: 1px solid $gray;
   margin-top: 1rem;
   padding-top: 1rem;
 }
@@ -100,9 +100,9 @@
 
 .message--primary,
 .message--secondary {
-  @include u-font-color($cream);
-  background-color: rgba($cream, .1);
-  border-color: $cream;
+  @include u-font-color($white);
+  background-color: rgba($white, .1);
+  border-color: $white;
 
   &.message--success {
     @include u-background-image('i-success--inverse', 50% 2rem);

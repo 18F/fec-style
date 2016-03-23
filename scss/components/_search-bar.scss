@@ -115,7 +115,7 @@
 }
 
 .tt-menu {
-  background-color: $cream;
+  background-color: $white;
   border: 1px solid $primary;
   font-family: $sans-serif;
   font-size: 1.2rem;
@@ -132,7 +132,7 @@
   padding: 1rem;
   margin-bottom: 0;
   line-height: 1;
-  border-top: 1px solid $ivory;
+  border-top: 1px solid $gray-lightest;
   width: 100%;
 
   .tt-suggestion__name,
@@ -155,7 +155,7 @@ span.tt-suggestion__office {
 .tt-cursor,
 .tt-suggestion:hover {
   cursor: pointer;
-  background: $ivory;
+  background: $gray-lightest;
 
   .tt-suggestion__name {
     color: $primary;

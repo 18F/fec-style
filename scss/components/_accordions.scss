@@ -34,19 +34,19 @@
 
 .accordion--neutral {
   .accordion__button {
-    border-color: $beige;
-    border-top: 1px solid $beige;
+    border-color: $gray;
+    border-top: 1px solid $gray;
 
     &[aria-expanded='true'] {
-      background-color: rgba($beige, .5);
+      background-color: rgba($gray, .5);
       border-top: 1px solid $primary;
     }
   }
 
   .accordion__content {
-    background-color: rgba($beige, .5);
+    background-color: rgba($gray, .5);
     border-bottom-color: $primary;
-    border-top-color: $beige;
+    border-top-color: $gray;
   }
 }
 
