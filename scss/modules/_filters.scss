@@ -41,10 +41,6 @@
       height: auto;
       overflow: visible;
     }
-
-    .filters__toggle {
-      @include u-background-image('i-up-2--primary', 1rem 50%);
-    }
   }
 
   .accordion__button {
@@ -62,48 +58,31 @@
   overflow: hidden;
 }
 
+.filters__controls {
+  @include clearfix();
+  clear: both;
+  padding-top: .5rem;
+}
+
 .filters__toggle {
-  @include transform(translateX(-50%));
-  @include transition(width, .1s);
-  @include u-background-image('i-down-2--primary', 1rem 50%);
-  background-color: $neutral;
-  border: 2px solid transparent;
-  left: 50%;
-  position: absolute;
-  z-index: $z4;
-  top: 100%;
-  height: 4rem;
-  padding: 1rem 1rem 1rem 3rem;
+  background-color: $primary;
+  border: 1px solid $primary-contrast;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  color: $primary-contrast;
+  padding: .5rem;
+  float: left;
+  margin-right: 1rem;
 
-  @include media($lg) {
-    @include transform(translateX(0));
-    @include transition(width, .1s);
-    @include u-background-image('i-right-2--primary', 1rem 50%);
-    left: 100%;
-    top: 0;
-    width: 3rem;
-    overflow: hidden;
-
-    &:hover, &:focus {
-      width: 13rem;
-
-      .filters__toggle__text {
-        display: block;
-        margin-left: 0;
-        width: 8rem;
-      }
-    }
+  &[aria-hidden="false"] {
+    display: block;
   }
 }
 
-.filters__toggle__text {
-  font-size: 1.4rem;
-  white-space: nowrap;
-
-  @include media($lg) {
-    display: block;
-    margin-left: 2rem; // Hides it out of the box
-  }
+.filters__close {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .filter__header {
@@ -214,14 +193,6 @@
     position: relative;
     width: 30rem;
     vertical-align: top;
-
-    &.is-open {
-      float: left;
-
-      .filters__toggle {
-        @include u-background-image('i-left-2--primary', 1rem 50%);
-      }
-    }
 
     form {
       display: block;
