@@ -43,6 +43,8 @@ Filter.build = function($elm) {
     return new TypeaheadFilter($elm);
   } else if ($elm.hasClass('js-election-filter')) {
     return new ElectionFilter($elm);
+  } else if ($elm.hasClass('js-multi-filter')) {
+    return new MultiFilter($elm);
   } else {
     return new Filter($elm);
   }
@@ -251,5 +253,18 @@ ElectionFilter.prototype.handleCycleChange = function(e) {
   this.$cycle.val(selected[0]).change();
   this.$full.val(selected[1]).change();
 };
+
+/* MultiFilters used when there are multiple filters that share the
+ * same name attribute
+*/
+
+function MultiFilter(elm) {
+  Filter.call(this, elm);
+  this.$group = $(this.$body.data('filter-group'));
+  this.$input = this.$group.find('input[name=' + this.name + ']');
+}
+
+MultiFilter.prototype = Object.create(Filter.prototype);
+MultiFilter.constructor = MultiFilter;
 
 module.exports = {Filter: Filter};
