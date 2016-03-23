@@ -46,7 +46,7 @@ FilterPanel.prototype.setInitialDisplay = function() {
 FilterPanel.prototype.setHeight = function() {
   if ($(document).width() > helpers.BREAKPOINTS.LARGE &&
       this.$dataContainer.height() > this.$body.height()) {
-    this.$body.height(this.$dataContainer.height());
+    this.$body.css('min-height', this.$dataContainer.height());
   }
 };
 
