@@ -3,9 +3,9 @@
 // Styleguide modules.glossary
 
 .glossary {
-  @include u-bg--secondary();
   @include transition(right, .3s);
-  border-left: 4px solid $secondary-contrast;
+  background-color: $base;
+  /*border-left: 4px solid $primary-contrast;*/
   bottom: 0;
   max-width: 30rem;
   overflow-y: scroll;
@@ -56,13 +56,14 @@
   cursor: pointer;
   margin-right: 2px;
   padding-right: .9em;
+  color: $white;
 
   &:focus,
   &:hover {
     @include u-background-image('i-term--secondary', 100% 50%);
-    box-shadow: 0 0 0 4px rgba($secondary-contrast, .7);
-    background-color: rgba($secondary-contrast, .7);
-    color: $secondary;
+    box-shadow: 0 0 0 4px rgba($white, .7);
+    background-color: rgba($white, .7);
+    color: $white;
   }
 }
 
