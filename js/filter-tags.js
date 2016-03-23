@@ -6,9 +6,14 @@ var _ = require('underscore');
 var BODY_TEMPLATE = _.template(
   '<div class="data-container__tags">' +
     '<h3 class="tags__title">Viewing: ' +
-      '<span class="js-tag-title tags__title__text">{{ title }}</span>' +
     '</h3>' +
-    '<ul class="tags"></ul>' +
+    '<ul class="tags">' +
+      '<li class="js-tag-title tags__title__text">{{ title }}</li>' +
+    '</ul>' +
+    '<div class="filters__controls">' +
+      '<button class="js-filter-toggle filters__toggle">Add filters +</button>' +
+      '<button class="js-filter-clear filters__toggle" aria-hidden="true">Clear all filters</button>' +
+    '</div>' +
   '</div>',
   {interpolate: /\{\{(.+?)\}\}/g}
 );
@@ -29,6 +34,7 @@ function TagList(opts) {
   this.$body = $(BODY_TEMPLATE({title: this.opts.title}));
   this.$list = this.$body.find('ul');
   this.$title = this.$body.find('.js-tag-title');
+  this.$clear = this.$body.find('.js-filter-clear');
 
   $(document.body)
     .on('filter:added', this.addTag.bind(this))
@@ -36,12 +42,14 @@ function TagList(opts) {
     .on('filter:renamed', this.renameTag.bind(this));
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
+  this.$clear.on('click', this.removeAllTags.bind(this));
 }
 
 TagList.prototype.addTag = function(e, opts) {
   this.removeTag(opts.key, false);
   this.$title.html('');
   this.$list.append(TAG_TEMPLATE(opts));
+  this.$clear.attr('aria-hidden', false);
 };
 
 TagList.prototype.removeTag = function(key, emit) {
@@ -55,7 +63,15 @@ TagList.prototype.removeTag = function(key, emit) {
 
   if (this.$list.find('.tag').length === 0) {
     this.$title.html(this.opts.title);
+    this.$clear.attr('aria-hidden', true);
   }
+};
+
+TagList.prototype.removeAllTags = function(e) {
+  var self = this;
+  this.$list.find('[data-id]').each(function(){
+    self.removeTag($(this).data('id'), true);
+  });
 };
 
 TagList.prototype.removeTagEvt = function(e, opts) {
