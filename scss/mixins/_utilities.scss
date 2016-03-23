@@ -220,7 +220,7 @@
 }
 
 @mixin u-bg--neutral(){
-  @include u-font-color($primary);
+  @include u-font-color($base);
   @include u-form-color($white, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $gray-lightest;
 

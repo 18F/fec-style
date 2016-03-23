@@ -226,6 +226,7 @@
 
 .card--neutral {
   background-color: $gray;
+  @include u-font-color($base);
 
   .card__image__container {
     @include clearfix();

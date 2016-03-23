@@ -12,9 +12,9 @@
 
 .accordion__button {
   @include u-background-image('i-accordion-closed--primary', 95% 50%);
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
   margin: 0 0 -1px 0;
-  color: $primary;
+  color: $base;
   font-size: 1.6rem;
   font-weight: bold;
   padding: 1rem 4rem 1rem 1rem;
@@ -28,7 +28,7 @@
 }
 
 .accordion__content {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
   padding: 1rem;
 }
 
@@ -39,13 +39,13 @@
 
     &[aria-expanded='true'] {
       background-color: rgba($gray, .5);
-      border-top: 1px solid $primary;
+      border-top: 1px solid $base;
     }
   }
 
   .accordion__content {
     background-color: rgba($gray, .5);
-    border-bottom-color: $primary;
+    border-bottom-color: $base;
     border-top-color: $gray;
   }
 }
