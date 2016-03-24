@@ -15,7 +15,8 @@ var formatMap = {
   pretty: 'MMM D, YYYY',
   time: 'h:mma',
   dateTime: 'MMM D, h:mma',
-  dayOfWeek: 'ddd'
+  dayOfWeek: 'ddd',
+  fullDayOfWeek: 'dddd'
 };
 
 function datetime(value, options) {
