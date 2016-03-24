@@ -92,10 +92,9 @@
   }
 
   .export-widget {
-    clear: right;
-    float: right;
-    margin: 0 0 1rem 0;
-    width: 100%;
+    float: left;
+    margin-right: 1rem;
+    width: calc(50% - .5rem);
 
     &:last-of-type {
       margin: 0;

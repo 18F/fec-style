@@ -144,7 +144,6 @@
   line-height: 1.2;
   padding: 2px 4px;
   position: relative;
-  overflow: visible;
 
   &::before {
     content: '';
@@ -171,19 +170,12 @@
 }
 
 .fc-title {
-  display: block;
-  width: calc(100% - 1.2rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: inline-block;
   vertical-align: top;
 }
 
 .fc-time {
-  display: block;
-
-  & + .fc-title {
-    margin-left: 1.2rem;
-  }
+  display: inline-block;
 }
 
 .fc-limited {
@@ -352,9 +344,13 @@
   }
 }
 
+.cal-list {
+  padding-top: 2rem;
+}
+
 .cal-list__title {
   margin: 0;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 
 .cal-list__event {
@@ -378,13 +374,11 @@
 .cal-list__date {
   @include span-columns(4 of 8);
   font-weight: bold;
-  line-height: 1.7rem;
 }
 
 .cal-list__time {
   @include span-columns(4 of 8);
   @include omega();
-  line-height: 1.7rem;
 }
 
 .cal-list__description {
@@ -396,12 +390,28 @@
   }
 }
 
+.cal-list__category {
+  float: left;
+}
+
+.cal-list__category-title {
+  display: inline-block;
+  border: 1px solid;
+  border-color: $primary;
+  padding: 0 .5rem;
+  border-radius: 3px;
+}
+
 .cal-list__event-title {
   margin: 0;
 }
 
 .cal-list__location {
   display: block;
+}
+
+.cal-list__details {
+  margin-bottom: 1rem;
 }
 
 // Popover
@@ -474,13 +484,34 @@
 // - List events line up horizontally
 
 @include media($lg) {
+  .cal-list {
+    font-size: 1.6rem;
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .cal-list--time {
+    .cal-list__date {
+      display: none;
+    }
+  }
+
+  .cal-list--category {
+    .cal-list__category {
+      visibility: hidden;
+    }
+  }
+
   .cal-list__event {
     @include clearfix();
-    padding-bottom: 4rem;
+    padding: 2rem;
   }
 
   .cal-list__details {
     @include span-columns(10);
+    margin-bottom: 0;
   }
 
   .cal-list__add {
@@ -493,16 +524,15 @@
   }
 
   .cal-list__time {
-    @include span-columns(2 of 10);
+    @include span-columns(1 of 10);
   }
 
   .cal-list__description {
     @include span-columns(6 of 10);
     padding-top: 0;
-    font-size: 1.6rem;
+  }
 
-    p {
-      font-size: 1.6rem;
-    }
+  .cal-list__category {
+    @include span-columns(2 of 10);
   }
 }
