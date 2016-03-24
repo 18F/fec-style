@@ -49,6 +49,13 @@
   @include span-columns(6);
 }
 
+.panel__controls {
+  @include clearfix();
+  clear: both;
+  padding-top: .5rem;
+}
+
+
 // BREAKPOINT: LARGE
 // Data-container shrinks and floats
 

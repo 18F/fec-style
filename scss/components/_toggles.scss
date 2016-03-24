@@ -166,6 +166,8 @@
   .toggle {
     border-bottom: 1px dotted $primary;
     color: $primary;
+    padding: 0;
+    margin: 0 1rem;
   }
 
   .is-active {

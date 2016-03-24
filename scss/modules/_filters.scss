@@ -58,12 +58,6 @@
   overflow: hidden;
 }
 
-.filters__controls {
-  @include clearfix();
-  clear: both;
-  padding-top: .5rem;
-}
-
 .filters__toggle {
   background-color: $primary;
   border: 1px solid $primary-contrast;

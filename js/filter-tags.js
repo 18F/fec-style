@@ -29,7 +29,7 @@ function TagList(opts) {
   this.$body = $(BODY_TEMPLATE({title: this.opts.title}));
   this.$list = this.$body.find('ul');
   this.$title = this.$body.find('.js-tag-title');
-  this.$clear = this.$body.find('.js-filter-clear');
+  this.$clear = $('.js-filter-clear');
 
   $(document.body)
     .on('filter:added', this.addTag.bind(this))
