@@ -4,18 +4,11 @@ var $ = require('jquery');
 var _ = require('underscore');
 
 var BODY_TEMPLATE = _.template(
-  '<div class="data-container__tags">' +
-    '<h3 class="tags__title">Viewing: ' +
-    '</h3>' +
+  '<div class="js-filter-tags data-container__tags">' +
+    '<h3 class="tags__title">Viewing:</h3>' +
     '<ul class="tags">' +
       '<li class="js-tag-title tags__title__text">{{ title }}</li>' +
     '</ul>' +
-    '<div class="filters__controls">' +
-      '<button class="js-filter-toggle filters__toggle">Add filters +</button>' +
-      '<button class="js-filter-clear filters__toggle filters__clear" aria-hidden="true">' +
-        'Clear all filters' +
-      '</button>' +
-    '</div>' +
   '</div>',
   {interpolate: /\{\{(.+?)\}\}/g}
 );
