@@ -50,14 +50,14 @@
   }
 }
 
-.accordion--glossary {
+.accordion--inverse {
   .accordion__button {
-    @include u-background-image('i-accordion-closed--white', 100% 50%);
+    @include u-background-image('i-accordion-closed--inverse', 100% 50%);
     border-color: $white;
     color: $white;
 
     &[aria-expanded='true'] {
-      @include u-background-image('i-accordion-open--white', 100% 50%);
+      @include u-background-image('i-accordion-open--inverse', 100% 50%);
     }
   }
 

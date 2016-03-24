@@ -400,8 +400,14 @@
 //
 // Styleguide components.buttons.special-buttons
 
-.button--close {
-  @include u-background-image('../img/i-x--secondary-contrast');
+.button--close--base {
+  @include u-background-image('../img/i-x--base');
+  height: 4rem;
+  width: 4rem;
+}
+
+.button--close--inverse {
+  @include u-background-image('../img/i-x--inverse');
   height: 4rem;
   width: 4rem;
 }
