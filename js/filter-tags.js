@@ -4,7 +4,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 
 var BODY_TEMPLATE = _.template(
-  '<div class="js-filter-tags data-container__tags">' +
+  '<div>' +
     '<h3 class="tags__title">Viewing:</h3>' +
     '<ul class="tags">' +
       '<li class="js-tag-title tags__title__text">{{ title }}</li>' +
