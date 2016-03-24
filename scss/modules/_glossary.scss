@@ -5,7 +5,6 @@
 .glossary {
   @include transition(right, .3s);
   background-color: $base;
-  /*border-left: 4px solid $primary-contrast;*/
   bottom: 0;
   max-width: 30rem;
   overflow-y: scroll;
