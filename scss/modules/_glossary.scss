@@ -56,14 +56,14 @@
   cursor: pointer;
   margin-right: 2px;
   padding-right: .9em;
-  color: $white;
+
 
   &:focus,
   &:hover {
-    @include u-background-image('i-term--secondary', 100% 50%);
-    box-shadow: 0 0 0 4px rgba($white, .7);
-    background-color: rgba($white, .7);
-    color: $white;
+    @include u-background-image('i-term--primary', 100% 50%);
+    box-shadow: 0 0 0 4px rgba($gray, .7);
+    background-color: rgba($gray, .7);
+    color: $primary;
   }
 }
 
