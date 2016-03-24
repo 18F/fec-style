@@ -147,7 +147,7 @@
   overflow: visible;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: .6rem;
     height: .6rem;
@@ -163,20 +163,27 @@
     background-color: $primary;
     border-radius: 4px;
     color: $cream;
+
+    &::before {
+      background-color: $cream;
+    }
   }
 }
 
 .fc-title {
-  display: inline-block;
-  width: calc(100% - 12px);
+  display: block;
+  width: calc(100% - 1.2rem);
   overflow: hidden;
   text-overflow: ellipsis;
   vertical-align: top;
 }
 
 .fc-time {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+
+  & + .fc-title {
+    margin-left: 1.2rem;
+  }
 }
 
 .fc-limited {
