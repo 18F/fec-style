@@ -52,12 +52,12 @@
 
 .accordion--glossary {
   .accordion__button {
-    @include u-background-image('i-accordion-closed--secondary-contrast', 100% 50%);
+    @include u-background-image('i-accordion-closed--white', 100% 50%);
     border-color: $white;
     color: $white;
 
     &[aria-expanded='true'] {
-      @include u-background-image('i-accordion-open--secondary-contrast', 100% 50%);
+      @include u-background-image('i-accordion-open--white', 100% 50%);
     }
   }
 
