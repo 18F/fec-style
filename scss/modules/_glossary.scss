@@ -9,7 +9,7 @@
   bottom: 0;
   max-width: 30rem;
   overflow-y: scroll;
-  padding: 2rem;
+  padding: 8rem 3rem;
   position: fixed;
   top: 0;
   width: 75%;
@@ -30,6 +30,14 @@
     right: 0;
     top: 0;
   }
+
+  h2 {
+    color: $white;
+  }
+
+  .label {
+   color: $white;
+  }
 }
 
 .glossary__content {
@@ -39,6 +47,8 @@
 .glossary__definition {
   font-family: $sans-serif;
 }
+
+
 
 // Term classes
 //

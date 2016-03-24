@@ -50,11 +50,11 @@
   }
 }
 
-.accordion--secondary {
+.accordion--glossary {
   .accordion__button {
     @include u-background-image('i-accordion-closed--secondary-contrast', 100% 50%);
-    border-color: $secondary-contrast;
-    color: $secondary-contrast;
+    border-color: $white;
+    color: $white;
 
     &[aria-expanded='true'] {
       @include u-background-image('i-accordion-open--secondary-contrast', 100% 50%);
@@ -62,7 +62,7 @@
   }
 
   .accordion__content {
-    @include u-font-color($secondary-contrast);
-    border-color: $secondary-contrast;
+    @include u-font-color($white);
+    border-color: $white;
   }
 }
