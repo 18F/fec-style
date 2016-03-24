@@ -11,7 +11,7 @@ var defaultOptions = {
   body: '.filters',
   dataContainer: '.data-container',
   form: '#category-filters',
-  focus: '#results tr:first-child',
+  focus: '.js-filter-toggle',
   toggle: '.js-filter-toggle',
   close: '.js-filter-close'
 };
@@ -56,6 +56,7 @@ FilterPanel.prototype.show = function() {
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
   this.isOpen = true;
+  this.$close.focus();
 };
 
 FilterPanel.prototype.hide = function() {
