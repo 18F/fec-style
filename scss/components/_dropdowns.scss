@@ -32,7 +32,6 @@
 .dropdown {
   font-family: $sans-serif;
   position: relative;
-  max-width: 21rem;
   width: 100%;
 }
 
@@ -128,6 +127,10 @@
       background-color: $cream;
     }
   }
+}
+
+.dropdown__panel--right {
+  right: 0;
 }
 
 .dropdown--secondary {
