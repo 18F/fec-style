@@ -119,11 +119,12 @@
   border-bottom: none;
   color: $primary;
   font-weight: bold;
-  padding: .5rem 1rem;
+  padding: .3rem 1rem;
 }
 
-.fc-today {
-  background-color: $neutral;
+.fc-day-number.fc-today {
+  background-color: $primary;
+  color: $cream;
 }
 
 .fc-event-container {
@@ -491,10 +492,10 @@
   .cal-list__description {
     @include span-columns(6 of 10);
     padding-top: 0;
+    font-size: 1.6rem;
 
     p {
       font-size: 1.6rem;
     }
-
   }
 }
