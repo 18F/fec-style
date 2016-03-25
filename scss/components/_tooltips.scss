@@ -15,7 +15,7 @@
 .tooltip {
   border-radius: 4px;
   border: 2px solid $primary;
-  background-color: $white;
+  background-color: $inverse;
   color: $primary;
   font-family: $sans-serif;
   padding: 1.5rem;
@@ -58,7 +58,7 @@
   }
 
   &:after {
-    @include triangle(1.6rem, $white, down);
+    @include triangle(1.6rem, $inverse, down);
     content: '';
     display: block;
     position: absolute;
@@ -80,7 +80,7 @@
   }
 
   &:after {
-    @include triangle(1.6rem, $white, up);
+    @include triangle(1.6rem, $inverse, up);
     content: '';
     display: block;
     position: absolute;

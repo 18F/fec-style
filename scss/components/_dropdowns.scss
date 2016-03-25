@@ -85,7 +85,7 @@
 .dropdown__panel {
   position: absolute;
   min-width: 100%;
-  background: $white;
+  background: $inverse;
   border: 2px solid $primary;
   max-height: 30rem;
   overflow: hidden;
@@ -125,7 +125,7 @@
     font-weight: bold;
 
     &:hover {
-      background-color: $white;
+      background-color: $inverse;
     }
   }
 }

@@ -218,7 +218,7 @@
 }
 
 .card--secondary-contrast {
-  @include u-font-color($white);
+  @include u-font-color($inverse);
   background-color: $bright-red;
 }
 

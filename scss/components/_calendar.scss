@@ -135,7 +135,7 @@
   @include u-truncate();
   background: $gray;
   border-radius: 4px;
-  color: $white;
+  color: $inverse;
   font-size: 1.4rem;
   line-height: 1.2;
   padding: 4px;
@@ -164,7 +164,7 @@
   .fc-content,
   .cal__category {
     background: $cal-election;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -172,7 +172,7 @@
   .fc-content,
   .cal__category {
     background: $cal-deadline;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -180,7 +180,7 @@
   .fc-content,
   .cal__category {
     background: $cal-outreach;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -188,7 +188,7 @@
   .fc-content,
   .cal__category {
     background: $cal-rules;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -196,7 +196,7 @@
   .fc-content,
   .cal__category {
     background: $cal-meeting;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -204,7 +204,7 @@
   .fc-content,
   .cal__category {
     background: $cal-other;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -275,7 +275,7 @@
 }
 
 .fc-popup {
-  background: $white;
+  background: $inverse;
   border: 2px solid $neutral;
   position: absolute;
   max-width: 20rem;
@@ -424,7 +424,7 @@
 
 // Popover
 .fc-popover {
-  background-color: $white;
+  background-color: $inverse;
   border: 2px solid $neutral;
   position: absolute;
   width: 22rem;

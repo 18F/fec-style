@@ -18,7 +18,7 @@
 
 .data-container__widgets {
   @include clearfix();
-  color: $white;
+  color: $inverse;
   background-color: $primary;
   font-family: $sans-serif;
   padding: 5rem 2rem 2rem 2rem;

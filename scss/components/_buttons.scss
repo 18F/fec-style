@@ -58,7 +58,7 @@
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -86,7 +86,7 @@
   &.is-active {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -114,7 +114,7 @@
   &.is-active {
     background-color: $gray-dark;
     border: 2px solid $primary;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -142,7 +142,7 @@
   &:active:not(.disabled),
   &.is-active {
     background-color: $primary;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -193,7 +193,7 @@
   &.is-active {
     background-color: $navy;
     border: 2px solid $primary-contrast;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -221,7 +221,7 @@
   &.is-active {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
-    color: $white;
+    color: $inverse;
   }
 }
 
@@ -240,7 +240,7 @@
 .button--navy {
   @extend .button;
   background-color: $navy;
-  color: $white;
+  color: $inverse;
 
   &:hover:not(.disabled) {
     background-color: lighten($navy, 10%);
@@ -250,7 +250,7 @@
   &.is-active {
     background-color: $primary;
     border: 2px solid $primary-contrast;
-    color: $white;
+    color: $inverse;
   }
 }
 

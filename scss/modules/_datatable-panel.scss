@@ -23,7 +23,7 @@
 }
 .panel__overlay {
   @include transition(opacity .2s);
-  background-color: $white;
+  background-color: $inverse;
   overflow: hidden;
   padding: 1rem;
   float: right;

@@ -71,7 +71,7 @@
     @include heading(h3);
     color: $gray-lightest;
     border-bottom: 0;
-    border-color: $white;
+    border-color: $inverse;
     border-top-width: 1px;
     border-right-width: 0;
     border-left-width: 1px;
@@ -86,7 +86,7 @@
     text-decoration: none;
 
     &[aria-selected="true"] {
-      background-color: $white;
+      background-color: $inverse;
     }
   }
 

@@ -1,7 +1,7 @@
 // Feedback module
 
 .feedback {
-  @include u-font-color($white);
+  @include u-font-color($inverse);
   @include u-form-color($navy, $primary-contrast, $gray-lightest, 'primary', $primary-contrast);
   background-color: $navy;
   bottom: .5rem;
@@ -15,7 +15,7 @@
   z-index: $z-feedback;
 
   legend {
-    color: $white;
+    color: $inverse;
   }
 
   textarea {
@@ -28,7 +28,7 @@
   }
 
   a {
-    border-color: $white;
+    border-color: $inverse;
   }
 
   .label {

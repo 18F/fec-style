@@ -100,9 +100,9 @@
 
 .message--primary,
 .message--secondary {
-  @include u-font-color($white);
-  background-color: rgba($white, .1);
-  border-color: $white;
+  @include u-font-color($inverse);
+  background-color: rgba($inverse, .1);
+  border-color: $inverse;
 
   &.message--success {
     @include u-background-image('i-success--inverse', 50% 2rem);

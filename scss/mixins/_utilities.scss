@@ -48,7 +48,7 @@
 
 .u-blank-space {
   display: inline-block;
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid $inverse;
   width: 5rem;
 }
 
@@ -221,7 +221,7 @@
 
 @mixin u-bg--neutral(){
   @include u-font-color($base);
-  @include u-form-color($white, $primary, $primary-contrast, 'neutral', $primary);
+  @include u-form-color($inverse, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $gray-lightest;
 
   a {

@@ -53,8 +53,8 @@
 .accordion--inverse {
   .accordion__button {
     @include u-background-image('i-accordion-closed--inverse', 100% 50%);
-    border-color: $white;
-    color: $white;
+    border-color: $inverse;
+    color: $inverse;
 
     &[aria-expanded='true'] {
       @include u-background-image('i-accordion-open--inverse', 100% 50%);
@@ -62,7 +62,7 @@
   }
 
   .accordion__content {
-    @include u-font-color($white);
-    border-color: $white;
+    @include u-font-color($inverse);
+    border-color: $inverse;
   }
 }

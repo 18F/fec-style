@@ -138,7 +138,7 @@
 }
 
 .site-nav__toggle {
-  color: $white;
+  color: $inverse;
   font-family: $serif;
   text-align: left;
   position: relative;
@@ -198,7 +198,7 @@
   height: 4rem;
 
   &:hover {
-    background-color: $white;
+    background-color: $inverse;
   }
 
   &.active {
