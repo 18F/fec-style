@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>i-cal--inverse</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Simple-Copy" transform="translate(-97.000000, -1187.000000)">
+            <g id="i-cal--inverse" transform="translate(97.000000, 1187.000000)">
+                <path d="M1.5,1.49374104 C1.5,1.49948887 1.49948559,1.5 1.49374104,1.5 L13.506259,1.5 C13.5005111,1.5 13.5,1.49948559 13.5,1.49374104 L13.5,13.506259 C13.5,13.5005111 13.5005144,13.5 13.506259,13.5 L1.49374104,13.5 C1.49948887,13.5 1.5,13.5005144 1.5,13.506259 L1.5,1.49374104 L1.5,1.49374104 Z M0.5,1.49374104 L0.5,13.506259 C0.5,14.0513732 0.945768076,14.5 1.49374104,14.5 L13.506259,14.5 C14.0513732,14.5 14.5,14.0542319 14.5,13.506259 L14.5,1.49374104 C14.5,0.948626763 14.0542319,0.5 13.506259,0.5 L1.49374104,0.5 C0.948626763,0.5 0.5,0.945768076 0.5,1.49374104 L0.5,1.49374104 Z" id="Rectangle-201" fill="#FFFFFF"></path>
+                <path d="M2,1.49374104 L2,1.49374104 L2,1.49374104 L2,13.506259 C2,13.225085 1.77634926,13 1.49374104,13 L13.506259,13 C13.225085,13 13,13.2236507 13,13.506259 L13,1.49374104 C13,1.774915 13.2236507,2 13.506259,2 L1.49374104,2 C1.774915,2 2,1.77634926 2,1.49374104 L2,1.49374104 Z M1,1.49374104 C1,1.22105539 1.22563934,1 1.49374104,1 L13.506259,1 C13.7789446,1 14,1.22563934 14,1.49374104 L14,13.506259 C14,13.7789446 13.7743607,14 13.506259,14 L1.49374104,14 C1.22105539,14 1,13.7743607 1,13.506259 L1,1.49374104 L1,1.49374104 Z" id="Rectangle-201-Copy" fill="#FFFFFF"></path>
+                <rect id="Rectangle-203" fill="#FFFFFF" x="1" y="1" width="13" height="4" rx="0.5"></rect>
+                <path d="M7.5,4.5 L7.5,13.5" id="Line-Copy-38" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M10.5,4.5 L10.5,13.5" id="Line-Copy-40" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M4.5,4.5 L4.5,13.5" id="Line-Copy-39" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M1.5,7.5 L13.5,7.5" id="Line-Copy-41" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <path d="M1.5,10.5 L13.5,10.5" id="Line-Copy-42" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <rect id="Rectangle-218" fill="#FFFFFF" x="1" y="4" width="1" height="10"></rect>
+                <rect id="Rectangle-218-Copy" fill="#FFFFFF" x="13" y="4" width="1" height="10"></rect>
+                <rect id="Rectangle-220" fill="#FFFFFF" x="1" y="13" width="13" height="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

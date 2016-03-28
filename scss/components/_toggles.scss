@@ -154,6 +154,7 @@
   .is-active.button--neutral {
     background-color: $gray-dark;
     border: 2px solid $primary;
+    color: $inverse;
   }
 
   .is-active.button--empty {
