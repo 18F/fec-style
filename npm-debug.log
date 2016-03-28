@@ -1,0 +1,36 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'run', 'build' ]
+2 info using npm@2.7.3
+3 info using node@v0.12.1
+4 verbose node symlink /usr/local/bin/node
+5 verbose run-script [ 'prebuild', 'build', 'postbuild' ]
+6 info prebuild fec-style@1.7.2
+7 info build fec-style@1.7.2
+8 verbose unsafe-perm in lifecycle true
+9 info fec-style@1.7.2 Failed to exec build script
+10 verbose stack Error: fec-style@1.7.2 build: `npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images`
+10 verbose stack Exit status 1
+10 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+10 verbose stack     at EventEmitter.emit (events.js:110:17)
+10 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+10 verbose stack     at ChildProcess.emit (events.js:110:17)
+10 verbose stack     at maybeClose (child_process.js:1008:16)
+10 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1080:5)
+11 verbose pkgid fec-style@1.7.2
+12 verbose cwd /Users/jenniferthibault/Desktop/code/fec-style
+13 error Darwin 15.0.0
+14 error argv "node" "/usr/local/bin/npm" "run" "build"
+15 error node v0.12.1
+16 error npm  v2.7.3
+17 error code ELIFECYCLE
+18 error fec-style@1.7.2 build: `npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images`
+18 error Exit status 1
+19 error Failed at the fec-style@1.7.2 build script 'npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images'.
+19 error This is most likely a problem with the fec-style package,
+19 error not with npm itself.
+19 error Tell the author that this fails on your system:
+19 error     npm run build-sass && npm run build-js && npm run build-styleguide && npm run copy-css && npm run copy-images
+19 error You can get their info via:
+19 error     npm owner ls fec-style
+19 error There is likely additional logging output above.
+20 verbose exit [ 1, true ]

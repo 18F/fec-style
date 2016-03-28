@@ -197,7 +197,7 @@
 
 // u-bg--primary()
 //
-// Used to set generate all of the styles for a bg--primary element
+// Used to set generate all of the styles for a bg--secondary element
 //
 // Styleguide mixins.bg-secondary
 
@@ -216,6 +216,38 @@
 
   .term {
     @include u-background-image('i-term--neutral', 100% 0);
+  }
+}
+
+@mixin u-bg--neutral(){
+  @include u-font-color($base);
+  @include u-form-color($inverse, $primary, $primary-contrast, 'neutral', $primary);
+  background-color: $gray-lightest;
+
+  a {
+    &:hover {
+      border-bottom-color: $primary-contrast;
+    }
+  }
+}
+
+// u-bg--primary()
+//
+// Used to set generate all of the styles for a bg--dark element
+//
+// Styleguide mixins.bg-dark
+
+@mixin u-bg--dark(){
+  @include u-font-color($gray-lightest);
+  @include u-form-color($gray-darkest, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
+  background-color: $gray-darkest;
+
+  a {
+    border-bottom-color: $gray-lightest;
+
+    &:hover {
+      border-bottom-color: $secondary-contrast;
+    }
   }
 }
 
