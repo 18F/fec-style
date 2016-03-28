@@ -239,14 +239,14 @@
 
 @mixin u-bg--dark(){
   @include u-font-color($gray-lightest);
-  @include u-form-color($gray-darkest, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
-  background-color: $gray-darkest;
+  @include u-form-color($gray-dark, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
+  background-color: $gray-dark;
 
   a {
     border-bottom-color: $gray-lightest;
 
     &:hover {
-      border-bottom-color: $secondary-contrast;
+      border-bottom-color: $primary;
     }
   }
 }
