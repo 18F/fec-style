@@ -5,6 +5,7 @@
 // 
 // .slab--primary     - Primary background with primary-contrast accents and type
 // .slab--secondary   - Secondary background with secondary-contrast accents and type
+// .slab--dark        - Dark gray background with gray-lightest accents and type
 //
 // Markup:
 // <div class="slab {{ modifier_class }}">
@@ -27,6 +28,10 @@
 
 .slab--secondary {
   @include u-bg--secondary();
+}
+
+.slab--dark {
+  @include u-bg--dark();
 }
 
 .slab--neutral {

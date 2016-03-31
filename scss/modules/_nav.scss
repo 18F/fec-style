@@ -138,7 +138,7 @@
 }
 
 .site-nav__toggle {
-  color: $cream;
+  color: $inverse;
   font-family: $serif;
   text-align: left;
   position: relative;
@@ -185,7 +185,7 @@
 // .site-nav__button--right     - Glossary toggle
 
 .site-nav__button {
-  background-color: $ivory;
+  background-color: $gray-lightest;
   border-radius: 0;
   margin: 0;
   padding: 1.8rem 2rem;
@@ -198,7 +198,7 @@
   height: 4rem;
 
   &:hover {
-    background-color: $cream;
+    background-color: $inverse;
   }
 
   &.active {
@@ -279,7 +279,7 @@
       .site-nav__link {
         border-bottom-color: $primary-contrast;
         background-color: $primary;
-        color: $ivory;
+        color: $gray-lightest;
       }
     }
 
@@ -309,7 +309,7 @@
     &:active {
       border-bottom-color: $primary-contrast;
       background-color: $primary;
-      color: $ivory;
+      color: $gray-lightest;
     }
   }
 

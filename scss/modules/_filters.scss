@@ -55,6 +55,10 @@
   .accordion__content {
     padding: 2rem 2rem 1rem 2rem;
   }
+
+  .message {
+    background-color: $inverse-translucent;
+  }
 }
 
 .filters__hider {
@@ -332,7 +336,7 @@
     .filter {
       border-bottom: none;
       border-top: none;
-      border-right: 1px solid $cream;
+      border-right: 1px solid $inverse;
       margin-right: 0;
       padding: 0 1rem;
       width: 100%;

@@ -36,24 +36,25 @@
     & + .button--primary {
       background-color: $navy;
       border: 2px solid $primary-contrast;
-      color: $cream;
+      color: $inverse;
     }
 
     & + .button--secondary {
       background-color: $deep-red;
       border: 2px solid $secondary-contrast;
-      color: $cream;
+      color: $inverse;
     }
 
     & + .button--neutral {
-      background-color: $beige-dark;
+      background-color: $gray-dark;
       border: 2px solid $primary;
+      color: $inverse;
     }
 
     & + .button--empty {
       background-color: $primary;
       border: 2px solid $primary;
-      color: $cream;
+      color: $inverse;
     }
 
     & + .button--map {
@@ -141,24 +142,25 @@
   .is-active.button--primary {
     background-color: $navy;
     border: 2px solid $primary-contrast;
-    color: $cream;
+    color: $inverse;
   }
 
   .is-active.button--secondary {
     background-color: $deep-red;
     border: 2px solid $secondary-contrast;
-    color: $cream;
+    color: $inverse;
   }
 
   .is-active.button--neutral {
-    background-color: $beige-dark;
+    background-color: $gray-dark;
     border: 2px solid $primary;
+    color: $inverse;
   }
 
   .is-active.button--empty {
     background-color: $primary;
     border: 2px solid $primary;
-    color: $cream;
+    color: $inverse;
   }
 }
 

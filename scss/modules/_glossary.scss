@@ -3,13 +3,12 @@
 // Styleguide modules.glossary
 
 .glossary {
-  @include u-bg--secondary();
   @include transition(right, .3s);
-  border-left: 4px solid $secondary-contrast;
+  background-color: $base;
   bottom: 0;
   max-width: 30rem;
   overflow-y: scroll;
-  padding: 2rem;
+  padding: 8rem 3rem;
   position: fixed;
   top: 0;
   width: 75%;
@@ -25,10 +24,18 @@
     right: 0;
   }
 
-  .button--close {
+  .button--close--inverse {
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  h2 {
+    color: $inverse;
+  }
+
+  .label {
+    color: $inverse;
   }
 }
 
@@ -39,6 +46,8 @@
 .glossary__definition {
   font-family: $sans-serif;
 }
+
+
 
 // Term classes
 //
@@ -57,12 +66,13 @@
   margin-right: 2px;
   padding-right: .9em;
 
+
   &:focus,
   &:hover {
-    @include u-background-image('i-term--secondary', 100% 50%);
-    box-shadow: 0 0 0 4px rgba($secondary-contrast, .7);
-    background-color: rgba($secondary-contrast, .7);
-    color: $secondary;
+    @include u-background-image('i-term--primary', 100% 50%);
+    box-shadow: 0 0 0 4px rgba($gray, .7);
+    background-color: rgba($gray, .7);
+    color: $primary;
   }
 }
 

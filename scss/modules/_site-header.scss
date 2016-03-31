@@ -5,14 +5,14 @@
 // Staging banner
 .banner {
   background-color: $navy;
-  color: $cream;
+  color: $inverse;
   font-family: $sans-serif;
   padding: 1rem 0;
   width: 100%;
 
   a {
-    border-bottom-color: $cream;
-    color: $cream;
+    border-bottom-color: $inverse;
+    color: $inverse;
   }
 }
 
@@ -21,7 +21,7 @@
   @include transition(top, .2s);
   background-color: $primary;
   border: 2px solid $primary-contrast;
-  color: $cream;
+  color: $inverse;
   font-family: $sans-serif;
   left: 2rem;
   padding: 1rem 2rem;

@@ -4,18 +4,18 @@
 // .orange         - Orange
 // .federal-blue   - Federal blue
 // .aqua           - Aqua
-// .ivory          - Ivory
-// .cream          - Cream
-// .bright-red     - Bright-red
-// .deep-orange    - Deep-orange
-// .deep-red       - Deep-red
-// .bright-blue    - Bright-blue
-// .deep-aqua      - Deep-aqua
+// .base           - Base, black
+// .neutral        - Neutral, lightest gray
+// .inverse        - Inverse, white
+// .bright-red     - Bright red
+// .deep-orange    - Deep orange
+// .deep-red       - Deep red
+// .bright-blue    - Bright blue
+// .deep-aqua      - Deep aqua
 // .navy           - Navy
-// .beige          - Beige
-// .beige-light    - Beige-light
-// .beige-dark     - Beige-dark
-// .black          - Black
+// .gray           - Gray
+// .gray-light     - Light gray
+// .gray-dark      - Dark gray
 // .disabled       - Disabled
 // .cal-deadline   - Calendar deadline
 // .cal-election   - Calendar election
@@ -34,18 +34,18 @@ $colors: (
   orange: $orange,
   federal-blue: $federal-blue,
   aqua: $aqua,
-  ivory: $ivory,
-  cream: $cream,
+  base: $base,
+  neutral: $gray-lightest,
+  inverse: $inverse,
   bright-red: $bright-red,
   deep-orange: $deep-orange,
   deep-red: $deep-red,
   bright-blue: $bright-blue,
   deep-aqua: $deep-aqua,
   navy: $navy,
-  beige: $beige,
-  beige-light: $beige-light,
-  beige-dark: $beige-dark,
-  black: $black,
+  gray: $gray,
+  gray-light: $gray-light,
+  gray-dark: $gray-dark,
   disabled: $disabled,
   cal-deadline: $cal-deadline,
   cal-election: $cal-election,
@@ -75,8 +75,8 @@ $colors: (
   }
 }
 
-.sg-swatch.ivory,
-.sg-swatch.cream {
+.sg-swatch.inverse,
+.sg-swatch.neutral {
   &:after {
     color: $navy;
   }

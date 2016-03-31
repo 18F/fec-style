@@ -4,3 +4,4 @@ node_modules
 fec-template/public/main.js
 
 css/styles.css
+npm-debug.log

@@ -2,7 +2,7 @@
 
 @mixin heading($level) {
   margin: 0 0 1em 0;
-  color: $primary;
+  color: $base;
 
   @if $level == display {
     border-bottom: 0;
@@ -19,7 +19,7 @@
   }
 
   @if $level == h1 {
-    border-bottom: 1px solid $primary;
+    border-bottom: 1px solid $base;
     font-family: $serif;
     font-size: 2.4rem;
     font-weight: bold;
@@ -65,7 +65,7 @@
   }
 
   @if $level == h6 {
-    border-bottom: 1px solid $primary;
+    border-bottom: 1px solid $base;
     font-family: $sans-serif;
     font-size: 1.3rem;
     font-weight: normal;

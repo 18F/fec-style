@@ -35,13 +35,13 @@
 
 .hero--primary {
   @include u-bg--primary();
-  @include u-font-color($ivory);
+  @include u-font-color($gray-lightest);
   border-bottom: 10px solid $primary-contrast;
 }
 
 .hero--secondary {
   @include u-bg--secondary();
-  @include u-font-color($ivory);
+  @include u-font-color($gray-lightest);
   border-bottom: 10px solid $secondary-contrast;
 
   .hero__action {
@@ -118,7 +118,7 @@
   }
 
   .photo-credit {
-    background: rgba($ivory, .6);
+    background: rgba($gray-lightest, .6);
     font-size: 1rem;
     font-family: $sans-serif;
     position: absolute;
