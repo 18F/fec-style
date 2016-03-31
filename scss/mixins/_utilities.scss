@@ -201,7 +201,7 @@
 //
 // Styleguide mixins.bg-secondary
 
-@mixin u-bg--secondary(){
+@mixin u-bg--secondary() {
   @include u-font-color($gray-lightest);
   @include u-form-color($secondary, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
   background-color: $secondary;
@@ -219,7 +219,7 @@
   }
 }
 
-@mixin u-bg--neutral(){
+@mixin u-bg--neutral() {
   @include u-font-color($base);
   @include u-form-color($inverse, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $gray-lightest;
@@ -237,7 +237,7 @@
 //
 // Styleguide mixins.bg-dark
 
-@mixin u-bg--dark(){
+@mixin u-bg--dark() {
   @include u-font-color($gray-lightest);
   @include u-form-color($gray-dark, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
   background-color: $gray-dark;
@@ -251,7 +251,7 @@
   }
 }
 
-@mixin u-bg--neutral(){
+@mixin u-bg--neutral() {
   @include u-font-color($base);
   @include u-form-color($inverse, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $gray-lightest;
@@ -306,8 +306,7 @@
   position: relative;
   @if $side == left {
     padding-left: $width + 2rem;
-  }
-  @else {
+  } @else {
     padding-right: $width + 2rem;
   }
 
@@ -325,11 +324,9 @@
     @if $side == left {
       left: 1rem;
       border-right: 1px solid $color;
-    }
-    @else {
+    } @else {
       right: 1rem;
       border-left: 1px solid $color;
     }
   }
-
 }
