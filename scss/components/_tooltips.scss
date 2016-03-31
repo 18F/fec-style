@@ -79,13 +79,8 @@
     top: -1rem;
   }
 
-<<<<<<< HEAD
   &::after {
-    @include triangle(1.6rem, $cream, up);
-=======
-  &:after {
     @include triangle(1.6rem, $inverse, up);
->>>>>>> 410f27787e4b8a4dc449d4f65395f78457aca942
     content: '';
     display: block;
     position: absolute;
@@ -147,7 +142,7 @@
   .tooltip__heading {
     @include clearfix();
     background: $primary;
-    color: $cream;
+    color: $inverse;
 
     .button {
       float: right;

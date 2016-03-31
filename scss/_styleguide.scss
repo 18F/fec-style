@@ -37,24 +37,10 @@ $colors: (
   bright-blue: $bright-blue,
   deep-aqua: $deep-aqua,
   navy: $navy,
-<<<<<<< HEAD
-  beige: $beige,
-  beige-light: $beige-light,
-  beige-dark: $beige-dark,
-  black: $black,
-  disabled: $disabled
-=======
   gray: $gray,
   gray-light: $gray-light,
   gray-dark: $gray-dark,
   disabled: $disabled,
-  cal-deadline: $cal-deadline,
-  cal-election: $cal-election,
-  cal-meeting: $cal-meeting,
-  cal-outreach: $cal-outreach,
-  cal-rules: $cal-rules,
-  cal-other: $cal-other
->>>>>>> 410f27787e4b8a4dc449d4f65395f78457aca942
 );
 
 @each $variable, $color in $colors {
@@ -77,15 +63,9 @@ $colors: (
   }
 }
 
-<<<<<<< HEAD
-.sg-swatch.ivory,
-.sg-swatch.cream {
-  &::after {
-=======
 .sg-swatch.inverse,
 .sg-swatch.neutral {
   &:after {
->>>>>>> 410f27787e4b8a4dc449d4f65395f78457aca942
     color: $navy;
   }
 }

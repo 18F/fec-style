@@ -124,7 +124,7 @@
 
 .fc-day-number.fc-today {
   background-color: $primary;
-  color: $cream;
+  color: $inverse;
 }
 
 .fc-event-container {
@@ -161,10 +161,10 @@
   .fc-content {
     background-color: $primary;
     border-radius: 4px;
-    color: $cream;
+    color: $inverse;
 
     &::before {
-      background-color: $cream;
+      background-color: $inverse;
     }
   }
 }
