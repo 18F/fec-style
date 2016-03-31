@@ -24,7 +24,7 @@
     right: 0;
   }
 
-  .button--close {
+  .button--close--inverse {
     position: absolute;
     right: 0;
     top: 0;
@@ -35,7 +35,7 @@
   }
 
   .label {
-   color: $inverse;
+    color: $inverse;
   }
 }
 
