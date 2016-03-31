@@ -53,13 +53,13 @@
 
 .t-ruled {
   @include clearfix();
-  border-bottom: 1px solid $primary;
-  border-top: 1px solid $primary;
+  border-bottom: 1px solid $base;
+  border-top: 1px solid $base;
   padding: 1rem 0;
 }
 
 .t-ruled--bottom {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
   padding-bottom: 1rem;
 }
 
@@ -125,11 +125,12 @@
 .t-data {
   font-family: $sans-serif;
   text-transform: uppercase;
+  color: $base;
 }
 
 .t-big-data {
   display: block;
-  color: $primary;
+  color: $base;
   font-family: $sans-serif;
   font-size: 3.6rem;
   margin-bottom: 1rem;

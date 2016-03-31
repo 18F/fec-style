@@ -8,7 +8,7 @@
   padding: 1rem;
 
   &:nth-child(2) {
-    border-top: 1px solid $beige;
+    border-top: 1px solid $gray;
     padding-top: 2rem;
   }
 }
@@ -50,7 +50,7 @@
     }
 
     &:nth-child(2) {
-      border-left: 1px solid $beige;
+      border-left: 1px solid $gray;
       border-top: none;
     }    
   }

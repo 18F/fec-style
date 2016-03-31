@@ -61,6 +61,7 @@
 
   p {
     font-size: 1.4rem;
+    color: $base;
   }
 }
 
@@ -92,7 +93,7 @@
   }
 
   .card {
-    @include u-font-color($cream);
+    @include u-font-color($inverse);
     background-color: #dd3700;
   }
 }

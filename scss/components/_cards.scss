@@ -187,7 +187,7 @@
 
 .card--primary {
   @include u-bg--primary();
-  @include u-font-color($ivory);
+  @include u-font-color($gray-lightest);
   font-weight: bold;
 }
 
@@ -213,19 +213,20 @@
 
 .card--secondary {
   @include u-bg--secondary();
-  @include u-font-color($ivory);
+  @include u-font-color($gray-lightest);
   font-weight: bold;
 }
 
 .card--secondary-contrast {
-  @include u-font-color($cream);
+  @include u-font-color($inverse);
   background-color: $bright-red;
 }
 
 // Neutral cards
 
 .card--neutral {
-  background-color: $beige;
+  background-color: $gray;
+  @include u-font-color($base);
 
   .card__image__container {
     @include clearfix();

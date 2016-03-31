@@ -1,5 +1,5 @@
 .election-map {
-  border: 1px solid $beige;
+  border: 1px solid $gray;
   height: 40rem;
 
   svg path {
@@ -77,7 +77,7 @@ path.shape {
 }
 
 .map-table {
-  border-bottom: 1px solid $ivory;
+  border-bottom: 1px solid $gray-lightest;
 
   tr {
     cursor: pointer;
@@ -101,8 +101,8 @@ path.shape {
   }
 
   @include media($med) {
-    background-color: rgba($ivory, .3);
-    border: 1px solid $ivory;
+    background-color: rgba($gray-lightest, .3);
+    border: 1px solid $gray-lightest;
     height: 432px;
   }
 }

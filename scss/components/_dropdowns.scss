@@ -84,7 +84,7 @@
 .dropdown__panel {
   position: absolute;
   min-width: 100%;
-  background: $cream;
+  background: $inverse;
   border: 2px solid $primary;
   max-height: 30rem;
   overflow: hidden;
@@ -99,7 +99,7 @@
     white-space: nowrap;
 
     &:hover {
-      background-color: $ivory;
+      background-color: $gray-light;
       cursor: pointer;
     }
 
@@ -109,7 +109,7 @@
   }
 
   input:focus + .dropdown__value {
-    background-color: $ivory;
+    background-color: $gray-light;
   }
 
   .dropdown__item:last-of-type {
@@ -124,7 +124,7 @@
     font-weight: bold;
 
     &:hover {
-      background-color: $cream;
+      background-color: $inverse;
     }
   }
 }
@@ -178,7 +178,7 @@
 
 .ps-scrollbar-y-rail {
   position: absolute;
-  background: $ivory;
+  background: $gray-light;
   width: 4px;
   border-left: 1px solid $primary;
 }

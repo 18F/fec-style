@@ -12,9 +12,9 @@
 
 .accordion__button {
   @include u-background-image('i-accordion-closed--primary', 95% 50%);
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
   margin: 0 0 -1px 0;
-  color: $primary;
+  color: $base;
   font-size: 1.6rem;
   font-weight: bold;
   padding: 1rem 4rem 1rem 1rem;
@@ -28,41 +28,41 @@
 }
 
 .accordion__content {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
   padding: 1rem;
 }
 
 .accordion--neutral {
   .accordion__button {
-    border-color: $beige;
-    border-top: 1px solid $beige;
+    border-color: $gray;
+    border-top: 1px solid $gray;
 
     &[aria-expanded='true'] {
-      background-color: rgba($beige, .5);
-      border-top: 1px solid $primary;
+      background-color: rgba($gray, .5);
+      border-top: 1px solid $base;
     }
   }
 
   .accordion__content {
-    background-color: rgba($beige, .5);
-    border-bottom-color: $primary;
-    border-top-color: $beige;
+    background-color: rgba($gray, .5);
+    border-bottom-color: $base;
+    border-top-color: $gray;
   }
 }
 
-.accordion--secondary {
+.accordion--inverse {
   .accordion__button {
-    @include u-background-image('i-accordion-closed--secondary-contrast', 100% 50%);
-    border-color: $secondary-contrast;
-    color: $secondary-contrast;
+    @include u-background-image('i-accordion-closed--inverse', 100% 50%);
+    border-color: $inverse;
+    color: $inverse;
 
     &[aria-expanded='true'] {
-      @include u-background-image('i-accordion-open--secondary-contrast', 100% 50%);
+      @include u-background-image('i-accordion-open--inverse', 100% 50%);
     }
   }
 
   .accordion__content {
-    @include u-font-color($secondary-contrast);
-    border-color: $secondary-contrast;
+    @include u-font-color($inverse);
+    border-color: $inverse;
   }
 }

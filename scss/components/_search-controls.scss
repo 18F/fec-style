@@ -6,7 +6,7 @@
 
 .search-controls__row {
   @include clearfix();
-  border-bottom: 1px solid $beige;
+  border-bottom: 1px solid $gray;
   padding: 1rem 0;
 
   &:first-of-type {
@@ -30,7 +30,7 @@
 
   &::before,
   &::after {
-    background-color: $beige;
+    background-color: $gray;
     content: '';
     display: block;
     position: absolute;

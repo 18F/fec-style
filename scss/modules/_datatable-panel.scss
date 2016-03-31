@@ -23,7 +23,7 @@
 }
 .panel__overlay {
   @include transition(opacity .2s);
-  background-color: $cream;
+  background-color: $inverse;
   overflow: hidden;
   padding: 1rem;
   float: right;
@@ -59,8 +59,8 @@
 }
 
 .panel {
-  background-color: rgba($ivory, .3);
-  border: 1px solid $ivory;
+  background-color: rgba($gray-lightest, .3);
+  border: 1px solid $gray-lightest;
   font-family: $sans-serif;
   padding: 1rem;
 
@@ -111,7 +111,7 @@
 
 .panel__navigation {
   @include clearfix();
-  border-bottom: 1px solid $ivory;
+  border-bottom: 1px solid $gray-lightest;
   padding: 0 0 1rem 0;
   text-align: right;
 }
@@ -147,8 +147,8 @@
   }
 
   .panel__overlay {
-    background-color: rgba($ivory, .3);
-    border-left: 1px solid $ivory;
+    background-color: rgba($gray-lightest, .3);
+    border-left: 1px solid $gray-lightest;
     min-height: 70vh;
     height: 100%;
     width: 50%;
