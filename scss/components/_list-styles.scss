@@ -59,13 +59,13 @@
 // For check marks as list bullets
 //
 // Markup:
-// <ul class="list--checkboxes">
-//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 1</li>
-//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 2</li>
-//  <li class="list--checkboxes__item {{modifier_class}}">Unordered list item 2</li>
+// <ul class="list--checks">
+//  <li>Unordered list item 1</li>
+//  <li>Unordered list item 2</li>
+//  <li>Unordered list item 3</li>
 // </ul>
 //
-// Styleguide components.list-styles.checkboxes
+// Styleguide components.list-styles.checks
 
 .list--checks {
   li {
@@ -86,11 +86,27 @@
 // List of buttons, such as a list of browse buttons
 // On mobile, we want these to be stacked, with margin, and with full-width buttons
 //
+// Markup:
+// <ul class="list--buttons">
+// <li><button class="button--neutral">Button</button></li>
+// <li><button class="button--neutral">Button</button></li>
+// <li><button class="button--neutral">Button</button></li>
+// </ul>
+//
 // Styleguide components.list-styles.button-lists
 
 .list--buttons {
+  @include clearfix();
+  padding: 0;
+
   li {
+    float: left;
+    margin-right: 1rem;
     width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   .button--neutral,

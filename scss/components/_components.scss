@@ -4,43 +4,42 @@
 //
 // Styleguide components
 
-@import 'type-styles';
-@import 'list-styles';
-@import 'form-styles';
-@import 'buttons';
-@import 'toggles';
-@import 'pagination';
-@import 'page-headers';
-@import 'icons';
-@import 'grid'; // @TODO: Document
-@import 'cards';
-@import 'sidebar';
-@import 'hero';
-@import 'search-bar';
-@import 'results-info';
-@import 'dropdowns';
 @import 'accordions'; // @TODO: Document
-@import 'totals-tables'; // @TODO: Document & clean up
-@import 'charts'; // @TODO: Clean up
-@import 'maps'; //@TODO: Document
-@import 'boxes'; //@TODO: Document
-@import 'messages'; //@TODO: Document
-@import 'billboards'; //@TODO: Document
-@import 'features'; //@TODO: Document
-@import 'cycle-select';
-@import 'callouts'; //@TODO: Document
-@import 'overlay';
-@import 'icon-headings'; //@TODO: Document
-@import 'search-results'; //@TODO: Document
-@import 'search-controls'; //@TODO: Document
-@import 'widgets'; //@TODO: Document
-@import 'table-styles';  //@TODO: Document
-@import 'richtext';
-@import 'tooltips';
-@import 'contact-items'; // @TODO: Document
-@import 'modals'; // @TODO: Document OR deprecate
-@import 'side-nav'; // @TODO: Document
-@import 'options'; // @TODO: Document
-@import 'downloads'; // @TODO: Document
+@import 'billboards';
+@import 'buttons';
 @import 'calendar'; // @TODO: Document
+@import 'callouts'; //@TODO: Document
+@import 'cards';
+@import 'charts'; // @TODO: Clean up
+@import 'contact-items'; // @TODO: Document or abstract
+@import 'cycle-select'; // Document
+@import 'downloads'; // @TODO: Document
+@import 'dropdowns'; // Update
+@import 'features'; //@TODO: Document
+@import 'form-styles';
+@import 'grid'; // @TODO: Document
+@import 'hero';
+@import 'icon-headings'; //@TODO: Document
+@import 'icons';
+@import 'list-styles';
+@import 'maps'; //@TODO: Document
+@import 'messages'; //@TODO: Document
+@import 'modals'; // @TODO: Document OR deprecate
+@import 'options'; // @TODO: Document
+@import 'overlay';  // @TODO: Document
+@import 'page-headers';
+@import 'pagination';
+@import 'results-info';
+@import 'richtext';
+@import 'search-bar';
+@import 'search-controls'; //@TODO: Document
+@import 'search-results'; //@TODO: Document
+@import 'side-nav'; // @TODO: Document
+@import 'sidebar';
+@import 'table-styles';  //@TODO: Document
 @import 'tags';
+@import 'toggles';
+@import 'tooltips';
+@import 'totals-tables'; // @TODO: Document & clean up
+@import 'type-styles';
+@import 'widgets'; //@TODO: Document

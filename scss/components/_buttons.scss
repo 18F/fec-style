@@ -1,9 +1,17 @@
 // Buttons
 //
-// .button      - The basic styled button that contains the properties that get extended by more specific classes
+// .button                      - The basic styled button that contains the properties that get extended by more specific classes
+// .button--primary             - Primary button
+// .button--primary-contrast    - Primary contrast button
+// .button--secondary           - Secondary button
+// .button--secondary-contrast  - Secondary contrast button
+// .button--neutral             - Neutral button
+// .button--navy                - Navy button
+// .button--empty               - Empty buttons
 //
 // Markup:
-// <button>Basic button</button>
+// <button class="{{modifier_class}}"">Basic button</button>
+// <button class="is-active {{modifier_class}}">Active button</button>
 //
 // Styleguide components.buttons
 
@@ -34,17 +42,6 @@
   }
 }
 
-// Primary buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--primary {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.primary
-
 .button--primary {
   @extend .button;
   background-color: $primary-contrast;
@@ -61,17 +58,6 @@
     color: $inverse;
   }
 }
-
-// Secondary buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--secondary {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.secondary
 
 .button--secondary {
   @extend .button;
@@ -90,17 +76,6 @@
   }
 }
 
-// Neutral buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--neutral {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.neutral
-
 .button--neutral {
   @extend .button;
   background-color: $gray;
@@ -117,17 +92,6 @@
     color: $inverse;
   }
 }
-
-// Empty buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--empty {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.empty
 
 .button--empty {
   @extend .button;
@@ -146,7 +110,15 @@
   }
 }
 
-// Alt sizes
+// Button size variations
+//
+// .button--lg    - Large button
+// .button--sm    - Small button
+//
+// Markup:
+// <button class="button--primary {{modifier_class}}">Button</button>
+//
+// Styleguide components.button-size-variations
 
 .button--lg {
   border: 2px solid transparent;
@@ -169,16 +141,6 @@
   }
 }
 
-// Primary Contrast buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--primary {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.primary-contrast
 
 .button--primary-contrast {
   @extend .button;
@@ -197,17 +159,6 @@
   }
 }
 
-// Secondary Contrast buttons
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--secondary {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.secondary-contrast
-
 .button--secondary-contrast {
   @extend .button;
   background-color: $secondary;
@@ -224,18 +175,6 @@
     color: $inverse;
   }
 }
-
-// Navy buttons
-// Specialty button for the feedback widget
-//
-// .button--lg      - Large button
-// .button--sm      - Small button
-// .is-active       - Darkens with a border when active it's active
-//
-// Markup:
-// <button class="button--navy {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.navy
 
 .button--navy {
   @extend .button;
@@ -254,102 +193,11 @@
   }
 }
 
-// Icon Buttons
-//
-// Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
-// Defaults to the styles for button--neutral and button--primary, with overrides for other classes
-//
-// .button--previous    - Go back
-// .button--next        - Go next
-// .button--browse      - For links to the datatable view
-//
-// Markup:
-// <button class="button--neutral {{ modifier_class }}">Button</button>
-// <button class="button--primary {{ modifier_class }}">Button</button>
-// <button class="button--secondary {{ modifier_class }}">Button</button>
-//
-// Styleguide components.buttons.icon-buttons
-
-.button--previous {
-  @include u-icon-button('i-left--primary', transparent, left, 1rem, 1rem);
-
-  &.button--secondary {
-    @include u-icon-button('i-left--secondary', transparent, left, 1rem, 1rem);
-  }
-}
-
-.button--next {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
-
-  &.button--secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
-}
-
-.button--go {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
-
-  &.button--secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
-}
-
-.button--browse {
-  @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
-}
-
-.button--map {
-  @include u-icon-button('i-map--primary', transparent)
-}
-
-.button--table {
-  @include u-icon-button('i-table--primary', transparent, left, 2.5rem)
-}
-
-.button--two-candidates {
-  @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
-}
-
-.button--search {
-  &.button--primary,
-  &.button--neutral {
-    @include u-background-image('i-search--primary');
-  }
-
-  &.button--primary-contrast {
-    @include u-background-image('i-search--primary-contrast');
-  }
-
-  &.button--secondary {
-    @include u-background-image('i-search--secondary');
-  }
-
-  &.button--secondary-contrast {
-    @include u-background-image('i-search--secondary-contrast');
-  }
-}
-
-// .button--search--text    - Positions the icon correctly when showing the "search" word in the button
-
-.button--search--text {
-  &.button--primary,
-  &.button--neutral {
-    @include u-icon-button('i-search--primary', transparent, left);
-  }
-
-  &.button--primary-contrast {
-    @include u-icon-button('i-search--primary-contrast', transparent, left);
-  }
-}
-
-.button--election {
-  @include u-icon-button('i-election--primary', $primary, left, 4rem);
-}
-
 // Remove button
 //
 // For clearing form inputs
 //
+// Markup:
 // <div class="input--removable is-active">
 //  <input type="text" value="Input">
 //  <button type="button" class="button--remove button" data-removes="{{ name }}"><span class="u-visually-hidden">Remove</span></button>
@@ -392,14 +240,190 @@
   }
 }
 
+// Search button
+//
+// .button--search                  - Search button
+//
+// Markup:
+// <button class="button--primary {{modifier_class}}"></button>
+// <button class="button--primary-contrast {{modifier_class}}"></button>
+// <button class="button--secondary {{modifier_class}}"></button>
+// <button class="button--secondary-contrast {{modifier_class}}"></button>
+// <button class="button--neutral {{modifier_class}}"></button>
+//
+// Styleguide components.icon-buttons
+
+.button--search {
+  &.button--primary,
+  &.button--neutral {
+    @include u-background-image('i-search--primary');
+  }
+
+  &.button--primary-contrast {
+    @include u-background-image('i-search--primary-contrast');
+  }
+
+  &.button--secondary {
+    @include u-background-image('i-search--secondary');
+  }
+
+  &.button--secondary-contrast {
+    @include u-background-image('i-search--secondary-contrast');
+  }
+}
+
+// Calendar dropdown buttons
+//
+// .button--calendar                - Add calendar button
+// .button--calendar--mini          - Mini add calendar button
+//
+// Markup:
+// <button class="dropdown__button button--neutral">Add to calendar</button>
+//
+// Styleguide components.calendar-dropdown-buttons
+
+.button--calendar {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  padding-left: 4rem;
+  padding-right: 6rem;
+}
+
+
+.button--calendar--mini {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  max-width: 7.4rem;
+  padding-left: 5rem;
+}
+
+// Icon and text buttons
+//
+// Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
+// Defaults to the styles for button--neutral and button--primary, with overrides for other classes
+//
+// .button--previous    - Go back
+// .button--next        - Go next
+// .button--go          - Go
+// .button--browse      - For links to the datatable view
+// .button--map         - Map button
+// .button--table       - Table button
+// .button--two-candidates          - Toggle two-candidate view on map comparison
+// .button--export                  - Export button
+// .button--download                - Download button
+// .button--subscribe               - Subscribe button
+// .button--cal                     - Calendar view button
+// .button--list                    - List view button
+// .button--search--text            - Search with text
+//
+// Markup:
+// <button class="button--neutral {{ modifier_class }}">Button</button>
+// <button class="button--primary {{ modifier_class }}">Button</button>
+// <button class="button--secondary {{ modifier_class }}">Button</button>
+//
+// Styleguide components.icon-and-text-buttons
+
+.button--previous {
+  @include u-icon-button('i-left--primary', transparent, left, 1rem, 1rem);
+
+  &.button--secondary {
+    @include u-icon-button('i-left--secondary', transparent, left, 1rem, 1rem);
+  }
+}
+
+.button--next {
+  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
+
+  &.button--secondary {
+    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
+  }
+}
+
+.button--go {
+  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
+
+  &.button--go--secondary {
+    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
+  }
+}
+
+.button--browse {
+  @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
+}
+
+.button--map {
+  @include u-icon-button('i-map--primary', transparent)
+}
+
+.button--table {
+  @include u-icon-button('i-table--primary', transparent, left, 2.5rem)
+}
+
+.button--two-candidates {
+  @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
+}
+
+.button--election {
+  @include u-icon-button('i-election--primary', $primary, left, 4rem);
+}
+
+.button--export {
+  @include u-background-image('../img/i-export--primary', 1rem .5rem);
+  background-size: 2rem;
+  padding-left: 4rem;
+}
+
+.button--download {
+  @include u-background-image('../img/i-download--secondary', 1rem 1rem);
+  padding-left: 3rem;
+}
+
+.button--subscribe {
+  @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
+  padding-left: 3rem;
+}
+
+.button--cal {
+  @include u-background-image('../img/i-cal--primary', 1rem .7rem);
+  background-size: 1.5rem;
+  height: 3.4rem;
+  padding-left: 3rem;
+  width: 9rem;
+}
+
+.button--list {
+  @include u-background-image('../img/i-table--primary', 1rem 1rem);
+  background-size: 1.5rem;
+  height: 3.4rem;
+  padding-left: 3rem;
+  width: 9rem;
+}
+
+.button--search--text {
+  &.button--primary,
+  &.button--neutral {
+    @include u-icon-button('i-search--primary', transparent, left);
+  }
+
+  &.button--primary-contrast {
+    @include u-icon-button('i-search--primary-contrast', transparent, left);
+  }
+}
+
 // Special Buttons
 //
 // Common icon buttons for various purposes
 //
-// <button class="button button--close"><span class="u-visually-hidden">Hide glossary</span></button>
+// .button--close--base             - Base close button
+// .button--close--inverse          - Inverse close button
+// .button--close--primary          - Primary close button
+// .button--close--primary-contrast - Primary contrast close button
+// .button--down                    - Down button
+// .button--cancel                  - Cancel button
+// .button--panel                   - Panel trigger button
+//
+// Markup:
+// <button class="{{modifier_class}}"></button>
 //
 // Styleguide components.buttons.special-buttons
-
 .button--close--base {
   @include u-background-image('../img/i-x--base');
   height: 4rem;
@@ -439,46 +463,9 @@
   width: 2rem;
 }
 
-.button--export {
-  @include u-background-image('../img/i-export--primary', 1rem .5rem);
-  background-size: 2rem;
-  padding-left: 4rem;
-}
-
-.button--download {
-  @include u-background-image('../img/i-download--secondary', 1rem 1rem);
-  padding-left: 3rem;
-}
-
-.button--subscribe {
-  @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
-  padding-left: 3rem;
-}
-
-.button--calendar {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
-  padding-left: 4rem;
-  padding-right: 6rem;
-}
-
-.button--calendar--mini {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
-  max-width: 7.4rem;
-  padding-left: 5rem;
-}
-
-.button--cal {
-  @include u-background-image('../img/i-cal--primary', 1rem .7rem);
-  background-size: 1.5rem;
-  height: 3.4rem;
-  padding-left: 3rem;
-  width: 9rem;
-}
-
-.button--list {
-  @include u-background-image('../img/i-table--primary', 1rem 1rem);
-  background-size: 1.5rem;
-  height: 3.4rem;
-  padding-left: 3rem;
-  width: 9rem;
+.button--panel {
+  @include u-background-image('../img/i-right--primary');
+  display: block;
+  height: 2rem;
+  width: 2rem;
 }
