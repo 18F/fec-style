@@ -4,6 +4,10 @@ node_js: "5.5.0"
 
 sudo: false
 
+env:
+  GITHUB_REPO: github.com/$TRAVIS_REPO_SLUG
+  secure: "b1Ps2d5J2EyBekdSDlSuVccia+CPLwf4MKvVU5MfIHzVEO1PgdZM6JsxN820owcbDpDxYQsJlHIORZffS+RXf87K/Mv74N0Y7MZHI/ghj0niXqYnFSqnuAee5g3nyvjpNFPOAKkQVKD1PtizAHF1O4oncJfcvEQpS15umZRr9WGcQniAQYyZJj3aO3ft8Vy+tE3D/w2Nv0y269JIPPu1qD+RS5qfrTYcxW3kjDO2hH0N/QjuE3dGPXa3VH7CRGTpE+D2+7M544J5En43iDXAXirW2DquoZnzKElliEbGCYwvGdfv8kkugl8wvVDx5QhOyqD7eCd9ToTPKdbsco3x0uLxHcvK7qSFkieYfr+DWpeVKAVqX5/xYC5+MKyte2Xp8rWPh/u9HgN6fSRpqcLPu7KHJSQEnQJG3qIgGyQOsMVPZaYI+gPa37wC5mnl87AvKSjE0bbDkX04f+4rtYBLb0ri2t+cE62joZttS7rmdw5tQSilox8kVzSpRk86sWZ6BZyHKkW5cAgNApup/ncrPlIcyufSP7MkNCSJHeXvtRkZ19bun11SQj+Um73RDc2lmv/QqhcVPEjpfMdQAKjm+o66kMX4ixO06d4PJvA6C7DCsLanX2x34PdvUIBzdiJsBUUkH25f15x/E2rccDekLk/LSAFUXksRWvSOngro59Y=" # GITHUB_TOKEN
+
 before_script:
   - travis_retry npm install codecov.io
 
@@ -14,3 +18,10 @@ script:
 
 after_success:
   - cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
+
+deploy:
+  provider: script
+  script: ./deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master

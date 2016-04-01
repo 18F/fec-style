@@ -28,10 +28,18 @@ We’re thrilled you want to get involved!
 - Check out our StoriesonBoard [FEC story map](https://18f.storiesonboard.com/m/fec) to get a sense of the user needs we'll be addressing in the future.
 
 ---
+
+
 ## Set up
 
+You can view the current styleguide on https://pages.18f.gov/fec-style/. It is
+updated automatically on every successful push to the `master` branch.
+
+
 ### View the style guide
+
 Clone the repo to your machine and open `styleguide/index.html`. Voila.
+
 
 ### Install dependencies
 
