@@ -177,6 +177,10 @@ html {
 
     .kss-sidebar {
       width: 20%;
+
+      a {
+        color: #fff;
+      }
     }
 
     .kss-main,
@@ -197,7 +201,7 @@ html {
 
   .kss-sidebar {
     border-bottom:1px solid #ddd;
-    background-color: #022C53;
+    background-color: #212121;
 
     @media screen and (min-width: 769px) {
       width: 20%;
@@ -251,7 +255,7 @@ html {
     display: none;
 
     @media screen and (min-width: 769px) {
-      background-color: #164F85;
+      background-color: #5b616b;
       display: block;
       list-style-type: none;
       margin: 0;
@@ -341,8 +345,10 @@ html {
     display: table;
     list-style-type: none;
     margin-left: 0;
-    padding-left: 0;
+    background-color: #f1f1f1;
+    padding: 10px;
   }
+
   .kss-parameters__item {
     display: table-row;
   }
@@ -355,20 +361,20 @@ html {
   }
 
   .kss-modifier__wrapper {
-    border: 1px solid #efdecd;
+    border: 1px solid #d6d7d9;
     padding: 10px;
   }
   .kss-modifier__heading {
     margin: -10px -10px 10px -10px;
     padding: 10px;
-    border-bottom: 1px solid #efdecd;
-    background-color: #fffff6;
+    border-bottom: 1px solid #d6d7d9;
+    background-color: #f1f1f1;
     font-weight: bold;
   }
   .kss-modifier__default-name {
     font-weight: bold;
     margin-bottom: (@kss-vertical-rhythm / 2);
-    border-bottom: 1px solid #efdecd;
+    border-bottom: 1px solid #d6d7d9;
   }
 
   .kss-modifier__name {
@@ -381,7 +387,7 @@ html {
 
   .kss-modifier__description {
     margin-bottom: (@kss-vertical-rhythm / 2);
-    border-bottom: 1px solid #efdecd;
+    border-bottom: 1px solid #d6d7d9;
   }
   .kss-modifier__example {
     clear: left;
@@ -400,7 +406,7 @@ html {
 
   .kss-markup {
     margin: -1px 0 @kss-vertical-rhythm 0;
-    border: 1px solid #efdecd;
+    border: 1px solid #d6d7d9;
   }
   .kss-markup pre {
     margin: 0;
