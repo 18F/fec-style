@@ -479,6 +479,11 @@
   height: 3.4rem;
   padding-left: 3rem;
   width: 9rem;
+
+  &.is-active {
+    @include u-background-image('i-cal--inverse', 1rem .7rem);
+    color: $inverse;
+  }
 }
 
 .button--list {
@@ -487,4 +492,9 @@
   height: 3.4rem;
   padding-left: 3rem;
   width: 9rem;
+
+  &.is-active {
+    @include u-background-image('i-table--inverse', 1rem .7rem);
+    color: $inverse;
+  }
 }
