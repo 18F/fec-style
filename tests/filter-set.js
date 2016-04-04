@@ -18,7 +18,6 @@ describe('filter set', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
       '<form>' +
-        '<div class="button js-clear-filters"></button>' +
         '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="name" />' +
@@ -39,7 +38,6 @@ describe('filter set', function() {
 
   it('locates dom elements', function() {
     expect(this.filterSet.$body.is('#fixtures form')).to.be.true;
-    expect(this.filterSet.$clear.is('#fixtures .js-clear-filters')).to.be.true;
     expect(this.filterSet.filters).to.deep.equal({});
     expect(this.filterSet.fields).to.deep.equal([]);
   });
@@ -78,13 +76,6 @@ describe('filter set', function() {
     this.filterSet.filters.name.setValue('jed');
     this.filterSet.filters.cycle.setValue(['2012', '2014']);
     this.filterSet.clear();
-    expect(this.filterSet.serialize()).to.deep.equal({});
-  });
-
-  it('calls clear on clicking clear button', function() {
-    this.filterSet.activate();
-    this.filterSet.filters.name.setValue('jed');
-    this.filterSet.$clear.trigger('click');
     expect(this.filterSet.serialize()).to.deep.equal({});
   });
 });

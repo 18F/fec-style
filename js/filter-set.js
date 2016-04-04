@@ -10,10 +10,6 @@ var KEYCODE_ENTER = 13;
 
 function FilterSet(elm) {
   this.$body = $(elm);
-  this.$clear = this.$body.find('.js-clear-filters');
-
-  this.$clear.on('click keypress', this.handleClear.bind(this));
-
   $(document.body).on('tag:removed', this.handleTagRemove.bind(this));
 
   this.filters = {};
@@ -52,13 +48,6 @@ FilterSet.prototype.serialize = function() {
     }
     return memo;
   }, {});
-};
-
-FilterSet.prototype.handleClear = function(e) {
-  if (e.which === KEYCODE_ENTER || e.type === 'click') {
-    this.clear();
-    $(e.target).focus();
-  }
 };
 
 FilterSet.prototype.clear = function() {

@@ -11,8 +11,9 @@ var defaultOptions = {
   body: '.filters',
   dataContainer: '.data-container',
   form: '#category-filters',
-  focus: '#results tr:first-child',
-  toggle: '#filter-toggle'
+  focus: '.js-filter-toggle',
+  toggle: '.js-filter-toggle',
+  close: '.js-filter-close'
 };
 
 function FilterPanel(options) {
@@ -24,8 +25,10 @@ function FilterPanel(options) {
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
+  this.$close = $(this.options.close);
 
   this.$toggle.on('click', this.toggle.bind(this));
+  this.$close.on('click', this.hide.bind(this));
 
   this.filterSet = new FilterSet(this.$form).activate();
 
@@ -43,23 +46,22 @@ FilterPanel.prototype.setInitialDisplay = function() {
 FilterPanel.prototype.setHeight = function() {
   if ($(document).width() > helpers.BREAKPOINTS.LARGE &&
       this.$dataContainer.height() > this.$body.height()) {
-    this.$body.height(this.$dataContainer.height());
+    this.$body.css('min-height', this.$dataContainer.height());
   }
 };
 
 FilterPanel.prototype.show = function() {
   this.$body.addClass('is-open');
-  this.$toggle.addClass('is-active');
-  this.$toggle.find('.js-filter-toggle-text').html('Hide filters');
+  this.$toggle.attr('aria-hidden', true);
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
   this.isOpen = true;
+  this.$close.focus();
 };
 
 FilterPanel.prototype.hide = function() {
   this.$body.removeClass('is-open');
-  this.$toggle.removeClass('is-active');
-  this.$toggle.find('.js-filter-toggle-text').html('Show filters');
+  this.$toggle.attr('aria-hidden', false);
   this.$focus.focus();
   accessibility.removeTabindex(this.$form);
   $('body').removeClass('is-showing-filters');

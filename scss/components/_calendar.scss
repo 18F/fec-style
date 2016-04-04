@@ -37,7 +37,7 @@
   }
 
   .fc-today-button {
-    float: left;
+    margin-left: 1rem;
   }
 
   .fc-prev-button,
@@ -54,7 +54,7 @@
       border-radius: 0 4px 4px 0;
     }
 
-    &:after {
+    &::after {
       left: .5rem;
       right: .5rem;
     }
@@ -119,11 +119,12 @@
   border-bottom: none;
   color: $primary;
   font-weight: bold;
-  padding: .5rem 1rem;
+  padding: .3rem 1rem;
 }
 
-.fc-today {
-  background-color: $neutral;
+.fc-day-number.fc-today {
+  background-color: $primary;
+  color: $inverse;
 }
 
 .fc-event-container {
@@ -131,81 +132,54 @@
   vertical-align: top;
 }
 
+.fc-more {
+  margin: 0 4px;
+}
+
 .fc-content {
   @include u-truncate();
-  background: $gray;
-  border-radius: 4px;
-  color: $inverse;
+  background: none;
+  color: $primary;
   font-size: 1.4rem;
   line-height: 1.2;
-  padding: 4px;
+  padding: 2px 4px;
   position: relative;
-  overflow: visible;
+
+  &::before {
+    content: '';
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    background-color: $primary;
+    border-radius: .8rem;
+    float: left;
+    margin: 5px 5px 5px 0;
+  }
+}
+
+.is-active {
+  .fc-content {
+    background-color: $primary;
+    border-radius: 4px;
+    color: $inverse;
+
+    &::before {
+      background-color: $inverse;
+    }
+  }
 }
 
 .fc-title {
   display: inline-block;
-  width: 100%;
-  overflow: hidden;
   vertical-align: top;
 }
 
 .fc-time {
   display: inline-block;
-  vertical-align: top;
 }
 
 .fc-limited {
   display: none;
-}
-
-// Events
-.fc--election {
-  .fc-content,
-  .cal__category {
-    background: $cal-election;
-    color: $inverse;
-  }
-}
-
-.fc--deadline {
-  .fc-content,
-  .cal__category {
-    background: $cal-deadline;
-    color: $inverse;
-  }
-}
-
-.fc--outreach {
-  .fc-content,
-  .cal__category {
-    background: $cal-outreach;
-    color: $inverse;
-  }
-}
-
-.fc--rules {
-  .fc-content,
-  .cal__category {
-    background: $cal-rules;
-    color: $inverse;
-  }
-}
-
-.fc--meeting {
-  .fc-content,
-  .cal__category {
-    background: $cal-meeting;
-    color: $inverse;
-  }
-}
-
-.fc--other {
-  .fc-content,
-  .cal__category {
-    background: $cal-other;
-    color: $inverse;
-  }
 }
 
 .cal__category {
@@ -217,7 +191,7 @@
 .cal-details {
   font-size: 1.4rem;
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 0;
   text-align: left;
   width: 26rem;
   white-space: initial;
@@ -233,12 +207,12 @@
   .cal-details {
     right: 0;
 
-    &:before {
+    &::before {
       left: auto;
       right: 1rem;
     }
 
-    &:after {
+    &::after {
       left: auto;
       right: 1.2rem;
     }
@@ -271,7 +245,7 @@
 }
 
 .cal-details__add {
-  padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 .fc-popup {
@@ -370,9 +344,13 @@
   }
 }
 
+.cal-list {
+  padding-top: 2rem;
+}
+
 .cal-list__title {
   margin: 0;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 
 .cal-list__event {
@@ -383,6 +361,7 @@
 
 .cal-list__details {
   @include span-columns(8);
+  margin-bottom: 1rem;
 }
 
 .cal-list__add {
@@ -396,13 +375,11 @@
 .cal-list__date {
   @include span-columns(4 of 8);
   font-weight: bold;
-  line-height: 1.7rem;
 }
 
 .cal-list__time {
   @include span-columns(4 of 8);
   @include omega();
-  line-height: 1.7rem;
 }
 
 .cal-list__description {
@@ -412,6 +389,18 @@
   p {
     font-size: 1.4rem;
   }
+}
+
+.cal-list__category {
+  float: left;
+}
+
+.cal-list__category-title {
+  display: inline-block;
+  border: 1px solid;
+  border-color: $primary;
+  padding: 0 .5rem;
+  border-radius: 3px;
 }
 
 .cal-list__event-title {
@@ -492,13 +481,34 @@
 // - List events line up horizontally
 
 @include media($lg) {
+  .cal-list {
+    font-size: 1.6rem;
+
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  .cal-list--time {
+    .cal-list__date {
+      display: none;
+    }
+  }
+
+  .cal-list--category {
+    .cal-list__category {
+      visibility: hidden;
+    }
+  }
+
   .cal-list__event {
     @include clearfix();
-    padding-bottom: 4rem;
+    padding: 2rem;
   }
 
   .cal-list__details {
     @include span-columns(10);
+    margin-bottom: 0;
   }
 
   .cal-list__add {
@@ -511,16 +521,15 @@
   }
 
   .cal-list__time {
-    @include span-columns(2 of 10);
+    @include span-columns(1 of 10);
   }
 
   .cal-list__description {
     @include span-columns(6 of 10);
     padding-top: 0;
+  }
 
-    p {
-      font-size: 1.6rem;
-    }
-
+  .cal-list__category {
+    @include span-columns(2 of 10);
   }
 }
