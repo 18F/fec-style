@@ -1,4 +1,5 @@
-<ul class="js-accordion">
+{{#if (eq modifier_class 'accordion--neutral')}}
+<ul class="js-accordion accordion--neutral" data-content-prefix="first">
   <li>
     <button class="accordion__button">
       First Amendment
@@ -20,3 +21,7 @@
     </div>
   </li>
  </ul>
+{{/if}}
+{{#if (eq modifier_class 'accordion--inverse')}}
+ Coming soon
+{{/if}}
