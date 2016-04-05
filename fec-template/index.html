@@ -123,9 +123,10 @@
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
           Example{{#if modifiers}}s{{/if}}
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
         </div>
       {{#unless modifiers}}
-        <div class="kss-modifier__example">
+        <div class="kss-modifier__example clearfix">
           {{{markup}}}
         </div>
       {{/unless}}
@@ -136,7 +137,7 @@
         <div class="kss-modifier__description kss-style">
           {{{description}}}
         </div>
-        <div class="kss-modifier__example">
+        <div class="kss-modifier__example clearfix">
           {{{markup}}}
         </div>
       {{/eachModifier}}
