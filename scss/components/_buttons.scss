@@ -118,7 +118,7 @@
 // Markup:
 // <button class="button--primary {{modifier_class}}">Button</button>
 //
-// Styleguide components.button-size-variations
+// Styleguide components.buttons.button-size-variations
 
 .button--lg {
   border: 2px solid transparent;
@@ -203,7 +203,7 @@
 //  <button type="button" class="button--remove button" data-removes="{{ name }}"><span class="u-visually-hidden">Remove</span></button>
 // </div>
 //
-// Styleguide components.buttons.remove
+// Styleguide components.buttons.buttons.remove
 
 .button--remove {
   @include u-background-image('i-x--primary');
@@ -251,7 +251,7 @@
 // <button class="button--secondary-contrast {{modifier_class}}"></button>
 // <button class="button--neutral {{modifier_class}}"></button>
 //
-// Styleguide components.icon-buttons
+// Styleguide components.buttons.icon-buttons
 
 .button--search {
   &.button--primary,
@@ -280,7 +280,7 @@
 // Markup:
 // <button class="dropdown__button button--neutral">Add to calendar</button>
 //
-// Styleguide components.calendar-dropdown-buttons
+// Styleguide components.buttons.calendar-dropdown-buttons
 
 .button--calendar {
   @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
@@ -319,7 +319,7 @@
 // <button class="button--primary {{ modifier_class }}">Button</button>
 // <button class="button--secondary {{ modifier_class }}">Button</button>
 //
-// Styleguide components.icon-and-text-buttons
+// Styleguide components.buttons.icon-and-text-buttons
 
 .button--previous {
   @include u-icon-button('i-left--primary', transparent, left, 1rem, 1rem);

@@ -1,7 +1,34 @@
 // Feature callouts
 //
-// Used on the home page
+// Used on the home page. Width determined by the grid class
 // Use .feature--no-title to add extra padding to items that don't have a title above the card to get them to line up
+//
+// Markup:
+// <div class="grid grid--4-wide">
+//   <div class="feature grid__item">
+//     <h2 class="feature__title">New features</h2>
+//     <div class="card card--primary">
+//       <a class="card__image-link" href="#">
+//         <img class="card__image" src="img/i-data--neutral.svg" alt="Icon for explore campaign finance data">
+//       </a>
+//       <div class="card__content">
+//         Explore <a href="#">campaign finance data</a>
+//       </div>
+//     </div>
+//     <p>See how money is raised and spent in federal elections. Compare candidates’ financial data. Learn how campaigns have spent their money. Discover who contributed to which candidates.</p>
+//   </div>
+//   <div class="feature feature--no-title grid__item">
+//     <div class="card card--primary">
+//       <a class="card__image-link" href="#">
+//         <img class="card__image" src="img/i-register--neutral.svg" alt="Icon for explore campaign finance data">
+//       </a>
+//       <div class="card__content">
+//         Learn how candidates and political committees <a href="#">register and report
+//       </div>
+//     </div>
+//      <p>We’re making it easier to learn the essentials of registration and reporting. So far we’ve published information about candidates, authorized committees, corporations and labor organizations.</p>
+//   </div>
+// </div>
 //
 // Styleguide components.features
 

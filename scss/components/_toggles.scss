@@ -2,26 +2,7 @@
 //
 // We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.
 //
-// Markup:
-// <fieldset class="toggles">
-//   <legend class="label">View by:</legend>
-//   <label for="toggle-state">
-//     <input id="toggle-state" type="radio" name="receipt-aggregate" value="by-state" checked>
-//     <span class="button--primary">State</span>
-//   </label>
-//   <label for="toggle-contribution-size">
-//     <input id="toggle-contribution-size" type="radio" name="receipt-aggregate" value="by-contribution-size">
-//     <span class="button--primary">Contribution Size</span>
-//   </label>
-//   <label for="toggle-employer">
-//     <input id="toggle-employer" type="radio" name="receipt-aggregate" value="by-employer">
-//     <span class="button--primary">Employer</span>
-//   </label>
-//   <label for="toggle-occupation">
-//     <input id="toggle-occupation" type="radio" name="receipt-aggregate" value="by-occupation">
-//     <span class="button--primary">Occupation</span>
-//   </label>
-// </fieldset>
+// Markup: toggles.hbs
 //
 // Styleguide components.toggles
 

@@ -3,7 +3,7 @@
 // For classes that define type styles
 // Prefix these styles with t-
 //
-// Styleguide components.type-styles
+// Styleguide type-styles
 
 // Display
 //
@@ -14,7 +14,7 @@
 // Markup:
 // <h2 class="t-display {{modifier_class}}">Some great heading</h2>
 //
-// Styleguide components.type-styles.display
+// Styleguide type-styles.display
 
 .t-display {
   @include heading(display);
@@ -31,7 +31,7 @@
 // Markup:
 // <span class="t-display--sans">$2,010</span>
 //
-// Styleguide components.type-styles.display-sans
+// Styleguide type-styles.display-sans
 
 .t-display--sans {
   @include heading(display);
@@ -44,12 +44,15 @@
 //
 // Adds top and bottom borders; color changed by u-font-color
 //
+// .t-ruled           - 1px top and bottom rule
 // .t-ruled--bold     - 2px weight borders
+// .t-ruled--bottom   - Only rule on the bottom
+// .t-no-rules        - Removes a rule on an item that has one by default
 //
 // Markup:
 // <h2 class="t-ruled {{ modifier_class }}">Another heading</h2>
 //
-// Styleguide components.type-styles.ruled-headings
+// Styleguide type-styles.ruled-headings
 
 .t-ruled {
   @include clearfix();
@@ -82,6 +85,29 @@
 }
 
 // Miscellaneous
+//
+// .t-note          - Small text for adding a note somewhere
+// .t-block         - Force display: block
+// .t-inline-block  - Force display: inline-block
+// .t-sans          - Force sans serif
+// .t-italic        - Italicize
+// .t-bold          - Embolden!
+// .t-upper         - Transform to uppercase
+// .t-data-header   - Small header above a big data number
+// .t-big-data      - Big number
+// .t-secondary-contrast    - Force secondary contrast color
+// .t-lead          - Set a bigger size to lead paragraphs
+// .t-short         - Used when we want a heading to break onto two lines
+// .h1              - Fake h1 style
+// .h2              - Fake h2 style
+// .h3              - Fake h3 style
+// .h4              - Fake h4 style
+// .h5              - Fake h5 style
+//
+// Markup:
+// <p class="{{ modifier_class }}">Sample text</p>
+//
+// Styleguide type-styles.miscellaneous
 
 .t-note {
   display: inline-block;
@@ -140,7 +166,11 @@
   color: $secondary-contrast;
 }
 
-// .t-short: Used when we want a heading to break onto two lines
+.t-lead {
+  font-weight: regular;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
 
 .t-short {
   @include media($lg) {
@@ -148,31 +178,6 @@
     width: 70%;
   }
 }
-
-// Modifier styles for text
-//
-// .t-centered       - Center the text
-// .t-right-aligned  - Right-align the text
-// .t-left-aligned   - Left-align the text
-//
-// Markup:
-// <p class="{{ modifier_class }}"">Some sample text</p>
-//
-// Styleguide components.type-styles.modifiers
-
-.t-centered {
-  text-align: center;
-}
-
-.t-right-aligned {
-  text-align: right;
-}
-
-.t-left-aligned {
-  text-align: left;
-}
-
-// Pseudo-Header styles
 
 .h1 {
   @include heading(h1);
@@ -194,9 +199,25 @@
   @include heading(h5);
 }
 
-// Alternate paragraph styles
-.p--lead {
-  font-weight: regular;
-  font-size: 1.8rem;
-  line-height: 2.8rem;
+// Modifier styles for text
+//
+// .t-centered       - Center the text
+// .t-right-aligned  - Right-align the text
+// .t-left-aligned   - Left-align the text
+//
+// Markup:
+// <p class="{{ modifier_class }}"">Some sample text</p>
+//
+// Styleguide type-styles.modifiers
+
+.t-centered {
+  text-align: center;
+}
+
+.t-right-aligned {
+  text-align: right;
+}
+
+.t-left-aligned {
+  text-align: left;
 }

@@ -50,15 +50,14 @@
   @include u-background-image('i-info', 2rem 2rem);
 }
 
+.message--no-icon {
+  padding: 2rem;
+}
+
 .message--alert__bottom {
   border-top: 1px solid $gray;
   margin-top: 1rem;
   padding-top: 1rem;
-}
-
-.message--small {
-  background-position: 1rem 1rem;
-  padding: 4rem 1rem 1rem 1rem;
 }
 
 .message__title {
@@ -69,6 +68,18 @@
   display: table-cell;
 }
 
+// Messages: Big
+//
+// .message--big      - Big message, for error pages
+//
+// Markup:
+// <div class="message message--info {{ modifier_class }}">
+//   <h2 id="section-1-header" tabindex="0">No results</h2>
+//   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
+// </div>
+//
+// Styleguide components.messages.big
+
 .message--big {
   @include media($lg) {
     @include span-columns(8);
@@ -76,13 +87,25 @@
   }
 }
 
-.message--no-icon {
-  padding: 2rem;
+// Messages: Small
+//
+// .message--small      - Big message, for error pages
+//
+// Markup:
+// <div class="message message--info {{ modifier_class }}">
+//   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
+// </div>
+//
+// Styleguide components.messages.small
+
+.message--small {
+  background-position: 1rem 1rem;
+  padding: 4rem 1rem 1rem 1rem;
 }
 
-// Primary messages
+// Messages: Inverse
 //
-// Use this style for secondary messages as well
+// Use this style against a dark background
 //
 // .message--success  - Success message
 // .message--error    - Error message
@@ -91,15 +114,14 @@
 //
 // Markup:
 // <div class="slab slab--primary" style="padding: 2rem;">
-// <div class="message message--primary {{ modifier_class }}">
+// <div class="message message--inverse {{ modifier_class }}">
 //   <p>Sample message content.</p>
 // </div>
 // </div>
 //
-// Styleguide components.messages.primary-messages
+// Styleguide components.messages.inverse
 
-.message--primary,
-.message--secondary {
+.message--inverse {
   @include u-font-color($inverse);
   background-color: rgba($inverse, .1);
   border-color: $inverse;
@@ -123,6 +145,27 @@
   }
 }
 
+// Messages: Inverse (Alt)
+//
+// Use this style against a light neutral background (e.g. a filter panel)
+//
+// .message--success  - Success message
+// .message--error    - Error message
+// .message--alert   - Alert message
+// .message--info     - Info messages
+//
+// Markup:
+// <div class="slab slab--neutral" style="padding: 2rem;">
+// <div class="message message--inverse-alt {{ modifier_class }}">
+//   <p>Sample message content.</p>
+// </div>
+// </div>
+//
+// Styleguide components.messages.inverse-alt
+
+.message--inverse-alt {
+  background-color: $inverse-translucent;
+}
 
 @include media($med) {
   .message {
@@ -131,8 +174,7 @@
     min-height: 8rem;
     padding: 2rem 2rem 2rem 6rem;
 
-    &.message--primary,
-    &.message--secondary {
+    &.message--inverse {
       background-position: 2rem 2rem;
     }
   }

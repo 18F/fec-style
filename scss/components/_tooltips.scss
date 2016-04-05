@@ -1,16 +1,21 @@
+// Tooltips
 //
-// Tooltips for maps
+// Styleguide components.tooltips
+
+// Tooltips: General
 //
 // .tooltip--above        - When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
 // .tooltip--under        - When the tooltip is under the content. Puts the arrow at the top left of the tooltip
 //
 // Markup:
-// <div class="tooltip">
-//  <div class="tooltip__title">Michigan</div>
-//  <div class="tooltip__value">$100,000</div>
+// <div class="sg-tooltip-container">
+//   <div class="tooltip {{ modifier_class }}">
+//    <div class="tooltip__title">Michigan</div>
+//    <div class="tooltip__value">$100,000</div>
+//   </div>
 // </div>
 //
-// Styleguide components.tooltips
+// Styleguide components.tooltips.general
 
 .tooltip {
   border-radius: 4px;
@@ -89,7 +94,7 @@
   }
 }
 
-// Tooltips to learn more
+// Tooltips: Learn more
 //
 // For tooltips on regular DOM elements (rather than on maps) that contain additional info
 //
@@ -103,7 +108,7 @@
 //   <select><option>Select one</option></select>
 // </div>
 //
-// Styleguide components.learn-tooltips
+// Styleguide components.tooltips.learn-more
 
 .tooltip__container {
   display: block;
