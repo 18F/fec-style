@@ -1,6 +1,28 @@
 // Callout
 //
-// Action-oriented components
+// Action-oriented components. 100% width of their container.
+//
+// .callout             - Base class
+// .callout--primary    - Primary
+// .callout--secondary  - Secondary
+//
+// Markup:
+// <div class="callout {{modifier_class}}">
+//   <div class="callout__content">
+//     <h4 class="callout__title">
+//       <a href="#">Committee name</a>
+//     </h4>
+//     <span class="callout__subtitle">Principal campaign committee</span>
+//     <span class="callout__subtitle t-block">2008 - 2012</span>
+//   </div>
+//   <div class="callout__action">
+//     <ul class="callout__sublinks">
+//       <li><a href="#">Money received</a></li>
+//       <li><a href="#">Money spent</a></li>
+//       <li><a href="#">Reports filed</a></li>
+//     </ul>
+//   </div>
+// </div>
 //
 // Styleguide components.callouts
 
