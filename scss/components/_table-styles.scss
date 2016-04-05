@@ -1,4 +1,28 @@
-// Table styles
+// Simple table
+//
+// Simple table with rules
+//
+// Markup:
+// <table class="simple-table">
+//     <thead class="simple-table__header">
+//         <tr>
+//             <th>Dates covered</th>
+//             <th>Due</th>
+//         </tr>
+//     </thead>
+//     <tbody>
+//         <tr class="simple-table__row">
+//             <td class="simple-table__cell">January 1–March 31</td>
+//             <td class="simple-table__cell">April 15</td>
+//         </tr>
+//         <tr class="simple-table__row">
+//             <td class="simple-table__cell">April 1–June 30</td>
+//             <td class="simple-table__cell">July 15</td>
+//         </tr>
+//     </tbody>
+// </table>
+//
+// Styleguide components.simple-table
 
 .simple-table {
   border-color: $primary;
@@ -38,6 +62,6 @@
 // Table titles in content are h3, but those have bottom margins.
 // This closes that gap
 
-h3 + .simple-table { 
-  margin-top: -1rem; 
+h3 + .simple-table {
+  margin-top: -1rem;
 }

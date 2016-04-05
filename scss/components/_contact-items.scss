@@ -1,5 +1,30 @@
 // Contact items
+//
 // List items on the contact page
+//
+// Markup:
+// <div class="grid grid--2-wide">
+//   <ul class="grid__item">
+//     <li class="contact-item">
+//       <div class="contact-item__icon">
+//         <img src="img/i-phone--primary.svg" alt="Icon of a phone">
+//       </div>
+//       <div class="contact-item__content">
+//         <h5 class="contact-item__title">Toll free</h5>
+//         <span class="t-block">1-800-424-9530</span>
+//         <span class="t-block">8:30 a.m. to 5:30 p.m. Eastern Time</span>
+//       </div>
+//     </li>
+//     <li class="contact-item">
+//       <div class="contact-item__content--offset">
+//         <h5 class="contact-item__title">Local</h5>
+//         <span class="t-block">202-694-1000</span>
+//       </div>
+//     </li>
+//   </ul>
+// </div>
+//
+// Styleguide components.contact-items
 
 .contact-item {
   @include clearfix();

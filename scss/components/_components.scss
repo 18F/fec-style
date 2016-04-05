@@ -4,35 +4,35 @@
 //
 // Styleguide components
 
-@import 'accordions'; // @TODO: Document
+@import 'accordions'; // @TODO: Add inverse accordion
 @import 'billboards';
 @import 'buttons';
 @import 'calendar'; // @TODO: Document
 @import 'callouts';
 @import 'cards';
-@import 'charts'; // @TODO: Clean up
-@import 'contact-items'; // @TODO: Document or abstract
-@import 'cycle-select'; // Document
-@import 'dropdowns'; // Update
-@import 'features'; //@TODO: Document
+@import 'charts'; // REFACTOR
+@import 'contact-items'; // REFACTOR: https://github.com/18F/fec-style/issues/295
+@import 'cycle-select';
+@import 'dropdowns';
+@import 'features';
 @import 'form-styles';
-@import 'icon-headings'; //@TODO: Document
+@import 'icon-headings';
 @import 'icons';
 @import 'list-styles';
-@import 'maps'; //@TODO: Document
+@import 'maps'; //@TODO: Address later:
 @import 'messages';
-@import 'options'; // @TODO: Document
-@import 'overlay';  // @TODO: Document
+@import 'options';
+@import 'overlay';
 @import 'page-headers';
 @import 'pagination';
 @import 'richtext';
 @import 'search-bar';
-@import 'search-results'; //@TODO: Document
-@import 'side-nav'; // @TODO: Document
+@import 'search-results';
+@import 'side-nav';
 @import 'sidebar';
-@import 'table-styles';  //@TODO: Document
+@import 'table-styles';
 @import 'tags';
 @import 'toggles';
 @import 'tooltips';
 @import 'type-styles';
-@import 'widgets'; //@TODO: Document or refactor
+@import 'widgets'; // REFACTOR: https://github.com/18F/fec-style/issues/296

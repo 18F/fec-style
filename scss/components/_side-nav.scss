@@ -1,4 +1,21 @@
 // Side nav
+//
+// Sticky side nav that tracks the user's scroll progress through a page
+//
+// Markup:
+// <div class="sidebar-container sidebar-container--left">
+//   <nav class="sidebar sidebar--neutral sidebar--left side-nav">
+//     <ul class="sidebar__content">
+//       <li class="side-nav__item"><a class="side-nav__link is-active" href="#">Link (active)</a></li>
+//       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+//       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+//       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+//     </ul>
+//   </nav>
+// </div>
+//
+// Styleguide components.side-nav
+
 .side-nav {
   display: none;
 }
