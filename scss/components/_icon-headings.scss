@@ -1,4 +1,17 @@
+// Icon headings
+//
 // For combinations of icons + headings
+//
+// .icon-heading        - 4 columns wide on large screens
+// .icon-heading--full  - Full-width on large screens
+//
+// Markup:
+// <div class="{{modifier_class}}">
+//   <img class="icon-heading__image" src="img/i-elections--primary.svg" alt="Icon representing elections">
+//   <h2 class="icon-heading__title widget__title"><span class="t-short">Find candidates running near you</span></h2>
+// </div>
+//
+//  Styleguide components.icon-headings
 
 .icon-heading__image {
   @include span-columns(3);
@@ -29,5 +42,22 @@
 
   .icon-heading__title {
     @include span-columns(3 of 4);
+  }
+
+  .icon-heading--full {
+    width: 100%;
+
+    .icon-heading__image {
+      @include span-columns(1 of 6);
+    }
+
+    .icon-heading__title {
+      @include span-columns(5 of 6);
+    }
+
+    &:nth-child(2) {
+      border-left: 1px solid $gray;
+      border-top: none;
+    }
   }
 }
