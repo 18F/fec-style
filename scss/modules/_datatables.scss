@@ -121,7 +121,7 @@
   margin-left: 1.5rem;
   position: relative;
 
-  &:before {
+  &::before {
     background-color: $primary;
     border-radius: 1rem;
     content: '';

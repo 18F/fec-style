@@ -14,17 +14,15 @@ var FilterSet = require('../js/filter-set').FilterSet;
 function expectOpen(panel) {
   expect(panel.isOpen).to.be.true;
   expect(panel.$body.hasClass('is-open')).to.be.true;
-  expect(panel.$toggle.hasClass('is-active')).to.be.true;
+  expect(panel.$toggle.attr('aria-hidden')).to.equal('true');
   expect($('body').hasClass('is-showing-filters')).to.be.true;
-  expect(panel.$toggle.find('.js-filter-toggle-text').html()).to.equal('Hide filters');
 }
 
 function expectClosed(panel) {
   expect(panel.isOpen).to.be.false;
   expect(panel.$body.hasClass('is-open')).to.be.false;
-  expect(panel.$toggle.hasClass('is-active')).to.be.false;
+  expect(panel.$toggle.attr('aria-hidden')).to.equal('false');
   expect($('body').hasClass('is-showing-filters')).to.be.false;
-  expect(panel.$toggle.find('.js-filter-toggle-text').html()).to.equal('Show filters');
 }
 
 describe('filter panel', function() {
@@ -35,7 +33,7 @@ describe('filter panel', function() {
 
   beforeEach(function() {
     this.$fixture.empty().append(
-      '<div id="filter-toggle">' +
+      '<div class="js-filter-toggle">' +
         '<div class="js-filter-toggle-text"></div>' +
       '</div>' +
       '<div id="filters" class="filters">' +

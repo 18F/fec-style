@@ -15,7 +15,8 @@ var formatMap = {
   pretty: 'MMM D, YYYY',
   time: 'h:mma',
   dateTime: 'MMM D, h:mma',
-  dayOfWeek: 'ddd'
+  dayOfWeek: 'ddd',
+  fullDayOfWeek: 'dddd'
 };
 
 function datetime(value, options) {
@@ -30,6 +31,9 @@ Handlebars.registerHelper('datetime', datetime);
 Handlebars.registerHelper({
   eq: function (v1, v2) {
     return v1 === v2;
+  },
+  toUpperCase: function(value) {
+    return value.substr(0,1).toUpperCase() + value.substr(1);
   }
 });
 

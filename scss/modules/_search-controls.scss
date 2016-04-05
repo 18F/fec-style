@@ -28,8 +28,8 @@
   text-align: center;
   width: 100%;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     background-color: $gray;
     content: '';
     display: block;
@@ -39,11 +39,11 @@
     top: 1rem;
   }
 
-  &:before {
+  &::before {
     left: 0;
   }
 
-  &:after {
+  &::after {
     right: 0;
   }
 
@@ -105,18 +105,18 @@
     margin: 5.5rem 0;
     text-align: center;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       height: 6.5rem;
       left: 50%;
       width: 1px;
     }
 
-    &:before {
+    &::before {
       top: -6.5rem;
     }
 
-    &:after {
+    &::after {
       top: auto;
       bottom: -6.5rem;
     }

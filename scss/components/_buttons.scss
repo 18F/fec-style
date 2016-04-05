@@ -442,6 +442,12 @@
   width: 4rem;
 }
 
+.button--close--neutral {
+  @include u-background-image('../img/i-x--neutral');
+  height: 4rem;
+  width: 4rem;
+}
+
 .button--close--primary-contrast {
   @include u-background-image('../img/i-x--primary-contrast');
   height: 4rem;
@@ -468,4 +474,48 @@
   display: block;
   height: 2rem;
   width: 2rem;
+}
+
+.button--export {
+  @include u-background-image('../img/i-export--primary', 1rem .5rem);
+  background-size: 2rem;
+  padding-left: 4rem;
+}
+
+.button--download {
+  @include u-background-image('../img/i-download--primary', 1rem 1rem);
+  padding-left: 3rem;
+}
+
+.button--subscribe {
+  @include u-background-image('../img/i-subscribe--primary', 1rem .8rem);
+  padding-left: 3rem;
+}
+
+.button--calendar {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  padding-left: 4rem;
+  padding-right: 6rem;
+}
+
+.button--calendar--mini {
+  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  max-width: 7.4rem;
+  padding-left: 5rem;
+}
+
+.button--cal {
+  @include u-background-image('../img/i-cal--primary', 1rem .7rem);
+  background-size: 1.5rem;
+  height: 3.4rem;
+  padding-left: 3rem;
+  width: 9rem;
+}
+
+.button--list {
+  @include u-background-image('../img/i-table--primary', 1rem 1rem);
+  background-size: 1.5rem;
+  height: 3.4rem;
+  padding-left: 3rem;
+  width: 9rem;
 }

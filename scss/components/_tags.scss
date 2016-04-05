@@ -11,13 +11,15 @@
 
 .tags__title__text {
   color: $inverse;
+  display: inline-block;
+  margin: 4px .5rem;
 }
 
 .tags {
-  float: left;
+  width: 100%;
 }
 
-.tag  {
+.tag {
   display: inline-block;
   background-color: $neutral;
   border-radius: 4px;

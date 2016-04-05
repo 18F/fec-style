@@ -310,7 +310,7 @@
     padding-right: $width + 2rem;
   }
 
-  &:after {
+  &::after {
     @include u-background-image($image);
     background-size: contain;
     content: '';

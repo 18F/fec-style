@@ -27,7 +27,7 @@ describe('filter tags', function() {
 
   describe('constructor()', function() {
     it('creates elements', function() {
-      expect(this.tagList.$list.find('li').length).to.equal(0);
+      expect(this.tagList.$list.find('li').length).to.equal(1);
       expect(this.tagList.$title.text()).to.equal('tags');
     });
   });
