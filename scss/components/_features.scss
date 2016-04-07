@@ -35,6 +35,10 @@
 .feature {
   font-family: $sans-serif;
   padding-top: 2rem;
+
+  p {
+    letter-spacing: -.3px;
+  }
 }
 
 .feature__title {
