@@ -62,7 +62,7 @@ Feedback.prototype.submit = function(e) {
   if (!_.some(_.values(data))) {
     var message =
       '<h2 class="feedback__title">Input required</h2>' +
-      '<p>To submit feedback, please fill out at least one field.</p>';
+      '<p>Please fill out at least one field.</p>';
     var buttonText = 'Try again';
     this.message(message, buttonText, 'error');
     return;
