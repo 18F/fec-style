@@ -16,8 +16,20 @@
 //
 // Styleguide components.form-styles.selects
 
-.select--neutral {
-  background-color: $neutral;
+.select--alt {
+  @extend .button--alt;
+}
+
+.select--alt-primary {
+  @extend .button--alt-primary;
+  background-image: url('../img/i-down--inverse.png');
+  background-image: url('../img/i-down--inverse.svg');
+}
+
+.select--alt-secondary {
+  @extend .button--secondary;
+  background-image: url('../img/i-down--inverse.png');
+  background-image: url('../img/i-down--inverse.svg');
 }
 
 // Labels

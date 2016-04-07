@@ -59,11 +59,13 @@ Dropdown.prototype.show = function() {
   this.$panel.attr('aria-hidden', 'false');
   this.$panel.perfectScrollbar({suppressScrollX: true});
   this.$panel.find('input[type="checkbox"]:first').focus();
+  this.$button.addClass('is-active');
   this.isOpen = true;
 };
 
 Dropdown.prototype.hide = function() {
   this.$panel.attr('aria-hidden', 'true');
+  this.$button.removeClass('is-active');
   this.isOpen = false;
 };
 

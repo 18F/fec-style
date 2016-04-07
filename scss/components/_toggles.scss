@@ -14,26 +14,18 @@
   }
 
   input:checked {
-    & + .button--primary {
-      background-color: $navy;
-      border: 2px solid $primary-contrast;
-      color: $inverse;
+    & + .button--alt {
+      @extend .button--alt.is-active;
     }
 
-    & + .button--secondary {
+    & + .button--alt--primary {
       background-color: $deep-red;
       border: 2px solid $secondary-contrast;
       color: $inverse;
     }
 
-    & + .button--neutral {
+    & + .button--alt--secondary {
       background-color: $gray-dark;
-      border: 2px solid $primary;
-      color: $inverse;
-    }
-
-    & + .button--empty {
-      background-color: $primary;
       border: 2px solid $primary;
       color: $inverse;
     }
@@ -70,7 +62,6 @@
     border-radius: 0;
     display: block;
     font-weight: normal;
-    margin-right: 1px;
   }
 }
 
@@ -180,6 +171,15 @@
       .button {
         border-radius: 0 4px 4px 0;
         margin-right: 0;
+      }
+    }
+
+    .button {
+      margin-right: -2px;
+
+      &.is-active {
+        margin-right: 0;
+        margin-left: 2px;
       }
     }
   }

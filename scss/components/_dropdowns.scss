@@ -63,7 +63,9 @@
   position: absolute;
   min-width: 100%;
   background: $inverse;
-  border: 2px solid $primary;
+  border: 2px solid $gray-dark;
+  border-top: none;
+  margin-top: -1px;
   max-height: 30rem;
   overflow: hidden;
   text-align: left;
@@ -71,7 +73,7 @@
   z-index: 999;
 
   .dropdown__value {
-    border-bottom: 1px solid $primary;
+    border-bottom: 1px solid $gray-dark;
     margin: 0;
     padding: .5rem 1rem;
     white-space: nowrap;
@@ -142,11 +144,11 @@
   position: absolute;
   background: $gray-light;
   width: 4px;
-  border-left: 1px solid $primary;
+  border-left: 1px solid $gray-dark;
 }
 
 .ps-scrollbar-y {
   position: absolute;
   width: 4px;
-  background: $primary;
+  background: $gray-dark;
 }

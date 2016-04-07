@@ -44,7 +44,7 @@ select[multiple=multiple],
 textarea,
 select {
   background-color: $inverse;
-  border-color: $gray-dark;
+  border-color: $gray;
   border-width: 2px;
   border-style: solid;
   border-radius: 4px;
@@ -66,11 +66,14 @@ select {
 select {
   @include appearance(none);
   width: auto;
+  background-color: transparent;
   background-image: url('../img/i-down--primary.png');
   background-image: url('../img/i-down--primary.svg');
   background-repeat: no-repeat;
   background-position: 90% 50%;
   background-size: 12px;
+  color: $base;
+  border: 2px solid $gray;
   padding: .6rem 3rem .6rem 1rem;
   white-space: nowrap;
   overflow: hidden;

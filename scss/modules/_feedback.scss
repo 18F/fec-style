@@ -2,8 +2,7 @@
 
 .feedback {
   @include u-font-color($inverse);
-  @include u-form-color($navy, $primary-contrast, $gray-lightest, 'primary', $primary-contrast);
-  background-color: $navy;
+  background-color: $base;
   bottom: .5rem;
   display: block;
   left: .5rem;
@@ -21,6 +20,7 @@
   textarea {
     height: 7rem;
     margin-bottom: 2rem;
+    border-color: $inverse;
 
     &:last-of-type {
       margin-bottom: 1rem;
@@ -67,6 +67,7 @@
 
 .feedback__toggle {
   bottom: 0;
+  border-radius: 2px 2px 0 0;
   position: fixed;
   right: 4rem;
   z-index: $z-feedback;
