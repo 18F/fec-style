@@ -35,6 +35,8 @@ Unknown tasks or dependencies that need investigation
 - When a pull request is ready for review, label it `plz-review`. 
 - Include a summary of all work and changes.
 - Use `cc @username` to notify a specific team member to review a pull request.
+- Update the styleguide documentation, include a screenshot if applicable.
+- Include a screenshot of the new/updated styles in context (“in the wild”).
 
 ## 18F team processes
 * Use PEP8 as the coding standard for Python, but don't worry about fitting lines within 79 characters.
