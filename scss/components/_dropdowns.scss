@@ -52,6 +52,10 @@
     padding: 1rem .5rem 1rem 1.5rem;
     right: .5rem;
   }
+
+  & + .dropdown__panel {
+    border-top: 2px solid $gray-dark;
+  }
 }
 
 .dropdown__value {
@@ -79,7 +83,7 @@
     white-space: nowrap;
 
     &:hover {
-      background-color: $gray-light;
+      background-color: $gray-medium;
       cursor: pointer;
     }
 
@@ -89,7 +93,7 @@
   }
 
   input:focus + .dropdown__value {
-    background-color: $gray-light;
+    background-color: $gray-medium;
   }
 
   .dropdown__item:last-of-type {
@@ -142,7 +146,7 @@
 
 .ps-scrollbar-y-rail {
   position: absolute;
-  background: $gray-light;
+  background: $gray-medium;
   width: 4px;
   border-left: 1px solid $gray-dark;
 }

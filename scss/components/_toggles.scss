@@ -100,7 +100,6 @@
     border-radius: 0;
     display: block;
     font-weight: normal;
-    margin-right: 1px;
 
     &:first-of-type {
       border-radius: 4px 4px 0 0;
@@ -109,30 +108,6 @@
     &:last-of-type {
       border-radius: 0 0 4px 4px;
     }
-  }
-
-  .is-active.button--primary {
-    background-color: $navy;
-    border: 2px solid $primary-contrast;
-    color: $inverse;
-  }
-
-  .is-active.button--secondary {
-    background-color: $deep-red;
-    border: 2px solid $secondary-contrast;
-    color: $inverse;
-  }
-
-  .is-active.button--neutral {
-    background-color: $gray-dark;
-    border: 2px solid $primary;
-    color: $inverse;
-  }
-
-  .is-active.button--empty {
-    background-color: $primary;
-    border: 2px solid $primary;
-    color: $inverse;
   }
 }
 

@@ -46,7 +46,7 @@
   color: $base;
 
   &:hover:not(.is-disabled) {
-    background-color: $gray-light;
+    background-color: $gray-medium;
   }
 
   &:active:not(.is-disabled),
@@ -79,16 +79,16 @@
   color: $base;
 
   &:hover:not(.is-active) {
-    border-color: $gray-light;
+    border-color: $gray-medium;
   }
 
   // &:hover:not(.is-disabled) {
-  //   border-color: $gray-light;
+  //   border-color: $gray-medium;
   // }
 
   &:active:not(.is-disabled),
   &.is-active {
-    background-color: $gray-light;
+    background-color: $gray-medium;
     border-color: $gray-dark;
     color: $base;
   }
@@ -131,7 +131,7 @@
   color: $inverse;
 
   &:hover:not(.is-disabled) {
-    border-color: $gray-light;
+    border-color: $gray-medium;
   }
 
   &:active:not(.is-disabled),
@@ -183,7 +183,7 @@
   color: $inverse;
 
   &:hover:not(.is-disabled) {
-    border-color: $gray-light;
+    border-color: $gray-medium;
   }
 
   &:active:not(.is-disabled),
