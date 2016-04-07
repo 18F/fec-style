@@ -1,24 +1,24 @@
 // Icons
 //
+// Simple classes to set the size and spacing of <img> icons
+//
+// .icon                  - Sets size of an icon img
+// .icon--complex         - Sets size of complex icons
+// .icon--inline--right   - Vertically centering and adding slight margin to inline icons
+// .icon--inline--left    - Vertically centering and adding slight margin to inline icons
+//
 // Styleguide components.icons
-
-.icon--complex {
-  max-height: 6rem;
-  max-width: 6rem;
-}
 
 .icon {
   display: block;
   height: 2rem;
   width: 2rem;
-
-  &.arrow--right {
-    @include u-background-image('i-right--primary');
-  }
 }
 
-
-// Classes for vertically centering and adding slight margin to inline icons
+.icon--complex {
+  max-height: 6rem;
+  max-width: 6rem;
+}
 
 .icon--inline--right {
   margin-left: 1rem;

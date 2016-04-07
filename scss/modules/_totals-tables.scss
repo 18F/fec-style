@@ -3,12 +3,13 @@
 // Simple tables, often paired with accordion components to expand and collapse.
 // This component is focused on the styling.
 //
-// Styleguide components.totals-tables
+// Styleguide modules.totals-tables
 
 
 .totals-table {
   font-family: $sans-serif;
   font-size: 1.6rem;
+  letter-spacing: -.3px;
 }
 
 .totals-table__row {

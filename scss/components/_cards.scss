@@ -1,19 +1,15 @@
 // Cards
 //
-// Small boxes that contain content
-// Default layout is image stacked on text.
+// Small boxes that contain content. Default layout is image stacked on text.
 // All sizing is handled by using .grid and .grid__item,
 // either as containers or on the cards themselves
 //
-// Markup:
-// <div class="container">
-//   <aside class="card {{modifier_class}}">
-//    <img alt="" src="../img/i-calendar--primary.svg" class="icon--complex card__image">
-//    <div class="card__content">
-//      <a href="#">Take this action</a>
-//    </div>
-//  </aside>
-// </div>
+// .card                        - Base style
+// .card--horizontal            - Horizontal layout
+// .card--full-bleed            - Image has no padding
+// .card--wide                  - Wide cards, used on data landing page. Big image container with a background
+//
+// Markup: cards.hbs
 //
 // Styleguide components.cards
 
@@ -25,6 +21,33 @@
   padding: 2rem;
   text-align: center;
   width: 100%;
+}
+
+.card--primary {
+  @include u-bg--primary();
+  @include u-font-color($gray-lightest);
+  font-weight: bold;
+}
+
+.card--secondary {
+  @include u-bg--secondary();
+  @include u-font-color($gray-lightest);
+  font-weight: bold;
+}
+
+.card--secondary-contrast {
+  @include u-font-color($inverse);
+  background-color: $bright-red;
+}
+
+.card--neutral {
+  background-color: $gray;
+  @include u-font-color($base);
+
+  .card__image__container {
+    @include clearfix();
+    background-color: $primary;
+  }
 }
 
 .card__image-link {
@@ -45,9 +68,6 @@
 .card__content--small {
   font-size: 1.4rem;
 }
-
-// Horizontal cards
-// Image on the left, content on the right
 
 .card--horizontal {
   font-size: 1.4rem;
@@ -163,73 +183,8 @@
 
 // For lists of links, such as on data landing page cards
 .card__links {
+  letter-spacing: -.3px;
   font-family: $sans-serif;
   font-weight: normal;
   margin-bottom: 2rem;
-}
-
-// Primary cards
-//
-// .card--horizontal      - Image next to text
-// .card--wide            - Card takes up half of grid
-//
-// Markup:
-// <div class="container">
-//   <aside class="card card--primary {{modifier_class}}">
-//    <img alt="" src="../img/i-register--neutral.svg" class="icon--complex card__image">
-//    <div class="card__content">
-//      <a href="#">Take this action</a>
-//    </div>
-//  </aside>
-// </div>
-//
-// Styleguide components.cards.primary
-
-.card--primary {
-  @include u-bg--primary();
-  @include u-font-color($gray-lightest);
-  font-weight: bold;
-}
-
-
-// Secondary cards
-//
-// Different styles of cards require different icons
-//
-// .card--horizontal      - Image next to text
-// .card--wide            - Card takes up half of grid
-//
-// Markup:
-// <div class="container">
-//   <aside class="card card--secondary {{modifier_class}}">
-//    <img alt="" src="../img/i-register--neutral.svg" class="icon--complex card__image">
-//    <div class="card__content">
-//      <a href="#">Take this action</a>
-//    </div>
-//  </aside>
-// </div>
-//
-// Styleguide components.cards.alternate-colors
-
-.card--secondary {
-  @include u-bg--secondary();
-  @include u-font-color($gray-lightest);
-  font-weight: bold;
-}
-
-.card--secondary-contrast {
-  @include u-font-color($inverse);
-  background-color: $bright-red;
-}
-
-// Neutral cards
-
-.card--neutral {
-  background-color: $gray;
-  @include u-font-color($base);
-
-  .card__image__container {
-    @include clearfix();
-    background-color: $primary;
-  }
 }

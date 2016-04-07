@@ -22,6 +22,8 @@
     "test-single": "karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
+    "aria-accordion": "0.1.0",
+    "glossary-panel": "0.1.2",
     "eventemitter2": "0.4.14",
     "jquery": "2.1.4",
     "moment": "2.10.3",

@@ -2,6 +2,8 @@
 //
 // Full-width sections for promoting specific features
 //
+// Markup: billboard.hbs
+//
 // Styleguide components.billboards
 
 .billboard {
@@ -29,5 +31,5 @@
       @include span-columns(8);
       vertical-align: middle;
     }
-  }  
+  }
 }

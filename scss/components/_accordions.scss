@@ -1,12 +1,9 @@
 // Accordions
 //
-// Markup:
-// <div class="js-accordion">
-//   <button class="js-accordion-trigger accordion__button">Accordion button</button>
-//   <div class="accordion__content">
-//     <p>Accordion content</p>
-//   </div>
-// </div>
+// .accordion--neutral         - No background, dark buttons
+// .accordion--inverse         - Dark background, light buttons
+//
+// Markup: accordions.hbs
 //
 // Styleguide components.accordions
 
@@ -17,6 +14,7 @@
   color: $base;
   font-size: 1.6rem;
   font-weight: bold;
+  letter-spacing: -.3px;
   padding: 1rem 4rem 1rem 1rem;
   text-align: left;
   width: 100%;

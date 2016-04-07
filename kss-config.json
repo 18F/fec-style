@@ -1,7 +1,8 @@
 {
   "//": "The source and destination paths are relative to this file.",
   "source": [
-    "scss"  
+    "scss",
+    "fec-template/templates"
   ],
   "destination":  "styleguide",
   "template": "fec-template",
@@ -10,5 +11,8 @@
     "css/styles.css"
   ],
   "js": [
+  ],
+  "helpers": [
+    "fec-template/helpers"
   ]
 }

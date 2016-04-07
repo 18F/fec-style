@@ -1,4 +1,10 @@
 // Downloads
+//
+// Triggered by the export button
+//
+// Markup: downloads.hbs
+//
+// Styleguide modules.downloads
 
 .downloads {
   background-color: $neutral;
@@ -56,6 +62,7 @@
 }
 
 .download__message {
+  letter-spacing: -.3px;
   font-size: 1.4rem;
   margin: 0;
 }

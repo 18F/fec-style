@@ -4,43 +4,34 @@
 //
 // Styleguide components
 
-@import 'type-styles';
-@import 'list-styles';
-@import 'form-styles';
+@import 'accordions'; // @TODO: Add inverse accordion
+@import 'billboards';
 @import 'buttons';
-@import 'toggles';
-@import 'pagination';
-@import 'page-headers';
-@import 'icons';
-@import 'grid'; // @TODO: Document
+@import 'callouts';
 @import 'cards';
-@import 'sidebar';
-@import 'hero';
-@import 'search-bar';
-@import 'results-info';
-@import 'dropdowns';
-@import 'accordions'; // @TODO: Document
-@import 'totals-tables'; // @TODO: Document & clean up
-@import 'charts'; // @TODO: Clean up
-@import 'maps'; //@TODO: Document
-@import 'boxes'; //@TODO: Document
-@import 'messages'; //@TODO: Document
-@import 'billboards'; //@TODO: Document
-@import 'features'; //@TODO: Document
+@import 'charts'; // REFACTOR
+@import 'contact-items'; // REFACTOR: https://github.com/18F/fec-style/issues/295
 @import 'cycle-select';
-@import 'callouts'; //@TODO: Document
+@import 'dropdowns';
+@import 'features';
+@import 'form-styles';
+@import 'icon-headings';
+@import 'icons';
+@import 'list-styles';
+@import 'maps'; //@TODO: Address later
+@import 'messages';
+@import 'options';
 @import 'overlay';
-@import 'icon-headings'; //@TODO: Document
-@import 'search-results'; //@TODO: Document
-@import 'search-controls'; //@TODO: Document
-@import 'widgets'; //@TODO: Document
-@import 'table-styles';  //@TODO: Document
+@import 'page-headers';
+@import 'pagination';
 @import 'richtext';
-@import 'tooltips';
-@import 'contact-items'; // @TODO: Document
-@import 'modals'; // @TODO: Document OR deprecate
-@import 'side-nav'; // @TODO: Document
-@import 'options'; // @TODO: Document
-@import 'downloads'; // @TODO: Document
-@import 'calendar'; // @TODO: Document
+@import 'search-bar';
+@import 'search-results';
+@import 'side-nav';
+@import 'sidebar';
+@import 'table-styles';
 @import 'tags';
+@import 'toggles';
+@import 'tooltips';
+@import 'type-styles';
+@import 'widgets'; // REFACTOR: https://github.com/18F/fec-style/issues/296

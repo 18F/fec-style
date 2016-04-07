@@ -1,10 +1,71 @@
+// Search results
+//
+// Components that make up the search results page
+//
+// Styleguide components.search-results
+
+// Search results: Title
+//
+// Title at the top of a list of search results
+//
+// Markup:
+// <h2 class="results__title">Results</h2>
+//
+// Styleguide components.search-results.title
+
 .results__title {
   margin: 2rem 0 1rem 0;
 }
 
+// Search results: Count
+//
+// Message notifying how many results with link to datatable
+//
+// Markup:
+// <div class="results__count message message--alert">
+//   Showing first 20 results.
+//   <a href="#">View all »</a>
+// </div>
+//
+// Styleguide components.search-results.count
+
 .results__count {
   margin-bottom: 2rem;
 }
+
+// Search results: Name search result
+//
+// Individual search result item
+//
+// Markup:
+// <div class="main__content">
+// <div class="result">
+//   <div class="result__header">
+//     <h3 class="result__title">
+//       <a title="LASTNAME, FIRSTNAME" href="#">LASTNAME, FIRSTNAME</a>
+//     </h3>
+//     <span class="result__years t-data">
+//         Election years: 2012
+//     </span>
+//   </div>
+//   <div class="row">
+//     <ul class="result__column">
+//       <li>Office sought: Senate</li>
+//       <li><span class="term" data-term="party" title="Click to define" tabindex="0">Party:</span> Some Party</li>
+//     </ul>
+//     <ul class="result__column">
+//       <li>State: PA</li>
+//       <li>District: 00</li>
+//     </ul>
+//     <div class="result__column">
+//       <span class="t-block t-bold">Principal campaign committee:</span>
+//         <a title="LASTNAME COMMITTEE" href="#">LASTNAME COMMITTEE</a>
+//     </div>
+//   </div>
+// </div>
+// </div>
+//
+// Styleguide components.search-results.name-result
 
 .result__title {
   margin-bottom: 0;
@@ -30,9 +91,6 @@
   @include clearfix();
 }
 
-.result__column {
-}
-
 .result__left {
   @include span-columns(5 of 9);
   border-right: 1px solid $gray;
@@ -45,6 +103,54 @@
 .result__related {
   padding: 1rem 0;
 }
+
+// Search results: Election result
+//
+// Used for showing results in the election search
+//
+// Markup:
+// <div class="grid grid--2-wide">
+//   <div class="grid__item">
+//     <div class="result">
+//       <h3>
+//         <span></span>
+//         <a href="#">US President</a>
+//       </h3>
+//       <div class="row">
+//         <span class="result__term">Next general election:</span>
+//         <span class="result__definition">November 4, 2016</span>
+//       </div>
+//       <div class="row">
+//         <span class="result__term">Current officeholder:</span>
+//         <a class="result__definition" href="#">OBAMA, BARACK</a>
+//         </div>
+//       <div class="row">
+//         <span class="result__term">Current candidates:</span>
+//         <a class="result__definition" href="#">View all &raquo;</a>
+//       </div>
+//     </div>
+//     <div class="result">
+//       <h3>
+//         <span></span>
+//         <a href="#">US President</a>
+//       </h3>
+//       <div class="row">
+//         <span class="result__term">Next general election:</span>
+//         <span class="result__definition">November 4, 2016</span>
+//       </div>
+//       <div class="row">
+//         <span class="result__term">Current officeholder:</span>
+//         <a class="result__definition" href="#">OBAMA, BARACK</a>
+//         </div>
+//       <div class="row">
+//         <span class="result__term">Current candidates:</span>
+//         <a class="result__definition" href="#">View all &raquo;</a>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide components.search-results.election
 
 .result__term {
   display: inline-block;

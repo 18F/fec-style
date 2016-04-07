@@ -1,9 +1,21 @@
 // Overlay
 //
 // An absolutely positioned overlay over any relatively positioned area
-// Adding .is-loading adds the loading gif
+//
+// .is-loading        - Adds the loading-state gif
+//
+// Markup:
+// <div class="overlay__container">
+//   <div class="overlay {{modifier_class}}">
+//   </div>
+// </div>
 //
 // Styleguide components.overlay
+
+.overlay__container {
+  position: relative;
+  min-height: 50rem;
+}
 
 .overlay {
   background-color: rgba($primary, .7);
@@ -21,21 +33,3 @@
   }
 }
 
-.overlay--modal {
-  z-index: $z6;
-}
-
-.overlay--neutral {
-  background-color: transparent;
-
-  &.is-loading {
-    background-image: url('../img/loading--primary.gif');
-    background-repeat: no-repeat;
-    background-position: 50% 40%;
-  }
-}
-
-.overlay__container {
-  position: relative;
-  min-height: 50rem;
-}

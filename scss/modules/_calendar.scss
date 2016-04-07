@@ -345,10 +345,12 @@
 }
 
 .cal-list {
+  letter-spacing: -.3px;
   padding-top: 2rem;
 }
 
 .cal-list__title {
+  letter-spacing: 0;
   margin: 0;
   padding-top: 2rem;
 }
@@ -513,6 +515,7 @@
 
   .cal-list__add {
     @include span-columns(2);
+    font-size: 1.4rem;
   }
 
   .cal-list__date {

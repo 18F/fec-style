@@ -3,7 +3,25 @@
 // Used for presenting a list of options, each of which is a row with main
 // content and an aside. Used on the landing_page template.
 //
+// Markup:
+// <section class="main__content--right">
+//   <div id="candidate-committees" class="option">
+//     <div class="option__content">
+//       <h3><a href="#">Candidates and candidate committees</a></h3>
+//       <p>An individual running for a seat in the House or Senate becomes a candidate when he or she raises or spends more than $5,000 in contributions or expenditures.</p>
+//       <a class="button button--neutral button--go" href="#">Get started</a>
+//     </div>
+//     <div class="option__aside">
+//       <h5 class="label">Campaign guide</h5>
+//       <a class="u-no-border" href="http://www.fec.gov/pdf/candgui.pdf">
+//         <img src="img/guide--candidates.jpg" alt="Federal Election Commission Campaign Guide: Congressional Candidates and Committees, June 2014">
+//       </a>
+//       <a class="t-sans" href="http://www.fec.gov/pdf/candgui.pdf">(PDF)</a>
+//     </div>
+//   </div>
+// </section>
 //
+// Styleguide components.options
 
 .option {
   @include clearfix();

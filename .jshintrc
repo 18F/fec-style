@@ -2,7 +2,7 @@
   "asi": false,
   "bitwise": true,
   "browser": true,
-  "camelcase": true,
+  "camelcase": false,
   "curly": true,
   "expr": true,
   "forin": true,
@@ -12,8 +12,10 @@
   "newcap": true,
   "noarg": true,
   "noempty": true,
-  "nonew": true,
+  "nonew": false,
   "predef": [
+    "window",
+    "document",
     "require",
     "module",
     "window",
@@ -26,7 +28,6 @@
     "it"
   ],
   "quotmark": true,
-  "strict": "global",
   "trailing": true,
   "undef": true,
   "unused": true

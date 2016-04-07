@@ -101,6 +101,12 @@
         </a>
       </h{{depth}}>
 
+    {{#if description}}
+      <div class="kss-description">
+        {{{description}}}
+      </div>
+    {{/if}}
+
     {{#if parameters}}
       <ul class="kss-parameters">
       {{#eachParameter}}
@@ -111,27 +117,19 @@
       {{/eachParameter}}
       </ul>
     {{/if}}
-
-    {{#if description}}
-      <div class="kss-description">
-        {{{description}}}
-      </div>
-    {{/if}}
     </div>
 
     {{#if markup}}
       <div class="kss-modifier__wrapper">
         <div class="kss-modifier__heading kss-style">
           Example{{#if modifiers}}s{{/if}}
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
         </div>
-      {{#if modifiers}}
-        <div class="kss-modifier__default-name kss-style">
-          Default styling
-        </div>
-      {{/if}}
-        <div class="kss-modifier__example">
+      {{#unless modifiers}}
+        <div class="kss-modifier__example clearfix">
           {{{markup}}}
         </div>
+      {{/unless}}
       {{#eachModifier}}
         <div class="kss-modifier__name kss-style">
           <pre>{{name}}</pre>
@@ -139,7 +137,7 @@
         <div class="kss-modifier__description kss-style">
           {{{description}}}
         </div>
-        <div class="kss-modifier__example">
+        <div class="kss-modifier__example clearfix">
           {{{markup}}}
         </div>
       {{/eachModifier}}

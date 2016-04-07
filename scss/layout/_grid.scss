@@ -1,8 +1,27 @@
 // Grids
 //
-// For displaying grids of items, such as cards, callouts, images, etc.
+// Utility class for displaying grids of items, such as cards, callouts, images, etc.
 //
-// Styleguide components.grids
+// .grid--2-wide        - 2 to a row
+// .grid--4-wide        - 4 to a row
+//
+// Markup:
+// <div class="grid sg-grid-example {{modifier_class}}">
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+// </div>
+//
+// Styleguide layout.grids
 
 .grid {
   @include clearfix();

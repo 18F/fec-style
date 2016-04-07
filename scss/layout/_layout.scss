@@ -7,6 +7,7 @@
 // Styleguide layout
 
 @import 'slabs';
+@import 'grid';
 
 // Layout elements
 //
@@ -38,7 +39,6 @@
 
 .main {
   @include clearfix();
-  color: $primary;
   padding-bottom: 2rem;
   padding-top: 2rem;
   position: relative;
@@ -128,6 +128,7 @@
 .u-padding--right {
   padding-right: 2rem;
 }
+
 // Class applied to candidate and committee pages with tabs
 .tab-interface {
   overflow-x: hidden;

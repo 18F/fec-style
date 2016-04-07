@@ -6,6 +6,14 @@
 
 // Selects
 //
+// .select--neutral         - Neutral background
+//
+// Markup:
+// <select class="select--neutral">
+//  <option>Option 1</option>
+//  <option>Option 2</option>
+// </select>
+//
 // Styleguide components.form-styles.selects
 
 .select--neutral {
@@ -35,9 +43,12 @@
   font-style: italic;
   margin-bottom: .5rem;
 }
+
 // Combo
 //
 // On medium and up, displays input and button right next to each other. On small screens they're stacked.
+//
+// .combo         - Base styling
 //
 // Markup:
 // <div class="slab slab--primary">
@@ -109,7 +120,11 @@
 }
 
 // Date range inputs
+//
 // Combination of radio buttons and text inputs for selecting date ranges
+// Adds padding to the left of the input to line up with the radio button labels
+//
+// Styleguide components.form-styles.date-range-input
 
 .date-range-input {
   padding-left: 2.5rem;
