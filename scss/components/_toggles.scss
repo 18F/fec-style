@@ -37,14 +37,6 @@
       font-weight: bold;
       margin-bottom: 0;
     }
-
-    & + .button--map {
-      @include u-icon-button('i-map--cream', transparent)
-    }
-
-    & + .button--table {
-      @include u-icon-button('i-table--cream', transparent, left, 2.5rem)
-    }
   }
 
   label {
