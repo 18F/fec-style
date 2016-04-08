@@ -39,11 +39,12 @@
   border: 2px solid $gray;
   color: $base;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not([disabled]) {
     border-color: $gray-medium;
+    background-color: transparent;
   }
 
-  &:active:not(.is-disabled),
+  &:active:not(.is-disabled):not([disabled]),
   &.is-active {
     background-color: $gray-medium;
     border-color: $gray-dark;
@@ -57,11 +58,12 @@
   border: 2px solid $inverse;
   color: $inverse;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not([disabled]) {
     border-color: $gray-medium;
+    background-color: transparent;
   }
 
-  &:active:not(.is-disabled),
+  &:active:not(.is-disabled):not([disabled]),
   &.is-active {
     background-color: rgba($inverse, .3);
     border-color: $primary-contrast;
@@ -79,11 +81,12 @@
   border: 2px solid $inverse;
   color: $inverse;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not([disabled]) {
     border-color: $gray-medium;
+    background-color: transparent;
   }
 
-  &:active:not(.is-disabled),
+  &:active:not(.is-disabled):not([disabled]),
   &.is-active {
     background-color: rgba($inverse, .3);
     border-color: $secondary-contrast;

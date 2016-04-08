@@ -368,6 +368,10 @@
 .button--go {
   @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
 
+  &.button--cta {
+    @include u-icon-button('i-right-2--inverse', transparent, right, 1rem, 1rem);
+  }
+
   &.button--cta-secondary {
     @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
   }
@@ -400,12 +404,12 @@
 }
 
 .button--download {
-  @include u-background-image('../img/i-download--secondary', 1rem 1rem);
+  @include u-background-image('../img/i-download--inverse', 1rem 1rem);
   padding-left: 3rem;
 }
 
 .button--subscribe {
-  @include u-background-image('../img/i-subscribe--secondary', 1rem .8rem);
+  @include u-background-image('../img/i-subscribe--inverse', 1rem .8rem);
   padding-left: 3rem;
 }
 

@@ -82,6 +82,10 @@ select {
   &::-ms-expand {
     display: none;
   }
+
+  &:hover:not([disabled]) {
+    background-color: $gray-medium;
+  }
 }
 
 textarea {
