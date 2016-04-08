@@ -69,7 +69,7 @@ $colors: (
 
 .sg-swatch.inverse,
 .sg-swatch.neutral {
-  &:after {
+  &::after {
     color: $navy;
   }
 }
