@@ -20,6 +20,10 @@
       color: $base;
       font-weight: bold;
       margin-bottom: 0;
+
+      &:hover {
+        border-color: $gray-dark;
+      }
     }
 
     & + .button--alt--primary {
@@ -28,6 +32,10 @@
       color: $inverse;
       font-weight: bold;
       margin-bottom: 0;
+
+      &:hover {
+        border-color: $primary-contrast;
+      }
     }
 
     & + .button--alt--secondary {
@@ -36,6 +44,10 @@
       color: $inverse;
       font-weight: bold;
       margin-bottom: 0;
+
+      &:hover {
+        border-color: $secondary-contrast;
+      }
     }
   }
 
