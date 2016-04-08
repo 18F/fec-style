@@ -1,0 +1,10 @@
+{{#renderChild 'button--alt' 'button--alt-primary' 'button--alt-secondary'}}
+  <div class="slab
+    {{#if (eq className 'button--alt-primary')}}slab--primary{{/if}}
+    {{#if (eq className 'button--alt-secondary')}}slab--secondary{{/if}}" style="padding: 2rem">
+    <select class="{{modifier_class}}">
+     <option>Alt select</option>
+     <option>Option 2</option>
+    </select>
+  </div>
+{{/renderChild}}

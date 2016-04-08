@@ -45,7 +45,7 @@
   background-color: $gray;
   color: $base;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     background-color: $gray-medium;
   }
 
@@ -61,7 +61,7 @@
   background-color: $primary;
   color: $inverse;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     background-color: $navy;
   }
 
@@ -78,13 +78,9 @@
   border: 2px solid $gray;
   color: $base;
 
-  &:hover:not(.is-active) {
+  &:hover:not(.is-disabled):not(.is-active) {
     border-color: $gray-medium;
   }
-
-  // &:hover:not(.is-disabled) {
-  //   border-color: $gray-medium;
-  // }
 
   &:active:not(.is-disabled),
   &.is-active {
@@ -114,7 +110,7 @@
   background-color: $primary-contrast;
   color: $primary;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     background-color: lighten($primary-contrast, 5%);
   }
 
@@ -130,7 +126,7 @@
   border: 2px solid $inverse;
   color: $inverse;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     border-color: $gray-medium;
   }
 
@@ -166,7 +162,7 @@
   background-color: $secondary-contrast;
   color: $secondary;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     background-color: lighten($secondary-contrast, 5%);
   }
 
@@ -182,7 +178,7 @@
   border: 2px solid $inverse;
   color: $inverse;
 
-  &:hover:not(.is-disabled) {
+  &:hover:not(.is-disabled):not(.is-active) {
     border-color: $gray-medium;
   }
 
