@@ -27,9 +27,13 @@
 }
 
 .select--alt-secondary {
-  @extend .button--secondary;
+  @extend .button--alt-secondary;
   background-image: url('../img/i-down--inverse.png');
   background-image: url('../img/i-down--inverse.svg');
+}
+
+.select--full {
+  width: 100%;
 }
 
 // Labels
@@ -67,7 +71,7 @@
 //   <div class="container">
 //   <div class="combo">
 //     <input type="text" class="combo__input">
-//     <button class="button--primary combo__button">Go</button>
+//     <button class="button--standard combo__button">Go</button>
 //   </div>
 // </div>
 // </div>
@@ -112,7 +116,7 @@
 //  <div class="row">
 //  <input class="form-element--inline" type="text">
 //  <select class="form-element--inline" ><option>Select an option</option></select>
-//  <button class="form-element--inline button--primary">Submit</button>
+//  <button class="form-element--inline button--standard">Submit</button>
 // </div>
 //
 // Styleguide components.form-styles.inline-form

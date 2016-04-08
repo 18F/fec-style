@@ -15,19 +15,27 @@
 
   input:checked {
     & + .button--alt {
-      @extend .button--alt.is-active;
+      background-color: $gray-medium;
+      border-color: $gray-dark;
+      color: $base;
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     & + .button--alt--primary {
-      background-color: $deep-red;
-      border: 2px solid $secondary-contrast;
+      background-color: rgba($inverse, .3);
+      border-color: $primary-contrast;
       color: $inverse;
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     & + .button--alt--secondary {
-      background-color: $gray-dark;
-      border: 2px solid $primary;
+      background-color: rgba($inverse, .3);
+      border-color: $secondary-contrast;
       color: $inverse;
+      font-weight: bold;
+      margin-bottom: 0;
     }
 
     & + .button--map {
@@ -41,11 +49,12 @@
 
   label {
     cursor: pointer;
-    margin-bottom: 2px;
   }
 
   label:first-of-type {
-    .button {
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary  {
       border-radius: 4px 4px 0 0;
     }
   }
@@ -53,15 +62,20 @@
   label:last-of-type {
     margin-bottom: 0;
 
-    .button {
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary {
       border-radius: 0 0 4px 4px;
     }
   }
 
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     border-radius: 0;
     display: block;
     font-weight: normal;
+    margin-bottom: -2px;
   }
 }
 
@@ -89,14 +103,18 @@
     margin: .5rem 1rem 0 0;
   }
 
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     margin-right: -1px;
   }
 }
 
 // If the toggle group is actually buttons and not radios
 .toggles--buttons {
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     border-radius: 0;
     display: block;
     font-weight: normal;
@@ -130,26 +148,40 @@
 // - Display toggles in a row
 
 @include media($med) {
-  .toggles {
+  .toggles:not(.toggles--vertical) {
     label {
       float: left;
       margin-top: 0;
     }
 
     label:first-of-type {
-      .button {
+      .button--alt,
+      .button--alt-primary,
+      .button--alt-secondary {
         border-radius: 4px 0 0 4px;
       }
     }
 
     label:last-of-type {
-      .button {
+      .button--alt,
+      .button--alt-primary,
+      .button--alt-secondary {
         border-radius: 0 4px 4px 0;
         margin-right: 0;
       }
     }
 
-    .button {
+    input:checked {
+      & + .button--alt,
+      & + .button--alt-primary,
+      & + .button--alt-secondary {
+        margin-right: 0;
+      }
+    }
+
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary {
       margin-right: -2px;
 
       &.is-active {

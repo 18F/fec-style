@@ -34,13 +34,13 @@
     top: .5rem;
   }
 
-  &.button--secondary:after {
+  &.button--alt-secondary:after {
     background-image: url('../img/i-down--secondary.png');
     background-image: url('../img/i-down--secondary.svg');
     border-left: 1px solid $secondary;
   }
 
-  &.button--primary-contrast:after {
+  &.button--alt-primary:after {
     background-image: url('../img/i-down--primary-contrast.png');
     background-image: url('../img/i-down--primary-contrast.svg');
     border-left: 1px solid $primary-contrast;

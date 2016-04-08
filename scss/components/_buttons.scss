@@ -306,7 +306,7 @@
 // .button--calendar--mini          - Mini add calendar button
 //
 // Markup:
-// <button class="dropdown__button button--neutral">Add to calendar</button>
+// <button class="dropdown__button button--alt">Add to calendar</button>
 //
 // Styleguide components.buttons.calendar-dropdown-buttons
 
@@ -326,7 +326,7 @@
 // Buttons: Icon and text buttons
 //
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
-// Defaults to the styles for button--neutral and button--primary, with overrides for other classes
+// Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
 // .button--previous    - Go back
 // .button--next        - Go next
