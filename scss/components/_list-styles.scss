@@ -88,9 +88,9 @@
 //
 // Markup:
 // <ul class="list--buttons">
-// <li><button class="button--neutral">Button</button></li>
-// <li><button class="button--neutral">Button</button></li>
-// <li><button class="button--neutral">Button</button></li>
+// <li><button class="button--standard">Button</button></li>
+// <li><button class="button--cta">Button</button></li>
+// <li><button class="button--alt">Button</button></li>
 // </ul>
 //
 // Styleguide components.list-styles.button-lists
@@ -109,9 +109,9 @@
     }
   }
 
-  .button--neutral,
-  .button--primary,
-  .button--secondary {
+  .button--standard,
+  .button--cta,
+  .button--alt {
     display: block;
     margin-bottom: .5rem;
     text-align: left;
@@ -123,9 +123,9 @@
       width: auto;
     }
 
-    .button--neutral,
-    .button--primary,
-    .button--secondary {
+    .button--standard,
+    .button--cta,
+    .button--alt {
       display: inline-block;
       margin-bottom: 0;
       text-align: center;

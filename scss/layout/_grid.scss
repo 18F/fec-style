@@ -3,6 +3,7 @@
 // Utility class for displaying grids of items, such as cards, callouts, images, etc.
 //
 // .grid--2-wide        - 2 to a row
+// .grid--3-wide        - 3 to a row
 // .grid--4-wide        - 4 to a row
 //
 // Markup:
@@ -35,6 +36,7 @@
 // BREAKPOINT: MEDIUM
 @include media($med) {
   .grid--2-wide,
+  .grid--3-wide,
   .grid--4-wide {
     .grid__item {
       @include span-columns(6);
@@ -48,6 +50,21 @@
 
 // BREAKPOINT: LARGE
 @include media($lg) {
+  .grid--3-wide {
+    .grid__item {
+      @include span-columns(4);
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        margin-right: flex-gutter();
+      }
+
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
+  }
+
   .grid--4-wide {
     .grid__item {
       @include span-columns(3);

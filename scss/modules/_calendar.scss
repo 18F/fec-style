@@ -46,14 +46,6 @@
     text-indent: -9999px;
     padding: .8rem 1rem;
 
-    &:first-of-type {
-      border-radius: 4px 0 0 4px;
-    }
-
-    &:last-of-type {
-      border-radius: 0 4px 4px 0;
-    }
-
     &::after {
       left: .5rem;
       right: .5rem;
@@ -61,9 +53,16 @@
   }
 }
 
-.fc-state-active.button--neutral {
-  background-color: $gray-dark;
-  border: 2px solid $primary;
+.fc-prev-button {
+  border-radius: 2px 0 0 2px;
+}
+
+.fc-next-button {
+  border-radius: 0 2px 2px 0;
+}
+
+.fc-state-active.button--alt {
+  @extend .button--alt.is-active;
 }
 
 .fc-right {

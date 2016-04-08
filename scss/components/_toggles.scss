@@ -14,46 +14,51 @@
   }
 
   input:checked {
-    & + .button--primary {
-      background-color: $navy;
-      border: 2px solid $primary-contrast;
+    & + .button--alt {
+      background-color: $gray-medium;
+      border-color: $gray-dark;
+      color: $base;
+      font-weight: bold;
+      margin-bottom: 0;
+
+      &:hover {
+        border-color: $gray-dark;
+      }
+    }
+
+    & + .button--alt--primary {
+      background-color: rgba($inverse, .3);
+      border-color: $primary-contrast;
       color: $inverse;
+      font-weight: bold;
+      margin-bottom: 0;
+
+      &:hover {
+        border-color: $primary-contrast;
+      }
     }
 
-    & + .button--secondary {
-      background-color: $deep-red;
-      border: 2px solid $secondary-contrast;
+    & + .button--alt--secondary {
+      background-color: rgba($inverse, .3);
+      border-color: $secondary-contrast;
       color: $inverse;
-    }
+      font-weight: bold;
+      margin-bottom: 0;
 
-    & + .button--neutral {
-      background-color: $gray-dark;
-      border: 2px solid $primary;
-      color: $inverse;
-    }
-
-    & + .button--empty {
-      background-color: $primary;
-      border: 2px solid $primary;
-      color: $inverse;
-    }
-
-    & + .button--map {
-      @include u-icon-button('i-map--cream', transparent)
-    }
-
-    & + .button--table {
-      @include u-icon-button('i-table--cream', transparent, left, 2.5rem)
+      &:hover {
+        border-color: $secondary-contrast;
+      }
     }
   }
 
   label {
     cursor: pointer;
-    margin-bottom: 2px;
   }
 
   label:first-of-type {
-    .button {
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary  {
       border-radius: 4px 4px 0 0;
     }
   }
@@ -61,16 +66,20 @@
   label:last-of-type {
     margin-bottom: 0;
 
-    .button {
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary {
       border-radius: 0 0 4px 4px;
     }
   }
 
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     border-radius: 0;
     display: block;
     font-weight: normal;
-    margin-right: 1px;
+    margin-bottom: -2px;
   }
 }
 
@@ -98,18 +107,21 @@
     margin: .5rem 1rem 0 0;
   }
 
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     margin-right: -1px;
   }
 }
 
 // If the toggle group is actually buttons and not radios
 .toggles--buttons {
-  .button {
+  .button--alt,
+  .button--alt-primary,
+  .button--alt-secondary {
     border-radius: 0;
     display: block;
     font-weight: normal;
-    margin-right: 1px;
 
     &:first-of-type {
       border-radius: 4px 4px 0 0;
@@ -118,30 +130,6 @@
     &:last-of-type {
       border-radius: 0 0 4px 4px;
     }
-  }
-
-  .is-active.button--primary {
-    background-color: $navy;
-    border: 2px solid $primary-contrast;
-    color: $inverse;
-  }
-
-  .is-active.button--secondary {
-    background-color: $deep-red;
-    border: 2px solid $secondary-contrast;
-    color: $inverse;
-  }
-
-  .is-active.button--neutral {
-    background-color: $gray-dark;
-    border: 2px solid $primary;
-    color: $inverse;
-  }
-
-  .is-active.button--empty {
-    background-color: $primary;
-    border: 2px solid $primary;
-    color: $inverse;
   }
 }
 
@@ -164,22 +152,45 @@
 // - Display toggles in a row
 
 @include media($med) {
-  .toggles {
+  .toggles:not(.toggles--vertical) {
     label {
       float: left;
       margin-top: 0;
     }
 
     label:first-of-type {
-      .button {
+      .button--alt,
+      .button--alt-primary,
+      .button--alt-secondary {
         border-radius: 4px 0 0 4px;
       }
     }
 
     label:last-of-type {
-      .button {
+      .button--alt,
+      .button--alt-primary,
+      .button--alt-secondary {
         border-radius: 0 4px 4px 0;
         margin-right: 0;
+      }
+    }
+
+    input:checked {
+      & + .button--alt,
+      & + .button--alt-primary,
+      & + .button--alt-secondary {
+        margin-right: 0;
+      }
+    }
+
+    .button--alt,
+    .button--alt-primary,
+    .button--alt-secondary {
+      margin-right: -2px;
+
+      &.is-active {
+        margin-right: 0;
+        margin-left: 2px;
       }
     }
   }

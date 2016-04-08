@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>i-down--inverse</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Simple-Copy" transform="translate(-180.000000, -512.000000)" fill="#FFFFFF">
+            <path d="M183.808855,519.527952 L180.124341,513.29439 C180.04315,513.157601 180,513.00946 180,512.851386 C180,512.381137 180.381255,512 180.851648,512 L188.232599,512 C188.702709,512 189.084247,512.381137 189.084247,512.851386 C189.084247,513.00946 189.040813,513.157601 188.965584,513.284457 C188.962462,513.290133 185.275393,519.527952 185.275393,519.527952 C185.126922,519.778259 184.854111,519.946266 184.542124,519.946266 C184.229853,519.946266 183.957041,519.778259 183.808855,519.527952 Z" id="i-down--inverse"></path>
+        </g>
+    </g>
+</svg>

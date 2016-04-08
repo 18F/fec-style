@@ -21,7 +21,7 @@
 // Styleguide components.pagination
 
 .paginate_button {
-  @extend .button--neutral;
+  @extend .button--standard;
   @extend .button--sm;
   display: inline-block;
   height: auto;
@@ -31,7 +31,7 @@
   &.next {
     text-indent: -99999px;
     background-repeat: no-repeat;
-    background-position: 50% 50%;    
+    background-position: 50% 50%;
   }
 
   &.previous {
@@ -39,7 +39,7 @@
     background-image: url('../img/i-left-2--primary.svg');
     margin-left: 0;
   }
-  
+
   &.next {
     text-indent: -99999px;
     background-image: url('../img/i-right-2--primary.png');

@@ -36,13 +36,13 @@
     border-top: 1px solid $gray;
 
     &[aria-expanded='true'] {
-      background-color: rgba($gray, .5);
+      background-color: $gray-light;
       border-top: 1px solid $base;
     }
   }
 
   .accordion__content {
-    background-color: rgba($gray, .5);
+    background-color: $gray-light;
     border-bottom-color: $base;
     border-top-color: $gray;
   }

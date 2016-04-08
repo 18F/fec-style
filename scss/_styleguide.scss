@@ -13,8 +13,10 @@
 // .bright-blue    - Bright blue
 // .deep-aqua      - Deep aqua
 // .navy           - Navy
-// .gray           - Gray
+// .gray-lightest  - Lightest gray
 // .gray-light     - Light gray
+// .gray-medium    - Medium gray
+// .gray           - Standard gray
 // .gray-dark      - Dark gray
 // .disabled       - Disabled
 //
@@ -37,8 +39,10 @@ $colors: (
   bright-blue: $bright-blue,
   deep-aqua: $deep-aqua,
   navy: $navy,
-  gray: $gray,
+  gray-lightest: $gray-lightest,
   gray-light: $gray-light,
+  gray-medium: $gray-medium,
+  gray: $gray,
   gray-dark: $gray-dark,
   disabled: $disabled,
 );
@@ -65,7 +69,7 @@ $colors: (
 
 .sg-swatch.inverse,
 .sg-swatch.neutral {
-  &:after {
+  &::after {
     color: $navy;
   }
 }
@@ -75,7 +79,7 @@ $colors: (
   .grid__item {
     text-align: center;
     padding: 4rem 0;
-    background-color: $gray-light;
+    background-color: $gray-medium;
   }
 }
 

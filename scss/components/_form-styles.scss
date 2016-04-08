@@ -6,18 +6,100 @@
 
 // Selects
 //
-// .select--neutral         - Neutral background
+// Alternate styles to the base select style
+//
+// .select--alt              - Neutral background
+// .select--alt-primary      - Primary background
+// .select--alt-secondary    - Secondary background
 //
 // Markup:
-// <select class="select--neutral">
-//  <option>Option 1</option>
-//  <option>Option 2</option>
-// </select>
+// <div class="slab slab--neutral" style="padding: 2rem;">
+//   <select class="select--alt">
+//    <option>Alt select</option>
+//    <option>Option 2</option>
+//   </select>
+// </div>
+// <div class="slab slab--primary" style="padding: 2rem;">
+//   <select class="select--alt-primary">
+//    <option>Alt primary select</option>
+//    <option>Option 2</option>
+//   </select>
+// </div>
+// <div class="slab slab--secondary" style="padding: 2rem;">
+//   <select class="select--alt-secondary">
+//    <option>Alt secondary select</option>
+//    <option>Option 2</option>
+//   </select>
+// </div>
 //
 // Styleguide components.form-styles.selects
 
-.select--neutral {
-  background-color: $neutral;
+.select--alt {
+  background-color: none;
+  border: 2px solid $gray;
+  color: $base;
+
+  &:hover:not(.is-disabled):not([disabled]) {
+    border-color: $gray-medium;
+    background-color: transparent;
+  }
+
+  &:active:not(.is-disabled):not([disabled]),
+  &.is-active {
+    background-color: $gray-medium;
+    border-color: $gray-dark;
+    color: $base;
+  }
+}
+
+.select--alt-primary {
+  background-image: url('../img/i-down--inverse.png');
+  background-image: url('../img/i-down--inverse.svg');
+  border: 2px solid $inverse;
+  color: $inverse;
+
+  &:hover:not(.is-disabled):not([disabled]) {
+    border-color: $gray-medium;
+    background-color: transparent;
+  }
+
+  &:active:not(.is-disabled):not([disabled]),
+  &.is-active {
+    background-color: rgba($inverse, .3);
+    border-color: $primary-contrast;
+    color: $inverse;
+  }
+
+  &:focus {
+    color: $inverse;
+  }
+}
+
+.select--alt-secondary {
+  background-image: url('../img/i-down--inverse.png');
+  background-image: url('../img/i-down--inverse.svg');
+  border: 2px solid $inverse;
+  color: $inverse;
+
+  &:hover:not(.is-disabled):not([disabled]) {
+    border-color: $gray-medium;
+    background-color: transparent;
+  }
+
+  &:active:not(.is-disabled):not([disabled]),
+  &.is-active {
+    background-color: rgba($inverse, .3);
+    border-color: $secondary-contrast;
+    color: $inverse;
+  }
+
+  &:focus {
+    color: $inverse;
+  }
+}
+
+.select--full {
+  width: 100%;
 }
 
 // Labels
@@ -55,7 +137,7 @@
 //   <div class="container">
 //   <div class="combo">
 //     <input type="text" class="combo__input">
-//     <button class="button--primary combo__button">Go</button>
+//     <button class="button--standard combo__button">Go</button>
 //   </div>
 // </div>
 // </div>
@@ -100,7 +182,7 @@
 //  <div class="row">
 //  <input class="form-element--inline" type="text">
 //  <select class="form-element--inline" ><option>Select an option</option></select>
-//  <button class="form-element--inline button--primary">Submit</button>
+//  <button class="form-element--inline button--standard">Submit</button>
 // </div>
 //
 // Styleguide components.form-styles.inline-form

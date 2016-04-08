@@ -12,7 +12,7 @@
 //           <option value="committees">Committees</option>
 //         </select>
 //         <input type="text" class="combo__input js-search-input">
-//         <button type="submit" class="button--primary combo__button">
+//         <button type="submit" class="button--standard combo__button">
 //          <span class="u-visually-hidden">Search</span>
 //         </button>
 //       </div>
@@ -141,12 +141,12 @@
   }
 }
 
-span.tt-suggestion__name {
-  color: $primary;
+.tt-suggestion__name.tt-suggestion__name {
+  color: $base;
 }
 
-span.tt-suggestion__office {
-  color: $primary;
+.tt-suggestion__office.tt-suggestion__office {
+  color: $base;
   font-size: 1.2rem;
   text-align: right;
   font-style: italic;
@@ -158,22 +158,22 @@ span.tt-suggestion__office {
   background: $gray-lightest;
 
   .tt-suggestion__name {
-    color: $primary;
+    color: $base;
   }
 
   .tt-suggestion__office {
-    color: $primary;
+    color: $base;
   }
 }
 
-span.tt-suggestion__header {
-  color: $primary;
+.tt-suggestion__header.tt-suggestion__header {
+  color: $base;
   display: block;
   font-weight: bold;
   padding: 1rem .5rem;
 }
 
-span.tt-suggestion__loading {
+.tt-suggestion__loading.tt-suggestion__loading {
   color: $primary;
   display: block;
   font-weight: bold;
@@ -181,5 +181,5 @@ span.tt-suggestion__loading {
 }
 
 .tt-dataset-0 {
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $base;
 }

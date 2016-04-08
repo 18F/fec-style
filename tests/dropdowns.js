@@ -34,7 +34,7 @@ describe('dropdown', function() {
         '<legend class="label">Election Years</legend>' +
         '<ul class="dropdown__selected"></ul>' +
         '<div class="dropdown">' +
-          '<button class="dropdown__button button--neutral">More</button>' +
+          '<button class="dropdown__button button--alt">More</button>' +
           '<div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">' +
             '<ul class="dropdown__list">' +
               '<li class="dropdown__item">' +
@@ -118,7 +118,7 @@ describe('dropdown', function() {
         '<legend class="label">Election Years</legend>' +
         '<ul class="dropdown__selected"></ul>' +
         '<div class="dropdown">' +
-          '<button class="dropdown__button button--neutral">More</button>' +
+          '<button class="dropdown__button button--alt">More</button>' +
           '<div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true"></div>' +
         '</div>' +
       '</fieldset>'

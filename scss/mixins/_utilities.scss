@@ -92,78 +92,6 @@
   .t-ruled {
     border-color: $color;
   }
-
-  .button--primary {
-    color: $primary;
-    border-color: transparent;
-  }
-
-  .button--secondary {
-    color: $secondary;
-    border-color: transparent;
-  }
-
-  .button:hover {
-    border-color: transparent;
-  }
-}
-
-// u-form-color()
-//
-// Used to set the color of the form elements
-//
-// $background-color      - The color of the background of the inputs
-// $contrast-color        - Border and font colors
-// $focus-color           - Focus color
-// $icon-color            - A string that will be appended to the background-image url for checkboxes (e.g. 'primary', 'secondary')
-// $fill-color            - Color for checkbox and radio backgrounds when checked
-//
-// Styleguide mixins.font-colo
-
-@mixin u-form-color($background-color, $contrast-color, $focus-color, $icon-color, $fill-color) {
-  #{$all-text-inputs},
-  select,
-  select[multiple=multiple],
-  textarea {
-    color: $contrast-color;
-    border-color: $contrast-color;
-    background-color: $background-color;
-  }
-
-  #{$all-text-inputs} {
-    @include placeholder() {
-      color: $contrast-color;
-    }
-  }
-
-  select {
-    background-image: url('../img/i-down--' + $icon-color + '-contrast.png');
-    background-image: url('../img/i-down--' + $icon-color + '-contrast.svg');
-  }
-
-  [type="checkbox"] + label::before,
-  [type="radio"] + label::before {
-    background-color: $background-color;
-    border-color: $contrast-color;
-  }
-
-  [type="checkbox"]:checked + label::before,
-  [type="radio"]:checked + label::before {
-    background-color: $fill-color;
-  }
-
-  [type="checkbox"]:checked + label::before {
-    background-image: url('../img/i-check--' + $icon-color + '.png');
-    background-image: url('../img/i-check--' + $icon-color + '.svg');
-  }
-
-  [type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 3px $focus-color;
-  }
-
-  .tt-dropdown-menu {
-    border-color: $contrast-color;
-  }
 }
 
 // u-bg--primary()
@@ -174,7 +102,6 @@
 
 @mixin u-bg--primary() {
   @include u-font-color($gray-lightest);
-  @include u-form-color($primary, $primary-contrast, $gray-lightest, 'primary', $primary-contrast);
   background-color: $primary;
 
   a {
@@ -185,6 +112,11 @@
     }
   }
 
+  input,
+  textarea {
+    border-color: $inverse;
+  }
+
   .term {
     @include u-background-image('i-term--cream', 100% 40%);
   }
@@ -192,7 +124,6 @@
   .tooltip__trigger {
     @include u-background-image('i-info--cream--small', 100% 50%);
   }
-
 }
 
 // u-bg--primary()
@@ -203,7 +134,6 @@
 
 @mixin u-bg--secondary() {
   @include u-font-color($gray-lightest);
-  @include u-form-color($secondary, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
   background-color: $secondary;
 
   a {
@@ -212,6 +142,11 @@
     &:hover {
       border-bottom-color: $secondary-contrast;
     }
+  }
+
+  input,
+  textarea {
+    border-color: $inverse;
   }
 
   .term {
@@ -239,7 +174,6 @@
 
 @mixin u-bg--dark() {
   @include u-font-color($gray-lightest);
-  @include u-form-color($gray-dark, $secondary-contrast, $gray-lightest, 'secondary', $secondary-contrast);
   background-color: $gray-dark;
 
   a {
@@ -253,7 +187,6 @@
 
 @mixin u-bg--neutral() {
   @include u-font-color($base);
-  @include u-form-color($inverse, $primary, $primary-contrast, 'neutral', $primary);
   background-color: $gray-lightest;
 
   a {
