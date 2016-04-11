@@ -156,6 +156,18 @@
   }
 }
 
+.fc-multi-day {
+  .fc-content {
+    border: 1px solid $gray;
+    border-radius: 2px;
+    padding-left: 2px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
 .is-active {
   .fc-content {
     background-color: $primary;
