@@ -64,14 +64,17 @@
   }
 
   &:active:not(.is-disabled):not([disabled]),
+  &:focus,
   &.is-active {
     background-color: rgba($inverse, .3);
     border-color: $primary-contrast;
     color: $inverse;
   }
 
-  &:focus {
-    color: $inverse;
+  option {
+    background-color: $neutral;
+    color: $primary;
+    padding: .5rem;
   }
 }
 
@@ -87,6 +90,7 @@
   }
 
   &:active:not(.is-disabled):not([disabled]),
+  &:focus,
   &.is-active {
     background-color: rgba($inverse, .3);
     border-color: $secondary-contrast;
@@ -95,6 +99,12 @@
 
   &:focus {
     color: $inverse;
+  }
+
+  option {
+    background-color: $neutral;
+    color: $primary;
+    padding: .5rem;
   }
 }
 
