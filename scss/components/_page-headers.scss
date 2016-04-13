@@ -3,8 +3,8 @@
 // The band of color at the top of a page that contains the parent category.
 // Consists of an h1 within a container within a slab. h1 may have an icon.
 //
-// .slab--primary     - Primary background with primary-contrast accents and type
-// .slab--secondary   - Secondary background with secondary-contrast accents and type
+// .page-header--primary     - Primary background with primary-contrast accents and type
+// .page-header--secondary   - Secondary background with secondary-contrast accents and type
 //
 // Markup:
 // <div class="page-header {{ modifier_class }}">
@@ -21,6 +21,11 @@
 
   .search__container {
     display: none;
+  }
+
+  a,
+  a:hover {
+    border-color: $inverse;
   }
 }
 
@@ -41,6 +46,10 @@
 
 .page-header--primary {
   background: $primary;
+}
+
+.page-header--secondary {
+  background: $secondary;
 }
 
 // BREAKPOINT: MEDIUM
