@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7 (28169) - http://www.bohemiancoding.com/sketch -->
     <title>i-committees--neutral</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Complex" sketch:type="MSArtboardGroup" transform="translate(-487.000000, -940.000000)">
-            <g id="i-committees--neutral" sketch:type="MSLayerGroup" transform="translate(487.000000, 940.500000)">
-                <g id="Oval-63-Copy-+-Group-Copy-Copy-Copy-+-Fill-3-Copy-2-+-Fill-4-Copy-2-+-Imported-Layers-Copy-4-+-Oval-41-Copy" transform="translate(0.000000, 0.011079)" fill="#EFDECD" sketch:type="MSShapeGroup">
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Complex" transform="translate(-567.000000, -932.000000)">
+            <g id="i-committees--neutral" transform="translate(567.000000, 931.913793)">
+                <g id="Oval-63-Copy-+-Group-Copy-Copy-Copy-+-Fill-3-Copy-2-+-Fill-4-Copy-2-+-Imported-Layers-Copy-4-+-Oval-41-Copy" transform="translate(0.000000, 0.011079)" fill="#D6D7D9">
                     <g id="Oval-63-Copy-+-Group-Copy-Copy-Copy" transform="translate(0.215477, 0.407820)">
                         <ellipse id="Oval-63-Copy" cx="39.9345669" cy="39.4498957" rx="39.531372" ry="39.4417744"></ellipse>
                     </g>
                 </g>
-                <g id="Imported-Layers-+-Rectangle-267-Copy-4-+-Path-Copy-Copy-Copy-Copy-Copy-Copy" transform="translate(8.345248, 7.490368)" sketch:type="MSShapeGroup">
+                <g id="Imported-Layers-+-Rectangle-267-Copy-4-+-Path-Copy-Copy-Copy-Copy-Copy-Copy" transform="translate(8.345248, 7.490368)">
                     <path d="M10.1609016,22.4301234 C10.1601749,24.1977077 8.54771405,25.805789 6.7775677,25.805789 C5.00596804,25.805789 3.39423381,24.1977077 3.39423381,22.4301234 C3.39350715,20.661814 5.00596804,19.0501077 6.7775677,19.0501077 C8.54989403,19.0501077 10.1652616,20.660364 10.1609016,22.4301234" id="Fill-1" fill="#3E8A9A"></path>
                     <path d="M24.9779748,41.2145134 C24.9772481,42.9820977 23.3647872,44.590179 21.5946409,44.590179 C19.8230412,44.590179 18.211307,42.9820977 18.211307,41.2145134 C18.2105803,39.446204 19.8230412,37.8344977 21.5946409,37.8344977 C23.3669672,37.8344977 24.9823347,39.444754 24.9779748,41.2145134" id="Fill-1-Copy-2" fill="#3E8A9A"></path>
                     <path d="M24.9779748,3.85091233 C24.9772481,5.61849668 23.3647872,7.22657793 21.5946409,7.22657793 C19.8230412,7.22657793 18.211307,5.61849668 18.211307,3.85091233 C18.2105803,2.08260297 19.8230412,0.47089665 21.5946409,0.47089665 C23.3669672,0.47089665 24.9823347,2.08115294 24.9779748,3.85091233" id="Fill-1-Copy-4" fill="#3E8A9A"></path>
