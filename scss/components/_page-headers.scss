@@ -40,8 +40,7 @@
 }
 
 .page-header--primary {
-  @include u-bg--primary();
-  @include u-font-color($primary-contrast);
+  background: $primary;
 }
 
 // BREAKPOINT: MEDIUM
@@ -60,10 +59,8 @@
   }
 
   .page-header__title {
-    @include media($med) {
     float: left;
     line-height: 4rem;
-  }
   }
 }
 
