@@ -136,7 +136,8 @@
 }
 
 .fc-content {
-  @include u-truncate();
+  white-space: nowrap;
+  overflow: hidden;
   background: none;
   color: $primary;
   font-size: 1.4rem;
@@ -153,6 +154,17 @@
     border-radius: .8rem;
     float: left;
     margin: 5px 5px 5px 0;
+  }
+
+  &::after {
+    @include linear-gradient(90deg, rgba($inverse, 0), $inverse);
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 3rem;
   }
 }
 
@@ -176,6 +188,11 @@
 
     &::before {
       background-color: $inverse;
+    }
+
+    &::after {
+      display: none;
+      background-color: transparent;
     }
   }
 }
