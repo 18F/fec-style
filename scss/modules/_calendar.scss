@@ -157,7 +157,7 @@
   }
 
   &::after {
-    @include linear-gradient(90deg, rgba($inverse, 0), $inverse)
+    @include linear-gradient(90deg, rgba($inverse, 0), $inverse);
     content: '';
     display: block;
     position: absolute;
