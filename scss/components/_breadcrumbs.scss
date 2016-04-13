@@ -24,25 +24,34 @@
 // Styleguide components.breadcrumbs
 
 .breadcrumbs {
-  color: $gray;
-  float: left;
-  font-family: $sans-serif;
-  letter-spacing: -.3px;
+  display: none;
 }
 
-.breadcrumbs__item {
-  float: left;
-  padding: .8rem 0;
-}
+@include media($lg) {
+  .breadcrumbs {
+    color: $gray;
+    display: block;
+    float: left;
+    font-family: $sans-serif;
+    letter-spacing: -.3px;
+  }
 
-.breadcrumbs__item--current {
-  color: $inverse;
-}
+  .breadcrumbs__item {
+    @include u-truncate();
+    float: left;
+    max-width: 20rem;
+    padding: .8rem 0;
+  }
 
-.breadcrumbs__link {
-  color: $inverse;
-}
+  .breadcrumbs__item--current {
+    color: $inverse;
+  }
 
-.breadcrumbs__separator {
-  padding: .5rem .8rem;
+  .breadcrumbs__link {
+    color: $inverse;
+  }
+
+  .breadcrumbs__separator {
+    padding: .5rem .8rem;
+  }
 }
