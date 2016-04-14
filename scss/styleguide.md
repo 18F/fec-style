@@ -1,3 +1,3 @@
-# FEC Styleguide
+# betaFEC style guide
 
-Hello, and welcome to the beta.fec.gov styleguide. 
+Hello, and welcome to the beta.fec.gov style guide. 
