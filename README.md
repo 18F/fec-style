@@ -118,19 +118,20 @@ We use [Semantic Versioning](http://semver.org/):
 > PATCH version when you make backwards-compatible bug fixes.
 > Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-When merging into master, update the package version and push to npm:
+When changes in master are ready to be released, follow these steps to update the package version and publish to npm:
 
-    npm version patch
-    npm publish
+    npm version <major | minor | patch>
+    git push
     git push --tags
+    npm publish
 
-Use `npm version minor` or `npm version major` for minor and major updates, respectively. For details on npm versioning, see `npm version --help`.
+Use `npm version minor` or `npm version major` for minor and major updates respectively, and `npm version patch` for small updates that only add small bits of functionality to existing features. For details on npm versioning, see `npm version --help`.
 
 Downstream applications should pin versions as appropriate. For example, to get bug fixes but not new features, pin to the minor version:
 
     {
         "dependencies": {
-            "fec-style": "~1.0.0"
+            "fec-style": "~1.0"
         }
     }
 
