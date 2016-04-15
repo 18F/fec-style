@@ -31,11 +31,12 @@ var defaultOpts = {
 function SiteNav(selector, opts) {
   this.opts = _.extend({}, defaultOpts, opts);
   this.$body = $(selector);
+  this.$list = this.$body.find('#site-menu');
   this.$toggle = this.$body.find('.js-nav-toggle');
 
   this.assignAria();
 
-  this.$megaMenu = this.initMegaMenu();
+  this.initMegaMenu();
 
   // Open and close the menu on mobile
   this.$toggle.on('click', this.toggle.bind(this));
@@ -45,13 +46,11 @@ SiteNav.prototype.initMegaMenu = function() {
   var self = this;
   this.$body.find('[data-submenu]').each(function(){
     var id = $(this).data('submenu');
-    var $submenu = $(TEMPLATES[id](self.opts));
-    var maxHeight = $submenu.height();
-    $(this).append($submenu);
-    $('#' + id + '.is-open').css({'max-height': maxHeight});
+    var submenu = TEMPLATES[id](self.opts);
+    $(this).append(submenu);
   });
 
-  if ( $('body').width() > helpers.BREAKPOINTS['LARGE']) {
+  if ( $('body').width() > helpers.BREAKPOINTS.LARGE) {
     this.$body.accessibleMegaMenu({
       uuidPrefix: 'mega-menu',
       menuClass: 'site-nav__list',
@@ -66,12 +65,11 @@ SiteNav.prototype.initMegaMenu = function() {
 };
 
 SiteNav.prototype.assignAria = function() {
-  this.$body.find('.js-sublist-toggle').attr('aria-haspopup', true);
-  this.$body.attr('aria-label', 'Site wide navigation');
-  this.$body.find('ul ul').attr({
-    'aria-label': 'submenu',
-    'aria-hidden': 'true'
-  });
+  this.$list.attr('aria-label', 'Site-wide navigation');
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE) {
+    this.$toggle.attr('aria-haspopup', true);
+    this.$list.attr('aria-hidden', true);
+  }
 };
 
 SiteNav.prototype.toggle = function() {
