@@ -54,18 +54,14 @@
     margin-bottom: 0;
   }
 
-  .mega-heading__image {
-
-  }
-
   .mega__group {
     @include clearfix();
     padding-bottom: 4rem;
   }
 
   .mega__column-container--1 {
-      @include span-columns(3);
-    }
+    @include span-columns(3);
+  }
 
   .mega__column-container--2 {
     @include span-columns(6);
