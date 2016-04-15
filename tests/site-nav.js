@@ -13,14 +13,14 @@ var SiteNav = require('../js/site-nav').SiteNav;
 function isOpen(siteNav) {
   return siteNav.isOpen &&
     siteNav.$body.hasClass('is-open') &&
-    siteNav.$list.attr('aria-hidden', true) &&
+    siteNav.$list.attr('aria-hidden') === 'false' &&
     siteNav.$toggle.hasClass('active');
 }
 
 function isClosed(siteNav) {
   return !siteNav.isOpen &&
     !siteNav.$body.hasClass('is-open') &&
-    !siteNav.$list.attr('aria-hidden', true) &&
+    siteNav.$list.attr('aria-hidden') !== 'false'  &&
     !siteNav.$toggle.hasClass('active');
 }
 
