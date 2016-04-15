@@ -1,0 +1,62 @@
+// Mega menu
+
+.mega {
+  @include u-font-color($inverse);
+  @include clearfix();
+  background-color: $primary;
+  font-family: $sans-serif;
+  display: none;
+  color: $inverse;
+  padding: 2rem;
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: $z-navigation;
+
+  &.open {
+    display: block;
+  }
+}
+
+.mega-heading {
+  border-bottom: 2px solid $inverse;
+  margin-bottom: 1rem;
+}
+
+.mega-heading--sub {
+  border-bottom: 1px solid $inverse;
+  margin-bottom: 1rem;
+}
+
+.mega-heading__title {
+  margin-bottom: 0;
+}
+
+.mega-heading__image {
+
+}
+
+.mega__group {
+  @include clearfix();
+  padding-bottom: 4rem;
+}
+
+@include media($lg) {
+  .mega__column-container--1 {
+    @include span-columns(3);
+  }
+
+  .mega__column-container--2 {
+    @include span-columns(6);
+  }
+
+  .mega__column-container--3 {
+    @include span-columns(9);
+
+    .mega__column {
+      @include span-columns(3 of 9);
+    }
+  }
+}

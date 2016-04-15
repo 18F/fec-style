@@ -1,0 +1,92 @@
+<div class="mega">
+  <div class="mega__column-container--1">
+    <div class="mega__column">
+      <div class="mega__group">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title">Profiles</h3>
+        </div>
+        <form action="{{webAppUrl}}" method="GET">
+          <label class="t-sans" for="menu-search">Search for candidates and committees in any election</label>
+          <div class="combo--search--mini">
+            <input id="menu-search" name="search" class="combo__input" type="text">
+            <input type="hidden" name="search_type" value="candidates" placeholder="Search committees">
+            <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
+          </div>
+        </form>
+      </div>
+      <div class="mega__group">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title">Interactive overviews</h3>
+        </div>
+          <p>Coming soon</p>
+      </div>
+      <div class="mega__group">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title">Location</h3>
+        </div>
+        <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
+          <label class="t-sans" for="menu-election-search">Find elections and candidates by ZIP code</label>
+          <div class="combo--search--mini">
+            <input id="menu-election-search" name="search" class="combo__input" type="text">
+            <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="mega__column-container--3">
+    <div class="mega-heading">
+      <h3 class="mega-heading__title">Advanced data</h3>
+    </div>
+    <div class="mega__column">
+      <div class="mega__group">
+        <div class="mega-heading--sub">
+          <h4 class="mega-heading__title">Candidates</h4>
+        </div>
+        <ul>
+          <li><a href="{{webAppUrl}}/candidates/president">Presidential</a></li>
+          <li><a href="{{webAppUrl}}/candidates/senate">Senate</a></li>
+          <li><a href="{{webAppUrl}}/candidates/house">House</a></li>
+          <li><a href="{{webAppUrl}}/candidates/">+ All candidates</a></li>
+        </ul>
+      </div>
+      <div class="mega__group">
+        <div class="mega-heading--sub">
+          <h4 class="mega-heading__title">Receipts</h4>
+        </div>
+        <ul>
+          <li><a href="{{webAppUrl}}/receipts/individual-contributions">Individual contributions</a></li>
+          <li><a href="{{webAppUrl}}/receipts/">+ All receipt data</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mega__column">
+      <div class="mega__group">
+        <div class="mega-heading--sub">
+          <h4 class="mega-heading__title">Committees</h4>
+        </div>
+        <ul>
+          <li><a href="{{webAppUrl}}/committees">+ All committee data</a></li>
+        </ul>
+      </div>
+      <div class="mega__group">
+        <div class="mega-heading--sub">
+          <h4 class="mega-heading__title">Disbursements</h4>
+        </div>
+        <ul>
+          <li><a href="{{webAppUrl}}/committees">+ All disbursement data</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mega__column">
+      <div class="mega__group">
+        <div class="mega-heading--sub">
+          <h4 class="mega-heading__title">Filings</h4>
+        </div>
+        <ul>
+          <li><a href="{{webAppUrl}}/committees">+ All filings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

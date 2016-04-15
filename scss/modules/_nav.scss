@@ -54,7 +54,6 @@
 }
 
 .site-nav__list {
-  @include u-bg--primary();
   @include transform(translateX(-100%));
   @include transition(transform, .2s);
   border-right: 1px solid $primary-contrast;
@@ -71,7 +70,6 @@
 }
 
 .site-nav__item {
-  position: relative;
   border-bottom: 1px solid $primary-contrast;
 
   &:last-child .site-nav__link {
@@ -248,22 +246,20 @@
 // Hide the submenu toggles
 
 @include media($lg) {
-  .site-nav {
-    padding-left: 2rem;
-  }
-
   .site-nav__list {
     @include clearfix();
-    @include u-bg--neutral();
     @include transform(translateX(0));
     background: none;
     border: none;
     min-height: 0;
+    height: auto;
+    overflow: visible;
     display: block;
     float: left;
-    padding: 0;
-    position: relative;
+    padding: 0 0 0 2rem;
     top: 0;
+    position: relative;
+    width: 100%;
 
     .utility-nav__item {
       display: none;
@@ -273,6 +269,7 @@
   .site-nav__item {
     float: left;
     border-bottom: none;
+    color: $primary;
 
     &.is-open,
     &:hover {
@@ -384,9 +381,11 @@
     }
   }
 
-  .site-nav__button,
   .site-nav__button--right {
     height: 6rem;
+    position: absolute;
+    right: 0;
+    z-index: $z-glossary;
   }
 
   .site-nav__button--left {
