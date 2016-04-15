@@ -14,25 +14,13 @@ function isOpen(siteNav) {
   return siteNav.isOpen &&
     siteNav.$body.hasClass('is-open') &&
     siteNav.$toggle.hasClass('active');
-};
+}
 
 function isClosed(siteNav) {
   return !siteNav.isOpen &&
     !siteNav.$body.hasClass('is-open') &&
     !siteNav.$toggle.hasClass('active');
-};
-
-function sublistIsOpen(siteNav, sublistParent) {
-  return siteNav.$openSublist &&
-    sublistParent.hasClass('is-open') &&
-    sublistParent.find('ul').attr('aria-hidden') == 'false';
-};
-
-function sublistIsClosed(siteNav, sublistParent) {
-  return siteNav.$openSublist == null &&
-    !sublistParent.hasClass('is-open') &&
-    sublistParent.find('ul').attr('aria-hidden') == 'true';
-};
+}
 
 describe('SiteNav', function() {
   before(function() {
@@ -119,37 +107,6 @@ describe('SiteNav', function() {
       expect(isOpen(this.siteNav)).to.be.true;
       this.siteNav.toggle();
       expect(isClosed(this.siteNav)).to.be.true;
-    });
-  });
-
-  describe('toggleSublist()', function() {
-    it('should show and hide the sublist', function() {
-      var $sublistParent = this.$fixture.find('.js-sublist-parent');
-      var $sublistToggle = this.$fixture.find('.js-sublist-toggle');
-      var testEv = {target: $sublistToggle};
-      this.siteNav.toggleSublist(testEv);
-      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
-      this.siteNav.toggleSublist(testEv);
-      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
-    });
-  });
-
-  describe('handleFocusBody()', function() {
-    it('should show the sublist when focused', function() {
-      var $sublistParent = this.$fixture.find('.js-sublist-parent');
-      var $link = $sublistParent.find('a')[0];
-      var testEv = {target: $link};
-      this.siteNav.handleFocusBody(testEv);
-      expect(sublistIsOpen(this.siteNav, $sublistParent)).to.be.true;
-    });
-
-    it('should hide the sublist when focus leaves the parent', function() {
-      var $sublistParent = this.$fixture.find('.js-sublist-parent');
-      var $otherLink = this.$fixture.find('.site-nav__item .is-disabled')[0];
-      var testEv = {target: $otherLink};
-      this.siteNav.showSublist($sublistParent);
-      this.siteNav.handleFocusBody(testEv);
-      expect(sublistIsClosed(this.siteNav, $sublistParent)).to.be.true;
     });
   });
 });
