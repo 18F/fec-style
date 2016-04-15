@@ -2,22 +2,31 @@
 
 .mega {
   @include u-font-color($inverse);
+  @include transition(max-height .5s $ease-out-cubic);
   @include clearfix();
   background-color: $primary;
   font-family: $sans-serif;
-  display: none;
+  font-size: 1.6rem;
+  display: block !important;
   color: $inverse;
-  padding: 2rem;
+  max-height: 0;
+  overflow: hidden;
   position: absolute;
-  top: 6rem;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: $z-navigation;
 
-  &.open {
+  &.is-open {
+    @include transition(max-height .5s $ease-out-cubic);
+    max-height: 500px;
     display: block;
+    top: 6rem;
+    z-index: $z-navigation;
   }
+}
+
+.mega__inner {
+  padding: 2rem;
 }
 
 .mega-heading {

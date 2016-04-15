@@ -4,6 +4,7 @@
 
 var $ = require('jquery');
 var _ = require('underscore');
+var helpers = require('./helpers');
 
 window.$ = window.jQuery = $;
 
@@ -31,7 +32,6 @@ function SiteNav(selector, opts) {
   this.opts = _.extend({}, defaultOpts, opts);
   this.$body = $(selector);
   this.$toggle = this.$body.find('.js-nav-toggle');
-  this.$openMegaMenu = null;
 
   this.assignAria();
 
@@ -45,20 +45,24 @@ SiteNav.prototype.initMegaMenu = function() {
   var self = this;
   this.$body.find('[data-submenu]').each(function(){
     var id = $(this).data('submenu');
-    var submenu = $(TEMPLATES[id](self.opts));
-    $(this).append(submenu);
+    var $submenu = $(TEMPLATES[id](self.opts));
+    var maxHeight = $submenu.height();
+    $(this).append($submenu);
+    $('#' + id + '.is-open').css({'max-height': maxHeight});
   });
 
-  this.$body.accessibleMegaMenu({
-    uuidPrefix: 'mega-menu',
-    menuClass: 'site-nav__list',
-    topNavItemClass: 'site-nav__item',
-    panelClass: 'mega',
-    panelGroupClass: 'mega__group',
-    hoverClass: 'hover',
-    focusClass: 'focus',
-    openClass: 'open'
-  });
+  if ( $('body').width() > helpers.BREAKPOINTS['LARGE']) {
+    this.$body.accessibleMegaMenu({
+      uuidPrefix: 'mega-menu',
+      menuClass: 'site-nav__list',
+      topNavItemClass: 'site-nav__item',
+      panelClass: 'mega',
+      panelGroupClass: 'mega__group',
+      hoverClass: 'is-hover',
+      focusClass: 'is-focus',
+      openClass: 'is-open'
+    });
+  }
 };
 
 SiteNav.prototype.assignAria = function() {
