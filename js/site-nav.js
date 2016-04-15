@@ -80,12 +80,14 @@ SiteNav.prototype.toggle = function() {
 SiteNav.prototype.show = function() {
   this.$body.addClass('is-open');
   this.$toggle.addClass('active');
+  this.$list.attr('aria-hidden', false);
   this.isOpen = true;
 };
 
 SiteNav.prototype.hide = function() {
   this.$body.removeClass('is-open');
   this.$toggle.removeClass('active');
+  this.$list.attr('aria-hidden', true);
   this.isOpen = false;
 };
 

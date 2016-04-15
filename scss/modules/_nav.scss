@@ -38,6 +38,10 @@
   bottom: 0;
   z-index: $z-navigation;
 
+  &[aria-hidden='true'] {
+    display: block !important;
+  }
+
   .utility-nav__item {
     padding: 0;
   }
