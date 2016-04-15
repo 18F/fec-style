@@ -35,10 +35,10 @@
 @kss-colors-heading        : #333;
 @kss-colors-quotes         : #666;
 
-@kss-colors-link           : #36BDBB;
-@kss-colors-link-visited   : #36BDBB;
-@kss-colors-link-hover     : #36BDBB;
-@kss-colors-link-active    : #36BDBB;
+@kss-colors-link           : #333;
+@kss-colors-link-visited   : #333;
+@kss-colors-link-hover     : #333;
+@kss-colors-link-active    : #333;
 
 @kss-font-body             : 'Source Sans Pro', Arial, sans-serif;
 @kss-font-code             : Menlo, 'Ubuntu Mono', 'Lucida Console', 'Courier New', Courier, monospace;
@@ -64,10 +64,9 @@ html {
 
   a {
     color: @kss-colors-link;
-    text-decoration: none;
     transition-property: color;
     transition-duration: 0.5s;
-    border-bottom: none;
+    border-bottom: 1px dotted @dark-gray;
 
     &:visited { color: @kss-colors-link-visited; }
     &:hover,
@@ -290,6 +289,10 @@ html {
     display: inline-block;
     border-bottom: 1px solid @dark-gray;
     padding: 10px;
+
+    a {
+      border-bottom: none;
+    }
 
     @media screen and (min-width: 769px) {
       display: list-item;
