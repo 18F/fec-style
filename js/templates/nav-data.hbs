@@ -4,7 +4,7 @@
       <div class="mega__column">
         <div class="mega__group">
           <div class="mega-heading">
-            <h3 class="mega-heading__title">Profiles</h3>
+            <h3 class="mega-heading__title"><a href="{{webAppUrl}}">Profiles</a></h3>
           </div>
           <form action="{{webAppUrl}}" method="GET">
             <label class="t-sans" for="menu-search">Search for candidates and committees in any election</label>
@@ -23,7 +23,7 @@
         </div>
         <div class="mega__group">
           <div class="mega-heading">
-            <h3 class="mega-heading__title">Location</h3>
+            <h3 class="mega-heading__title"><a href="{{webAppUrl}}/elections">Location</a></h3>
           </div>
           <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
             <label class="t-sans" for="menu-election-search">Find elections and candidates by ZIP code</label>
@@ -75,7 +75,10 @@
             <h4 class="mega-heading__title">Disbursements</h4>
           </div>
           <ul>
-            <li><a href="{{webAppUrl}}/committees">+ All disbursement data</a></li>
+            <li><a href="{{webAppUrl}}/independent-expenditures">Independent expenditures</a></li>
+            <li><a href="{{webAppUrl}}/electioneering-communications">Electioneering communications</a></li>
+            <li><a href="{{webAppUrl}}/communication-costs">Communication costs</a></li>
+            <li><a href="{{webAppUrl}}/disbursements">+ All disbursement data</a></li>
           </ul>
         </div>
       </div>
@@ -85,7 +88,7 @@
             <h4 class="mega-heading__title">Filings</h4>
           </div>
           <ul>
-            <li><a href="{{webAppUrl}}/committees">+ All filings</a></li>
+            <li><a href="{{webAppUrl}}/filings">+ All filings</a></li>
           </ul>
         </div>
       </div>
