@@ -288,11 +288,18 @@ html {
 
   .kss-nav__menu-item {
     display: inline-block;
-    border-bottom: 1px solid @dark-gray;
-    padding: 10px;
 
     a {
+      display: block;
       border-bottom: none;
+      padding: 10px;
+      border-bottom: 1px solid @dark-gray;
+      border-left: 0px solid @dark-gray;
+
+      &:hover {
+        transition: all .2s;
+        border-left-width: 4px;
+      }
     }
 
     @media screen and (min-width: 769px) {
@@ -314,18 +321,19 @@ html {
       margin: 0;
       padding: 0;
 
-      li {
+      a {
         padding: 0 10px;
+        border-bottom: none;
       }
 
       // @TODO: The ul is output even when there are no children. Fix this, so
       // we can put these :first-child and :last child styles back on the ul.
-      li:first-child {
+      li:first-child a {
         margin: 10px 0 0;
       }
 
-      li:last-child {
-        padding: 0 10px 0;
+      li:last-child a {
+        padding: 0 10px;
       }
     }
   }
