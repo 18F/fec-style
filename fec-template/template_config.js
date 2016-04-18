@@ -29,6 +29,6 @@ module.exports.options = {
     string: true,
     multiple: false,
     describe: 'Styles for the new beta.fec.gov',
-    default: 'FEC Styleguide'
+    default: 'Style guide'
   }
 };

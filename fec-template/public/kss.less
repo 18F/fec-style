@@ -1,22 +1,52 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sourcesanspro-light-webfont.woff2") format("woff2"), url("fonts/sourcesanspro-light-webfont.woff") format("woff"), url("fonts/sourcesanspro-light-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sourcesanspro-regular-webfont.woff2") format("woff2"), url("fonts/sourcesanspro-regular-webfont.woff") format("woff"), url("fonts/sourcesanspro-regular-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/sourcesanspro-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sourcesanspro-italic-webfont.woff2") format("woff2"), url("fonts/sourcesanspro-italic-webfont.woff") format("woff"), url("fonts/sourcesanspro-italic-webfont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/sourcesanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/sourcesanspro-bold-webfont.woff2") format("woff2"), url("fonts/sourcesanspro-bold-webfont.woff") format("woff"), url("fonts/sourcesanspro-bold-webfont.ttf") format("truetype");
+}
+
 // ------------------------------------------------------------------------------
 //   @group Variables - Colors, Fonts, etc.
 // ------------------------------------------------------------------------------
 @kss-colors-background     : #ffffff;
 
-@kss-colors-foreground     : #444;
-@kss-colors-heading        : #111;
+@kss-colors-foreground     : #333;
+@kss-colors-heading        : #333;
 @kss-colors-quotes         : #666;
 
-@kss-colors-link           : #36BDBB;
-@kss-colors-link-visited   : #36BDBB;
-@kss-colors-link-hover     : #36BDBB;
-@kss-colors-link-active    : #36BDBB;
+@kss-colors-link           : #333;
+@kss-colors-link-visited   : #333;
+@kss-colors-link-hover     : #333;
+@kss-colors-link-active    : #333;
 
-@kss-font-body             : 'Karla Sans', Arial, sans-serif;
+@kss-font-body             : 'Source Sans Pro', Arial, sans-serif;
 @kss-font-code             : Menlo, 'Ubuntu Mono', 'Lucida Console', 'Courier New', Courier, monospace;
 
 @kss-font-size             : 16px;
 @kss-vertical-rhythm       : @kss-font-size * 1.5;
+
+@dark-gray                 : #333;
 
 // ------------------------------------------------------------------------------
 // Wrap all of this template's base HTML styling inside a .kss-style selector.
@@ -34,10 +64,9 @@ html {
 
   a {
     color: @kss-colors-link;
-    text-decoration: none;
     transition-property: color;
     transition-duration: 0.5s;
-    border-bottom: none;
+    border-bottom: 1px dotted @dark-gray;
 
     &:visited { color: @kss-colors-link-visited; }
     &:hover,
@@ -178,7 +207,7 @@ html {
     .kss-sidebar {
       width: 20%;
       a {
-        color: #fff;
+        color: @dark-gray;
       }
     }
 
@@ -195,18 +224,18 @@ html {
     @media screen and (min-width: 769px) {
       width: 80%;
       margin-left: 20%;
-      padding: 0 20px 0 30px;
+      padding: 0 8%;
     }
   }
 
   .kss-sidebar {
     border-bottom:1px solid #ddd;
-    background-color: #212121;
+    background-color: #f1f1f1;
 
     @media screen and (min-width: 769px) {
       height: 100%;
       width: 20%;
-      padding: 0 10px 0 20px;
+      padding: 0 40px;
       border-bottom: 0;
       position: fixed;
       overflow: scroll;
@@ -220,10 +249,23 @@ html {
 
 #kss-node {
 
+  .draft-note {
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
   .kss-doc-title {
     margin: 0;
-    border-bottom: 0;
-    color: #36BDBB;
+    border-bottom: 1px solid @dark-gray;
+    border-top: 1px solid @dark-gray;
+    font-family: 'Gandhi', serif;
+    padding: 20px 10px;
+    color: @dark-gray;
+
+    em {
+      font-style: italic;
+    }
 
     @media screen and (min-width: 769px) {
       font-size: 1.5em;
@@ -246,7 +288,19 @@ html {
 
   .kss-nav__menu-item {
     display: inline-block;
-    padding-right: @kss-vertical-rhythm;
+
+    a {
+      display: block;
+      border-bottom: none;
+      padding: 10px;
+      border-bottom: 1px solid @dark-gray;
+      border-left: 0px solid @dark-gray;
+
+      &:hover {
+        transition: all .2s;
+        border-left-width: 4px;
+      }
+    }
 
     @media screen and (min-width: 769px) {
       display: list-item;
@@ -257,33 +311,35 @@ html {
   .kss-nav__menu-child {
     display: none;
 
+    .kss-nav__menu-item {
+      border-bottom: 0;
+    }
+
     @media screen and (min-width: 769px) {
-      background-color: #5b616b;
       display: block;
       list-style-type: none;
       margin: 0;
       padding: 0;
 
-      li {
+      a {
         padding: 0 10px;
+        border-bottom: none;
       }
 
       // @TODO: The ul is output even when there are no children. Fix this, so
       // we can put these :first-child and :last child styles back on the ul.
-      li:first-child {
+      li:first-child a {
         margin: 10px 0 0;
-        padding: 10px 10px 0 10px;
       }
 
-      li:last-child {
-        margin: 0 0 10px;
-        padding: 0 10px 10px 10px;
+      li:last-child a {
+        padding: 0 10px;
       }
     }
   }
 
   .kss-nav__ref {
-    color: #36BDBB;
+    color: @dark-gray;
     font-weight: bold;
 
     &::after {
@@ -305,6 +361,15 @@ html {
     margin-bottom: (@kss-vertical-rhythm * 2);
   }
 
+  .kss-overview {
+    padding-top: 150px;
+    font-size: 20px;
+    width: 600px;
+
+    h1 {
+      border-bottom: 0;
+    }
+  }
 
   .kss-title {
     margin-bottom: 2rem;
