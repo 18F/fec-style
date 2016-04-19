@@ -289,7 +289,7 @@
   &::before {
     @if $side == 'left' {
       left: 1rem;
-    } else {
+    } @else {
       right: 1rem;
     }
   }

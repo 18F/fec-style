@@ -1,15 +1,12 @@
-/* global process */
-
-var fs = require('fs');
 var _ = require('underscore');
 var gulp = require('gulp');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
+var cssfont64 = require('gulp-cssfont64');
 
 var FONTNAME = 'fec-icons';
 var CLASSNAME = 'i';
-var TEMPLATE = 'fontawesome-style';
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task('build-icons', function () {
@@ -32,7 +29,7 @@ gulp.task('build-icons', function () {
     gulp.src('fec-icons/icon-template.scss')
       .pipe(consolidate('underscore', options))
       .pipe(rename({basename: '_icons', extname: '.scss'}))
-      .pipe(gulp.dest('./scss/'))
+      .pipe(gulp.dest('./scss/'));
   })
   .pipe(gulp.dest('./fonts/'))
 });
