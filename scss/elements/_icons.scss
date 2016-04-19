@@ -1,0 +1,15 @@
+.i::before {
+  @include icon-base();
+  display: inline-block;
+}
+
+// Variables for all icons
+
+$info: '\EA01';
+$minus-circle: '\EA02';
+$plus-circle: '\EA03';
+
+
+.i-info::before { content: $info; }
+.i-minus-circle::before { content: $minus-circle; }
+.i-plus-circle::before { content: $plus-circle; }
