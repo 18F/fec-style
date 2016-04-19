@@ -43,6 +43,15 @@
   background: $secondary;
 }
 
+.page-header__title {
+  border-bottom: none;
+  font-family: $sans-serif;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
 // BREAKPOINT: MEDIUM
 // Add padding
 // Show the search bar in line with the page title
