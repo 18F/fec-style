@@ -90,6 +90,7 @@
 // .t-block         - Force display: block
 // .t-inline-block  - Force display: inline-block
 // .t-sans          - Force sans serif
+// .t-serif         - Force serif
 // .t-italic        - Italicize
 // .t-bold          - Embolden!
 // .t-upper         - Transform to uppercase
@@ -128,6 +129,10 @@
 .t-sans {
   font-family: $sans-serif;
   letter-spacing: -.3px;
+}
+
+.t-serif {
+  font-family: $serif;
 }
 
 .t-italic {

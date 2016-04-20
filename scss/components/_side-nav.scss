@@ -9,7 +9,7 @@
 //       <li class="side-nav__item"><a class="side-nav__link is-active" href="#">Link (active)</a></li>
 //       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
 //       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
-//       <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+//       <li class="is-disabled side-nav__item"><span class="side-nav__link" href="#">TBD</span></li>
 //     </ul>
 //   </nav>
 // </div>
@@ -29,6 +29,15 @@
 
   &:last-child {
     padding-bottom: 0;
+  }
+
+  &.is-disabled {
+    .side-nav__link {
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
   }
 }
 
