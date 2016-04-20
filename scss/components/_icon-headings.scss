@@ -61,3 +61,47 @@
     }
   }
 }
+
+// Temporary
+// Refactor after introducing icon font
+
+@mixin u-icon-heading($image) {
+  @include u-background-image($image, 0 0);
+  padding-left: 3rem;
+}
+
+.icon-heading--profiles {
+  @include u-icon-heading('i-profile--inverse');
+}
+
+.icon-heading--overviews {
+  @include u-icon-heading('i-overview--inverse');
+}
+
+.icon-heading--location {
+  @include u-icon-heading('i-election--inverse');
+}
+
+.icon-heading--candidates {
+  @include u-icon-heading('i-candidates--inverse');
+}
+
+.icon-heading--committees {
+  @include u-icon-heading('i-committees--inverse');
+}
+
+.icon-heading--receipts {
+  @include u-icon-heading('i-receipts--inverse');
+}
+
+.icon-heading--disbursements {
+  @include u-icon-heading('i-disbursements--inverse');
+}
+
+.icon-heading--filings {
+  @include u-icon-heading('i-filings--inverse');
+}
+
+.icon-heading--table {
+  @include u-icon-heading('i-table--inverse');
+}

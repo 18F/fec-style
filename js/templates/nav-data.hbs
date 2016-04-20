@@ -4,7 +4,7 @@
       <div class="mega__column">
         <div class="mega__group">
           <div class="mega-heading">
-            <h3 class="mega-heading__title"><a href="{{webAppUrl}}">Profiles</a></h3>
+            <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
           </div>
           <form action="{{webAppUrl}}" method="GET">
             <label class="t-sans" for="menu-search">Search for candidates and committees in any election</label>
@@ -17,13 +17,13 @@
         </div>
         <div class="mega__group">
           <div class="mega-heading">
-            <h3 class="mega-heading__title">Interactive overviews</h3>
+            <h3 class="mega-heading__title icon-heading--overviews">Interactive overviews</h3>
           </div>
             <p>Coming soon</p>
         </div>
         <div class="mega__group">
           <div class="mega-heading">
-            <h3 class="mega-heading__title"><a href="{{webAppUrl}}/elections">Location</a></h3>
+            <h3 class="mega-heading__title icon-heading--location"><a href="{{webAppUrl}}/elections">Location</a></h3>
           </div>
           <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
             <label class="t-sans" for="menu-election-search">Find elections and candidates by ZIP code</label>
@@ -37,26 +37,28 @@
     </div>
     <div class="mega__column-container--3">
       <div class="mega-heading">
-        <h3 class="mega-heading__title">Advanced data</h3>
+        <h3 class="mega-heading__title icon-heading--table">Advanced data</h3>
       </div>
       <div class="mega__column">
         <div class="mega__group">
           <div class="mega-heading--sub">
-            <h4 class="mega-heading__title">Candidates</h4>
+            <h4 class="mega-heading__title icon-heading--candidates">Candidates</h4>
           </div>
           <ul>
             <li><a href="{{webAppUrl}}/candidates/president">Presidential</a></li>
             <li><a href="{{webAppUrl}}/candidates/senate">Senate</a></li>
             <li><a href="{{webAppUrl}}/candidates/house">House</a></li>
-            <li><a href="{{webAppUrl}}/candidates/">+ All candidates</a></li>
+            <li><a href="{{webAppUrl}}/candidates/">+ All candidate data</a></li>
+            <li class="is-disabled">Most recent statements of candidacy (form 2)</li>
           </ul>
         </div>
         <div class="mega__group">
           <div class="mega-heading--sub">
-            <h4 class="mega-heading__title">Receipts</h4>
+            <h4 class="mega-heading__title icon-heading--receipts">Receipts</h4>
           </div>
           <ul>
             <li><a href="{{webAppUrl}}/receipts/individual-contributions">Individual contributions</a></li>
+            <li class="is-disabled">Contributions from other committees</li>
             <li><a href="{{webAppUrl}}/receipts/">+ All receipt data</a></li>
           </ul>
         </div>
@@ -64,30 +66,45 @@
       <div class="mega__column">
         <div class="mega__group">
           <div class="mega-heading--sub">
-            <h4 class="mega-heading__title">Committees</h4>
+            <h4 class="mega-heading__title icon-heading--committees">Committees</h4>
           </div>
           <ul>
+            <li class="is-disabled">Candidate committees</li>
+            <li class="is-disabled">PACs</li>
+            <li class="is-disabled">Super PACs</li>
+            <li class="is-disabled">Leadership PACs</li>
+            <li class="is-disabled">Joint fundraising committees</li>
+            <li class="is-disabled">Party committees</li>
+            <li class="is-disabled">Separate segregated funds</li>
+            <li class="is-disabled">Committees that received requests for additional information (RFAIs)</li>
+            <li class="is-disabled">Most recent statements of organization (form 1)</li>
             <li><a href="{{webAppUrl}}/committees">+ All committee data</a></li>
-          </ul>
-        </div>
-        <div class="mega__group">
-          <div class="mega-heading--sub">
-            <h4 class="mega-heading__title">Disbursements</h4>
-          </div>
-          <ul>
-            <li><a href="{{webAppUrl}}/independent-expenditures">Independent expenditures</a></li>
-            <li><a href="{{webAppUrl}}/electioneering-communications">Electioneering communications</a></li>
-            <li><a href="{{webAppUrl}}/communication-costs">Communication costs</a></li>
-            <li><a href="{{webAppUrl}}/disbursements">+ All disbursement data</a></li>
           </ul>
         </div>
       </div>
       <div class="mega__column">
         <div class="mega__group">
           <div class="mega-heading--sub">
-            <h4 class="mega-heading__title">Filings</h4>
+            <h4 class="mega-heading__title icon-heading--disbursements">Disbursements</h4>
           </div>
           <ul>
+            <li class="is-disabled">Operating expenditures</li>
+            <li class="is-disabled">Expenditures to committees</li>
+            <li><a href="{{webAppUrl}}/independent-expenditures">Independent expenditures</a></li>
+            <li><a href="{{webAppUrl}}/electioneering-communications">Electioneering communications</a></li>
+            <li><a href="{{webAppUrl}}/communication-costs">Communication costs</a></li>
+            <li><a href="{{webAppUrl}}/disbursements">+ All disbursement data</a></li>
+          </ul>
+        </div>
+        <div class="mega__group">
+          <div class="mega-heading--sub">
+            <h4 class="mega-heading__title icon-heading--filings">Report summaries</h4>
+          </div>
+          <ul>
+            <li class="is-disabled">Authorized committees</li>
+            <li class="is-disabled">Unauthorized committees</li>
+            <li class="is-disabled">Form 5 filers only committees</li>
+            <li class="is-disabled">+ All report summaries</li>
             <li><a href="{{webAppUrl}}/filings">+ All filings</a></li>
           </ul>
         </div>

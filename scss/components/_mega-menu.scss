@@ -48,6 +48,11 @@
   .mega-heading--sub {
     border-bottom: 1px solid $inverse;
     margin-bottom: 1rem;
+
+    .mega-heading__title {
+      line-height: 1.5;
+      padding-bottom: .5rem;
+    }
   }
 
   .mega-heading__title {
