@@ -10,7 +10,7 @@ var CLASSNAME = 'i';
 var TIMESTAMP = Math.round(Date.now() / 1000);
 
 gulp.task('build-icons', function () {
- return gulp.src('fec-icons/*.svg')
+ return gulp.src('fec-icons/icons/*.svg')
   .pipe(iconfont({
     fontName: FONTNAME,
     prependUnicode: false,
@@ -26,7 +26,6 @@ gulp.task('build-icons', function () {
         return { name: glyph.name, codepoint: glyph.unicode[0].charCodeAt(0) }
       })
     };
-    // Generate the .scss file
     gulp.src('fec-icons/icon-template.scss')
       .pipe(consolidate('underscore', options))
       .pipe(rename({basename: '_icons'}))

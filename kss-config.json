@@ -8,7 +8,7 @@
   "template": "fec-template",
   "//": "The css and js paths are URLs relative to the generated style guide.",
   "css": [
-    "css/styles.css"
+    "../css/styles.css"
   ],
   "js": [
   ],
