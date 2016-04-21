@@ -250,8 +250,22 @@ ElectionFilter.prototype.handleElectionChange = function(e) {
 
 ElectionFilter.prototype.handleCycleChange = function(e) {
   var selected = $(e.target).val().split(':');
-  this.$cycle.val(selected[0]).change();
+  this.$cycle.val(selected[0]).change().attr('checked', true);
   this.$full.val(selected[1]).change();
+  this.setTag();
+};
+
+ElectionFilter.prototype.setTag = function() {
+  var election = this.$election.val();
+  var cycle = this.$cycles.find(':checked').data('display-value');
+  var value = election + ' election: ' + cycle;
+  this.$election.trigger('filter:added', [
+    {
+      key: 'election',
+      value: value,
+      nonremovable: true
+    }
+  ]);
 };
 
 /* MultiFilters used when there are multiple filters that share the
