@@ -73,7 +73,7 @@ describe('SiteNav', function() {
 
     after(function() {
       $('body').width(1000);
-    })
+    });
 
     describe('assignAria()', function() {
       it('should assign aria attributes to the list and toggle', function() {
