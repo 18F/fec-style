@@ -10,20 +10,6 @@ var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
 
-function isOpen(siteNav) {
-  return siteNav.isOpen &&
-    siteNav.$body.hasClass('is-open') &&
-    siteNav.$list.attr('aria-hidden') === 'false' &&
-    siteNav.$toggle.hasClass('active');
-}
-
-function isClosed(siteNav) {
-  return !siteNav.isOpen &&
-    !siteNav.$body.hasClass('is-open') &&
-    siteNav.$list.attr('aria-hidden') !== 'false'  &&
-    !siteNav.$toggle.hasClass('active');
-}
-
 describe('SiteNav', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
@@ -51,6 +37,10 @@ describe('SiteNav', function() {
     this.siteNav = new SiteNav('.js-site-nav');
   });
 
+  after(function() {
+    this.$fixture.remove();
+  });
+
   describe('constructor()', function() {
     it('should set body to jqueryized selector', function() {
       expect(this.siteNav.$body).to.be.ok;
@@ -63,14 +53,14 @@ describe('SiteNav', function() {
 
   describe('Desktop configuration', function() {
     describe('assignAria()', function() {
-      it('should assign arria attributes to the list', function() {
+      it('should assign aria attributes to the list', function() {
         expect(this.siteNav.$list.attr('aria-label')).to.equal('Site-wide navigation');
       });
     });
 
     describe('initMegaMenu()', function() {
       it('should append a mega menu to items with [data-submenu]', function() {
-        expect(this.siteNav.$list.find('[data-submenu]').find('.mega')).to.be.ok;
+        expect(this.siteNav.$list.find('[data-submenu]').find('.mega').length).to.equal(1);
       });
     });
   });
@@ -81,8 +71,12 @@ describe('SiteNav', function() {
       this.siteNav = new SiteNav('.js-site-nav');
     });
 
+    after(function() {
+      $('body').width(1000);
+    })
+
     describe('assignAria()', function() {
-      it('should assign arria attributes to the list and toggle', function() {
+      it('should assign aria attributes to the list and toggle', function() {
         expect(this.siteNav.$toggle.length).to.be.ok;
         expect(this.siteNav.$toggle.attr('aria-haspopup')).to.equal('true');
         expect(this.siteNav.$list.attr('aria-hidden')).to.equal('true');
@@ -90,6 +84,18 @@ describe('SiteNav', function() {
     });
 
     describe('toggle()', function() {
+      function isOpen(siteNav) {
+        return siteNav.isOpen &&
+          siteNav.$body.hasClass('is-open') &&
+          siteNav.$list.attr('aria-hidden') === 'false' &&
+          siteNav.$toggle.hasClass('active');
+      }
+      function isClosed(siteNav) {
+        return !siteNav.isOpen &&
+          !siteNav.$body.hasClass('is-open') &&
+          siteNav.$list.attr('aria-hidden') !== 'false'  &&
+          !siteNav.$toggle.hasClass('active');
+      }
       it('should show and hide the menu', function() {
         this.siteNav.toggle();
         expect(isOpen(this.siteNav)).to.be.true;
