@@ -54,6 +54,12 @@ describe('filter tags', function() {
       var tag = this.tagList.$list.find('li[data-id="name"]');
       expect(tag.length).to.equal(1);
     });
+
+    it('it does not add remove button if nonremovable is true', function(){
+      $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy', nonremovable: true}]);
+      var tag = this.tagList.$list.find('li[data-id="name"]');
+      expect(tag.find('button').length).to.equal(0);
+    });
   });
 
   describe('removeTag()', function() {
