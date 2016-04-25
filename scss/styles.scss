@@ -2,9 +2,11 @@
 @import 'lib/bourbon/bourbon';
 @import 'lib/neat/neat';
 @import 'fonts';
+@import 'fec-icon-font';
 
 // Variables and mixins
 @import 'variables';
+@import 'icons';
 @import 'grid';
 @import 'mixins/utilities';
 @import 'mixins/type-mixins';

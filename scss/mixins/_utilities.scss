@@ -263,3 +263,35 @@
     }
   }
 }
+
+@mixin icon-base() {
+  font-family: 'fec-icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon-before($icon) {
+  position: relative;
+
+  &::before {
+    @include icon-base;
+    content: $icon;
+    position: absolute;
+  }
+}
+
+@mixin icon-button($icon, $side) {
+  @include icon-before($icon);
+
+  &::before {
+    @if $side == 'left' {
+      left: 1rem;
+    } @else {
+      right: 1rem;
+    }
+  }
+}
+

@@ -1,0 +1,20 @@
+@import 'mixins/utilities';
+
+// Font icons
+.i::before {
+  @include icon-base();
+  display: inline-block;
+}
+
+// Variables for all icons
+
+$cal-add: '\EA01';
+$info: '\EA02';
+$minus-circle: '\EA03';
+$plus-circle: '\EA04';
+
+
+.i-cal-add::before { content: $cal-add; }
+.i-info::before { content: $info; }
+.i-minus-circle::before { content: $minus-circle; }
+.i-plus-circle::before { content: $plus-circle; }
