@@ -23,6 +23,13 @@ var TAG_TEMPLATE = _.template(
   {interpolate: /\{\{(.+?)\}\}/g}
 );
 
+var NONREMOVABLE_TAG_TEMPLATE = _.template(
+  '<li data-id="{{ key }}" class="tag">' +
+    '{{ value }}' +
+  '</li>',
+  {interpolate: /\{\{(.+?)\}\}/g}
+);
+
 function TagList(opts) {
   this.opts = opts;
 
@@ -41,9 +48,10 @@ function TagList(opts) {
 }
 
 TagList.prototype.addTag = function(e, opts) {
+  var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
   this.removeTag(opts.key, false);
   this.$title.html('');
-  this.$list.append(TAG_TEMPLATE(opts));
+  this.$list.append(tag);
   this.$clear.attr('aria-hidden', false);
 };
 

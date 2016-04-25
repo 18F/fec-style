@@ -50,6 +50,10 @@
   .accordion__content {
     padding: 2rem 2rem 1rem 2rem;
   }
+
+  .toggles {
+    margin: 1rem 0;
+  }
 }
 
 .filters__hider {
@@ -86,6 +90,10 @@
 
 .filter__header {
   margin-bottom: 1rem;
+
+  @include media($lg) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .filters__subheader {
@@ -105,16 +113,20 @@
 }
 
 .filters__inner {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 1rem 2rem;
+}
+
+.filters__message-container {
+  padding: 0 2rem;
 }
 
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
-  padding: 1.5rem 0 .5rem 0;
+  margin-top: 1.5rem;
+  padding-bottom: .5rem;
 
-  &:first-of-type {
-    padding-top: 0;
+  &:first-child {
+    margin-top: 0;
   }
 
   &:last-child {
