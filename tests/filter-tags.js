@@ -58,7 +58,7 @@ describe('filter tags', function() {
     it('it does not add remove button if nonremovable is true', function(){
       $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy', nonremovable: true}]);
       var tag = this.tagList.$list.find('li[data-id="name"]');
-      expect(tag.find('button').length).to.equal(0);
+      expect(tag.find('button')).to.have.length(0);
     });
   });
 

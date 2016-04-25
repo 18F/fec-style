@@ -173,6 +173,12 @@ describe('filter set', function() {
         '</div>'
       );
       this.filter = Filter.build(this.$fixture.find('.js-filter'));
+      this.filter.fromQuery({
+        election_year: '2016',
+        cycle: '2014',
+        election_full: false
+      });
+      this.trigger = sinon.spy($.prototype, 'trigger');
     });
 
     it('sets its initial state', function() {
@@ -205,21 +211,18 @@ describe('filter set', function() {
     });
 
     it('sets a tag', function() {
-      this.filter.fromQuery({
-        election_year: '2016',
-        cycle: '2014',
-        election_full: false
-      });
-      var trigger = sinon.spy($.prototype, 'trigger');
       this.filter.$election.val('2016');
       this.filter.setTag();
-      expect(trigger).to.have.been.calledWith('filter:added', [
+      expect(this.trigger).to.have.been.calledWith('filter:added', [
         {
           key: 'election',
           value: '2016 election: 2013-2014',
           nonremovable: true
         }
       ]);
+    });
+
+    afterEach(function() {
       $.prototype.trigger.restore();
     });
   });
