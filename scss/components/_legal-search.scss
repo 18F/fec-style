@@ -1,0 +1,17 @@
+// Legal search
+//
+// Styles for legal search results.
+//
+// Styleguide components.search-results-legal
+
+.legal-search-result__hit {
+  font-style: italic;
+
+  em {
+    @include t-highlight;
+  }
+}
+
+.legal-search-result__display-all {
+  margin: 0.5em 0;
+}
