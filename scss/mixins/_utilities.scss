@@ -235,10 +235,10 @@
 //
 // Styleguide mixins.icon-button
 
-@mixin u-icon-button($icon, $color, $side: left, $width: 2rem, $height: 2rem) {
-  background-image: url('#{svg-fill($icon, $color)}');
+@mixin u-icon-button($icon, $side: left, $width: 1.5rem) {
+  background-image: url('#{svg-fill($icon, $primary)}');
   background-repeat: no-repeat;
-  background-size: $width $height;
+  background-size: $width;
 
   @if $side == left {
     background-position: 1rem 50%;
@@ -246,5 +246,15 @@
   } @else {
     background-position: 90% 50%;
     padding-right: $width + 2rem;
+  }
+
+  &.button--cta,
+  &.button--alt-primary,
+  &.button--alt-secondary {
+    background-image: url('#{svg-fill($icon, $inverse)}');
+  }
+
+  &.button--cta-secondary {
+    background-image: url('#{svg-fill($icon, $secondary)}');
   }
 }
