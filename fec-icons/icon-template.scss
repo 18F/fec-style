@@ -1,15 +1,3 @@
-@import 'mixins/utilities';
-
-// Font icons
-.<%= className %>::before {
-  @include icon-base();
-  display: inline-block;
-}
-
 // Variables for all icons
-
-<% _.each(glyphs, function(glyph) { %>$<%= glyph.name %>: '\<%= glyph.codepoint.toString(16).toUpperCase() %>';
-<% }); %>
-
-<% _.each(glyphs, function(glyph) { %>.<%= className %>-<%= glyph.name %>::before { content: $<%= glyph.name %>; }
+<% _.each(icons, function(svg) { %>$<%= svg.name %>: 'data:image/svg+xml;utf8, <%= svg.content %>';
 <% }); %>

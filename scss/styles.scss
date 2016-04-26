@@ -2,14 +2,14 @@
 @import 'lib/bourbon/bourbon';
 @import 'lib/neat/neat';
 @import 'fonts';
-@import 'fec-icon-font';
 
 // Variables and mixins
 @import 'variables';
-@import 'icons';
+@import 'icons-variables';
 @import 'grid';
 @import 'mixins/utilities';
 @import 'mixins/type-mixins';
+@import 'mixins/icon-mixins';
 
 // Base styling for html elements
 @import 'elements/elements';

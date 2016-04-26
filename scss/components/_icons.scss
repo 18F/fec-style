@@ -7,7 +7,7 @@
 // .icon--inline--right   - Vertically centering and adding slight margin to inline icons
 // .icon--inline--left    - Vertically centering and adding slight margin to inline icons
 //
-// Styleguide components.icons
+// Styleguide icons
 
 .icon {
   display: block;
@@ -28,4 +28,23 @@
 .icon--inline--left {
   margin-right: 1rem;
   vertical-align: middle;
+}
+
+// Icons
+//
+// .i-plus-circle  - Plus circle
+//
+// Markup:
+// <i class="i i-plus-circle"></i>
+//
+// Styleguide icons.simple
+
+.i-plus-circle {
+  display: block;
+  background-color: $primary;
+  color: $inverse;
+  background-image: url('#{svg-fill($plus-circle, $primary-contrast)}');
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
 }
