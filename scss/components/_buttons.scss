@@ -324,6 +324,7 @@
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
 // Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
+// .button--add         - Add
 // .button--previous    - Go back
 // .button--next        - Go next
 // .button--go          - Go
@@ -349,52 +350,38 @@
 //
 // Styleguide components.buttons.icon-and-text-buttons
 
+.button--add {
+  @include u-icon-button($plus-circle, left);
+}
+
 .button--previous {
-  @include u-icon-button('i-left--primary', transparent, left, 1rem, 1rem);
-
-  &.button--cta-secondary {
-    @include u-icon-button('i-left--secondary', transparent, left, 1rem, 1rem);
-  }
+  @include u-icon-button($left, left);
 }
 
-.button--next {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
 
-  &.button--cta-secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
-}
-
+.button--next,
 .button--go {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
-
-  &.button--cta {
-    @include u-icon-button('i-right-2--inverse', transparent, right, 1rem, 1rem);
-  }
-
-  &.button--cta-secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
+  @include u-icon-button($right, right;
 }
 
 .button--browse {
-  @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
+  @include u-icon-button($browse);
 }
 
 .button--map {
-  @include u-icon-button('i-map--primary', transparent)
+  @include u-icon-button($map)
 }
 
 .button--table {
-  @include u-icon-button('i-table--primary', transparent, left, 2.5rem)
+  @include u-icon-button($table, left, 2.5rem)
 }
 
 .button--two-candidates {
-  @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
+  @include u-icon-button($two-candidates, left, 2.5rem);
 }
 
 .button--election {
-  @include u-icon-button('i-election--primary', $primary, left, 4rem);
+  @include u-icon-button($election, left, 4rem);
 }
 
 .button--export {
@@ -430,15 +417,7 @@
 }
 
 .button--search--text {
-  @include u-icon-button('i-search--primary', transparent, left);
-
-  &.button--cta {
-    @include u-icon-button('i-search--inverse', transparent, left);
-  }
-
-  &.button--cta-primary {
-    @include u-icon-button('i-search--primary-contrast', transparent, left);
-  }
+  @include u-icon-button($search);
 }
 
 // Special Buttons
