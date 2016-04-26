@@ -10,7 +10,7 @@ function writeScss(stream, file) {
 
 }
 
-gulp.task('minify', function() {
+gulp.task('minify-icons', function() {
   return gulp.src('./fec-icons/icons/*.svg')
     .pipe(svgmin({
       plugins: [
@@ -22,10 +22,10 @@ gulp.task('minify', function() {
         }
       ]
     }))
-    .pipe(gulp.dest('./img/icons'));
+    .pipe(gulp.dest('./img/icons', {overwrite: true}));
 });
 
-gulp.task('consolidate', function() {
+gulp.task('consolidate-icons', function() {
   function getSVGs() {
     var svgs = [],
         files = fs.readdirSync('./img/icons/');

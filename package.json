@@ -11,6 +11,7 @@
     "build-js": "browserify -t stringify --debug fec-template/public/init.js > fec-template/public/main.js",
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "cd fec-template/ && npm run less && cd .. rm -rf styleguide && kss-node --config kss-config.json",
+    "build-icons": "gulp minify-icons && gulp consolidate-icons",
     "copy-images": "cp -R img styleguide/img",
     "copy-css": "cp -R css styleguide/css",
     "percy": "percy snapshot styleguide",

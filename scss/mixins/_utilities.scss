@@ -227,7 +227,7 @@
 
 // u-icon-button()
 //
-// $image         - Name of the image file
+// $icon          - Name of the icon variable. Will be inlined as a data uri
 // $color         - Border color
 // $side          - Icon on the left or right? Defaults to left
 // $width         - Width of the icon, defaults to 2rem
@@ -235,63 +235,16 @@
 //
 // Styleguide mixins.icon-button
 
-@mixin u-icon-button($image, $color, $side: left, $width: 2rem, $height: 2rem) {
-  position: relative;
+@mixin u-icon-button($icon, $color, $side: left, $width: 2rem, $height: 2rem) {
+  background-image: url('#{svg-fill($icon, $color)}');
+  background-repeat: no-repeat;
+  background-size: $width $height;
+
   @if $side == left {
+    background-position: 1rem 50%;
     padding-left: $width + 2rem;
   } @else {
+    background-position: 90% 50%;
     padding-right: $width + 2rem;
   }
-
-  &::after {
-    @include u-background-image($image);
-    background-size: contain;
-    content: '';
-    display: block;
-    height: $height;
-    width: $width;
-    position: absolute;
-    top: 50%;
-    margin-top: -1 * ($height / 2);
-
-    @if $side == left {
-      left: 1rem;
-      border-right: 1px solid $color;
-    } @else {
-      right: 1rem;
-      border-left: 1px solid $color;
-    }
-  }
 }
-
-@mixin icon-base() {
-  font-family: 'fec-icons';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@mixin icon-before($icon) {
-  position: relative;
-
-  &::before {
-    @include icon-base;
-    content: $icon;
-    position: absolute;
-  }
-}
-
-@mixin icon-button($icon, $side) {
-  @include icon-before($icon);
-
-  &::before {
-    @if $side == 'left' {
-      left: 1rem;
-    } @else {
-      right: 1rem;
-    }
-  }
-}
-
