@@ -44,6 +44,7 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$selected = this.$body.find('.dropdown__selected');
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
   this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
+  this.$field.on('blur', this.handleBlur.bind(this));
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
   if (this.allowText) {
@@ -60,6 +61,7 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     value: datum.id,
     id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
   });
+  this.datum = null;
 };
 
 TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
@@ -72,9 +74,25 @@ TypeaheadFilter.prototype.handleKeypress = function(e) {
   }
 };
 
+TypeaheadFilter.prototype.selectFirstItem = function(e) {
+  // Hack to select the first item in the list
+  // Refactor to be less hacky if usability testing reveals it to be a good move
+  this.$body.find('.tt-suggestion__name')[0].click();
+  this.handleSelect(e, this.datum);
+};
+
+TypeaheadFilter.prototype.handleBlur = function() {
+  // If the user starts typing but then leaves the field clear the input
+  if (!this.datum && !this.allowText) {
+    this.clearInput();
+  }
+};
+
 TypeaheadFilter.prototype.handleSubmit = function(e) {
   if (this.datum) {
     this.handleSelect(e, this.datum);
+  } else if (!this.datum && !this.allowText) {
+    this.selectFirstItem(e);
   } else if (this.allowText && this.$field.typeahead('val').length > 0) {
     this.handleSelect(e, {id: this.$field.typeahead('val')});
   }
@@ -82,6 +100,13 @@ TypeaheadFilter.prototype.handleSubmit = function(e) {
 
 TypeaheadFilter.prototype.clearInput = function() {
   this.$field.typeahead('val', null).change();
+};
+
+TypeaheadFilter.prototype.handleChange = function() {
+  // Clear the hidden datum value if the input is emptied
+  if (this.$field.typeahead('val').length === 0) {
+    this.datum = null;
+  }
 };
 
 TypeaheadFilter.prototype.checkboxTemplate = _.template(
