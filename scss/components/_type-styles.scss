@@ -93,6 +93,7 @@
 // .t-serif         - Force serif
 // .t-italic        - Italicize
 // .t-bold          - Embolden!
+// .t-highlight     - Highlight
 // .t-upper         - Transform to uppercase
 // .t-data-header   - Small header above a big data number
 // .t-big-data      - Big number
@@ -141,6 +142,10 @@
 
 .t-bold {
   font-weight: bold;
+}
+
+.t-hightlight {
+  @include t-highlight;
 }
 
 .t-upper {

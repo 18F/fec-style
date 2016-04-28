@@ -2,7 +2,7 @@
 
 var $ = require('jquery');
 var _ = require('underscore');
-var feedback = require('./templates/feedback.html');
+var feedback = require('./templates/feedback.hbs');
 
 var statusClasses = {
   success: 'message--success',
@@ -18,7 +18,7 @@ var statusClasses = {
 function Feedback(url, parent) {
   this.url = url;
   this.isOpen = false;
-  this.$feedback = $(feedback);
+  this.$feedback = $(feedback());
 
   $(parent || 'body').append(this.$feedback);
 
