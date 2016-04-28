@@ -236,7 +236,7 @@
 // Styleguide mixins.icon-button
 
 @mixin u-icon-button($icon, $side: left, $width: 1.5rem) {
-  background-image: url('#{svg-fill($icon, $primary)}');
+  background-image: url('#{svg-fill($icon, $base)}');
   background-repeat: no-repeat;
   background-size: $width;
 
@@ -248,10 +248,18 @@
     padding-right: $width + 2rem;
   }
 
+  &.button--alt {
+    background-image: url('#{svg-fill($icon, $gray)}');
+  }
+
   &.button--cta,
   &.button--alt-primary,
   &.button--alt-secondary {
     background-image: url('#{svg-fill($icon, $inverse)}');
+  }
+
+  &.button--cta-primary {
+    background-image: url('#{svg-fill($icon, $primary)}');
   }
 
   &.button--cta-secondary {

@@ -355,69 +355,60 @@
 }
 
 .button--previous {
-  @include u-icon-button($left, left);
+  @include u-icon-button($arrow-left, left);
 }
 
+.button--next {
+  @include u-icon-button($arrow-right, right);
+}
 
-.button--next,
 .button--go {
-  @include u-icon-button($right, right;
+  @include u-icon-button($arrow-right-border, right);
 }
 
 .button--browse {
-  @include u-icon-button($browse);
+  @include u-icon-button($table, left);
 }
 
 .button--map {
-  @include u-icon-button($map)
+  @include u-icon-button($map-pin, left)
 }
 
 .button--table {
-  @include u-icon-button($table, left, 2.5rem)
+  @include u-icon-button($table, left)
 }
 
 .button--two-candidates {
-  @include u-icon-button($two-candidates, left, 2.5rem);
+  @include u-icon-button($two-candidates, left);
 }
 
 .button--election {
-  @include u-icon-button($election, left, 4rem);
+  @include u-icon-button($person-location, left);
 }
 
-.button--export {
-  @include u-background-image('../img/i-export--primary', 1rem .5rem);
-  background-size: 2rem;
-  padding-left: 4rem;
-}
-
+.button--export,
 .button--download {
-  @include u-background-image('../img/i-download--inverse', 1rem 1rem);
-  padding-left: 3rem;
+  @include u-icon-button($download, left);
 }
 
 .button--subscribe {
-  @include u-background-image('../img/i-subscribe--inverse', 1rem .8rem);
-  padding-left: 3rem;
+  @include u-icon-button($signal, left);
 }
 
 .button--cal {
-  @include u-background-image('../img/i-cal--primary', 1rem .7rem);
-  background-size: 1.5rem;
+  @include u-icon-button($calendar, left);
   height: 3.4rem;
-  padding-left: 3rem;
   width: 9rem;
 }
 
 .button--list {
-  @include u-background-image('../img/i-table--primary', 1rem 1rem);
-  background-size: 1.5rem;
+  @include u-icon-button($list, left);
   height: 3.4rem;
-  padding-left: 3rem;
   width: 9rem;
 }
 
 .button--search--text {
-  @include u-icon-button($search);
+  @include u-icon-button($magnifying-glass);
 }
 
 // Special Buttons
