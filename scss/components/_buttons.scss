@@ -19,7 +19,7 @@
 
 .button {
   @include transition(background-color, .1s, color, .1s, border-color, .1s);
-  border: none;
+  border: 2px solid;
   border-radius: 2px;
   color: $primary;
   display: inline-block;
@@ -43,15 +43,18 @@
 .button--standard {
   @extend .button;
   background-color: $gray;
+  border-color: $gray;
   color: $base;
 
   &:hover:not(.is-disabled):not(.is-active) {
     background-color: $gray-medium;
+    border-color: $gray-medium;
   }
 
   &:active:not(.is-disabled),
   &.is-active {
     background-color: $gray-dark;
+    border-color: $gray-dark;
     color: $inverse;
   }
 }
@@ -59,15 +62,18 @@
 .button--cta {
   @extend .button;
   background-color: $primary;
+  border-color: $primary;
   color: $inverse;
 
   &:hover:not(.is-disabled):not(.is-active) {
     background-color: $navy;
+    border-color: $navy;
   }
 
   &:active:not(.is-disabled),
   &.is-active {
     background-color: $bright-blue;
+    border-color: $bright-blue;
     color: $primary;
   }
 }
@@ -75,7 +81,7 @@
 .button--alt {
   @extend .button;
   background-color: none;
-  border: 2px solid $gray;
+  border-color: $gray;
   color: $base;
 
   &:hover:not(.is-disabled):not(.is-active) {
@@ -108,22 +114,25 @@
 .button--cta-primary {
   @extend .button;
   background-color: $primary-contrast;
+  border-color: $primary-contrast;
   color: $primary;
 
   &:hover:not(.is-disabled):not(.is-active) {
     background-color: lighten($primary-contrast, 5%);
+    border-color: lighten($primary-contrast, 5%);
   }
 
   &:active:not(.is-disabled),
   &.is-active {
     background-color: $navy;
+    border-color: $navy;
     color: $inverse;
   }
 }
 
 .button--alt-primary {
   @extend .button;
-  border: 2px solid $inverse;
+  border-color: $inverse;
   color: $inverse;
 
   &:hover:not(.is-disabled):not(.is-active) {
@@ -160,22 +169,25 @@
 .button--cta-secondary {
   @extend .button;
   background-color: $secondary-contrast;
+  border-color: $secondary-contrast;
   color: $secondary;
 
   &:hover:not(.is-disabled):not(.is-active) {
     background-color: lighten($secondary-contrast, 5%);
+    border-color: lighten($secondary-contrast, 5%);
   }
 
   &:active:not(.is-disabled),
   &.is-active {
     background-color: $deep-orange;
+    border-color: $deep-orange;
     color: $inverse;
   }
 }
 
 .button--alt-secondary {
   @extend .button;
-  border: 2px solid $inverse;
+  border-color: $inverse;
   color: $inverse;
 
   &:hover:not(.is-disabled):not(.is-active) {
