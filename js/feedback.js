@@ -24,6 +24,7 @@ function Feedback(url, parent) {
 
   this.$button = this.$feedback.find('.js-feedback');
   this.$reset = this.$feedback.find('.js-reset');
+  this.$follow = this.$feedback.find('.js-follow');
   this.$box = this.$feedback.find('.js-feedback-box');
   this.$status = this.$box.find('.js-status');
   this.$form = this.$feedback.find('form');
@@ -79,11 +80,11 @@ Feedback.prototype.submit = function(e) {
 
 Feedback.prototype.handleSuccess = function(response) {
   var message =
-    '<h2 class="feedback__title">Thanks for helping us improve betaFEC</h2>' +
-    '<p>This information has been reported on GitHub, where it is publicly visible. ' +
-    '<a target="_blank" href="' + response.html_url + '">Track</a> the status of your feedback.</p>';
+    '<h2 class="feedback__title">Thanks for helping us improve</h2>' +
+    '<p>This information has been reported on GitHub, where it\'s publicly visible.</p>';
   var buttonText = 'Submit another issue';
   this.$box.find('textarea').val('');
+  this.$follow.attr('href', response.html_url).attr('aria-hidden', false);
   this.message(message, buttonText, 'success');
 };
 
