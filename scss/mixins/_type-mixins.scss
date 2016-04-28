@@ -2,7 +2,6 @@
 
 @mixin heading($level) {
   margin: 0 0 1em 0;
-  color: $base;
 
   @if $level == display {
     border-bottom: 0;
