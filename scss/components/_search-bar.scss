@@ -46,6 +46,15 @@
 
     .combo__input {
       width: 100%;
+      color: $base;
+    }
+
+    .tt-hint {
+      color: $gray-dark;
+    }
+
+    pre {
+      color: $base;
     }
   }
 
