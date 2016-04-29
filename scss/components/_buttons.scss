@@ -285,14 +285,20 @@
 // Styleguide components.buttons.icon-buttons
 
 .button--search {
-  @include u-background-image('i-search--primary');
+  @include u-icon-button($magnifying-glass);
+  background-size: 2.2rem;
+  background-position: 50%;
 
   &.button--cta {
-    @include u-background-image('i-search--inverse');
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
   }
 
   &.button--cta-secondary {
-    @include u-background-image('i-search--secondary');
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
   }
 }
 
@@ -351,7 +357,7 @@
 // Styleguide components.buttons.icon-and-text-buttons
 
 .button--add {
-  @include u-icon-button($plus-circle, left);
+  @include u-icon-button($plus-circle, left, 2rem);
 }
 
 .button--previous {
