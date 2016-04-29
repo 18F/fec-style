@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
-    <title>table</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="table" fill="#000000">
-            <path d="M0,1.99742191 C0,0.894276248 0.898212381,0 1.99079514,0 L18.0092049,0 C19.1086907,0 20,0.890925393 20,1.99742191 L20,17.0025781 C20,18.1057238 19.1017876,19 18.0092049,19 L1.99079514,19 C0.891309342,19 0,18.1090746 0,17.0025781 L0,1.99742191 Z M7,10.5 L18,10.5 L18,12.5 L7,12.5 L7,10.5 Z M7,14.5 L18,14.5 L18,17 L7,17 L7,14.5 Z M7,2 L18,2 L18,4.5 L7,4.5 L7,2 Z M7,6.5 L18,6.5 L18,8.5 L7,8.5 L7,6.5 Z M2,6.5 L5,6.5 L5,8.5 L2,8.5 L2,6.5 Z M2,10.5 L5,10.5 L5,12.5 L2,12.5 L2,10.5 Z M2,14.5 L5,14.5 L5,17 L2,17 L2,14.5 Z M2,2 L5,2 L5,4.5 L2,4.5 L2,2 Z" id="Combined-Shape"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-745.5 539.9 20 20" style="enable-background:new -745.5 539.9 20 20;" xml:space="preserve">
+<path d="M-727.5,540.4h-16c-1.1,0-2,0.9-2,2v15c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2v-15C-725.5,541.3-726.4,540.4-727.5,540.4z
+	 M-740.5,557.4h-3v-2.5h3V557.4z M-740.5,552.9h-3v-2h3V552.9z M-740.5,548.9h-3v-2h3V548.9z M-740.5,544.9h-3v-2.5h3V544.9z
+	 M-727.5,557.4h-11v-2.5h11V557.4z M-727.5,552.9h-11v-2h11V552.9z M-727.5,548.9h-11v-2h11V548.9z M-727.5,544.9h-11v-2.5h11V544.9
+	z"/>
 </svg>
