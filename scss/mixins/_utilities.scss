@@ -108,17 +108,18 @@
   [type="radio"] + label,
   [type="checkbox"] + label::before,
   [type="radio"] + label::before {
-    border-color: $inverse;
+    color: $base;
   }
 
-  [type="checkbox"]:checked + label::before,
-  [type="radio"]:checked + label::before {
-    background-color: $inverse;
+  [type="checkbox"]:checked + label,
+  [type="radio"]:checked + label {
+    color: $inverse;
   }
 
   [type="checkbox"]:checked + label::before {
     background-image: url('../img/i-check--base.png');
     background-image: url('../img/i-check--base.svg');
+    background-color: $inverse;
   }
 
   select {

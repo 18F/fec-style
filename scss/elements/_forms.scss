@@ -150,41 +150,47 @@ input[type="file"] {
 
 [type="checkbox"] + label,
 [type="radio"] + label {
-  border: 1px solid $gray-dark;
+  border: 1px solid $gray-medium;
+  background-color: $gray-medium;
   display: inline-block;
   cursor: pointer;
   line-height: 2rem;
   margin: 0 0 1rem .25rem;
   padding: .4rem .6rem .4rem 3rem;
+
+  &:hover {
+    background-color: $gray-light;
+    border-color: $gray-light;
+  }
+
+  &::before {
+    background: $inverse;
+    border: 2px solid $gray-dark;
+    border-radius: 2px;
+    content: '';
+    display: inline-block;
+    height: 1.6rem;
+    margin-right: .6em;
+    margin-left: -2.4rem;
+    text-indent: .15em;
+    width: 1.6rem;
+    vertical-align: -4px;
+  }
 }
 
-[type="checkbox"] + label::before,
 [type="radio"] + label::before {
-  background: $inverse;
-  border: 2px solid $gray-dark;
-  border-radius: 2px;
-  content: '';
-  display: inline-block;
   height: 1.6rem;
-  margin-right: .6em;
-  margin-left: -2.4rem;
-  text-indent: .15em;
   width: 1.6rem;
-  vertical-align: -4px;
-}
-
-[type="radio"] + label::before {
-  height: 1.6rem;
-  width: 1.6rem;
-}
-
-[type="radio"] + label::before {
   border-radius: 1.6rem;
 }
 
-[type="checkbox"]:checked + label::before,
-[type="radio"]:checked + label::before {
-  background-color: $gray-dark;
+[type="checkbox"]:checked + label,
+[type="radio"]:checked + label {
+  background-color: transparent;
+
+  &::before {
+    background-color: $gray-dark;
+  }
 }
 
 [type="checkbox"]:checked + label::before {
@@ -193,10 +199,12 @@ input[type="file"] {
   background-position: 50%;
   background-size: 12px;
   background-repeat: no-repeat;
+  border: 1px solid $inverse;
 }
 
-[type="checkbox"]:focus + label::before {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 3px $gray-dark;
+[type="checkbox"]:focus + label,
+[type="radio"]:focus + label {
+  box-shadow: 0 0 2px 2px $focus;
 }
 
 [type="checkbox"]:disabled + label::before,
