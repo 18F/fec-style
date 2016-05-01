@@ -15,6 +15,9 @@ gulp.task('minify-icons', function() {
         },
         {
           removeAttrs: {attrs: '(fill|fill-rule)'}
+        },
+        {
+          removeStyleElement: true
         }
       ]
     }))
@@ -46,6 +49,5 @@ gulp.task('consolidate-icons', function() {
     .pipe(rename({basename: '_icon-variables'}))
     .pipe(urlencode())
     .pipe(gulp.dest('./scss/'))
-    .pipe(gulp.dest('./'));
 });
 
