@@ -18,30 +18,28 @@ gulp.task('minify-icons', function() {
         }
       ]
     }))
-    .pipe(gulp.dest('./img/icons', {overwrite: true}));
+    .pipe(gulp.dest('./fec-icons/output', {overwrite: true}));
 });
 
 gulp.task('consolidate-icons', function() {
   function getSVGs() {
-    var svgs = [],
-        files = fs.readdirSync('./img/icons/');
-    files = _.filter(files, function(file) {
-      return file.substr(-4) === '.svg';
-    });
-    _.map(files, function(file) {
-      var data = fs.readFileSync('./img/icons/' + file, 'utf8');
-      svgs.push({
-        name: file.split('.')[0],
-        content: data,
-      });
-    });
-    return svgs;
+    return _(fs.readdirSync('./fec-icons/output/'))
+      .chain()
+      .filter(function (filename) {
+        return filename.substr(-4) === '.svg';
+      }).map(function (filename) {
+        return {
+          name: filename.split('.')[0],
+          content: fs.readFileSync('./fec-icons/output/' + filename, 'utf8')
+        };
+      }).value();
   }
 
   var svgs = getSVGs();
   var data = {
     icons: svgs
   };
+
 
   return gulp.src('./fec-icons/icon-template.scss')
     .pipe(consolidate('underscore', data))
