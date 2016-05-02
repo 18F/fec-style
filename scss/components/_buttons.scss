@@ -238,7 +238,9 @@
 // Styleguide components.buttons.remove
 
 .button--remove {
-  @include u-background-image('i-x--primary');
+  @include u-icon-bg($x, $primary);
+  background-size: 50%;
+  background-position: center center;
   display: none;
   height: 4rem;
   padding: .6rem;
@@ -253,7 +255,6 @@
   }
 
   &:focus {
-    @include u-background-image('i-x--primary-contrast');
     border: none;
   }
 }
@@ -308,19 +309,24 @@
 // .button--calendar--mini          - Mini add calendar button
 //
 // Markup:
-// <button class="dropdown__button button--alt">Add to calendar</button>
+// <button class="button--calendar dropdown__button button--alt">Add to calendar</button>
+// <button class="button--calendar--mini dropdown__button dropdown__button--mini button--alt"></button>
 //
 // Styleguide components.buttons.calendar-dropdown-buttons
 
 .button--calendar {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  @include u-icon-bg($cal-add, $base);
+  background-position: 1rem .7rem;
+  background-size: 2rem;
   padding-left: 4rem;
   padding-right: 6rem;
 }
 
 
 .button--calendar--mini {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  @include u-icon-bg($cal-add, $base);
+  background-position: 1rem .7rem;
+  background-size: 2rem;
   max-width: 7.4rem;
   padding-left: 5rem;
 }
@@ -330,7 +336,6 @@
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
 // Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
-// .button--add         - Add
 // .button--previous    - Go back
 // .button--next        - Go next
 // .button--go          - Go
@@ -355,10 +360,6 @@
 // <button class="button--alt-secondary {{ modifier_class }}">Button</button>
 //
 // Styleguide components.buttons.icon-and-text-buttons
-
-.button--add {
-  @include u-icon-button($plus-circle, left, 2rem);
-}
 
 .button--previous {
   @include u-icon-button($arrow-left, left);
@@ -424,7 +425,6 @@
 // .button--close--base             - Base close button
 // .button--close--inverse          - Inverse close button
 // .button--close--primary          - Primary close button
-// .button--close--primary-contrast - Primary contrast close button
 // .button--down                    - Down button
 // .button--cancel                  - Cancel button
 // .button--panel                   - Panel trigger button
@@ -433,54 +433,30 @@
 // <button class="{{modifier_class}}"></button>
 //
 // Styleguide components.buttons.special-buttons
+
 .button--close--base {
-  @include u-background-image('../img/i-x--base');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $base);
 }
 
 .button--close--inverse {
-  @include u-background-image('../img/i-x--inverse');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $inverse);
 }
 
 .button--close--primary {
-  @include u-background-image('../img/i-x--primary');
-  height: 4rem;
-  width: 4rem;
-}
-
-.button--close--neutral {
-  @include u-background-image('../img/i-x--neutral');
-  height: 4rem;
-  width: 4rem;
-}
-
-.button--close--primary-contrast {
-  @include u-background-image('../img/i-x--primary-contrast');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $primary);
 }
 
 .button--down {
-  @include u-background-image('../img/i-down-2--primary-contrast');
+  @include u-background-image('i-down-2--primary-contrast');
   background-size: 50%;
   height: 4rem;
   width: 4rem;
 }
 
 .button--cancel {
-  @include u-background-image('../img/i-x--primary-contrast');
-  background-color: $primary;
-  border-radius: 2rem;
-  height: 2rem;
-  width: 2rem;
+  @include u-icon($x-circle, $primary, 2rem, 2rem, contain);
 }
 
 .button--panel {
-  @include u-background-image('../img/i-right--primary');
-  display: block;
-  height: 2rem;
-  width: 2rem;
+  @include u-icon($arrow-right, $primary, 2rem, 2rem, contain);
 }

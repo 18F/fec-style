@@ -31,9 +31,10 @@
 }
 
 .tag__remove {
-  @include u-background-image('../img/i-x--primary');
-  padding: 1rem;
+  @include u-icon-bg($x, $primary);
+  background-size: contain;
   background-position: 100% 50%;
+  padding: 1rem;
 }
 
 .data-container__widgets--secondary {
