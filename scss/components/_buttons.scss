@@ -447,10 +447,7 @@
 }
 
 .button--down {
-  @include u-background-image('i-down-2--primary-contrast');
-  background-size: 50%;
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($arrow-down-border, $primary-contrast);
 }
 
 .button--cancel {

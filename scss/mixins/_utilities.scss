@@ -52,6 +52,17 @@
   width: 5rem;
 }
 
+// u-icon-bg()
+//
+// Most basic mixin for using a variable svg as a background image
+//
+// Styleguide mixins.icon-bg
+
+@mixin u-icon-bg($icon, $color) {
+  background-image: url('#{svg-fill($icon, $color)}');
+  background-repeat: no-repeat;
+}
+
 // u-font-color()
 //
 // Used to set the color of all child elements
@@ -118,11 +129,11 @@
   }
 
   .term {
-    @include u-background-image('i-term--cream', 100% 40%);
+    @include u-icon-bg($book, $inverse);
   }
 
   .tooltip__trigger {
-    @include u-background-image('i-info--cream--small', 100% 50%);
+    @include u-icon-bg($info-circle-outline, $inverse);
   }
 }
 
@@ -150,7 +161,11 @@
   }
 
   .term {
-    @include u-background-image('i-term--neutral', 100% 0);
+    @include u-icon-bg($book, $inverse);
+  }
+
+  .tooltip__trigger {
+    @include u-icon-bg($info-circle-outline, $inverse);
   }
 }
 
@@ -222,17 +237,6 @@
   background-image: url('../img/' + $image + '.svg');
   background-repeat: no-repeat;
   background-position: $position;
-}
-
-// u-icon-bg()
-//
-// Most basic mixin for using a variable svg as a background image
-//
-// Styleguide mixins.icon-bg
-
-@mixin u-icon-bg($icon, $color) {
-  background-image: url('#{svg-fill($icon, $color)}');
-  background-repeat: no-repeat;
 }
 
 // u-icon()
