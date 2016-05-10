@@ -336,8 +336,6 @@
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
 // Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
-// .button--previous    - Go back
-// .button--next        - Go next
 // .button--go          - Go
 // .button--browse      - For links to the datatable view
 // .button--map         - Map button
@@ -360,15 +358,6 @@
 // <button class="button--alt-secondary {{ modifier_class }}">Button</button>
 //
 // Styleguide components.buttons.icon-and-text-buttons
-
-.button--previous {
-  @include u-icon-button($arrow-left, left);
-}
-
-.button--next {
-  @include u-icon-button($arrow-right, right);
-}
-
 .button--go {
   @include u-icon-button($arrow-right-border, right);
 }
@@ -422,6 +411,8 @@
 //
 // Common icon buttons for various purposes
 //
+// .button--previous    - Go back
+// .button--next        - Go next
 // .button--close--base             - Base close button
 // .button--close--inverse          - Inverse close button
 // .button--close--primary          - Primary close button
@@ -434,6 +425,16 @@
 //
 // Styleguide components.buttons.special-buttons
 
+.button--previous {
+  @include u-icon-button($arrow-left, left, 1rem);
+  background-position: 50% 50%;
+}
+
+.button--next {
+  @include u-icon-button($arrow-right, right, 1rem);
+  background-position: 50% 50%;
+}
+
 .button--close--base {
   @include u-icon($x, $base);
 }
@@ -444,6 +445,7 @@
 
 .button--close--primary {
   @include u-icon($x, $primary);
+  background-size: 2rem;
 }
 
 .button--down {

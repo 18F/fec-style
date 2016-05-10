@@ -280,7 +280,7 @@
   }
 
   &.button--alt {
-    background-image: url('#{svg-fill($icon, $gray)}');
+    background-image: url('#{svg-fill($icon, $base)}');
   }
 
   &.button--cta,

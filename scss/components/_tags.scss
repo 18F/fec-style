@@ -27,12 +27,12 @@
   font-family: $sans-serif;
   letter-spacing: -.3px;
   margin: 0 4px 2px 0;
-  padding: 2px 0 2px .75rem;
+  padding: 2px .75rem;
 }
 
 .tag__remove {
   @include u-icon-bg($x, $primary);
-  background-size: 2rem;
+  background-size: 1.4rem;
   background-position: 100% 50%;
   padding: 1rem;
 }
