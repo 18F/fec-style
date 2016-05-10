@@ -6,3 +6,5 @@ fec-template/public/main.js
 css/styles.css
 fec-icons/output/*.svg
 npm-debug.log
+
+fec-template/public/kss.css
