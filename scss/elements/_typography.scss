@@ -55,8 +55,8 @@ p {
   max-width: 80rem;
   width: 100%;
 
-    p + h1 {
-    margin-top: 3rem;
+  p + h1 {
+  margin-top: 3rem;
   }
 
   p + h2 {
@@ -69,6 +69,7 @@ p {
 
   p + h4 {
     margin-top: 2rem;
+  }
 }
 
 hr {
@@ -80,4 +81,4 @@ hr {
 }
 
 
-}
+
