@@ -407,6 +407,11 @@
   @include u-icon-button($magnifying-glass);
 }
 
+// Temporary button for testing new typeahead button styles
+.button--typeahead-filter {
+  @include u-background-image('i-down--primary');
+}
+
 // Special Buttons
 //
 // Common icon buttons for various purposes

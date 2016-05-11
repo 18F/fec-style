@@ -165,6 +165,7 @@
 .tt-suggestion:hover {
   cursor: pointer;
   background: $gray-lightest;
+  border-left: 4px solid $primary-contrast;
 
   .tt-suggestion__name {
     color: $base;
