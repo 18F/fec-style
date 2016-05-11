@@ -44,6 +44,7 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$selected = this.$body.find('.dropdown__selected');
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
   this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
+  this.$field.on('typeahead:render', this.setFirstItem.bind(this));
   this.$field.on('blur', this.handleBlur.bind(this));
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
@@ -68,17 +69,16 @@ TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
   this.datum = datum;
 };
 
+TypeaheadFilter.prototype.setFirstItem = function(e) {
+  // Set the firstItem to a datum upon each rendering of results
+  // This way clicking enter or the button will submit with this datum
+  this.firstItem = arguments[1];
+};
+
 TypeaheadFilter.prototype.handleKeypress = function(e) {
   if (e.keyCode === 13) {
     this.handleSubmit(e);
   }
-};
-
-TypeaheadFilter.prototype.selectFirstItem = function(e) {
-  // Hack to select the first item in the list
-  // Refactor to be less hacky if usability testing reveals it to be a good move
-  this.$body.find('.tt-suggestion__name')[0].click();
-  this.handleSelect(e, this.datum);
 };
 
 TypeaheadFilter.prototype.handleBlur = function() {
@@ -92,7 +92,7 @@ TypeaheadFilter.prototype.handleSubmit = function(e) {
   if (this.datum) {
     this.handleSelect(e, this.datum);
   } else if (!this.datum && !this.allowText) {
-    this.selectFirstItem(e);
+    this.handleSelect(e, this.firstItem);
   } else if (this.allowText && this.$field.typeahead('val').length > 0) {
     this.handleSelect(e, {id: this.$field.typeahead('val')});
   }
