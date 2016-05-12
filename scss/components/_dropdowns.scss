@@ -54,7 +54,6 @@
 }
 
 .dropdown__value {
-  display: block;
   margin: 0;
 }
 
@@ -71,24 +70,23 @@
   top: 3.4rem;
   z-index: 999;
 
-  .dropdown__value {
+  .dropdown__value,
+  label.dropdown__value {
+    background-color: transparent;
     border-bottom: 1px solid $gray-dark;
+    display: block;
     margin: 0;
     padding: .5rem 1rem;
     white-space: nowrap;
 
     &:hover {
-      background-color: $gray-medium;
+      background-color: $gray-light;
       cursor: pointer;
     }
 
     &::before {
       display: none;
     }
-  }
-
-  input:focus + .dropdown__value {
-    background-color: $gray-medium;
   }
 
   .dropdown__item:last-of-type {
