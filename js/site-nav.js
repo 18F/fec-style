@@ -44,13 +44,13 @@ function SiteNav(selector, opts) {
 
 SiteNav.prototype.initMegaMenu = function() {
   var self = this;
-  this.$body.find('[data-submenu]').each(function(){
-    var id = $(this).data('submenu');
-    var submenu = TEMPLATES[id](self.opts);
-    $(this).append(submenu);
-  });
-
   if ( $('body').width() > helpers.BREAKPOINTS.LARGE) {
+    this.$body.find('[data-submenu]').each(function(){
+      var id = $(this).data('submenu');
+      var submenu = TEMPLATES[id](self.opts);
+      $(this).append(submenu);
+    });
+
     this.$body.accessibleMegaMenu({
       uuidPrefix: 'mega-menu',
       menuClass: 'site-nav__list',
