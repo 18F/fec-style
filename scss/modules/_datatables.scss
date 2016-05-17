@@ -16,6 +16,8 @@
   overflow-x: hidden;
 }
 
+// Sortable headers
+
 .data-table {
   @include transform(translateX(0%));
   @include transition-property(transform);
@@ -29,6 +31,30 @@
     letter-spacing: -.3px;
     padding: .5rem 1rem;
     border-bottom: 1px solid $primary;
+
+    &.sorting,
+    &.sorting_asc,
+    &.sorting_desc {
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      padding-left: 2rem;
+    }
+
+    &.sorting {
+      @include u-icon-bg($dash, $gray);
+      background-size: 1rem;
+    }
+
+    &.sorting_asc {
+      @include u-icon-bg($arrow-up-border, $primary);
+      background-size: 1rem;
+    }
+
+    &.sorting_desc {
+      @include u-icon-bg($arrow-down-border, $primary);
+      background-size: 1rem;
+    }
   }
 
   tr {
@@ -47,15 +73,6 @@
     padding: 1rem;
   }
 
-  .sorting,
-  .sorting_asc,
-  .sorting_desc {
-    background-position: 0 50%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    padding-left: 1rem;
-  }
-
   .sorting_disabled {
     cursor: default;
   }
@@ -68,7 +85,7 @@
   @include media($lg) {
     th,
     td {
-      padding-left: 1rem;
+      padding-left: 2rem;
       padding-right: 1rem;
     }
   }
@@ -106,22 +123,6 @@
     padding-left: 1rem;
     border-left: 1px solid $gray-lightest;
   }
-}
-
-// Sortable headers
-.sorting {
-  background-image: url('../img/i-sort--neutral.png');
-  background-image: url('../img/i-sort--neutral.svg');
-}
-
-.sorting_asc {
-  background-image: url('../img/i-sort-up--neutral.png');
-  background-image: url('../img/i-sort-up--neutral.svg');
-}
-
-.sorting_desc {
-  background-image: url('../img/i-sort-down--neutral.png');
-  background-image: url('../img/i-sort-down--neutral.svg');
 }
 
 // Miscellaneous classes

@@ -123,8 +123,9 @@
 }
 
 .panel__close {
-  background-image: url('../img/i-left-2--primary.png');
-  background-position: 1rem;
+  @include u-icon-bg($arrow-left-border, $primary);
+  background-position: 0 50%;
+  background-size: 1.5rem;
   background-repeat: no-repeat;
   cursor: pointer;
   float: left;
@@ -164,6 +165,7 @@
   .panel-active {
     .panel__main {
       max-height: 100%;
+      position: relative;
     }
   }
 
@@ -174,7 +176,7 @@
   }
 
   .panel__navigation {
-    padding: .6rem 2rem .6rem 2rem;
+    padding: .6rem 2rem;
     text-align: left;
     margin-bottom: 0;
   }
@@ -184,17 +186,14 @@
   }
 
   .panel__close {
-    background-image: url('../img/i-x--primary.png');
-    background-image: url('../img/i-x--primary.svg');
-    float: right;
+    @include u-icon($x, $primary);
+    background-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     &::after {
-      content: "Close";
-    }
-
-    &:focus {
-      background-image: url('../img/i-x--primary-contrast.png');
-      background-image: url('../img/i-x--primary-contrast.svg');
+      content: '';
     }
   }
 

@@ -457,5 +457,6 @@
 }
 
 .button--panel {
-  @include u-icon($arrow-right, $primary, 2rem, 2rem, contain);
+  @include u-icon($arrow-right-circle, $gray, 2rem, 2rem, contain);
+  background-size: 90%;
 }
