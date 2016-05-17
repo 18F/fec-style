@@ -238,7 +238,9 @@
 // Styleguide components.buttons.remove
 
 .button--remove {
-  @include u-background-image('i-x--primary');
+  @include u-icon-bg($x, $primary);
+  background-size: 50%;
+  background-position: center center;
   display: none;
   height: 4rem;
   padding: .6rem;
@@ -253,7 +255,6 @@
   }
 
   &:focus {
-    @include u-background-image('i-x--primary-contrast');
     border: none;
   }
 }
@@ -285,14 +286,20 @@
 // Styleguide components.buttons.icon-buttons
 
 .button--search {
-  @include u-background-image('i-search--primary');
+  @include u-icon-button($magnifying-glass);
+  background-size: 2.2rem;
+  background-position: 50%;
 
   &.button--cta {
-    @include u-background-image('i-search--inverse');
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
   }
 
   &.button--cta-secondary {
-    @include u-background-image('i-search--secondary');
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
   }
 }
 
@@ -302,19 +309,24 @@
 // .button--calendar--mini          - Mini add calendar button
 //
 // Markup:
-// <button class="dropdown__button button--alt">Add to calendar</button>
+// <button class="button--calendar dropdown__button button--alt">Add to calendar</button>
+// <button class="button--calendar--mini dropdown__button dropdown__button--mini button--alt"></button>
 //
 // Styleguide components.buttons.calendar-dropdown-buttons
 
 .button--calendar {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  @include u-icon-bg($cal-add, $base);
+  background-position: 1rem .7rem;
+  background-size: 2rem;
   padding-left: 4rem;
   padding-right: 6rem;
 }
 
 
 .button--calendar--mini {
-  @include u-background-image('../img/i-addcalendar--primary', 1rem 1rem);
+  @include u-icon-bg($cal-add, $base);
+  background-position: 1rem .7rem;
+  background-size: 2rem;
   max-width: 7.4rem;
   padding-left: 5rem;
 }
@@ -324,8 +336,6 @@
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
 // Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
-// .button--previous    - Go back
-// .button--next        - Go next
 // .button--go          - Go
 // .button--browse      - For links to the datatable view
 // .button--map         - Map button
@@ -348,107 +358,64 @@
 // <button class="button--alt-secondary {{ modifier_class }}">Button</button>
 //
 // Styleguide components.buttons.icon-and-text-buttons
-
-.button--previous {
-  @include u-icon-button('i-left--primary', transparent, left, 1rem, 1rem);
-
-  &.button--cta-secondary {
-    @include u-icon-button('i-left--secondary', transparent, left, 1rem, 1rem);
-  }
-}
-
-.button--next {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
-
-  &.button--cta-secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
-}
-
 .button--go {
-  @include u-icon-button('i-right--primary', transparent, right, 1rem, 1rem);
-
-  &.button--cta {
-    @include u-icon-button('i-right-2--inverse', transparent, right, 1rem, 1rem);
-  }
-
-  &.button--cta-secondary {
-    @include u-icon-button('i-right--secondary', transparent, right, 1rem, 1rem);
-  }
+  @include u-icon-button($arrow-right-border, right);
 }
 
 .button--browse {
-  @include u-icon-button('i-browse--primary', $primary, left, 4rem, 2rem);
+  @include u-icon-button($table, left);
 }
 
 .button--map {
-  @include u-icon-button('i-map--primary', transparent)
+  @include u-icon-button($map-pin, left)
 }
 
 .button--table {
-  @include u-icon-button('i-table--primary', transparent, left, 2.5rem)
+  @include u-icon-button($table, left)
 }
 
 .button--two-candidates {
-  @include u-icon-button('i-two-candidates--primary', transparent, left, 2.5rem);
+  @include u-icon-button($two-candidates, left);
 }
 
 .button--election {
-  @include u-icon-button('i-election--primary', $primary, left, 4rem);
+  @include u-icon-button($person-location, left);
 }
 
-.button--export {
-  @include u-background-image('../img/i-export--primary', 1rem .5rem);
-  background-size: 2rem;
-  padding-left: 4rem;
-}
-
+.button--export,
 .button--download {
-  @include u-background-image('../img/i-download--inverse', 1rem 1rem);
-  padding-left: 3rem;
+  @include u-icon-button($download, left);
 }
 
 .button--subscribe {
-  @include u-background-image('../img/i-subscribe--inverse', 1rem .8rem);
-  padding-left: 3rem;
+  @include u-icon-button($signal, left);
 }
 
 .button--cal {
-  @include u-background-image('../img/i-cal--primary', 1rem .7rem);
-  background-size: 1.5rem;
+  @include u-icon-button($calendar, left);
   height: 3.4rem;
-  padding-left: 3rem;
   width: 9rem;
 }
 
 .button--list {
-  @include u-background-image('../img/i-table--primary', 1rem 1rem);
-  background-size: 1.5rem;
+  @include u-icon-button($list, left);
   height: 3.4rem;
-  padding-left: 3rem;
   width: 9rem;
 }
 
 .button--search--text {
-  @include u-icon-button('i-search--primary', transparent, left);
-
-  &.button--cta {
-    @include u-icon-button('i-search--inverse', transparent, left);
-  }
-
-  &.button--cta-primary {
-    @include u-icon-button('i-search--primary-contrast', transparent, left);
-  }
+  @include u-icon-button($magnifying-glass);
 }
 
 // Special Buttons
 //
 // Common icon buttons for various purposes
 //
+// .button--previous    - Go back
+// .button--next        - Go next
 // .button--close--base             - Base close button
 // .button--close--inverse          - Inverse close button
 // .button--close--primary          - Primary close button
-// .button--close--primary-contrast - Primary contrast close button
 // .button--down                    - Down button
 // .button--cancel                  - Cancel button
 // .button--panel                   - Panel trigger button
@@ -457,54 +424,39 @@
 // <button class="{{modifier_class}}"></button>
 //
 // Styleguide components.buttons.special-buttons
+
+.button--previous {
+  @include u-icon-button($arrow-left, left, 1rem);
+  background-position: 50% 50%;
+}
+
+.button--next {
+  @include u-icon-button($arrow-right, right, 1rem);
+  background-position: 50% 50%;
+}
+
 .button--close--base {
-  @include u-background-image('../img/i-x--base');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $base);
 }
 
 .button--close--inverse {
-  @include u-background-image('../img/i-x--inverse');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $inverse);
 }
 
 .button--close--primary {
-  @include u-background-image('../img/i-x--primary');
-  height: 4rem;
-  width: 4rem;
-}
-
-.button--close--neutral {
-  @include u-background-image('../img/i-x--neutral');
-  height: 4rem;
-  width: 4rem;
-}
-
-.button--close--primary-contrast {
-  @include u-background-image('../img/i-x--primary-contrast');
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($x, $primary);
+  background-size: 2rem;
 }
 
 .button--down {
-  @include u-background-image('../img/i-down-2--primary-contrast');
-  background-size: 50%;
-  height: 4rem;
-  width: 4rem;
+  @include u-icon($arrow-down-border, $primary-contrast);
 }
 
 .button--cancel {
-  @include u-background-image('../img/i-x--primary-contrast');
-  background-color: $primary;
-  border-radius: 2rem;
-  height: 2rem;
-  width: 2rem;
+  @include u-icon($x-circle, $primary, 2rem, 2rem, contain);
 }
 
 .button--panel {
-  @include u-background-image('../img/i-right--primary');
-  display: block;
-  height: 2rem;
-  width: 2rem;
+  @include u-icon($arrow-right-circle, $gray, 2rem, 2rem, contain);
+  background-size: 90%;
 }

@@ -73,14 +73,16 @@
 
 .list--checks {
   li {
-    @include u-background-image('i-check--primary', 0 1.4rem);
+    @include u-icon-bg($check, $primary);
+    background-size: 2rem;
+    background-position: 0 1.4rem;
     padding: 1rem 0 1rem 2.5rem;
     position: relative;
   }
 
   &.list--checks--secondary {
     li {
-      @include u-background-image('i-check--secondary-contrast', 0 1.4rem);
+      @include u-icon-bg($check, $secondary);
     }
   }
 }

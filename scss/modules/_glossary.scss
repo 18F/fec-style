@@ -58,8 +58,10 @@
 // .term--p       - Used when the term is in a body paragaraph of text, reduces padding and adds margin
 
 .term {
-  @include u-background-image('i-term--primary', 100% 50%);
+  @include u-icon-bg($book, $primary);
   @include transition(background-color, .2s, box-shadow, .2s, color, .2s);
+  background-size: .6em;
+  background-position: 100% 50%;
   background-color: transparent;
   box-shadow: 0 0 0 4px transparent;
   border-bottom: none;
@@ -70,7 +72,6 @@
 
   &:focus,
   &:hover {
-    @include u-background-image('i-term--primary', 100% 50%);
     box-shadow: 0 0 0 4px rgba($gray, .7);
     background-color: rgba($gray, .7);
     color: $primary;

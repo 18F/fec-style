@@ -24,6 +24,7 @@
 .message {
   @include clearfix();
   background-size: 2rem;
+  background-position: 2rem 2rem;
   background-color: $neutral;
   border-color: $gray;
   border-style: solid;
@@ -33,21 +34,21 @@
 }
 
 .message--success {
-  @include u-background-image('i-success', 2rem 2rem);
+  @include u-icon-bg($check-circle, $primary);
   border-color: $primary-contrast;
 }
 
 .message--error {
-  @include u-background-image('i-error', 2rem 2rem);
+  @include u-icon-bg($x-circle, $primary);
   border-color: $secondary-contrast;
 }
 
 .message--alert {
-  @include u-background-image('i-alert', 2rem 2rem);
+  @include u-icon-bg($bang-circle, $primary);
 }
 
 .message--info {
-  @include u-background-image('i-info', 2rem 2rem);
+  @include u-icon-bg($info-circle, $primary);
 }
 
 .message--no-icon {
@@ -100,6 +101,7 @@
 
 .message--small {
   background-position: 1rem 1rem;
+  min-height: 0;
   padding: 4rem 1rem 1rem 1rem;
 }
 
@@ -124,24 +126,25 @@
 .message--inverse {
   @include u-font-color($inverse);
   background-color: rgba($inverse, .1);
+  background-position: 50% 2rem;
   border-color: $inverse;
 
   &.message--success {
-    @include u-background-image('i-success--inverse', 50% 2rem);
+    @include u-icon-bg($check-circle, $inverse);
     border-color: $primary-contrast;
   }
 
   &.message--error {
-    @include u-background-image('i-error--inverse', 50% 2rem);
+    @include u-icon-bg($x-circle, $inverse);
     border-color: $secondary-contrast;
   }
 
   &.message--alert {
-    @include u-background-image('i-alert--inverse', 50% 2rem);
+    @include u-icon-bg($bang-circle, $inverse);
   }
 
   &.message--info {
-    @include u-background-image('i-info--inverse', 50% 2rem);
+    @include u-icon-bg($info-circle, $inverse);
   }
 }
 

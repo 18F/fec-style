@@ -83,9 +83,10 @@
 }
 
 .filters__clear {
-  @include u-background-image('i-x--primary-contrast');
-  background-position: 95% .5rem;
-  padding-right: 3rem;
+  @include u-icon-bg($x, $primary-contrast);
+  background-size: 1.4rem;
+  background-position: 95% 50%;
+  padding-right: 2.5rem;
 }
 
 .filter__header {

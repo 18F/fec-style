@@ -138,22 +138,15 @@
 }
 
 .site-nav__toggle {
+  @include u-icon-bg($arrow-right, $inverse);
+  background-position: 0 50%;
+  background-size: 1rem;
   color: $inverse;
   font-family: $serif;
   text-align: left;
+  padding-left: 2rem;
   position: relative;
   width: 100%;
-
-  &::after {
-    @include u-background-image('i-right--neutral');
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    left: -1rem;
-    top: 1rem;
-  }
 }
 
 .site-nav__item--with-dropdown {
@@ -167,11 +160,8 @@
 
   &.is-open {
     .site-nav__toggle {
+      @include u-icon-bg($arrow-down, $primary-contrast);
       color: $primary-contrast;
-
-      &::after {
-        @include u-background-image('i-down--primary-contrast');
-      }
     }
   }
 }
@@ -193,7 +183,9 @@
 }
 
 .site-nav__button--left {
-  @include u-background-image('i-menu--primary');
+  @include u-icon-bg($menu, $primary);
+  background-position: 50% 50%;
+  background-size: 2rem;
   float: left;
   height: 4rem;
 
@@ -202,19 +194,21 @@
   }
 
   &.active {
-    @include u-background-image('i-menu--neutral');
+    @include u-icon-bg($menu, $inverse);
     background-color: $primary;
     color: $neutral;
   }
 }
 
 .site-nav__button--right {
-  @include u-background-image('i-book--secondary');
+  @include u-icon-bg($book, $secondary);
+  background-position: 50% 50%;
+  background-size: 2rem;
   float: right;
-  height: 3.6rem;
+  height: 4rem;
 
   &:hover {
-    @include u-background-image('i-book--neutral');
+    @include u-icon-bg($book, $inverse);
     background-color: lighten($secondary, 10%);
   }
 }

@@ -462,12 +462,9 @@
   }
 
   .fc-close {
-    @include u-background-image('../img/i-x--primary');
-    color: $primary;
+    @include u-icon($x, $primary, 2rem, 2rem, 100%);
     cursor: pointer;
     float: right;
-    height: 2rem;
-    width: 2rem;
   }
 
   .fc-event-container {
