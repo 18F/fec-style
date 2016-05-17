@@ -1,13 +1,15 @@
 // Forms
 //
 // .slab--neutral     - When the form is on a neutral background
+// .slab--primary     - When the form is on a primary background
+// .slab--secondary   - When the form is on a secondary background
 //
 // Markup:
 // <div class="slab {{modifier_class}}">
 //   <div class="container">
-//     <label class="label" for="input">Label</label>
+//     <label class="label" for="input">Input</label>
 //     <input type="text" id="input">
-//     <label class="label" for="select">Label</label>
+//     <label class="label" for="select">Select</label>
 //     <select>
 //      <option>Option 1</option>
 //     </select>
@@ -148,39 +150,47 @@ input[type="file"] {
 
 [type="checkbox"] + label,
 [type="radio"] + label {
+  border: 1px solid $gray;
+  background-color: $gray;
+  display: inline-block;
   cursor: pointer;
   line-height: 2rem;
   margin: 0 0 1rem .25rem;
-  padding-left: 2.2rem;
+  padding: .4rem .8rem .4rem 3rem;
+
+  &:hover {
+    background-color: $gray-medium;
+    border-color: $gray-medium
+  }
+
+  &::before {
+    background: $inverse;
+    border: 2px solid $gray-dark;
+    border-radius: 2px;
+    content: '';
+    display: inline-block;
+    height: 1.6rem;
+    margin-right: .6em;
+    margin-left: -2.4rem;
+    text-indent: .15em;
+    width: 1.6rem;
+    vertical-align: -4px;
+  }
 }
 
-[type="checkbox"] + label::before,
 [type="radio"] + label::before {
-  background: $inverse;
-  border: 2px solid $primary;
-  border-radius: 2px;
-  content: '';
-  display: inline-block;
   height: 1.6rem;
-  margin-right: .6em;
-  margin-left: -2.4rem;
-  text-indent: .15em;
   width: 1.6rem;
-  vertical-align: -4px;
-}
-
-[type="radio"] + label::before {
-  height: 1.6rem;
-  width: 1.6rem;
-}
-
-[type="radio"] + label::before {
   border-radius: 1.6rem;
 }
 
-[type="checkbox"]:checked + label::before,
-[type="radio"]:checked + label::before {
-  background-color: $primary;
+[type="checkbox"]:checked + label,
+[type="radio"]:checked + label {
+  background-color: transparent;
+
+  &::before {
+    background-color: $gray-dark;
+  }
 }
 
 [type="checkbox"]:checked + label::before {
@@ -189,10 +199,12 @@ input[type="file"] {
   background-position: 50%;
   background-size: 12px;
   background-repeat: no-repeat;
+  border: 1px solid $gray-dark;
 }
 
-[type="checkbox"]:focus + label::before {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 3px $primary-contrast;
+[type="checkbox"]:focus + label,
+[type="radio"]:focus + label {
+  box-shadow: 0 0 2px 2px $focus;
 }
 
 [type="checkbox"]:disabled + label::before,

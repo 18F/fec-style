@@ -105,6 +105,60 @@
   }
 }
 
+// u-form--inverse()
+//
+// Set form elements to inverse color scheme
+
+@mixin u-form--inverse() {
+  input,
+  textarea {
+    border-color: $inverse;
+  }
+
+  [type="checkbox"] + label,
+  [type="radio"] + label,
+  [type="checkbox"] + label::before,
+  [type="radio"] + label::before {
+    color: $base;
+  }
+
+  [type="checkbox"]:checked + label,
+  [type="radio"]:checked + label {
+    color: $inverse;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    background-image: url('../img/i-check--base.png');
+    background-image: url('../img/i-check--base.svg');
+    background-color: $inverse;
+  }
+
+  select {
+    background-image: url('../img/i-down--inverse.png');
+    background-image: url('../img/i-down--inverse.svg');
+    border: 2px solid $inverse;
+    color: $inverse;
+
+    &:hover:not(.is-disabled):not([disabled]) {
+      border-color: $gray-medium;
+      background-color: transparent;
+    }
+
+    &:active:not(.is-disabled):not([disabled]),
+    &:focus,
+    &.is-active {
+      background-color: rgba($inverse, .3);
+      color: $inverse;
+    }
+  }
+
+  option {
+    background-color: $neutral;
+    color: $base;
+    padding: .5rem;
+  }
+}
+
 // u-bg--primary()
 //
 // Used to set generate all of the styles for a bg--primary element
@@ -112,6 +166,7 @@
 // Styleguide mixins.bg-primary
 
 @mixin u-bg--primary() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $primary;
 
@@ -121,11 +176,6 @@
     &:hover {
       border-bottom-color: $primary-contrast;
     }
-  }
-
-  input,
-  textarea {
-    border-color: $inverse;
   }
 
   .term {
@@ -144,6 +194,7 @@
 // Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $secondary;
 
@@ -188,6 +239,7 @@
 // Styleguide mixins.bg-dark
 
 @mixin u-bg--dark() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $gray-dark;
 
