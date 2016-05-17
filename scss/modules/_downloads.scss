@@ -41,7 +41,9 @@
   }
 
   &.is-complete {
-    @include u-background-image('../img/i-check--primary', 0% 1rem);
+    @include u-icon-bg($check, $primary);
+    background-size: 2rem;
+    background-position: 0 .5rem;
   }
 }
 

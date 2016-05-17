@@ -93,6 +93,7 @@
 // .t-serif         - Force serif
 // .t-italic        - Italicize
 // .t-bold          - Embolden!
+// .t-highlight     - Highlight
 // .t-upper         - Transform to uppercase
 // .t-data-header   - Small header above a big data number
 // .t-big-data      - Big number
@@ -112,10 +113,10 @@
 
 .t-note {
   display: inline-block;
-  font-family: $sans-serif;
+  font-family: $serif;
   font-weight: normal;
+  font-style: italic;
   font-size: 1.4rem;
-  line-height: 1;
 }
 
 .t-block {
@@ -141,6 +142,10 @@
 
 .t-bold {
   font-weight: bold;
+}
+
+.t-hightlight {
+  @include t-highlight;
 }
 
 .t-upper {

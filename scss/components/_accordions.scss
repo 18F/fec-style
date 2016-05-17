@@ -8,7 +8,9 @@
 // Styleguide components.accordions
 
 .accordion__button {
-  @include u-background-image('i-accordion-closed--primary', 95% 50%);
+  @include u-icon-bg($plus-circle, $primary);
+  background-size: 2rem;
+  background-position: 95% 50%;
   border-bottom: 1px solid $base;
   margin: 0 0 -1px 0;
   color: $base;
@@ -20,7 +22,7 @@
   width: 100%;
 
   &[aria-expanded='true'] {
-    @include u-background-image('i-accordion-open--primary', 95% 50%);
+    @include u-icon-bg($minus-circle, $primary);
     border-bottom: none;
   }
 }
@@ -50,12 +52,13 @@
 
 .accordion--inverse {
   .accordion__button {
-    @include u-background-image('i-accordion-closed--inverse', 100% 50%);
+    @include u-icon-bg($plus-circle, $inverse);
+    background-position: 100% 50%;
     border-color: $inverse;
     color: $inverse;
 
     &[aria-expanded='true'] {
-      @include u-background-image('i-accordion-open--inverse', 100% 50%);
+      @include u-icon-bg($minus-circle, $primary);
     }
   }
 

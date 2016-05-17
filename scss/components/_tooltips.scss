@@ -123,7 +123,8 @@
 }
 
 .tooltip__trigger {
-  @include u-background-image('i-info--primary--small', 100% 50%);
+  @include u-icon-bg($info-circle-outline, $primary);
+  background-position: 100% 50%;
   background-size: contain;
   cursor: pointer;
   display: inline-block;

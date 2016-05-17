@@ -52,15 +52,16 @@
     font-family: $sans-serif;
     font-size: 1.8rem;
     font-weight: normal;
-    line-height: 1.14;
     margin: 2rem 0 .5rem 0;
-    line-height: 1.14;
+    line-height: 1.2;
+    letter-spacing: -.3px;
   }
 
   @if $level == h5 {
     font-family: $serif;
     font-size: 1.6rem;
     font-weight: bold;
+    margin: 1.5rem 0 .75rem 0;
     line-height: 1.33;
   }
 
@@ -72,4 +73,10 @@
     line-height: 1.63;
     text-transform: uppercase;
   }
+}
+
+@mixin t-highlight {
+  background: $gray-light;
+  font-weight: bold;
+  padding: 0 0.3em;
 }

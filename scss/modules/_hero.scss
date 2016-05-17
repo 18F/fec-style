@@ -64,7 +64,8 @@
 }
 
 .hero__down {
-  @include u-background-image('i-arrow--down--secondary-contrast', 50% 100%);
+  @include u-icon-bg($arrow-down, $secondary-contrast);
+  background-position: 50% 100%;
   padding-bottom: 3rem;
 }
 

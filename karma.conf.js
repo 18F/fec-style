@@ -5,7 +5,9 @@ var istanbul = require('browserify-istanbul');
 module.exports = function(config) {
   var browserify = {
     debug: true,
-    transform: ['stringify', ['hbsfy', {'extensions': 'hbs'}]]
+    transform: [
+      ['hbsfy', {extensions: 'hbs'}],
+    ]
   };
 
   var reporters = ['progress'];

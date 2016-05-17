@@ -52,6 +52,17 @@
   width: 5rem;
 }
 
+// u-icon-bg()
+//
+// Most basic mixin for using a variable svg as a background image
+//
+// Styleguide mixins.icon-bg
+
+@mixin u-icon-bg($icon, $color) {
+  background-image: url('#{svg-fill($icon, $color)}');
+  background-repeat: no-repeat;
+}
+
 // u-font-color()
 //
 // Used to set the color of all child elements
@@ -94,6 +105,60 @@
   }
 }
 
+// u-form--inverse()
+//
+// Set form elements to inverse color scheme
+
+@mixin u-form--inverse() {
+  input,
+  textarea {
+    border-color: $inverse;
+  }
+
+  [type="checkbox"] + label,
+  [type="radio"] + label,
+  [type="checkbox"] + label::before,
+  [type="radio"] + label::before {
+    color: $base;
+  }
+
+  [type="checkbox"]:checked + label,
+  [type="radio"]:checked + label {
+    color: $inverse;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    background-image: url('../img/i-check--base.png');
+    background-image: url('../img/i-check--base.svg');
+    background-color: $inverse;
+  }
+
+  select {
+    background-image: url('../img/i-down--inverse.png');
+    background-image: url('../img/i-down--inverse.svg');
+    border: 2px solid $inverse;
+    color: $inverse;
+
+    &:hover:not(.is-disabled):not([disabled]) {
+      border-color: $gray-medium;
+      background-color: transparent;
+    }
+
+    &:active:not(.is-disabled):not([disabled]),
+    &:focus,
+    &.is-active {
+      background-color: rgba($inverse, .3);
+      color: $inverse;
+    }
+  }
+
+  option {
+    background-color: $neutral;
+    color: $base;
+    padding: .5rem;
+  }
+}
+
 // u-bg--primary()
 //
 // Used to set generate all of the styles for a bg--primary element
@@ -101,6 +166,7 @@
 // Styleguide mixins.bg-primary
 
 @mixin u-bg--primary() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $primary;
 
@@ -112,17 +178,12 @@
     }
   }
 
-  input,
-  textarea {
-    border-color: $inverse;
-  }
-
   .term {
-    @include u-background-image('i-term--cream', 100% 40%);
+    @include u-icon-bg($book, $inverse);
   }
 
   .tooltip__trigger {
-    @include u-background-image('i-info--cream--small', 100% 50%);
+    @include u-icon-bg($info-circle-outline, $inverse);
   }
 }
 
@@ -133,6 +194,7 @@
 // Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $secondary;
 
@@ -150,7 +212,11 @@
   }
 
   .term {
-    @include u-background-image('i-term--neutral', 100% 0);
+    @include u-icon-bg($book, $inverse);
+  }
+
+  .tooltip__trigger {
+    @include u-icon-bg($info-circle-outline, $inverse);
   }
 }
 
@@ -173,6 +239,7 @@
 // Styleguide mixins.bg-dark
 
 @mixin u-bg--dark() {
+  @include u-form--inverse();
   @include u-font-color($gray-lightest);
   background-color: $gray-dark;
 
@@ -224,42 +291,61 @@
   background-position: $position;
 }
 
+// u-icon()
+//
+// Used for creating a button or single icon with a background image with no text
+//
+// $icon:         - Name of the icon to use
+// $color:        - Color variable the icon should be
+//
+// Styleguide mixins.icon()
+
+@mixin u-icon($icon, $color: $base, $width: 4rem, $height: 4rem, $background-size: 50%) {
+  background-image: url('#{svg-fill($icon, $color)}');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $background-size;
+  height: $height;
+  width: $width;
+}
 
 // u-icon-button()
 //
-// $image         - Name of the image file
-// $color         - Border color
+// $icon          - Name of the icon variable. Will be inlined as a data uri
+// $color         -  Color variable the icon should be
 // $side          - Icon on the left or right? Defaults to left
-// $width         - Width of the icon, defaults to 2rem
-// $height        - Height of the icon, defaults to 2rem
+// $width         - Width of the icon, defaults to 1.5rem
 //
 // Styleguide mixins.icon-button
 
-@mixin u-icon-button($image, $color, $side: left, $width: 2rem, $height: 2rem) {
-  position: relative;
+@mixin u-icon-button($icon, $side: left, $width: 1.5rem) {
+  background-image: url('#{svg-fill($icon, $base)}');
+  background-repeat: no-repeat;
+  background-size: $width;
+
   @if $side == left {
+    background-position: 1rem 50%;
     padding-left: $width + 2rem;
   } @else {
+    background-position: 90% 50%;
     padding-right: $width + 2rem;
   }
 
-  &::after {
-    @include u-background-image($image);
-    background-size: contain;
-    content: '';
-    display: block;
-    height: $height;
-    width: $width;
-    position: absolute;
-    top: 50%;
-    margin-top: -1 * ($height / 2);
+  &.button--alt {
+    background-image: url('#{svg-fill($icon, $base)}');
+  }
 
-    @if $side == left {
-      left: 1rem;
-      border-right: 1px solid $color;
-    } @else {
-      right: 1rem;
-      border-left: 1px solid $color;
-    }
+  &.button--cta,
+  &.button--alt-primary,
+  &.button--alt-secondary {
+    background-image: url('#{svg-fill($icon, $inverse)}');
+  }
+
+  &.button--cta-primary {
+    background-image: url('#{svg-fill($icon, $primary)}');
+  }
+
+  &.button--cta-secondary {
+    background-image: url('#{svg-fill($icon, $secondary)}');
   }
 }

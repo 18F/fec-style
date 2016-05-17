@@ -26,25 +26,13 @@
   color: $primary;
   font-family: $sans-serif;
   letter-spacing: -.3px;
-  margin: 0 2px 2px 0;
-  padding: 2px .5rem;
+  margin: 0 4px 2px 0;
+  padding: 2px .75rem;
 }
 
 .tag__remove {
-  @include u-background-image('../img/i-x--primary');
+  @include u-icon-bg($x, $primary);
+  background-size: 1.4rem;
+  background-position: 100% 45%;
   padding: 1rem;
-}
-
-.data-container__widgets--secondary {
-  .tag {
-    color: $secondary;
-  }
-
-  .tags__title {
-    color: $secondary-contrast;
-  }
-
-  .tag__remove {
-    @include u-background-image('../img/i-x--secondary');
-  }
 }
