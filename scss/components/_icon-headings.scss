@@ -65,43 +65,57 @@
 // Temporary
 // Refactor after introducing icon font
 
-@mixin u-icon-heading($image) {
-  @include u-background-image($image, 0 0);
+@mixin u-icon-heading() {
   padding-left: 3rem;
 }
 
 .icon-heading--profiles {
-  @include u-icon-heading('i-profile--inverse');
+  @include u-icon-bg($folder-with-person, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--overviews {
-  @include u-icon-heading('i-overview--inverse');
+  @include u-icon-bg($graph, $inverse);
+  padding-left: 3rem;
 }
 
 .icon-heading--location {
-  @include u-icon-heading('i-election--inverse');
+  @include u-icon-bg($map-pin, $inverse);
+  padding-left: 3rem;
 }
 
 .icon-heading--candidates {
-  @include u-icon-heading('i-candidates--inverse');
+  @include u-icon-bg($candidate, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--committees {
-  @include u-icon-heading('i-committees--inverse');
+  @include u-icon-bg($committee, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--receipts {
-  @include u-icon-heading('i-receipts--inverse');
+  @include u-icon-bg($piggy-bank, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--disbursements {
-  @include u-icon-heading('i-disbursements--inverse');
+  @include u-icon-bg($disbursement, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--filings {
-  @include u-icon-heading('i-filings--inverse');
+  @include u-icon-bg($papers, $inverse);
+  background-size: 2rem;
+  padding-left: 3rem;
 }
 
 .icon-heading--table {
-  @include u-icon-heading('i-browse--inverse');
+  @include u-icon-bg($table, $inverse);
+  padding-left: 3rem;
 }
