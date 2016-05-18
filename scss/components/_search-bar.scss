@@ -201,11 +201,13 @@
     @include u-icon-button($magnifying-glass-arrow);
     background-size: 2.8rem;
     background-position: 50%;
+    padding: 0;
   }
 
   &[data-allow-text] .button--search {
     @include u-icon-button($magnifying-glass);
     background-size: 2.2rem;
     background-position: 50%;
+    padding: 0;
   }
 }
