@@ -289,18 +289,7 @@
   @include u-icon-button($magnifying-glass);
   background-size: 2.2rem;
   background-position: 50%;
-
-  &.button--cta {
-    @include u-icon-button($magnifying-glass);
-    background-size: 2.2rem;
-    background-position: 50%;
-  }
-
-  &.button--cta-secondary {
-    @include u-icon-button($magnifying-glass);
-    background-size: 2.2rem;
-    background-position: 50%;
-  }
+  padding: 0;
 }
 
 // Buttons: Calendar dropdown buttons
