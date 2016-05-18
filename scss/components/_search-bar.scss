@@ -193,3 +193,19 @@
 .tt-dataset-0 {
   border-bottom: 1px solid $base;
 }
+
+// Specific styles for typeahead filters
+// Just testing things out. Refactor to use non-js class if we use it
+.js-typeahead-filter {
+  .button--search {
+    @include u-icon-button($magnifying-glass-arrow);
+    background-size: 2.8rem;
+    background-position: 50%;
+  }
+
+  &[data-allow-text] .button--search {
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
+  }
+}
