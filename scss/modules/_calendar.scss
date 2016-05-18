@@ -500,6 +500,13 @@
     .fc-button-group {
       float: right;
     }
+
+    .button {
+      background-position: 50% 50%;
+      padding-left: 2rem;
+      text-indent: -9999px;
+      width: 4rem;
+    }
   }
 }
 
