@@ -363,30 +363,29 @@
   padding-top: 2rem;
 }
 
-.cal-list__group {
-  border-bottom: 1px solid $primary;
-
-  &:last-child {
-    border-bottom: none;
-    padding-top: 2rem;
-  }
-}
-
 .cal-list {
   letter-spacing: -.3px;
   padding-top: 2rem;
 }
 
 .cal-list__title {
+  background-color: $gray-light;
+  border-left: .5rem solid $primary;
+  font-family: $sans-serif;
   letter-spacing: 0;
-  margin: 0;
-  padding-top: 2rem;
+  margin: 2rem 0 0 0;
+  padding: 1rem;
 }
 
 .cal-list__event {
   @include clearfix();
   border-bottom: 1px solid $neutral;
   padding: 2rem 0;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 .cal-list__details {
