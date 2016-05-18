@@ -1,5 +1,45 @@
 // Datatables
 //
+// Standard design for tabular data. If the table is
+// preceded/followed by buttons (or nav arrows), always enclose with
+// a rule line using `.results-info`.
+//
+// Markup:
+// <table id="data-table" class="data-table {{ modifier_class }}">
+//   <thead>
+//     <tr>
+//       <th>No.</th>
+//       <th>Name</th>
+//       <th>Score</th>
+//       <th>Description</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <td>1</td>
+//       <td>Red</td>
+//       <td>0.1234</td>
+//       <td>Minim in magna ex incididunt sit laborum exercitation aute do ullamco consectetur esse.</td>
+//     </tr>
+//     <tr>
+//       <td>2</td>
+//       <td>Blue</td>
+//       <td>0.1234</td>
+//       <td>in dolore amet irure dolore commodo est aliquip labore sunt</td>
+//     </tr>
+//     <tr>
+//       <td>3</td>
+//       <td>Green</td>
+//       <td>0.1234</td>
+//       <td>nostrud laborum in ullamco cillum laborum anim esse commodo aliqua</td>
+//     </tr>
+//   </tbody>
+// </table>
+// <div class="results-info">
+//   <a class="paginate_button previous" href="#data-table">Previous</a>
+//   <a class="paginate_button next" href="#data-table">Next</a>
+// </div>
+//
 // .is-showing-filters    - Class applied to body when the filters are open, causing the datatable to shrink slightly
 // .data-table--text      - Textual tables for text-heavy search results.
 //
