@@ -58,6 +58,8 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   } else {
     this.$field.typeahead({minLength: 3}, this.dataset);
   }
+
+  this.disableButton();
 };
 
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
