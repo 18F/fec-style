@@ -7,7 +7,7 @@
             <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
           </div>
           <form action="{{webAppUrl}}" method="GET">
-            <label class="t-sans" for="menu-search">Search for candidates and committees in any election</label>
+            <label class="t-sans mega__item" for="menu-search">Search for candidates and committees in any election</label>
             <div class="combo--search--mini">
               <input id="menu-search" name="search" class="combo__input" type="text">
               <input type="hidden" name="search_type" value="candidates" placeholder="Search committees">
@@ -22,9 +22,6 @@
           <ul>
             <li class="mega__item is-disabled">Fundraising – coming soon</li>
             <li class="mega__item is-disabled">Spending – coming soon</li>
-            <li class="mega__item is-disabled">Candidates – coming soon</li>
-            <li class="mega__item is-disabled">PACs – coming soon</li>
-            <li class="mega__item is-disabled">Party committees – coming soon</li>
           </ul>
         </div>
         <div class="mega__group">
@@ -32,7 +29,7 @@
             <h3 class="mega-heading__title icon-heading--location"><a href="{{webAppUrl}}/elections">Location</a></h3>
           </div>
           <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
-            <label class="t-sans" for="menu-election-search">Find elections and candidates by ZIP code</label>
+            <label class="t-sans mega__item" for="menu-election-search">Find elections and candidates by ZIP code</label>
             <div class="combo--search--mini">
               <input id="menu-election-search" name="search" class="combo__input" type="text">
               <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
