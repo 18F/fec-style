@@ -1,15 +1,15 @@
 // Links
-// 
+//
 // Use them like this
 //
 // Markup:
 // <a href="...">Link</a>
-// 
+//
 // Styleguide elements.links
 
 a {
   border-bottom: 1px dotted $primary;
-  color: $primary;
+  color: inherit;
   cursor: pointer;
   text-decoration: none;
   transition: color 0.1s linear;

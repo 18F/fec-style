@@ -1,9 +1,9 @@
 // Feedback module
 
 .feedback {
-  @include u-font-color($inverse);
   background-color: $base;
   bottom: .5rem;
+  color: $inverse;
   display: block;
   left: .5rem;
   overflow-y: scroll;
@@ -51,7 +51,7 @@
     padding: 3rem 3rem 0 3rem;
     right: 4rem;
     top: 5vh;
-    width: 50rem;
+    width: 52rem;
 
     &[aria-hidden='true'] {
       display: block !important;

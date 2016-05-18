@@ -10,7 +10,7 @@
 //
 // Markup:
 // <div class="message {{ modifier_class }}">
-//   <h2 id="section-1-header" tabindex="0">No results</h2>
+//   <h2 class="message__title">No results</h2>
 //   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
 //   <p>For complete data, search the <a href="http://www.fec.gov/finance/disclosure/candcmte_info.shtml">FEC Candidate and Committee Viewer</a>.</p>
 //   <div class="message--alert__bottom">
@@ -58,11 +58,12 @@
 .message--alert__bottom {
   border-top: 1px solid $gray;
   margin-top: 1rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .message__title {
   border-bottom: none;
+  margin-bottom: 1rem;
 }
 
 .message__content {
@@ -124,7 +125,7 @@
 // Styleguide components.messages.inverse
 
 .message--inverse {
-  @include u-font-color($inverse);
+  color: $inverse;
   background-color: rgba($inverse, .1);
   background-position: 50% 2rem;
   border-color: $inverse;
