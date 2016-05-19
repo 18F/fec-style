@@ -62,6 +62,17 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.disableButton();
 };
 
+TypeaheadFilter.prototype.setFirstItem = function() {
+  // Set the firstItem to a datum upon each rendering of results
+  // This way clicking enter or the button will submit with this datum
+  this.firstItem = arguments[1];
+  // Add a hover class to the first item to indicate it will be selected
+  $(this.$body.find('.tt-suggestion')[0]).addClass('tt-cursor');
+  if (this.$body.find('.tt-suggestion').length > 0) {
+    this.enableButton();
+  }
+};
+
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   this.appendCheckbox({
     name: this.fieldName,
@@ -74,17 +85,6 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
 
 TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
   this.datum = datum;
-};
-
-TypeaheadFilter.prototype.setFirstItem = function(e) {
-  // Set the firstItem to a datum upon each rendering of results
-  // This way clicking enter or the button will submit with this datum
-  this.firstItem = arguments[1];
-  // Add a hover class to the first item to indicate it will be selected
-  $(this.$body.find('.tt-suggestion')[0]).addClass('tt-cursor');
-  if (this.$body.find('.tt-suggestion').length > 0) {
-    this.enableButton();
-  }
 };
 
 TypeaheadFilter.prototype.handleKeypress = function(e) {
@@ -105,7 +105,8 @@ TypeaheadFilter.prototype.handleBlur = function() {
 TypeaheadFilter.prototype.handleChange = function() {
   if ((this.allowText && this.$field.typeahead('val').length > 1) || this.datum) {
     this.enableButton();
-  } else if (this.$field.typeahead('val').length === 0 || (!this.allowText && this.$field.typeahead('val').length < 3)) {
+  } else if (this.$field.typeahead('val').length === 0 ||
+    (!this.allowText && this.$field.typeahead('val').length < 3)) {
     this.datum = null;
     this.disableButton();
   }
