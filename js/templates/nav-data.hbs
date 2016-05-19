@@ -30,7 +30,7 @@
         <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
           <label class="t-sans mega__item" for="menu-election-search">Find elections and candidates by ZIP code</label>
           <div class="combo--search--mini">
-            <input id="menu-election-search" name="search" class="combo__input" type="text">
+            <input id="menu-election-search" name="zip" class="combo__input" type="text">
             <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
           </div>
         </form>
@@ -48,7 +48,7 @@
           <li class="mega__item"><a href="{{webAppUrl}}/candidates/president">Presidential</a></li>
           <li class="mega__item"><a href="{{webAppUrl}}/candidates/senate">Senate</a></li>
           <li class="mega__item"><a href="{{webAppUrl}}/candidates/house">House</a></li>
-          <li class="mega__item"><a href="{{webAppUrl}}/candidates/">+ All candidates</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/candidates/?election_year=2012&election_year=2014&election_year=2016&five_thousand_flag=true">+ All candidates</a></li>
         </ul>
       </div>
       <div class="mega__column">
