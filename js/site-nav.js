@@ -5,6 +5,7 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var helpers = require('./helpers');
+var moment = require('moment');
 
 window.$ = window.jQuery = $;
 
@@ -22,10 +23,13 @@ var TEMPLATES = {
  * @param {object} opts - Options, including base URLs
  */
 
+var today = new Date();
+
 var defaultOpts = {
   cmsUrl: 'http://localhost:8000',
   webAppUrl: 'http://localhost:3000',
-  cycle: 2016
+  cycle: 2016,
+  today: moment(today).format('MM-DD-YYYY')
 };
 
 function SiteNav(selector, opts) {

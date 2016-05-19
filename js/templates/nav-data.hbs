@@ -58,7 +58,7 @@
         <ul>
           <li class="mega__item"><a href="{{webAppUrl}}/receipts/individual-contributions">Individual contributions</a></li>
           <li class="mega__item is-disabled">Contributions from other committees</li>
-          <li class="mega__item"><a href="{{webAppUrl}}/receipts/">+ All receipts</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">+ All receipts</a></li>
         </ul>
       </div>
       <div class="mega__column">
@@ -90,8 +90,8 @@
         <ul>
           <li class="mega__item is-disabled">Operating expenditures</li>
           <li class="mega__item is-disabled">Expenditures to committees</li>
-          <li class="mega__item"><a href="{{webAppUrl}}/disbursements">+ All disbursements</a></li>
-          <li class="mega__item"><a href="{{webAppUrl}}/independent-expenditures">Independent expenditures</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/disbursements/?max_date={{today}}">+ All disbursements</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/independent-expenditures?max_date={{today}}">Independent expenditures</a></li>
         </ul>
       </div>
     </div>
