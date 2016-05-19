@@ -48,13 +48,13 @@
     font-family: $sans-serif;
     font-size: 1.4rem;
     color: $inverse;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem 2rem 4rem;
   }
 
   .mega-heading {
     border-bottom: 2px solid $inverse;
     padding-bottom: .8rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 
   .mega-heading--sub {
@@ -78,7 +78,7 @@
 
   .mega__group {
     @include clearfix();
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   .mega__column {
@@ -88,5 +88,9 @@
   .mega__item {
     line-height: 1.2;
     margin-bottom: 1.2rem;
+  }
+
+  .mega__item__sub {
+    margin-left: 2rem;
   }
 }
