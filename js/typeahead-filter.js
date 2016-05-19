@@ -28,7 +28,7 @@ var textDataset = {
   },
   templates: {
     suggestion: function(datum) {
-      return '<span>"' + datum.id + '"</span>';
+      return '<span>Search for: "' + datum.id + '"</span>';
     }
   }
 };
@@ -42,14 +42,34 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.fieldName = this.$body.data('name') || this.$field.attr('name');
   this.$button = this.$body.find('button');
   this.$selected = this.$body.find('.dropdown__selected');
+
+  this.$body.on('change', 'input', this.handleChange.bind(this));
+  this.$body.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
+
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
   this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
+  this.$field.on('typeahead:render', this.setFirstItem.bind(this));
+  this.$field.on('blur', this.handleBlur.bind(this));
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
+
   if (this.allowText) {
     this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
   } else {
     this.$field.typeahead({minLength: 3}, this.dataset);
+  }
+
+  this.disableButton();
+};
+
+TypeaheadFilter.prototype.setFirstItem = function() {
+  // Set the firstItem to a datum upon each rendering of results
+  // This way clicking enter or the button will submit with this datum
+  this.firstItem = arguments[1];
+  // Add a hover class to the first item to indicate it will be selected
+  $(this.$body.find('.tt-suggestion')[0]).addClass('tt-cursor');
+  if (this.$body.find('.tt-suggestion').length > 0) {
+    this.enableButton();
   }
 };
 
@@ -60,6 +80,7 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     value: datum.id,
     id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
   });
+  this.datum = null;
 };
 
 TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
@@ -67,14 +88,39 @@ TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
 };
 
 TypeaheadFilter.prototype.handleKeypress = function(e) {
+  this.handleChange();
+
   if (e.keyCode === 13) {
     this.handleSubmit(e);
   }
 };
 
+TypeaheadFilter.prototype.handleBlur = function() {
+  // If the user starts typing but then leaves the field clear the input
+  if (!this.datum && !this.allowText) {
+    this.clearInput();
+  }
+};
+
+TypeaheadFilter.prototype.handleChange = function() {
+  if ((this.allowText && this.$field.typeahead('val').length > 1) || this.datum) {
+    this.enableButton();
+  } else if (this.$field.typeahead('val').length === 0 ||
+    (!this.allowText && this.$field.typeahead('val').length < 3)) {
+    this.datum = null;
+    this.disableButton();
+  }
+};
+
+TypeaheadFilter.prototype.handleHover = function() {
+  this.$body.find('.tt-suggestion.tt-cursor').removeClass('tt-cursor');
+};
+
 TypeaheadFilter.prototype.handleSubmit = function(e) {
   if (this.datum) {
     this.handleSelect(e, this.datum);
+  } else if (!this.datum && !this.allowText) {
+    this.handleSelect(e, this.firstItem);
   } else if (this.allowText && this.$field.typeahead('val').length > 0) {
     this.handleSelect(e, {id: this.$field.typeahead('val')});
   }
@@ -82,6 +128,17 @@ TypeaheadFilter.prototype.handleSubmit = function(e) {
 
 TypeaheadFilter.prototype.clearInput = function() {
   this.$field.typeahead('val', null).change();
+  this.disableButton();
+};
+
+TypeaheadFilter.prototype.enableButton = function() {
+  this.searchEnabled = true;
+  this.$button.removeClass('is-disabled').attr('tabindex', '1').attr('disabled', false);
+};
+
+TypeaheadFilter.prototype.disableButton = function() {
+  this.searchEnabled = false;
+  this.$button.addClass('is-disabled').attr('tabindex', '-1').attr('disabled', false);
 };
 
 TypeaheadFilter.prototype.checkboxTemplate = _.template(

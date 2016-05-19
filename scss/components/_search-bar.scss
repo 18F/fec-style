@@ -46,6 +46,15 @@
 
     .combo__input {
       width: 100%;
+      color: $base;
+    }
+
+    .tt-hint {
+      color: $gray-dark;
+    }
+
+    pre {
+      color: $base;
     }
   }
 
@@ -156,6 +165,7 @@
 .tt-suggestion:hover {
   cursor: pointer;
   background: $gray-lightest;
+  border-left: 4px solid $primary-contrast;
 
   .tt-suggestion__name {
     color: $base;
@@ -182,4 +192,22 @@
 
 .tt-dataset-0 {
   border-bottom: 1px solid $base;
+}
+
+// Specific styles for typeahead filters
+// Just testing things out. Refactor to use non-js class if we use it
+.js-typeahead-filter {
+  .button--search {
+    @include u-icon-button($magnifying-glass-arrow);
+    background-size: 2.8rem;
+    background-position: 50%;
+    padding: 0;
+  }
+
+  &[data-allow-text] .button--search {
+    @include u-icon-button($magnifying-glass);
+    background-size: 2.2rem;
+    background-position: 50%;
+    padding: 0;
+  }
 }
