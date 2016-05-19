@@ -253,6 +253,7 @@
   @include u-icon-bg($x, $primary);
   background-size: 50%;
   background-position: center center;
+  border: none;
   display: none;
   height: 4rem;
   padding: .6rem;
