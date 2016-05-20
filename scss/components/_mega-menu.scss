@@ -1,0 +1,96 @@
+// Mega menu
+
+.mega {
+  a {
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: 1px dotted $inverse;
+    }
+  }
+}
+
+@include media($lg) {
+  .mega {
+    @include u-font-color($inverse);
+    @include clearfix();
+    display: block !important; // Important to override [aria-hidden] styles
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+
+    &.is-open {
+      top: 6rem;
+      visibility: visible;
+      padding-bottom: 8rem; // Padding so that the shadow doesn't get cut off
+      z-index: $z-navigation;
+
+      .mega__inner {
+        @include transition(all .4s ease-out);
+        @include transform(translateY(0));
+        box-shadow: 0 6px 8px 2px rgba(0, 0, 0, .3);
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      border-color: $inverse;
+    }
+  }
+
+  .mega__inner {
+    @include clearfix();
+    @include transition(all .4s ease-out);
+    @include transform(translateY(-100%));
+    background-color: $primary;
+    font-family: $sans-serif;
+    font-size: 1.4rem;
+    color: $inverse;
+    padding: 1rem 4rem 2rem 4rem;
+  }
+
+  .mega-heading {
+    border-bottom: 2px solid $inverse;
+    padding-bottom: .8rem;
+    margin: 1rem 0;
+  }
+
+  .mega-heading--sub {
+    border-bottom: 1px solid $gray-light;
+    margin-bottom: 1rem;
+
+    .mega-heading__title {
+      line-height: 1.5;
+      margin: 0;
+      padding-bottom: .5rem;
+    }
+  }
+
+  .mega-heading__title {
+    margin-bottom: 0;
+
+    a {
+      border-bottom: 1px dotted $inverse;
+    }
+  }
+
+  .mega__group {
+    @include clearfix();
+    padding-bottom: 2rem;
+  }
+
+  .mega__column {
+    @include span-columns(3);
+  }
+
+  .mega__item {
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+
+  .mega__item__sub {
+    margin-left: 2rem;
+  }
+}

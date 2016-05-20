@@ -4,6 +4,7 @@
 
 // Staging banner
 .banner {
+  display: none;
   background-color: $navy;
   color: $inverse;
   font-family: $sans-serif;
@@ -140,6 +141,13 @@
 
   a {
     border: none;
+  }
+}
+
+.site-header {
+  @include media($lg) {
+    position: relative;
+    z-index: $z-header;
   }
 }
 

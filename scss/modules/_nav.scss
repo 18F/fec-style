@@ -8,34 +8,7 @@
 // .site-nav__item                  - Each li inside the ul
 // .site-nav__link                  - Styles for the links inside the items
 // .site-nav__dropdown              - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
-// .site-nav__item--with-dropdown   - Parent items that have a submenu dropdown
 // .site-nav__toggle                - A button inside each .site-nav__item--with-dropdown that controls visibility of the submenu
-//
-// Markup:
-// <nav class="site-nav js-site-nav">
-//   <button for="nav-toggle" class="js-nav-toggle site-nav__button site-nav__button--left" aria-controls="site-menu">Menu</button>
-//   <ul id="site-menu" class="site-nav__list">
-//     <li class="site-nav__item site-nav__item--with-dropdown js-sublist-parent">
-//       <a href="#" class="site-nav__link is-current js-nav-drop-link">
-//           Campaign finance data</a>
-//       <span class="site-nav__link site-nav__toggle js-sublist-toggle">Campaign finance data</span>
-//       <ul class="site-nav__dropdown">
-//         <li class="site-nav__item">
-//           <a class="site-nav__link site-nav__sublink" href="#">Search for candidates »</a>
-//         </li>
-//         <li class="site-nav__item">
-//           <a class="site-nav__link site-nav__sublink" href="#">Search for elections »</a>
-//         </li>
-//       </ul>
-//     </li>
-//     <li class="site-nav__item">
-//       <a href="#" class="site-nav__link is-disabled">Calendar</a>
-//     </li>
-//     <li class="site-nav__item">
-//       <a href="#" class="site-nav__link is-disabled">TBD</a>
-//     </li>
-//   </ul>
-// </nav>
 //
 // Styleguide modules.navigation
 
@@ -54,9 +27,9 @@
 }
 
 .site-nav__list {
-  @include u-bg--primary();
   @include transform(translateX(-100%));
   @include transition(transform, .2s);
+  background-color: $primary;
   border-right: 1px solid $primary-contrast;
   padding: 1rem 2rem;
   position: absolute;
@@ -65,13 +38,16 @@
   bottom: 0;
   z-index: $z-navigation;
 
+  &[aria-hidden='true'] {
+    display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
+  }
+
   .utility-nav__item {
     padding: 0;
   }
 }
 
 .site-nav__item {
-  position: relative;
   border-bottom: 1px solid $primary-contrast;
 
   &:last-child .site-nav__link {
@@ -82,7 +58,7 @@
     opacity: 1;
 
     .site-nav__link {
-      color: #929292;
+      color: $disabled;
     }
   }
 }
@@ -90,6 +66,7 @@
 // .site-nav__link
 .site-nav__link {
   @include transition(background-color, .1s);
+  color: $inverse;
   display: block;
   font-size: 1.6rem;
   line-height: 2rem;
@@ -148,24 +125,6 @@
   position: relative;
   width: 100%;
 }
-
-.site-nav__item--with-dropdown {
-  & > .site-nav__link {
-    display: none;
-  }
-
-  .site-nav__toggle {
-    display: block;
-  }
-
-  &.is-open {
-    .site-nav__toggle {
-      @include u-icon-bg($arrow-down, $primary-contrast);
-      color: $primary-contrast;
-    }
-  }
-}
-
 
 // Nav Buttons
 //
@@ -242,22 +201,20 @@
 // Hide the submenu toggles
 
 @include media($lg) {
-  .site-nav {
-    padding-left: 2rem;
-  }
-
   .site-nav__list {
     @include clearfix();
-    @include u-bg--neutral();
     @include transform(translateX(0));
     background: none;
     border: none;
     min-height: 0;
+    height: auto;
+    overflow: visible;
     display: block;
     float: left;
-    padding: 0;
-    position: relative;
+    padding: 0 0 0 2rem;
     top: 0;
+    position: relative;
+    width: 100%;
 
     .utility-nav__item {
       display: none;
@@ -267,6 +224,7 @@
   .site-nav__item {
     float: left;
     border-bottom: none;
+    color: $primary;
 
     &.is-open,
     &:hover {
@@ -296,6 +254,7 @@
   }
 
   .site-nav__link {
+    color: $primary;
     padding: 2rem;
 
     &:hover,
@@ -307,80 +266,11 @@
     }
   }
 
-  .site-nav__dropdown {
-    @include u-bg--primary();
-    border: 1px solid $primary-contrast;
-    border-top: none;
-    padding: 0;
-    position: absolute;
-    top: 6rem;
-    z-index: $z-navigation;
-
-    .site-nav__item {
-      padding: 0 2rem;
-      width: 100%;
-
-      &:hover,
-      &:focus {
-        background-color: $primary-contrast;
-        color: $primary;
-      }
-
-      &:first-child {
-        border-top: 1px solid $primary-contrast;
-      }
-
-      &:last-child {
-        .site-nav__link {
-          border-bottom: none;
-        }
-      }
-    }
-
-    .site-nav__subtitle {
-      clear: both;
-      padding: 2rem 2rem 1rem 2rem;
-      width: 100%;
-    }
-
-    .site-nav__link {
-      @include transition(none);
-      background-color: transparent;
-      border-bottom: 1px solid $primary-contrast;
-      padding: 2rem 0;
-      width: 100%;
-
-      &:hover,
-      &:focus {
-        background-color: $primary-contrast;
-        color: $primary;
-      }
-    }
-
-    .site-nav__sublink {
-      padding: 1rem 0 1rem 2rem;
-      border-bottom: none;
-    }
-
-    .site-nav__sublink--last {
-      border-bottom: 1px solid $primary-contrast;
-      padding-bottom: 2rem;
-    }
-  }
-
-  .site-nav__item--with-dropdown {
-    .site-nav__link {
-      display: block;
-    }
-
-    .site-nav__toggle {
-      display: none;
-    }
-  }
-
-  .site-nav__button,
   .site-nav__button--right {
     height: 6rem;
+    position: absolute;
+    right: 0;
+    z-index: $z-glossary;
   }
 
   .site-nav__button--left {

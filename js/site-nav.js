@@ -3,40 +3,77 @@
 /* global document */
 
 var $ = require('jquery');
+var _ = require('underscore');
+var helpers = require('./helpers');
+var moment = require('moment');
+
+window.$ = window.jQuery = $;
+
+require('./vendor/jquery-accessibleMegaMenu');
+
+var TEMPLATES = {
+  data: require('./templates/nav-data.hbs')
+};
 
 /** SiteNav module
  * On mobile: Controls the visibility of the the hamburger menu and sublists
  * On desktop: Controls the visibility of dropdown sublists on hover and focus
  * @constructor
  * @param {object} selector - CSS selector for the nav component
+ * @param {object} opts - Options, including base URLs
  */
 
-function SiteNav(selector) {
+var today = new Date();
+
+var defaultOpts = {
+  cmsUrl: 'http://localhost:8000',
+  webAppUrl: 'http://localhost:3000',
+  cycle: 2016,
+  today: moment(today).format('MM-DD-YYYY')
+};
+
+function SiteNav(selector, opts) {
+  this.opts = _.extend({}, defaultOpts, opts);
   this.$body = $(selector);
+  this.$list = this.$body.find('#site-menu');
   this.$toggle = this.$body.find('.js-nav-toggle');
-  this.$openSublist = null;
 
   this.assignAria();
 
+  this.initMegaMenu();
+
   // Open and close the menu on mobile
   this.$toggle.on('click', this.toggle.bind(this));
-
-  // Mobile: open sublists with the toggle buttons
-  this.$body.on('click', '.js-sublist-toggle', this.toggleSublist.bind(this));
-
-  // Desktop: open and close sublists on hover and focus
-  this.$body.on('mouseenter', '.js-sublist-parent', this.showSublist.bind(this));
-  this.$body.on('mouseleave', '.js-sublist-parent', this.hideSublist.bind(this));
-  $(document.body).on('focusin', this.handleFocusBody.bind(this));
 }
 
+SiteNav.prototype.initMegaMenu = function() {
+  var self = this;
+  if ( $('body').width() > helpers.BREAKPOINTS.LARGE) {
+    this.$body.find('[data-submenu]').each(function(){
+      var id = $(this).data('submenu');
+      var submenu = TEMPLATES[id](self.opts);
+      $(this).append(submenu);
+    });
+
+    this.$body.accessibleMegaMenu({
+      uuidPrefix: 'mega-menu',
+      menuClass: 'site-nav__list',
+      topNavItemClass: 'site-nav__item',
+      panelClass: 'mega',
+      panelGroupClass: 'mega__group',
+      hoverClass: 'is-hover',
+      focusClass: 'is-focus',
+      openClass: 'is-open'
+    });
+  }
+};
+
 SiteNav.prototype.assignAria = function() {
-  this.$body.find('.js-sublist-toggle').attr('aria-haspopup', true);
-  this.$body.attr('aria-label', 'Site wide navigation');
-  this.$body.find('ul ul').attr({
-    'aria-label': 'submenu',
-    'aria-hidden': 'true'
-  });
+  this.$list.attr('aria-label', 'Site-wide navigation');
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE) {
+    this.$toggle.attr('aria-haspopup', true);
+    this.$list.attr('aria-hidden', true);
+  }
 };
 
 SiteNav.prototype.toggle = function() {
@@ -47,42 +84,15 @@ SiteNav.prototype.toggle = function() {
 SiteNav.prototype.show = function() {
   this.$body.addClass('is-open');
   this.$toggle.addClass('active');
+  this.$list.attr('aria-hidden', false);
   this.isOpen = true;
 };
 
 SiteNav.prototype.hide = function() {
   this.$body.removeClass('is-open');
   this.$toggle.removeClass('active');
+  this.$list.attr('aria-hidden', true);
   this.isOpen = false;
-};
-
-SiteNav.prototype.toggleSublist = function(e) {
-  var method = this.$openSublist ? this.hideSublist : this.showSublist;
-  method.call(this, e);
-};
-
-SiteNav.prototype.showSublist = function(e, $selector) {
-  var $sublistParent = $selector || $(e.target).closest('.js-sublist-parent');
-  $sublistParent.addClass('is-open');
-  $sublistParent.find('ul').attr('aria-hidden', false);
-  this.$openSublist = $sublistParent;
-};
-
-SiteNav.prototype.hideSublist = function(e, $selector) {
-  var $sublistParent = $selector || $(e.target).closest('.js-sublist-parent');
-  $sublistParent.removeClass('is-open');
-  $sublistParent.find('ul').attr('aria-hidden', true);
-  this.$openSublist = null;
-};
-
-SiteNav.prototype.handleFocusBody = function(e) {
-  var $target = $(e.target);
-  var $sublistParent = $target.closest('.js-sublist-parent');
-  if (this.$openSublist && !this.$openSublist.has($target).length) {
-    this.hideSublist(e, this.$openSublist);
-  } else if ($sublistParent) {
-    this.showSublist(e);
-  }
 };
 
 module.exports = {SiteNav: SiteNav};
