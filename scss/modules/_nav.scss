@@ -39,7 +39,7 @@
   z-index: $z-navigation;
 
   &[aria-hidden='true'] {
-    display: block !important;
+    display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
   }
 
   .utility-nav__item {
