@@ -11,9 +11,6 @@ gulp.task('minify-icons', function() {
     .pipe(svgmin({
       plugins: [
         {
-          removeDimensions: true
-        },
-        {
           removeAttrs: {attrs: '(fill|fill-rule)'}
         },
         {
