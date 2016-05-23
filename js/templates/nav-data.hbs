@@ -5,11 +5,16 @@
         <div class="mega-heading">
           <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
         </div>
-        <form action="{{webAppUrl}}" method="GET">
+        <form action="{{webAppUrl}}" method="GET" autocomplete="off">
           <label class="t-sans mega__item" for="menu-search">Search for candidates and committees</label>
           <div class="combo--search--mini">
-            <input id="menu-search" name="search" class="combo__input" type="text">
-            <input type="hidden" name="search_type" value="candidates" placeholder="Search committees">
+            <input id="menu-search" name="search" class="combo__input js-menu-search" type="text"
+            placeholder="Search for candidates"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false">
+            <input type="hidden" name="search_type" value="candidates">
             <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
           </div>
         </form>
@@ -30,7 +35,7 @@
         <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
           <label class="t-sans mega__item" for="menu-election-search">Find elections and candidates by ZIP code</label>
           <div class="combo--search--mini">
-            <input id="menu-election-search" name="zip" class="combo__input" type="text">
+            <input id="menu-election-search" name="zip" class="combo__input" type="text" placeholder="Search by ZIP code">
             <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
           </div>
         </form>
@@ -65,8 +70,8 @@
         </div>
         <ul>
           <li class="mega__item"><a href="{{webAppUrl}}/filings">All filings</a></li>
-          <li class="mega__item is-disabled">Authorized committees</li>
-          <li class="mega__item is-disabled">Unauthorized committees</li>
+          <li class="mega__item is-disabled">Authorized committee reports</li>
+          <li class="mega__item is-disabled">Unauthorized committees reports</li>
         </ul>
       </div>
     </div>

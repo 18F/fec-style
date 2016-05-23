@@ -6,6 +6,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var helpers = require('./helpers');
 var moment = require('moment');
+var typeahead = require('./typeahead');
 
 window.$ = window.jQuery = $;
 
@@ -65,6 +66,11 @@ SiteNav.prototype.initMegaMenu = function() {
       focusClass: 'is-focus',
       openClass: 'is-open'
     });
+
+    new typeahead.Typeahead('.js-menu-search', 'candidates', '/data/');
+  }
+};
+
   }
 };
 
