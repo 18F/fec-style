@@ -43,6 +43,7 @@ function SiteNav(selector, opts) {
 
   this.initMegaMenu();
 
+  $(window).on('resize', this.destroyMegaMenu.bind(this));
   // Open and close the menu on mobile
   this.$toggle.on('click', this.toggle.bind(this));
 }
@@ -71,6 +72,9 @@ SiteNav.prototype.initMegaMenu = function() {
   }
 };
 
+SiteNav.prototype.destroyMegaMenu = function() {
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE ) {
+    this.$body.find('.mega').remove();
   }
 };
 
