@@ -58,7 +58,7 @@
     color: $inverse;
 
     &[aria-expanded='true'] {
-      @include u-icon-bg($minus-circle, $primary);
+      @include u-icon-bg($minus-circle, $inverse);
     }
   }
 
