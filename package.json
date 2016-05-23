@@ -12,7 +12,7 @@
     "build-sass": "node-sass scss/ -o css/",
     "build-styleguide": "cd fec-template/ && npm run less && cd .. rm -rf styleguide && kss-node --config kss-config.json && npm run copy-css",
     "build-icons": "gulp minify-icons && gulp consolidate-icons",
-    "copy-css": "cp -R css styleguide/css",
+    "copy-css": "cp -R css styleguide",
     "copy-images": "cp -R img styleguide/img",
     "percy": "percy snapshot styleguide",
     "quick-build": "npm run build-sass && npm run copy-css",
