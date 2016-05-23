@@ -204,10 +204,16 @@
     padding: 0;
   }
 
-  &[data-allow-text] .button--search {
-    @include u-icon-button($magnifying-glass);
-    background-size: 2.2rem;
-    background-position: 50%;
-    padding: 0;
+  &[data-allow-text] {
+    .tt-suggestion__missing {
+      display: none;
+    }
+
+    .button--search {
+      @include u-icon-button($magnifying-glass);
+      background-size: 2.2rem;
+      background-position: 50%;
+      padding: 0;
+    }
   }
 }
