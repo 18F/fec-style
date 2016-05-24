@@ -439,15 +439,18 @@
 
 .button--close--base {
   @include u-icon($x, $base);
+  border: none;
 }
 
 .button--close--inverse {
   @include u-icon($x, $inverse);
+  border: none;
 }
 
 .button--close--primary {
   @include u-icon($x, $primary);
   background-size: 2rem;
+  border: none;
 }
 
 .button--down {

@@ -122,7 +122,11 @@
 }
 
 .filters__message-container {
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
+
+  .message {
+    margin: 0;
+  }
 }
 
 .filter {

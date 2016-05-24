@@ -18,7 +18,7 @@
 }
 
 // Variables for all icons
-<% _.each(icons, function(svg) { %>$<%= svg.name %>: 'data:image/svg+xml;utf8, <%= svg.content %>';
+<% _.each(icons, function(svg) { %>$<%= svg.name %>: 'data:image/svg+xml;charset=utf8, <%= svg.content %>';
 <% }); %>
 
 // Classes for all icons
@@ -27,5 +27,6 @@
   background-image: url('#{$<%= svg.name %>}');
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 4rem;
 }
 <% }); %>

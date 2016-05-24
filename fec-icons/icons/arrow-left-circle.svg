@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-822.2 544.6 20 20" style="enable-background:new -822.2 544.6 20 20;" xml:space="preserve">
-<path d="M-812.2,564.6c5.5,0,10-4.5,10-10s-4.5-10-10-10s-10,4.5-10,10S-817.7,564.6-812.2,564.6z M-816.3,553.8
-	c0,0,5.7-3.3,5.7-3.4c0.1-0.1,0.2-0.1,0.4-0.1c0.4,0,0.8,0.3,0.8,0.8v6.7c0,0.4-0.3,0.8-0.8,0.8c-0.1,0-0.3,0-0.4-0.1l-5.7-3.3
-	c-0.2-0.1-0.4-0.4-0.4-0.7C-816.7,554.2-816.5,553.9-816.3,553.8z"/>
-</svg>
+<svg id="arrow-left-circle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><title>betaFEC_icons</title><path d="M10,20A10,10,0,1,0,0,10,10,10,0,0,0,10,20ZM5.9,9.2s5.7-3.3,5.7-3.4A0.48,0.48,0,0,1,12,5.7a0.79,0.79,0,0,1,.8.8v6.7a0.79,0.79,0,0,1-.8.8,0.6,0.6,0,0,1-.4-0.1L5.9,10.6A0.81,0.81,0,0,1,5.9,9.2Z"/></svg>

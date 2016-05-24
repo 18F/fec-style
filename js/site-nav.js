@@ -6,6 +6,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var helpers = require('./helpers');
 var moment = require('moment');
+var typeahead = require('./typeahead');
 
 window.$ = window.jQuery = $;
 
@@ -42,6 +43,7 @@ function SiteNav(selector, opts) {
 
   this.initMegaMenu();
 
+  $(window).on('resize', this.destroyMegaMenu.bind(this));
   // Open and close the menu on mobile
   this.$toggle.on('click', this.toggle.bind(this));
 }
@@ -65,6 +67,14 @@ SiteNav.prototype.initMegaMenu = function() {
       focusClass: 'is-focus',
       openClass: 'is-open'
     });
+
+    new typeahead.Typeahead('.js-menu-search', 'candidates', '/data/');
+  }
+};
+
+SiteNav.prototype.destroyMegaMenu = function() {
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE ) {
+    this.$body.find('.mega').remove();
   }
 };
 
