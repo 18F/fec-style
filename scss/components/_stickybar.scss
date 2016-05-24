@@ -1,0 +1,15 @@
+.sticky-bar {
+  @include transition(top .4s ease-out);
+  top: -200px; // Setting this property so we can animate it when .is-stuck is applied
+  z-index: $z-sticky;
+  width: 100%;
+
+  // To stick to the top of the page
+  &.is-stuck {
+    @include transition(top .4s ease-out);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-page-controls;
+  }
+}
