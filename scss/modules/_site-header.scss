@@ -40,12 +40,11 @@
 //
 // Markup:
 // <div class="disclaimer">
-//   <span class="disclaimer__left">Looking for fec.gov? <a href="http://www.fec.gov">Click here.</a></span>
-//   <span class="disclaimer__center">
+//   <span class="disclaimer__left">This site is in beta, visit <a href="http://www.fec.gov">FEC.gov</a></span>
+//   <span class="disclaimer__right">
 //     An official website of the United States Government.
 //     <img alt="US flag signifying that this is a United States Federal Government website" src="../img/us_flag_small.png">
 //   </span>
-//   <span class="disclaimer__right">This site is currently in <a href="https://18f.gsa.gov/dashboard/stages/#beta">beta</a>.</span>
 // </div>
 //
 // Styleguide modules.site-header.disclaimer
@@ -93,6 +92,8 @@
 //   <ul class="utility-nav list--flat">
 //     <li class="utility-nav__item">About</li>
 //     <li class="utility-nav__item">Contact</li>
+//     <li class="utility-nav__item">Contact</li>
+//     <li class="utility-nav__item">Glossary</li>
 //   </ul>
 // </div>
 //
