@@ -22,7 +22,7 @@
     visibility: hidden;
 
     &.is-open {
-      top: 6rem;
+      top: 4rem;
       visibility: visible;
       padding-bottom: 8rem; // Padding so that the shadow doesn't get cut off
       z-index: $z-navigation;

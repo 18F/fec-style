@@ -230,7 +230,7 @@
     &.is-open,
     &:hover {
       .site-nav__link {
-        border-bottom-color: $primary-contrast;
+        border-bottom-color: transparent;
         background-color: $primary;
         color: $gray-lightest;
       }
@@ -256,22 +256,20 @@
 
   .site-nav__link {
     color: $primary;
-    padding: 2rem;
+    border-bottom: .5rem solid transparent;
+    padding: 1rem 2rem .5rem 2rem;
 
     &:hover,
     &:focus,
     &:active {
-      border-bottom-color: $primary-contrast;
+      border-bottom-color: transparent;
       background-color: $primary;
       color: $gray-lightest;
     }
-  }
 
-  .site-nav__button--right {
-    height: 6rem;
-    position: absolute;
-    right: 0;
-    z-index: $z-glossary;
+    &.is-parent {
+      border-color: $navy;
+    }
   }
 
   .site-nav__button--left {

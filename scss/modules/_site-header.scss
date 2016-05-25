@@ -52,7 +52,7 @@
 
 .disclaimer {
   @include clearfix();
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $gray-light;
   font-family: $sans-serif;
   font-size: 1.2rem;
   padding: .5rem 2rem;
@@ -62,28 +62,23 @@
 .disclaimer__left {
   display: none;
   float: left;
-
-  @include media($med) {
-    display: block;
-  }
-}
-
-.disclaimer__center {
-  display: none;
-
-  img {
-    vertical-align: middle;
-  }
-
-  @include media($med) {
-    display: inline-block;
-  }
 }
 
 .disclaimer__right {
   text-align: center;
+}
 
-  @include media($med) {
+@include media($med) {
+  .disclaimer {
+    float: right;
+    width: calc(100% - 13rem);
+  }
+
+  .disclaimer__left {
+    display: block;
+  }
+
+  .disclaimer__right {
     float: right;
   }
 }
@@ -105,42 +100,12 @@
 
 .masthead {
   @include clearfix();
-  border-bottom: 2px solid $neutral;
-  padding: 1.9rem 2rem 0 0;
-  display: none;
 
   @include media($med) {
+    @include u-background-image('seal--cropped', 0% 0%);
+    border-bottom: 2px solid $neutral;
     display: block;
-
-    .site-title {
-      @include u-background-image('lockup', 0% 0%);
-      background-size: contain;
-      height: 8rem;
-      width: 70%;
-    }
-  }
-}
-
-.utility-nav {
-  font-family: $sans-serif;
-  display: none;
-  float: right;
-  padding: .55rem 0;
-
-  @include media($lg) {
-    display: block;
-  }
-}
-
-.utility-nav__item {
-  padding: 0 2rem;
-
-  &:last-child {
-    padding-right: 0;
-  }
-
-  a {
-    border: none;
+    background-size: contain;
   }
 }
 
@@ -154,19 +119,67 @@
 .site-title {
   margin-bottom: 0;
   border-bottom: 0;
-  display: block;
+  display: none;
   float: left;
+  width: 100%;
+
+  @include media($med) {
+    @include u-background-image('wordmark', 0% 50%);
+    background-size: contain;
+    display: block;
+    margin: 1rem 0 1rem 16rem;
+    height: 5rem;
+    width: 100%;
+  }
+
+  @include media($lg) {
+    width: 32%;
+  }
 }
+
+.utility-nav {
+  font-family: $sans-serif;
+  display: none;
+  float: right;
+  padding: 2.3rem 0;
+
+  @include media($lg) {
+    display: block;
+  }
+}
+
+li.utility-nav__item {
+  margin-right: 0;
+  padding: 0 1.5rem;
+  border-left: 1px solid $primary;
+  font-size: 1.6rem;
+
+  &:first-child {
+    border-left: none;
+  }
+
+  a {
+    border: none;
+  }
+
+  button {
+    color: inherit;
+    font-size: inherit;
+  }
+}
+
 
 // Mobile site title is included in the .site-nav nav element
 .site-nav {
   .site-title {
     @include u-background-image('wordmark', 0% 50%);
     background-size: contain;
+    display: block;
     height: 3rem;
     margin: .5rem 1rem;
     width: calc(100% - 15rem);
     max-width: 40rem;
+
     @include media($med) {
       display: none;
     }
