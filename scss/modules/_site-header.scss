@@ -51,7 +51,7 @@
 
 .disclaimer {
   @include clearfix();
-  border-bottom: 1px solid $gray-light;
+  border-bottom: 1px solid $neutral;
   font-family: $sans-serif;
   font-size: 1.2rem;
   padding: .5rem 2rem;
@@ -75,6 +75,7 @@
 
   .disclaimer__left {
     display: block;
+    padding-left: 1rem;
   }
 
   .disclaimer__right {
