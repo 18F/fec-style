@@ -7,11 +7,11 @@
 // Styleguide components.billboards
 
 .billboard {
-  padding: 3rem 0;
+  padding: u(3rem 0);
 }
 
 .billboard__image {
-  max-width: 10rem;
+  max-width: u(10rem);
 }
 
 .billboard__content {
@@ -24,7 +24,7 @@
     }
 
     .billboard__image {
-      max-width: 19rem;
+      max-width: u(19rem);
     }
 
     .billboard__content {

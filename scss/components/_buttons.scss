@@ -24,9 +24,9 @@
   color: $primary;
   display: inline-block;
   font-family: $sans-serif;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   line-height: 1;
-  padding: 8px 2rem;
+  padding: u(8px 2rem);
   text-align: center;
   vertical-align: middle;
 
@@ -36,7 +36,7 @@
   }
 
   &.form-element--inline {
-    min-height: 3.6rem;
+    min-height: u(3.6rem);
   }
 }
 
@@ -220,17 +220,17 @@
   border: 2px solid transparent;
   border-radius: 4px;
   font-family: $sans-serif;
-  font-size: 1.6rem;
-  padding: 1.4rem 3rem;
+  font-size: u(1.6rem);
+  padding: u(1.4rem 3rem);
 }
 
 .button--sm {
   border: 1px solid transparent;
   border-radius: 2px;
   font-family: $sans-serif;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
   line-height: 1;
-  padding: 5px 1rem;
+  padding: u(5px 1rem);
 
   &:active {
     border: 1px solid;
@@ -255,15 +255,15 @@
   background-position: center center;
   border: none;
   display: none;
-  height: 4rem;
-  padding: .6rem;
+  height: u(4rem);
+  padding: u(.6rem);
   position: absolute;
   top: 0;
   right: 0;
-  width: 4rem;
+  width: u(4rem);
 
   &:hover {
-    padding: .6rem;
+    padding: u(.6rem);
     text-decoration: none;
   }
 
@@ -276,7 +276,7 @@
   position: relative;
 
   input[type="text"] {
-    padding-right: 5rem;
+    padding-right: u(5rem);
   }
 
   &.is-active {
@@ -300,7 +300,7 @@
 
 .button--search {
   @include u-icon-button($magnifying-glass);
-  background-size: 2.2rem;
+  background-size: u(2.2rem);
   background-position: 50%;
   padding: 0;
 }
@@ -318,19 +318,19 @@
 
 .button--calendar {
   @include u-icon-bg($cal-add, $base);
-  background-position: 1rem .7rem;
-  background-size: 2rem;
-  padding-left: 4rem;
-  padding-right: 6rem;
+  background-position: u(1rem .7rem);
+  background-size: u(2rem);
+  padding-left: u(4rem);
+  padding-right: u(6rem);
 }
 
 
 .button--calendar--mini {
   @include u-icon-bg($cal-add, $base);
-  background-position: 1rem .7rem;
-  background-size: 2rem;
-  max-width: 7.4rem;
-  padding-left: 5rem;
+  background-position: u(1rem .7rem);
+  background-size: u(2rem);
+  max-width: u(7.4rem);
+  padding-left: u(5rem);
 }
 
 // Buttons: Icon and text buttons
@@ -395,14 +395,14 @@
 
 .button--cal {
   @include u-icon-button($calendar, left);
-  height: 3.4rem;
-  width: 9rem;
+  height: u(3.4rem);
+  width: u(9rem);
 }
 
 .button--list {
   @include u-icon-button($list, left);
-  height: 3.4rem;
-  width: 9rem;
+  height: u(3.4rem);
+  width: u(9rem);
 }
 
 .button--search--text {
@@ -449,7 +449,7 @@
 
 .button--close--primary {
   @include u-icon($x, $primary);
-  background-size: 2rem;
+  background-size: u(2rem);
   border: none;
 }
 

@@ -18,12 +18,12 @@
 .list--bulleted {
   li {
     list-style-type: disc;
-    margin-left: 2rem;
-    padding: .5rem 0;
-    font-size: 1.6rem;
+    margin-left: u(2rem);
+    padding: u(.5rem 0);
+    font-size: u(1.6rem);
 
     &:last-child {
-      margin-bottom: 1.5rem;
+      margin-bottom: u(1.5rem);
     }
   }
 }
@@ -31,7 +31,7 @@
 .list--numbered {
   list-style-type: decimal;
   margin: 0;
-  padding-left: 1rem;
+  padding-left: u(1rem);
 }
 
 .list--flat {
@@ -40,7 +40,7 @@
 
   li {
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
 
     &:last-child {
       margin-right: 0;
@@ -74,9 +74,9 @@
 .list--checks {
   li {
     @include u-icon-bg($check, $primary);
-    background-size: 2rem;
-    background-position: 0 1.4rem;
-    padding: 1rem 0 1rem 2.5rem;
+    background-size: u(2rem);
+    background-position: u(0 1.4rem);
+    padding: u(1rem 0 1rem 2.5rem);
     position: relative;
   }
 
@@ -107,7 +107,7 @@
 
   li {
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
     width: 100%;
 
     &:last-child {
@@ -119,7 +119,7 @@
   .button--cta,
   .button--alt {
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: u(.5rem);
     text-align: left;
     width: 100%;
   }

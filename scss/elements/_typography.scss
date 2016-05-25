@@ -20,7 +20,7 @@ body {
   // -webkit-font-smoothing: antialiased;
   color: $base;
   font-family: $base-font-family;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   line-height: 1.5;
 }
 
@@ -50,25 +50,25 @@ h6 {
 
 p {
   color: inherit;
-  font-size: 1.6rem;
-  margin: 0 0 1rem 0;
-  max-width: 80rem;
+  font-size: u(1.6rem);
+  margin: u(0 0 1rem 0);
+  max-width: u(80rem);
   width: 100%;
 
   & + h1 {
-    margin-top: 3rem;
+    margin-top: u(3rem);
   }
 
   & + h2 {
-    margin-top: 3rem;
+    margin-top: u(3rem);
   }
 
   & + h3 {
-    margin-top: 2rem;
+    margin-top: u(2rem);
   }
 
   & + h4 {
-    margin-top: 2rem;
+    margin-top: u(2rem);
   }
 }
 
@@ -77,7 +77,7 @@ hr {
   border-left: none;
   border-right: none;
   border-top: none;
-  margin: 1rem 0;
+  margin: u(1rem 0);
 }
 
 

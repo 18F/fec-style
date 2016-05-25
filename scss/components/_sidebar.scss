@@ -41,26 +41,26 @@
 
   &.is-fixed {
     position: fixed;
-    top: 2rem;
+    top: u(2rem);
     left: auto;
   }
 }
 
 .sidebar__title {
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   font-weight: bold;
   margin: 0;
-  padding: 1rem 2rem;
+  padding: u(1rem 2rem);
   text-transform: uppercase;
 }
 
 .sidebar__content {
   @include clearfix();
   background-color: $neutral;
-  padding: 2rem;
+  padding: u(2rem);
 
   p {
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
     color: $base;
   }
 }

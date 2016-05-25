@@ -2,15 +2,15 @@
 
 .feedback {
   background-color: $base;
-  bottom: .5rem;
+  bottom: u(.5rem);
   color: $inverse;
   display: block;
-  left: .5rem;
+  left: u(.5rem);
   overflow-y: scroll;
-  padding: 2rem .5rem;
+  padding: u(2rem .5rem);
   position: fixed;
-  right: .5rem;
-  top: .5rem;
+  right: u(.5rem);
+  top: u(.5rem);
   z-index: $z-feedback;
 
   legend {
@@ -18,12 +18,12 @@
   }
 
   textarea {
-    height: 7rem;
-    margin-bottom: 2rem;
+    height: u(7rem);
+    margin-bottom: u(2rem);
     border-color: $inverse;
 
     &:last-of-type {
-      margin-bottom: 1rem;
+      margin-bottom: u(1rem);
     }
   }
 
@@ -33,14 +33,14 @@
 
   .label {
     &:first-of-type {
-      margin-top: 2rem;
+      margin-top: u(2rem);
     }
   }
 
   .feedback__close {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: u(1rem);
+    top: u(1rem);
   }
 
   @include media($lg) {
@@ -48,10 +48,10 @@
     height: 95vh;
     left: auto;
     overflow: auto;
-    padding: 3rem 3rem 0 3rem;
-    right: 4rem;
+    padding: u(3rem 3rem 0 3rem);
+    right: u(4rem);
     top: 5vh;
-    width: 52rem;
+    width: u(52rem);
 
     &[aria-hidden='true'] {
       display: block !important;
@@ -62,17 +62,17 @@
 
 .feedback__title {
   @include heading(h2);
-  margin-bottom: .5rem;
+  margin-bottom: u(.5rem);
 }
 
 .feedback__toggle {
   bottom: 0;
   border-radius: 2px 2px 0 0;
   position: fixed;
-  right: 4rem;
+  right: u(4rem);
   z-index: $z-feedback;
 }
 
 .feedback__button {
-  margin-top: 1rem;
+  margin-top: u(1rem);
 }

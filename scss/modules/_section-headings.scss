@@ -17,31 +17,31 @@
 .section__heading {
   @include clearfix();
   border-bottom: 2px solid;
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .heading__title {
   border-bottom: 0;
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .heading__subtitle {
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .heading__action {
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .heading__action__top {
-  margin-top: -1rem;
-  margin-bottom: 1rem;
+  margin-top: u(-1rem);
+  margin-bottom: u(1rem);
   text-align: right;
 }
 
 .heading__action__left {
   float: left;
-  margin-right: 1rem;
+  margin-right: u(1rem);
 }
 
 .heading__action__right {
@@ -51,7 +51,7 @@
 
 .heading__link-name {
   display: block;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
 }
 
 .heading__message {
