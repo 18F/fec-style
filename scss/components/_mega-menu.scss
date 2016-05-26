@@ -22,7 +22,7 @@
     visibility: hidden;
 
     &.is-open {
-      top: 6rem;
+      top: 4rem;
       visibility: visible;
       padding-bottom: 8rem; // Padding so that the shadow doesn't get cut off
       z-index: $z-navigation;
@@ -62,6 +62,7 @@
     margin-bottom: 1rem;
 
     .mega-heading__title {
+      font-size: 1.6rem;
       line-height: 1.5;
       margin: 0;
       padding-bottom: .5rem;
