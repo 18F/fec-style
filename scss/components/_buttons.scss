@@ -409,6 +409,10 @@
   @include u-icon-button($magnifying-glass);
 }
 
+.button--back {
+  @include u-icon-button($arrow-left-border, left);
+}
+
 // Special Buttons
 //
 // Common icon buttons for various purposes
@@ -464,4 +468,10 @@
 .button--panel {
   @include u-icon($arrow-right-circle, $gray, 2rem, 2rem, contain);
   background-size: 90%;
+}
+
+.button--nav-panel {
+  @include u-icon-bg($arrow-right-circle, $primary-contrast);
+  background-position: 100% 50%;
+  padding-right: 4rem;
 }

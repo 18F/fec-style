@@ -1,0 +1,53 @@
+<div id="nav-data" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
+  <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-data">Back</button>
+  <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
+  <form action="{{webAppUrl}}" method="GET" autocomplete="off">
+    <label class="t-sans" for="menu-search">Search for candidates and committees</label>
+    <div class="combo--search--mini">
+      <input id="menu-search" name="search" class="combo__input js-menu-search" type="text"
+      placeholder="Search for candidates"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false">
+      <input type="hidden" name="search_type" value="candidates">
+      <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
+    </div>
+  </form>
+  <ul>
+    <li class="site-nav__item is-disabled"><span class="site-nav__link">Overviews</span></li>
+    <li class="site-nav__item"><a class="site-nav__link" href="{{webAppUrl}}/elections">Location</a></li>
+    <li class="site-nav__item"><button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced">Advanced data</button></li>
+  </ul>
+</div>
+
+<div id="nav-advanced" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
+  <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced">Campaign finance data</button>
+  <ul>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-candidates">Candidates</button>
+    </li>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-committees">Committees</button>
+    </li>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-receipts">Receipts</button>
+    </li>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-spending">Spending</button>
+    </li>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-filings">Reports and filings</button>
+    </li>
+  </ul>
+</div>
+
+<div id="nav-advanced-candidates" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
+  <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-candidates">Advanced data</button>
+  <h4 class="icon-heading--candidates"><a class="site-nav__link" href="{{webAppUrl}}/candidates/?election_year=2012&election_year=2014&election_year=2016&has_raised_funds=true">Candidates - all</a></h4>
+  <ul>
+    <li class="site-nav__item"><a class="site-nav__link" href="{{webAppUrl}}/candidates/president">Presidential</a></li>
+    <li class="site-nav__item"><a class="site-nav__link" href="{{webAppUrl}}/candidates/senate">Senate</a></li>
+    <li class="site-nav__item"><a class="site-nav__link" href="{{webAppUrl}}/candidates/house">House of Representatives</a></li>
+  </ul>
+</div>

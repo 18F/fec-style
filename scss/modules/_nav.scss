@@ -5,6 +5,7 @@
 // Elements:
 // .site-nav                        - The outer nav element
 // .site-nav__list                  - ul that displays horizontally on desktop and is hidden on mobile until revealed
+// .site-nav__panel                 - Container that gets revealed
 // .site-nav__item                  - Each li inside the ul
 // .site-nav__link                  - Styles for the links inside the items
 // .site-nav__dropdown              - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
@@ -16,27 +17,50 @@
   @include clearfix();
 
   &.is-open {
-    .site-nav__list {
-      @include transform(translateX(0));
+
+    // When the menu is open, set all sub-panels 100% off
+    .site-nav__panel--sub {
+      @include transform(translateX(100%));
+
+      // When subpanels open, set them to 0
+      &.is-open {
+        @include transform(translateX(0));
+      }
     }
 
-    .site-nav__dropdown {
-      display: block;
+    .site-nav__container {
+      @include transform(translateX(0));
+      @include transition(transform, .2s);
     }
   }
 }
-
-.site-nav__list {
+.site-nav__container {
   @include transform(translateX(-100%));
-  @include transition(transform, .2s);
-  background-color: $primary;
-  border-right: 1px solid $primary-contrast;
-  padding: 1rem 2rem;
+  @include transition(left, .2s);
   position: absolute;
   left: 0;
+  right: 0;
   top: 7rem;
   bottom: 0;
   z-index: $z-navigation;
+
+  &[aria-hidden='true'] {
+    display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
+  }
+}
+
+.site-nav__panel {
+  @include transition(transform, .2s);
+  background-color: $primary;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+
+  &.is-open {
+    @include transform(translateX(0));
+  }
 
   &[aria-hidden='true'] {
     display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
@@ -45,6 +69,10 @@
   .utility-nav__item {
     padding: 0;
   }
+}
+
+.site-nav__panel--sub {
+  @include transform(translateX(200%));
 }
 
 .site-nav__item {
@@ -72,6 +100,8 @@
   line-height: 2rem;
   padding: 1rem;
   border-bottom: none;
+  width: 100%;
+  text-align: left;
 
   &.is-current {
     border-bottom-color: $aqua;
@@ -80,37 +110,6 @@
   &.is-active {
     background-color: $primary;
     color: $primary-contrast;
-  }
-}
-
-.site-nav__subtitle {
-  display: block;
-  margin: 0;
-  font-size: 1.4rem;
-  padding: 1rem;
-}
-
-.site-nav__dropdown {
-  font-family: $sans-serif;
-  display: none;
-  padding-bottom: 2rem;
-
-  &[aria-hidden='false'] {
-    display: block;
-  }
-
-  .site-nav__item {
-    border-bottom: 0;
-  }
-
-  .site-nav__link {
-    padding: .5rem 1rem;
-    font-size: 1.4rem;
-    white-space: nowrap;
-  }
-
-  .site-nav__sublink {
-    padding-left: 2rem;
   }
 }
 
@@ -177,7 +176,7 @@
 // Mostly stays the same except the menu button now has the word menu in it
 
 @include media($med) {
-  .site-nav__list {
+  .site-nav__panel {
     top: 17rem;
   }
 
@@ -202,20 +201,31 @@
 // Hide the submenu toggles
 
 @include media($lg) {
-  .site-nav__list {
+  .site-nav__container {
     @include clearfix();
+    @include transform(translateX(0));
+    top: 0;
+    position: relative;
+    width: 100%;
+    float: left;
+    background: $inverse;
+  }
+
+  .site-nav__panel--sub {
+    @include transform(translateX(0));
+  }
+
+  .site-nav__panel {
     @include transform(translateX(0));
     background: none;
     border: none;
     min-height: 0;
     height: auto;
     overflow: visible;
+    position: relative;
     display: block;
-    float: left;
     padding: 0 0 0 2rem;
     top: 0;
-    position: relative;
-    width: 100%;
 
     .utility-nav__item {
       display: none;
@@ -257,6 +267,7 @@
   .site-nav__link {
     color: $primary;
     padding: 2rem;
+    text-align: center;
 
     &:hover,
     &:focus,
