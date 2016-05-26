@@ -3,30 +3,28 @@
 var $ = require('jquery');
 
 function FilterControl($selector) {
-  this.$body = $selector;
-  this.modifiesFilter = this.$body.data('modifies-filter');
-  this.modifiesProperty = this.$body.data('modifies-property');
-  this.getValue();
+  this.$element = $selector;
+  this.modifiesFilter = this.$element.data('modifies-filter');
+  this.modifiesProperty = this.$element.data('modifies-property');
 
-  this.controlledFilter = $('#' + this.$body.data('controls'));
-  this.$body.on('change', this.handleChange.bind(this));
+  this.controlledFilter = $('#' + this.$element.data('controls'));
+  this.$element.on('change', this.handleChange.bind(this));
 }
 
 FilterControl.prototype.getValue = function() {
   var values = [];
-  this.$body.find('input:checked').each(function() {
+  this.$element.find('input:checked').each(function() {
     values.push($(this).val());
   });
-  this.values = values;
+  return values;
 };
 
 FilterControl.prototype.handleChange = function() {
-  this.getValue();
-  this.$body.trigger('filter:modify', [
+  this.$element.trigger('filter:modify', [
     {
       filterName: this.modifiesFilter,
       filterProperty: this.modifiesProperty,
-      filterValue: this.values
+      filterValue: this.getValue()
     }
   ]);
 };
