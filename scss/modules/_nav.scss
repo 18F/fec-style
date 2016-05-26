@@ -30,13 +30,13 @@
 
     .site-nav__container {
       @include transform(translateX(0));
-      @include transition(transform, .2s);
+      @include transition(transform, .2s, ease-out);
     }
   }
 }
 .site-nav__container {
   @include transform(translateX(-100%));
-  @include transition(left, .2s);
+  @include transition(left, .2s, ease-out);
   position: absolute;
   left: 0;
   right: 0;
@@ -50,7 +50,7 @@
 }
 
 .site-nav__panel {
-  @include transition(transform, .2s);
+  @include transition(transform, .2s, ease-out);
   background-color: $primary;
   color: $inverse;
   font-size: 1.6rem;
@@ -235,7 +235,7 @@
     &.is-open,
     &:hover {
       .site-nav__link {
-        border-bottom-color: $primary-contrast;
+        border-bottom-color: transparent;
         background-color: $primary;
         color: $gray-lightest;
       }
@@ -261,23 +261,21 @@
 
   .site-nav__link {
     color: $primary;
-    padding: 2rem;
     text-align: center;
+    border-bottom: .5rem solid transparent;
+    padding: 1rem 2rem .5rem 2rem;
 
     &:hover,
     &:focus,
     &:active {
-      border-bottom-color: $primary-contrast;
+      border-bottom-color: transparent;
       background-color: $primary;
       color: $gray-lightest;
     }
-  }
 
-  .site-nav__button--right {
-    height: 6rem;
-    position: absolute;
-    right: 0;
-    z-index: $z-glossary;
+    &.is-parent {
+      border-color: $navy;
+    }
   }
 
   .site-nav__button--left {
