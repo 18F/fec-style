@@ -52,6 +52,8 @@
 .site-nav__panel {
   @include transition(transform, .2s);
   background-color: $primary;
+  color: $inverse;
+  font-size: 1.6rem;
   padding: 1rem 2rem;
   position: absolute;
   top: 0;
@@ -73,10 +75,15 @@
 
 .site-nav__panel--sub {
   @include transform(translateX(200%));
+
+  @include media($lg) {
+    display: none;
+  }
 }
 
 .site-nav__item {
-  border-bottom: 1px solid $primary-contrast;
+  @include clearfix();
+  border-bottom: 1px solid $inverse;
 
   &:last-child .site-nav__link {
     border-bottom: 0;
@@ -96,21 +103,13 @@
   @include transition(background-color, .1s);
   color: $inverse;
   display: block;
-  font-size: 1.6rem;
+  font-size: inherit;
+  font-family: $serif;
   line-height: 2rem;
   padding: 1rem;
   border-bottom: none;
   width: 100%;
   text-align: left;
-
-  &.is-current {
-    border-bottom-color: $aqua;
-  }
-
-  &.is-active {
-    background-color: $primary;
-    color: $primary-contrast;
-  }
 }
 
 .site-nav__toggle {
@@ -176,12 +175,8 @@
 // Mostly stays the same except the menu button now has the word menu in it
 
 @include media($med) {
-  .site-nav__panel {
+  .site-nav__container {
     top: 17rem;
-  }
-
-  .site-nav__button {
-    width: 9rem;
   }
 
   .site-nav__button--left {
@@ -288,4 +283,27 @@
   .site-nav__button--left {
     display: none;
   }
+}
+
+.site-nav__back {
+  background-position: 0 50%;
+  border: none;
+  padding: 0 0 0 2rem;
+  font-size: 1.4rem;
+}
+
+.site-nav__title {
+  border-bottom: 1px solid $inverse;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.site-nav__item--sub {
+  padding-left: 1rem;
+}
+
+.site-nav__block {
+  @include clearfix();
+  border-bottom: 1px solid $inverse;
+  padding: 1.6rem 2rem 2rem 2rem;
 }

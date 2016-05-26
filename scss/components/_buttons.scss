@@ -471,7 +471,7 @@
 }
 
 .button--nav-panel {
-  @include u-icon-bg($arrow-right-circle, $primary-contrast);
+  @include u-icon-bg($arrow-right-circle, $inverse);
   background-position: 100% 50%;
   padding-right: 4rem;
 }

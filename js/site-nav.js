@@ -44,7 +44,7 @@ function SiteNav(selector, opts) {
 
   this.initMenu();
 
-  $(window).on('resize', this.destroyMegaMenu.bind(this));
+  $(window).on('resize', this.switchMenu.bind(this));
   // Open and close the menu on mobile
   this.$body.on('click', '.js-panel-trigger', this.showPanel.bind(this));
   this.$body.on('click', '.js-panel-close', this.hidePanel.bind(this));
@@ -52,35 +52,48 @@ function SiteNav(selector, opts) {
 }
 
 SiteNav.prototype.initMenu = function() {
-  var self = this;
   if ( $('body').width() > helpers.BREAKPOINTS.LARGE) {
-    this.$body.find('[data-submenu]').each(function(){
-      var id = $(this).data('submenu');
-      var submenu = TEMPLATES[id](self.opts);
-      $(this).append(submenu);
-    });
-
-    this.$menu.accessibleMegaMenu({
-      uuidPrefix: 'mega-menu',
-      menuClass: 'site-nav__panel--main',
-      topNavItemClass: 'site-nav__item',
-      panelClass: 'mega',
-      panelGroupClass: 'mega__group',
-      hoverClass: 'is-hover',
-      focusClass: 'is-focus',
-      openClass: 'is-open'
-    });
+    this.initMegaMenu();
   } else {
-    this.$menu.append(TEMPLATES.mobile(self.opts));
-    this.isMobile = true;
+    this.initMobileMenu();
   }
 
   new typeahead.Typeahead('.js-menu-search', 'candidates', '/data/');
 };
 
-SiteNav.prototype.destroyMegaMenu = function() {
+SiteNav.prototype.initMegaMenu = function() {
+  var self = this;
+  this.$body.find('[data-submenu]').each(function(){
+    var id = $(this).data('submenu');
+    var submenu = TEMPLATES[id](self.opts);
+    $(this).append(submenu);
+  });
+
+  this.$menu.accessibleMegaMenu({
+    uuidPrefix: 'mega-menu',
+    menuClass: 'site-nav__panel--main',
+    topNavItemClass: 'site-nav__item',
+    panelClass: 'mega',
+    panelGroupClass: 'mega__group',
+    hoverClass: 'is-hover',
+    focusClass: 'is-focus',
+    openClass: 'is-open'
+  });
+};
+
+SiteNav.prototype.initMobileMenu = function() {
+  this.$menu.append(TEMPLATES.mobile(this.opts));
+  this.isMobile = true;
+};
+
+SiteNav.prototype.switchMenu = function() {
   if ( $('body').width() < helpers.BREAKPOINTS.LARGE ) {
     this.$body.find('.mega').remove();
+    this.initMobileMenu();
+  } else if (this.isMobile) {
+    // Note: we don't re-init the mega menu because there's no way to actually destroy it currently
+    this.$body.find('.js-mobile-nav').remove();
+    this.isMobile = false;
   }
 };
 

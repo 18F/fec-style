@@ -61,14 +61,14 @@ $xl: new-breakpoint(min-width $x-large-screen 12);
 
 .u-under-lg-only {
   @include media($lg) {
-    display: none;
+    display: none !important;
   }
 }
 
 .u-lg-only {
-  display: none;
+  display: none !important;
 
   @include media($lg) {
-    display: inherit;
+    display: inherit !important;
   }
 }
