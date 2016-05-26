@@ -24,7 +24,6 @@
     top: -200px; // Setting this property so we can animate it when .is-stuck is applied
 
     &.is-stuck {
-      @include transition(top .4s ease-out);
       top: 0;
     }
   }
