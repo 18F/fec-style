@@ -40,7 +40,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 7rem;
+  top: 6.3rem;
   bottom: 0;
   z-index: $z-navigation;
 
@@ -176,7 +176,7 @@
 
 @include media($med) {
   .site-nav__container {
-    top: 17rem;
+    top: 11.6rem;
   }
 
   .site-nav__button--left {
