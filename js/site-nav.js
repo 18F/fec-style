@@ -137,6 +137,6 @@ SiteNav.prototype.hidePanel = function(e) {
   var $target = $(e.target);
   var $panel = $('#' + $target.attr('aria-controls'));
   $panel.removeClass('is-open').attr('aria-hidden', true);
-}
+};
 
 module.exports = {SiteNav: SiteNav};
