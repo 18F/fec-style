@@ -52,9 +52,11 @@
 .disclaimer {
   @include clearfix();
   border-bottom: 1px solid $neutral;
+  color: $gray-dark;
   font-family: $sans-serif;
   font-size: 1.2rem;
-  padding: .5rem 2rem;
+  line-height: 1;
+  padding: 5px 2rem;
   text-align: center;
 }
 
@@ -65,12 +67,16 @@
 
 .disclaimer__right {
   text-align: center;
+
+  img {
+    vertical-align: bottom;
+  }
 }
 
 @include media($med) {
   .disclaimer {
     float: right;
-    width: calc(100% - 13rem);
+    width: calc(100% - 9rem);
   }
 
   .disclaimer__left {
@@ -104,10 +110,10 @@
   @include clearfix();
 
   @include media($med) {
-    @include u-background-image('seal--cropped', 0% 0%);
+    @include u-background-image('seal--cropped', 0% 100%);
     border-bottom: 2px solid $neutral;
     display: block;
-    background-size: contain;
+    background-size: 11rem;
   }
 }
 
@@ -129,8 +135,8 @@
     @include u-background-image('wordmark', 0% 50%);
     background-size: contain;
     display: block;
-    margin: 1rem 0 1rem 16rem;
-    height: 5rem;
+    margin: 1rem 0 .7rem 12rem;
+    height: 3.4rem;
     width: 100%;
   }
 
@@ -143,7 +149,7 @@
   font-family: $sans-serif;
   display: none;
   float: right;
-  padding: 2.3rem 0;
+  padding: 1.6rem 0;
 
   @include media($lg) {
     display: block;
@@ -153,8 +159,9 @@
 li.utility-nav__item {
   margin-right: 0;
   padding: 0 1.5rem;
-  border-left: 1px solid $primary;
-  font-size: 1.6rem;
+  border-left: 1px solid $gray;
+  line-height: 1.6rem;
+  font-size: 1.4rem;
 
   &:first-child {
     border-left: none;
@@ -162,6 +169,10 @@ li.utility-nav__item {
 
   a {
     border: none;
+
+    &:hover {
+      border-bottom: 1px dotted $base;
+    }
   }
 
   button {
