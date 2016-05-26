@@ -5,9 +5,8 @@ var $ = require('jquery');
 function StickyBar(selector) {
   this.$body = $('body');
   this.$bar = $(selector);
-  this.height = this.$bar.outerHeight();
   this.offset = this.$bar.offset().top;
-  this.delay = 100; // Delay before it sticks
+  this.triggerOffset = this.$bar.data('trigger-offset'); // Delay before it sticks
 
   this.defaultBodyPadding = this.$body.css('padding-top');
   $(window).on('scroll', this.toggle.bind(this));
@@ -15,9 +14,10 @@ function StickyBar(selector) {
 
 StickyBar.prototype.toggle = function() {
   var scrollTop = this.$body.scrollTop();
-  if (scrollTop >= this.offset + this.delay) {
+  if (scrollTop >= this.offset + this.triggerOffset) {
+    var height = this.$bar.outerHeight();
     this.$bar.addClass('is-stuck');
-    this.$body.css('padding-top', this.height);
+    this.$body.css('padding-top', height);
   } else if (scrollTop < this.offset) {
     this.$bar.removeClass('is-stuck');
     this.$body.css('padding-top', this.defaultBodyPadding);
