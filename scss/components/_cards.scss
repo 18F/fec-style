@@ -199,6 +199,31 @@
 }
 
 // Card icons
+//
+// CSS generated icons for cards
+//
+// .i-candidate   - Candidate icon
+// .i-committee   - Committee icon
+// .i-receipt     - Receipt icon
+// .i-disbursement  - Disbursement icon
+// .i-overview      - Overview icon
+// .i-profile       - Profile icon
+// .i-elections      - Election icon
+//
+// Markup:
+// <div class="grid--3-wide">
+// <aside class="card card--primary card--horizontal grid__item">
+// <div class="card__image">
+//   <span class="card__icon {{modifier_class}}"><span class="u-visually-hidden">Icon representing [something]</span></span>
+// </div>
+// <div class="card__content">
+//   Card icon
+// </div>
+// </aside>
+// </div>
+//
+// Styleguide components.card-icons
+
 .card__icon {
   background-color: $neutral;
   background-position: 50% 50%;
