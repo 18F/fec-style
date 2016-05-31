@@ -21,6 +21,10 @@
   padding: 2rem;
   text-align: center;
   width: 100%;
+
+  & + & {
+    margin-top: 2rem;
+  }
 }
 
 .card--primary {
@@ -48,6 +52,11 @@
     @include clearfix();
     background-color: $primary;
   }
+}
+
+.card__image {
+  display: block;
+  margin: 0 auto;
 }
 
 .card__image-link {
@@ -187,4 +196,49 @@
   font-family: $sans-serif;
   font-weight: normal;
   margin-bottom: 2rem;
+}
+
+// Card icons
+.card__icon {
+  background-color: $neutral;
+  background-position: 50% 50%;
+  background-size: 50%;
+  border-radius: 100%;
+  display: block;
+  height: 6rem;
+  width: 6rem;
+}
+
+.card--primary {
+  .card__icon {
+    &.i-candidate {
+      @include u-icon-bg($candidate, $primary-contrast);
+      background-position: 60% 50%;
+      background-size: 40%;
+    }
+
+    &.i-committee {
+      @include u-icon-bg($committee, $primary-contrast);
+    }
+
+    &.i-receipt {
+      @include u-icon-bg($piggy-bank, $primary-contrast);
+    }
+
+    &.i-disbursement {
+      @include u-icon-bg($disbursement, $primary-contrast);
+    }
+
+    &.i-overview {
+      @include u-icon-bg($graph, $primary-contrast);
+    }
+
+    &.i-profile {
+      @include u-icon-bg($folder-with-person, $primary-contrast);
+    }
+
+    &.i-elections {
+      @include u-icon-bg($person-location, $primary-contrast);
+    }
+  }
 }
