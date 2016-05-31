@@ -53,10 +53,6 @@
   }
 }
 
-.dropdown__value {
-  margin: 0;
-}
-
 .dropdown__panel {
   position: absolute;
   min-width: 100%;
@@ -74,6 +70,7 @@
   label.dropdown__value {
     background-color: transparent;
     border-bottom: 1px solid $gray-dark;
+    color: $base;
     display: block;
     margin: 0;
     padding: .5rem 1rem;
