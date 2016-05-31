@@ -81,7 +81,7 @@
 
   .disclaimer__left {
     display: block;
-    padding-left: 1rem;
+    padding-left: u(1rem);
   }
 
   .disclaimer__right {
@@ -113,7 +113,7 @@
     @include u-background-image('seal--cropped', 0% 100%);
     border-bottom: 2px solid $neutral;
     display: block;
-    background-size: 11rem;
+    background-size: u(11rem);
   }
 }
 
@@ -135,8 +135,8 @@
     @include u-background-image('wordmark', 0% 50%);
     background-size: contain;
     display: block;
-    margin: 1rem 0 .7rem 12rem;
-    height: 3.4rem;
+    margin: u(1rem 0 .7rem 12rem);
+    height: u(3.4rem);
     width: 100%;
   }
 

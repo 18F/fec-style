@@ -52,7 +52,7 @@
   @include u-icon-bg($book, $base);
   background-position: 0% 50%;
   background-size: 1em;
-  padding-left: 2.5rem;
+  padding-left: u(2.5rem);
 }
 
 // Term classes
