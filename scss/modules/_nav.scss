@@ -1,17 +1,12 @@
 // Navigation
 //
 // Primary site navigation
-//
-// Elements:
+
+// Main layout elements
 // .site-nav                        - The outer nav element
-// .site-nav__list                  - ul that displays horizontally on desktop and is hidden on mobile until revealed
-// .site-nav__panel                 - Container that gets revealed
-// .site-nav__item                  - Each li inside the ul
-// .site-nav__link                  - Styles for the links inside the items
-// .site-nav__dropdown              - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
-// .site-nav__toggle                - A button inside each .site-nav__item--with-dropdown that controls visibility of the submenu
-//
-// Styleguide modules.navigation
+// .site-nav__container             - div that contains the ul and all panels
+// .site-nav__panel                 - Styles for each panel on mobile
+// .site-nav__panel--sub            - Panels after the main screen
 
 .site-nav {
   @include clearfix();
@@ -34,6 +29,7 @@
     }
   }
 }
+
 .site-nav__container {
   @include transform(translateX(-100%));
   @include transition(left, .2s, ease-out);
@@ -42,6 +38,7 @@
   right: 0;
   top: 6.3rem;
   bottom: 0;
+  overflow-x: hidden;
   z-index: $z-navigation;
 
   &[aria-hidden='true'] {
@@ -75,9 +72,40 @@
 
 .site-nav__panel--sub {
   @include transform(translateX(200%));
+}
 
-  @include media($lg) {
-    display: none;
+// Granular elements
+// .site-nav__button        - Hamburger button that triggers menu on mobile
+// .site-nav__item          - li element
+// .site-nav__item--sub     - Indented item nested under a parent
+// .site-nav__link          - link or button inside each li
+// .site-nav__back          - Back button that moves back a panel
+// .site-nav__title         - Panel titles on mobile
+// .site-nav__block         - Block area, such as for search bars
+//
+// Note: Buttons that trigger panels are styled with .button--nav-panel
+
+.site-nav__button {
+  @include u-icon-bg($menu, $primary);
+  background-color: $gray-lightest;
+  background-position: 50% 50%;
+  background-size: 2rem;
+  border: none;
+  border-radius: 0;
+  float: left;
+  height: 4rem;
+  margin: 0;
+  padding: 1.8rem 2rem;
+  text-indent: -99999px;
+
+  &:hover {
+    background-color: $inverse;
+  }
+
+  &.active {
+    @include u-icon-bg($menu, $inverse);
+    background-color: $primary;
+    color: $neutral;
   }
 }
 
@@ -98,7 +126,10 @@
   }
 }
 
-// .site-nav__link
+.site-nav__item--sub {
+  padding-left: 1rem;
+}
+
 .site-nav__link {
   @include transition(background-color, .1s);
   color: $inverse;
@@ -112,63 +143,23 @@
   text-align: left;
 }
 
-.site-nav__toggle {
-  @include u-icon-bg($arrow-right, $inverse);
+.site-nav__back {
   background-position: 0 50%;
-  background-size: 1rem;
-  color: $inverse;
-  font-family: $serif;
-  text-align: left;
-  padding-left: 2rem;
-  position: relative;
-  width: 100%;
-}
-
-// Nav Buttons
-//
-// For the mobile menu toggle and glossary toggle
-//
-// .site-nav__button--left      - Mobile toggle
-// .site-nav__button--right     - Glossary toggle
-
-.site-nav__button {
-  background-color: $gray-lightest;
-  border-radius: 0;
   border: none;
+  padding: 0 0 0 2rem;
+  font-size: 1.4rem;
+}
+
+.site-nav__title {
+  border-bottom: 1px solid $inverse;
+  padding: 1rem 0;
   margin: 0;
-  padding: 1.8rem 2rem;
-  text-indent: -99999px;
 }
 
-.site-nav__button--left {
-  @include u-icon-bg($menu, $primary);
-  background-position: 50% 50%;
-  background-size: 2rem;
-  float: left;
-  height: 4rem;
-
-  &:hover {
-    background-color: $inverse;
-  }
-
-  &.active {
-    @include u-icon-bg($menu, $inverse);
-    background-color: $primary;
-    color: $neutral;
-  }
-}
-
-.site-nav__button--right {
-  @include u-icon-bg($book, $secondary);
-  background-position: 50% 50%;
-  background-size: 2rem;
-  float: right;
-  height: 4rem;
-
-  &:hover {
-    @include u-icon-bg($book, $inverse);
-    background-color: lighten($secondary, 10%);
-  }
+.site-nav__block {
+  @include clearfix();
+  border-bottom: 1px solid $inverse;
+  padding: 1.6rem 2rem 2rem 2rem;
 }
 
 // BREAKPOINT: MEDIUM
@@ -179,7 +170,7 @@
     top: 11.6rem;
   }
 
-  .site-nav__button--left {
+  .site-nav__button {
     background-position: 90% 1rem;
     font-size: 1.4rem;
     text-indent: 0;
@@ -193,21 +184,22 @@
 
 // BREAKPOINT: LARGE
 // Switches to traditional dropdown menu
-// Hide the submenu toggles
 
 @include media($lg) {
   .site-nav__container {
     @include clearfix();
     @include transform(translateX(0));
-    top: 0;
-    position: relative;
-    width: 100%;
-    float: left;
     background: $inverse;
+    float: left;
+    overflow: visible;
+    position: relative;
+    top: 0;
+    width: 100%;
   }
 
   .site-nav__panel--sub {
     @include transform(translateX(0));
+    display: none;
   }
 
   .site-nav__panel {
@@ -278,30 +270,7 @@
     }
   }
 
-  .site-nav__button--left {
+  .site-nav__button {
     display: none;
   }
-}
-
-.site-nav__back {
-  background-position: 0 50%;
-  border: none;
-  padding: 0 0 0 2rem;
-  font-size: 1.4rem;
-}
-
-.site-nav__title {
-  border-bottom: 1px solid $inverse;
-  padding: 1rem 0;
-  margin: 0;
-}
-
-.site-nav__item--sub {
-  padding-left: 1rem;
-}
-
-.site-nav__block {
-  @include clearfix();
-  border-bottom: 1px solid $inverse;
-  padding: 1.6rem 2rem 2rem 2rem;
 }
