@@ -117,5 +117,10 @@
 
 .icon-heading--table {
   @include u-icon-bg($table, $inverse);
+  background-position: 0 50%;
   padding-left: 3rem;
+
+  &.icon-heading--base {
+    @include u-icon-bg($table, $base);
+  }
 }

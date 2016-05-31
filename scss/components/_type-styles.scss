@@ -233,3 +233,12 @@
 .t-left-aligned {
   text-align: left;
 }
+
+// .t-all-data      - Adds an icon to signify a master table
+.t-all-data {
+  @include u-icon-bg($all-files, $base);
+  display: inline-block;
+  background-size: 1em;
+  background-position: 0 30%;
+  padding-left: 2rem;
+}

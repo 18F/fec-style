@@ -1,5 +1,5 @@
 // Lists
-// 
+//
 // Blank list markup. No bullets, no numbers.
 //
 // Markup:
@@ -21,6 +21,11 @@ ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
+  ul,
+  ol {
+    margin-left: 2rem;
+  }
 }
 
 dl {
