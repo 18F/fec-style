@@ -1,4 +1,3 @@
-
 'use strict';
 
 /* global require, describe, before, beforeEach, it */
@@ -77,6 +76,13 @@ describe('SiteNav', function() {
       $('body').width(1000);
     });
 
+    describe('initMobileMenu()', function() {
+      it('should append the mobile menu', function() {
+        expect(this.siteNav.$menu.find('.js-mobile-nav').length).to.equal(1);
+        expect(this.siteNav.isMobile).to.be.true;
+      });
+    });
+
     describe('assignAria()', function() {
       it('should assign aria attributes to the list and toggle', function() {
         expect(this.siteNav.$toggle.length).to.be.ok;
@@ -98,12 +104,46 @@ describe('SiteNav', function() {
           siteNav.$menu.attr('aria-hidden') !== 'false'  &&
           !siteNav.$toggle.hasClass('active');
       }
+
       it('should show and hide the menu', function() {
         this.siteNav.toggleMenu();
         expect(isOpen(this.siteNav)).to.be.true;
         this.siteNav.toggleMenu();
         expect(isClosed(this.siteNav)).to.be.true;
       });
+    });
+
+    describe('mobile panels', function() {
+      it('should show a panel when clicking a target', function() {
+        this.siteNav.$body.find('.js-panel-trigger[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('false');
+      });
+
+      it('should hide a panel when clicking the back button', function() {
+        this.siteNav.$body.find('.js-panel-close[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('true');
+      });
+    });
+  });
+
+  describe('switchMenu()', function() {
+    before(function() {
+      this.siteNav = new SiteNav('.js-site-nav');
+      $('body').width(400);
+    });
+
+    afterEach(function() {
+      $('body').width(1000);
+    });
+
+    it('should remove the mega menu if the screen gets small', function() {
+      this.siteNav.switchMenu();
+      expect(this.siteNav.$body.find('.mega').length).to.equal(0);
+    });
+
+    it('should remove the mobile menu if the screen gets big', function() {
+      this.siteNav.switchMenu();
+      expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(0);
     });
   });
 });
