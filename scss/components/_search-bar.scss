@@ -25,8 +25,8 @@
 .search__select {
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
-  height: 3.6rem;
-  width: 14rem;
+  height: u(3.6rem);
+  width: u(14rem);
   float: left;
 }
 
@@ -62,8 +62,8 @@
     border-radius: 0 4px 4px 0;
     margin-top: 0;
     float: right;
-    height: 3.6rem;
-    width: 5.6rem;
+    height: u(3.6rem);
+    width: u(5.6rem);
   }
 }
 
@@ -76,7 +76,7 @@
     }
 
     .combo__button {
-      width: 5.6rem;
+      width: u(5.6rem);
     }
 
     .tt-menu {
@@ -85,28 +85,28 @@
   }
 
   .combo--search--large {
-    height: 6rem;
+    height: u(6rem);
 
     .combo__input {
-      font-size: 1.8rem;
-      height: 6rem;
+      font-size: u(1.8rem);
+      height: u(6rem);
       line-height: 1;
       width: calc(100% - 26rem);
     }
 
     .combo__button {
-      height: 6rem;
-      width: 10rem;
+      height: u(6rem);
+      width: u(10rem);
     }
 
     .search__select {
-      height: 6rem;
-      width: 16rem;
-      font-size: 1.8rem;
+      height: u(6rem);
+      width: u(16rem);
+      font-size: u(1.8rem);
     }
 
     .tt-menu {
-      font-size: 1.6rem;
+      font-size: u(1.6rem);
       top: 5.9rem !important;
       width: calc(100% - 10.2rem);
     }
@@ -127,7 +127,7 @@
   background-color: $inverse;
   border: 1px solid $primary;
   font-family: $sans-serif;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
   left: 0;
   position: absolute;
   text-align: left;
@@ -138,7 +138,7 @@
 .tt-suggestion {
   display: table;
   position: relative;
-  padding: 1rem;
+  padding: u(1rem);
   margin-bottom: 0;
   line-height: 1;
   border-top: 1px solid $gray-lightest;
@@ -156,7 +156,7 @@
 
 .tt-suggestion__office.tt-suggestion__office {
   color: $base;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
   text-align: right;
   font-style: italic;
 }
@@ -180,14 +180,14 @@
   color: $base;
   display: block;
   font-weight: bold;
-  padding: 1rem .5rem;
+  padding: u(1rem .5rem);
 }
 
 .tt-suggestion__loading.tt-suggestion__loading {
   color: $primary;
   display: block;
   font-weight: bold;
-  padding: 1rem .5rem;
+  padding: u(1rem .5rem);
 }
 
 .tt-dataset-0 {
@@ -199,7 +199,7 @@
 .js-typeahead-filter {
   .button--search {
     @include u-icon-button($magnifying-glass-arrow);
-    background-size: 2.8rem;
+    background-size: u(2.8rem);
     background-position: 50%;
     padding: 0;
   }
@@ -211,7 +211,7 @@
 
     .button--search {
       @include u-icon-button($magnifying-glass);
-      background-size: 2.2rem;
+      background-size: u(2.2rem);
       background-position: 50%;
       padding: 0;
     }

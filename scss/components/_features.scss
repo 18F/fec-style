@@ -34,7 +34,7 @@
 
 .feature {
   font-family: $sans-serif;
-  padding-top: 2rem;
+  padding-top: u(2rem);
 
   p {
     letter-spacing: -.3px;
@@ -44,18 +44,18 @@
 .feature__title {
   @include heading(h1);
   border-bottom: none;
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .feature--bulleted {
   display: list-item;
   list-style-type: disc;
-  padding: 0 2rem 0 0;
+  padding: u(0 2rem 0 0);
 }
 
 .feature-list {
   @include clearfix();
-  padding-left: 2rem;
+  padding-left: u(2rem);
 }
 
 // BREAKPOINT: MEDIUM
@@ -64,8 +64,8 @@
 @include media($med) {
   .feature {
     .card {
-      margin-bottom: 2rem;
-      min-height: 19.5rem;
+      margin-bottom: u(2rem);
+      min-height: u(19.5rem);
     }
   }
 
@@ -76,7 +76,7 @@
   }
 
   .feature--no-title {
-    padding-top: 6.2rem;
+    padding-top: u(6.2rem);
   }
 
   &.feature--bulleted {
@@ -97,17 +97,17 @@
     }
 
     .card {
-      min-height: 34rem;
+      min-height: u(34rem);
     }
 
     .card__image {
-      margin-top: 2rem;
-      width: 12rem;
+      margin-top: u(2rem);
+      width: u(12rem);
     }
   }
 
   .feature--no-title {
-    padding-top: 4.2rem;
+    padding-top: u(4.2rem);
   }
 
   &.feature--bulleted {

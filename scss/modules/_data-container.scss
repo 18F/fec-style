@@ -9,7 +9,7 @@
   border-top: 2px solid $neutral;
   position: relative;
   width: 100%;
-  padding-top: 2rem;
+  padding-top: u(2rem);
 }
 
 .is-showing-filters {
@@ -22,7 +22,7 @@
   background-color: $primary;
   border-top: 1px solid $inverse;
   font-family: $sans-serif;
-  padding: 2rem;
+  padding: u(2rem);
 }
 
 .data-container__widgets--secondary {
@@ -30,7 +30,7 @@
 }
 
 .data-container__body {
-  padding: 0 1rem;
+  padding: u(0 1rem);
 
   &.fade-in {
     opacity: 0;
@@ -42,7 +42,7 @@
 }
 
 .data-container__export {
-  margin-top: 1rem;
+  margin-top: u(1rem);
 }
 
 .export-widget {
@@ -52,7 +52,7 @@
 .panel__controls {
   @include clearfix();
   clear: both;
-  padding-top: .5rem;
+  padding-top: u(.5rem);
 }
 
 
@@ -73,11 +73,11 @@
 
   .data-container__body {
     border-top: 0;
-    padding: 0 2rem 2rem 2rem;
+    padding: u(0 2rem 2rem 2rem);
   }
 
   .data-container__widgets {
-    padding: 1rem 2rem;
+    padding: u(1rem 2rem);
   }
 
   .data-container__export {
@@ -93,7 +93,7 @@
 
   .export-widget {
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
     width: calc(50% - .5rem);
 
     &:last-of-type {

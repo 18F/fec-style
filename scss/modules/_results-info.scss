@@ -8,12 +8,12 @@
   @include clearfix();
   border-top: 2px solid $primary;
   border-bottom: 2px solid $primary;
-  padding: 1rem 1rem;
+  padding: u(1rem 1rem);
 }
 
 .results-info__left {
   @include clearfix();
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .results-info__right {
@@ -26,7 +26,7 @@
 }
 
 .results-info__download {
-  margin-top: 1rem;
+  margin-top: u(1rem);
 }
 
 .results-info__details {
@@ -44,12 +44,12 @@
 
     .dataTables_paginate {
       float: right;
-      padding: .5rem 0;
+      padding: u(.5rem 0);
     }
 
     .dataTables_length {
       float: left;
-      line-height: 2rem;
+      line-height: u(2rem);
 
       select {
         display: inline;
@@ -92,11 +92,11 @@
     }
 
     .dataTables_length {
-      padding: 0 1rem 0 0;
+      padding: u(0 1rem 0 0);
     }
 
     .dataTables_paginate {
-      padding: .5rem 0;
+      padding: u(.5rem 0);
     }
   }
 }
@@ -104,6 +104,6 @@
 // BREAKPOINT: LARGE
 @include media($lg) {
   .results-info {
-    padding: 1rem 0;
+    padding: u(1rem 0);
   }
 }

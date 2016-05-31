@@ -23,14 +23,14 @@
 
 .message {
   @include clearfix();
-  background-size: 2rem;
-  background-position: 2rem 2rem;
+  background-size: u(2rem);
+  background-position: u(2rem 2rem);
   background-color: $neutral;
   border-color: $gray;
   border-style: solid;
   border-width: 0 0 0 3px;
-  margin: 2rem 0;
-  padding: 5rem 2rem 2rem 2rem;
+  margin: u(2rem 0);
+  padding: u(5rem 2rem 2rem 2rem);
 }
 
 .message--success {
@@ -52,18 +52,18 @@
 }
 
 .message--no-icon {
-  padding: 2rem;
+  padding: u(2rem);
 }
 
 .message--alert__bottom {
   border-top: 1px solid $gray;
-  margin-top: 1rem;
-  padding-top: 2rem;
+  margin-top: u(1rem);
+  padding-top: u(2rem);
 }
 
 .message__title {
   border-bottom: none;
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .message__content {
@@ -101,9 +101,9 @@
 // Styleguide components.messages.small
 
 .message--small {
-  background-position: 1rem 1rem;
+  background-position: u(1rem 1rem);
   min-height: 0;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: u(4rem 1rem 1rem 1rem);
 }
 
 // Messages: Inverse
@@ -127,7 +127,7 @@
 .message--inverse {
   color: $inverse;
   background-color: rgba($inverse, .1);
-  background-position: 50% 2rem;
+  background-position: u(50% 2rem);
   border-color: $inverse;
 
   &.message--success {
@@ -173,23 +173,23 @@
 
 @include media($med) {
   .message {
-    background-position: 2rem 2rem;
-    background-size: 3rem;
-    min-height: 8rem;
-    padding: 2rem 2rem 2rem 6rem;
+    background-position: u(2rem 2rem);
+    background-size: u(3rem);
+    min-height: u(8rem);
+    padding: u(2rem 2rem 2rem 6rem);
 
     &.message--inverse {
-      background-position: 2rem 2rem;
+      background-position: u(2rem 2rem);
     }
   }
 
   .message--small {
-    background-size: 2rem;
-    background-position: 1rem 1rem;
-    padding: 1rem 1rem 1rem 4rem;
+    background-size: u(2rem);
+    background-position: u(1rem 1rem);
+    padding: u(1rem 1rem 1rem 4rem);
   }
 
   .message--no-icon {
-    padding: 2rem;
+    padding: u(2rem);
   }
 }

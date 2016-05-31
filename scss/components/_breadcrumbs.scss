@@ -39,8 +39,8 @@
   .breadcrumbs__item {
     @include u-truncate();
     float: left;
-    max-width: 20rem;
-    padding: .8rem 0;
+    max-width: u(20rem);
+    padding: u(.8rem 0);
   }
 
   .breadcrumbs__item--current {
@@ -52,6 +52,6 @@
   }
 
   .breadcrumbs__separator {
-    padding: .5rem .8rem;
+    padding: u(.5rem .8rem);
   }
 }

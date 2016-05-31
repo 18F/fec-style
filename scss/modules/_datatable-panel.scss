@@ -25,7 +25,7 @@
   @include transition(opacity .2s);
   background-color: $inverse;
   overflow: hidden;
-  padding: 1rem;
+  padding: u(1rem);
   float: right;
   width: 50%;
   opacity: 0;
@@ -62,18 +62,18 @@
   background-color: rgba($gray-lightest, .3);
   border: 1px solid $gray-lightest;
   font-family: $sans-serif;
-  padding: 1rem;
+  padding: u(1rem);
 
   td {
-    padding-bottom: 1rem;
+    padding-bottom: u(1rem);
     vertical-align: top;
   }
 }
 
 .panel__heading {
   border-bottom: 1px solid $neutral;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: u(1rem);
+  padding-bottom: u(1rem);
 
   .panel__title {
     margin-bottom: 0;
@@ -90,7 +90,7 @@
 }
 
 .panel__row {
-  padding: 2rem 0 1rem 0;
+  padding: u(2rem 0 1rem 0);
   border-bottom: 1px solid $neutral;
 
   &:last-child {
@@ -101,7 +101,7 @@
 .panel__term {
   font-weight: bold;
   letter-spacing: -.3px;
-  padding-right: 2rem;
+  padding-right: u(2rem);
   vertical-align: top;
 }
 
@@ -115,7 +115,7 @@
 .panel__navigation {
   @include clearfix();
   border-bottom: 1px solid $gray-lightest;
-  padding: 0 0 1rem 0;
+  padding: u(0 0 1rem 0);
   text-align: right;
 }
 
@@ -126,12 +126,12 @@
 .panel__close {
   @include u-icon-bg($arrow-left-border, $primary);
   background-position: 0 50%;
-  background-size: 1.5rem;
+  background-size: u(1.5rem);
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   float: left;
-  padding-left: 3rem;
+  padding-left: u(3rem);
 
   &::after {
     content: "View all";
@@ -178,7 +178,7 @@
   }
 
   .panel__navigation {
-    padding: .6rem 2rem;
+    padding: u(.6rem 2rem);
     text-align: left;
     margin-bottom: 0;
   }
@@ -189,7 +189,7 @@
 
   .panel__close {
     @include u-icon($x, $primary);
-    background-size: 2rem;
+    background-size: u(2rem);
     position: absolute;
     right: 0;
     top: 0;
@@ -205,13 +205,13 @@
     .panel__main {
       left: 0;
       width: 100%;
-      min-height: 150rem;
+      min-height: u(150rem);
       height: auto;
       overflow: visible;
     }
 
     .panel__overlay {
-      min-height: 150rem;
+      min-height: u(150rem);
     }
 
     .data-table {
@@ -225,7 +225,7 @@
   }
 
   .panel__row {
-    padding: 1rem 1.8rem;
+    padding: u(1rem 1.8rem);
     margin-top: 0;
 
     &:last-child {
@@ -247,7 +247,7 @@
 
   td {
     border-bottom: 0;
-    padding: .3rem 0;
+    padding: u(.3rem 0);
     white-space: pre-wrap;
     overflow: visible;
 

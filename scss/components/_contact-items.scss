@@ -28,7 +28,7 @@
 
 .contact-item {
   @include clearfix();
-  margin-bottom: 4rem;
+  margin-bottom: u(4rem);
 }
 
 .contact-item--half {
@@ -42,12 +42,12 @@
 }
 
 .contact-item__title {
-  margin-bottom: .5rem;
+  margin-bottom: u(.5rem);
 }
 
 .contact-item__icon {
   float: left;
-  margin-right: 2rem;
+  margin-right: u(2rem);
 }
 
 .contact-item__content {
@@ -55,10 +55,10 @@
 }
 
 .contact-item__content--offset {
-  margin-left: 5.4rem;
+  margin-left: u(5.4rem);
 }
 
 .contact-item__phone {
   display: block;
-  padding-top: 1rem;
+  padding-top: u(1rem);
 }

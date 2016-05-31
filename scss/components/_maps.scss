@@ -1,6 +1,6 @@
 .election-map {
   border: 1px solid $gray;
-  height: 40rem;
+  height: u(40rem);
 
   svg path {
     stroke-width: 1px;
@@ -12,7 +12,7 @@
 }
 
 .state-map {
-  padding-top: 2rem;
+  padding-top: u(2rem);
 
   .button--close {
     float: right;
@@ -20,7 +20,7 @@
 
   .candidate-select {
     float: left;
-    margin-bottom: 1rem;
+    margin-bottom: u(1rem);
   }
 
   @include media($lg) {
@@ -33,7 +33,7 @@
     .button--two-candidates {
       position: absolute;
       right: 0;
-      top: 1rem;
+      top: u(1rem);
     }
   }
 }
@@ -89,11 +89,11 @@ path.shape {
 }
 
 .map-toggles {
-  margin-top: 1rem;
+  margin-top: u(1rem);
 }
 
 .map-panel {
-  padding: 2rem;
+  padding: u(2rem);
   position: relative;
 
   .state-map {

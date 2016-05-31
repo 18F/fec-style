@@ -3,7 +3,7 @@
 // Styleguide modules.entity-header
 
 .entity__header {
-  padding: 3rem 0;
+  padding: u(3rem 0);
 
   @include media($med) {
     .entity__term {
@@ -16,7 +16,7 @@
   position: relative;
 
   .map {
-    height: 30rem;
+    height: u(30rem);
     width: 100%;
 
     a {
@@ -25,7 +25,7 @@
   }
 
   @include media($med) {
-    height: 30rem;
+    height: u(30rem);
 
     .entity__header--info {
       @include span-columns(6);
@@ -34,7 +34,7 @@
     .map {
       position: absolute;
       width: 50%;
-      height: 34rem;
+      height: u(34rem);
       top: 0;
       bottom: 0;
       right: 0;
@@ -43,11 +43,11 @@
 }
 
 .entity__header__top {
-  padding-bottom: .5rem;
+  padding-bottom: u(.5rem);
 }
 
 .entity__header__bottom {
-  padding: 2rem 0 0 0;
+  padding: u(2rem 0 0 0);
 }
 
 .entity__name {
@@ -67,7 +67,7 @@
   border-top: 2px solid;
   font-family: $sans-serif;
   letter-spacing: -.3px;
-  padding: 1rem 0;
+  padding: u(1rem 0);
   width: 100%;
 
   @include media($med) {
@@ -78,7 +78,7 @@
 .entity__term {
   @include clearfix();
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 
   &:last-child {
     margin-bottom: 0;
@@ -88,7 +88,7 @@
     display: table-cell;
     width: auto;
     margin-bottom: 0;
-    padding-right: 3rem;
+    padding-right: u(3rem);
   }
 }
 
@@ -99,8 +99,8 @@
 }
 
 .entity__term--icon {
-  min-width: 3rem;
-  width: 3rem;
+  min-width: u(3rem);
+  width: u(3rem);
   text-align: center;
 }
 
@@ -128,7 +128,7 @@
 
 .entity__election {
   clear: both;
-  padding-top: 1rem;
+  padding-top: u(1rem);
 
   .entity__term__label {
     width: 100%;
@@ -160,8 +160,8 @@
 @include media($med) {
   .entity__type {
     display: inline-block;
-    margin-right: 1rem;
-    padding-right: 1rem;
+    margin-right: u(1rem);
+    padding-right: u(1rem);
     border-right: 1px solid;
   }
 

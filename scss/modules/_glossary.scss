@@ -6,9 +6,9 @@
   @include transition(right, .3s);
   background-color: $base;
   bottom: 0;
-  max-width: 30rem;
+  max-width: u(30rem);
   overflow-y: scroll;
-  padding: 8rem 3rem;
+  padding: u(8rem 3rem);
   position: fixed;
   top: 0;
   width: 75%;
@@ -40,7 +40,7 @@
 }
 
 .glossary__content {
-  padding: 4rem 0;
+  padding: u(4rem 0);
 }
 
 .glossary__definition {
@@ -52,7 +52,7 @@
   @include u-icon-bg($book, $base);
   background-position: 0% 50%;
   background-size: 1em;
-  padding-left: 2.5rem;
+  padding-left: u(2.5rem);
 }
 
 // Term classes
@@ -84,6 +84,6 @@
 }
 
 .term--p {
-  margin-right: .5rem;
+  margin-right: u(.5rem);
   box-shadow: none;
 }

@@ -31,10 +31,10 @@
   @include transition(transform, .2s);
   background-color: $primary;
   border-right: 1px solid $primary-contrast;
-  padding: 1rem 2rem;
+  padding: u(1rem 2rem);
   position: absolute;
   left: 0;
-  top: 7rem;
+  top: u(7rem);
   bottom: 0;
   z-index: $z-navigation;
 
@@ -68,9 +68,9 @@
   @include transition(background-color, .1s);
   color: $inverse;
   display: block;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  padding: 1rem;
+  font-size: u(1.6rem);
+  line-height: u(2rem);
+  padding: u(1rem);
   border-bottom: none;
 
   &.is-current {
@@ -86,14 +86,14 @@
 .site-nav__subtitle {
   display: block;
   margin: 0;
-  font-size: 1.4rem;
-  padding: 1rem;
+  font-size: u(1.4rem);
+  padding: u(1rem);
 }
 
 .site-nav__dropdown {
   font-family: $sans-serif;
   display: none;
-  padding-bottom: 2rem;
+  padding-bottom: u(2rem);
 
   &[aria-hidden='false'] {
     display: block;
@@ -104,24 +104,24 @@
   }
 
   .site-nav__link {
-    padding: .5rem 1rem;
-    font-size: 1.4rem;
+    padding: u(.5rem 1rem);
+    font-size: u(1.4rem);
     white-space: nowrap;
   }
 
   .site-nav__sublink {
-    padding-left: 2rem;
+    padding-left: u(2rem);
   }
 }
 
 .site-nav__toggle {
   @include u-icon-bg($arrow-right, $inverse);
   background-position: 0 50%;
-  background-size: 1rem;
+  background-size: u(1rem);
   color: $inverse;
   font-family: $serif;
   text-align: left;
-  padding-left: 2rem;
+  padding-left: u(2rem);
   position: relative;
   width: 100%;
 }
@@ -138,16 +138,16 @@
   border-radius: 0;
   border: none;
   margin: 0;
-  padding: 1.8rem 2rem;
+  padding: u(1.8rem 2rem);
   text-indent: -99999px;
 }
 
 .site-nav__button--left {
   @include u-icon-bg($menu, $primary);
   background-position: 50% 50%;
-  background-size: 2rem;
+  background-size: u(2rem);
   float: left;
-  height: 4rem;
+  height: u(4rem);
 
   &:hover {
     background-color: $inverse;
@@ -163,9 +163,9 @@
 .site-nav__button--right {
   @include u-icon-bg($book, $secondary);
   background-position: 50% 50%;
-  background-size: 2rem;
+  background-size: u(2rem);
   float: right;
-  height: 4rem;
+  height: u(4rem);
 
   &:hover {
     @include u-icon-bg($book, $inverse);
@@ -178,21 +178,21 @@
 
 @include media($med) {
   .site-nav__list {
-    top: 17rem;
+    top: u(17rem);
   }
 
   .site-nav__button {
-    width: 9rem;
+    width: u(9rem);
   }
 
   .site-nav__button--left {
-    background-position: 90% 1rem;
-    font-size: 1.4rem;
+    background-position: u(90% 1rem);
+    font-size: u(1.4rem);
     text-indent: 0;
-    padding: 1rem 4rem 1rem 1rem;
+    padding: u(1rem 4rem 1rem 1rem);
 
     &.active {
-      background-position: 90% 1rem;
+      background-position: u(90% 1rem);
     }
   }
 }
@@ -212,7 +212,7 @@
     overflow: visible;
     display: block;
     float: left;
-    padding: 0 0 0 2rem;
+    padding: u(0 0 0 2rem);
     top: 0;
     position: relative;
     width: 100%;
@@ -257,7 +257,7 @@
   .site-nav__link {
     color: $primary;
     border-bottom: .5rem solid transparent;
-    padding: 1rem 2rem .5rem 2rem;
+    padding: u(1rem 2rem .5rem 2rem);
 
     &:hover,
     &:focus,

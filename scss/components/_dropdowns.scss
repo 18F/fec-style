@@ -16,7 +16,7 @@
 .dropdown__button {
   position: relative;
   text-align: left;
-  min-height: 3.4rem;
+  min-height: u(3.4rem);
   width: 100%;
 
   &::after {
@@ -28,10 +28,10 @@
     border-left: 1px solid $primary;
     content: '';
     display: block;
-    padding: 1rem 2rem 1rem 1rem;
+    padding: u(1rem 2rem 1rem 1rem);
     position: absolute;
-    right: 1.5rem;
-    top: .5rem;
+    right: u(1.5rem);
+    top: u(.5rem);
   }
 
   &.button--alt-primary::after,
@@ -44,8 +44,8 @@
 
 .dropdown__button--mini {
   &::after {
-    padding: 1rem .5rem 1rem 1.5rem;
-    right: .5rem;
+    padding: u(1rem .5rem 1rem 1.5rem);
+    right: u(.5rem);
   }
 
   & + .dropdown__panel {
@@ -64,10 +64,10 @@
   border: 2px solid $gray-dark;
   border-top: none;
   margin-top: -1px;
-  max-height: 30rem;
+  max-height: u(30rem);
   overflow: hidden;
   text-align: left;
-  top: 3.4rem;
+  top: u(3.4rem);
   z-index: 999;
 
   .dropdown__value,
@@ -76,7 +76,7 @@
     border-bottom: 1px solid $gray-dark;
     display: block;
     margin: 0;
-    padding: .5rem 1rem;
+    padding: u(.5rem 1rem);
     white-space: nowrap;
 
     &:hover {
@@ -97,7 +97,7 @@
 
   // For labeling a group of options
   .dropdown__subhead {
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
     font-weight: bold;
 
     &:hover {
@@ -120,7 +120,7 @@
 }
 
 .dropdown__selected {
-  margin-bottom: .5rem;
+  margin-bottom: u(.5rem);
 
   .dropdown__item {
     @include animation(fadeIn .2s ease-in);

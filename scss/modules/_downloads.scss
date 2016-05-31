@@ -14,7 +14,7 @@
   font-family: $sans-serif;
   max-height: 50vh;
   overflow: scroll;
-  padding: 1.5rem 0;
+  padding: u(1.5rem 0);
   position: fixed;
   width: 100%;
   z-index: $z-downloads;
@@ -22,28 +22,28 @@
 
 .downloads__title {
   display: block;
-  font-size: 1.6rem;
+  font-size: u(1.6rem);
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: u(2rem);
 }
 
 .download {
   @include clearfix();
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  padding-left: 3rem;
+  font-size: u(1.2rem);
+  margin-bottom: u(1rem);
+  padding-left: u(3rem);
 
   &.is-pending {
     background-image: url('../img/loading-ellipsis.gif');
-    background-position: 0 .4rem;
+    background-position: u(0 .4rem);
     background-repeat: no-repeat;
-    background-size: 2rem;
+    background-size: u(2rem);
   }
 
   &.is-complete {
     @include u-icon-bg($check, $primary);
-    background-size: 2rem;
-    background-position: 0 .5rem;
+    background-size: u(2rem);
+    background-position: u(0 .5rem);
   }
 }
 
@@ -51,11 +51,11 @@
   @include u-truncate();
   display: block;
   font-weight: bold;
-  padding: .5rem 0;
+  padding: u(.5rem 0);
 }
 
 .download__button {
-  padding: .5rem;
+  padding: u(.5rem);
 }
 
 .download__cancel {
@@ -65,7 +65,7 @@
 
 .download__message {
   letter-spacing: -.3px;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   margin: 0;
 }
 
@@ -85,7 +85,7 @@
 
   .download__button {
     @include span-columns(3);
-    margin: 0 2rem;
+    margin: u(0 2rem);
   }
 }
 
@@ -95,7 +95,7 @@
   }
 
   .download {
-    min-height: 4.2rem;
+    min-height: u(4.2rem);
   }
 
   .download__item {

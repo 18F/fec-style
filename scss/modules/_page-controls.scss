@@ -30,8 +30,7 @@
 
 .page-controls {
   @include clearfix();
-  padding: 0 2rem;
-
+  padding: u(0 2rem); 
   .container {
     padding: 0;
   }
@@ -43,7 +42,7 @@
 
 .page-controls__top {
   display: none;
-  padding: 1rem 0;
+  padding: u(1rem 0);
 }
 
 .page-tabs {
@@ -53,7 +52,7 @@
 }
 
 .page-tabs__years {
-  padding: .5rem;
+  padding: u(.5rem);
 }
 
 .page-tabs__list {
@@ -74,12 +73,12 @@
     border-left-width: 1px;
     border-style: solid;
     font-family: $sans-serif;
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
     display: block;
-    letter-spacing: -.05rem;
-    line-height: 2rem;
+    letter-spacing: u(-.05rem);
+    line-height: u(2rem);
     margin-bottom: 0;
-    padding: .5rem;
+    padding: u(.5rem);
     text-decoration: none;
 
     &[aria-selected="true"] {
@@ -138,7 +137,7 @@
 
   .page-tabs__item {
     a {
-      padding: 1rem;
+      padding: u(1rem);
     }
   }
 }
@@ -155,7 +154,7 @@
   }
 
   .page-tabs__years {
-    padding: 1rem 2rem 1rem 0;
+    padding: u(1rem 2rem 1rem 0);
 
     h2 {
       margin: 0;
@@ -164,7 +163,7 @@
 
   .page-tabs__item {
     a {
-      padding: 1rem 2rem;
+      padding: u(1rem 2rem);
     }
   }
 }
