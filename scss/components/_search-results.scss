@@ -14,7 +14,7 @@
 // Styleguide components.search-results.title
 
 .results__title {
-  margin: 2rem 0 1rem 0;
+  margin: u(2rem 0 1rem 0);
 }
 
 // Search results: Count
@@ -30,7 +30,7 @@
 // Styleguide components.search-results.count
 
 .results__count {
-  padding: 2rem 0;
+  padding: u(2rem 0);
 }
 
 // Search results: Name search result
@@ -74,12 +74,12 @@
 .result__years {
   display: block;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: u(1.5rem);
 }
 
 .result {
   border-top: 2px solid $gray;
-  padding: 2rem 0;
+  padding: u(2rem 0);
 
   &:first-of-type {
     border-top: none;
@@ -101,7 +101,7 @@
 }
 
 .result__related {
-  padding: 1rem 0;
+  padding: u(1rem 0);
 }
 
 // Search results: Election result
@@ -166,7 +166,7 @@
 
 @include media($lg) {
   .result {
-    padding: 3rem 0;
+    padding: u(3rem 0);
   }
 
   .result__title {

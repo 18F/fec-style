@@ -23,7 +23,7 @@
   background-color: $inverse;
   color: $primary;
   font-family: $sans-serif;
-  padding: 1.5rem;
+  padding: u(1.5rem);
   position: absolute;
   text-align: center;
   z-index: $z-tooltip;
@@ -39,7 +39,7 @@
 .tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   font-weight: normal;
   line-height: 1.4;
   margin-bottom: 0;
@@ -51,14 +51,14 @@
 }
 
 .tooltip--above {
-  width: 12rem;
+  width: u(12rem);
 
   &::before {
     @include triangle(2rem, $primary, down);
-    bottom: -1rem;
+    bottom: u(-1rem);
     content: '';
     display: block;
-    left: 5rem;
+    left: u(5rem);
     position: absolute;
   }
 
@@ -67,21 +67,21 @@
     content: '';
     display: block;
     position: absolute;
-    left: 5.2rem;
-    bottom: -.7rem;
+    left: u(5.2rem);
+    bottom: u(-.7rem);
   }
 }
 
 .tooltip--under {
-  max-width: 30rem;
+  max-width: u(30rem);
 
   &::before {
     @include triangle(2rem, $primary, up);
     content: '';
     display: block;
     position: absolute;
-    left: 4rem;
-    top: -1rem;
+    left: u(4rem);
+    top: u(-1rem);
   }
 
   &::after {
@@ -89,8 +89,8 @@
     content: '';
     display: block;
     position: absolute;
-    left: 4.2rem;
-    top: -.7rem;
+    left: u(4.2rem);
+    top: u(-.7rem);
   }
 }
 
@@ -156,12 +156,12 @@
   }
 
   .tooltip__title {
-    line-height: 4rem;
-    padding-left: 1rem;
+    line-height: u(4rem);
+    padding-left: u(1rem);
     float: left;
   }
 
   .tooltip__content {
-    padding: 1rem;
+    padding: u(1rem);
   }
 }

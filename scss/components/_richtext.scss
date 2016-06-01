@@ -5,16 +5,16 @@
 .rich-text {
 
   li {
-    font-size: 1.6rem;
+    font-size: u(1.6rem);
   }
 
   ul {
-    margin-bottom: 1rem;
+    margin-bottom: u(1rem);
 
     li {
       list-style-type: disc;
-      margin-left: 2rem;
-      padding: 0 0 .5rem 0;
+      margin-left: u(2rem);
+      padding: u(0 0 .5rem 0);
       margin-bottom: 0;
 
       // Hack because the editor is putting all text in <p>s
@@ -28,7 +28,7 @@
     li {
       list-style-type: decimal;
       margin: 0;
-      padding-left: 1rem;
+      padding-left: u(1rem);
     }
   }
 

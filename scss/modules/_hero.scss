@@ -21,7 +21,7 @@
 // Styleguide modules.hero
 
 .hero {
-  padding: 3rem 0;
+  padding: u(3rem 0);
   text-align: center;
 
   .t-display {
@@ -29,7 +29,7 @@
   }
 
   @include media($med) {
-    padding: 7rem 0;
+    padding: u(7rem 0);
   }
 }
 
@@ -66,26 +66,26 @@
 .hero__down {
   @include u-icon-bg($arrow-down, $secondary-contrast);
   background-position: 50% 100%;
-  padding-bottom: 3rem;
+  padding-bottom: u(3rem);
 }
 
 .hero__content {
-  padding-top: 2rem;
+  padding-top: u(2rem);
 
   @include media($lg) {
     @include span-columns(8);
     @include shift(2);
-    padding-top: 4rem;
+    padding-top: u(4rem);
 
     .combo--search {
       @include span-columns(8 of 8);
     }
 
     .search__radio__button {
-      font-size: 2rem;
-      height: 6rem;
+      font-size: u(2rem);
+      height: u(6rem);
       line-height: 1;
-      padding: 2rem;
+      padding: u(2rem);
     }
   }
 }
@@ -95,7 +95,7 @@
   padding: 0;
 
   .hero__content {
-    padding: 2rem 0;
+    padding: u(2rem 0);
   }
 }
 
@@ -103,7 +103,7 @@
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 32rem;
+  height: u(32rem);
   position: relative;
 
   .hero__title {
@@ -111,21 +111,21 @@
   }
 
   .hero__subtitle {
-    padding: 2rem 0;
+    padding: u(2rem 0);
   }
 
   .hero__heading {
-    padding-top: 4rem;
+    padding-top: u(4rem);
   }
 
   .photo-credit {
     background: rgba($gray-lightest, .6);
-    font-size: 1rem;
+    font-size: u(1rem);
     font-family: $sans-serif;
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: .5rem;
+    padding: u(.5rem);
   }
 
   @include media($lg) {
@@ -149,11 +149,11 @@
     background-position: right center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 20rem;
+    height: u(20rem);
   }
 
   @include media($lg) {
     background-size: cover;
-    height: 28rem;
+    height: u(28rem);
   }
 }

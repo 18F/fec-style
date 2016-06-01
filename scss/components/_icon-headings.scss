@@ -66,61 +66,59 @@
 // Refactor after introducing icon font
 
 @mixin u-icon-heading() {
-  padding-left: 3rem;
+  padding-left: u(3rem);
 }
 
 .icon-heading--profiles {
   @include u-icon-bg($folder-with-person, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--overviews {
   @include u-icon-bg($graph, $inverse);
-  padding-left: 3rem;
+  padding-left: u(3rem);
 }
 
 .icon-heading--location {
   @include u-icon-bg($map-pin, $inverse);
-  padding-left: 3rem;
+  padding-left: u(3rem);
 }
 
 .icon-heading--candidates {
   @include u-icon-bg($candidate, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--committees {
   @include u-icon-bg($committee, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--receipts {
   @include u-icon-bg($piggy-bank, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--disbursements {
   @include u-icon-bg($disbursement, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--filings {
   @include u-icon-bg($papers, $inverse);
-  background-size: 2rem;
-  padding-left: 3rem;
+  background-size: u(2rem);
+  padding-left: u(3rem);
 }
 
 .icon-heading--table {
   @include u-icon-bg($table, $inverse);
   background-position: 0 50%;
-  padding-left: 3rem;
-
-  &.icon-heading--base {
-    @include u-icon-bg($table, $base);
-  }
+  padding-left: u(3rem);
 }
+
+

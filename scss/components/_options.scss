@@ -26,7 +26,7 @@
 .option {
   @include clearfix();
   border-top: 1px solid $primary;
-  padding: 2rem 0;
+  padding: u(2rem 0);
 
   &.option--border-bottom {
     border-bottom: 1px solid $primary;
@@ -35,7 +35,7 @@
 
 .option__aside {
   @include span-columns(4);
-  padding-top: 2rem;
+  padding-top: u(2rem);
 }
 
 @include media($lg) {

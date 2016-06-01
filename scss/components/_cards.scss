@@ -17,8 +17,8 @@
   @include clearfix();
   background-color: $neutral;
   border-radius: 4px;
-  font-size: 1.6rem;
-  padding: 2rem;
+  font-size: u(1.6rem);
+  padding: u(2rem);
   text-align: center;
   width: 100%;
 
@@ -69,18 +69,18 @@
 
 .card__content {
   text-align: left;
-  padding: 2rem 0 0 0;
+  padding: u(2rem 0 0 0);
   font-family: $serif;
   font-weight: normal;
 }
 
 .card__content--small {
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
 }
 
 .card--horizontal {
-  font-size: 1.4rem;
-  padding: 1rem 2rem;
+  font-size: u(1.4rem);
+  padding: u(1rem 2rem);
   text-align: left;
 
   .card__image {
@@ -116,7 +116,7 @@
     }
 
     .card__content {
-      padding: 1rem 2rem 1rem 0;
+      padding: u(1rem 2rem 1rem 0);
     }
   }
 }
@@ -132,19 +132,19 @@
     @include clearfix();
     background-color: $primary;
     border-radius: 4px 4px 0 0;
-    padding: 1rem;
+    padding: u(1rem);
     text-align: center;
 
     .card__title {
       float: left;
       color: $primary-contrast;
-      padding: 1rem;
+      padding: u(1rem);
       margin: 0;
     }
   }
 
   .card__content {
-    padding: 2rem;
+    padding: u(2rem);
 
     .card__title {
       display: none;
@@ -152,19 +152,19 @@
   }
 
   .icon--complex {
-    max-height: 4rem;
-    max-width: 4rem;
+    max-height: u(4rem);
+    max-width: u(4rem);
     display: block;
     float: left;
   }
 
   @include media($lg) {
-    min-height: 26rem;
+    min-height: u(26rem);
 
     .card__image__container {
       @include span-columns(2 of 6);
       border-radius: 4px 0 0 4px;
-      padding: 9rem 2rem;
+      padding: u(9rem 2rem);
 
       .card__title {
         display: none;
@@ -182,8 +182,8 @@
     }
 
     .icon--complex {
-      max-height: 10rem;
-      max-width: 10rem;
+      max-height: u(10rem);
+      max-width: u(10rem);
       display: inline;
       float: none;
     }
@@ -195,7 +195,7 @@
   letter-spacing: -.3px;
   font-family: $sans-serif;
   font-weight: normal;
-  margin-bottom: 2rem;
+  margin-bottom: u(2rem);
 }
 
 // Card icons

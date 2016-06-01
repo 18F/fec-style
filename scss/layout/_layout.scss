@@ -26,7 +26,7 @@
 
 .container {
   @include outer-container();
-  padding: 0 2rem;
+  padding: u(0 2rem);
 
   @include media($lg) {
     padding: 0;
@@ -39,19 +39,19 @@
 
 .main {
   @include clearfix();
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-bottom: u(2rem);
+  padding-top: u(2rem);
   position: relative;
 
   @include media($lg) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: u(4rem);
+    padding-bottom: u(4rem);
   }
 }
 
 .content--blank {
   border-top: 1px solid $neutral;
-  padding: 4rem 0;
+  padding: u(4rem 0);
 }
 
 .main__content {
@@ -75,7 +75,7 @@
 .main__title {
   @include heading(display);
   border-bottom: 2px solid $primary;
-  margin-bottom: 3rem;
+  margin-bottom: u(3rem);
 }
 
 .main__content--full {
@@ -85,25 +85,25 @@
 
 .content__section {
   @include clearfix();
-  padding: 0 0 2rem 0;
+  padding: u(0 0 2rem 0);
 }
 
 .content__section--extra {
   @include clearfix();
-  padding: 2rem 0;
+  padding: u(2rem 0);
 
   @include media($lg) {
-    padding: 4rem 0;
+    padding: u(4rem 0);
   }
 }
 
 .content__section--ruled {
   border-top: 1px solid $primary;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: u(2rem);
+  padding-top: u(2rem);
 
   &.content__section--extra {
-    padding-top: 4rem;
+    padding-top: u(4rem);
   }
 
   & + .content__section--ruled {
@@ -114,19 +114,19 @@
 // Utility padding classes
 
 .u-padding--top {
-  padding-top: 2rem;
+  padding-top: u(2rem);
 }
 
 .u-padding--bottom {
-  padding-bottom: 2rem;
+  padding-bottom: u(2rem);
 }
 
 .u-padding-left {
-  padding-left: 2rem;
+  padding-left: u(2rem);
 }
 
 .u-padding--right {
-  padding-right: 2rem;
+  padding-right: u(2rem);
 }
 
 // Class applied to candidate and committee pages with tabs

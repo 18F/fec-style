@@ -6,13 +6,13 @@
   float: left;
   color: $primary-contrast;
   margin: 0;
-  padding: .5rem 1rem .5rem 0;
+  padding: u(.5rem 1rem .5rem 0);
 }
 
 .tags__title__text {
   color: $inverse;
   display: inline-block;
-  margin: 4px .5rem;
+  margin: u(4px .5rem);
 }
 
 .tags {
@@ -27,13 +27,13 @@
   font-family: $sans-serif;
   letter-spacing: -.3px;
   margin: 0 4px 2px 0;
-  padding: 2px .75rem;
+  padding: u(2px .75rem);
 }
 
 .tag__remove {
   @include u-icon-bg($x, $primary);
-  background-size: 1.4rem;
+  background-size: u(1.4rem);
   background-position: 100% 45%;
   border: none;
-  padding: 1rem;
+  padding: u(1rem);
 }

@@ -17,7 +17,7 @@
 
 .page-header {
   @include clearfix();
-  padding: 1rem;
+  padding: u(1rem);
 
   .search__container {
     display: none;
@@ -32,7 +32,7 @@
 .page-header__icon {
   float: left;
   margin-right: 0;
-  width: 4rem;
+  width: u(4rem);
 }
 
 .page-header--primary {
@@ -46,7 +46,7 @@
 .page-header__title {
   border-bottom: none;
   font-family: $sans-serif;
-  font-size: 1.6rem;
+  font-size: u(1.6rem);
   text-transform: uppercase;
   margin-bottom: 0;
   line-height: 1;
@@ -58,18 +58,18 @@
 
 @include media($med) {
   .page-header {
-    padding: 1rem 2rem;
+    padding: u(1rem 2rem);
 
     .search__container {
       display: block;
       float: right;
-      width: 40rem;
+      width: u(40rem);
     }
   }
 
   .page-header__title {
     float: left;
-    line-height: 4rem;
+    line-height: u(4rem);
   }
 }
 
@@ -79,7 +79,7 @@
 @include media($lg) {
   .page-header {
     .search__container {
-      width: 50rem;
+      width: u(50rem);
     }
   }
 }

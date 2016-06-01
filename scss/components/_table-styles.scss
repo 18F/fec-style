@@ -30,19 +30,19 @@
   border-width: 2px 0;
   color: $primary;
   font-family: $sans-serif;
-  margin: 2rem 0;
+  margin: u(2rem 0);
 }
 
 .simple-table__header {
   border-bottom: 1px solid $primary;
 
   th {
-    padding: .5rem 0;
+    padding: u(.5rem 0);
   }
 }
 
 .simple-table__cell {
-  padding: 1rem 0;
+  padding: u(1rem 0);
   border-bottom: 1px solid $neutral;
   vertical-align: top;
 
@@ -63,5 +63,5 @@
 // This closes that gap
 
 h3 + .simple-table {
-  margin-top: -1rem;
+  margin-top: u(-1rem);
 }
