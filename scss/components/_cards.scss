@@ -191,7 +191,7 @@
 
 // Stacked cards, when there's more than one in a vertical column
 .card--stacked {
-  margin-top: 2rem;
+  margin-top: u(2rem);
 }
 
 // For lists of links, such as on data landing page cards
@@ -234,8 +234,8 @@
   background-size: 50%;
   border-radius: 100%;
   display: block;
-  height: 4.8rem;
-  width: 4.8rem;
+  height: u(4.8rem);
+  width: u(4.8rem);
 }
 
 .card--primary {
