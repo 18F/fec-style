@@ -21,10 +21,6 @@
   padding: u(2rem);
   text-align: center;
   width: 100%;
-
-  & + & {
-    margin-top: 2rem;
-  }
 }
 
 .card--primary {
@@ -68,10 +64,11 @@
 }
 
 .card__content {
-  text-align: left;
+  text-align: center;
   padding: u(2rem 0 0 0);
   font-family: $serif;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 .card__content--small {
@@ -101,6 +98,7 @@
 
   .card__content {
     @include span-columns(2 of 3);
+    text-align: left;
     padding: 0;
   }
 
@@ -144,6 +142,7 @@
   }
 
   .card__content {
+    text-align: left;
     padding: u(2rem);
 
     .card__title {
@@ -190,6 +189,11 @@
   }
 }
 
+// Stacked cards, when there's more than one in a vertical column
+.card--stacked {
+  margin-top: 2rem;
+}
+
 // For lists of links, such as on data landing page cards
 .card__links {
   letter-spacing: -.3px;
@@ -230,8 +234,8 @@
   background-size: 50%;
   border-radius: 100%;
   display: block;
-  height: 6rem;
-  width: 6rem;
+  height: 4.8rem;
+  width: 4.8rem;
 }
 
 .card--primary {

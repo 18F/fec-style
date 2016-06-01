@@ -144,7 +144,7 @@
 }
 
 .icon-heading--circle-table {
-  @include icon-heading--circle($base, $table);
+  @include icon-heading--circle($primary, $table);
 }
 
 
