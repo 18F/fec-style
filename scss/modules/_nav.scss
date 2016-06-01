@@ -50,8 +50,8 @@
   @include transition(transform, .2s, ease-out);
   background-color: $primary;
   color: $inverse;
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
+  font-size: u(1.6rem);
+  padding: u(1rem 2rem);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -95,7 +95,7 @@
   float: left;
   height: u(4rem);
   margin: 0;
-  padding: 1.8rem 2rem;
+  padding: u(1.8rem 2rem);
   text-indent: -99999px;
 
   &:hover {
@@ -127,7 +127,7 @@
 }
 
 .site-nav__item--sub {
-  padding-left: 1rem;
+  padding-left: u(1rem);
 }
 
 .site-nav__link {
@@ -136,8 +136,8 @@
   display: block;
   font-size: inherit;
   font-family: $serif;
-  line-height: 2rem;
-  padding: 1rem;
+  line-height: u(2rem);
+  padding: u(1rem);
   border-bottom: none;
   width: 100%;
   text-align: left;
@@ -146,20 +146,20 @@
 .site-nav__back {
   background-position: 0 50%;
   border: none;
-  padding: 0 0 0 2rem;
-  font-size: 1.4rem;
+  padding: u(0 0 0 2rem);
+  font-size: u(1.4rem);
 }
 
 .site-nav__title {
   border-bottom: 1px solid $inverse;
-  padding: 1rem 0;
+  padding: u(1rem 0);
   margin: 0;
 }
 
 .site-nav__block {
   @include clearfix();
   border-bottom: 1px solid $inverse;
-  padding: 1.6rem 2rem 2rem 2rem;
+  padding: u(1.6rem 2rem 2rem 2rem);
 }
 
 // BREAKPOINT: MEDIUM
@@ -167,12 +167,12 @@
 
 @include media($med) {
   .site-nav__container {
-    top: 11.6rem;
+    top: u(11.6rem);
   }
 
   .site-nav__button {
     background-position: 90% 1rem;
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
     text-indent: 0;
     padding: u(1rem 4rem 1rem 1rem);
 
