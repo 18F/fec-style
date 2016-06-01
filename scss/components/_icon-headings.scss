@@ -1,6 +1,7 @@
 // Icon headings
 //
-// For combinations of icons + headings
+// NOTE: This component is evolving as we adopt new icons. Will update
+// the documentation all at oncce.
 //
 // .icon-heading        - 4 columns wide on large screens
 // .icon-heading--full  - Full-width on large screens
@@ -119,6 +120,31 @@
   @include u-icon-bg($table, $inverse);
   background-position: 0 50%;
   padding-left: u(3rem);
+}
+
+// Icon headings in circles
+@mixin icon-heading--circle($background, $icon) {
+  background-image: none;
+  padding-bottom: .2em;
+  position: relative;
+
+  &::before {
+    @include u-icon-bg($icon, $inverse);
+    background-size: 50%;
+    background-position: 50% 50%;
+    content: '';
+    display: block;
+    float: left;
+    background-color: $background;
+    margin-right: .2em;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1.2em;
+  }
+}
+
+.icon-heading--circle-table {
+  @include icon-heading--circle($base, $table);
 }
 
 
