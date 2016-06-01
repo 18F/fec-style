@@ -18,7 +18,7 @@
   }
 
   @if $level == h1 {
-    border-bottom: 1px solid $base;
+    border-bottom: 2px solid $base;
     font-family: $serif;
     font-size: u(2.4rem);
     font-weight: bold;
