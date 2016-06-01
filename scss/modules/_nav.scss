@@ -256,7 +256,7 @@
 
   .site-nav__link {
     color: $primary;
-    border-bottom: .5rem solid transparent;
+    border-bottom: u(.5rem) solid transparent;
     padding: u(1rem 2rem .5rem 2rem);
 
     &:hover,
