@@ -9,21 +9,21 @@
 
 .icon {
   display: block;
-  height: 2rem;
-  width: 2rem;
+  height: u(2rem);
+  width: u(2rem);
 }
 
 .icon--complex {
-  max-height: 6rem;
-  max-width: 6rem;
+  max-height: u(6rem);
+  max-width: u(6rem);
 }
 
 .icon--inline--right {
-  margin-left: 1rem;
+  margin-left: u(1rem);
   vertical-align: middle;
 }
 
 .icon--inline--left {
-  margin-right: 1rem;
+  margin-right: u(1rem);
   vertical-align: middle;
 }

@@ -34,7 +34,7 @@
     left: 0;
     height: auto;
     margin-left: 0%;
-    padding: 1rem 0;
+    padding: u(1rem 0);
 
     .filters__hider {
       height: auto;
@@ -43,21 +43,21 @@
   }
 
   .accordion__button {
-    padding-left: 2rem;
-    padding-right: 5rem;
+    padding-left: u(2rem);
+    padding-right: u(5rem);
   }
 
   .accordion__content {
-    padding: 2rem 2rem 1rem 2rem;
+    padding: u(2rem 2rem 1rem 2rem);
   }
 
   .toggles {
-    margin: 1rem 0;
+    margin: u(1rem 0);
   }
 }
 
 .filters--fixed {
-  margin-right: 2rem;
+  margin-right: u(2rem);
 }
 
 .filters__hider {
@@ -69,11 +69,11 @@
   background-color: $primary;
   border: 1px solid $primary-contrast;
   border-radius: 3px;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   color: $primary-contrast;
-  padding: .5rem;
+  padding: u(.5rem);
   float: left;
-  margin-right: 1rem;
+  margin-right: u(1rem);
 
   &[aria-hidden="false"] {
     display: block;
@@ -88,16 +88,16 @@
 
 .filters__clear {
   @include u-icon-bg($x, $primary-contrast);
-  background-size: 1.4rem;
+  background-size: u(1.4rem);
   background-position: 95% 50%;
-  padding-right: 2.5rem;
+  padding-right: u(2.5rem);
 }
 
 .filter__header {
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 
   @include media($lg) {
-    margin-bottom: 1.5rem;
+    margin-bottom: u(1.5rem);
   }
 }
 
@@ -105,10 +105,10 @@
   border-top: 2px solid $primary;
   display: block;
   font-family: $sans-serif;
-  font-size: 1.8rem;
+  font-size: u(1.8rem);
   font-weight: bold;
-  margin: 3rem 0 1rem 0;
-  padding: 2rem 0 0 0;
+  margin: u(3rem 0 1rem 0);
+  padding: u(2rem 0 0 0);
   text-transform: uppercase;
   width: 100%;
 
@@ -118,11 +118,11 @@
 }
 
 .filters__inner {
-  padding: 1rem 2rem;
+  padding: u(1rem 2rem);
 }
 
 .filters__message-container {
-  padding: 0 2rem 2rem 2rem;
+  padding: u(0 2rem 2rem 2rem);
 
   .message {
     margin: 0;
@@ -131,8 +131,8 @@
 
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
-  margin-top: 1.5rem;
-  padding-bottom: .5rem;
+  margin-top: u(1.5rem);
+  padding-bottom: u(.5rem);
 
   &:first-child {
     margin-top: 0;
@@ -152,24 +152,24 @@
 
   [type="text"],
   .dropdown__button {
-    margin-bottom: 1rem;
+    margin-bottom: u(1rem);
   }
 }
 
 .filter__instructions {
   display: block;
   font-family: $sans-serif;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
   line-height: 1;
-  padding: .5rem;
+  padding: u(.5rem);
 }
 
 // Horizontal layout
 
 .filters--horizontal {
   background-color: $neutral;
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: u(2rem);
+  padding: u(2rem);
 }
 
 // BREAKPOINT: MEDIUM
@@ -208,10 +208,10 @@
   .filters {
     @include transition(margin-left .2s);
     float: left;
-    margin-left: -30rem;
-    padding: 2rem 0;
+    margin-left: u(-30rem);
+    padding: u(2rem 0);
     position: relative;
-    width: 30rem;
+    width: u(30rem);
     vertical-align: top;
 
     form {
@@ -250,7 +250,7 @@
       border-top: none;
       border-right: 1px solid $inverse;
       margin-right: 0;
-      padding: 0 1rem;
+      padding: u(0 1rem);
       width: 100%;
 
       &:first-child {

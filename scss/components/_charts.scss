@@ -10,11 +10,11 @@ $tooltip-border-color: #999;
   font-family: $sans-serif;
 
   .chart-series {
-    margin: 1rem;
+    margin: u(1rem);
   }
 
   & + .chart-container {
-    margin-top: 4rem;
+    margin-top: u(4rem);
   }
 }
 
@@ -167,7 +167,7 @@ $tooltip-border-color: #999;
 }
 
 .chart-series__group__label {
-  font-size: 1rem;
+  font-size: u(1rem);
   position: absolute;
   top: 100%;
   left: 0;
@@ -176,7 +176,7 @@ $tooltip-border-color: #999;
   text-align: center;
 
   @include media($med) {
-    font-size: 1.2rem;
+    font-size: u(1.2rem);
   }
 }
 
@@ -276,10 +276,10 @@ $tooltip-border-color: #999;
   .swatch {
     border-radius: 20px;
     display: inline-block;
-    height: 2rem;
-    margin-right: 1rem;
+    height: u(2rem);
+    margin-right: u(1rem);
     padding: 0;
-    width: 2rem;
+    width: u(2rem);
     vertical-align: middle;
   }
 
@@ -289,7 +289,7 @@ $tooltip-border-color: #999;
 }
 
 .chart__key__item {
-  margin-left: 2rem;
+  margin-left: u(2rem);
   float: none;
 
   @include media($med) {

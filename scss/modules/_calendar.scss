@@ -13,7 +13,7 @@
 
   .fc-day {
     font-weight: bold;
-    padding: .7rem 1rem 0 2rem;
+    padding: u(.7rem 1rem 0 2rem);
   }
 }
 
@@ -25,7 +25,7 @@
 .fc-toolbar {
   @include clearfix();
   border-bottom: 2px solid $primary;
-  padding: 2rem 0 1.5rem 0;
+  padding: u(2rem 0 1.5rem 0);
 }
 
 .fc-left {
@@ -33,22 +33,22 @@
 
   .fc-button-group {
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
   }
 
   .fc-today-button {
-    margin-left: 1rem;
+    margin-left: u(1rem);
   }
 
   .fc-prev-button,
   .fc-next-button {
     margin-right: 1px;
     text-indent: -9999px;
-    padding: .8rem 1rem;
+    padding: u(.8rem 1rem);
 
     &::after {
-      left: .5rem;
-      right: .5rem;
+      left: u(.5rem);
+      right: u(.5rem);
     }
   }
 }
@@ -82,14 +82,14 @@
 .fc-day-header {
   color: $primary;
   font-weight: normal;
-  padding-top: .5rem;
+  padding-top: u(.5rem);
 }
 
 .fc-content-skeleton {
   height: 100%;
 
   table {
-    min-height: 12rem;
+    min-height: u(12rem);
   }
 }
 
@@ -118,7 +118,7 @@
   border-bottom: none;
   color: $primary;
   font-weight: bold;
-  padding: .3rem 1rem;
+  padding: u(.3rem 1rem);
 }
 
 .fc-day-number.fc-today {
@@ -140,7 +140,7 @@
   overflow: hidden;
   background: none;
   color: $primary;
-  font-size: 1.4rem;
+  font-size: u(1.4rem);
   line-height: 1.2;
   padding: 2px 4px;
   position: relative;
@@ -148,10 +148,10 @@
   &::before {
     content: '';
     display: block;
-    width: .6rem;
-    height: .6rem;
+    width: u(.6rem);
+    height: u(.6rem);
     background-color: $primary;
-    border-radius: .8rem;
+    border-radius: u(.8rem);
     float: left;
     margin: 5px 5px 5px 0;
   }
@@ -164,7 +164,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    width: 3rem;
+    width: u(3rem);
   }
 }
 
@@ -212,16 +212,16 @@
 
 .cal__category {
   border-radius: 3px;
-  padding: .5rem;
+  padding: u(.5rem);
 }
 
 // Event details
 .cal-details {
-  font-size: 1.4rem;
-  margin-top: 1rem;
+  font-size: u(1.4rem);
+  margin-top: u(1rem);
   padding: 0;
   text-align: left;
-  width: 26rem;
+  width: u(26rem);
   white-space: initial;
 
   .button--close--primary {
@@ -237,12 +237,12 @@
 
     &::before {
       left: auto;
-      right: 1rem;
+      right: u(1rem);
     }
 
     &::after {
       left: auto;
-      right: 1.2rem;
+      right: u(1.2rem);
     }
   }
 }
@@ -250,44 +250,44 @@
 .cal-details__date {
   display: block;
   font-weight: bold;
-  padding-bottom: 1rem;
+  padding-bottom: u(1rem);
 }
 
 .cal-details__title {
   display: block;
   font-weight: bold;
   line-height: 1.4;
-  padding-bottom: .5rem;
+  padding-bottom: u(.5rem);
 }
 
 .cal-details__summary {
   display: block;
   line-height: 1.2;
-  padding-bottom: .5rem;
+  padding-bottom: u(.5rem);
 }
 
 .cal-details__location {
   display: block;
   line-height: 1.2;
-  padding-bottom: .5rem;
+  padding-bottom: u(.5rem);
 }
 
 .cal-details__add {
-  margin-top: 1rem;
+  margin-top: u(1rem);
 }
 
 .fc-popup {
   background: $inverse;
   border: 2px solid $neutral;
   position: absolute;
-  max-width: 20rem;
+  max-width: u(20rem);
 
   .button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 3rem;
-    height: 3rem;
+    width: u(3rem);
+    height: u(3rem);
   }
 }
 
@@ -318,7 +318,7 @@
 
 .fc-slats {
   td {
-    height: 1.5rem;
+    height: u(1.5rem);
   }
 
   tr {
@@ -338,7 +338,7 @@
   }
 
   .fc-axis {
-    padding: .5rem 1rem 0 1rem;
+    padding: u(.5rem 1rem 0 1rem);
     text-align: right;
     vertical-align: middle;
     white-space: nowrap;
@@ -355,17 +355,17 @@
 
 .cal-view__toggles {
   float: right;
-  padding-left: 1rem;
+  padding-left: u(1rem);
 }
 
 // List view
 .cal-list__toggles {
-  padding-top: 2rem;
+  padding-top: u(2rem);
 }
 
 .cal-list {
   letter-spacing: -.3px;
-  padding-top: 2rem;
+  padding-top: u(2rem);
 }
 
 .cal-list__title {
@@ -373,14 +373,14 @@
   border-left: .5rem solid $primary;
   font-family: $sans-serif;
   letter-spacing: 0;
-  margin: 2rem 0 0 0;
-  padding: 1rem;
+  margin: u(2rem 0 0 0);
+  padding: u(1rem);
 }
 
 .cal-list__event {
   @include clearfix();
   border-bottom: 1px solid $neutral;
-  padding: 2rem 0;
+  padding: u(2rem 0);
 
   &:last-child {
     border-bottom: none;
@@ -390,7 +390,7 @@
 
 .cal-list__details {
   @include span-columns(8);
-  margin-bottom: 1rem;
+  margin-bottom: u(1rem);
 }
 
 .cal-list__add {
@@ -413,10 +413,10 @@
 
 .cal-list__description {
   @include span-columns(8 of 8);
-  padding-top: 2rem;
+  padding-top: u(2rem);
 
   p {
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
   }
 }
 
@@ -428,7 +428,7 @@
   display: inline-block;
   border: 1px solid;
   border-color: $primary;
-  padding: 0 .5rem;
+  padding: u(0 .5rem);
   border-radius: 3px;
 }
 
@@ -445,17 +445,17 @@
   background-color: $inverse;
   border: 2px solid $neutral;
   position: absolute;
-  width: 22rem;
+  width: u(22rem);
 
   .fc-header {
     background: $neutral;
-    padding: 3px .5rem;
+    padding: u(3px .5rem);
 
     .fc-title {
       float: left;
       font-weight: bold;
       height: auto;
-      line-height: 2rem;
+      line-height: u(2rem);
       width: auto;
     }
   }
@@ -467,11 +467,11 @@
   }
 
   .fc-event-container {
-    padding: .5rem;
+    padding: u(.5rem);
   }
 
   .fc-content {
-    margin-bottom: .5rem;
+    margin-bottom: u(.5rem);
   }
 }
 
@@ -503,9 +503,9 @@
 
     .button {
       background-position: 50% 50%;
-      padding-left: 2rem;
+      padding-left: u(2rem);
       text-indent: -9999px;
-      width: 4rem;
+      width: u(4rem);
     }
   }
 }
@@ -515,10 +515,10 @@
 
 @include media($lg) {
   .cal-list {
-    font-size: 1.6rem;
+    font-size: u(1.6rem);
 
     p {
-      font-size: 1.6rem;
+      font-size: u(1.6rem);
     }
   }
 
@@ -536,7 +536,7 @@
 
   .cal-list__event {
     @include clearfix();
-    padding: 2rem;
+    padding: u(2rem);
   }
 
   .cal-list__details {
@@ -546,7 +546,7 @@
 
   .cal-list__add {
     @include span-columns(2);
-    font-size: 1.4rem;
+    font-size: u(1.4rem);
   }
 
   .cal-list__date {

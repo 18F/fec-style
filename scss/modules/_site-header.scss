@@ -8,7 +8,7 @@
   background-color: $navy;
   color: $inverse;
   font-family: $sans-serif;
-  padding: 1rem 0;
+  padding: u(1rem 0);
   width: 100%;
 
   a {
@@ -24,10 +24,10 @@
   border: 2px solid $primary-contrast;
   color: $inverse;
   font-family: $sans-serif;
-  left: 2rem;
-  padding: 1rem 2rem;
+  left: u(2rem);
+  padding: u(1rem 2rem);
   position: absolute;
-  top: -10rem;
+  top: u(-10rem);
   z-index: $z4;
 
   &:focus {
@@ -54,9 +54,9 @@
   border-bottom: 1px solid $neutral;
   color: $gray-dark;
   font-family: $sans-serif;
-  font-size: 1.2rem;
+  font-size: u(1.2rem);
   line-height: 1;
-  padding: 5px 2rem;
+  padding: u(5px 2rem);
   text-align: center;
 }
 
@@ -81,7 +81,7 @@
 
   .disclaimer__left {
     display: block;
-    padding-left: 1rem;
+    padding-left: u(1rem);
   }
 
   .disclaimer__right {
@@ -113,7 +113,7 @@
     @include u-background-image('seal--cropped', 0% 100%);
     border-bottom: 2px solid $neutral;
     display: block;
-    background-size: 11rem;
+    background-size: u(11rem);
   }
 }
 
@@ -135,8 +135,8 @@
     @include u-background-image('wordmark', 0% 50%);
     background-size: contain;
     display: block;
-    margin: 1rem 0 .7rem 12rem;
-    height: 3.4rem;
+    margin: u(1rem 0 .7rem 12rem);
+    height: u(3.4rem);
     width: 100%;
   }
 
@@ -149,7 +149,7 @@
   font-family: $sans-serif;
   display: none;
   float: right;
-  padding: 1.6rem 0;
+  padding: u(1.6rem 0);
 
   @include media($lg) {
     display: block;
@@ -190,10 +190,10 @@ li.utility-nav__item {
     @include u-background-image('wordmark', 0% 50%);
     background-size: contain;
     display: block;
-    height: 3rem;
-    margin: .5rem 1rem;
+    height: u(3rem);
+    margin: u(.5rem 1rem);
     width: calc(100% - 15rem);
-    max-width: 40rem;
+    max-width: u(40rem);
 
     @include media($med) {
       display: none;

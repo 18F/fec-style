@@ -36,7 +36,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 6.3rem;
+  top: (6.3rem);
   bottom: 0;
   overflow-x: hidden;
   z-index: $z-navigation;
@@ -89,11 +89,11 @@
   @include u-icon-bg($menu, $primary);
   background-color: $gray-lightest;
   background-position: 50% 50%;
-  background-size: 2rem;
+  background-size: u(2rem);
   border: none;
   border-radius: 0;
   float: left;
-  height: 4rem;
+  height: u(4rem);
   margin: 0;
   padding: 1.8rem 2rem;
   text-indent: -99999px;
@@ -174,10 +174,10 @@
     background-position: 90% 1rem;
     font-size: 1.4rem;
     text-indent: 0;
-    padding: 1rem 4rem 1rem 1rem;
+    padding: u(1rem 4rem 1rem 1rem);
 
     &.active {
-      background-position: 90% 1rem;
+      background-position: u(90% 1rem);
     }
   }
 }
@@ -211,7 +211,7 @@
     overflow: visible;
     position: relative;
     display: block;
-    padding: 0 0 0 2rem;
+    padding: u(0 0 0 2rem);
     top: 0;
 
     .utility-nav__item {
@@ -254,8 +254,8 @@
   .site-nav__link {
     color: $primary;
     text-align: center;
-    border-bottom: .5rem solid transparent;
-    padding: 1rem 2rem .5rem 2rem;
+    border-bottom: u(.5rem) solid transparent;
+    padding: u(1rem 2rem .5rem 2rem);
 
     &:hover,
     &:focus,

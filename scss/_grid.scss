@@ -1,9 +1,9 @@
 // Grid
 
 // Neat Breakpoints
-$medium-screen: em(640);
-$large-screen: em(860);
-$x-large-screen: em(1088);
+$medium-screen: em(640) !default;
+$large-screen: em(860) !default;
+$x-large-screen: em(1088) !default;
 
 $med: new-breakpoint(min-width $medium-screen 12);
 $lg: new-breakpoint(min-width $large-screen 12);

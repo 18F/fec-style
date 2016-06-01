@@ -19,7 +19,7 @@
 
 .slab {
   @include clearfix();
-  padding: 2rem 0;
+  padding: u(2rem 0);
 }
 
 .slab--primary {
