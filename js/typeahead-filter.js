@@ -5,6 +5,7 @@
 var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
+var typeahead = require('./typeahead');
 
 var ID_PATTERN = /^\w{9}$/;
 
@@ -45,6 +46,7 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
 
   this.$body.on('change', 'input', this.handleChange.bind(this));
   this.$body.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
+  $('body').on('filter:modify', this.changeDataset.bind(this));
 
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
   this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
@@ -53,13 +55,18 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
 
-  if (this.allowText) {
+  this.typeaheadInit();
+  this.disableButton();
+};
+
+TypeaheadFilter.prototype.typeaheadInit = function() {
+  if (this.allowText && this.dataset) {
     this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
+  } else if (this.allowText && !this.dataset) {
+    this.$field.typeahead({minLength: 1}, textDataset);
   } else {
     this.$field.typeahead({minLength: 3}, this.dataset);
   }
-
-  this.disableButton();
 };
 
 TypeaheadFilter.prototype.setFirstItem = function() {
@@ -167,43 +174,67 @@ TypeaheadFilter.prototype.appendCheckbox = function(opts) {
 
 TypeaheadFilter.prototype.getFilters = function(values) {
   var self = this;
-  var dataset = this.dataset.name + 's';
-  var idKey = this.dataset.name + '_id';
-  var ids = values.filter(function(value) {
-    return ID_PATTERN.test(value);
-  });
-  values.forEach(function(value) {
-    self.appendCheckbox({
-      name: self.fieldName,
-      id: slugify(value) + '-checkbox',
-      value: value,
-      label: ID_PATTERN.test(value) ? 'Loading...' : value
+  if (this.dataset) {
+    var dataset = this.dataset.name + 's';
+    var idKey = this.dataset.name + '_id';
+    var ids = values.filter(function(value) {
+      return ID_PATTERN.test(value);
     });
-  });
-  if (ids.length) {
-    $.getJSON(
-      URI(API_LOCATION)
-        .path([API_VERSION, dataset].join('/'))
-        .addQuery('api_key', API_KEY)
-        .addQuery(idKey, ids)
-        .toString()
-    ).done(this.updateFilters.bind(this));
+    values.forEach(function(value) {
+      self.appendCheckbox({
+        name: self.fieldName,
+        id: slugify(value) + '-checkbox',
+        value: value,
+        label: ID_PATTERN.test(value) ? 'Loading...' : value
+      });
+    });
+    if (ids.length) {
+      $.getJSON(
+        URI(API_LOCATION)
+          .path([API_VERSION, dataset].join('/'))
+          .addQuery('api_key', API_KEY)
+          .addQuery(idKey, ids)
+          .toString()
+      ).done(this.updateFilters.bind(this));
+    }
   }
 };
 
 TypeaheadFilter.prototype.updateFilters = function(response) {
   var self = this;
-  var idKey = this.dataset.name + '_id';
-  response.results.forEach(function(result) {
-    var label = result.name + ' (' + result[idKey] + ')';
-    self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
-    self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
-      {
-        key: result[idKey] + '-checkbox',
-        value: label
-      }
-    ]);
-  });
+  if (this.dataset) {
+    var idKey = this.dataset.name + '_id';
+    response.results.forEach(function(result) {
+      var label = result.name + ' (' + result[idKey] + ')';
+      self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
+      self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
+        {
+          key: result[idKey] + '-checkbox',
+          value: label
+        }
+      ]);
+    });
+  }
+};
+
+TypeaheadFilter.prototype.changeDataset = function(e, opts) {
+  // Method for changing the typeahead suggestion on the "contributor name" filter
+  // when the "individual" or "committee" checkbox filter is changed
+  // If the modify event names this filter, destroy it
+  if (opts.filterName === this.fieldName) {
+    this.$field.typeahead('destroy');
+    // If the value array is only individuals and not committees
+    // set the dataset to empty and re-init
+    if (opts.filterValue.indexOf('individual') > -1 && opts.filterValue.indexOf('committee') < 0) {
+      this.dataset = null;
+      this.allowText = true;
+      this.typeaheadInit();
+    } else {
+      // Otherwise initialize with the committee dataset
+      this.dataset = typeahead.datasets.committees;
+      this.typeaheadInit();
+    }
+  }
 };
 
 module.exports = {TypeaheadFilter: TypeaheadFilter};

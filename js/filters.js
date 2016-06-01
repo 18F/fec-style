@@ -8,6 +8,7 @@ window.$ = window.jQuery = $;
 
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
+var FilterControl = require('./filter-control').FilterControl;
 
 var cyclesTemplate = require('./templates/election-cycles.hbs');
 
@@ -34,6 +35,10 @@ function Filter(elm) {
 
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
+
+  if (this.$body.hasClass('js-filter-control')) {
+    new FilterControl(this.$body);
+  }
 }
 
 Filter.build = function($elm) {
@@ -152,7 +157,7 @@ function TypeaheadFilter(elm) {
 
   var key = this.$body.data('dataset');
   var allowText = this.$body.data('allow-text') !== undefined;
-  var dataset = typeahead.datasets[key];
+  var dataset = key ? typeahead.datasets[key] : null;
   this.typeaheadFilter = new typeaheadFilter.TypeaheadFilter(this.$body, dataset, allowText);
   this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
