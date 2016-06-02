@@ -1,4 +1,3 @@
-
 'use strict';
 
 /* global require, describe, before, beforeEach, it */
@@ -10,6 +9,24 @@ var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
 
+var dom = '<nav class="site-nav js-site-nav">' +
+  '<div id="site-menu" class="site-nav__container">' +
+  '<ul>' +
+    '<li class="site-nav__item" data-submenu="data">' +
+      '<a href="/" class="site-nav__link is-current">' +
+        'Campaign Finance Data</a>' +
+    '</li>' +
+    '<li class="site-nav__item">' +
+      '<a href="#" class="site-nav__link">Calendar</a>' +
+    '</li>' +
+    '<li class="site-nav__item">' +
+      '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
+    '</li>' +
+  '</ul>' +
+  '</div>' +
+  '<button class="js-nav-toggle" aria-controls="site-menu">Menu</button>' +
+'</nav>';
+
 describe('SiteNav', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
@@ -17,23 +34,7 @@ describe('SiteNav', function() {
   });
 
   beforeEach(function() {
-    this.$fixture.empty().append(
-    '<nav class="site-nav js-site-nav">' +
-      '<ul id="site-menu" class="site-nav__list">' +
-        '<li class="site-nav__item" data-submenu="data">' +
-          '<a href="/" class="site-nav__link is-current">' +
-            'Campaign Finance Data</a>' +
-        '</li>' +
-        '<li class="site-nav__item">' +
-          '<a href="#" class="site-nav__link">Calendar</a>' +
-        '</li>' +
-        '<li class="site-nav__item">' +
-          '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
-        '</li>' +
-      '</ul>' +
-      '<button class="js-nav-toggle" aria-controls="site-menu">Menu</button>' +
-    '</nav>'
-    );
+    this.$fixture.empty().append(dom);
     this.siteNav = new SiteNav('.js-site-nav');
   });
 
@@ -45,7 +46,7 @@ describe('SiteNav', function() {
     it('should set body to jqueryized selector', function() {
       expect(this.siteNav.$body).to.be.ok;
       expect(this.siteNav.$body.length).to.be.ok;
-      expect(this.siteNav.$list.length).to.be.ok;
+      expect(this.siteNav.$menu.length).to.be.ok;
       expect(this.siteNav.$toggle.length).to.be.ok;
       expect(this.siteNav.$body.is(this.$fixture.find('nav'))).to.be.true;
     });
@@ -54,13 +55,13 @@ describe('SiteNav', function() {
   describe('Desktop configuration', function() {
     describe('assignAria()', function() {
       it('should assign aria attributes to the list', function() {
-        expect(this.siteNav.$list.attr('aria-label')).to.equal('Site-wide navigation');
+        expect(this.siteNav.$menu.attr('aria-label')).to.equal('Site-wide navigation');
       });
     });
 
     describe('initMegaMenu()', function() {
       it('should append a mega menu to items with [data-submenu]', function() {
-        expect(this.siteNav.$list.find('[data-submenu]').find('.mega').length).to.equal(1);
+        expect(this.siteNav.$menu.find('[data-submenu]').find('.mega').length).to.equal(1);
       });
     });
   });
@@ -68,18 +69,26 @@ describe('SiteNav', function() {
   describe('Mobile configuration', function() {
     beforeEach(function() {
       $('body').width(400);
+      this.$fixture.empty().append(dom);
       this.siteNav = new SiteNav('.js-site-nav');
     });
 
-    after(function() {
+    afterEach(function() {
       $('body').width(1000);
+    });
+
+    describe('initMobileMenu()', function() {
+      it('should append the mobile menu', function() {
+        expect(this.siteNav.$menu.find('.js-mobile-nav').length).to.equal(1);
+        expect(this.siteNav.isMobile).to.be.true;
+      });
     });
 
     describe('assignAria()', function() {
       it('should assign aria attributes to the list and toggle', function() {
         expect(this.siteNav.$toggle.length).to.be.ok;
         expect(this.siteNav.$toggle.attr('aria-haspopup')).to.equal('true');
-        expect(this.siteNav.$list.attr('aria-hidden')).to.equal('true');
+        expect(this.siteNav.$menu.attr('aria-hidden')).to.equal('true');
       });
     });
 
@@ -87,20 +96,62 @@ describe('SiteNav', function() {
       function isOpen(siteNav) {
         return siteNav.isOpen &&
           siteNav.$body.hasClass('is-open') &&
-          siteNav.$list.attr('aria-hidden') === 'false' &&
+          siteNav.$menu.attr('aria-hidden') === 'false' &&
           siteNav.$toggle.hasClass('active');
       }
       function isClosed(siteNav) {
         return !siteNav.isOpen &&
           !siteNav.$body.hasClass('is-open') &&
-          siteNav.$list.attr('aria-hidden') !== 'false'  &&
+          siteNav.$menu.attr('aria-hidden') !== 'false'  &&
           !siteNav.$toggle.hasClass('active');
       }
+
       it('should show and hide the menu', function() {
-        this.siteNav.toggle();
+        this.siteNav.toggleMenu();
         expect(isOpen(this.siteNav)).to.be.true;
-        this.siteNav.toggle();
+        this.siteNav.toggleMenu();
         expect(isClosed(this.siteNav)).to.be.true;
+      });
+    });
+
+    describe('mobile panels', function() {
+      it('should show a panel when clicking a target', function() {
+        this.siteNav.$body.find('.js-panel-trigger[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('false');
+      });
+
+      it('should hide a panel when clicking the back button', function() {
+        this.siteNav.$body.find('.js-panel-close[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('true');
+      });
+    });
+  });
+
+  describe('switchMenu()', function() {
+    describe('when switching to a small screen', function() {
+      before(function() {
+        $('body').width(400);
+        this.siteNav.switchMenu();
+      });
+
+      it('should remove the mega menu', function() {
+        expect(this.siteNav.$body.find('.mega').length).to.equal(0);
+      });
+
+      it('should instantiate the small menu', function() {
+        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(1);
+      });
+    });
+
+    describe('when switching to a large screen', function() {
+      before(function() {
+        $('body').width(1000);
+        this.siteNav.switchMenu();
+      });
+
+      it('should remove the mobile menu if the screen gets big', function() {
+        this.siteNav.switchMenu();
+        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(0);
       });
     });
   });
