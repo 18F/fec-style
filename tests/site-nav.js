@@ -9,6 +9,24 @@ var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
 
+var dom = '<nav class="site-nav js-site-nav">' +
+  '<div id="site-menu" class="site-nav__container">' +
+  '<ul>' +
+    '<li class="site-nav__item" data-submenu="data">' +
+      '<a href="/" class="site-nav__link is-current">' +
+        'Campaign Finance Data</a>' +
+    '</li>' +
+    '<li class="site-nav__item">' +
+      '<a href="#" class="site-nav__link">Calendar</a>' +
+    '</li>' +
+    '<li class="site-nav__item">' +
+      '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
+    '</li>' +
+  '</ul>' +
+  '</div>' +
+  '<button class="js-nav-toggle" aria-controls="site-menu">Menu</button>' +
+'</nav>';
+
 describe('SiteNav', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
@@ -16,25 +34,7 @@ describe('SiteNav', function() {
   });
 
   beforeEach(function() {
-    this.$fixture.empty().append(
-    '<nav class="site-nav js-site-nav">' +
-      '<div id="site-menu" class="site-nav__container">' +
-      '<ul>' +
-        '<li class="site-nav__item" data-submenu="data">' +
-          '<a href="/" class="site-nav__link is-current">' +
-            'Campaign Finance Data</a>' +
-        '</li>' +
-        '<li class="site-nav__item">' +
-          '<a href="#" class="site-nav__link">Calendar</a>' +
-        '</li>' +
-        '<li class="site-nav__item">' +
-          '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
-        '</li>' +
-      '</ul>' +
-      '</div>' +
-      '<button class="js-nav-toggle" aria-controls="site-menu">Menu</button>' +
-    '</nav>'
-    );
+    this.$fixture.empty().append(dom);
     this.siteNav = new SiteNav('.js-site-nav');
   });
 
@@ -67,7 +67,8 @@ describe('SiteNav', function() {
   });
 
   describe('Mobile configuration', function() {
-    beforeEach(function() {
+    before(function() {
+      this.$fixture.empty().append(dom);
       $('body').width(400);
       this.siteNav = new SiteNav('.js-site-nav');
     });
@@ -127,23 +128,31 @@ describe('SiteNav', function() {
   });
 
   describe('switchMenu()', function() {
-    before(function() {
-      this.siteNav = new SiteNav('.js-site-nav');
-      $('body').width(400);
+    describe('when switching to a small screen', function() {
+      before(function() {
+        $('body').width(400);
+        this.siteNav.switchMenu();
+      });
+
+      it('should remove the mega menu', function() {
+        expect(this.siteNav.$body.find('.mega').length).to.equal(0);
+      });
+
+      it('should instantiate the small menu', function() {
+        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(1);
+      });
     });
 
-    afterEach(function() {
-      $('body').width(1000);
-    });
+    describe('when switching to a large screen', function() {
+      before(function() {
+        $('body').width(1000);
+        this.siteNav.switchMenu();
+      });
 
-    it('should remove the mega menu if the screen gets small', function() {
-      this.siteNav.switchMenu();
-      expect(this.siteNav.$body.find('.mega').length).to.equal(0);
-    });
-
-    it('should remove the mobile menu if the screen gets big', function() {
-      this.siteNav.switchMenu();
-      expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(0);
+      it('should remove the mobile menu if the screen gets big', function() {
+        this.siteNav.switchMenu();
+        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(0);
+      });
     });
   });
 });
