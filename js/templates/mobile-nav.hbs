@@ -6,7 +6,7 @@
     <li class="site-nav__item site-nav__item--sub"><button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced">Advanced data</button></li>
     <li class="site-nav__item site-nav__item--sub is-disabled"><span class="site-nav__link">Interactive overviews</span></li>
     <li class="site-nav__block">
-      <a href="{{webAppUrl}}">Profiles</a>
+      <a class="site-nav__link--underline" href="{{webAppUrl}}">Profiles</a>
       <form action="{{webAppUrl}}" method="GET" autocomplete="off">
         <label class="t-sans" for="menu-search">Search for candidates and committees</label>
         <div class="combo--search--mini">
@@ -22,7 +22,7 @@
       </form>
     </li>
     <li class="site-nav__block">
-      <a href="{{webAppUrl}}/elections">Locations</a>
+      <a class="site-nav__link--underline" href="{{webAppUrl}}/elections">Locations</a>
       <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
         <label class="t-sans mega__item" for="menu-election-search">Find elections and candidates by ZIP code</label>
         <div class="combo--search--mini">
@@ -36,29 +36,29 @@
 
 <div id="nav-advanced" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced">Campaign finance data</button>
-  <h3 class="site-nav__title">Advanced data</h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/advanced">Advanced data</a></h3>
   <ul>
-    <li class="site-nav__item site-nav__item--sub">
-      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-candidates">Candidates</button>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel button--candidates js-panel-trigger" aria-controls="nav-advanced-candidates">Candidates</button>
     </li>
-    <li class="site-nav__item site-nav__item--sub">
-      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-committees">Committees</button>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel button--committees js-panel-trigger" aria-controls="nav-advanced-committees">Committees</button>
     </li>
-    <li class="site-nav__item site-nav__item--sub">
-      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-receipts">Receipts</button>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel button--receipts js-panel-trigger" aria-controls="nav-advanced-receipts">Receipts</button>
     </li>
-    <li class="site-nav__item site-nav__item--sub">
-      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-spending">Spending</button>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel button--disbursements js-panel-trigger" aria-controls="nav-advanced-spending">Spending</button>
     </li>
-    <li class="site-nav__item site-nav__item--sub">
-      <button class="site-nav__link button--nav-panel js-panel-trigger" aria-controls="nav-advanced-filings">Reports and filings</button>
+    <li class="site-nav__item">
+      <button class="site-nav__link button--nav-panel button--filings js-panel-trigger" aria-controls="nav-advanced-filings">Reports and filings</button>
     </li>
   </ul>
 </div>
 
 <div id="nav-advanced-candidates" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-candidates">Advanced data</button>
-  <h3 class="site-nav__title"><a href="{{webAppUrl}}/candidates/?election_year=2012&election_year=2014&election_year=2016&has_raised_funds=true">Candidates - all</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline"href="{{webAppUrl}}/candidates/?election_year=2012&election_year=2014&election_year=2016&has_raised_funds=true">Candidates - all</a></h3>
   <ul>
     <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/candidates/president">Presidential</a></li>
     <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/candidates/senate">Senate</a></li>
@@ -68,7 +68,7 @@
 
 <div id="nav-advanced-committees" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-committees">Advanced data</button>
-  <h3 class="site-nav__title"><a href="{{webAppUrl}}/committees/?election_year=2012&election_year=2014&election_year=2016">Committees - all</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/committees/?election_year=2012&election_year=2014&election_year=2016">Committees - all</a></h3>
   <ul>
     <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Candidate committees</a></li>
     <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">PACs</a></li>
@@ -78,7 +78,7 @@
 
 <div id="nav-advanced-receipts" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-receipts">Advanced data</button>
-  <h3 class="site-nav__title"><a href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Receipts - all</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Receipts - all</a></h3>
   <ul>
     <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/receipts/individual-contributions/?is_individual=true&max_date={{today}}">Individual contributions</a></li>
     <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Contributions from other committees</a></li>
@@ -87,7 +87,7 @@
 
 <div id="nav-advanced-spending" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-spending">Advanced data</button>
-  <h3 class="site-nav__title"><a href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Spending</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Spending</a></h3>
   <ul>
     <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/disbursements/?max_date={{today}}">All disbursements</a></li>
     <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Operating expenditures</a></li>
@@ -98,7 +98,7 @@
 
 <div id="nav-advanced-filings" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-filings">Advanced data</button>
-  <h3 class="site-nav__title"><a href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Reports and filings</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Reports and filings</a></h3>
   <ul>
     <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/filings">All filings</a></li>
     <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Authorized committee reports</a></li>

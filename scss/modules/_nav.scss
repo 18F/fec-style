@@ -143,10 +143,14 @@
   text-align: left;
 }
 
+.site-nav__link--underline {
+  border-bottom: 1px dotted $inverse;
+}
+
 .site-nav__back {
   background-position: 0 50%;
   border: none;
-  margin: u(1rem 0 1rem 0)
+  margin: u(1rem 0 1rem 0);
   padding: u(0 0 0 2rem);
   font-size: u(1.4rem);
 }
