@@ -67,13 +67,13 @@ describe('SiteNav', function() {
   });
 
   describe('Mobile configuration', function() {
-    before(function() {
-      this.$fixture.empty().append(dom);
+    beforeEach(function() {
       $('body').width(400);
+      this.$fixture.empty().append(dom);
       this.siteNav = new SiteNav('.js-site-nav');
     });
 
-    after(function() {
+    afterEach(function() {
       $('body').width(1000);
     });
 
