@@ -52,7 +52,7 @@ function SiteNav(selector, opts) {
 }
 
 SiteNav.prototype.initMenu = function() {
-  if (window.innerWidth >= helpers.BREAKPOINTS.LARGE) {
+  if ( $('body').width() > helpers.BREAKPOINTS.LARGE) {
     this.initMegaMenu();
   } else {
     this.initMobileMenu();
@@ -82,14 +82,12 @@ SiteNav.prototype.initMegaMenu = function() {
 };
 
 SiteNav.prototype.initMobileMenu = function() {
-  if (!this.isMobile) {
-    this.$menu.append(TEMPLATES.mobile(this.opts));
-    this.isMobile = true;
-  }
+  this.$menu.append(TEMPLATES.mobile(this.opts));
+  this.isMobile = true;
 };
 
 SiteNav.prototype.switchMenu = function() {
-  if (window.innerWidth < helpers.BREAKPOINTS.LARGE ) {
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE ) {
     this.$body.find('.mega').remove();
     this.initMobileMenu();
   } else if (this.isMobile) {
@@ -101,7 +99,7 @@ SiteNav.prototype.switchMenu = function() {
 
 SiteNav.prototype.assignAria = function() {
   this.$menu.attr('aria-label', 'Site-wide navigation');
-  if (window.innerWidth < helpers.BREAKPOINTS.LARGE) {
+  if ( $('body').width() < helpers.BREAKPOINTS.LARGE) {
     this.$toggle.attr('aria-haspopup', true);
     this.$menu.attr('aria-hidden', true);
   }
