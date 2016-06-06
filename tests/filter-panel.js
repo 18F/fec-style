@@ -10,6 +10,7 @@ var $ = require('jquery');
 
 var FilterPanel = require('../js/filter-panel').FilterPanel;
 var FilterSet = require('../js/filter-set').FilterSet;
+var helpers = require('../js/helpers');
 
 function expectOpen(panel) {
   expect(panel.isOpen).to.be.true;
@@ -55,10 +56,23 @@ describe('filter panel', function() {
     expectClosed(this.panel);
   });
 
-  it('should start off open on wide windows', function() {
-    $('body').width(861);
-    var panel = new FilterPanel();
-    expectOpen(panel);
+  describe('for wide windows', function() {
+    beforeEach(function() {
+      this.originalWidth = $('body').width();
+      var width = 861;
+      sinon.stub(helpers, 'getWindowWidth').returns(width);
+      $('body').width(width);
+    });
+
+    afterEach(function() {
+      $('body').width(this.originalWidth);
+      helpers.getWindowWidth.restore();
+    });
+
+    it('should start off open on wide windows', function() {
+      var panel = new FilterPanel();
+      expectOpen(panel);
+    });
   });
 
   describe('interaction with filterset', function() {

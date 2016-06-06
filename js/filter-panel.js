@@ -36,7 +36,7 @@ function FilterPanel(options) {
 }
 
 FilterPanel.prototype.setInitialDisplay = function() {
-  if (window.innerWidth >= helpers.BREAKPOINTS.LARGE) {
+  if (helpers.getWindowWidth() >= helpers.BREAKPOINTS.LARGE) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
@@ -44,7 +44,7 @@ FilterPanel.prototype.setInitialDisplay = function() {
 };
 
 FilterPanel.prototype.setHeight = function() {
-  if (window.innerWidth >= helpers.BREAKPOINTS.LARGE &&
+  if (helpers.getWindowWidth() >= helpers.BREAKPOINTS.LARGE &&
       this.$dataContainer.height() > this.$body.height()) {
     this.$body.css('min-height', this.$dataContainer.height());
   }
