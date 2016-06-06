@@ -1,12 +1,16 @@
 // Mega menu
 
 .mega {
-  a {
+  a:not(.button) {
     border-bottom: none;
 
     &:hover {
       border-bottom: 1px dotted $inverse;
     }
+  }
+
+  ul {
+    margin-left: 0;
   }
 }
 
@@ -35,7 +39,7 @@
       }
     }
 
-    a {
+    a:not(.button) {
       border-color: $inverse;
     }
   }
@@ -49,6 +53,10 @@
     font-size: u(1.4rem);
     color: $inverse;
     padding: u(1rem 4rem 2rem 4rem);
+
+    .button--standard {
+      color: $base;
+    }
   }
 
   .mega-heading {
