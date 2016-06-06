@@ -6,7 +6,7 @@ function StickyBar(selector) {
   this.$body = $('body');
   this.$bar = $(selector);
   this.offset = this.$bar.offset().top;
-  this.triggerOffset = this.$bar.data('trigger-offset'); // Delay before it sticks
+  this.triggerOffset = this.$bar.data('trigger-offset') || 0; // Delay before it sticks
 
   this.defaultBodyPadding = this.$body.css('padding-top');
   $(window).on('scroll', this.toggle.bind(this));
