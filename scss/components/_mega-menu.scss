@@ -1,7 +1,7 @@
 // Mega menu
 
 .mega {
-  a:not(.button) {
+  a {
     border-bottom: none;
 
     &:hover {
@@ -39,7 +39,7 @@
       }
     }
 
-    a:not(.button) {
+    a {
       border-color: $inverse;
     }
   }
@@ -56,6 +56,7 @@
 
     .button--standard {
       color: $base;
+      border: 1px solid $gray;
     }
   }
 
