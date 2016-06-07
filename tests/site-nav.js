@@ -4,10 +4,12 @@
 
 var chai = require('chai');
 var expect = chai.expect;
+var sinon = require('sinon');
 
 var $ = require('jquery');
 
 var SiteNav = require('../js/site-nav').SiteNav;
+var helpers = require('../js/helpers');
 
 var dom = '<nav class="site-nav js-site-nav">' +
   '<div id="site-menu" class="site-nav__container">' +
@@ -53,6 +55,21 @@ describe('SiteNav', function() {
   });
 
   describe('Desktop configuration', function() {
+    beforeEach(function() {
+      this.originalWidth = $('body').width();
+      var width = 1000;
+      $('body').width(width);
+      sinon.stub(helpers, 'getWindowWidth').returns(width);
+
+      this.$fixture.empty().append(dom);
+      this.siteNav = new SiteNav('.js-site-nav');
+    });
+
+    afterEach(function() {
+      $('body').width(this.originalWidth);
+      helpers.getWindowWidth.restore();
+    });
+
     describe('assignAria()', function() {
       it('should assign aria attributes to the list', function() {
         expect(this.siteNav.$menu.attr('aria-label')).to.equal('Site-wide navigation');
@@ -68,13 +85,16 @@ describe('SiteNav', function() {
 
   describe('Mobile configuration', function() {
     beforeEach(function() {
-      $('body').width(400);
+      var width = 400;
+      sinon.stub(helpers, 'getWindowWidth').returns(width);
+      $('body').width(width);
       this.$fixture.empty().append(dom);
       this.siteNav = new SiteNav('.js-site-nav');
     });
 
     afterEach(function() {
       $('body').width(1000);
+      helpers.getWindowWidth.restore();
     });
 
     describe('initMobileMenu()', function() {
@@ -130,8 +150,16 @@ describe('SiteNav', function() {
   describe('switchMenu()', function() {
     describe('when switching to a small screen', function() {
       before(function() {
-        $('body').width(400);
+        this.originalWidth = $('body').width();
+        var width = 400;
+        sinon.stub(helpers, 'getWindowWidth').returns(width);
+        $('body').width(width);
         this.siteNav.switchMenu();
+      });
+
+      after(function() {
+        $('body').width(this.originalWidth);
+        helpers.getWindowWidth.restore();
       });
 
       it('should remove the mega menu', function() {
@@ -145,8 +173,16 @@ describe('SiteNav', function() {
 
     describe('when switching to a large screen', function() {
       before(function() {
-        $('body').width(1000);
+        this.originalWidth = $('body').width();
+        var width = 1000;
+        sinon.stub(helpers, 'getWindowWidth').returns(width);
+        $('body').width(width);
         this.siteNav.switchMenu();
+      });
+
+      after(function() {
+        $('body').width(this.originalWidth);
+        helpers.getWindowWidth.restore();
       });
 
       it('should remove the mobile menu if the screen gets big', function() {
