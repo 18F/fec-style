@@ -55,6 +55,21 @@ describe('SiteNav', function() {
   });
 
   describe('Desktop configuration', function() {
+    beforeEach(function() {
+      this.originalWidth = $('body').width();
+      var width = 1000;
+      $('body').width(width);
+      sinon.stub(helpers, 'getWindowWidth').returns(width);
+
+      this.$fixture.empty().append(dom);
+      this.siteNav = new SiteNav('.js-site-nav');
+    });
+
+    afterEach(function() {
+      $('body').width(this.originalWidth);
+      helpers.getWindowWidth.restore();
+    });
+
     describe('assignAria()', function() {
       it('should assign aria attributes to the list', function() {
         expect(this.siteNav.$menu.attr('aria-label')).to.equal('Site-wide navigation');
