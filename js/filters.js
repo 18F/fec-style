@@ -185,9 +185,13 @@ DateFilter.prototype.handleRadioChange = function(e) {
   }
 };
 
-DateFilter.prototype.validate = function(e) {
-  var year = $(e.target).val().split('-')[2];
-  if ( this.minYear <= year && year <= this.maxYear ) {
+DateFilter.prototype.validate = function() {
+  var years = [this.minYear, this.maxYear];
+  var minDateYear = this.$minDate.val() ?
+    parseInt(this.$minDate.val().split('-')[2]) : this.minYear;
+  var maxDateYear = this.$maxDate.val() ?
+    parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
+  if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
     this.hideWarning();
   } else {
     this.showWarning();
