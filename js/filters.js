@@ -163,10 +163,10 @@ function DateFilter(elm) {
   this.$minDate = this.$body.find('.js-min-date');
   this.$maxDate = this.$body.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
-    oncomplete: this.validateMinYear.bind(this)
+    oncomplete: this.validate.bind(this)
   });
   this.$maxDate.inputmask('mm-dd-yyyy', {
-    oncomplete: this.validateMaxYear.bind(this)
+    oncomplete: this.validate.bind(this)
   });
 
   this.$body.on('change', this.handleRadioChange.bind(this));
@@ -185,21 +185,12 @@ DateFilter.prototype.handleRadioChange = function(e) {
   }
 };
 
-DateFilter.prototype.validateMinYear = function() {
-  var year = parseInt(this.$minDate.val().split('-')[2]);
-  if ( year < this.minYear || year > this.maxYear) {
-    this.showWarning();
-  } else {
+DateFilter.prototype.validate = function(e) {
+  var year = $(e.target).val().split('-')[2];
+  if ( this.minYear <= year && year <= this.maxYear ) {
     this.hideWarning();
-  }
-};
-
-DateFilter.prototype.validateMaxYear = function() {
-  var year = parseInt(this.$minDate.val().split('-')[2]);
-  if ( year < this.minYear || year > this.maxYear) {
-    this.showWarning();
   } else {
-    this.hideWarning();
+    this.showWarning();
   }
 };
 
@@ -233,11 +224,19 @@ DateFilter.prototype.showWarning = function(e) {
   if (!this.showingWarning) {
     var warning =
     '<div class="message message--error message--small">' +
-      'The date you entered is not within the period selected' +
+      'You entered a date that\'s outside the selected transaction period. ' +
+      'Please enter a receipt date from ' +
+      '<strong>' + this.minYear + '-' + this.maxYear + '</strong>' +
     '</div>';
     this.$maxDate.after(warning);
     this.showingWarning = true;
   }
+
+  this.$body.trigger('filters:validation', [
+    {
+      isValid: false,
+    }
+  ]);
 };
 
 DateFilter.prototype.hideWarning = function() {
@@ -245,6 +244,12 @@ DateFilter.prototype.hideWarning = function() {
     this.$body.find('.message').remove();
     this.showingWarning = false;
   }
+
+  this.$body.trigger('filters:validation', [
+    {
+      isValid: true,
+    }
+  ]);
 };
 
 function TypeaheadFilter(elm) {
