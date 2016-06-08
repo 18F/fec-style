@@ -225,7 +225,7 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
   }
 };
 
-DateFilter.prototype.showWarning = function(e) {
+DateFilter.prototype.showWarning = function() {
   if (!this.showingWarning) {
     var warning =
     '<div class="message message--error message--small">' +
