@@ -9,6 +9,7 @@ function updateQuery(params, fields) {
   var queryString = nextUrl(params, fields);
   if (queryString !== null) {
     window.history.replaceState(params, queryString, queryString || window.location.pathname);
+    analytics.pageView();
   }
 }
 
