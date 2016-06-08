@@ -221,6 +221,7 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
     this.minYear = this.maxYear - 1;
     this.$minDate.val('01-01-' + this.minYear.toString()).change();
     this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+    this.validate();
   }
 };
 
