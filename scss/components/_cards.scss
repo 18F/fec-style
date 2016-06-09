@@ -158,12 +158,11 @@
   }
 
   @include media($lg) {
-    min-height: u(26rem);
 
     .card__image__container {
       @include span-columns(2 of 6);
       border-radius: 4px 0 0 4px;
-      padding: u(9rem 2rem);
+      padding: u(2rem);
 
       .card__title {
         display: none;
