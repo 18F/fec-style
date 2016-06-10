@@ -137,8 +137,11 @@
       float: left;
       color: $primary-contrast;
       padding: u(1rem);
-      margin: 0;
     }
+  }
+
+  .card__title {
+    margin-bottom: 1rem;
   }
 
   .card__content {

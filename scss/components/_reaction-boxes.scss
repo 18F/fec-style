@@ -1,0 +1,40 @@
+.reaction-box {
+  background-color: $neutral;
+  padding: u(2rem);
+
+  label[for="reaction-informative"] {
+    background-image: url('../img/reaction-informative.svg');
+    background-repeat: no-repeat;
+    background-position: u(3rem) 50%;
+
+    &::before {
+      margin-right: u(3.5rem);
+    }
+  }
+
+  label[for="reaction-confusing"] {
+    background-image: url('../img/reaction-confusing.svg');
+    background-repeat: no-repeat;
+    background-position: u(3rem) 50%;
+
+    &::before {
+      margin-right: u(3.5rem);
+    }
+  }
+
+  label[for="reaction-not-interested"] {
+    background-image: url('../img/reaction-not-interested.svg');
+    background-repeat: no-repeat;
+    background-position: u(3rem) 50%;
+
+    &::before {
+      margin-right: u(3.5rem);
+    }
+  }
+}
+
+.reaction-box__heading {
+  border-bottom: 1px solid $primary;
+  padding-bottom: u(1rem);
+}
+

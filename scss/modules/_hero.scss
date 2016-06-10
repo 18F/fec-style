@@ -70,11 +70,10 @@
 }
 
 .hero__content {
-  padding-top: u(2rem);
+  padding-top: u(1rem);
 
   @include media($lg) {
-    @include span-columns(8);
-    font-size: u(2rem);
+    @include span-columns(6);
   }
 }
 
@@ -93,6 +92,7 @@
   background-size: cover;
   height: u(32rem);
   position: relative;
+  text-align: center;
 
   .hero__title {
     border-bottom: 2px solid $primary;

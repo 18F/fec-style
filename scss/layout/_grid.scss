@@ -31,6 +31,10 @@
 .grid__item {
   margin-bottom: u(2rem);
   width: 100%;
+
+  &.grid__item--no-margin {
+    margin-bottom: 0;
+  }
 }
 
 // BREAKPOINT: MEDIUM

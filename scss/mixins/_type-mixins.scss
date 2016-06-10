@@ -26,6 +26,7 @@
 
     @include media($med) {
       font-size: u(3rem);
+      line-height: 1.5;
     }
   }
 

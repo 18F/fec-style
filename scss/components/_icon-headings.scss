@@ -14,51 +14,41 @@
 //
 //  Styleguide components.icon-headings
 
+.icon-heading {
+  @include clearfix();
+}
+
 .icon-heading__image {
-  @include span-columns(3);
+  @include span-columns(1);
+}
+
+.icon-heading__content {
+  @include span-columns(11);
+  max-width: 80%;
+
+  p {
+    margin: 0;
+  }
 }
 
 .icon-heading__title {
-  @include span-columns(9);
+  margin-bottom: 0;
 }
 
-@include media($med) {
-  .icon-heading__image {
-    @include span-columns(1);
-  }
-
-  .icon-heading__title {
-    @include span-columns(11);
+.icon-heading__half {
+  .icon-heading__content {
+    max-width: 100%;
   }
 }
 
 @include media($lg) {
-  .icon-heading {
-    @include span-columns(4);
-  }
-
-  .icon-heading__image {
-    @include span-columns(1 of 4);
-  }
-
-  .icon-heading__title {
-    @include span-columns(3 of 4);
-  }
-
-  .icon-heading--full {
-    width: 100%;
-
+  .icon-heading__half {
     .icon-heading__image {
-      @include span-columns(1 of 6);
+      @include span-columns(2);
     }
 
-    .icon-heading__title {
-      @include span-columns(5 of 6);
-    }
-
-    &:nth-child(2) {
-      border-left: 1px solid $gray;
-      border-top: none;
+    .icon-heading__content {
+      @include span-columns(10);
     }
   }
 }

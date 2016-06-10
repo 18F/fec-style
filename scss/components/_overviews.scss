@@ -1,0 +1,56 @@
+.overview {
+  @include clearfix();
+  padding-top: u(2rem);
+}
+
+.overview__total {
+  font-family: $sans-serif;
+  font-size: u(1.6rem);
+  margin-bottom: u(1rem);
+}
+
+.overview__total-title {
+  display: block;
+  font-weight: bold;
+}
+
+@include media($lg) {
+  .overview__totals {
+    @include span-columns(3);
+    padding-right: u(2rem);
+  }
+
+  .overview__chart {
+    @include span-columns(6);
+  }
+
+  .overview__feedback {
+    @include span-columns(3);
+  }
+}
+
+// Swatches
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  margin-right: .4em;
+  vertical-align: middle;
+
+  &.candidates {
+    background-color: $deep-aqua;
+  }
+
+  &.pacs {
+    background-color: $gray;
+  }
+
+  &.parties {
+    background-color: $aqua;
+  }
+
+  &.other {
+    background-color: $gray-dark;
+  }
+}
