@@ -143,11 +143,11 @@ describe('filter set', function() {
 
     it('pulls values from query', function() {
       this.filter.fromQuery({
-        min_date: '2015-01-01',
-        max_date: '2015-12-31'
+        min_date: '01-01-2015',
+        max_date: '01-01-2015'
       });
-      expect(this.filter.$body.find('[name="min_date"]').val()).to.equal('2015-01-01');
-      expect(this.filter.$body.find('[name="max_date"]').val()).to.equal('2015-12-31');
+      expect(this.filter.$body.find('[name="min_date"]').val()).to.equal('01-01-2015');
+      expect(this.filter.$body.find('[name="max_date"]').val()).to.equal('01-01-2015');
     });
   });
 
