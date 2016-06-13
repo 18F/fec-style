@@ -193,8 +193,18 @@ DateFilter.prototype.validate = function() {
     parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
   if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
     this.hideWarning();
+    this.$body.trigger('filters:validation', [
+      {
+        isValid: true,
+      }
+    ]);
   } else {
     this.showWarning();
+    this.$body.trigger('filters:validation', [
+      {
+        isValid: false,
+      }
+    ]);
   }
 };
 
@@ -236,12 +246,6 @@ DateFilter.prototype.showWarning = function() {
     this.$maxDate.after(warning);
     this.showingWarning = true;
   }
-
-  this.$body.trigger('filters:validation', [
-    {
-      isValid: false,
-    }
-  ]);
 };
 
 DateFilter.prototype.hideWarning = function() {
@@ -249,12 +253,6 @@ DateFilter.prototype.hideWarning = function() {
     this.$body.find('.message').remove();
     this.showingWarning = false;
   }
-
-  this.$body.trigger('filters:validation', [
-    {
-      isValid: true,
-    }
-  ]);
 };
 
 function TypeaheadFilter(elm) {
