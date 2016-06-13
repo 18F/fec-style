@@ -50,6 +50,11 @@
   }
 }
 
+.card__image {
+  display: block;
+  margin: 0 auto;
+}
+
 .card__image-link {
   border-bottom: none;
 
@@ -59,10 +64,11 @@
 }
 
 .card__content {
-  text-align: left;
+  text-align: center;
   padding: u(2rem 0 0 0);
   font-family: $serif;
   font-weight: normal;
+  line-height: 1.2;
 }
 
 .card__content--small {
@@ -92,6 +98,7 @@
 
   .card__content {
     @include span-columns(2 of 3);
+    text-align: left;
     padding: 0;
   }
 
@@ -135,6 +142,7 @@
   }
 
   .card__content {
+    text-align: left;
     padding: u(2rem);
 
     .card__title {
@@ -181,10 +189,85 @@
   }
 }
 
+// Stacked cards, when there's more than one in a vertical column
+.card--stacked {
+  margin-top: u(2rem);
+}
+
 // For lists of links, such as on data landing page cards
 .card__links {
   letter-spacing: -.3px;
   font-family: $sans-serif;
   font-weight: normal;
   margin-bottom: u(2rem);
+}
+
+// Card icons
+//
+// CSS generated icons for cards
+//
+// .i-candidate   - Candidate icon
+// .i-committee   - Committee icon
+// .i-receipt     - Receipt icon
+// .i-disbursement  - Disbursement icon
+// .i-overview      - Overview icon
+// .i-profile       - Profile icon
+// .i-elections      - Election icon
+//
+// Markup:
+// <div class="grid--3-wide">
+// <aside class="card card--primary card--horizontal grid__item">
+// <div class="card__image">
+//   <span class="card__icon {{modifier_class}}"><span class="u-visually-hidden">Icon representing [something]</span></span>
+// </div>
+// <div class="card__content">
+//   Card icon
+// </div>
+// </aside>
+// </div>
+//
+// Styleguide components.card-icons
+
+.card__icon {
+  background-color: $neutral;
+  background-position: 50% 50%;
+  background-size: 50%;
+  border-radius: 100%;
+  display: block;
+  height: u(4.8rem);
+  width: u(4.8rem);
+}
+
+.card--primary {
+  .card__icon {
+    &.i-candidate {
+      @include u-icon-bg($candidate, $primary-contrast);
+      background-position: 60% 50%;
+      background-size: 40%;
+    }
+
+    &.i-committee {
+      @include u-icon-bg($committee, $primary-contrast);
+    }
+
+    &.i-receipt {
+      @include u-icon-bg($piggy-bank, $primary-contrast);
+    }
+
+    &.i-disbursement {
+      @include u-icon-bg($disbursement, $primary-contrast);
+    }
+
+    &.i-overview {
+      @include u-icon-bg($graph, $primary-contrast);
+    }
+
+    &.i-profile {
+      @include u-icon-bg($folder-with-person, $primary-contrast);
+    }
+
+    &.i-elections {
+      @include u-icon-bg($person-location, $primary-contrast);
+    }
+  }
 }

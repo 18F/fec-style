@@ -8,6 +8,10 @@
       border-bottom: 1px dotted $inverse;
     }
   }
+
+  ul {
+    margin-left: 0;
+  }
 }
 
 @include media($lg) {
@@ -49,6 +53,11 @@
     font-size: u(1.4rem);
     color: $inverse;
     padding: u(1rem 4rem 2rem 4rem);
+
+    .button--standard {
+      color: $base;
+      border: 1px solid $gray;
+    }
   }
 
   .mega-heading {

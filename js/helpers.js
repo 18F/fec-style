@@ -19,6 +19,12 @@ var formatMap = {
   fullDayOfWeek: 'dddd'
 };
 
+function getWindowWidth() {
+  // window.innerWidth accounts for scrollbars and should match the width used
+  // for media queries.
+  return window.innerWidth;
+}
+
 function datetime(value, options) {
   var hash = options.hash || {};
   var format = formatMap[hash.format || 'default'];
@@ -40,5 +46,6 @@ Handlebars.registerHelper({
 module.exports = {
   datetime: datetime,
   BREAKPOINTS: BREAKPOINTS,
+  getWindowWidth: getWindowWidth,
   helpers: Handlebars.helpers
 };

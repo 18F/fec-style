@@ -157,27 +157,29 @@
 }
 
 li.utility-nav__item {
-  margin-right: 0;
-  padding: u(0 1.5rem);
-  border-left: 1px solid $gray;
-  line-height: u(1.6rem);
-  font-size: u(1.4rem);
+  @include media($lg) {
+    border-left: 1px solid $gray;
+    margin-right: 0;
+    padding: u(0 1.5rem);
+    line-height: u(1.6rem);
+    font-size: u(1.4rem);
 
-  &:first-child {
-    border-left: none;
-  }
-
-  a {
-    border: none;
-
-    &:hover {
-      border-bottom: 1px dotted $base;
+    &:first-child {
+      border-left: none;
     }
-  }
 
-  button {
-    color: inherit;
-    font-size: inherit;
+    button {
+      color: inherit;
+      font-size: inherit;
+    }
+
+    a {
+      border: none;
+
+      &:hover {
+        border-bottom: 1px dotted $base;
+      }
+    }
   }
 }
 

@@ -4,6 +4,7 @@
 
 // Icons
 // 
+// .i-all-files   - all-files
 // .i-arrow-down-border   - arrow-down-border
 // .i-arrow-down-circle   - arrow-down-circle
 // .i-arrow-down   - arrow-down
@@ -71,6 +72,7 @@
 }
 
 // Variables for all icons
+$all-files: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2218%22%20height%3D%2220%22%20viewBox%3D%220%200%2018%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Eall-files%3C%2Ftitle%3E%3Cpath%20d%3D%22M15.5%2018H8.01a.507.507%200%200%200-.51.505v.99a.5.5%200%200%200%20.51.505h8.98a.51.51%200%200%200%20.51-.51v-8.98a.507.507%200%200%200-.505-.51h-.99a.5.5%200%200%200-.505.51V18zM12%2014.5H4.51a.507.507%200%200%200-.51.505v.99a.5.5%200%200%200%20.51.505h8.98a.51.51%200%200%200%20.51-.51V7.01a.507.507%200%200%200-.505-.51h-.99a.5.5%200%200%200-.505.51v7.49zM0%20.494A.5.5%200%200%201%20.5%200h6.554C8%201%209.5%202.5%2010.5%203.494v9.003a.5.5%200%200%201-.506.503H.506A.503.503%200%200%201%200%2012.506V.494zM2%202v9h6.5V4.5h-2V2H2z%22%2F%3E%3C%2Fsvg%3E';
 $arrow-down-border: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2210%22%20height%3D%2213%22%20viewBox%3D%220%200%2010%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Earrow-down-border%3C%2Ftitle%3E%3Cpath%20d%3D%22M5.516%2011.907L9.2%205.673a.85.85%200%200%200-.727-1.294h-7.38a.852.852%200%200%200-.734%201.283l3.69%206.244a.852.852%200%200%200%201.466%200zm2.81-9.082h-7.15a1%201%200%200%201%200-2h7.15a1%201%200%200%201%200%202z%22%2F%3E%3C%2Fsvg%3E';
 $arrow-down-circle: 'data:image/svg+xml;charset=utf8, %3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Ctitle%3EbetaFEC_icons%3C%2Ftitle%3E%3Cpath%20d%3D%22M20%2010a10%2010%200%201%200-10%2010%2010%2010%200%200%200%2010-10zM9.2%2014.1S5.9%208.4%205.8%208.4a.48.48%200%200%201-.1-.4.79.79%200%200%201%20.8-.8h6.7a.79.79%200%200%201%20.8.8.6.6%200%200%201-.1.4l-3.3%205.7a.81.81%200%200%201-1.4%200z%22%2F%3E%3C%2Fsvg%3E';
 $arrow-down: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2210%22%20height%3D%229%22%20viewBox%3D%220%200%2010%209%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Earrow-down%3C%2Ftitle%3E%3Cpath%20d%3D%22M5.706%208.013L9.39%201.78A.85.85%200%200%200%208.664.485h-7.38A.852.852%200%200%200%20.55%201.768l3.69%206.243a.852.852%200%200%200%201.466%200z%22%2F%3E%3C%2Fsvg%3E';
@@ -128,6 +130,13 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
 
 
 // Classes for all icons
+
+.i-all-files {
+  background-image: url('#{$all-files}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+}
 
 .i-arrow-down-border {
   background-image: url('#{$arrow-down-border}');

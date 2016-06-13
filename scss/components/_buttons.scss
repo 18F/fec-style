@@ -409,6 +409,10 @@
   @include u-icon-button($magnifying-glass);
 }
 
+.button--back {
+  @include u-icon-button($arrow-left-border, left);
+}
+
 // Special Buttons
 //
 // Common icon buttons for various purposes
@@ -464,4 +468,56 @@
 .button--panel {
   @include u-icon($arrow-right-circle, $gray, 2rem, 2rem, contain);
   background-size: 90%;
+}
+
+.button--nav-panel {
+  @include u-icon-bg($arrow-right-circle, $inverse);
+  background-position: 100% 50%;
+  padding-right: u(4rem);
+
+  &.button--candidates,
+  &.button--committees,
+  &.button--receipts,
+  &.button--disbursements,
+  &.button--filings {
+    &::before {
+      content: '';
+      background-size: contain;
+      float: left;
+      display: block;
+      margin-right: .5em;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &.button--candidates {
+    &::before {
+      @include u-icon-bg($candidate, $inverse);
+    }
+  }
+
+  &.button--committees {
+    &::before {
+      @include u-icon-bg($committee, $inverse);
+    }
+  }
+
+  &.button--receipts {
+    &::before {
+      @include u-icon-bg($piggy-bank, $inverse);
+    }
+  }
+
+  &.button--disbursements {
+    &::before {
+      @include u-icon-bg($disbursement, $inverse);
+    }
+  }
+
+  &.button--filings {
+    &::before {
+      @include u-icon-bg($papers, $inverse);
+    }
+  }
 }

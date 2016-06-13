@@ -1,42 +1,65 @@
 // Navigation
 //
 // Primary site navigation
-//
-// Elements:
+
+// Main layout elements
 // .site-nav                        - The outer nav element
-// .site-nav__list                  - ul that displays horizontally on desktop and is hidden on mobile until revealed
-// .site-nav__item                  - Each li inside the ul
-// .site-nav__link                  - Styles for the links inside the items
-// .site-nav__dropdown              - A ul inside a site-nav__item li. On mobile, this expands on tap (see below) and on desktop, shows on hover
-// .site-nav__toggle                - A button inside each .site-nav__item--with-dropdown that controls visibility of the submenu
-//
-// Styleguide modules.navigation
+// .site-nav__container             - div that contains the ul and all panels
+// .site-nav__panel                 - Styles for each panel on mobile
+// .site-nav__panel--sub            - Panels after the main screen
 
 .site-nav {
   @include clearfix();
 
   &.is-open {
-    .site-nav__list {
-      @include transform(translateX(0));
+
+    // When the menu is open, set all sub-panels 100% off
+    .site-nav__panel--sub {
+      @include transform(translateX(100%));
+
+      // When subpanels open, set them to 0
+      &.is-open {
+        @include transform(translateX(0));
+      }
     }
 
-    .site-nav__dropdown {
-      display: block;
+    .site-nav__container {
+      @include transform(translateX(0));
+      @include transition(transform, .2s, ease-out);
     }
   }
 }
 
-.site-nav__list {
+.site-nav__container {
   @include transform(translateX(-100%));
-  @include transition(transform, .2s);
-  background-color: $primary;
-  border-right: 1px solid $primary-contrast;
-  padding: u(1rem 2rem);
+  @include transition(left, .2s, ease-out);
   position: absolute;
   left: 0;
-  top: u(7rem);
+  right: 0;
+  top: (6.3rem);
   bottom: 0;
+  overflow-x: hidden;
   z-index: $z-navigation;
+
+  &[aria-hidden='true'] {
+    display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
+  }
+}
+
+.site-nav__panel {
+  @include transition(transform, .2s, ease-out);
+  background-color: $primary;
+  color: $inverse;
+  font-size: u(1.6rem);
+  padding: u(1rem 2rem);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+
+  &.is-open {
+    @include transform(translateX(0));
+  }
 
   &[aria-hidden='true'] {
     display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
@@ -47,8 +70,48 @@
   }
 }
 
+.site-nav__panel--sub {
+  @include transform(translateX(200%));
+}
+
+// Granular elements
+// .site-nav__button        - Hamburger button that triggers menu on mobile
+// .site-nav__item          - li element
+// .site-nav__item--sub     - Indented item nested under a parent
+// .site-nav__link          - link or button inside each li
+// .site-nav__back          - Back button that moves back a panel
+// .site-nav__title         - Panel titles on mobile
+// .site-nav__block         - Block area, such as for search bars
+//
+// Note: Buttons that trigger panels are styled with .button--nav-panel
+
+.site-nav__button {
+  @include u-icon-bg($menu, $primary);
+  background-color: $gray-lightest;
+  background-position: 50% 50%;
+  background-size: u(2rem);
+  border: none;
+  border-radius: 0;
+  float: left;
+  height: u(4rem);
+  margin: 0;
+  padding: u(1.8rem 2rem);
+  text-indent: -99999px;
+
+  &:hover {
+    background-color: $inverse;
+  }
+
+  &.active {
+    @include u-icon-bg($menu, $inverse);
+    background-color: $primary;
+    color: $neutral;
+  }
+}
+
 .site-nav__item {
-  border-bottom: 1px solid $primary-contrast;
+  @include clearfix();
+  border-bottom: 1px solid $inverse;
 
   &:last-child .site-nav__link {
     border-bottom: 0;
@@ -63,130 +126,57 @@
   }
 }
 
-// .site-nav__link
+.site-nav__item--sub {
+  padding-left: u(1rem);
+}
+
 .site-nav__link {
   @include transition(background-color, .1s);
   color: $inverse;
   display: block;
-  font-size: u(1.6rem);
+  font-size: inherit;
+  font-family: $serif;
   line-height: u(2rem);
   padding: u(1rem);
   border-bottom: none;
-
-  &.is-current {
-    border-bottom-color: $aqua;
-  }
-
-  &.is-active {
-    background-color: $primary;
-    color: $primary-contrast;
-  }
-}
-
-.site-nav__subtitle {
-  display: block;
-  margin: 0;
-  font-size: u(1.4rem);
-  padding: u(1rem);
-}
-
-.site-nav__dropdown {
-  font-family: $sans-serif;
-  display: none;
-  padding-bottom: u(2rem);
-
-  &[aria-hidden='false'] {
-    display: block;
-  }
-
-  .site-nav__item {
-    border-bottom: 0;
-  }
-
-  .site-nav__link {
-    padding: u(.5rem 1rem);
-    font-size: u(1.4rem);
-    white-space: nowrap;
-  }
-
-  .site-nav__sublink {
-    padding-left: u(2rem);
-  }
-}
-
-.site-nav__toggle {
-  @include u-icon-bg($arrow-right, $inverse);
-  background-position: 0 50%;
-  background-size: u(1rem);
-  color: $inverse;
-  font-family: $serif;
-  text-align: left;
-  padding-left: u(2rem);
-  position: relative;
   width: 100%;
+  text-align: left;
 }
 
-// Nav Buttons
-//
-// For the mobile menu toggle and glossary toggle
-//
-// .site-nav__button--left      - Mobile toggle
-// .site-nav__button--right     - Glossary toggle
+.site-nav__link--underline {
+  border-bottom: 1px dotted $inverse;
+}
 
-.site-nav__button {
-  background-color: $gray-lightest;
-  border-radius: 0;
+.site-nav__back {
+  background-position: 0 50%;
   border: none;
+  margin: u(1rem 0 1rem 0);
+  padding: u(0 0 0 2rem);
+  font-size: u(1.4rem);
+}
+
+.site-nav__title {
+  border-bottom: 1px solid $inverse;
+  padding: u(1rem 0);
   margin: 0;
-  padding: u(1.8rem 2rem);
-  text-indent: -99999px;
 }
 
-.site-nav__button--left {
-  @include u-icon-bg($menu, $primary);
-  background-position: 50% 50%;
-  background-size: u(2rem);
-  float: left;
-  height: u(4rem);
-
-  &:hover {
-    background-color: $inverse;
-  }
-
-  &.active {
-    @include u-icon-bg($menu, $inverse);
-    background-color: $primary;
-    color: $neutral;
-  }
-}
-
-.site-nav__button--right {
-  @include u-icon-bg($book, $secondary);
-  background-position: 50% 50%;
-  background-size: u(2rem);
-  float: right;
-  height: u(4rem);
-
-  &:hover {
-    @include u-icon-bg($book, $inverse);
-    background-color: lighten($secondary, 10%);
-  }
+.site-nav__block {
+  @include clearfix();
+  border-bottom: 1px solid $inverse;
+  padding: u(1.6rem 2rem 2rem 2rem);
 }
 
 // BREAKPOINT: MEDIUM
 // Mostly stays the same except the menu button now has the word menu in it
 
 @include media($med) {
-  .site-nav__list {
-    top: u(17rem);
+  .site-nav__container {
+    top: u(11.6rem);
   }
 
   .site-nav__button {
-    width: u(9rem);
-  }
-
-  .site-nav__button--left {
-    background-position: u(90% 1rem);
+    background-position: 90% 1rem;
     font-size: u(1.4rem);
     text-indent: 0;
     padding: u(1rem 4rem 1rem 1rem);
@@ -199,23 +189,35 @@
 
 // BREAKPOINT: LARGE
 // Switches to traditional dropdown menu
-// Hide the submenu toggles
 
 @include media($lg) {
-  .site-nav__list {
+  .site-nav__container {
     @include clearfix();
+    @include transform(translateX(0));
+    background: $inverse;
+    float: left;
+    overflow: visible;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .site-nav__panel--sub {
+    @include transform(translateX(0));
+    display: none;
+  }
+
+  .site-nav__panel {
     @include transform(translateX(0));
     background: none;
     border: none;
     min-height: 0;
     height: auto;
     overflow: visible;
+    position: relative;
     display: block;
-    float: left;
     padding: u(0 0 0 2rem);
     top: 0;
-    position: relative;
-    width: 100%;
 
     .utility-nav__item {
       display: none;
@@ -256,6 +258,7 @@
 
   .site-nav__link {
     color: $primary;
+    text-align: center;
     border-bottom: u(.5rem) solid transparent;
     padding: u(1rem 2rem .5rem 2rem);
 
@@ -272,7 +275,7 @@
     }
   }
 
-  .site-nav__button--left {
+  .site-nav__button {
     display: none;
   }
 }

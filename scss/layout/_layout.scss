@@ -73,7 +73,6 @@
 }
 
 .main__title {
-  @include heading(display);
   border-bottom: 2px solid $primary;
   margin-bottom: u(3rem);
 }
