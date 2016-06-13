@@ -102,8 +102,11 @@
 
 .message--small {
   background-position: u(1rem 1rem);
-  min-height: 0;
   padding: u(4rem 1rem 1rem 1rem);
+
+  &.message {
+    min-height: 0;
+  }
 }
 
 // Messages: Inverse

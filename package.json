@@ -27,6 +27,7 @@
     "glossary-panel": "0.1.2",
     "eventemitter2": "0.4.14",
     "jquery": "2.1.4",
+    "jquery.inputmask": "3.2.7",
     "moment": "2.10.3",
     "node-bourbon": "4.2.2",
     "node-neat": "1.7.1-beta1",
