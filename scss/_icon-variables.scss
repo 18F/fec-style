@@ -32,9 +32,11 @@
 // .i-folder-with-person   - folder-with-person
 // .i-github-circle   - github-circle
 // .i-graph   - graph
+// .i-grid   - grid
 // .i-icons_table   - icons_table
 // .i-info-circle-outline   - info-circle-outline
 // .i-info-circle   - info-circle
+// .i-info-person   - info-person
 // .i-list   - list
 // .i-magnifying-glass-arrow   - magnifying-glass-arrow
 // .i-magnifying-glass   - magnifying-glass
@@ -56,6 +58,7 @@
 // .i-star   - star
 // .i-table   - table
 // .i-telephone-circle   - telephone-circle
+// .i-training   - training
 // .i-two-candidates   - two-candidates
 // .i-x-circle   - x-circle
 // .i-x   - x
@@ -250,6 +253,13 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
   background-size: 4rem;
 }
 
+.i-calendar {
+  background-image: url('#{$calendar}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+}
+
 .i-candidate {
   background-image: url('#{$candidate}');
   background-position: center center;
@@ -343,6 +353,13 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
 
 .i-info-circle {
   background-image: url('#{$info-circle}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+}
+
+.i-info-person {
+  background-image: url('#{$info-person}');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 4rem;
@@ -490,6 +507,13 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
 
 .i-telephone-circle {
   background-image: url('#{$telephone-circle}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+}
+
+.i-training {
+  background-image: url('#{$training}');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 4rem;

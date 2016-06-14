@@ -271,3 +271,21 @@
     }
   }
 }
+
+.card--secondary {
+  .card__icon {
+    &.i-calendar {
+      @include u-icon-bg($calendar, $secondary-contrast);
+      background-position: 60% 50%;
+      background-size: 40%;
+    }
+
+    &.i-info-person {
+      @include u-icon-bg($info-person, $secondary-contrast);
+    }
+
+    &.i-training {
+      @include u-icon-bg($training, $primary-contrast);
+    }
+  }
+}
