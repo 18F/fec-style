@@ -140,6 +140,10 @@
     font-size: u(1.4rem);
     padding: 0;
     margin: u(0 1rem);
+
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 
   .is-active {

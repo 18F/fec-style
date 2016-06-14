@@ -38,7 +38,7 @@
 }
 
 .search__example {
-  margin-top: u(1rem);
+  margin: u(1rem) 0 0 u(21rem);
 }
 
 .combo--search--mini {
@@ -95,7 +95,7 @@
       font-size: u(1.8rem);
       height: u(6rem);
       line-height: 1;
-      width: calc(100% - 26rem);
+      width: calc(100% - 31rem);
     }
 
     .combo__button {
@@ -105,7 +105,7 @@
 
     .search__select {
       height: u(6rem);
-      width: u(16rem);
+      width: u(21rem);
       font-size: u(1.8rem);
     }
 

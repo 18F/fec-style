@@ -37,3 +37,7 @@
 .slab--neutral {
   @include u-bg--neutral();
 }
+
+.slab--spacious {
+  padding: u(4rem 0);
+}

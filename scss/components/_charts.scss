@@ -306,3 +306,65 @@ $tooltip-border-color: #999;
 .value-bar {
   background-color: $primary;
 }
+
+// New bar charts
+.axis,
+.axis {
+  path,
+  line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+}
+
+.domain {
+  display: none;
+}
+
+.in-progress {
+  opacity: .5;
+}
+
+.bar {
+  &.candidates {
+    fill: $deep-aqua;
+  }
+
+  &.pacs {
+    fill: $gray;
+  }
+
+  &.parties {
+    fill: $aqua;
+  }
+
+  &.other {
+    fill: $gray-dark;
+  }
+}
+
+// .in-progress {
+//   .bar {
+//     &.candidates {
+//       fill: url('#stripes') $deep-aqua;
+//     }
+
+//     &.pacs {
+//       fill: url('#stripes') $gray;
+//     }
+
+//     &.parties {
+//       fill: url('#stripes') $aqua;
+//     }
+
+//     &.other {
+//       fill: url('#stripes') $gray-dark;
+//     }
+//   }
+// }
+
+.tick line {
+  stroke: #cdcdcd;
+  stroke-style: dashed;
+}

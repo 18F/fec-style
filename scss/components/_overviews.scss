@@ -14,6 +14,27 @@
   font-weight: bold;
 }
 
+.overview__chart {
+  position: relative;
+
+  svg {
+    font-size: u(1rem);
+    font-family: $sans-serif;
+  }
+}
+
+.top-list {
+  border-style: solid;
+  border-color: $base;
+  border-width: 1px 0 1px 0;
+  font-family: $sans-serif;
+  padding: u(2rem);
+
+  ol {
+    padding-top: u(1rem);
+  }
+}
+
 @include media($lg) {
   .overview__totals {
     @include span-columns(3);
@@ -26,6 +47,10 @@
 
   .overview__feedback {
     @include span-columns(3);
+  }
+
+  .top-list {
+    @include span-columns(4);
   }
 }
 

@@ -1,0 +1,12 @@
+.figure--zero-pad {
+  .figure__label {
+    @include u-truncate();
+    display: block;
+    font-weight: bold;
+  }
+
+  .figure__item {
+    display: inline-block;
+    margin-bottom: u(1rem);
+  }
+}
