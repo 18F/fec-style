@@ -250,13 +250,6 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
   background-size: 4rem;
 }
 
-.i-calendar {
-  background-image: url('#{$calendar}');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 4rem;
-}
-
 .i-candidate {
   background-image: url('#{$candidate}');
   background-position: center center;
@@ -322,6 +315,13 @@ $x: 'data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2220%22%20height%3D%2220
 
 .i-graph {
   background-image: url('#{$graph}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 4rem;
+}
+
+.i-grid {
+  background-image: url('#{$grid}');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 4rem;
