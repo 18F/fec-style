@@ -25,6 +25,22 @@ function getWindowWidth() {
   return window.innerWidth;
 }
 
+function isLargeScreen() {
+  if (window.innerWidth >= BREAKPOINTS.LARGE) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isMediumScreen() {
+  if (window.innerWidth >= BREAKPOINTS.MEDIUM) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function datetime(value, options) {
   var hash = options.hash || {};
   var format = formatMap[hash.format || 'default'];
@@ -46,6 +62,8 @@ Handlebars.registerHelper({
 module.exports = {
   datetime: datetime,
   BREAKPOINTS: BREAKPOINTS,
+  isMediumScreen: isMediumScreen,
+  isLargeScreen: isLargeScreen,
   getWindowWidth: getWindowWidth,
   helpers: Handlebars.helpers
 };
