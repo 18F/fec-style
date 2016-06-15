@@ -10,7 +10,6 @@
 }
 
 .overview__total-title {
-  display: inline-block;
   font-weight: bold;
 }
 
@@ -28,11 +27,19 @@
   border-color: $base;
   border-width: 1px 0;
   font-family: $sans-serif;
-  padding: u(2rem);
+  padding: u(1rem) 0;
 
   ol {
     padding-top: u(1rem);
   }
+}
+
+.top-list__title {
+  margin-bottom: u(1.5rem);
+}
+
+.top-list__subtitle {
+  margin-bottom: u(.5rem);
 }
 
 @include media($lg) {
