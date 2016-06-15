@@ -342,7 +342,7 @@
   }
 
   &.button--cta-primary {
-    background-image: url('#{svg-fill($icon, $inverse)}');
+    background-image: url('#{svg-fill($icon, $primary)}');
   }
 
   &.button--cta-secondary {
