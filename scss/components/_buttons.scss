@@ -373,7 +373,7 @@
 }
 
 .button--table {
-  @include u-icon-button($table, left)
+  @include u-icon-button($table, right)
 }
 
 .button--two-candidates {
@@ -411,6 +411,10 @@
 
 .button--back {
   @include u-icon-button($arrow-left-border, left);
+}
+
+.button--share {
+  @include u-icon-button($share, right);
 }
 
 // Special Buttons
