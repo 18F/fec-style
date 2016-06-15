@@ -1,15 +1,16 @@
-// Icon headings
+// Icon headings (complex)
 //
-// NOTE: This component is evolving as we adopt new icons. Will update
-// the documentation all at oncce.
+// Lockups that combine an icon, title and some additional text
 //
-// .icon-heading        - 4 columns wide on large screens
-// .icon-heading--full  - Full-width on large screens
+// .icon-heading        - Base class
 //
 // Markup:
-// <div class="{{modifier_class}}">
-//   <img class="icon-heading__image" src="img/i-elections--primary.svg" alt="Icon representing elections">
-//   <h2 class="icon-heading__title widget__title"><span class="t-short">Find candidates running near you</span></h2>
+// <div class="icon-heading">
+//   <img class="icon-heading__image" src="../img/i-overviews--primary.svg" alt="Icon representing interactive overviews">
+//   <div class="icon-heading__content">
+//     <h2 class="icon-heading__title">Interactive overviews</h2>
+//     <p>You don’t have to be an expert to learn more about campaign finance. These overviews are a visual introduction to how money is raised and spent in federal elections.</p>
+//   </div>
 // </div>
 //
 //  Styleguide components.icon-headings
@@ -35,26 +36,27 @@
   margin-bottom: 0;
 }
 
-.icon-heading__half {
-  .icon-heading__content {
-    max-width: 100%;
-  }
-}
-
-@include media($lg) {
-  .icon-heading__half {
-    .icon-heading__image {
-      @include span-columns(2);
-    }
-
-    .icon-heading__content {
-      @include span-columns(10);
-    }
-  }
-}
-
-// Temporary
-// Refactor after introducing icon font
+// Icon headings (simple)
+//
+// Used when you just want a single icon next to a single heading
+// Styled for use against dark backgrounds
+//
+// .icon-heading--profiles      - Profiles icon
+// .icon-heading--overviews     - Overviews icon
+// .icon-heading--location      - Location icon
+// .icon-heading--candidates    - Candidates icon
+// .icon-heading--committees    - Committees icon
+// .icon-heading--receipts      - Receipts icon
+// .icon-heading--disbursements - Disbursements icon
+// .icon-heading--filings       - Filings icon
+// .icon-heading--table         - Table icon
+//
+// Markup:
+// <div class="slab slab--primary" style="padding: 20px">
+//   <h2 class="{{ modifier_class }}">Icon heading</h2>
+// </div>
+//
+// Styleguide components.simple-icon-headings
 
 @mixin u-icon-heading() {
   padding-left: u(3rem);
@@ -111,30 +113,4 @@
   background-position: 0 50%;
   padding-left: u(3rem);
 }
-
-// Icon headings in circles
-@mixin icon-heading--circle($background, $icon) {
-  background-image: none;
-  padding-bottom: .2em;
-  position: relative;
-
-  &::before {
-    @include u-icon-bg($icon, $inverse);
-    background-size: 50%;
-    background-position: 50% 50%;
-    content: '';
-    display: block;
-    float: left;
-    background-color: $background;
-    margin-right: .2em;
-    width: 1.2em;
-    height: 1.2em;
-    border-radius: 1.2em;
-  }
-}
-
-.icon-heading--circle-table {
-  @include icon-heading--circle($primary, $table);
-}
-
 

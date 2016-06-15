@@ -165,7 +165,7 @@
     .card__image__container {
       @include span-columns(2 of 6);
       border-radius: 4px 0 0 4px;
-      padding: u(2rem);
+      padding: u(3rem);
 
       .card__title {
         display: none;

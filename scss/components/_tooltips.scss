@@ -176,17 +176,3 @@
     margin-bottom: u(1rem);
   }
 }
-
-.tooltip__item {
-  @include clearfix();
-  display: inline-block;
-  width: auto;
-}
-
-.tooltip__label {
-  display: inline-block;
-}
-
-.tooltip__number {
-  display: inline-block;
-}
