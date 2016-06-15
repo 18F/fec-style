@@ -322,10 +322,6 @@ $tooltip-border-color: #999;
   display: none;
 }
 
-.in-progress {
-  opacity: .5;
-}
-
 .bar {
   &.candidates {
     fill: $deep-aqua;
@@ -344,27 +340,12 @@ $tooltip-border-color: #999;
   }
 }
 
-// .in-progress {
-//   .bar {
-//     &.candidates {
-//       fill: url('#stripes') $deep-aqua;
-//     }
-
-//     &.pacs {
-//       fill: url('#stripes') $gray;
-//     }
-
-//     &.parties {
-//       fill: url('#stripes') $aqua;
-//     }
-
-//     &.other {
-//       fill: url('#stripes') $gray-dark;
-//     }
-//   }
-// }
+.bar--empty,
+.bar--in-progress {
+  fill: url('#stripes');
+}
 
 .tick line {
-  stroke: #cdcdcd;
+  stroke: $gray-light;
   stroke-style: dashed;
 }

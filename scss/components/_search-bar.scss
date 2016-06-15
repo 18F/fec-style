@@ -28,6 +28,7 @@
   height: u(3.6rem);
   width: u(14rem);
   float: left;
+  line-height: 1;
 }
 
 .combo--search {
@@ -38,7 +39,7 @@
 }
 
 .search__example {
-  margin: u(1rem) 0 0 u(21rem);
+  margin-top: u(1rem);
 }
 
 .combo--search--mini {
@@ -86,6 +87,10 @@
     .tt-menu {
       width: calc(100% - 6.8rem);
     }
+  }
+
+  .search__example {
+    margin: u(1rem) 0 0 u(21rem);
   }
 
   .combo--search--large {
