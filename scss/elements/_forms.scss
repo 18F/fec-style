@@ -193,8 +193,7 @@ input[type="file"] {
 }
 
 [type="checkbox"]:checked + label::before {
-  background-image: url('../img/i-check--neutral.png');
-  background-image: url('../img/i-check--neutral.svg');
+  @include u-icon-bg($check, $inverse);
   background-position: 50%;
   background-size: 12px;
   background-repeat: no-repeat;
