@@ -11,9 +11,10 @@ var KEYCODE_ENTER = 13;
 function FilterSet(elm) {
   this.$body = $(elm);
   $(document.body).on('tag:removed', this.handleTagRemove.bind(this));
-
+  this.$body.on('filters:validation', this.handleValidation.bind(this));
   this.filters = {};
   this.fields = [];
+  this.isValid = true;
 }
 
 FilterSet.prototype.activate = function() {
@@ -65,6 +66,10 @@ FilterSet.prototype.handleTagRemove = function(e, opts) {
   } else if (type === 'text') {
     $input.val('').trigger('change');
   }
+};
+
+FilterSet.prototype.handleValidation = function(e, opts) {
+  this.isValid = opts.isValid;
 };
 
 module.exports = {FilterSet: FilterSet};

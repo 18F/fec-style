@@ -6,6 +6,10 @@ var _ = require('underscore');
 // Hack: Append jQuery to `window` for use by legacy libraries
 window.$ = window.jQuery = $;
 
+require('jquery.inputmask');
+require('jquery.inputmask/dist/inputmask/inputmask.date.extensions.js');
+require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
+
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 var FilterControl = require('./filter-control').FilterControl;
@@ -36,8 +40,14 @@ function Filter(elm) {
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
 
+  $('body').on('filter:modify', this.handleModifyEvent.bind(this));
+
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
+  }
+
+  if (this.$input.data('inputmask')) {
+    this.$input.inputmask();
   }
 }
 
@@ -50,6 +60,8 @@ Filter.build = function($elm) {
     return new ElectionFilter($elm);
   } else if ($elm.hasClass('js-multi-filter')) {
     return new MultiFilter($elm);
+  } else if ($elm.hasClass('js-select-filter')) {
+    return new SelectFilter($elm);
   } else {
     return new Filter($elm);
   }
@@ -79,6 +91,8 @@ Filter.prototype.handleKeydown = function(e) {
     this.$input.change();
   }
 };
+
+Filter.prototype.handleModifyEvent = function() {};
 
 Filter.prototype.handleChange = function(e) {
   var $input = $(e.target);
@@ -116,13 +130,46 @@ Filter.prototype.handleChange = function(e) {
   ]);
 };
 
+function SelectFilter(elm) {
+  Filter.call(this, elm);
+  this.$input = this.$body.find('select');
+  this.name = this.$input.attr('name');
+  this.requiredDefault = this.$body.data('required-default') || null; // If a default is required
+  this.setRequiredDefault();
+}
+
+SelectFilter.prototype = Object.create(Filter.prototype);
+SelectFilter.constructor = SelectFilter;
+
+SelectFilter.prototype.setRequiredDefault = function() {
+  if (this.requiredDefault) {
+    this.setValue(this.requiredDefault);
+  }
+};
+
+SelectFilter.prototype.fromQuery = function(query) {
+  this.setValue(query[this.name]);
+};
+
+SelectFilter.prototype.setValue = function(value) {
+  this.$input.find('option[selected]').attr('selected','false');
+  this.$input.find('option[value="' + value + '"]').attr('selected','true');
+  this.$input.change();
+};
+
 function DateFilter(elm) {
   Filter.call(this, elm);
 
   this.$minDate = this.$body.find('.js-min-date');
   this.$maxDate = this.$body.find('.js-max-date');
-  this.$body.on('change', this.handleRadioChange.bind(this));
+  this.$minDate.inputmask('mm-dd-yyyy', {
+    oncomplete: this.validate.bind(this)
+  });
+  this.$maxDate.inputmask('mm-dd-yyyy', {
+    oncomplete: this.validate.bind(this)
+  });
 
+  this.$body.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
 }
 
@@ -138,11 +185,36 @@ DateFilter.prototype.handleRadioChange = function(e) {
   }
 };
 
+DateFilter.prototype.validate = function() {
+  var years = [this.minYear, this.maxYear];
+  var minDateYear = this.$minDate.val() ?
+    parseInt(this.$minDate.val().split('-')[2]) : this.minYear;
+  var maxDateYear = this.$maxDate.val() ?
+    parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
+  if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
+    this.hideWarning();
+    this.$body.trigger('filters:validation', [
+      {
+        isValid: true,
+      }
+    ]);
+  } else {
+    this.showWarning();
+    this.$body.trigger('filters:validation', [
+      {
+        isValid: false,
+      }
+    ]);
+  }
+};
+
 DateFilter.prototype.fromQuery = function(query) {
-  this.setValue([
-    query['min_' + this.name],
-    query['max_' + this.name]
-  ]);
+  if (query['min_' + this.name] || query['max_' + this.name]) {
+    this.setValue([
+      query['min_' + this.name],
+      query['max_' + this.name]
+    ]);
+  }
   return this;
 };
 
@@ -150,6 +222,37 @@ DateFilter.prototype.setValue = function(value) {
   value = ensureArray(value);
   this.$minDate.val(value[0]).change();
   this.$maxDate.val(value[1]).change();
+};
+
+DateFilter.prototype.handleModifyEvent = function(e, opts) {
+  // Sets min and max years based on the transactionPeriod filter
+  if (opts.filterName === this.name) {
+    this.maxYear = parseInt(opts.filterValue);
+    this.minYear = this.maxYear - 1;
+    this.$minDate.val('01-01-' + this.minYear.toString()).change();
+    this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+    this.validate();
+  }
+};
+
+DateFilter.prototype.showWarning = function() {
+  if (!this.showingWarning) {
+    var warning =
+    '<div class="message message--error message--small">' +
+      'You entered a date that\'s outside the selected transaction period. ' +
+      'Please enter a receipt date from ' +
+      '<strong>' + this.minYear + '-' + this.maxYear + '</strong>' +
+    '</div>';
+    this.$maxDate.after(warning);
+    this.showingWarning = true;
+  }
+};
+
+DateFilter.prototype.hideWarning = function() {
+  if (this.showingWarning) {
+    this.$body.find('.message').remove();
+    this.showingWarning = false;
+  }
 };
 
 function TypeaheadFilter(elm) {

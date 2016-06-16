@@ -51,7 +51,7 @@ FilterPanel.prototype.setHeight = function() {
 };
 
 FilterPanel.prototype.show = function() {
-  this.$body.addClass('is-open');
+  this.$body.addClass('is-open').attr('aria-hidden', false);
   this.$toggle.attr('aria-hidden', true);
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
@@ -60,7 +60,7 @@ FilterPanel.prototype.show = function() {
 };
 
 FilterPanel.prototype.hide = function() {
-  this.$body.removeClass('is-open');
+  this.$body.removeClass('is-open').attr('aria-hidden', true);
   this.$toggle.attr('aria-hidden', false);
   this.$focus.focus();
   accessibility.removeTabindex(this.$form);
