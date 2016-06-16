@@ -58,14 +58,13 @@ describe('filter panel', function() {
 
   describe('for wide windows', function() {
     beforeEach(function() {
-      this.originalWidth = $('body').width();
       var width = 861;
       sinon.stub(helpers, 'getWindowWidth').returns(width);
       $('body').width(width);
     });
 
     afterEach(function() {
-      $('body').width(this.originalWidth);
+      $('body').width(960);
       helpers.getWindowWidth.restore();
     });
 
