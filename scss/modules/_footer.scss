@@ -52,12 +52,12 @@
 
 // Beta content disclaimer on CMS pages
 .footer-disclaimer {
-  border-top: 1px solid $secondary-contrast;
+  border-top: 1px solid $base;
 
   p {
     font-family: $sans-serif;
     font-size: u(1.4rem);
     letter-spacing: -.3px;
-    color: $secondary-contrast;
+    color: $base;
   }
 }

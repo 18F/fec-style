@@ -361,7 +361,7 @@
 //
 // Styleguide components.buttons.icon-and-text-buttons
 .button--go {
-  @include u-icon-button($arrow-right-border, right);
+  @include u-icon-button($arrow-right, right, 1rem);
 }
 
 .button--browse {
