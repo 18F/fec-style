@@ -78,7 +78,7 @@ $search-button-width: u(5.6rem);
     }
 
     .combo__button {
-      width: #{$search-button-width};
+      width: $search-button-width;
     }
 
     .tt-menu {
