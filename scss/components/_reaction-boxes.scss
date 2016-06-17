@@ -33,8 +33,10 @@
   background-color: $neutral;
   border-radius: 4px;
   padding: u(2rem);
+  position: relative;
+  overflow: hidden;
 
-  [for="reaction-informative"] {
+  .reaction--informative {
     background-image: url('../img/reaction-informative.svg');
     background-repeat: no-repeat;
     background-position: u(3rem) 50%;
@@ -44,7 +46,7 @@
     }
   }
 
-  [for="reaction-confusing"] {
+  .reaction--confusing {
     background-image: url('../img/reaction-confusing.svg');
     background-repeat: no-repeat;
     background-position: u(3rem) 50%;
@@ -54,7 +56,7 @@
     }
   }
 
-  [for="reaction-not-interested"] {
+  .reaction--not-interested {
     background-image: url('../img/reaction-not-interested.svg');
     background-repeat: no-repeat;
     background-position: u(3rem) 50%;
@@ -62,6 +64,11 @@
     &::before {
       margin-right: u(3.5rem);
     }
+  }
+
+  textarea {
+    height: u(11rem);
+    margin-bottom: u(1rem);
   }
 }
 
@@ -74,4 +81,3 @@
   margin-bottom: u(2rem);
   padding: 0 0 u(1rem) u(3rem);
 }
-

@@ -1,6 +1,6 @@
 .overview {
   @include clearfix();
-  padding-top: u(2rem);
+  padding: u(2rem) 0;
 }
 
 .overview__total {
