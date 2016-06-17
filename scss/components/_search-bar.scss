@@ -22,6 +22,8 @@
 //
 // Styleguide components.search-bar
 
+$search-button-width: u(5.6rem);
+
 .search__select {
   border-radius: 4px 0 0 4px;
   margin-right: -2px;
@@ -47,7 +49,7 @@
   .combo__input {
     border-radius: 4px 0 0 4px;
     float: left;
-    width: calc(100% - 5.6rem);
+    width: calc(100% - #{$search-button-width});
 
     .combo__input {
       width: 100%;
@@ -81,7 +83,7 @@
     }
 
     .combo__button {
-      width: u(5.6rem);
+      width: $search-button-width;
     }
 
     .tt-menu {
