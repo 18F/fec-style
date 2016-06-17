@@ -349,3 +349,20 @@
     background-image: url('#{svg-fill($icon, $secondary)}');
   }
 }
+
+// Animation
+// fadeIn: Animation to fade in an element
+// Useful for when transition doesn't work because you're setting display:none
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.u-fade-in {
+  @include animation(fadeIn .8s ease-out);
+}

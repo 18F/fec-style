@@ -20,8 +20,7 @@
   width: 100%;
 
   &::after {
-    background-image: url('../img/i-down--primary.png');
-    background-image: url('../img/i-down--primary.svg');
+    @include u-icon-bg($arrow-down, $primary);
     background-repeat: no-repeat;
     background-position: 90% 50%;
     background-size: 12px;

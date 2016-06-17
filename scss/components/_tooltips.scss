@@ -165,3 +165,14 @@
     padding: u(1rem);
   }
 }
+
+// Chart tooltips
+.tooltip--chart {
+  display: none;
+  position: absolute;
+  width: u(30rem);
+
+  .tooltip__title {
+    margin-bottom: u(1rem);
+  }
+}

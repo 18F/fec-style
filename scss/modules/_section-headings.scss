@@ -23,6 +23,11 @@
 .heading__title {
   border-bottom: 0;
   margin-bottom: u(1rem);
+
+  &.heading__title--with-action {
+    line-height: u(3.4rem);
+    margin: 0;
+  }
 }
 
 .heading__subtitle {

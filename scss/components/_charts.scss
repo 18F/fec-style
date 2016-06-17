@@ -306,3 +306,48 @@ $tooltip-border-color: #999;
 .value-bar {
   background-color: $primary;
 }
+
+// New SVG bar chart styles
+.bar-chart {
+  .axis,
+  .axis {
+    path,
+    line {
+      fill: none;
+      stroke: $base;
+      shape-rendering: crispEdges;
+    }
+  }
+
+  .domain {
+    display: none;
+  }
+
+  .bar {
+    &.candidates {
+      fill: $deep-aqua;
+    }
+
+    &.pacs {
+      fill: $gray;
+    }
+
+    &.parties {
+      fill: $aqua;
+    }
+
+    &.other {
+      fill: $gray-dark;
+    }
+  }
+
+  .bar--empty,
+  .bar--in-progress {
+    fill: url('#stripes');
+  }
+
+  .tick line {
+    stroke: $gray-light;
+    stroke-style: dashed;
+  }
+}

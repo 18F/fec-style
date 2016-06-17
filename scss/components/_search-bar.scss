@@ -28,6 +28,7 @@
   height: u(3.6rem);
   width: u(14rem);
   float: left;
+  line-height: 1;
 }
 
 .combo--search {
@@ -35,6 +36,10 @@
     border-radius: 0 4px 4px 0;
     width: calc(100% - 14rem);
   }
+}
+
+.search__example {
+  margin-top: u(1rem);
 }
 
 .combo--search--mini {
@@ -84,6 +89,10 @@
     }
   }
 
+  .search__example {
+    margin: u(1rem) 0 0 u(21rem);
+  }
+
   .combo--search--large {
     height: u(6rem);
 
@@ -91,7 +100,7 @@
       font-size: u(1.8rem);
       height: u(6rem);
       line-height: 1;
-      width: calc(100% - 26rem);
+      width: calc(100% - 31rem);
     }
 
     .combo__button {
@@ -101,7 +110,7 @@
 
     .search__select {
       height: u(6rem);
-      width: u(16rem);
+      width: u(21rem);
       font-size: u(1.8rem);
     }
 
