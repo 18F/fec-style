@@ -58,6 +58,25 @@
   padding-left: u(2rem);
 }
 
+.feature__release-notes {
+  background-position: 0 50%;
+  font-size: u(1.2rem);
+  display: inline-block;
+  line-height: 1;
+  margin: u(1.2rem) 0 u(1.3rem) u(2.5rem);
+
+  &::before {
+    @include u-icon-bg($star, $primary-contrast);
+    background-size: contain;
+    background-position: 0 100%;
+    content: '';
+    display: inline-block;
+    height: u(1.6rem);
+    margin: 0 u(.6rem) 0 u(-2.5rem);
+    width: u(1.6rem);
+  }
+}
+
 // BREAKPOINT: MEDIUM
 // Features span half the screen
 
@@ -97,7 +116,7 @@
     }
 
     .card {
-      min-height: u(29rem);
+      min-height: u(31rem);
     }
 
     .card__image {
@@ -107,7 +126,7 @@
   }
 
   .feature--no-title {
-    padding-top: u(4.2rem);
+    padding-top: u(4.4rem);
   }
 
   &.feature--bulleted {
