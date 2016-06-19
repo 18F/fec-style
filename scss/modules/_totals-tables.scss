@@ -52,8 +52,11 @@
 }
 
 .totals-table__header-data {
+  border-bottom: 1px solid $primary;
   font-size: u(2rem);
   font-weight: bold;
+  padding-bottom: u(1rem);
+  margin-bottom: u(2rem);
 }
 
 .totals-table__row--nested {
