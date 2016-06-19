@@ -28,19 +28,23 @@
 }
 
 .accordion__content {
+  @include clearfix();
   border-bottom: 1px solid $base;
   padding: u(1rem);
+}
+
+.accordion__button--spacious {
+  padding: u(2rem 4rem 2rem 2rem);
 }
 
 .accordion--neutral {
   .accordion__button {
     background-color: $gray-lightest;
-    border-color: $gray;
-    border-top: 1px solid $gray;
+    border-top: 1px solid $primary;
 
     &[aria-expanded='true'] {
       background-color: $gray-light;
-      border-top: 1px solid $base;
+      border-bottom: 1px solid $gray;
     }
   }
 
