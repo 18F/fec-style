@@ -73,24 +73,22 @@
 }
 
 .tooltip--under {
-  max-width: u(30rem);
+  width: u(30rem);
+  right: u(-14rem);
+  top: u(3rem);
 
   &::before {
-    @include triangle(2rem, $primary, up);
+    background-image: url('../img/tooltip-point.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
     content: '';
     display: block;
     position: absolute;
-    left: u(4rem);
+    left: 50%;
+    margin-left: u(-1rem);
     top: u(-1rem);
-  }
-
-  &::after {
-    @include triangle(1.6rem, $inverse, up);
-    content: '';
-    display: block;
-    position: absolute;
-    left: u(4.2rem);
-    top: u(-.7rem);
+    width: u(2rem);
+    height: u(2rem);
   }
 }
 
@@ -111,7 +109,11 @@
 // Styleguide components.tooltips.learn-more
 
 .tooltip__container {
-  display: block;
+  width: u(2rem);
+  height: u(2rem);
+  display: inline-block;
+  position: relative;
+  text-align: center;
 
   .tooltip__trigger-text {
     display: inline-block;
@@ -124,12 +126,11 @@
 
 .tooltip__trigger {
   @include u-icon-bg($info-circle-outline, $primary);
-  background-position: 100% 50%;
+  background-position: 50% 50%;
   background-size: contain;
   cursor: pointer;
   display: inline-block;
   height: 1.5em;
-  padding-right: 1.5em;
   vertical-align: middle;
   width: 1.5em;
 
@@ -170,7 +171,6 @@
 .tooltip--chart {
   display: none;
   position: absolute;
-  width: u(30rem);
 
   .tooltip__title {
     margin-bottom: u(1rem);

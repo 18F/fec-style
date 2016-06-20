@@ -564,6 +564,6 @@
   }
 
   .cal-list__category {
-    @include span-columns(2 of 10);
+    @include span-columns(3 of 10);
   }
 }
