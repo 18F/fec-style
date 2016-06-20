@@ -82,7 +82,10 @@
   padding: 0;
 
   .hero__content {
+    @include span-columns(8);
+    @include shift(2);
     padding: u(2rem 0);
+    text-align: center;
   }
 }
 
