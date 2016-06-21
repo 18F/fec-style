@@ -218,11 +218,19 @@
 // Event details
 .cal-details {
   font-size: u(1.4rem);
+  left: auto;
+  top: auto;
   margin-top: u(1rem);
   padding: 0;
   text-align: left;
   width: u(26rem);
   white-space: initial;
+
+  &::before {
+    @include triangle(2rem, $primary, up);
+    background-image: none;
+    left: 20%;
+  }
 
   .button--close--primary {
     position: absolute;
