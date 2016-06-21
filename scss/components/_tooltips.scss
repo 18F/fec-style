@@ -73,9 +73,10 @@
 }
 
 .tooltip--under {
+  $top: u(1rem);
   width: u(30rem);
-  right: u(-14rem);
-  top: u(3rem);
+  left: u(-14rem);
+  top: calc(100% + #{$top});
 
   &::before {
     background-image: url('../img/tooltip-point.svg');
@@ -83,12 +84,17 @@
     background-size: contain;
     content: '';
     display: block;
-    position: absolute;
+    height: u(2rem);
     left: 50%;
     margin-left: u(-1rem);
+    position: absolute;
     top: u(-1rem);
     width: u(2rem);
-    height: u(2rem);
+  }
+
+  &.tooltip--left {
+    left: auto;
+    right: u(-14rem);
   }
 }
 
@@ -97,8 +103,8 @@
 // For tooltips on regular DOM elements (rather than on maps) that contain additional info
 //
 // Markup:
+// <label class="label tooltip__trigger-text">Select something</label>
 // <div class="tooltip__container">
-//   <label class="label tooltip__trigger-text">Select something</label>
 //   <button class="tooltip__trigger"><span class="u-visually-hidden">Learn more</span></button>
 //   <div class="tooltip tooltip--under">
 //     <p class="tooltip__content">Learn more about this thing!</p>
