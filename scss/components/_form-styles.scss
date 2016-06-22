@@ -53,8 +53,7 @@
 }
 
 .select--alt-primary {
-  background-image: url('../img/i-down--inverse.png');
-  background-image: url('../img/i-down--inverse.svg');
+  @include u-icon-bg($arrow-down, $inverse);
   border: 2px solid $inverse;
   color: $inverse;
 
@@ -79,8 +78,7 @@
 }
 
 .select--alt-secondary {
-  background-image: url('../img/i-down--inverse.png');
-  background-image: url('../img/i-down--inverse.svg');
+  @include u-icon-bg($arrow-down, $inverse);
   border: 2px solid $inverse;
   color: $inverse;
 

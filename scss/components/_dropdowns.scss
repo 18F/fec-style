@@ -35,8 +35,7 @@
 
   &.button--alt-primary::after,
   &.button--alt-secondary::after {
-    background-image: url('../img/i-down--inverse.png');
-    background-image: url('../img/i-down--inverse.svg');
+    @include u-icon-bg($arrow-down, $inverse);
     border-left: 1px solid $inverse;
   }
 }

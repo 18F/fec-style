@@ -128,14 +128,12 @@
   }
 
   [type="checkbox"]:checked + label::before {
-    background-image: url('../img/i-check--base.png');
-    background-image: url('../img/i-check--base.svg');
+    @include u-icon-bg($check, $base);
     background-color: $inverse;
   }
 
   select {
-    background-image: url('../img/i-down--inverse.png');
-    background-image: url('../img/i-down--inverse.svg');
+    @include u-icon-bg($arrow-down, $inverse);
     border: 2px solid $inverse;
     color: $inverse;
 
