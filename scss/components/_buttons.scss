@@ -393,8 +393,8 @@
   @include u-icon-button($signal, left);
 }
 
-.button--cal {
-  @include u-icon-button($calendar, left);
+.button--grid {
+  @include u-icon-button($grid, left);
   height: u(3.4rem);
   width: u(9rem);
 }
