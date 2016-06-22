@@ -22,6 +22,16 @@
   }
 }
 
+.overview__methodology {
+  max-height: u(30rem);
+  overflow-y: scroll;
+
+  p,
+  li {
+    font-size: 1.4rem;
+  }
+}
+
 .top-list {
   border-style: solid;
   border-color: $base;
