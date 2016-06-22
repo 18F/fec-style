@@ -73,7 +73,7 @@
   padding-top: u(1rem);
 
   @include media($lg) {
-    @include span-columns(6);
+    @include span-columns(8);
   }
 }
 
