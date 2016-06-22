@@ -278,16 +278,19 @@
   .card__icon {
     &.i-calendar {
       @include u-icon-bg($calendar, $secondary-contrast);
-      background-position: 60% 50%;
-      background-size: 40%;
+      background-position: 50% 50%;
+      background-size: 60%;
     }
 
     &.i-info-person {
       @include u-icon-bg($info-person, $secondary-contrast);
+      background-position: 50% 110%;
+      background-size: 100%;
     }
 
     &.i-training {
-      @include u-icon-bg($training, $primary-contrast);
+      @include u-icon-bg($training, $secondary-contrast);
+      background-size: 60%;
     }
   }
 }
