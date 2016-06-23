@@ -114,3 +114,13 @@
   padding-left: u(3rem);
 }
 
+.icon-heading--calendar-circle {
+  &::before {
+    $size: u(2.5rem);
+    @include u-icon-circle($calendar, $secondary, $inverse, $size);
+    content: '';
+    float: left;
+    margin-right: 1rem;
+  }
+}
+
