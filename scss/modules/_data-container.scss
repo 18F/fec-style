@@ -60,6 +60,11 @@
 // Data-container shrinks and floats
 
 @include media($lg) {
+  .data-container__wrapper {
+    display: table;
+    width: 100%;
+  }
+
   .data-container {
     padding: 0;
   }

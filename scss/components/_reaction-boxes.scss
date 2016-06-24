@@ -36,44 +36,19 @@
   position: relative;
   overflow: hidden;
 
-  .reaction--informative {
-    background-image: url('../img/reaction-informative.svg');
-    background-repeat: no-repeat;
-    background-position: u(3rem) 50%;
-
-    &::before {
-      margin-right: u(3.5rem);
-    }
-  }
-
-  .reaction--confusing {
-    background-image: url('../img/reaction-confusing.svg');
-    background-repeat: no-repeat;
-    background-position: u(3rem) 50%;
-
-    &::before {
-      margin-right: u(3.5rem);
-    }
-  }
-
-  .reaction--not-interested {
-    background-image: url('../img/reaction-not-interested.svg');
-    background-repeat: no-repeat;
-    background-position: u(3rem) 50%;
-
-    &::before {
-      margin-right: u(3.5rem);
-    }
-  }
-
   textarea {
     height: u(11rem);
+    margin-bottom: u(1rem);
+  }
+
+  li {
     margin-bottom: u(1rem);
   }
 }
 
 .reaction-box__heading {
   @include u-icon-bg($question-circle, $primary);
+  display: block;
   font-size: u(1.6rem);
   font-weight: bold;
   line-height: 1.2;

@@ -120,6 +120,10 @@ function Typeahead(selector, type, url) {
 
   this.init(type || 'candidates');
 
+  this.$element = this.$input.parent('.twitter-typeahead');
+  this.$element.css('display', 'block');
+  this.$element.find('.tt-menu').attr('aria-live', 'polite');
+
   events.on('searchTypeChanged', this.handleChangeEvent.bind(this));
 }
 
@@ -130,7 +134,6 @@ Typeahead.prototype.init = function(type) {
   this.dataset = datasets[type];
   this.typeahead = this.$input.typeahead(typeaheadOpts, this.dataset);
   this.$input.on('typeahead:select', this.select.bind(this));
-  $('.twitter-typeahead').css('display', 'block');
 };
 
 Typeahead.prototype.handleChangeEvent = function(data) {

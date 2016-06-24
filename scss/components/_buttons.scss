@@ -525,3 +525,24 @@
     }
   }
 }
+
+.button--informative {
+  background-image: url('../img/reaction-informative.svg');
+  background-repeat: no-repeat;
+  background-position: u(1rem) 50%;
+  padding-left: u(4rem);
+}
+
+.button--confusing {
+  background-image: url('../img/reaction-confusing.svg');
+  background-repeat: no-repeat;
+  background-position: u(1rem) 50%;
+  padding-left: u(4rem);
+}
+
+.button--not-interested {
+  background-image: url('../img/reaction-not-interested.svg');
+  background-repeat: no-repeat;
+  background-position: u(1rem) 50%;
+  padding-left: u(4rem);
+}
