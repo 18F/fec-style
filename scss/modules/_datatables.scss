@@ -122,7 +122,7 @@
     padding: u(1rem);
     border-left: 1px solid $neutral;
 
-    &.currency-column {
+    &.column--number {
       text-align: right;
     }
 
@@ -264,5 +264,27 @@
 
   .cell--#{$width} {
     @include cell-width($width);
+  }
+}
+
+.column--small {
+  width: 80px;
+}
+
+.column--med {
+  width: 15%;
+}
+
+.column--large {
+  width: 20%;
+}
+
+.column--xl {
+  width: 30%;
+}
+
+.panel-active {
+  .column--xl {
+    width: 50%;
   }
 }
