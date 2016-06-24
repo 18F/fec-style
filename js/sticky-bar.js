@@ -1,6 +1,7 @@
 'use strict';
 
 var $ = require('jquery');
+var helpers = require('./helpers');
 
 function StickyBar(selector) {
   this.$body = $('body');
@@ -13,14 +14,16 @@ function StickyBar(selector) {
 }
 
 StickyBar.prototype.toggle = function() {
-  var scrollTop = this.$body.scrollTop();
-  if (scrollTop >= this.offset + this.triggerOffset) {
-    var height = this.$bar.outerHeight();
-    this.$bar.addClass('is-stuck');
-    this.$body.css('padding-top', height);
-  } else if (scrollTop < this.offset) {
-    this.$bar.removeClass('is-stuck');
-    this.$body.css('padding-top', this.defaultBodyPadding);
+  if (helpers.isLargeScreen()) {
+    var scrollTop = this.$body.scrollTop();
+    if (scrollTop >= this.offset + this.triggerOffset) {
+      var height = this.$bar.outerHeight();
+      this.$bar.addClass('is-stuck');
+      this.$body.css('padding-top', height);
+    } else if (scrollTop < this.offset) {
+      this.$bar.removeClass('is-stuck');
+      this.$body.css('padding-top', this.defaultBodyPadding);
+    }
   }
 };
 
