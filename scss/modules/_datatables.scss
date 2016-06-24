@@ -71,14 +71,15 @@
     letter-spacing: -.3px;
     padding: u(.5rem 1rem);
     border-bottom: 1px solid $primary;
+    border-left: 1px solid $neutral;
 
     &.sorting,
     &.sorting_asc,
     &.sorting_desc {
-      background-position: 0 50%;
+      background-position: calc(100% - 1rem) 50%;
       background-repeat: no-repeat;
       cursor: pointer;
-      padding-left: u(2rem);
+      padding-right: u(2rem);
     }
 
     &.sorting {
@@ -95,12 +96,21 @@
       @include u-icon-bg($arrow-down-border, $primary);
       background-size: u(1rem);
     }
+
+    &:last-child,
+    &:first-child {
+      border-left: none;
+    }
   }
 
   tr {
     border-left-width: 0;
     background-color: $inverse;
     border-bottom: 1px solid $neutral;
+
+    &:nth-child(even) {
+      background-color: rgba($gray-lightest, .5);
+    }
 
     &.row-active {
       border-left: .5rem solid $primary;
@@ -109,8 +119,21 @@
 
   td {
     @include transition(padding-left, .2s);
-    @include u-truncate();
     padding: u(1rem);
+    border-left: 1px solid $neutral;
+
+    &.currency-column {
+      text-align: right;
+    }
+
+    &.no-wrap {
+      white-space: nowrap;
+    }
+
+    &:last-child,
+    &:first-child {
+      border-left: none;
+    }
   }
 
   .sorting_disabled {
@@ -125,8 +148,7 @@
   @include media($lg) {
     th,
     td {
-      padding-left: u(2rem);
-      padding-right: u(1rem);
+      padding: u(1rem);
     }
   }
 
@@ -184,15 +206,6 @@
     position: absolute;
     top: 50%;
     width: u(1rem);
-  }
-}
-
-// For wrapping long table cells instead of truncating
-.data-table--wrapped {
-  td {
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-    overflow: visible;
   }
 }
 
