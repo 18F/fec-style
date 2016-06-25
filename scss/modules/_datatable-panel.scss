@@ -3,8 +3,7 @@
 // Styleguide modules.datatable-panel
 
 .panel__main {
-  @include transform(translate3D(0%, 0, 0));
-  @include transition(left .2s ease-in);
+  @include clearfix();
   left: 0;
   clear: both;
   position: relative;
@@ -167,6 +166,10 @@
   .panel-active {
     .panel__main {
       max-height: 100%;
+      position: relative;
+    }
+
+    .data-table {
       position: relative;
     }
   }

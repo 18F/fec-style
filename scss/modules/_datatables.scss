@@ -90,15 +90,23 @@
     &.sorting_asc {
       @include u-icon-bg($arrow-up-border, $primary);
       background-size: u(1rem);
+      background-color: $gray-lightest;
     }
 
     &.sorting_desc {
       @include u-icon-bg($arrow-down-border, $primary);
       background-size: u(1rem);
+      background-color: $gray-lightest;
     }
 
-    &:last-child,
     &:first-child {
+      border-left: none;
+    }
+
+    &.column--trigger {
+      width: 30px;
+      padding: 0;
+      text-align: center;
       border-left: none;
     }
   }
@@ -120,17 +128,24 @@
   td {
     @include transition(padding-left, .2s);
     padding: u(1rem);
+    overflow: hidden;
     border-left: 1px solid $neutral;
 
     &.column--number {
       text-align: right;
     }
 
+    &.column--trigger {
+      width: 30px;
+      padding: 0;
+      text-align: center;
+      border-left: none;
+    }
+
     &.no-wrap {
       white-space: nowrap;
     }
 
-    &:last-child,
     &:first-child {
       border-left: none;
     }
@@ -267,24 +282,37 @@
   }
 }
 
-.column--small {
-  width: 80px;
-}
+@include media($med) {
+  .column--small {
+    width: 90px;
+  }
 
-.column--med {
-  width: 15%;
-}
+  .column--med {
+    width: 15%;
+  }
 
-.column--large {
-  width: 20%;
-}
+  .column--large {
+    width: 20%;
+  }
 
-.column--xl {
-  width: 30%;
-}
-
-.panel-active {
   .column--xl {
-    width: 50%;
+    width: 30%;
+  }
+
+  .panel-active {
+    .column--xl,
+    .column--large {
+      width: 50%;
+    }
+
+    .column--med {
+      width: 25%;
+    }
+  }
+}
+
+@include media($lg) {
+  .column--med {
+    width: 12%;
   }
 }
