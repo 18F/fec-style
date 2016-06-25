@@ -132,10 +132,11 @@
   width: 100%;
 
   @include media($med) {
-    @include u-background-image('wordmark', 0% 50%);
+    @include u-background-image('wordmark', u(12rem) 50%);
     background-size: contain;
     display: block;
-    margin: u(1rem 0 .7rem 12rem);
+    margin: u(1rem 0 .7rem 0);
+    padding-left: u(12rem);
     height: u(3.4rem);
     width: 100%;
   }
