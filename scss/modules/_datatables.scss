@@ -104,8 +104,7 @@
     }
 
     &.column--trigger {
-      width: 30px;
-      padding: 0;
+      width: 40px;
       text-align: center;
       border-left: none;
     }
@@ -136,10 +135,9 @@
     }
 
     &.column--trigger {
-      width: 30px;
-      padding: 0;
+      width: 40px;
+      padding: 0 u(1rem);
       text-align: center;
-      border-left: none;
     }
 
     &.no-wrap {
@@ -169,7 +167,6 @@
 
   // Special styles for tables that use `offsetX: true`
   &.scrollX {
-    border-collapse: separate;
     table-layout: auto;
   }
 }
@@ -283,6 +280,10 @@
 }
 
 @include media($med) {
+  .column--state {
+    width: 50px;
+  }
+
   .column--small {
     width: 90px;
   }
