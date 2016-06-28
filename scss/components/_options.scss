@@ -17,6 +17,9 @@
 //         <img src="img/guide--candidates.jpg" alt="Federal Election Commission Campaign Guide: Congressional Candidates and Committees, June 2014">
 //       </a>
 //       <a class="t-sans" href="http://www.fec.gov/pdf/candgui.pdf">(PDF)</a>
+//       <div class="icon-heading--calendar--secondary option__aside__alt-action">
+//         <a href="#">Reporting deadlines</a>
+//       </div>
 //     </div>
 //   </div>
 // </section>
@@ -36,6 +39,10 @@
 .option__aside {
   @include span-columns(4);
   padding-top: u(2rem);
+}
+
+.option__aside__alt-action {
+  margin-top: u(1rem);
 }
 
 @include media($lg) {

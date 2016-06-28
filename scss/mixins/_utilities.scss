@@ -63,6 +63,25 @@
   background-repeat: no-repeat;
 }
 
+// u-icon-circle()
+//
+// Generates a circle with a background color and an icon within that circle
+// Can be used in pseudo-elements to create a quasi-background image
+//
+// Styleguide mixins.icon-circle
+
+@mixin u-icon-circle($icon, $circlecolor, $iconcolor, $size) {
+  @include u-icon-bg($icon, $iconcolor);
+  background-position: 50% 50%;
+  background-size: 60%;
+  background-color: $circlecolor;
+  border-radius: $size;
+  display: block;
+  height: $size;
+  width: $size;
+}
+
+
 // u-font-color()
 //
 // Used to set the color of all child elements
