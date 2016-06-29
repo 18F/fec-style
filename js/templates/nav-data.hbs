@@ -57,10 +57,10 @@
       </div>
       <div class="mega__column">
         <div class="mega-heading--sub">
-          <h4 class="mega-heading__title icon-heading--receipts"><a href="{{webAppUrl}}/receipts/?is_individual=true&max_date={{today}}">Receipts - all</a></h4>
+          <h4 class="mega-heading__title icon-heading--receipts"><a href="{{webAppUrl}}/receipts/?is_individual=true">Receipts - all</a></h4>
         </div>
         <ul>
-          <li class="mega__item"><a href="{{webAppUrl}}/receipts/individual-contributions/?is_individual=true&max_date={{today}}">Individual contributions</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/receipts/individual-contributions/">Individual contributions</a></li>
           <li class="mega__item is-disabled">Contributions from other committees</li>
         </ul>
       </div>
@@ -69,7 +69,7 @@
           <h4 class="mega-heading__title icon-heading--filings">Filings</h4>
         </div>
         <ul>
-          <li class="mega__item"><a href="{{webAppUrl}}/filings">All filings</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/filings/?max_receipt_date={{today}}">All filings</a></li>
           <li class="mega__item is-disabled">Authorized committee reports</li>
           <li class="mega__item is-disabled">Unauthorized committee reports</li>
         </ul>
@@ -91,7 +91,7 @@
           <h4 class="mega-heading__title icon-heading--disbursements">Spending</h4>
         </div>
         <ul>
-          <li class="mega__item"><a href="{{webAppUrl}}/disbursements/?max_date={{today}}">All disbursements</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/disbursements/">All disbursements</a></li>
           <li class="mega__item mega__item__sub is-disabled">Operating expenditures</li>
           <li class="mega__item mega__item__sub is-disabled">Expenditures to committees</li>
           <li class="mega__item"><a href="{{webAppUrl}}/independent-expenditures?max_date={{today}}">Independent expenditures</a></li>

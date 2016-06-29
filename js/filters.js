@@ -13,6 +13,7 @@ require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
 var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 var FilterControl = require('./filter-control').FilterControl;
+var moment = require('moment');
 
 var cyclesTemplate = require('./templates/election-cycles.hbs');
 
@@ -225,12 +226,18 @@ DateFilter.prototype.setValue = function(value) {
 };
 
 DateFilter.prototype.handleModifyEvent = function(e, opts) {
+  var today = new Date();
   // Sets min and max years based on the transactionPeriod filter
   if (opts.filterName === this.name) {
     this.maxYear = parseInt(opts.filterValue);
     this.minYear = this.maxYear - 1;
     this.$minDate.val('01-01-' + this.minYear.toString()).change();
-    this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+    if (this.maxYear === today.getFullYear()) {
+      today = moment(today).format('MM-DD-YYYY');
+      this.$maxDate.val(today).change();
+    } else {
+      this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+    }
     this.validate();
   }
 };
