@@ -438,6 +438,10 @@
   border-color: $primary;
   padding: u(0 .5rem);
   border-radius: 3px;
+
+  .tooltip__trigger {
+    margin-top: -2px;
+  }
 }
 
 .cal-list__event-title {
