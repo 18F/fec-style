@@ -67,6 +67,8 @@ TypeaheadFilter.prototype.typeaheadInit = function() {
   } else {
     this.$field.typeahead({minLength: 3}, this.dataset);
   }
+
+  this.$body.find('.tt-menu').attr('aria-live', 'polite');
 };
 
 TypeaheadFilter.prototype.setFirstItem = function() {

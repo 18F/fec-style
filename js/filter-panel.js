@@ -43,13 +43,6 @@ FilterPanel.prototype.setInitialDisplay = function() {
   }
 };
 
-FilterPanel.prototype.setHeight = function() {
-  if (helpers.getWindowWidth() >= helpers.BREAKPOINTS.LARGE &&
-      this.$dataContainer.height() > this.$body.height()) {
-    this.$body.css('min-height', this.$dataContainer.height());
-  }
-};
-
 FilterPanel.prototype.show = function() {
   this.$body.addClass('is-open').attr('aria-hidden', false);
   this.$toggle.attr('aria-hidden', true);

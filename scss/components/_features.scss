@@ -63,7 +63,7 @@
   font-size: u(1.2rem);
   display: inline-block;
   line-height: 1;
-  margin: u(1.2rem) 0 u(1.3rem) u(2.5rem);
+  margin: u(2.3rem) 0 u(1.3rem) u(2.5rem);
 
   &::before {
     @include u-icon-bg($star, $primary-contrast);
@@ -126,7 +126,7 @@
   }
 
   .feature--no-title {
-    padding-top: u(4.4rem);
+    padding-top: u(5.5rem);
   }
 
   &.feature--bulleted {

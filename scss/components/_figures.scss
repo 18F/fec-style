@@ -31,7 +31,11 @@
 }
 
 .figure__decimals {
-  color: $gray;
+  color: $gray-dark;
   font-weight: normal;
   letter-spacing: 3px;
+
+  &[aria-hidden="true"] {
+    display: inline !important;
+  }
 }
