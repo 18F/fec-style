@@ -174,7 +174,9 @@
 
 @include media($med) {
   .site-nav__container {
-    top: u(11.6rem);
+    $top: u(11.6rem);
+    height: calc(100vh - #{$top});
+    top: $top;
   }
 
   .site-nav__button {
@@ -197,6 +199,7 @@
     @include clearfix();
     @include transform(translateX(0));
     background: $inverse;
+    height: auto;
     float: left;
     overflow: visible;
     position: relative;
