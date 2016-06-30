@@ -46,11 +46,11 @@ describe('SiteNav', function() {
 
   describe('constructor()', function() {
     it('should set body to jqueryized selector', function() {
-      expect(this.siteNav.$body).to.be.ok;
-      expect(this.siteNav.$body.length).to.be.ok;
+      expect(this.siteNav.$element).to.be.ok;
+      expect(this.siteNav.$element.length).to.be.ok;
       expect(this.siteNav.$menu.length).to.be.ok;
       expect(this.siteNav.$toggle.length).to.be.ok;
-      expect(this.siteNav.$body.is(this.$fixture.find('nav'))).to.be.true;
+      expect(this.siteNav.$element.is(this.$fixture.find('nav'))).to.be.true;
     });
   });
 
@@ -115,13 +115,13 @@ describe('SiteNav', function() {
     describe('toggle()', function() {
       function isOpen(siteNav) {
         return siteNav.isOpen &&
-          siteNav.$body.hasClass('is-open') &&
+          siteNav.$element.hasClass('is-open') &&
           siteNav.$menu.attr('aria-hidden') === 'false' &&
           siteNav.$toggle.hasClass('active');
       }
       function isClosed(siteNav) {
         return !siteNav.isOpen &&
-          !siteNav.$body.hasClass('is-open') &&
+          !siteNav.$element.hasClass('is-open') &&
           siteNav.$menu.attr('aria-hidden') !== 'false'  &&
           !siteNav.$toggle.hasClass('active');
       }
@@ -136,13 +136,13 @@ describe('SiteNav', function() {
 
     describe('mobile panels', function() {
       it('should show a panel when clicking a target', function() {
-        this.siteNav.$body.find('.js-panel-trigger[aria-controls="nav-advanced"]').click();
-        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('false');
+        this.siteNav.$element.find('.js-panel-trigger[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$element.find('#nav-advanced').attr('aria-hidden')).to.equal('false');
       });
 
       it('should hide a panel when clicking the back button', function() {
-        this.siteNav.$body.find('.js-panel-close[aria-controls="nav-advanced"]').click();
-        expect(this.siteNav.$body.find('#nav-advanced').attr('aria-hidden')).to.equal('true');
+        this.siteNav.$element.find('.js-panel-close[aria-controls="nav-advanced"]').click();
+        expect(this.siteNav.$element.find('#nav-advanced').attr('aria-hidden')).to.equal('true');
       });
     });
   });
@@ -163,11 +163,11 @@ describe('SiteNav', function() {
       });
 
       it('should remove the mega menu', function() {
-        expect(this.siteNav.$body.find('.mega').length).to.equal(0);
+        expect(this.siteNav.$element.find('.mega').length).to.equal(0);
       });
 
       it('should instantiate the small menu', function() {
-        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(1);
+        expect(this.siteNav.$element.find('.js-mobile-nav').length).to.equal(1);
       });
     });
 
@@ -187,7 +187,7 @@ describe('SiteNav', function() {
 
       it('should remove the mobile menu if the screen gets big', function() {
         this.siteNav.switchMenu();
-        expect(this.siteNav.$body.find('.js-mobile-nav').length).to.equal(0);
+        expect(this.siteNav.$element.find('.js-mobile-nav').length).to.equal(0);
       });
     });
   });
