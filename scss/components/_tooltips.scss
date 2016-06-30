@@ -73,24 +73,28 @@
 }
 
 .tooltip--under {
-  max-width: u(30rem);
+  $top: u(1rem);
+  width: u(30rem);
+  left: u(-14rem);
+  top: calc(100% + #{$top});
 
   &::before {
-    @include triangle(2rem, $primary, up);
+    background-image: url('../img/tooltip-point.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
     content: '';
     display: block;
+    height: u(2rem);
+    left: 50%;
+    margin-left: u(-1rem);
     position: absolute;
-    left: u(4rem);
     top: u(-1rem);
+    width: u(2rem);
   }
 
-  &::after {
-    @include triangle(1.6rem, $inverse, up);
-    content: '';
-    display: block;
-    position: absolute;
-    left: u(4.2rem);
-    top: u(-.7rem);
+  &.tooltip--left {
+    left: auto;
+    right: u(-14rem);
   }
 }
 
@@ -99,8 +103,8 @@
 // For tooltips on regular DOM elements (rather than on maps) that contain additional info
 //
 // Markup:
+// <label class="label tooltip__trigger-text">Select something</label>
 // <div class="tooltip__container">
-//   <label class="label tooltip__trigger-text">Select something</label>
 //   <button class="tooltip__trigger"><span class="u-visually-hidden">Learn more</span></button>
 //   <div class="tooltip tooltip--under">
 //     <p class="tooltip__content">Learn more about this thing!</p>
@@ -111,7 +115,11 @@
 // Styleguide components.tooltips.learn-more
 
 .tooltip__container {
-  display: block;
+  width: u(2rem);
+  height: u(2rem);
+  display: inline-block;
+  position: relative;
+  text-align: center;
 
   .tooltip__trigger-text {
     display: inline-block;
@@ -124,12 +132,11 @@
 
 .tooltip__trigger {
   @include u-icon-bg($info-circle-outline, $primary);
-  background-position: 100% 50%;
+  background-position: 50% 50%;
   background-size: contain;
   cursor: pointer;
   display: inline-block;
   height: 1.5em;
-  padding-right: 1.5em;
   vertical-align: middle;
   width: 1.5em;
 
@@ -170,7 +177,6 @@
 .tooltip--chart {
   display: none;
   position: absolute;
-  width: u(30rem);
 
   .tooltip__title {
     margin-bottom: u(1rem);
