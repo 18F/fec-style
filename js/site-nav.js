@@ -36,6 +36,7 @@ var defaultOpts = {
 
 function SiteNav(selector, opts) {
   this.opts = _.extend({}, defaultOpts, opts);
+  this.$body = $('body');
   this.$element = $(selector);
   this.$menu = this.$element.find('#site-menu');
   this.$toggle = this.$element.find('.js-nav-toggle');
@@ -116,6 +117,7 @@ SiteNav.prototype.toggleMenu = function() {
 };
 
 SiteNav.prototype.showMenu = function() {
+  this.$body.css({'overflow': 'hidden'});
   this.$element.addClass('is-open');
   this.$toggle.addClass('active');
   this.$menu.attr('aria-hidden', false);
@@ -123,7 +125,6 @@ SiteNav.prototype.showMenu = function() {
 };
 
 SiteNav.prototype.hideMenu = function() {
-  this.$body.removeClass('is-open');
   this.$body.css({'overflow': 'auto'});
   this.$element.removeClass('is-open');
   this.$toggle.removeClass('active');
