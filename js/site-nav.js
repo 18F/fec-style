@@ -1,6 +1,6 @@
 'use strict';
 
-/* global document */
+/* global */
 
 var $ = require('jquery');
 var _ = require('underscore');
@@ -10,7 +10,7 @@ var typeahead = require('./typeahead');
 
 window.$ = window.jQuery = $;
 
-require('./vendor/jquery-accessibleMegaMenu');
+require('accessible-mega-menu');
 
 var TEMPLATES = {
   data: require('./templates/nav-data.hbs'),
@@ -36,9 +36,10 @@ var defaultOpts = {
 
 function SiteNav(selector, opts) {
   this.opts = _.extend({}, defaultOpts, opts);
-  this.$body = $(selector);
-  this.$menu = this.$body.find('#site-menu');
-  this.$toggle = this.$body.find('.js-nav-toggle');
+  this.$body = $('body');
+  this.$element = $(selector);
+  this.$menu = this.$element.find('#site-menu');
+  this.$toggle = this.$element.find('.js-nav-toggle');
 
   this.assignAria();
 
@@ -46,8 +47,8 @@ function SiteNav(selector, opts) {
 
   $(window).on('resize', this.switchMenu.bind(this));
   // Open and close the menu on mobile
-  this.$body.on('click', '.js-panel-trigger', this.showPanel.bind(this));
-  this.$body.on('click', '.js-panel-close', this.hidePanel.bind(this));
+  this.$element.on('click', '.js-panel-trigger', this.showPanel.bind(this));
+  this.$element.on('click', '.js-panel-close', this.hidePanel.bind(this));
   this.$toggle.on('click', this.toggleMenu.bind(this));
 }
 
@@ -63,7 +64,7 @@ SiteNav.prototype.initMenu = function() {
 
 SiteNav.prototype.initMegaMenu = function() {
   var self = this;
-  this.$body.find('[data-submenu]').each(function(){
+  this.$element.find('[data-submenu]').each(function(){
     var id = $(this).data('submenu');
     var submenu = TEMPLATES[id](self.opts);
     $(this).append(submenu);
@@ -77,7 +78,10 @@ SiteNav.prototype.initMegaMenu = function() {
     panelGroupClass: 'mega__group',
     hoverClass: 'is-hover',
     focusClass: 'is-focus',
-    openClass: 'is-open'
+    openClass: 'is-open',
+    selectors: {
+      topNavItems: '[data-submenu]'
+    }
   });
 };
 
@@ -90,11 +94,11 @@ SiteNav.prototype.initMobileMenu = function() {
 
 SiteNav.prototype.switchMenu = function() {
   if (helpers.getWindowWidth() < helpers.BREAKPOINTS.LARGE ) {
-    this.$body.find('.mega').remove();
+    this.$element.find('.mega__inner').remove();
     this.initMobileMenu();
   } else if (this.isMobile) {
     // Note: we don't re-init the mega menu because there's no way to actually destroy it currently
-    this.$body.find('.js-mobile-nav').remove();
+    this.$element.find('.js-mobile-nav').remove();
     this.isMobile = false;
   }
 };
@@ -113,19 +117,21 @@ SiteNav.prototype.toggleMenu = function() {
 };
 
 SiteNav.prototype.showMenu = function() {
-  this.$body.addClass('is-open');
+  this.$body.css({'overflow': 'hidden'});
+  this.$element.addClass('is-open');
   this.$toggle.addClass('active');
   this.$menu.attr('aria-hidden', false);
   this.isOpen = true;
 };
 
 SiteNav.prototype.hideMenu = function() {
-  this.$body.removeClass('is-open');
+  this.$body.css({'overflow': 'auto'});
+  this.$element.removeClass('is-open');
   this.$toggle.removeClass('active');
   this.$menu.attr('aria-hidden', true);
   this.isOpen = false;
   if (this.isMobile) {
-    this.$body.find('[aria-hidden=false]').attr('aria-hidden', true);
+    this.$element.find('[aria-hidden=false]').attr('aria-hidden', true);
   }
 };
 

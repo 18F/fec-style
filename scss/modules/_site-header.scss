@@ -118,6 +118,8 @@
 }
 
 .site-header {
+  position: relative;
+
   @include media($lg) {
     position: relative;
     z-index: $z-header;

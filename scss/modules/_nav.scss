@@ -31,13 +31,14 @@
 }
 
 .site-nav__container {
+  $top: u(6.3rem);
   @include transform(translateX(-100%));
   @include transition(left, .2s, ease-out);
+  height: calc(100vh - #{$top});
   position: absolute;
   left: 0;
   right: 0;
-  top: (6.3rem);
-  bottom: 0;
+  top: $top;
   overflow-x: hidden;
   z-index: $z-navigation;
 
@@ -51,6 +52,7 @@
   background-color: $primary;
   color: $inverse;
   font-size: u(1.6rem);
+  overflow-y: scroll;
   padding: u(1rem 2rem);
   position: absolute;
   top: 0;
@@ -172,7 +174,9 @@
 
 @include media($med) {
   .site-nav__container {
-    top: u(11.6rem);
+    $top: u(11.6rem);
+    height: calc(100vh - #{$top});
+    top: $top;
   }
 
   .site-nav__button {
@@ -195,6 +199,7 @@
     @include clearfix();
     @include transform(translateX(0));
     background: $inverse;
+    height: auto;
     float: left;
     overflow: visible;
     position: relative;
