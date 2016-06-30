@@ -14,16 +14,16 @@ function StickyBar(selector) {
 }
 
 StickyBar.prototype.toggle = function() {
-  if (helpers.isLargeScreen()) {
-    var scrollTop = this.$body.scrollTop();
-    if (scrollTop >= this.offset + this.triggerOffset) {
-      var height = this.$bar.outerHeight();
-      this.$bar.addClass('is-stuck');
-      this.$body.css('padding-top', height);
-    } else if (scrollTop < this.offset) {
-      this.$bar.removeClass('is-stuck');
-      this.$body.css('padding-top', this.defaultBodyPadding);
-    }
+  if (!helpers.isLargeScreen()) { return; }
+
+  var scrollTop = this.$body.scrollTop();
+  if (scrollTop >= this.offset + this.triggerOffset) {
+    var height = this.$bar.outerHeight();
+    this.$bar.addClass('is-stuck');
+    this.$body.css('padding-top', height);
+  } else if (scrollTop < this.offset) {
+    this.$bar.removeClass('is-stuck');
+    this.$body.css('padding-top', this.defaultBodyPadding);
   }
 };
 
