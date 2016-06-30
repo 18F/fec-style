@@ -10,7 +10,7 @@ var typeahead = require('./typeahead');
 
 window.$ = window.jQuery = $;
 
-require('./vendor/jquery-accessibleMegaMenu');
+require('accessible-mega-menu');
 
 var TEMPLATES = {
   data: require('./templates/nav-data.hbs'),

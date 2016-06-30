@@ -23,6 +23,7 @@
     "test-single": "karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
+    "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
     "aria-accordion": "0.1.0",
     "glossary-panel": "0.1.2",
     "eventemitter2": "0.4.14",
