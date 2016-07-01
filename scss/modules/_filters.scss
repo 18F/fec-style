@@ -206,7 +206,6 @@
 
 @include media($lg) {
   .filters {
-    @include transition(left .2s ease-out);
     display: table-cell;
     left: u(-30rem);
     padding: u(2rem 0);

@@ -1,6 +1,7 @@
 'use strict';
 
 var $ = require('jquery');
+var helpers = require('./helpers');
 
 function StickyBar(selector) {
   this.$body = $('body');
@@ -13,6 +14,8 @@ function StickyBar(selector) {
 }
 
 StickyBar.prototype.toggle = function() {
+  if (!helpers.isLargeScreen()) { return; }
+
   var scrollTop = this.$body.scrollTop();
   if (scrollTop >= this.offset + this.triggerOffset) {
     var height = this.$bar.outerHeight();
