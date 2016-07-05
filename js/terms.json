@@ -152,6 +152,22 @@
     "term": "Operating expenditures",
     "definition": "A committee's day-to-day expenditures for items such as rent, overhead, administration, personnel, equipment, travel, advertising and fundraising."
   },
+     {
+    "term": "Leadership PAC",
+    "definition": "A political committee that is directly or indirectly established, financed, maintained or controlled by a candidate or an individual holding federal office, but is not an authorized committee of the candidate or officeholder and is not affiliated with an authorized committee of a candidate or officeholder."
+  },
+     {
+    "term": "Super PAC",
+    "definition": "A committee that intends to make independent expenditures, and — consistent with the U.S. Court of Appeals for the District of Columbia Circuit decision in SpeechNow v. FEC — it therefore intends to raise funds in unlimited amounts. This committee will not use those funds to make contributions, whether direct, in-kind or via coordinated communications, to federal candidates or committees."
+  },
+     {
+    "term": "Hybrid PAC",
+    "definition": "A committee that intends to establish a separate bank account to deposit and withdraw funds raised in unlimited amounts from individuals, corporations, labor organizations and/or other political committees, consistent with the stipulated judgment in Carey v. FEC.  The funds maintained in this separate account will not be used to make contributions, whether direct, in-kind or via coordinated communications, or coordinated expenditures, to federal candidates or committees."
+  },
+     {
+    "term": "Lobbyist/Registrant PAC",
+    "definition": "Any political committee established or controlled by a person who is a current registrant under Lobbying Disclosure Act or an individual who is named on a current registration or report filed under the Lobbying Disclosure Act."
+  },
   {
     "term": "Exempt party activities",
     "definition": "Certain candidate support activities that state and local party groups may undertake without making a contribution or expenditure, provided specific rules are followed."
