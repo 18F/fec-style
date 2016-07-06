@@ -5,15 +5,26 @@
 var URI = require('urijs');
 var _ = require('underscore');
 
-function init() {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+function trackerExists() {
+  if (typeof ga !== 'undefined') {
+    return true;
+  }
+}
 
-  ga('set', 'forceSSL', true);
-  ga('set', 'anonymizeIp', true);
-  ga('create', 'UA-48605964-22', 'auto');
+/* Initialize a non Digital Analytics Program GA tracker
+ * This tracker's name is "nonDAP", so all commands will need to be prefixed
+*/
+function init() {
+  if (!trackerExists) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+
+  ga('create', 'UA-48605964-22', 'auto', 'notDAP');
+  ga('notDAP.set', 'forceSSL', true);
+  ga('notDAP.set', 'anonymizeIp', true);
 }
 
 function pageView() {
@@ -23,7 +34,7 @@ function pageView() {
     var query = URI.parseQuery(document.location.search);
     path += '?' + sortQuery(query);
   }
-  ga('send', 'pageview', path);
+  ga('notDAP.send', 'pageview', path);
 }
 
 function sortQuery(query) {
@@ -47,6 +58,7 @@ function sortQuery(query) {
 
 module.exports = {
   init: init,
+  pageView: pageView,
   sortQuery: sortQuery,
-  pageView: pageView
+  trackerExists: trackerExists
 };
