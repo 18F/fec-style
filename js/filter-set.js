@@ -6,8 +6,6 @@ var URI = require('urijs');
 
 var Filter = require('./filters').Filter;
 
-var KEYCODE_ENTER = 13;
-
 function FilterSet(elm) {
   this.$body = $(elm);
   $(document.body).on('tag:removed', this.handleTagRemove.bind(this));
