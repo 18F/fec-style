@@ -61,11 +61,11 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
 
 TypeaheadFilter.prototype.typeaheadInit = function() {
   if (this.allowText && this.dataset) {
-    this.$field.typeahead({minLength: 3}, textDataset, this.dataset);
+    this.$field.typeahead({minLength: 3, hint: false}, textDataset, this.dataset);
   } else if (this.allowText && !this.dataset) {
-    this.$field.typeahead({minLength: 1}, textDataset);
+    this.$field.typeahead({minLength: 1, hint: false}, textDataset);
   } else {
-    this.$field.typeahead({minLength: 3}, this.dataset);
+    this.$field.typeahead({minLength: 3, hint: false}, this.dataset);
   }
 
   this.$body.find('.tt-menu').attr('aria-live', 'polite');
