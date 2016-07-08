@@ -79,6 +79,7 @@ SiteNav.prototype.initMegaMenu = function() {
     hoverClass: 'is-hover',
     focusClass: 'is-focus',
     openClass: 'is-open',
+    openDelay: 350,
     selectors: {
       topNavItems: '[data-submenu]'
     }
