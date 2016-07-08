@@ -39,7 +39,7 @@ FilterSet.prototype.activate = function() {
 };
 
 FilterSet.prototype.serialize = function() {
-  return _.reduce(this.$body.serializeArray(), function(memo, val) {
+  return _.reduce(this.$body.find('input,select').serializeArray(), function(memo, val) {
     if (val.value && val.name.slice(0, 1) !== '_') {
       if (memo[val.name]) {
         memo[val.name].push(val.value);
