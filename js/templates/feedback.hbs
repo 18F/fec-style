@@ -2,16 +2,19 @@
   <button class="js-feedback feedback__toggle button--cta-primary" aria-controls="feedback" aria-expanded="false" type="button">Feedback</button>
   <div id="feedback" class="js-feedback-box feedback" aria-hidden="true">
     <button class="js-feedback button--down feedback__close"><span class="u-visually-hidden">Close</span></button>
-    <div class="js-status message message--inverse" aria-hidden="true">
-      <div class="js-status-content"></div>
+    <div class="js-status" aria-hidden="true">
+      <div class="message message--inverse js-message">
+      </div>
+      <p class="js-ethnio-prompt" aria-hidden="true">Every week, we ask people to try out new features, as we design them. Sign up to join our list of testers.</p>
       <ul class="list--buttons">
-        <li><button class="js-follow button--standard feedback__button" type="button" aria-hidden="true">Track your feedback</button></li>
-        <li><button class="js-reset button--standard feedback__button" type="button">Submit another issue</button></li>
+        <li><button class="js-ethnio button--cta-primary feedback__button" type="button" aria-hidden="true">Sign up</button></li>
+        <li><button class="js-reset button--cta-primary feedback__button" type="button">Submit another issue</button></li>
       </ul>
     </div>
     <form id="feedback-form" class="container">
       <fieldset>
         <legend class="feedback__title">Help us improve betaFEC</legend>
+        <p class="t-sans">Leave feedback here, or <a class="js-ethnio" href="#">sign up</a> to help us test new features.</p>
         <p class="t-sans">Don't include sensitive information like your name, contact information or Social Security number.</p>
         <label for="feedback-1" class="label">What were you trying to do and how can we improve it?*</label>
         <textarea id="feedback-1" name="action"></textarea>

@@ -3,6 +3,7 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var feedback = require('./templates/feedback.hbs');
+var ethnioHelpers = require('./ethnio-helpers');
 
 var statusClasses = {
   success: 'message--success',
@@ -24,14 +25,17 @@ function Feedback(url, parent) {
 
   this.$button = this.$feedback.find('.js-feedback');
   this.$reset = this.$feedback.find('.js-reset');
-  this.$follow = this.$feedback.find('.js-follow');
+  this.$ethnioPrompt = this.$feedback.find('.js-ethnio-prompt');
+  this.$ethnio = this.$feedback.find('.js-ethnio');
   this.$box = this.$feedback.find('.js-feedback-box');
   this.$status = this.$box.find('.js-status');
+  this.$message = this.$box.find('.js-message');
   this.$form = this.$feedback.find('form');
 
   this.$button.on('click', this.toggle.bind(this));
   this.$reset.on('click', this.reset.bind(this));
   this.$form.on('submit', this.submit.bind(this));
+  this.$ethnio.on('click', this.handleEthnio.bind(this));
 }
 
 Feedback.prototype.toggle = function() {
@@ -81,10 +85,10 @@ Feedback.prototype.submit = function(e) {
 Feedback.prototype.handleSuccess = function(response) {
   var message =
     '<h2 class="feedback__title">Thanks for helping us improve</h2>' +
-    '<p>This information has been reported on GitHub, where it\'s publicly visible.</p>';
+    '<p>This information has been reported on GitHub, where it\'s publicly visible. ' +
+    '<a href="' + response.html_url + '">Track the status of your feedback</a>.</p>';
   var buttonText = 'Submit another issue';
   this.$box.find('textarea').val('');
-  this.$follow.attr('href', response.html_url).attr('aria-hidden', false);
   this.message(message, buttonText, 'success');
 };
 
@@ -99,18 +103,26 @@ Feedback.prototype.handleError = function() {
 Feedback.prototype.message = function(text, buttonText, style) {
   var self = this;
   this.$form.attr('aria-hidden', true);
-  self.$status.attr('aria-hidden', false);
-  self.$reset.text(buttonText);
-  self.$status.find('.js-status-content').html(text);
+  this.$status.attr('aria-hidden', false);
+  this.$reset.text(buttonText);
   _.each(statusClasses, function(value) {
-    self.$status.removeClass(value);
+    self.$message.removeClass(value);
   });
-  self.$status.addClass(statusClasses[style]);
+  this.$message.html(text).addClass(statusClasses[style]);
+  if (style === 'success') {
+    this.$ethnioPrompt.attr('aria-hidden', false);
+    this.$ethnio.attr('aria-hidden', false);
+  }
 };
 
 Feedback.prototype.reset = function() {
   this.$form.attr('aria-hidden', false);
   this.$status.attr('aria-hidden', true);
+};
+
+Feedback.prototype.handleEthnio = function(e) {
+  e.preventDefault();
+  ethnioHelpers.checkEthnio();
 };
 
 module.exports = {Feedback: Feedback};
