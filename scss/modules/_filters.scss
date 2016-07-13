@@ -30,8 +30,10 @@
 
   // Styles for when the filters are open
   &.is-open {
-    position: relative;
+    position: absolute;
+    top: -20px;
     left: 0;
+    z-index: 10;
     height: auto;
     padding: u(1rem 0);
 
@@ -220,6 +222,12 @@
     &[aria-hidden="true"] {
       display: table-cell !important;
       padding: 0;
+    }
+
+    &.is-open {
+      position: relative;
+      top: 0;
+      z-index: 0;
     }
   }
 
