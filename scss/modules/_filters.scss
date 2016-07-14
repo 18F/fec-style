@@ -20,27 +20,32 @@
 //
 // Styleguide modules.filters
 
+// by default show filters offscreen
 .filters {
   @include clearfix();
   @include u-bg--neutral();
+  @include transition(top 1s ease-in-out);
+  position: absolute;
   bottom: 0;
-  height: 0;
-  top: 0;
+  height: auto;
+  top: -1500px;
+  z-index: 10;
   width: 100%;
+  padding: u(1rem 0);
+  display: table;
 
-  // Styles for when the filters are open
+  // slide filters down into view when open
   &.is-open {
-    position: absolute;
     top: -20px;
-    left: 0;
-    z-index: 10;
-    height: auto;
-    padding: u(1rem 0);
+  }
 
-    .filters__hider {
-      height: auto;
-      overflow: visible;
-    }
+  &[aria-hidden=true] {
+    display: table !important;
+  }
+
+  .filters__hider {
+    height: auto;
+    overflow: visible;
   }
 
   .accordion__button {
@@ -208,6 +213,7 @@
 
 @include media($lg) {
   .filters {
+    @include transition(unset);
     display: table-cell;
     left: u(-30rem);
     padding: u(2rem 0);
@@ -227,6 +233,7 @@
     &.is-open {
       position: relative;
       top: 0;
+      left: 0;
       z-index: 0;
     }
   }
