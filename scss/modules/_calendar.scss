@@ -433,15 +433,30 @@
 }
 
 .cal-list__category-title {
-  display: inline-block;
+  @include clearfix();
+  display: table;
   border: 1px solid;
   border-color: $primary;
   font-size: u(1.4rem);
   padding: u(2px .5rem);
   border-radius: 3px;
 
-  .tooltip__trigger {
-    margin-top: -2px;
+  .tooltip__trigger-text {
+    border-right: 1px solid $primary;
+    display: table-cell;
+    padding-right: .5rem;
+    line-height: 1.2;
+    vertical-align: middle;
+  }
+
+  .tooltip__container {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: .5rem;
+  }
+
+  .list--bulleted li:last-child {
+    margin-bottom: 0;
   }
 }
 

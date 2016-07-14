@@ -48,6 +48,10 @@
     border-bottom-color: $primary;
     color: $primary;
   }
+
+  li {
+    font-size: u(1.4rem);
+  }
 }
 
 .tooltip--above {
