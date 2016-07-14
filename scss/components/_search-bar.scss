@@ -205,6 +205,10 @@ $search-button-width: u(5.6rem);
   border-bottom: 1px solid $base;
 }
 
+.tt-highlight {
+  background-color: rgba($aqua, .3);
+}
+
 // Specific styles for typeahead filters
 // Just testing things out. Refactor to use non-js class if we use it
 .js-typeahead-filter {
