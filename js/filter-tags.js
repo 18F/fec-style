@@ -53,6 +53,18 @@ TagList.prototype.addTag = function(e, opts) {
   this.$title.html('');
   this.$list.append(tag);
   this.$clear.attr('aria-hidden', false);
+
+  // increment applied filter count
+  var filterLabel = $(e.target).closest('.accordion__content').prev();
+  var filterCount = filterLabel.find('.filter-count');
+
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    filterLabel.append(' <span class="filter-count">1</span>');
+  }
+  // TODO: write unit test
 };
 
 TagList.prototype.removeTag = function(key, emit) {
@@ -62,6 +74,17 @@ TagList.prototype.removeTag = function(key, emit) {
       $tag.trigger('tag:removed', [{key: key}]);
     }
     $tag.remove();
+
+    // decrement applied filter count
+    var filterCount = $('#' + key).closest('.accordion__content').prev().find('.filter-count');
+
+    if (filterCount.html() === '1') {
+      filterCount.remove();
+    }
+    else {
+      filterCount.html(parseInt(filterCount.html(), 10) - 1);
+    }
+    // TODO: write unit test
   }
 
   if (this.$list.find('.tag').length === 0) {
