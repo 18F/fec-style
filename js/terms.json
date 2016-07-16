@@ -168,6 +168,14 @@
     "term": "Lobbyist/Registrant PAC",
     "definition": "Any political committee established or controlled by a person who is a current registrant under Lobbying Disclosure Act or an individual who is named on a current registration or report filed under the Lobbying Disclosure Act."
   },
+     {
+    "term": "Overnight delivery service",
+    "definition": "A private delivery service business of established reliability that offers an overnight (next business day) delivery option."
+  },
+     {
+    "term": "Postmarked",
+    "definition": "A U.S. Postal Service postmark or the verifiable date of deposit with an overnight delivery service. "
+  },
   {
     "term": "Exempt party activities",
     "definition": "Certain candidate support activities that state and local party groups may undertake without making a contribution or expenditure, provided specific rules are followed."
