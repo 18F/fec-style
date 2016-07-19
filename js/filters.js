@@ -42,6 +42,7 @@ function Filter(elm) {
   this.fields = [this.name];
 
   $('body').on('filter:modify', this.handleModifyEvent.bind(this));
+  $('body').on('table:loaded', this.handleDataLoad.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
@@ -108,7 +109,9 @@ Filter.prototype.handleChange = function(e) {
 
   if (type === 'checkbox' || type === 'radio') {
     eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
-    value = $('label[for="' + id + '"]').text();
+    var $label = this.$body.find('label[for="' + id + '"]');
+    $label.addClass('is-loading');
+    value = $label.text();
   } else if (type === 'text') {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();

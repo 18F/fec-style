@@ -219,3 +219,62 @@
 .date-range-input {
   padding-left: u(2.5rem);
 }
+
+// Loading states
+label {
+  &.is-loading {
+    position: relative;
+
+    &::after {
+      @include animation(fadeIn .8s ease-out);
+      background: url('../img/loading-ellipsis.gif') no-repeat;
+      background-size: 2rem;
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: -3rem;
+    }
+  }
+
+  &.is-successful {
+    position: relative;
+
+    &::after {
+      @include u-icon-bg($check, $green-light)
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: -3rem;
+    }
+  }
+
+  &.is-unsuccessful {
+    position: relative;
+
+    &::after {
+      @include u-icon-bg($x, $error)
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      right: -3rem;
+    }
+  }
+}
+
+[type="checkbox"]:checked + label,
+[type="radio"]:checked + label {
+  &.is-loading,
+  &.is-successful {
+    border: 1px solid $green-light;
+  }
+
+  &.is-unsuccessful {
+    border: 1px solid $error;
+  }
+}
