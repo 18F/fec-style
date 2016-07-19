@@ -395,7 +395,7 @@ function MultiFilter(elm) {
   Filter.call(this, elm);
   this.$group = $(this.$body.data('filter-group'));
   this.$input = this.$group.find('input[name=' + this.name + ']');
-};
+}
 
 MultiFilter.prototype = Object.create(Filter.prototype);
 MultiFilter.constructor = MultiFilter;

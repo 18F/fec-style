@@ -10,6 +10,9 @@ var BREAKPOINTS = {
   LARGE: 860
 };
 
+var LOADING_DELAY = 1500;
+var SUCCESS_DELAY = 5000;
+
 var formatMap = {
   default: 'MM-DD-YYYY',
   pretty: 'MMM D, YYYY',
@@ -65,5 +68,7 @@ module.exports = {
   isMediumScreen: isMediumScreen,
   isLargeScreen: isLargeScreen,
   getWindowWidth: getWindowWidth,
-  helpers: Handlebars.helpers
+  helpers: Handlebars.helpers,
+  LOADING_DELAY: LOADING_DELAY,
+  SUCCESS_DELAY: SUCCESS_DELAY
 };
