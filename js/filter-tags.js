@@ -14,7 +14,7 @@ var BODY_TEMPLATE = _.template(
 );
 
 var TAG_TEMPLATE = _.template(
-  '<li data-id="{{ key }}" class="tag">' +
+  '<li data-id="{{ key }}" data-removable="true" class="tag">' +
     '{{ value }}' +
     '<button class="button js-close tag__remove">' +
       '<span class="u-visually-hidden">Remove</span>' +
@@ -52,7 +52,9 @@ TagList.prototype.addTag = function(e, opts) {
   this.removeTag(opts.key, false);
   this.$title.html('');
   this.$list.append(tag);
-  this.$clear.attr('aria-hidden', false);
+  if (!opts.nonremovable) {
+    this.$clear.attr('aria-hidden', false);
+  }
 };
 
 TagList.prototype.removeTag = function(key, emit) {
@@ -64,15 +66,18 @@ TagList.prototype.removeTag = function(key, emit) {
     $tag.remove();
   }
 
+  if (this.$list.find('.tag[data-removable]').length === 0) {
+    this.$clear.attr('aria-hidden', true);
+  }
+
   if (this.$list.find('.tag').length === 0) {
     this.$title.html(this.opts.title);
-    this.$clear.attr('aria-hidden', true);
   }
 };
 
 TagList.prototype.removeAllTags = function(e) {
   var self = this;
-  this.$list.find('[data-id]').each(function(){
+  this.$list.find('[data-removable]').each(function(){
     self.removeTag($(this).data('id'), true);
   });
 };
