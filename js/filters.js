@@ -14,6 +14,7 @@ var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 var FilterControl = require('./filter-control').FilterControl;
 var moment = require('moment');
+var helpers = require('./helpers');
 
 var cyclesTemplate = require('./templates/election-cycles.hbs');
 
@@ -33,6 +34,7 @@ function Filter(elm) {
   this.$body = $(elm);
   this.$input = this.$body.find('input:not([name^="_"])');
   this.$remove = this.$body.find('.button--remove');
+  this.$message = null;
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
@@ -40,8 +42,12 @@ function Filter(elm) {
 
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
+  this.lastAction;
 
-  $('body').on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('filter:added', this.setLastAction.bind(this));
+  $(document.body).on('filter:removed', this.setLastAction.bind(this));
+  $(document.body).on('filter:changed', this.setLastAction.bind(this));
   $(document.body).on('table:countChanged', this.handleCountChanged.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
@@ -71,6 +77,7 @@ Filter.build = function($elm) {
 
 Filter.prototype.fromQuery = function(query) {
   this.setValue(query[this.name]);
+  this.loadedOnce = true;
   return this;
 };
 
@@ -130,15 +137,56 @@ Filter.prototype.handleChange = function(e) {
     {
       key: id,
       value: value,
+      name: this.name
     }
   ]);
 
   $input.data('loaded-once', true);
 };
 
+Filter.prototype.setLastAction = function(e, opts) {
+  if (opts.name !== this.name) { return; }
+
+  if (e.type === 'filter:added') {
+    this.lastAction = 'Filter added';
+  } else if (e.type === 'filter:removed') {
+    this.lastAction = 'Filter removed';
+  } else {
+    this.lastAction = 'Filter changed';
+  }
+
+  // Mocking call to handleCountChanged for testing
+  this.handleCountChanged(e, {countDifference: 300});
+};
+
 Filter.prototype.handleCountChanged = function(e, opts) {
-  console.log(e);
-  console.log(opts);
+  var self = this;
+  if (!this.loadedOnce) { return; }
+
+  var message;
+  var formattedCount = opts.countDifference.toLocaleString('en-US');
+
+  message = this.lastAction + '<br>';
+
+  if (opts.countDifference > 0) {
+    message += 'Added ' + formattedCount + ' results';
+  } else if (opts.countChanged === 0) {
+    message += 'No results added';
+  } else {
+    message += 'Removed ' + formattedCount + ' results';
+  }
+
+  if (this.$message) {
+    this.$message.html(message);
+  } else {
+    this.$body.append('<span class="filter__message is-successful">' + message + '</span>');
+    this.$message = this.$body.find('.filter__message');
+  }
+
+  setTimeout(function() {
+    self.$message.remove();
+    self.$message = null;
+  }, helpers.SUCCESS_DELAY);
 };
 
 function SelectFilter(elm) {

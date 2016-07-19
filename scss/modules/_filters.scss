@@ -164,6 +164,13 @@
   padding: u(.5rem);
 }
 
+.filter__message {
+  &.is-successful {
+    color: $green-dark;
+    font-family: $sans-serif;
+    font-size: u(1.4rem);
+  }
+}
 // Horizontal layout
 
 .filters--horizontal {
