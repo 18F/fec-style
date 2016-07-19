@@ -42,6 +42,7 @@ function Filter(elm) {
   this.fields = [this.name];
 
   $('body').on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('table:countChanged', this.handleCountChanged.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
@@ -133,6 +134,11 @@ Filter.prototype.handleChange = function(e) {
   ]);
 
   $input.data('loaded-once', true);
+};
+
+Filter.prototype.handleCountChanged = function(e, opts) {
+  console.log(e);
+  console.log(opts);
 };
 
 function SelectFilter(elm) {
