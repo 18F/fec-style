@@ -6,8 +6,6 @@ var URI = require('urijs');
 
 var Filter = require('./filters').Filter;
 
-var KEYCODE_ENTER = 13;
-
 function FilterSet(elm) {
   this.$body = $(elm);
   $(document.body).on('tag:removed', this.handleTagRemove.bind(this));
@@ -39,7 +37,7 @@ FilterSet.prototype.activate = function() {
 };
 
 FilterSet.prototype.serialize = function() {
-  return _.reduce(this.$body.serializeArray(), function(memo, val) {
+  return _.reduce(this.$body.find('input,select').serializeArray(), function(memo, val) {
     if (val.value && val.name.slice(0, 1) !== '_') {
       if (memo[val.name]) {
         memo[val.name].push(val.value);

@@ -63,7 +63,8 @@
   font-size: u(1.2rem);
   display: inline-block;
   line-height: 1;
-  margin: u(2.3rem) 0 u(1.3rem) u(2.5rem);
+  margin: u(2.2rem 0 2rem 2.5rem);
+  position: relative;
 
   &::before {
     @include u-icon-bg($star, $primary-contrast);
@@ -72,7 +73,9 @@
     content: '';
     display: inline-block;
     height: u(1.6rem);
-    margin: 0 u(.6rem) 0 u(-2.5rem);
+    margin: u(0 .6rem 0 -2.5rem);
+    position: absolute;
+    top: -3px;
     width: u(1.6rem);
   }
 }
