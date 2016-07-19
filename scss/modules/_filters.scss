@@ -24,23 +24,24 @@
 .filters {
   @include clearfix();
   @include u-bg--neutral();
-  @include transition(top 1s ease-in-out);
+  @include transition(left 1s ease-in-out);
   position: absolute;
   bottom: 0;
   height: auto;
-  top: -1500px;
+  top: -20px;
+  left: -800px;
   z-index: 10;
   width: 100%;
   padding: u(1rem 0);
-  display: table;
+  display: block;
 
   // slide filters down into view when open
   &.is-open {
-    top: -20px;
+    left: 0;
   }
 
   &[aria-hidden=true] {
-    display: table !important;
+    display: block !important;
   }
 
   .filters__hider {
@@ -226,7 +227,7 @@
     }
 
     &[aria-hidden="true"] {
-      padding: 0;
+      display: none !important;
     }
 
     &.is-open {
