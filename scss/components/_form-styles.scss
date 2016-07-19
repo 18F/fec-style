@@ -269,7 +269,6 @@ label {
 
 [type="checkbox"]:checked + label,
 [type="radio"]:checked + label {
-  &.is-loading,
   &.is-successful {
     border: 1px solid $green-light;
   }

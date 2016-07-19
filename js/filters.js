@@ -41,6 +41,8 @@ function Filter(elm) {
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
 
+  this.notFirstTime = false;
+
   $('body').on('filter:modify', this.handleModifyEvent.bind(this));
   $('body').on('table:loaded', this.handleDataLoad.bind(this));
 
@@ -71,6 +73,7 @@ Filter.build = function($elm) {
 
 Filter.prototype.fromQuery = function(query) {
   this.setValue(query[this.name]);
+  this.notFirstTime = true;
   return this;
 };
 
@@ -108,9 +111,9 @@ Filter.prototype.handleChange = function(e) {
   this.$remove.css('display', $input.val() ? 'block' : 'none');
 
   if (type === 'checkbox' || type === 'radio') {
-    eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
     var $label = this.$body.find('label[for="' + id + '"]');
-    $label.addClass('is-loading');
+    if (this.notFirstTime) { $label.addClass('is-loading'); }
+    eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
     value = $label.text();
   } else if (type === 'text') {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
