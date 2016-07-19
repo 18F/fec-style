@@ -169,17 +169,17 @@ Filter.prototype.handleCountChanged = function(e, opts) {
   message = this.lastAction + '<br>';
 
   if (opts.countDifference > 0) {
-    message += 'Added ' + formattedCount + ' results';
+    message += '<strong>Added ' + formattedCount + '</strong> results';
   } else if (opts.countChanged === 0) {
     message += 'No results added';
   } else {
-    message += 'Removed ' + formattedCount + ' results';
+    message += '<strong>Removed ' + formattedCount + '</strong> results';
   }
 
   if (this.$message) {
     this.$message.html(message);
   } else {
-    this.$body.append('<span class="filter__message is-successful">' + message + '</span>');
+    this.$body.append('<span class="filter__message filter__message--success">' + message + '</span>');
     this.$message = this.$body.find('.filter__message');
   }
 
