@@ -41,10 +41,7 @@ function Filter(elm) {
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
 
-  this.notFirstTime = false;
-
   $('body').on('filter:modify', this.handleModifyEvent.bind(this));
-  $('body').on('table:loaded', this.handleDataLoad.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
@@ -73,7 +70,6 @@ Filter.build = function($elm) {
 
 Filter.prototype.fromQuery = function(query) {
   this.setValue(query[this.name]);
-  this.notFirstTime = true;
   return this;
 };
 
@@ -112,7 +108,7 @@ Filter.prototype.handleChange = function(e) {
 
   if (type === 'checkbox' || type === 'radio') {
     var $label = this.$body.find('label[for="' + id + '"]');
-    if (this.notFirstTime) { $label.addClass('is-loading'); }
+    if ($input.data('loaded-once')) { $label.addClass('is-loading'); }
     eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
     value = $label.text();
   } else if (type === 'text') {
@@ -135,6 +131,8 @@ Filter.prototype.handleChange = function(e) {
       value: value,
     }
   ]);
+
+  $input.data('loaded-once', true);
 };
 
 function SelectFilter(elm) {
@@ -397,7 +395,7 @@ function MultiFilter(elm) {
   Filter.call(this, elm);
   this.$group = $(this.$body.data('filter-group'));
   this.$input = this.$group.find('input[name=' + this.name + ']');
-}
+};
 
 MultiFilter.prototype = Object.create(Filter.prototype);
 MultiFilter.constructor = MultiFilter;
