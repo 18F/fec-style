@@ -154,9 +154,6 @@ Filter.prototype.setLastAction = function(e, opts) {
   } else {
     this.lastAction = 'Filter changed';
   }
-
-  // Mocking call to handleCountChanged for testing
-  this.handleCountChanged(e, {countDifference: 300});
 };
 
 Filter.prototype.handleCountChanged = function(e, opts) {
