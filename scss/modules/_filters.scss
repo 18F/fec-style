@@ -128,6 +128,8 @@
   }
 }
 
+$filter-button-width: u(4.6rem);
+
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
   margin-top: u(1.5rem);
@@ -145,6 +147,33 @@
     height: auto;
   }
 
+  .combo--filter--mini {
+    .combo__input {
+      border-radius: 4px 0 0 4px;
+      float: left;
+      width: calc(100% - #{$filter-button-width});
+
+      .combo__input {
+        width: 100%;
+        color: $base;
+      }
+    }
+
+    .combo__button {
+      background-position: 50% 50%;
+      border-radius: 0 4px 4px 0;
+      margin-top: 0;
+      float: right;
+      height: u(3.6rem);
+      width: u(4.6rem);
+    }
+
+    .button--go {
+      padding-right: 0;
+    }
+  }
+
+
   label {
     line-height: 1;
   }
@@ -155,6 +184,8 @@
     margin-bottom: u(1rem);
   }
 }
+
+
 
 .filter__instructions {
   display: block;

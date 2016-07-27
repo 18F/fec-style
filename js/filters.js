@@ -34,10 +34,14 @@ function Filter(elm) {
   this.$body = $(elm);
   this.$input = this.$body.find('input:not([name^="_"])');
   this.$remove = this.$body.find('.button--remove');
+  this.$inputFilter = this.$body.find('.input--removable input');
+  this.$inputFilterButton = this.$body.find('.button--go');
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
   this.$remove.on('click', this.handleClear.bind(this));
+  this.$inputFilter.on('keyup', this.handleInputFilterKeyup.bind(this));
+  this.$inputFilterButton.on('click', this.handleInputFilterClick.bind(this));
 
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
@@ -92,6 +96,22 @@ Filter.prototype.handleClear = function() {
   this.$input.focus();
 };
 
+// text input (no typeahead) keypress
+Filter.prototype.handleInputFilterKeyup = function() {
+  this.$inputFilterButton.removeClass('is-disabled');
+
+  if (this.$inputFilter.val() === '') {
+    this.$inputFilterButton.addClass('is-disabled');
+  }
+};
+
+// text input (no typeahead) button click
+Filter.prototype.handleInputFilterClick = function() {
+  if (!this.$inputFilterButton.hasClass('is-disabled')) {
+    this.$input.change();
+  }
+};
+
 Filter.prototype.handleKeydown = function(e) {
   if (e.which === KEYCODE_ENTER) {
     e.preventDefault();
@@ -120,6 +140,10 @@ Filter.prototype.handleChange = function(e) {
   } else if (type === 'text') {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();
+
+    if (this.$inputFilter.val()) {
+      this.$inputFilterButton.removeClass('is-disabled');
+    }
   } else {
     return;
   }
