@@ -177,6 +177,12 @@ input[type="file"] {
   }
 }
 
+// set smaller width for checkbox label
+// to make space for status update
+.dropdown__selected [type="checkbox"] + label {
+  max-width: 90%;
+}
+
 [type="radio"] + label::before {
   height: u(1.6rem);
   width: u(1.6rem);

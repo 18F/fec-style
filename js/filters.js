@@ -34,7 +34,6 @@ function Filter(elm) {
   this.$body = $(elm);
   this.$input = this.$body.find('input:not([name^="_"])');
   this.$remove = this.$body.find('.button--remove');
-  this.$message = null;
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
@@ -48,7 +47,6 @@ function Filter(elm) {
   $(document.body).on('filter:added', this.setLastAction.bind(this));
   $(document.body).on('filter:removed', this.setLastAction.bind(this));
   $(document.body).on('filter:changed', this.setLastAction.bind(this));
-  $(document.body).on('table:countChanged', this.handleCountChanged.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
@@ -154,36 +152,7 @@ Filter.prototype.setLastAction = function(e, opts) {
   } else {
     this.lastAction = 'Filter changed';
   }
-};
 
-Filter.prototype.handleCountChanged = function(e, opts) {
-  var self = this;
-  if (!this.loadedOnce) { return; }
-
-  var message;
-  var formattedCount = opts.countDifference.toLocaleString('en-US');
-
-  message = this.lastAction + '<br>';
-
-  if (opts.countDifference > 0) {
-    message += '<strong>Added ' + formattedCount + '</strong> results';
-  } else if (opts.countChanged === 0) {
-    message += 'No results added';
-  } else {
-    message += '<strong>Removed ' + formattedCount + '</strong> results';
-  }
-
-  if (this.$message) {
-    this.$message.html(message);
-  } else {
-    this.$body.append('<span class="filter__message filter__message--success">' + message + '</span>');
-    this.$message = this.$body.find('.filter__message');
-  }
-
-  setTimeout(function() {
-    self.$message.remove();
-    self.$message = null;
-  }, helpers.SUCCESS_DELAY);
 };
 
 function SelectFilter(elm) {

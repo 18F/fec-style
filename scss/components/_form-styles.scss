@@ -222,6 +222,17 @@
 
 // Loading states
 label {
+
+  &::after {
+    background: transparent;
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    right: -3rem;
+  }
+
   &.is-loading {
     position: relative;
 
@@ -229,12 +240,7 @@ label {
       @include animation(fadeIn .8s ease-out);
       background: url('../img/loading-ellipsis.gif') no-repeat;
       background-size: 2rem;
-      content: '';
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      position: absolute;
-      right: -3rem;
+      opacity: 1;
     }
   }
 
@@ -242,13 +248,7 @@ label {
     position: relative;
 
     &::after {
-      @include u-icon-bg($check, $green-light)
-      content: '';
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      position: absolute;
-      right: -3rem;
+      @include u-icon-bg($check, $green-light);
     }
   }
 
@@ -256,7 +256,7 @@ label {
     position: relative;
 
     &::after {
-      @include u-icon-bg($x, $error)
+      @include u-icon-bg($x, $error);
       content: '';
       display: inline-block;
       width: 2rem;
