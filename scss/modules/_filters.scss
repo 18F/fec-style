@@ -152,11 +152,6 @@ $filter-button-width: u(4.6rem);
       border-radius: 4px 0 0 4px;
       float: left;
       width: calc(100% - #{$filter-button-width});
-
-      .combo__input {
-        width: 100%;
-        color: $base;
-      }
     }
 
     .combo__button {
