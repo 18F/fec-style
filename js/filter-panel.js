@@ -49,7 +49,7 @@ FilterPanel.prototype.show = function() {
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
   this.isOpen = true;
-  this.$close.focus();
+  this.$body.find('input').first().focus();
 };
 
 FilterPanel.prototype.hide = function() {
