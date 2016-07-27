@@ -99,10 +99,6 @@ Filter.prototype.handleClear = function() {
 // text input (no typeahead) keypress
 Filter.prototype.handleInputFilterKeyup = function() {
   this.$inputFilterButton.removeClass('is-disabled');
-
-  if (this.$inputFilter.val() === '') {
-    this.$inputFilterButton.addClass('is-disabled');
-  }
 };
 
 // text input (no typeahead) button click
@@ -141,7 +137,11 @@ Filter.prototype.handleChange = function(e) {
     eventName = $input.val().length ? 'filter:added' : 'filter:removed';
     value = $input.val();
 
-    if (this.$inputFilter.val()) {
+    if ($input.data('loaded-once')) {
+      this.$inputFilterButton.addClass('button--loading');
+    }
+
+    if (value) {
       this.$inputFilterButton.removeClass('is-disabled');
     }
   } else {

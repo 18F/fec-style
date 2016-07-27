@@ -166,8 +166,11 @@ $filter-button-width: u(4.6rem);
     .button--go {
       padding-right: 0;
     }
-  }
 
+    .button--check {
+      background-size: unset;
+    }
+  }
 
   label {
     line-height: 1;
@@ -179,8 +182,6 @@ $filter-button-width: u(4.6rem);
     margin-bottom: u(1rem);
   }
 }
-
-
 
 .filter__instructions {
   display: block;
@@ -194,6 +195,7 @@ $filter-button-width: u(4.6rem);
   font-family: $sans-serif;
   font-size: u(1.4rem);
   padding-bottom: u(1rem);
+  clear: both;
 }
 
 .filter__message--success {
