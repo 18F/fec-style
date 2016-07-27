@@ -111,6 +111,7 @@ Dropdown.prototype.selectItem = function($input) {
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
   this.$selected.append($item);
+
   if (!this.isEmpty()) {
     if (next.length) {
       $(next[0]).find('input[type="checkbox"]').focus();
