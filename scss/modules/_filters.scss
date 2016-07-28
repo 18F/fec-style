@@ -45,6 +45,7 @@
   }
 
   .filters__hider {
+    @include u-bg--neutral();
     height: auto;
     overflow: visible;
   }
