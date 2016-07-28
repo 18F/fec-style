@@ -53,6 +53,14 @@
   .toggles {
     margin: u(1rem 0);
   }
+
+  .filter-count::before {
+    content: '(';
+  }
+
+  .filter-count::after {
+    content: ')';
+  }
 }
 
 .filters--fixed {
