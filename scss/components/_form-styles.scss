@@ -238,7 +238,7 @@ label {
 
     &::after {
       @include animation(fadeIn .8s ease-out);
-      background: url('../img/loading-ellipsis.gif') no-repeat;
+      background: url('../img/loading-ellipsis-gray.gif') no-repeat;
       background-size: 2rem;
       opacity: 1;
     }

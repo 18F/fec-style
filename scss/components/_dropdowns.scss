@@ -84,9 +84,26 @@
     }
   }
 
-  .dropdown__item:last-of-type {
-    .dropdown__value {
-      border-bottom: none;
+  .dropdown__item {
+    button {
+      @include u-icon-bg($check, $green-light);
+      background-position: 98%;
+      border: 1px solid $gray;
+      display: block;
+      font-size: u(1.4rem);
+      padding: u(.5rem 1rem);
+      text-align: left;
+      width: 100%;
+
+      &:hover {
+        background-color: $gray-light;
+      }
+    }
+
+    &:last-of-type {
+      .dropdown__value {
+        border-bottom: none;
+      }
     }
   }
 

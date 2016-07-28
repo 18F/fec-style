@@ -108,8 +108,11 @@ Dropdown.prototype.handleCheck = function(e) {
 
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
+  var $label = $item.find('label');
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
+
+  $item.after('<li class="dropdown__item"><button class="">' + $label.text() + '</button></li>');
   this.$selected.append($item);
 
   if (!this.isEmpty()) {
