@@ -139,14 +139,14 @@ Filter.prototype.handleChange = function(e) {
     value = $input.val();
     loadedOnce = $input.data('loaded-once') || false;
 
-    if (this.hadValue && value.length > 0) {
-      eventName = 'filter:modify';
+    if ($input.data('had-value') && value.length > 0) {
+      eventName = 'filter:renamed';
     } else if (value.length > 0) {
       eventName = 'filter:added';
-      this.hadValue = true;
+      $input.data('had-value', true);
     } else {
       eventName = 'filter:removed';
-      this.hadValue = false;
+      $input.data('had-value', false);
     }
 
     if (loadedOnce) {
