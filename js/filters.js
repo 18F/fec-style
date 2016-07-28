@@ -14,7 +14,6 @@ var typeahead = require('./typeahead');
 var typeaheadFilter = require('./typeahead-filter');
 var FilterControl = require('./filter-control').FilterControl;
 var moment = require('moment');
-var helpers = require('./helpers');
 
 var cyclesTemplate = require('./templates/election-cycles.hbs');
 
@@ -220,6 +219,8 @@ function SelectFilter(elm) {
   this.$input = this.$body.find('select');
   this.name = this.$input.attr('name');
   this.requiredDefault = this.$body.data('required-default') || null; // If a default is required
+  this.loadedOnce = false;
+
   this.$input.on('change', this.handleChange.bind(this));
   this.setRequiredDefault();
 }
@@ -246,14 +247,19 @@ SelectFilter.prototype.setValue = function(value) {
 SelectFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
   var id = this.$input.attr('id');
+  var eventName = this.loadedOnce ? 'filter:modify' : 'filter:added';
 
-  this.$input.trigger('filter:added', [
+  this.$input.trigger(eventName, [
     {
       key: id,
       value: 'Transaction period: ' + (value - 1) + '-' + value,
+      loadedOnce: this.loadedOnce,
+      name: this.name,
       nonremovable: true
     }
   ]);
+
+  this.loadedOnce = true;
 };
 
 function DateFilter(elm) {
