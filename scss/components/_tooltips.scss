@@ -186,7 +186,6 @@
     background-image: url('../img/tooltip-point.svg');
     background-repeat: no-repeat;
     background-size: contain;
-    content: '';
     display: block;
     height: u(2rem);
     left: 50%;
@@ -194,6 +193,5 @@
     position: absolute;
     top: u(-1rem);
     width: u(2rem);
-
   }
 }
