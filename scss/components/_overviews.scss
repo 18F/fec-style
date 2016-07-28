@@ -52,6 +52,23 @@
   margin-bottom: u(.5rem);
 }
 
+@include media($med) {
+  .overview__totals {
+    @include span-columns(4);
+    padding-right: u(2rem);
+  }
+
+  .overview__chart {
+    @include span-columns(8);
+    @include omega();
+  }
+
+  .overview__feedback {
+    width: 100%;
+    clear: both;
+  }
+}
+
 @include media($lg) {
   .overview__totals {
     @include span-columns(3);
@@ -64,6 +81,7 @@
 
   .overview__feedback {
     @include span-columns(3);
+    clear: none;
   }
 
   .top-list {
