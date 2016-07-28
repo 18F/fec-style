@@ -13,7 +13,7 @@
   },
   {
     "term": "District",
-    "definition": "A U.S. House of Representatives District. Because Senators represent an entire state, Senate races do not have districts associated with them."
+    "definition": "A U.S. House of Representatives District. Because senators represent an entire state, Senate races do not have districts associated with them."
   },
   {
     "term": "Organization type",
@@ -167,6 +167,14 @@
      {
     "term": "Lobbyist/Registrant PAC",
     "definition": "Any political committee established or controlled by a person who is a current registrant under Lobbying Disclosure Act or an individual who is named on a current registration or report filed under the Lobbying Disclosure Act."
+  },
+     {
+    "term": "Overnight delivery service",
+    "definition": "A private delivery service business of established reliability that offers an overnight (next business day) delivery option."
+  },
+     {
+    "term": "Postmarked",
+    "definition": "A U.S. Postal Service postmark or the verifiable date of deposit with an overnight delivery service. "
   },
   {
     "term": "Exempt party activities",
