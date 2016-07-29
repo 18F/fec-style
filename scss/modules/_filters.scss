@@ -24,13 +24,13 @@
 .filters {
   @include clearfix();
   @include u-bg--neutral();
-  @include transition(left 1s ease-in-out);
+  @include transition(left .2s ease-in-out);
   position: absolute;
   bottom: 0;
   height: auto;
-  top: -20px;
+  top: u(-2rem);
   left: -800px;
-  z-index: 10;
+  z-index: $z4;
   width: 100%;
   padding: u(1rem 0);
   display: block;
