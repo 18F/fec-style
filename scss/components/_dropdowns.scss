@@ -33,22 +33,6 @@
     top: u(.5rem);
   }
 
-  &.is-loading {
-    &::after {
-      background-image: url('../img/loading-ellipsis-gray.gif');
-      background-size: 18px;
-      padding-left: u(1.5rem);
-      right: u(1rem);
-    }
-  }
-
-  &.is-successful {
-    &::after {
-      @include u-icon-button($check);
-      padding-left: u(1rem);
-    }
-  }
-
   &.button--alt-primary::after,
   &.button--alt-secondary::after {
     @include u-icon-bg($arrow-down, $inverse);
@@ -78,7 +62,7 @@
   overflow: hidden;
   text-align: left;
   top: u(3.4rem);
-  z-index: 10;
+  z-index: $z1;
 
   .dropdown__value,
   label.dropdown__value {
