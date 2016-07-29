@@ -145,6 +145,10 @@
     margin-left: 0;
   }
 
+  [type="checkbox"] + label {
+    max-width: 90%;
+  }
+
   @include media($med) {
     &.list--flat .dropdown__item {
       width: 30%;
