@@ -220,53 +220,6 @@
   padding-left: u(2.5rem);
 }
 
-// Loading states
-label {
-
-  &::after {
-    background: transparent;
-    content: '';
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    right: -3rem;
-  }
-
-  &.is-loading {
-    position: relative;
-
-    &::after {
-      @include animation(fadeIn .8s ease-out);
-      background: url('../img/loading-ellipsis-gray.gif') no-repeat;
-      background-size: 2rem;
-      opacity: 1;
-    }
-  }
-
-  &.is-successful {
-    position: relative;
-
-    &::after {
-      @include u-icon-bg($check, $green-light);
-    }
-  }
-
-  &.is-unsuccessful {
-    position: relative;
-
-    &::after {
-      @include u-icon-bg($x, $error);
-      content: '';
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      position: absolute;
-      right: -3rem;
-    }
-  }
-}
-
 [type="checkbox"]:checked + label,
 [type="radio"]:checked + label {
   &.is-successful {

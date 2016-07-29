@@ -61,6 +61,53 @@
   .filter-count::after {
     content: ')';
   }
+
+  // Loading states
+  label {
+
+    &::after {
+      background: transparent;
+      content: '';
+      display: inline-block;
+      width: u(2rem);
+      height: u(2rem);
+      position: absolute;
+      right: u(-3rem);
+    }
+
+    &.is-loading {
+      position: relative;
+
+      &::after {
+        @include animation(fadeIn .8s ease-out);
+        background: url('../img/loading-ellipsis-gray.gif') no-repeat;
+        background-size: u(2rem);
+        opacity: 1;
+      }
+    }
+
+    &.is-successful {
+      position: relative;
+
+      &::after {
+        @include u-icon-bg($check, $green-light);
+      }
+    }
+
+    &.is-unsuccessful {
+      position: relative;
+
+      &::after {
+        @include u-icon-bg($x, $error);
+        content: '';
+        display: inline-block;
+        width: u(2rem);
+        height: u(2rem);
+        position: absolute;
+        right: u(-3rem);
+      }
+    }
+  }
 }
 
 .filters--fixed {
