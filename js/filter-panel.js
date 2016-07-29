@@ -43,13 +43,17 @@ FilterPanel.prototype.setInitialDisplay = function() {
   }
 };
 
-FilterPanel.prototype.show = function() {
+FilterPanel.prototype.show = function(focus) {
   this.$body.addClass('is-open').attr('aria-hidden', false);
   this.$toggle.attr('aria-hidden', true);
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
   this.isOpen = true;
-  this.$body.find('input').first().focus();
+  // Don't focus on the first filter unless explicitly intended to
+  // Prevents the first filter from being focused on initial page load
+  if (focus) {
+    this.$body.find('input, select, button:not(.js-filter-close)').first().focus();
+  }
 };
 
 FilterPanel.prototype.hide = function() {
@@ -65,7 +69,7 @@ FilterPanel.prototype.toggle = function() {
   if (this.isOpen) {
     this.hide();
   } else {
-    this.show();
+    this.show(true);
   }
 };
 
