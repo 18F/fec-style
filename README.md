@@ -79,11 +79,6 @@ And then we're using a custom template for the styleguide, which lives in
 
     $ npm run build-styleguide
 
-Host the styleguide on a local server:
-
-    $ npm install http-server
-    $ http-server
-
 To upload screenshots to [percy.io](https://percy.io):
 
     $ gem install percy
