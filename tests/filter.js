@@ -29,12 +29,14 @@ describe('filter set', function() {
   describe('text filters', function() {
     beforeEach(function() {
       this.$fixture.empty().append(
+        '<button class="accordion__trigger">Filter category</button>' +
+        '<div class="accordion__content">' +
         '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="name" />' +
             '<button class="button button--remove"></button>' +
           '</div>' +
-        '</div>'
+        '</div></div>'
       );
       this.filter = Filter.build(this.$fixture.find('.js-filter'));
     });
@@ -43,6 +45,7 @@ describe('filter set', function() {
       expect(this.filter.$body.is('#fixtures .js-filter')).to.be.true;
       expect(this.filter.$input.is('#fixtures input')).to.be.true;
       expect(this.filter.$remove.is('#fixtures .js-filter .button--remove')).to.be.true;
+      expect(this.filter.$filterLabel.is('#fixtures .accordion__trigger')).to.be.true;
     });
 
     it('pulls name from $body if present', function() {
@@ -89,18 +92,37 @@ describe('filter set', function() {
       expect(this.filter.$input.val()).to.equal('');
       expect(this.filter.$remove.is(':visible')).to.be.false;
     });
+
+    it('adds to the filter count if there was no text', function() {
+      this.filter.$input.val('judy').change();
+      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
+    });
+
+    it('does not add to the filter count if there was already text', function() {
+      this.filter.$input.val('judy').change();
+      this.filter.$input.val('jack').change();
+      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
+    });
+
+    it('subtracts from the filter count when emptied', function() {
+      this.filter.$input.val('judy').change();
+      this.filter.$input.val('').change();
+      expect(this.filter.$filterLabel.find('.filter-count').length).to.equal(0);
+    });
   });
 
   describe('checkbox filters', function() {
     beforeEach(function() {
       this.$fixture.empty().append(
+        '<button class="accordion__trigger">Filter category</button>' +
+        '<div class="accordion__content">' +
         '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="cycle" type="checkbox" value="2012" />' +
             '<input name="cycle" type="checkbox" value="2014" />' +
             '<input name="cycle" type="checkbox" value="2016" />' +
           '</div>' +
-        '</div>'
+        '</div></div>'
       );
       this.filter = Filter.build(this.$fixture.find('.js-filter'));
     });
@@ -118,6 +140,17 @@ describe('filter set', function() {
     it('sets empty values', function() {
       this.filter.setValue();
       expect(getChecked(this.filter.$input)).to.deep.equal([]);
+    });
+
+    it('increments the filter count when checked', function() {
+      this.filter.setValue(['2012', '2016']);
+      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('2');
+    });
+
+    it('decrements the filter count when unchecked', function() {
+      this.filter.setValue(['2012', '2016']);
+      this.filter.setValue('2012');
+      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
     });
   });
 
@@ -226,4 +259,5 @@ describe('filter set', function() {
       $.prototype.trigger.restore();
     });
   });
+
 });

@@ -179,7 +179,7 @@ Filter.prototype.handleChange = function(e) {
   $input.data('loaded-once', true);
 };
 
-  Filter.prototype.handleAddEvent = function(e, opts) {
+Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
 
   var filterCount = this.$filterLabel.find('.filter-count');
