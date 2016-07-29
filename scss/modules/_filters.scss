@@ -216,6 +216,12 @@ $filter-button-width: u(4.6rem);
       float: right;
       height: u(3.6rem);
       width: u(4.6rem);
+
+      &.is-successful {
+        @include u-icon-button($check);
+        background-size: u(2.2rem);
+        background-position: 50%;
+      }
     }
 
     .button--go {
@@ -225,12 +231,6 @@ $filter-button-width: u(4.6rem);
     .is-loading {
       background-image: url('../img/loading-ellipsis-gray.gif');
       background-size: u(2.8rem);
-      background-position: 50%;
-    }
-
-    .is-successful {
-      @include u-icon-button($check);
-      background-size: u(2.2rem);
       background-position: 50%;
     }
   }
