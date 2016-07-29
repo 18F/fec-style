@@ -125,12 +125,6 @@ Dropdown.prototype.selectItem = function($input) {
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
 
-  $item.after('<li class="dropdown__item">' +
-    '<button class="dropdown__item--selected is-checked" data-label="' + $label.attr('for') + '">' +
-    $label.text() +
-    '</button>' +
-    '</li>');
-
   this.$selected.append($item);
 
   if (!this.isEmpty()) {
