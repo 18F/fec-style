@@ -33,6 +33,21 @@
     top: u(.5rem);
   }
 
+  &.is-loading {
+    &::after {
+      background-image: url('../img/loading-ellipsis-gray.gif');
+      background-size: 18px;
+      padding-left: u(1.5rem);
+      right: u(1rem);
+    }
+  }
+  &.is-successful {
+    &::after {
+      @include u-icon-button($check);
+      padding-left: u(1rem);
+    }
+  }
+
   &.button--alt-primary::after,
   &.button--alt-secondary::after {
     @include u-icon-bg($arrow-down, $inverse);
@@ -86,8 +101,6 @@
 
   .dropdown__item {
     button {
-      @include u-icon-bg($check, $green-light);
-      background-position: 98%;
       border: 1px solid $gray;
       display: block;
       font-size: u(1.4rem);
@@ -97,6 +110,10 @@
 
       &:hover {
         background-color: $gray-light;
+      }
+      &.is-checked {
+        @include u-icon-bg($check, $green-light);
+        background-position: 98%;
       }
     }
 

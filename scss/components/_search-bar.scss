@@ -219,7 +219,7 @@ $search-button-width: u(5.6rem);
     padding: 0;
   }
 
-  .button--loading {
+  .is-loading {
     background-image: url('../img/loading-ellipsis-gray.gif');
   }
 
@@ -235,7 +235,7 @@ $search-button-width: u(5.6rem);
       padding: 0;
     }
 
-    .button--check {
+    .is-successful {
       @include u-icon-button($check);
       background-size: u(2.2rem);
       background-position: 50%;

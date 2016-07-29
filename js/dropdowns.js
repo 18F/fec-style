@@ -31,6 +31,7 @@ function Dropdown(selector, opts) {
     this.$selected = this.$body.find('.dropdown__selected');
     this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
+    this.$panel.on('click', this.$body.$panel, this.handleClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
@@ -106,13 +107,30 @@ Dropdown.prototype.handleCheck = function(e) {
   }
 };
 
+Dropdown.prototype.handleClick = function(e) {
+  var $item = $(e.target);
+
+  this.$button.addClass('is-loading');
+
+  // handle click of dropdown item that has been selected
+  if ($item.hasClass('dropdown__item--selected')) {
+    $('#' + $item.data('label')).click();
+    $item.toggleClass('is-checked');
+  }
+};
+
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
   var $label = $item.find('label');
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
 
-  $item.after('<li class="dropdown__item"><button class="">' + $label.text() + '</button></li>');
+  $item.after('<li class="dropdown__item">' +
+    '<button class="dropdown__item--selected is-checked" data-label="' + $label.attr('for') + '">' +
+    $label.text() +
+    '</button>' +
+    '</li>');
+
   this.$selected.append($item);
 
   if (!this.isEmpty()) {

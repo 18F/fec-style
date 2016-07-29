@@ -134,8 +134,12 @@ Filter.prototype.handleChange = function(e) {
     loadedOnce = $input.data('loaded-once') || false;
     eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
     value = $label.text();
-    if (loadedOnce) { $label.addClass('is-loading'); }
-  } else if (type === 'text') {
+
+    if (loadedOnce) {
+      $label.addClass('is-loading');
+    }
+  }
+  else if (type === 'text') {
     value = $input.val();
     loadedOnce = $input.data('loaded-once') || false;
 
@@ -150,7 +154,7 @@ Filter.prototype.handleChange = function(e) {
     }
 
     if (loadedOnce) {
-      this.$inputFilterButton.addClass('button--loading');
+      this.$inputFilterButton.addClass('is-loading');
     }
 
     if (value) {
