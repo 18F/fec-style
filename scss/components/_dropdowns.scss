@@ -41,6 +41,7 @@
       right: u(1rem);
     }
   }
+
   &.is-successful {
     &::after {
       @include u-icon-button($check);
@@ -111,6 +112,7 @@
       &:hover {
         background-color: $gray-light;
       }
+
       &.is-checked {
         @include u-icon-bg($check, $green-light);
         background-position: 98%;
