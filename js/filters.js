@@ -33,15 +33,24 @@ function Filter(elm) {
   this.$body = $(elm);
   this.$input = this.$body.find('input:not([name^="_"])');
   this.$remove = this.$body.find('.button--remove');
+  this.$inputFilter = this.$body.find('.input--removable input');
+  this.$inputFilterButton = this.$body.find('.button--go');
+  this.$filterLabel = this.$body.closest('.accordion__content').prev();
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keydown', this.handleKeydown.bind(this));
   this.$remove.on('click', this.handleClear.bind(this));
+  this.$inputFilter.on('keyup', this.handleInputFilterKeyup.bind(this));
+  this.$inputFilterButton.on('click', this.handleInputFilterClick.bind(this));
 
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
+  this.lastAction;
 
-  $('body').on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('filter:added', this.handleAddEvent.bind(this));
+  $(document.body).on('filter:removed', this.handleRemoveEvent.bind(this));
+  $(document.body).on('filter:changed', this.setLastAction.bind(this));
 
   if (this.$body.hasClass('js-filter-control')) {
     new FilterControl(this.$body);
@@ -70,6 +79,7 @@ Filter.build = function($elm) {
 
 Filter.prototype.fromQuery = function(query) {
   this.setValue(query[this.name]);
+  this.loadedOnce = true;
   return this;
 };
 
@@ -84,6 +94,18 @@ Filter.prototype.setValue = function(value) {
 Filter.prototype.handleClear = function() {
   this.setValue();
   this.$input.focus();
+};
+
+// text input (no typeahead) keypress
+Filter.prototype.handleInputFilterKeyup = function() {
+  this.$inputFilterButton.removeClass('is-disabled');
+};
+
+// text input (no typeahead) button click
+Filter.prototype.handleInputFilterClick = function() {
+  if (!this.$inputFilterButton.hasClass('is-disabled')) {
+    this.$input.change();
+  }
 };
 
 Filter.prototype.handleKeydown = function(e) {
@@ -101,17 +123,43 @@ Filter.prototype.handleChange = function(e) {
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
   var id = $input.attr('id');
-  var eventName;
-  var value;
+  var loadedOnce,
+      eventName,
+      value;
 
   this.$remove.css('display', $input.val() ? 'block' : 'none');
 
   if (type === 'checkbox' || type === 'radio') {
+    var $label = this.$body.find('label[for="' + id + '"]');
+    loadedOnce = $input.data('loaded-once') || false;
     eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
-    value = $('label[for="' + id + '"]').text();
-  } else if (type === 'text') {
-    eventName = $input.val().length ? 'filter:added' : 'filter:removed';
+    value = $label.text();
+
+    if (loadedOnce) {
+      $label.addClass('is-loading');
+    }
+  }
+  else if (type === 'text') {
     value = $input.val();
+    loadedOnce = $input.data('loaded-once') || false;
+
+    if ($input.data('had-value') && value.length > 0) {
+      eventName = 'filter:renamed';
+    } else if (value.length > 0) {
+      eventName = 'filter:added';
+      $input.data('had-value', true);
+    } else {
+      eventName = 'filter:removed';
+      $input.data('had-value', false);
+    }
+
+    if (loadedOnce) {
+      this.$inputFilterButton.addClass('is-loading');
+    }
+
+    if (value) {
+      this.$inputFilterButton.removeClass('is-disabled');
+    }
   } else {
     return;
   }
@@ -127,8 +175,55 @@ Filter.prototype.handleChange = function(e) {
     {
       key: id,
       value: value,
+      loadedOnce: loadedOnce,
+      name: this.name
     }
   ]);
+
+  $input.data('loaded-once', true);
+};
+
+Filter.prototype.handleAddEvent = function(e, opts) {
+  if (opts.name !== this.name) { return; }
+
+  var filterCount = this.$filterLabel.find('.filter-count');
+
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    this.$filterLabel.append(' <span class="filter-count">1</span>');
+  }
+
+  this.setLastAction(e, opts);
+};
+
+Filter.prototype.handleRemoveEvent = function(e, opts) {
+  // Don't decrement on initial page load
+  if (opts.name !== this.name || opts.loadedOnce !== true) { return; }
+
+  var filterCount = this.$filterLabel.find('.filter-count');
+
+  if (filterCount.html() === '1') {
+    filterCount.remove();
+  }
+  else {
+    filterCount.html(parseInt(filterCount.html(), 10) - 1);
+  }
+
+  this.setLastAction(e, opts);
+};
+
+Filter.prototype.setLastAction = function(e, opts) {
+  if (opts.name !== this.name) { return; }
+
+  if (e.type === 'filter:added') {
+    this.lastAction = 'Filter added';
+  } else if (e.type === 'filter:removed') {
+    this.lastAction = 'Filter removed';
+  } else {
+    this.lastAction = 'Filter changed';
+  }
 };
 
 function SelectFilter(elm) {
@@ -136,6 +231,8 @@ function SelectFilter(elm) {
   this.$input = this.$body.find('select');
   this.name = this.$input.attr('name');
   this.requiredDefault = this.$body.data('required-default') || null; // If a default is required
+  this.loadedOnce = false;
+
   this.$input.on('change', this.handleChange.bind(this));
   this.setRequiredDefault();
 }
@@ -162,14 +259,19 @@ SelectFilter.prototype.setValue = function(value) {
 SelectFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
   var id = this.$input.attr('id');
+  var eventName = this.loadedOnce ? 'filter:modify' : 'filter:added';
 
-  this.$input.trigger('filter:added', [
+  this.$input.trigger(eventName, [
     {
       key: id,
       value: 'Transaction period: ' + (value - 1) + '-' + value,
+      loadedOnce: this.loadedOnce,
+      name: this.name,
       nonremovable: true
     }
   ]);
+
+  this.loadedOnce = true;
 };
 
 function DateFilter(elm) {

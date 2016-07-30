@@ -108,9 +108,12 @@ Dropdown.prototype.handleCheck = function(e) {
 
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
+  var $label = $item.find('label');
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
+
   this.$selected.append($item);
+
   if (!this.isEmpty()) {
     if (next.length) {
       $(next[0]).find('input[type="checkbox"]').focus();

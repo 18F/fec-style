@@ -62,6 +62,61 @@
   .toggles {
     margin: u(1rem 0);
   }
+
+  .filter-count::before {
+    content: '(';
+  }
+
+  .filter-count::after {
+    content: ')';
+  }
+
+  // Loading states
+  label {
+
+    &::after {
+      background: transparent;
+      content: '';
+      display: inline-block;
+      width: u(2rem);
+      height: u(2rem);
+      position: absolute;
+      right: u(-3rem);
+    }
+
+    &.is-loading {
+      position: relative;
+
+      &::after {
+        @include animation(fadeIn .8s ease-out);
+        background: url('../img/loading-ellipsis-gray.gif') no-repeat;
+        background-size: u(2rem);
+        opacity: 1;
+      }
+    }
+
+    &.is-successful {
+      position: relative;
+
+      &::after {
+        @include u-icon-bg($check, $green-light);
+      }
+    }
+
+    &.is-unsuccessful {
+      position: relative;
+
+      &::after {
+        @include u-icon-bg($x, $error);
+        content: '';
+        display: inline-block;
+        width: u(2rem);
+        height: u(2rem);
+        position: absolute;
+        right: u(-3rem);
+      }
+    }
+  }
 }
 
 .filters--fixed {
@@ -137,6 +192,8 @@
   }
 }
 
+$filter-button-width: u(4.6rem);
+
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
   margin-top: u(1.5rem);
@@ -152,6 +209,39 @@
 
   .twitter-typeahead {
     height: auto;
+  }
+
+  .combo--filter--mini {
+    .combo__input {
+      border-radius: 4px 0 0 4px;
+      float: left;
+      width: calc(100% - #{$filter-button-width});
+    }
+
+    .combo__button {
+      background-position: 50% 50%;
+      border-radius: 0 4px 4px 0;
+      margin-top: 0;
+      float: right;
+      height: u(3.6rem);
+      width: u(4.6rem);
+
+      &.is-successful {
+        @include u-icon-button($check);
+        background-size: u(2.2rem);
+        background-position: 50%;
+      }
+    }
+
+    .button--go {
+      padding-right: 0;
+    }
+
+    .is-loading {
+      background-image: url('../img/loading-ellipsis-gray.gif');
+      background-size: u(2.8rem);
+      background-position: 50%;
+    }
   }
 
   label {
@@ -171,6 +261,17 @@
   font-size: u(1.2rem);
   line-height: 1;
   padding: u(.5rem);
+}
+
+.filter__message {
+  font-family: $sans-serif;
+  font-size: u(1.4rem);
+  padding-bottom: u(1rem);
+  clear: both;
+}
+
+.filter__message--success {
+  color: $green-dark;
 }
 
 // Horizontal layout
