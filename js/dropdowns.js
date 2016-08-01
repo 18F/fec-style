@@ -31,6 +31,7 @@ function Dropdown(selector, opts) {
     this.$selected = this.$body.find('.dropdown__selected');
     this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
+    this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
@@ -104,6 +105,13 @@ Dropdown.prototype.handleCheck = function(e) {
   if ($input.is(':checked')) {
     this.selectItem($input);
   }
+};
+
+Dropdown.prototype.handleSelectedClick = function(e) {
+  var $button = $(e.target);
+
+  $button.toggleClass('is-checked');
+  $('#' + $button.data('label')).click();
 };
 
 Dropdown.prototype.selectItem = function($input) {
