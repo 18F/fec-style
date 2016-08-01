@@ -78,7 +78,7 @@
   overflow: hidden;
   text-align: left;
   top: u(3.4rem);
-  z-index: 10;
+  z-index: $z1;
 
   .dropdown__value,
   label.dropdown__value {
@@ -159,6 +159,10 @@
 
   input {
     margin-left: 0;
+  }
+
+  [type="checkbox"] + label {
+    max-width: 90%;
   }
 
   @include media($med) {

@@ -234,11 +234,5 @@ $search-button-width: u(5.6rem);
       background-position: 50%;
       padding: 0;
     }
-
-    .is-successful {
-      @include u-icon-button($check);
-      background-size: u(2.2rem);
-      background-position: 50%;
-    }
   }
 }
