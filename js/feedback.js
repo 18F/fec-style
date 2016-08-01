@@ -3,7 +3,6 @@
 var $ = require('jquery');
 var _ = require('underscore');
 var feedback = require('./templates/feedback.hbs');
-var ethnioHelpers = require('./ethnio-helpers');
 
 var statusClasses = {
   success: 'message--success',
@@ -35,7 +34,6 @@ function Feedback(url, parent) {
   this.$button.on('click', this.toggle.bind(this));
   this.$reset.on('click', this.reset.bind(this));
   this.$form.on('submit', this.submit.bind(this));
-  this.$ethnio.on('click', this.handleEthnio.bind(this));
 }
 
 Feedback.prototype.toggle = function() {
@@ -118,11 +116,6 @@ Feedback.prototype.message = function(text, buttonText, style) {
 Feedback.prototype.reset = function() {
   this.$form.attr('aria-hidden', false);
   this.$status.attr('aria-hidden', true);
-};
-
-Feedback.prototype.handleEthnio = function(e) {
-  e.preventDefault();
-  ethnioHelpers.checkEthnio();
 };
 
 module.exports = {Feedback: Feedback};
