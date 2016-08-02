@@ -18,18 +18,24 @@
   @include clearfix();
   border-bottom: 2px solid $primary;
   font-family: $sans-serif;
+}
 
-  .button--export {
-    display: none;
-  }
+.data-container__action {
+  @include clearfix();
+  float: right;
+}
 
-  .button--share {
-    width: u(4rem);
-    padding: 8px 0;
-    background-position: 50%;
-    text-indent: -9999px;
-    margin-bottom: 0;
-  }
+.data-container__share {
+  display: inline-block;
+  width: u(4rem);
+  padding: 8px 0;
+  background-position: 50%;
+  text-indent: -9999px;
+  margin-bottom: 0;
+}
+
+.data-container__export {
+  display: none;
 }
 
 .data-container__widgets--secondary {
@@ -43,6 +49,7 @@
 
   h1 {
     border-bottom: none;
+    line-height: u(3.4rem);
     margin: 0;
     float: left;
   }
@@ -60,10 +67,6 @@
   @include clearfix();
   border-top: 1px solid $gray;
   padding: u(1rem);
-}
-
-.data-container__export {
-  float: right;
 }
 
 .export-widget {
@@ -100,7 +103,7 @@
   }
 
   .data-container__head {
-    padding: u(0 2rem);
+    padding: u(0 2rem 1rem 2rem);
   }
 
   .data-container__body {
@@ -109,25 +112,27 @@
   }
 
   .data-container__widgets {
-    padding: u(1rem 0);
-
-    .button--export {
-      display: block;
-    }
-
-    .button--share {
-      @include u-icon-button($share, right);
-      padding-left: u(2rem);
-      text-indent: 0;
-      width: auto;
-    }
+    padding: u(1rem 0 0 0);
   }
 
-  .data-container__export {
+  .data-container__action {
     @include span-columns(4);
     float: right;
     text-align: right;
   }
+
+  .data-container__share {
+    @include u-icon-button($share, right);
+    padding-left: u(2rem);
+    text-indent: 0;
+    width: auto;
+    margin-right: u(1rem);
+  }
+
+  .data-container__export {
+    display: inline-block;
+  }
+
 
   .data-container__tags {
     padding: u(1rem 2rem);

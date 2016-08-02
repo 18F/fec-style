@@ -34,10 +34,6 @@
   border-top: none;
 }
 
-.results-info__download {
-  display: none;
-}
-
 .dataTables_wrapper {
   .results-info {
     font-family: $sans-serif;
@@ -68,13 +64,6 @@
 
   .results-info__right {
     float: right;
-  }
-
-  .results-info__download {
-    display: block;
-    float: right;
-    margin: 0;
-    position: relative;
   }
 
   .dataTables_wrapper {

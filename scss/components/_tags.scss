@@ -15,6 +15,7 @@
 }
 
 .tags {
+  padding: 5px 0;
   width: 100%;
 }
 
@@ -43,7 +44,17 @@
   background-size: u(1.4rem);
   background-position: 95% 50%;
   border-bottom: 1px dotted $primary;
-  font-size: u(1.6rem);
+  font-size: u(1.4rem);
   padding-right: u(2.5rem);
-  float: right;
+
+  @include media($med) {
+    float: right;
+  }
+}
+
+.tags__count {
+  display: inline-block;
+  background: $primary;
+  color: $primary-contrast;
+  padding: 2px;
 }
