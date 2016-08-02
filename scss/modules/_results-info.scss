@@ -68,10 +68,13 @@
 
   .dataTables_wrapper {
     .results-info {
-      .dataTables_length,
-      .dataTables_paginate {
+      .dataTables_length {
         float: left;
         margin-left: 0;
+      }
+
+      .dataTables_paginate {
+        padding: u(.5rem 2rem);
       }
 
       .dataTables_info {
@@ -85,9 +88,6 @@
       padding: u(0 1rem 0 0);
     }
 
-    .dataTables_paginate {
-      padding: u(.5rem 0);
-    }
   }
 }
 

@@ -36,8 +36,8 @@ $filter-button-width: u(4.6rem);
 
     .filters__header {
       &::after {
-        @include u-icon($arrow-left-border, $base, $icon-size, $icon-size);
-        background-size: 75%;
+        @include u-icon($arrow-left-border, $primary, $icon-size, $icon-size);
+        background-size: 65%;
       }
     }
   }
@@ -117,7 +117,7 @@ $filter-button-width: u(4.6rem);
   position: absolute;
   bottom: 0;
   height: auto;
-  top: u(5.1rem);
+  top: u(10.8rem);
   z-index: $z4;
   width: 100%;
   overflow: visible;
@@ -137,6 +137,7 @@ $filter-button-width: u(4.6rem);
   @include heading(h2);
   background-color: $neutral;
   border-bottom: 1px solid $gray;
+  border-top: 2px solid $primary;
   color: $base;
   line-height: u(3rem);
   margin-bottom: 0;
@@ -146,15 +147,16 @@ $filter-button-width: u(4.6rem);
 
   &::before {
     @include u-icon-circle($filter, $primary, $inverse, $icon-size);
+    background-position: 50% 45%;
     content: '';
     float: left;
     margin-right: 1rem;
   }
 
   &::after {
-    @include u-icon($arrow-right-border, $base, $icon-size, $icon-size);
+    @include u-icon($arrow-right-border, $primary, $icon-size, $icon-size);
     content: '';
-    background-size: 75%;
+    background-size: 65%;
     clear: none;
     float: right;
   }
@@ -274,7 +276,7 @@ $filter-button-width: u(4.6rem);
 
 @include media($lg) {
   .filters {
-    border-right: 1px solid $gray;
+    border-right: 1px solid $primary;
     display: table-cell;
     position: relative;
     left: 0;
@@ -301,6 +303,7 @@ $filter-button-width: u(4.6rem);
   }
 
   .filters__header {
+    border-top: none;
     text-indent: -9999px;
     padding: u(1.2rem 2rem);
     width: u(7rem);

@@ -56,8 +56,6 @@
 }
 
 .data-container__body {
-  padding: u(0 1rem);
-
   &.fade-in {
     opacity: 0;
   }
@@ -108,7 +106,7 @@
 
   .data-container__body {
     border-top: 0;
-    padding: u(0 2rem 2rem 2rem);
+    padding-left: u(2rem);
   }
 
   .data-container__widgets {

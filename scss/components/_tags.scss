@@ -43,9 +43,7 @@
   @include u-icon-bg($x, $primary);
   background-size: u(1.4rem);
   background-position: 95% 50%;
-  border-bottom: 1px dotted $primary;
-  font-size: u(1.4rem);
-  padding-right: u(2.5rem);
+  padding-right: u(2.3rem);
 
   @include media($med) {
     float: right;
@@ -56,5 +54,5 @@
   display: inline-block;
   background: $primary;
   color: $primary-contrast;
-  padding: 2px;
+  padding: 2px 6px;
 }
