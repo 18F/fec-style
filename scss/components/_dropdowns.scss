@@ -45,7 +45,10 @@
   &.is-successful {
     &::after {
       @include u-icon-button($check);
-      padding-left: u(1rem);
+      background-position: 1.25rem 50%;
+      background-size: 18px;
+      padding-left: u(2.5rem);
+      right: 0;
     }
   }
 
