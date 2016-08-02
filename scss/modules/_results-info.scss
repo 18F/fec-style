@@ -25,10 +25,6 @@
   margin: 0;
 }
 
-.results-info__download {
-  margin-top: u(1rem);
-}
-
 .results-info__details {
   line-height: 2;
   font-family: $sans-serif;
@@ -36,6 +32,10 @@
 
 .results-info--simple {
   border-top: none;
+}
+
+.results-info__download {
+  display: none;
 }
 
 .dataTables_wrapper {
@@ -71,6 +71,7 @@
   }
 
   .results-info__download {
+    display: block;
     float: right;
     margin: 0;
     position: relative;

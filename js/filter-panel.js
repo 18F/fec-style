@@ -9,11 +9,11 @@ var helpers = require('./helpers');
 
 var defaultOptions = {
   body: '.filters',
+  content: '.filters__content',
   dataContainer: '.data-container',
   form: '#category-filters',
   focus: '.js-filter-toggle',
   toggle: '.js-filter-toggle',
-  close: '.js-filter-close'
 };
 
 function FilterPanel(options) {
@@ -21,14 +21,13 @@ function FilterPanel(options) {
   this.options = _.extend({}, defaultOptions, options);
 
   this.$body = $(this.options.body);
+  this.$content = this.$body.find(this.options.content);
   this.$dataContainer = $(this.options.dataContainer);
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
-  this.$close = $(this.options.close);
 
   this.$toggle.on('click', this.toggle.bind(this));
-  this.$close.on('click', this.hide.bind(this));
 
   this.filterSet = new FilterSet(this.$form).activate();
 
@@ -44,8 +43,8 @@ FilterPanel.prototype.setInitialDisplay = function() {
 };
 
 FilterPanel.prototype.show = function(focus) {
-  this.$body.addClass('is-open').attr('aria-hidden', false);
-  this.$toggle.attr('aria-hidden', true);
+  this.$body.addClass('is-open');
+  this.$content.attr('aria-hidden', false);
   accessibility.restoreTabindex(this.$form);
   $('body').addClass('is-showing-filters');
   this.isOpen = true;
@@ -57,8 +56,8 @@ FilterPanel.prototype.show = function(focus) {
 };
 
 FilterPanel.prototype.hide = function() {
-  this.$body.removeClass('is-open').attr('aria-hidden', true);
-  this.$toggle.attr('aria-hidden', false);
+  this.$body.removeClass('is-open');
+  this.$content.attr('aria-hidden', true);
   this.$focus.focus();
   accessibility.removeTabindex(this.$form);
   $('body').removeClass('is-showing-filters');

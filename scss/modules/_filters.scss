@@ -6,7 +6,7 @@
 //   <button class="filters__toggle">
 //     <span class="filters__toggle__text">Show filters</span>
 //   </button>
-//   <div class="filters__hider">
+//   <div class="filters__content">
 //     <h4 class="filter__header">Filters</h4>
 //     <div class="filter">
 //      Some filter
@@ -20,34 +20,26 @@
 //
 // Styleguide modules.filters
 
+$icon-size: u(3rem);
+$filter-button-width: u(4.6rem);
+
 // by default show filters offscreen
 .filters {
   @include clearfix();
-  @include u-bg--neutral();
-  @include transition(left .2s ease-in-out);
-  position: absolute;
-  bottom: 0;
-  height: auto;
-  top: u(-2rem);
-  left: -800px;
-  z-index: $z4;
-  width: 100%;
-  padding: u(1rem 0);
+  background: $neutral;
   display: block;
 
-  // slide filters down into view when open
   &.is-open {
-    left: 0;
-  }
+    .filters__content {
+      left: 0;
+    }
 
-  &[aria-hidden=true] {
-    display: block !important;
-  }
-
-  .filters__hider {
-    @include u-bg--neutral();
-    height: auto;
-    overflow: visible;
+    .filters__header {
+      &::after {
+        @include u-icon($arrow-left-border, $base, $icon-size, $icon-size);
+        background-size: 75%;
+      }
+    }
   }
 
   .accordion__button {
@@ -119,64 +111,52 @@
   }
 }
 
+.filters__content {
+  @include transition(left .2s ease-in-out);
+  @include u-bg--neutral();
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  top: u(5.6rem);
+  z-index: $z4;
+  width: 100%;
+  overflow: visible;
+  left: -800px;
+
+  &[aria-hidden=true] {
+    display: block !important;
+  }
+}
+
 .filters--fixed {
   margin-right: u(2rem);
 }
 
-.filters__hider {
-  height: 0;
-  overflow: hidden;
-}
-
-.filters__toggle {
-  background-color: $primary;
-  border: 1px solid $primary-contrast;
-  border-radius: 3px;
-  font-size: u(1.4rem);
-  color: $primary-contrast;
-  padding: u(.5rem);
-  float: left;
-  margin-right: u(1rem);
-
-  &[aria-hidden="false"] {
-    display: block;
-  }
-}
-
-.filters__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.filters__clear {
-  @include u-icon-bg($x, $primary-contrast);
-  background-size: u(1.4rem);
-  background-position: 95% 50%;
-  padding-right: u(2.5rem);
-}
-
-.filter__header {
-  margin-bottom: u(1rem);
-
-  @include media($lg) {
-    margin-bottom: u(1.5rem);
-  }
-}
-
-.filters__subheader {
-  border-top: 2px solid $primary;
-  display: block;
-  font-family: $sans-serif;
-  font-size: u(1.8rem);
-  font-weight: bold;
-  margin: u(3rem 0 1rem 0);
-  padding: u(2rem 0 0 0);
-  text-transform: uppercase;
+.filters__header {
+  @include clearfix();
+  @include heading(h2);
+  background-color: $neutral;
+  border-bottom: 1px solid $gray;
+  color: $base;
+  line-height: u(3rem);
+  margin-bottom: 0;
+  padding: u(1.25rem 2rem);
+  text-align: left;
   width: 100%;
 
-  & + .filter {
-    padding-top: 0;
+  &::before {
+    @include u-icon-circle($filter, $primary, $inverse, $icon-size);
+    content: '';
+    float: left;
+    margin-right: 1rem;
+  }
+
+  &::after {
+    @include u-icon($arrow-right-border, $base, $icon-size, $icon-size);
+    content: '';
+    background-size: 75%;
+    clear: none;
+    float: right;
   }
 }
 
@@ -191,8 +171,6 @@
     margin: 0;
   }
 }
-
-$filter-button-width: u(4.6rem);
 
 .filter {
   border-bottom: 1px solid darken($neutral, 10%);
@@ -286,26 +264,6 @@ $filter-button-width: u(4.6rem);
 // Use flexbox to get the filters into rows of equal height
 
 @include media($med) {
-  // .filters {
-  //   form {
-  //     @include display(flex);
-  //     @include justify-content(flex-start);
-  //     @include flex-wrap(wrap);
-  //   }
-  // }
-
-  // .filter {
-  //   border-bottom: none;
-  //   border-right: 1px solid darken($neutral, 10%);
-  //   margin-bottom: 2rem;
-  //   padding: 1rem 2rem;
-  //   width: 33.3333%;
-
-  //   &:nth-child(3n) {
-  //     border-right: none;
-  //   }
-  // }
-
   .filter {
     max-width: 50%;
   }
@@ -316,31 +274,43 @@ $filter-button-width: u(4.6rem);
 
 @include media($lg) {
   .filters {
-    @include transition(unset);
+    border-right: 1px solid $gray;
     display: table-cell;
-    left: u(-30rem);
-    padding: u(2rem 0);
     position: relative;
-    width: u(30rem);
+    left: 0;
+    top: 0;
+    width: u(4rem);
     vertical-align: top;
-
-    form {
-      display: block;
-    }
-
-    &[aria-hidden="true"] {
-      display: none !important;
-    }
 
     &.is-open {
       position: relative;
       top: 0;
       left: 0;
+      width: u(30rem);
       z-index: 0;
+
+      .filters__header {
+        width: 100%;
+        text-indent: 0;
+
+        &::after {
+          display: block;
+        }
+      }
     }
   }
 
-  .filters__hider {
+  .filters__header {
+    text-indent: -9999px;
+    width: u(7rem);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .filters__content {
+    @include transition(unset);
     overflow: visible;
   }
 

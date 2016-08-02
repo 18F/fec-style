@@ -5,7 +5,10 @@ var _ = require('underscore');
 
 var BODY_TEMPLATE = _.template(
   '<div>' +
-    '<h3 class="tags__title">Viewing:</h3>' +
+    '<div class="row">' +
+      '<h3 class="tags__title js-info"></h3>' +
+      '<button type="button" class="js-filter-clear tags__clear" aria-hidden="true">Clear all filters</button>' +
+    '</div>' +
     '<ul class="tags">' +
       '<li class="js-tag-title tags__title__text">{{ title }}</li>' +
     '</ul>' +
@@ -36,7 +39,7 @@ function TagList(opts) {
   this.$body = $(BODY_TEMPLATE({title: this.opts.title}));
   this.$list = this.$body.find('ul');
   this.$title = this.$body.find('.js-tag-title');
-  this.$clear = $('.js-filter-clear');
+  this.$clear = this.$body.find('.js-filter-clear');
 
   $(document.body)
     .on('filter:added', this.addTag.bind(this))
