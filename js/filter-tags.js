@@ -6,11 +6,11 @@ var _ = require('underscore');
 var BODY_TEMPLATE = _.template(
   '<div>' +
     '<div class="row">' +
-      '<h3 class="tags__title">Viewing about ' +
-        '<span class="js-count tags__count"></span> ' +
+      '<h3 class="tags__title">Viewing ' +
+        '<span class="js-count" aria-hidden="true">about <span class="tags__count"></span></span> ' +
         '<span class="js-result-type">filtered {{ resultType }} for:</span>' +
       '</h3>' +
-      '<button type="button" class="js-filter-clear tags__clear" aria-hidden="true">Clear all filters</button>' +
+      '<button type="button" class="js-filter-clear button--unstyled tags__clear" aria-hidden="true">Clear all filters</button>' +
     '</div>' +
     '<ul class="tags">' +
     '</ul>' +
@@ -50,6 +50,10 @@ function TagList(opts) {
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
   this.$clear.on('click', this.removeAllTags.bind(this));
+
+  if (this.opts.showResultCount) {
+    this.$body.find('.js-count').attr('aria-hidden', false);
+  }
 }
 
 TagList.prototype.addTag = function(e, opts) {
