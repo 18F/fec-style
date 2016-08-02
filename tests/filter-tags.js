@@ -27,15 +27,13 @@ describe('filter tags', function() {
 
   describe('constructor()', function() {
     it('creates elements', function() {
-      expect(this.tagList.$list.find('li').length).to.equal(1);
-      expect(this.tagList.$title.text()).to.equal('tags');
+      expect(this.tagList.$body.length).to.equal(1);
     });
   });
 
   describe('addTag()', function() {
     it('adds tag on invoke', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
-      expect(this.tagList.$title.text()).to.equal('');
       var tag = this.tagList.$list.find('li[data-id="name"]');
       expect(tag.length).to.equal(1);
       expect(tag.text()).to.contain('timmy');
@@ -76,7 +74,6 @@ describe('filter tags', function() {
       this.tagList.removeTag('name', true);
       var tag = this.tagList.$list.find('li[data-id="name"]');
       expect(tag.length).to.equal(0);
-      expect(this.tagList.$title.text()).to.equal('tags');
       expect($.prototype.trigger).to.have.been.calledWith('tag:removed', [{key: 'name'}]);
     });
 
