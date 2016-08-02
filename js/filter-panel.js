@@ -28,6 +28,8 @@ function FilterPanel(options) {
   this.$toggle = $(this.options.toggle);
 
   this.$toggle.on('click', this.toggle.bind(this));
+  this.$body.on('filter:added', this.handleAddEvent.bind(this));
+  this.$body.on('filter:removed', this.handleRemoveEvent.bind(this));
 
   this.filterSet = new FilterSet(this.$form).activate();
 
@@ -69,6 +71,30 @@ FilterPanel.prototype.toggle = function() {
     this.hide();
   } else {
     this.show(true);
+  }
+};
+
+FilterPanel.prototype.handleAddEvent = function() {
+  var filterCount = this.$toggle.find('.filter-count');
+
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    this.$toggle.append(' <span class="filter-count">1</span>');
+  }
+};
+
+FilterPanel.prototype.handleRemoveEvent = function(e, opts) {
+  if (opts.loadedOnce !== true) { return; }
+
+  var filterCount = this.$toggle.find('.filter-count');
+
+  if (filterCount.html() === '1') {
+    filterCount.remove();
+  }
+  else {
+    filterCount.html(parseInt(filterCount.html(), 10) - 1);
   }
 };
 
