@@ -115,7 +115,9 @@
 
       &.is-checked {
         @include u-icon-bg($check, $green-light);
+        background-color: $gray-light;
         background-position: 98%;
+        cursor: default;
       }
     }
 

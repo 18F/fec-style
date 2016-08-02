@@ -26,12 +26,15 @@ function Dropdown(selector, opts) {
   this.$body = $(selector);
   this.$button = this.$body.find('.dropdown__button');
   this.$panel = this.$body.find('.dropdown__panel');
+  this.$selectedInputs = this.$body.find('.dropdown__selected') ;
 
   if (this.opts.checkboxes) {
     this.$selected = this.$body.find('.dropdown__selected');
     this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-    this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedClick.bind(this));
+    this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedButtonClick.bind(this));
+
+    this.$selectedInputs.on('click', 'input[type="checkbox"]', this.handleInputsClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
@@ -107,11 +110,19 @@ Dropdown.prototype.handleCheck = function(e) {
   }
 };
 
-Dropdown.prototype.handleSelectedClick = function(e) {
+Dropdown.prototype.handleSelectedButtonClick = function(e) {
   var $button = $(e.target);
+  var $input = $('#' + $button.data('label'));
+
+  if (!$button.hasClass('is-checked')) {
+    $input.click();
+  }
+};
+
+Dropdown.prototype.handleInputsClick = function(e) {
+  var $button = $('button[data-label=' + e.target.id + ']');
 
   $button.toggleClass('is-checked');
-  $('#' + $button.data('label')).click();
 };
 
 Dropdown.prototype.selectItem = function($input) {
