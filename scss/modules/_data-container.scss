@@ -45,14 +45,15 @@
 
 .data-container__head {
   @include clearfix();
+  border-bottom: 1px solid $gray;
   padding: u(1rem);
+}
 
-  h1 {
-    border-bottom: none;
-    line-height: u(3.4rem);
-    margin: 0;
-    float: left;
-  }
+.data-container__title {
+  border-bottom: none;
+  line-height: u(3.4rem);
+  margin: 0;
+  float: left;
 }
 
 .data-container__body {
@@ -63,7 +64,6 @@
 
 .data-container__tags {
   @include clearfix();
-  border-top: 1px solid $gray;
   padding: u(1rem);
 }
 

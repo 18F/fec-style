@@ -2,6 +2,7 @@
 
 .fc-view-container {
   font-family: $sans-serif;
+  padding: u(0 2rem 2rem 2rem);
 }
 
 .fc-bg {
@@ -24,12 +25,29 @@
 // Controls
 .fc-toolbar {
   @include clearfix();
-  border-bottom: 2px solid $primary;
-  padding: u(2rem 0 1.5rem 0);
+  border-bottom: 1px solid $neutral;
+  padding: u(1rem);
+
+  .data-container__action {
+    margin-top: u(1rem);
+    width: 100%;
+
+    @include media($lg) {
+      @include span-columns(4);
+      float: right;
+      margin-top: 0;
+    }
+  }
+}
+
+.fc-view-controls {
+  @include clearfix();
+  padding: u(2rem);
+  width: 100%;
 }
 
 .fc-left {
-  float: right;
+  float: left;
 
   .fc-button-group {
     float: left;
@@ -368,12 +386,13 @@
 
 // List view
 .cal-list__toggles {
-  padding-top: u(2rem);
+  float: left;
+  font-family: $sans-serif;
+  padding-top: u(.5rem);
 }
 
 .cal-list {
   letter-spacing: -.3px;
-  padding-top: u(2rem);
 }
 
 .cal-list__title {
@@ -497,11 +516,16 @@
 // - View buttons on the right
 
 @include media($med) {
-  .fc-left {
-    float: left;
+  .fc-toolbar {
+    padding: u(1rem 2rem);
+  }
+
+  .fc-clear {
+    display: none;
   }
 
   .fc-center {
+    float: left;
     text-align: center;
   }
 
@@ -519,6 +543,10 @@
       text-indent: -9999px;
       width: u(4rem);
     }
+  }
+
+  .cal-list__toggles {
+    float: right;
   }
 }
 
