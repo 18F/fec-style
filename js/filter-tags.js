@@ -107,9 +107,10 @@ TagList.prototype.removeTagDom = function(e) {
 };
 
 TagList.prototype.renameTag = function(e, opts) {
+  var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
   var $tag = this.$list.find('[data-id="' + opts.key + '"]');
   if ($tag.length) {
-    $tag.replaceWith(TAG_TEMPLATE(opts));
+    $tag.replaceWith(tag);
   }
 };
 
