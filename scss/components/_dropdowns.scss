@@ -119,7 +119,8 @@
       &.is-checked {
         @include u-icon-bg($check, $green-light);
         background-color: $gray-light;
-        background-position: 98%;
+        background-position: 96%;
+        padding-right: u(1.5rem);
         cursor: default;
       }
     }
