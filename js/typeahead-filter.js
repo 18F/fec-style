@@ -91,6 +91,8 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
     id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
   });
   this.datum = null;
+
+  this.$button.addClass('is-loading');
 };
 
 TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
