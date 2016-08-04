@@ -209,6 +209,25 @@
   }
 }
 
+// Range inputs
+.range {
+  display: table;
+}
+
+.range__input {
+  width: 48%;
+  display: table-cell;
+  margin-right: 0;
+}
+
+.range__hyphen {
+  width: 4%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
 // Date range inputs
 //
 // Combination of radio buttons and text inputs for selecting date ranges
