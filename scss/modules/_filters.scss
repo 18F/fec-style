@@ -148,6 +148,7 @@ $filter-button-width: u(4.6rem);
   &::before {
     @include u-icon-circle($filter, $primary, $inverse, $icon-size);
     background-position: 50% 45%;
+    background-size: 70%;
     content: '';
     float: left;
     margin-right: 1rem;
