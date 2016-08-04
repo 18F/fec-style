@@ -238,3 +238,14 @@
 .date-range-input {
   padding-left: u(2.5rem);
 }
+
+[type="checkbox"]:checked + label,
+[type="radio"]:checked + label {
+  &.is-successful {
+    border: 1px solid $green-light;
+  }
+
+  &.is-unsuccessful {
+    border: 1px solid $error;
+  }
+}

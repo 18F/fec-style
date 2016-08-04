@@ -48,6 +48,10 @@
     border-bottom-color: $primary;
     color: $primary;
   }
+
+  li {
+    font-size: u(1.4rem);
+  }
 }
 
 .tooltip--above {
@@ -180,5 +184,18 @@
 
   .tooltip__title {
     margin-bottom: u(1rem);
+  }
+
+  .tooltip__point {
+    background-image: url('../img/tooltip-point.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: u(2rem);
+    left: 50%;
+    margin-left: u(-1rem);
+    position: absolute;
+    top: u(-1rem);
+    width: u(2rem);
   }
 }

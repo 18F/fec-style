@@ -7,10 +7,10 @@ $base-font-family: $serif;
 $crimson: #631010;
 $orange: #f77b42;
 
-$federal-blue: #112e51; // U.S. Web Design Standards color primary-darkest //
+$federal-blue: #112e51; // U.S. Web Design Standards color (blue) $primary-darkest //
 $aqua: #36bdbb;
 
-$base: #212121; // U.S. Web Design Standards color base //
+$base: #212121; // U.S. Web Design Standards color $base //
 $inverse: #ffffff;
 $inverse-translucent: rgba(255, 255, 255, .7);
 
@@ -23,14 +23,17 @@ $bright-blue: #0aacfa;
 $deep-aqua: #3e8a9a;
 $navy: #164f85;
 
-$gray-lightest: #f1f1f1; // U.S. Web Design Standards color gray-lightest //
+$gray-lightest: #f1f1f1; // U.S. Web Design Standards color $gray-lightest //
 $gray-light: #e8e8e8;
-$gray-medium: #d6d7d9; // U.S. Web Design Standards color gray-mediumer //
-$gray: #aeb0b5; // U.S. Web Design Standards color gray-medium //
-$gray-dark: #5b616b; // U.S. Web Design Standards color gray //
+$gray-medium: #d6d7d9; // U.S. Web Design Standards color $gray-lighter //
+$gray: #aeb0b5; // U.S. Web Design Standards color $gray-light //
+$gray-dark: #5b616b; // U.S. Web Design Standards color $gray //
 
 
 $disabled: #737373;
+$green-light: #4aa564; // U.S. Web Design Standards color $green-light //
+$green-dark: #287538;
+$error: #cd2026; // U.S. Web Design Standards color (red) $secondary-dark //
 
 // Focus
 $focus: #5b9dd9; // Focus color in order to simulate focus ring on checkboxes
