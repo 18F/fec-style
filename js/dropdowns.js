@@ -31,9 +31,9 @@ function Dropdown(selector, opts) {
     this.$selected = this.$body.find('.dropdown__selected');
     this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
-    this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedButtonClick.bind(this));
+    this.$panel.on('click', '.dropdown__item--selected', this.handleDropdownButtonClick.bind(this));
 
-    this.$selected.on('click', 'input[type="checkbox"]', this.handleInputsClick.bind(this));
+    this.$selected.on('click', 'input[type="checkbox"]', this.handleSelectedInputClick.bind(this));
     this.$selected.on('click', '.remove', this.handleRemoveClick.bind(this));
 
     if (this.isEmpty()) {
@@ -113,7 +113,7 @@ Dropdown.prototype.handleCheck = function(e) {
   }
 };
 
-Dropdown.prototype.handleSelectedButtonClick = function(e) {
+Dropdown.prototype.handleDropdownButtonClick = function(e) {
   var $button = $(e.target);
   var $input = $('#' + $button.data('label'));
 
@@ -122,7 +122,7 @@ Dropdown.prototype.handleSelectedButtonClick = function(e) {
   }
 };
 
-Dropdown.prototype.handleInputsClick = function(e) {
+Dropdown.prototype.handleSelectedInputClick = function(e) {
   var $button = $('button[data-label=' + e.target.id + ']');
 
   $button.toggleClass('is-checked');
