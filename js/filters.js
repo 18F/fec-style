@@ -517,4 +517,10 @@ function MultiFilter(elm) {
 MultiFilter.prototype = Object.create(Filter.prototype);
 MultiFilter.constructor = MultiFilter;
 
+// This is a temporary override for the calendar filters to not show filter count
+// Because this filter has multiple inputs with the same name,
+// the filter count gets updated for each one,
+// resulting in inflated numbers.
+MultiFilter.prototype.handleAddEvent = function() { return; };
+
 module.exports = {Filter: Filter};
