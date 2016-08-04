@@ -34,14 +34,15 @@ function Dropdown(selector, opts) {
     this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedButtonClick.bind(this));
 
     this.$selected.on('click', 'input[type="checkbox"]', this.handleInputsClick.bind(this));
-    this.$selected.on('click', '.remove', this.handleCheckboxRemove.bind(this));
+    this.$selected.on('click', '.remove', this.handleRemoveClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
     }
   }
 
-  $(document.body).on('tag:removed', this.handleCheckboxRemove.bind(this));
+  $(document.body).on('tag:removed', this.handleRemoveClick.bind(this));
+  $(document.body).on('tag:removeAll', this.handleClearFilters.bind(this));
 
   this.$button.on('click', this.toggle.bind(this));
 
@@ -127,21 +128,33 @@ Dropdown.prototype.handleInputsClick = function(e) {
   $button.toggleClass('is-checked');
 };
 
-Dropdown.prototype.handleCheckboxRemove = function(e, opts) {
-  var $input = $(e.target).parent().find('input');
-  var $label = $(e.target).parent().find('label');
-  var $button = $('button[data-label="' + $(e.target).data('dropdown-label') +'"]');
-
-  // tag removal
-  if (opts) {
-    $input = $('.dropdown__selected').find('#' + opts.key);
-    $label = $input.parent().find('label');
-    $button = $('button[data-label="' + opts.key +'"]');
-  }
+Dropdown.prototype.handleCheckboxRemoval = function($input) {
+  var $label = $input.parent().find('label');
+  var $button = $('button[data-label="' + $input.attr('id') +'"]');
 
   $button.parent().append($input);
   $button.parent().append($label);
   $button.remove();
+};
+
+Dropdown.prototype.handleRemoveClick = function(e, opts) {
+  var $input = $(e.target).parent().find('input');
+
+  // tag removal
+  if (opts) {
+    $input = this.$selected.find('#' + opts.key);
+  }
+
+  this.handleCheckboxRemoval($input);
+};
+
+// "Clear all filters" will remove unchecked dropdown checkboxes
+Dropdown.prototype.handleClearFilters = function() {
+  var self = this;
+
+  this.$selected.find('input:checkbox:not(:checked)').each(function () {
+    self.handleCheckboxRemoval($(this));
+  });
 };
 
 Dropdown.prototype.selectItem = function($input) {

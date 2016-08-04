@@ -59,6 +59,7 @@ TagList.prototype.addTag = function(e, opts) {
 
 TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('[data-id="' + key + '"]');
+
   if ($tag.length) {
     if (emit) {
       $tag.trigger('tag:removed', [{key: key}]);
@@ -77,9 +78,12 @@ TagList.prototype.removeTag = function(key, emit) {
 
 TagList.prototype.removeAllTags = function(e) {
   var self = this;
+
   this.$list.find('[data-removable]').each(function(){
     self.removeTag($(this).data('id'), true);
   });
+
+  $(document.body).trigger('tag:removeAll');
 };
 
 TagList.prototype.removeTagEvt = function(e, opts) {
