@@ -85,7 +85,7 @@ describe('dropdown', function() {
     var selectedItems = this.dropdown.$selected.find('.dropdown__item');
     var panelItems = this.dropdown.$panel.find('.dropdown__item');
     expect(selectedItems.length).to.equal(1);
-    expect(panelItems.length).to.equal(1);
+    expect(panelItems.length).to.equal(2);
   });
 
   it('focuses next input', function() {
