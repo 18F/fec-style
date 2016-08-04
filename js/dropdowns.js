@@ -26,7 +26,6 @@ function Dropdown(selector, opts) {
   this.$body = $(selector);
   this.$button = this.$body.find('.dropdown__button');
   this.$panel = this.$body.find('.dropdown__panel');
-  this.$selectedInputs = this.$body.find('.dropdown__selected') ;
 
   if (this.opts.checkboxes) {
     this.$selected = this.$body.find('.dropdown__selected');
@@ -34,7 +33,8 @@ function Dropdown(selector, opts) {
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
     this.$panel.on('click', '.dropdown__item--selected', this.handleSelectedButtonClick.bind(this));
 
-    this.$selectedInputs.on('click', 'input[type="checkbox"]', this.handleInputsClick.bind(this));
+    this.$selected.on('click', 'input[type="checkbox"]', this.handleInputsClick.bind(this));
+    this.$selected.on('click', '.remove', this.handleCheckboxRemove.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
@@ -125,6 +125,16 @@ Dropdown.prototype.handleInputsClick = function(e) {
   $button.toggleClass('is-checked');
 };
 
+Dropdown.prototype.handleCheckboxRemove = function(e) {
+  var $input = $(e.target).parent().find('input');
+  var $label = $(e.target).parent().find('label');
+  var $button = $('button[data-label="' + $(e.target).data('dropdown-label') +'"]');
+
+  $button.parent().append($input);
+  $button.parent().append($label);
+  $button.remove();
+};
+
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
   var $label = $item.find('label');
@@ -132,12 +142,17 @@ Dropdown.prototype.selectItem = function($input) {
   var next = $item.nextAll('.dropdown__item');
 
   $item.after('<li class="dropdown__item">' +
-    '<button class="dropdown__item--selected is-checked" data-label="' + $label.attr('for') + '">' +
+    '<button class="dropdown__item--selected is-checked"' +
+    ' data-label="' + $label.attr('for') +
+    '" data-value="' + $input.val() + '">' +
     $label.text() +
     '</button>' +
     '</li>');
 
   this.$selected.append($item);
+
+  $item.append('<button class="remove" data-dropdown-label="' + $label.attr('for') + '">' +
+    '<span class="u-visually-hidden">Remove</span></button>');
 
   if (!this.isEmpty()) {
     if (next.length) {

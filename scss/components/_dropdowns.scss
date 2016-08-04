@@ -161,6 +161,13 @@
 
   .dropdown__item {
     @include animation(fadeIn .2s ease-in);
+    position: relative;
+
+    &:hover {
+      input[type="checkbox"]:not(:checked) + label:not(.is-loading) + button {
+        display: inline-block;
+      }
+    }
   }
 
   input {
@@ -169,6 +176,16 @@
 
   [type="checkbox"] + label {
     max-width: 90%;
+  }
+
+  .remove {
+    @include u-icon-button($x, $gray-dark);
+    background-position: .75rem 50%;
+    background-size: 18px;
+    height: u(2.5rem);
+    display: none;
+    position: absolute;
+    z-index: $z1;
   }
 
   @include media($med) {
