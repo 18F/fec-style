@@ -41,6 +41,8 @@ function Dropdown(selector, opts) {
     }
   }
 
+  $(document.body).on('tag:removed', this.handleCheckboxRemove.bind(this));
+
   this.$button.on('click', this.toggle.bind(this));
 
   this.events = new listeners.Listeners();
@@ -125,10 +127,17 @@ Dropdown.prototype.handleInputsClick = function(e) {
   $button.toggleClass('is-checked');
 };
 
-Dropdown.prototype.handleCheckboxRemove = function(e) {
+Dropdown.prototype.handleCheckboxRemove = function(e, opts) {
   var $input = $(e.target).parent().find('input');
   var $label = $(e.target).parent().find('label');
   var $button = $('button[data-label="' + $(e.target).data('dropdown-label') +'"]');
+
+  // tag removal
+  if (opts) {
+    $input = $('.dropdown__selected').find('#' + opts.key);
+    $label = $input.parent().find('label');
+    $button = $('button[data-label="' + opts.key +'"]');
+  }
 
   $button.parent().append($input);
   $button.parent().append($label);
