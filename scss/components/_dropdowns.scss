@@ -182,8 +182,9 @@
     @include u-icon-button($x, $gray-dark);
     background-position: .75rem 50%;
     background-size: 18px;
-    height: u(2.5rem);
     display: none;
+    top: 0;
+    bottom: u(1rem);
     position: absolute;
     z-index: $z1;
   }
