@@ -123,18 +123,21 @@ Dropdown.prototype.handleDropdownItemClick = function(e) {
 };
 
 Dropdown.prototype.handleSelectedInputClick = function(e) {
-  var $button = this.$selected.find('button[data-label=' + e.target.id + ']');
+  var $button = this.$panel.find('button[data-label=' + e.target.id + ']');
 
   $button.toggleClass('is-checked');
 };
 
 Dropdown.prototype.handleCheckboxRemoval = function($input) {
+  var $item = $input.parent();
   var $label = $input.parent().find('label');
   var $button = this.$panel.find('button[data-label="' + $input.attr('id') +'"]');
 
   $button.parent().append($input);
   $button.parent().append($label);
   $button.remove();
+
+  $item.remove();
 };
 
 Dropdown.prototype.handleRemoveClick = function(e, opts) {
