@@ -34,7 +34,7 @@ function Dropdown(selector, opts) {
     this.$panel.on('click', '.dropdown__item--selected', this.handleDropdownItemClick.bind(this));
 
     this.$selected.on('click', 'input[type="checkbox"]', this.handleSelectedInputClick.bind(this));
-    this.$selected.on('click', '.remove', this.handleRemoveClick.bind(this));
+    this.$selected.on('click', '.dropdown__remove', this.handleRemoveClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
@@ -173,7 +173,7 @@ Dropdown.prototype.selectItem = function($input) {
 
   this.$selected.append($item);
 
-  $item.append('<button class="remove" data-dropdown-label="' + $label.attr('for') + '">' +
+  $item.append('<button class="dropdown__remove" data-dropdown-label="' + $label.attr('for') + '">' +
     '<span class="u-visually-hidden">Remove</span></button>');
 
   if (!this.isEmpty()) {
