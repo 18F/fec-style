@@ -71,8 +71,9 @@ $filter-button-width: u(4.6rem);
       content: '';
       display: inline-block;
       width: u(2rem);
-      height: u(2rem);
       position: absolute;
+      top: 0;
+      bottom: 0;
       right: u(-3rem);
     }
 
@@ -92,6 +93,7 @@ $filter-button-width: u(4.6rem);
 
       &::after {
         @include u-icon-bg($check, $green-light);
+        background-position: 50%;
       }
     }
 
@@ -100,12 +102,7 @@ $filter-button-width: u(4.6rem);
 
       &::after {
         @include u-icon-bg($x, $error);
-        content: '';
-        display: inline-block;
-        width: u(2rem);
-        height: u(2rem);
-        position: absolute;
-        right: u(-3rem);
+        background-position: 50%;
       }
     }
   }

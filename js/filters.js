@@ -137,6 +137,11 @@ Filter.prototype.handleChange = function(e) {
 
     if (loadedOnce) {
       $label.addClass('is-loading');
+
+      // dropdown loading status
+      if ($input.parent().hasClass('dropdown__item')) {
+        this.$body.find('button[data-name="' + $input.attr('name') + '"]').addClass('is-loading');
+      }
     }
   }
   else if (type === 'text') {
