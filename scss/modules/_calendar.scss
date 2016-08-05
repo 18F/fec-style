@@ -33,7 +33,7 @@
     width: 100%;
 
     @include media($lg) {
-      @include span-columns(4);
+      width: auto;
       float: right;
       margin-top: 0;
     }

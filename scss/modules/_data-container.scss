@@ -139,7 +139,7 @@
   .export-widget {
     float: left;
     margin-right: u(1rem);
-    width: calc(50% - .5rem);
+    width: auto;
 
     &:last-of-type {
       margin: 0;
