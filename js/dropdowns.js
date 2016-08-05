@@ -165,15 +165,12 @@ Dropdown.prototype.selectItem = function($input) {
 
   $item.after('<li class="dropdown__item">' +
     '<button class="dropdown__item--selected is-checked"' +
-    ' data-label="' + $label.attr('for') +
-    '" data-value="' + $input.val() + '">' +
-    $label.text() +
-    '</button>' +
-    '</li>');
+    ' data-label="' + $label.attr('for') + '" >' +
+    $label.text() + '</button></li>');
 
   this.$selected.append($item);
 
-  $item.append('<button class="dropdown__remove" data-dropdown-label="' + $label.attr('for') + '">' +
+  $item.append('<button class="dropdown__remove">' +
     '<span class="u-visually-hidden">Remove</span></button>');
 
   if (!this.isEmpty()) {
