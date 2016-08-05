@@ -178,7 +178,7 @@
     max-width: 90%;
   }
 
-  .remove {
+  .dropdown__remove {
     @include u-icon-button($x, $gray-dark);
     background-position: .75rem 50%;
     background-size: 18px;
