@@ -140,7 +140,7 @@ Filter.prototype.handleChange = function(e) {
 
       // dropdown loading status
       if ($input.parent().hasClass('dropdown__item')) {
-        $('button[data-name="' + $input.attr('name') + '"]').addClass('is-loading');
+        this.$body.find('button[data-name="' + $input.attr('name') + '"]').addClass('is-loading');
       }
     }
   }

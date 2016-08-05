@@ -115,7 +115,7 @@ Dropdown.prototype.handleCheck = function(e) {
 
 Dropdown.prototype.handleDropdownItemClick = function(e) {
   var $button = $(e.target);
-  var $input = $('#' + $button.data('label'));
+  var $input = this.$selected.find('#' + $button.data('label'));
 
   if (!$button.hasClass('is-checked')) {
     $input.click();
@@ -123,14 +123,14 @@ Dropdown.prototype.handleDropdownItemClick = function(e) {
 };
 
 Dropdown.prototype.handleSelectedInputClick = function(e) {
-  var $button = $('button[data-label=' + e.target.id + ']');
+  var $button = this.$selected.find('button[data-label=' + e.target.id + ']');
 
   $button.toggleClass('is-checked');
 };
 
 Dropdown.prototype.handleCheckboxRemoval = function($input) {
   var $label = $input.parent().find('label');
-  var $button = $('button[data-label="' + $input.attr('id') +'"]');
+  var $button = this.$panel.find('button[data-label="' + $input.attr('id') +'"]');
 
   $button.parent().append($input);
   $button.parent().append($label);
