@@ -85,7 +85,32 @@ describe('dropdown', function() {
     var selectedItems = this.dropdown.$selected.find('.dropdown__item');
     var panelItems = this.dropdown.$panel.find('.dropdown__item');
     expect(selectedItems.length).to.equal(1);
-    expect(panelItems.length).to.equal(1);
+    expect(panelItems.length).to.equal(2);
+  });
+
+  it('selects dropdown item and make sure it is checked', function() {
+    this.dropdown.selectItem($('#A'));
+    var panelItems = this.dropdown.$panel.find('.dropdown__item');
+    expect(panelItems.find('.dropdown__item--selected').length).to.equal(1);
+    expect(panelItems.find('.dropdown__item--selected').hasClass('is-checked')).to.be.true;
+  });
+
+  it('unchecks an input', function() {
+    var checkbox = this.dropdown.$panel.find('#B');
+    checkbox.click();
+    checkbox.click();
+    var dropdownItem = this.dropdown.$panel.find('.dropdown__item--selected');
+    expect(dropdownItem.hasClass('is-checked')).to.be.false;
+  });
+
+  it('removes an unchecked input', function() {
+    var checkbox = this.dropdown.$panel.find('#B');
+    checkbox.click();
+    checkbox.click();
+    expect(checkbox.is(':checked')).to.be.false;
+    this.dropdown.handleCheckboxRemoval(checkbox);
+    var selectedItems = this.dropdown.$selected.find('.dropdown__item');
+    expect(selectedItems.length).to.equal(0);
   });
 
   it('focuses next input', function() {
