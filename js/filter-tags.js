@@ -7,7 +7,7 @@ var BODY_TEMPLATE = _.template(
   '<div>' +
     '<div class="row">' +
       '<h3 class="tags__title">Viewing ' +
-        '<span class="js-count" aria-hidden="true">about <span class="tags__count"></span></span> ' +
+        '<span class="js-count" aria-hidden="true"></span> ' +
         '<span class="js-result-type">filtered {{ resultType }} for:</span>' +
       '</h3>' +
       '<button type="button" class="js-filter-clear button--unstyled tags__clear" aria-hidden="true">Clear all filters</button>' +
