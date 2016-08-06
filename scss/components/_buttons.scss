@@ -390,10 +390,12 @@
 
 .button--download {
   @include u-icon-button($download, left);
+  padding-right: u(6rem);
 }
 
 .button--subscribe {
   @include u-icon-button($signal, left);
+  padding-right: u(6rem);
 }
 
 .button--grid {
