@@ -31,11 +31,18 @@ function Dropdown(selector, opts) {
     this.$selected = this.$body.find('.dropdown__selected');
     this.$panel.on('keyup', 'input[type="checkbox"]', this.handleCheckKeyup.bind(this));
     this.$panel.on('change', 'input[type="checkbox"]', this.handleCheck.bind(this));
+    this.$panel.on('click', '.dropdown__item--selected', this.handleDropdownItemClick.bind(this));
+
+    this.$selected.on('click', 'input[type="checkbox"]', this.handleSelectedInputClick.bind(this));
+    this.$selected.on('click', '.dropdown__remove', this.handleRemoveClick.bind(this));
 
     if (this.isEmpty()) {
       this.removePanel();
     }
   }
+
+  $(document.body).on('tag:removed', this.handleRemoveClick.bind(this));
+  $(document.body).on('tag:removeAll', this.handleClearFilters.bind(this));
 
   this.$button.on('click', this.toggle.bind(this));
 
@@ -106,13 +113,68 @@ Dropdown.prototype.handleCheck = function(e) {
   }
 };
 
+Dropdown.prototype.handleDropdownItemClick = function(e) {
+  var $button = $(e.target);
+  var $input = this.$selected.find('#' + $button.data('label'));
+
+  if (!$button.hasClass('is-checked')) {
+    $input.click();
+  }
+};
+
+Dropdown.prototype.handleSelectedInputClick = function(e) {
+  var $button = this.$panel.find('button[data-label=' + e.target.id + ']');
+
+  $button.toggleClass('is-checked');
+};
+
+Dropdown.prototype.handleCheckboxRemoval = function($input) {
+  var $item = $input.parent();
+  var $label = $input.parent().find('label');
+  var $button = this.$panel.find('button[data-label="' + $input.attr('id') +'"]');
+
+  $button.parent().append($input);
+  $button.parent().append($label);
+  $button.remove();
+
+  $item.remove();
+};
+
+Dropdown.prototype.handleRemoveClick = function(e, opts) {
+  var $input = $(e.target).parent().find('input');
+
+  // tag removal
+  if (opts) {
+    $input = this.$selected.find('#' + opts.key);
+  }
+
+  this.handleCheckboxRemoval($input);
+};
+
+// "Clear all filters" will remove unchecked dropdown checkboxes
+Dropdown.prototype.handleClearFilters = function() {
+  var self = this;
+
+  this.$selected.find('input:checkbox:not(:checked)').each(function () {
+    self.handleCheckboxRemoval($(this));
+  });
+};
+
 Dropdown.prototype.selectItem = function($input) {
   var $item = $input.parent('.dropdown__item');
   var $label = $item.find('label');
   var prev = $item.prevAll('.dropdown__item');
   var next = $item.nextAll('.dropdown__item');
 
+  $item.after('<li class="dropdown__item">' +
+    '<button class="dropdown__item--selected is-checked"' +
+    ' data-label="' + $label.attr('for') + '" >' +
+    $label.text() + '</button></li>');
+
   this.$selected.append($item);
+
+  $item.append('<button class="dropdown__remove">' +
+    '<span class="u-visually-hidden">Remove</span></button>');
 
   if (!this.isEmpty()) {
     if (next.length) {
