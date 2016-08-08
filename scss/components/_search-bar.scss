@@ -219,10 +219,6 @@ $search-button-width: u(5.6rem);
     padding: 0;
   }
 
-  .is-loading {
-    background-image: url('../img/loading-ellipsis-gray.gif');
-  }
-
   &[data-allow-text] {
     .tt-suggestion__missing {
       display: none;
