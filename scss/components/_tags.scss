@@ -4,24 +4,25 @@
   font-family: $sans-serif;
   font-size: 1em;
   float: left;
-  color: $primary-contrast;
   margin: 0;
   padding: u(.5rem 1rem .5rem 0);
 }
 
 .tags__title__text {
-  color: $inverse;
+  color: $primary;
   display: inline-block;
   margin: u(4px .5rem);
 }
 
 .tags {
+  padding: 5px 0;
   width: 100%;
 }
 
 .tag {
   display: inline-block;
-  background-color: $neutral;
+  background-color: $inverse;
+  border: 1px solid $gray;
   border-radius: 4px;
   color: $primary;
   font-family: $sans-serif;
@@ -36,4 +37,22 @@
   background-position: 100% 45%;
   border: none;
   padding: u(1rem);
+}
+
+.tags__clear {
+  @include u-icon-bg($x, $primary);
+  background-size: u(1.4rem);
+  background-position: 95% 50%;
+  padding-right: u(2.3rem);
+
+  @include media($med) {
+    float: right;
+  }
+}
+
+.tags__count {
+  display: inline-block;
+  background: $primary;
+  color: $primary-contrast;
+  padding: 2px 6px;
 }

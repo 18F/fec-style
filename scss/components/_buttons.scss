@@ -384,13 +384,18 @@
   @include u-icon-button($person-location, left);
 }
 
-.button--export,
+.button--export {
+  @include u-icon-button($download, right);
+}
+
 .button--download {
   @include u-icon-button($download, left);
+  padding-right: u(6rem);
 }
 
 .button--subscribe {
   @include u-icon-button($signal, left);
+  padding-right: u(6rem);
 }
 
 .button--grid {
@@ -432,6 +437,7 @@
 // .button--close--primary          - Primary close button
 // .button--down                    - Down button
 // .button--cancel                  - Cancel button
+// .button--unstyled                - Unstyled button
 // .button--panel                   - Panel trigger button
 //
 // Markup:
@@ -471,6 +477,12 @@
 
 .button--cancel {
   @include u-icon($x-circle, $primary, 2rem, 2rem, contain);
+}
+
+.button--unstyled {
+  border-bottom: 1px dotted $primary;
+  font-size: u(1.4rem);
+  padding: 0;
 }
 
 .button--panel {

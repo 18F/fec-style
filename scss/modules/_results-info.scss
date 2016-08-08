@@ -25,10 +25,6 @@
   margin: 0;
 }
 
-.results-info__download {
-  margin-top: u(1rem);
-}
-
 .results-info__details {
   line-height: 2;
   font-family: $sans-serif;
@@ -70,18 +66,15 @@
     float: right;
   }
 
-  .results-info__download {
-    float: right;
-    margin: 0;
-    position: relative;
-  }
-
   .dataTables_wrapper {
     .results-info {
-      .dataTables_length,
-      .dataTables_paginate {
+      .dataTables_length {
         float: left;
         margin-left: 0;
+      }
+
+      .dataTables_paginate {
+        padding: u(.5rem 2rem);
       }
 
       .dataTables_info {
@@ -95,9 +88,6 @@
       padding: u(0 1rem 0 0);
     }
 
-    .dataTables_paginate {
-      padding: u(.5rem 0);
-    }
   }
 }
 

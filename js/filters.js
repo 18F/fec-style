@@ -264,7 +264,7 @@ SelectFilter.prototype.setValue = function(value) {
 SelectFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
   var id = this.$input.attr('id');
-  var eventName = this.loadedOnce ? 'filter:modify' : 'filter:added';
+  var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
 
   this.$input.trigger(eventName, [
     {

@@ -16,17 +16,7 @@
 // Styleguide components.page-header
 
 .page-header {
-  @include clearfix();
-  padding: u(1rem);
-
-  .search__container {
-    display: none;
-  }
-
-  a,
-  a:hover {
-    border-color: $inverse;
-  }
+  display: none;
 }
 
 .page-header__icon {
@@ -58,7 +48,14 @@
 
 @include media($med) {
   .page-header {
+    @include clearfix();
+    display: block;
     padding: u(1rem 2rem);
+
+    a,
+    a:hover {
+      border-color: $inverse;
+    }
 
     .search__container {
       display: block;

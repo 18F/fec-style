@@ -118,9 +118,11 @@
 }
 
 .site-header {
+  border-bottom: 1px solid $neutral;
   position: relative;
 
   @include media($lg) {
+    border-bottom: none;
     position: relative;
     z-index: $z-header;
   }

@@ -5,9 +5,14 @@ var _ = require('underscore');
 
 var BODY_TEMPLATE = _.template(
   '<div>' +
-    '<h3 class="tags__title">Viewing:</h3>' +
+    '<div class="row">' +
+      '<h3 class="tags__title">Viewing ' +
+        '<span class="js-count" aria-hidden="true"></span> ' +
+        '<span class="js-result-type">filtered {{ resultType }} for:</span>' +
+      '</h3>' +
+      '<button type="button" class="js-filter-clear button--unstyled tags__clear" aria-hidden="true">Clear all filters</button>' +
+    '</div>' +
     '<ul class="tags">' +
-      '<li class="js-tag-title tags__title__text">{{ title }}</li>' +
     '</ul>' +
   '</div>',
   {interpolate: /\{\{(.+?)\}\}/g}
@@ -33,10 +38,10 @@ var NONREMOVABLE_TAG_TEMPLATE = _.template(
 function TagList(opts) {
   this.opts = opts;
 
-  this.$body = $(BODY_TEMPLATE({title: this.opts.title}));
+  this.$body = $(BODY_TEMPLATE({resultType: this.opts.resultType}));
   this.$list = this.$body.find('ul');
-  this.$title = this.$body.find('.js-tag-title');
-  this.$clear = $('.js-filter-clear');
+  this.$resultType = this.$body.find('.js-result-type');
+  this.$clear = this.$body.find('.js-filter-clear');
 
   $(document.body)
     .on('filter:added', this.addTag.bind(this))
@@ -45,13 +50,22 @@ function TagList(opts) {
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
   this.$clear.on('click', this.removeAllTags.bind(this));
+
+  if (this.opts.showResultCount) {
+    this.$body.find('.js-count').attr('aria-hidden', false);
+  }
 }
 
 TagList.prototype.addTag = function(e, opts) {
   var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
   this.removeTag(opts.key, false);
-  this.$title.html('');
   this.$list.append(tag);
+
+  if (this.$list.find('.tag').length > 0) {
+    this.$resultType.html('filtered ' + this.opts.resultType + ' for:');
+    this.$list.attr('aria-hidden', false);
+  }
+
   if (!opts.nonremovable) {
     this.$clear.attr('aria-hidden', false);
   }
@@ -72,7 +86,8 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 
   if (this.$list.find('.tag').length === 0) {
-    this.$title.html(this.opts.title);
+    this.$resultType.html(this.opts.resultType);
+    this.$list.attr('aria-hidden', true);
   }
 };
 
@@ -96,9 +111,10 @@ TagList.prototype.removeTagDom = function(e) {
 };
 
 TagList.prototype.renameTag = function(e, opts) {
+  var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
   var $tag = this.$list.find('[data-id="' + opts.key + '"]');
   if ($tag.length) {
-    $tag.replaceWith(TAG_TEMPLATE(opts));
+    $tag.replaceWith(tag);
   }
 };
 
