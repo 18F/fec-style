@@ -117,7 +117,7 @@
       }
 
       &.is-checked {
-        @include u-icon-bg($check, $green-light);
+        @include u-icon-bg($check, $gray);
         background-color: $gray-light;
         background-position: right u(.5rem) top 50%;
         padding-right: u(1.5rem);
