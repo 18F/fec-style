@@ -168,8 +168,12 @@
     position: relative;
 
     &:hover {
-      input[type="checkbox"]:not(:checked) + label:not(.is-loading) + button {
+      input[type="checkbox"]:not(:checked) + label:not(.is-loading) + .dropdown__remove {
         display: inline-block;
+      }
+
+      input[type="checkbox"]:not(:checked) + label.is-unsuccessful + .dropdown__remove {
+        display: none;
       }
     }
   }
@@ -184,7 +188,7 @@
 
   .dropdown__remove {
     @include u-icon-button($x, $gray-dark);
-    background-position: .75rem 50%;
+    background-position: u(.75rem) 50%;
     background-size: 18px;
     display: none;
     top: 0;
