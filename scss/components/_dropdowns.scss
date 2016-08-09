@@ -33,6 +33,10 @@
     top: u(.5rem);
   }
 
+  &.is-active::after {
+    @include u-icon-bg($arrow-up, $primary);
+  }
+
   &.is-loading {
     &::after {
       background-image: url('../img/loading-ellipsis-gray.gif');
