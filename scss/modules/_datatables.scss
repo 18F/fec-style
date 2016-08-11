@@ -19,19 +19,19 @@
 //       <td>1</td>
 //       <td>Red</td>
 //       <td>0.1234</td>
-//       <td>Minim in magna ex incididunt sit laborum exercitation aute do ullamco consectetur esse.</td>
+//       <td>Minim in magna ex incididunt sit laborum exercitation aute</td>
 //     </tr>
 //     <tr>
 //       <td>2</td>
 //       <td>Blue</td>
 //       <td>0.1234</td>
-//       <td>in dolore amet irure dolore commodo est aliquip labore sunt</td>
+//       <td>in dolore amet irure dolore commodo est aliquip</td>
 //     </tr>
 //     <tr>
 //       <td>3</td>
 //       <td>Green</td>
 //       <td>0.1234</td>
-//       <td>nostrud laborum in ullamco cillum laborum anim esse commodo aliqua</td>
+//       <td>nostrud laborum in ullamco cillum laborum</td>
 //     </tr>
 //   </tbody>
 // </table>
@@ -42,6 +42,7 @@
 //
 // .is-showing-filters    - Class applied to body when the filters are open, causing the datatable to shrink slightly
 // .data-table--text      - Textual tables for text-heavy search results.
+// .data-table--heading-borders      - Include cell borders in the header row when your table follows `.results-info`.
 //
 // Styleguide modules.datatables
 
@@ -71,7 +72,6 @@
     letter-spacing: -.3px;
     padding: u(.5rem 1rem);
     border-bottom: 1px solid $primary;
-    border-left: 1px solid $neutral;
 
     &.sorting,
     &.sorting_asc,
@@ -168,6 +168,12 @@
   // Special styles for tables that use `offsetX: true`
   &.scrollX {
     table-layout: auto;
+  }
+}
+
+.data-table--heading-borders {
+  th {
+    border-left: 1px solid $neutral;
   }
 }
 
