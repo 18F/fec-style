@@ -37,7 +37,7 @@ function FilterPanel(options) {
 }
 
 FilterPanel.prototype.setInitialDisplay = function() {
-  if (helpers.getWindowWidth() >= helpers.BREAKPOINTS.LARGE) {
+  if (helpers.isLargeScreen()) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
@@ -45,6 +45,10 @@ FilterPanel.prototype.setInitialDisplay = function() {
 };
 
 FilterPanel.prototype.show = function(focus) {
+  if (!helpers.isLargeScreen()) {
+    var top = this.$toggle.outerHeight() +  this.$toggle.position().top;
+    this.$content.css('top', top);
+  }
   this.$body.addClass('is-open');
   this.$content.attr('aria-hidden', false);
   accessibility.restoreTabindex(this.$form);
