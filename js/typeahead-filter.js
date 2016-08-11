@@ -51,7 +51,6 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
   this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
   this.$field.on('typeahead:render', this.setFirstItem.bind(this));
-  this.$field.on('blur', this.handleBlur.bind(this));
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
 
@@ -92,6 +91,8 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   });
   this.datum = null;
 
+  this.$button.focus();
+
   this.$button.addClass('is-loading');
 };
 
@@ -104,13 +105,6 @@ TypeaheadFilter.prototype.handleKeypress = function(e) {
 
   if (e.keyCode === 13) {
     this.handleSubmit(e);
-  }
-};
-
-TypeaheadFilter.prototype.handleBlur = function() {
-  // If the user starts typing but then leaves the field clear the input
-  if (!this.datum && !this.allowText) {
-    this.clearInput();
   }
 };
 
