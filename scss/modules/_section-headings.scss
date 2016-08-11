@@ -1,18 +1,13 @@
 // Section headings
 //
-// Contain the title, date select and action button
+// Contain the title, date select and action button.
 //
 // Markup:
 // <div class="section__heading">
-//  <h2 class="heading__title">Heading title
-//     <select class="cycle-select">
-//       <option>Option 1</option>
-//     </select>
-//   </h2>
-//   <a class="heading__action button--alt button--browse">Browse</a>
+//  <h2 class="heading__title">Heading title</h2>
 // </div>
 //
-// Styleguide modules.section-headings
+// Styleguide modules.section-headings.0
 
 .section__heading {
   @include clearfix();
@@ -20,6 +15,22 @@
   margin-bottom: u(1rem);
 }
 
+// With action
+//
+// When the heading title includes an action.
+//
+// Markup:
+// <div class="section__heading">
+//  <h2 class="heading__title heading__title--with-action">A heading with an action</h2>
+//  <div class="heading__action">
+//    <ul class="list--buttons">
+//      <li><a class="button button--standard button--table" href="#">Explore data</a></li>
+//      <li><button class="button button--standard button--share">Share</button></li>
+//    </ul>
+//  </div>
+//
+// Styleguide modules.section-headings.1
+//
 .heading__title {
   border-bottom: 0;
   margin-bottom: u(1rem);
@@ -30,7 +41,29 @@
   }
 }
 
+// Heading main
+//
+// When the heading title is also the title of the page.
+//
+// Markup:
+// <div class="section__heading">
+//  <h1 class="heading__title heading__title--main">Page title</h1>
+//  <span class="heading__subtitle">A subtitle</span>
+// </div>
+//
+// Styleguide modules.section-headings.2
+
+.heading__title--main {
+  @include heading(display);
+  margin: 0;
+  padding: 0;
+}
+
 .heading__subtitle {
+  @include t-upper;
+  font-family: $sans-serif;
+  font-weight: bold;
+  letter-spacing: -.3px;
   margin-bottom: u(1rem);
 }
 
@@ -75,7 +108,7 @@
     }
   }
 
-  .heading__title {
+  .heading__title--with-action {
     float: left;
   }
 

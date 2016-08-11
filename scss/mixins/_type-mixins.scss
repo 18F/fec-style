@@ -13,7 +13,7 @@
     padding: u(1.2rem 0);
 
     @include media($med) {
-      font-size: u(4.8rem);
+      font-size: u(4rem);
     }
   }
 
@@ -79,4 +79,8 @@
   background: $gray-light;
   font-weight: bold;
   padding: 0 0.3em;
+}
+
+@mixin t-upper {
+  text-transform: uppercase;
 }
