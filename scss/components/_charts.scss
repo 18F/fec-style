@@ -386,10 +386,34 @@ $tooltip-border-color: #999;
   stroke: $primary;
 }
 
-// Snapshot
+// Snapshot component
+// Accompanies a line chart to show the totals at a given point
+.snapshot {
+  border-bottom: 2px solid $primary;
+
+  @include media($med) {
+    @include span-columns(4);
+  }
+
+  @include media($lg) {
+    @include span-columns(3);
+  }
+}
+
+.snapshot__item-title {
+  font-weight: bold;
+}
+
+.snapshot__item {
+  font-family: $sans-serif;
+  font-size: u(1.4rem);
+  padding: u(.5rem 0);
+  border-bottom: 1px solid $gray-light;
+}
+
 .snapshot__controls {
   @include clearfix();
-  border-width: 2px 0 2px 0;
+  border-width: 2px 0;
   border-style: solid;
   border-color: $primary;
   padding: 2px 0;
@@ -413,5 +437,4 @@ $tooltip-border-color: #999;
     float: right;
     padding: u(1.5rem 1rem);
   }
-
 }
