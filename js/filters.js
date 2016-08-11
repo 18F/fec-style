@@ -420,6 +420,8 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
     {
       key: id,
       value: $label.text(),
+      name: $input.attr('name'),
+      loadedOnce: true
     }
   ]);
 };

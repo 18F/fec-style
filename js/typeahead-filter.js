@@ -91,9 +91,7 @@ TypeaheadFilter.prototype.handleSelect = function(e, datum) {
   });
   this.datum = null;
 
-  this.$button.focus();
-
-  this.$button.addClass('is-loading');
+  this.$button.focus().addClass('is-loading');
 };
 
 TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
