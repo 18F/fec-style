@@ -52,7 +52,7 @@
   margin: 0;
   padding: u(1rem 2rem);
   text-transform: uppercase;
-  @include u-font-color($inverse);
+  font-color: $inverse;
 }
 
 .sidebar__content {
@@ -99,5 +99,6 @@
 
 .sidebar--neutral {
   @include u-bg--neutral();
+  @include u-font-color($base);
   border-top: 4px solid $primary;
 }
