@@ -44,7 +44,10 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$button = this.$body.find('button');
   this.$selected = this.$body.find('.dropdown__selected');
 
-  this.$body.on('change', 'input', this.handleChange.bind(this));
+  this.$body.on('change', 'input[type="text"]', this.handleChange.bind(this));
+  this.$body.on('change', 'input[type="checkbox"]', this.handleCheckbox.bind(this));
+  this.$body.on('click', '.dropdown__remove', this.removeCheckbox.bind(this));
+
   this.$body.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
   $('body').on('filter:modify', this.changeDataset.bind(this));
 
@@ -83,13 +86,17 @@ TypeaheadFilter.prototype.setFirstItem = function() {
 };
 
 TypeaheadFilter.prototype.handleSelect = function(e, datum) {
+  var id = this.fieldName + '-' + slugify(datum.id) + '-checkbox';
+
   this.appendCheckbox({
     name: this.fieldName,
     label: formatLabel(datum),
     value: datum.id,
-    id: this.fieldName + '-' + slugify(datum.id) + '-checkbox'
+    id: id
   });
   this.datum = null;
+
+  this.$body.find('label[for="' + id + '"]').addClass('is-loading');
 
   this.$button.focus().addClass('is-loading');
 };
@@ -114,6 +121,25 @@ TypeaheadFilter.prototype.handleChange = function() {
     this.datum = null;
     this.disableButton();
   }
+};
+
+TypeaheadFilter.prototype.handleCheckbox = function(e) {
+  var $input = $(e.target);
+  var id = $input.attr('id');
+  var $label = this.$body.find('label[for="' + id + '"]');
+  var loadedOnce = $input.data('loaded-once') || false;
+
+  if (loadedOnce) {
+    $label.addClass('is-loading');
+  }
+
+  $input.data('loaded-once', true);
+};
+
+TypeaheadFilter.prototype.removeCheckbox = function(e) {
+  var $input = $(e.target);
+
+  $input.closest('li').remove();
 };
 
 TypeaheadFilter.prototype.handleHover = function() {
@@ -154,7 +180,10 @@ TypeaheadFilter.prototype.checkboxTemplate = _.template(
       'type="checkbox" ' +
       'checked' +
     '/>' +
-    '<label for="{{id}}">{{label}}</li>' +
+    '<label for="{{id}}">{{label}}</label>' +
+    '<button class="dropdown__remove">' +
+      '<span class="u-visually-hidden">Remove</span>' +
+    '</button>' +
   '</li>',
   {interpolate: /\{\{(.+?)\}\}/g}
 );

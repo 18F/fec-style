@@ -163,7 +163,7 @@
 .dropdown__selected {
   margin-bottom: u(.5rem);
 
-  .dropdown__item {
+  li {
     @include animation(fadeIn .2s ease-in);
     position: relative;
 
