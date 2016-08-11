@@ -148,6 +148,9 @@ Filter.prototype.handleChange = function(e) {
     value = $input.val();
     loadedOnce = $input.data('loaded-once') || false;
 
+    // set focus to button
+    $input.next().focus();
+
     if ($input.data('had-value') && value.length > 0) {
       eventName = 'filter:renamed';
     } else if (value.length > 0) {
@@ -417,6 +420,8 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
     {
       key: id,
       value: $label.text(),
+      name: $input.attr('name'),
+      loadedOnce: true
     }
   ]);
 };

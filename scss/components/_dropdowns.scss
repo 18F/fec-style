@@ -33,6 +33,10 @@
     top: u(.5rem);
   }
 
+  &.is-active::after {
+    @include u-icon-bg($arrow-up, $primary);
+  }
+
   &.is-loading {
     &::after {
       background-image: url('../img/loading-ellipsis-gray.gif');
@@ -117,7 +121,7 @@
       }
 
       &.is-checked {
-        @include u-icon-bg($check, $green-light);
+        @include u-icon-bg($check, $gray);
         background-color: $gray-light;
         background-position: right u(.5rem) top 50%;
         padding-right: u(1.5rem);
@@ -159,13 +163,17 @@
 .dropdown__selected {
   margin-bottom: u(.5rem);
 
-  .dropdown__item {
+  li {
     @include animation(fadeIn .2s ease-in);
     position: relative;
 
     &:hover {
-      input[type="checkbox"]:not(:checked) + label:not(.is-loading) + button {
+      input[type="checkbox"]:not(:checked) + label:not(.is-loading) + .dropdown__remove {
         display: inline-block;
+      }
+
+      input[type="checkbox"]:not(:checked) + label.is-unsuccessful + .dropdown__remove {
+        display: none;
       }
     }
   }
@@ -180,7 +188,7 @@
 
   .dropdown__remove {
     @include u-icon-button($x, $gray-dark);
-    background-position: .75rem 50%;
+    background-position: u(.75rem) 50%;
     background-size: 18px;
     display: none;
     top: 0;

@@ -81,15 +81,6 @@ describe('typeaheadFilter', function() {
     this.typeaheadFilter.handleSubmit.restore();
   });
 
-  it('should clear the input on blur if it does not allow free text', function() {
-    this.typeaheadFilter.datum = null;
-    this.typeaheadFilter.allowText = false;
-    this.typeaheadFilter.$field.focus();
-    this.typeaheadFilter.$field.typeahead('val','text');
-    this.typeaheadFilter.$field.blur();
-    expect(this.typeaheadFilter.$field.typeahead('val')).to.equal('');
-  });
-
   it('should enable and disable button when the input changes', function() {
     var enableButton = sinon.spy(this.typeaheadFilter, 'enableButton');
     var disableButton = sinon.spy(this.typeaheadFilter, 'disableButton');
