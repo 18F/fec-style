@@ -57,9 +57,7 @@
 }
 
 .data-container__body {
-  &.fade-in {
-    opacity: 0;
-  }
+  padding: u(0 1rem);
 }
 
 .data-container__tags {
@@ -106,7 +104,11 @@
 
   .data-container__body {
     border-top: 0;
-    padding-left: u(2rem);
+    padding: u(0 2rem);
+  }
+
+  .data-container__datatable {
+    padding: u(0 0 0 2rem);
   }
 
   .data-container__widgets {
