@@ -37,7 +37,7 @@ function FilterPanel(options) {
 }
 
 FilterPanel.prototype.setInitialDisplay = function() {
-  if (helpers.isLargeScreen()) {
+  if (helpers.getWindowWidth() >= helpers.BREAKPOINTS.LARGE) {
     this.show();
   } else if (!this.isOpen) {
     this.hide();
