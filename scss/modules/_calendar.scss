@@ -25,6 +25,11 @@
 // Controls
 .fc-toolbar {
   @include clearfix();
+  padding: u(1rem);
+}
+
+.calendar__head {
+  @include clearfix();
   border-bottom: 1px solid $neutral;
   padding: u(1rem);
 
@@ -532,7 +537,7 @@
 // - View buttons on the right
 
 @include media($med) {
-  .fc-toolbar {
+  .calendar__head {
     padding: u(1rem 2rem);
   }
 

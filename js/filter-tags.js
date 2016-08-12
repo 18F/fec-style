@@ -86,7 +86,8 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 
   if (this.$list.find('.tag').length === 0) {
-    this.$resultType.html(this.opts.resultType);
+    var text = this.opts.emptyText ? this.opts.emptyText : this.opts.resultType;
+    this.$resultType.html(text);
     this.$list.attr('aria-hidden', true);
   }
 };
