@@ -39,6 +39,7 @@
 .tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
+  text-transform: initial;
   font-size: u(1.4rem);
   font-weight: normal;
   line-height: 1.4;
