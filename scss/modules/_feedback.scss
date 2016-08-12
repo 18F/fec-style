@@ -27,7 +27,7 @@
     }
   }
 
-  a {
+  a:not(.button--cta-primary) {
     border-color: $inverse;
   }
 
