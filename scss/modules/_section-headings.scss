@@ -60,11 +60,11 @@
 }
 
 .heading__subtitle {
-  @include t-upper;
   font-family: $sans-serif;
   font-weight: bold;
   letter-spacing: -.3px;
   margin-bottom: u(1rem);
+  text-transform: uppercase;
 }
 
 .heading__action {

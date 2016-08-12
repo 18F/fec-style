@@ -154,7 +154,7 @@
 }
 
 .t-upper {
-  @include t-upper;
+  text-transform: uppercase;
 }
 
 .t-data-header {
