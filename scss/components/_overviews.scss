@@ -63,29 +63,3 @@
     @include span-columns(4);
   }
 }
-
-// Swatches
-.swatch {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  border-radius: 1em;
-  margin-right: .4em;
-  vertical-align: middle;
-
-  &.candidates {
-    background-color: $deep-aqua;
-  }
-
-  &.pacs {
-    background-color: $gray;
-  }
-
-  &.parties {
-    background-color: $aqua;
-  }
-
-  &.other {
-    background-color: $gray-dark;
-  }
-}
