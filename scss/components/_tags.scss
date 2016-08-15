@@ -29,6 +29,12 @@
   letter-spacing: -.3px;
   margin: 0 4px 2px 0;
   padding: u(2px .75rem);
+
+  &.is-disabled {
+    button {
+      display: none;
+    }
+  }
 }
 
 .tag__remove {

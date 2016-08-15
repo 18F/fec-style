@@ -73,16 +73,14 @@ FilterSet.prototype.handleValidation = function(e, opts) {
 FilterSet.prototype.disableFilters = function(excludedFilters) {
   _.each(this.filters, function(filter) {
     if (excludedFilters.indexOf(filter.name) < 0) {
-      filter.$body.addClass('is-disabled');
-      // filter.disable();  
+      filter.disable();  
     }
   }) 
 };
 
 FilterSet.prototype.enableFilters = function() {
   _.each(this.filters, function(filter) {
-    filter.$body.removeClass('is-disabled');
-    // filter.enable();
+    filter.enable();
   })
 };
 
