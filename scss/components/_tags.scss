@@ -22,9 +22,8 @@
   background-color: $gray-light;
   border-radius: 2px;
   display: inline-block;
-  // padding: u(.5rem .75rem);
   padding: u(0 .75rem .5rem .7rem);
-  margin: u(.5rem .5rem 0);
+  margin: u(.5rem .5rem 0 0);
 
   .tag__item {
     display: inline-block;
@@ -34,7 +33,7 @@
     color: $primary;
     font-family: $sans-serif;
     letter-spacing: -.3px;
-    padding: u(.5rem .75rem);
+    padding: u(0 .5rem 0 .75rem);
     margin: u(.5rem 3rem 0 0);
     position: relative;
 
