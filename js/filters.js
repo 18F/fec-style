@@ -237,7 +237,7 @@ Filter.prototype.setLastAction = function(e, opts) {
 };
 
 Filter.prototype.disable = function() {
-  this.$body.find('input, label, button').each(function() {
+  this.$body.find('input, label, button, .label').each(function() {
     var $this = $(this);
     $this.addClass('is-disabled').prop('disabled', true);
     // Disable the tag if it's checked
@@ -251,7 +251,7 @@ Filter.prototype.disable = function() {
 };
 
 Filter.prototype.enable = function() {
-  this.$body.find('input, label, button').each(function() {
+  this.$body.find('input, label, button, .label').each(function() {
     var $this = $(this);
     $this.removeClass('is-disabled').prop('disabled', false);
     $this.trigger('filter:enabled', {
