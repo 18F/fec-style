@@ -34,28 +34,29 @@ describe('filter tags', function() {
   describe('addTag()', function() {
     it('adds tag on invoke', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(1);
       expect(tag.text()).to.contain('timmy');
     });
 
     it('removes existing tags by key', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
-      this.tagList.addTag({}, {key: 'name', value: 'kyle'});
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      this.tagList.removeTag({}, {key: 'name', value: 'kyle'});
+      var tag = this.tagList.$list.find('[data-id="name"]');
+
       expect(tag.length).to.equal(1);
-      expect(tag.text()).to.contain('kyle');
+      expect(tag.text()).to.contain('timmy');
     });
 
     it('adds tag on event', function() {
       $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy'}]);
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(1);
     });
 
     it('it does not add remove button if nonremovable is true', function(){
       $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy', nonremovable: true}]);
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.find('button')).to.have.length(0);
     });
   });
@@ -72,16 +73,16 @@ describe('filter tags', function() {
     it('removes tag on invoke', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
       this.tagList.removeTag('name', true);
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(0);
       expect($.prototype.trigger).to.have.been.calledWith('tag:removed', [{key: 'name'}]);
     });
 
     it('removes tag on dom event', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       tag.find('.js-close').trigger('click');
-      tag = this.tagList.$list.find('li[data-id="name"]');
+      tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(0);
     });
   });
@@ -90,14 +91,14 @@ describe('filter tags', function() {
     it('renames tag on invoke', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
       this.tagList.renameTag({}, {key: 'name', value: 'butters'});
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.text()).to.contain('butters');
     });
 
     it('renames tag on event', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
       $(document.body).trigger('filter:renamed', [{key: 'name', value: 'butters'}]);
-      var tag = this.tagList.$list.find('li[data-id="name"]');
+      var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.text()).to.contain('butters');
     });
   });
