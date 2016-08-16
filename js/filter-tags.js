@@ -46,7 +46,9 @@ function TagList(opts) {
   $(document.body)
     .on('filter:added', this.addTag.bind(this))
     .on('filter:removed', this.removeTagEvt.bind(this))
-    .on('filter:renamed', this.renameTag.bind(this));
+    .on('filter:renamed', this.renameTag.bind(this))
+    .on('filter:disabled', this.disableTag.bind(this))
+    .on('filter:enabled', this.enableTag.bind(this));
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
   this.$clear.on('click', this.removeAllTags.bind(this));
@@ -118,5 +120,17 @@ TagList.prototype.renameTag = function(e, opts) {
     $tag.replaceWith(tag);
   }
 };
+
+TagList.prototype.disableTag = function(e, opts) {
+  var $tag = this.$list.find('[data-id="' + opts.key + '"]');
+  $tag.addClass('is-disabled');  
+  $tag.attr('title', 'This filter is not avaible for efiling data');
+}
+
+TagList.prototype.enableTag = function(e, opts) {
+  var $tag = this.$list.find('[data-id="' + opts.key + '"]');
+  $tag.removeClass('is-disabled'); 
+  $tag.attr('title', false);
+}
 
 module.exports = {TagList: TagList};
