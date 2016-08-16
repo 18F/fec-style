@@ -377,6 +377,14 @@ $tooltip-border-color: #999;
   }
 }
 
+.line--other {
+  stroke: $gray-dark;
+
+  circle: {
+    fill: $gray-dark;
+  }
+}
+
 .cursor {
   stroke: $gray;
 }
@@ -436,5 +444,31 @@ $tooltip-border-color: #999;
   .button--next {
     float: right;
     padding: u(1.5rem 1rem);
+  }
+}
+
+// Swatches
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  margin-right: .4em;
+  vertical-align: middle;
+
+  &.candidates {
+    background-color: $deep-aqua;
+  }
+
+  &.pacs {
+    background-color: $gray;
+  }
+
+  &.parties {
+    background-color: $aqua;
+  }
+
+  &.other {
+    background-color: $gray-dark;
   }
 }

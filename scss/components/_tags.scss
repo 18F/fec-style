@@ -51,6 +51,12 @@
         content: '';
       }
     }
+
+    &.is-disabled {
+      button {
+        display: none;
+      }
+    }
   }
 }
 

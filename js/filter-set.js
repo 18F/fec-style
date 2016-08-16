@@ -70,4 +70,18 @@ FilterSet.prototype.handleValidation = function(e, opts) {
   this.isValid = opts.isValid;
 };
 
+FilterSet.prototype.disableFilters = function(excludedFilters) {
+  _.each(this.filters, function(filter) {
+    if (excludedFilters.indexOf(filter.name) < 0) {
+      filter.disable();  
+    }
+  }) 
+};
+
+FilterSet.prototype.enableFilters = function() {
+  _.each(this.filters, function(filter) {
+    filter.enable();
+  })
+};
+
 module.exports = {FilterSet: FilterSet};

@@ -72,6 +72,8 @@ Filter.build = function($elm) {
     return new MultiFilter($elm);
   } else if ($elm.hasClass('js-select-filter')) {
     return new SelectFilter($elm);
+  } else if ($elm.hasClass('js-toggle-filter')){
+    return new ToggleFilter($elm);
   } else {
     return new Filter($elm);
   }
@@ -234,6 +236,31 @@ Filter.prototype.setLastAction = function(e, opts) {
   }
 };
 
+Filter.prototype.disable = function() {
+  this.$body.find('input, label, button, .label').each(function() {
+    var $this = $(this);
+    $this.addClass('is-disabled').prop('disabled', true);
+    // Disable the tag if it's checked
+    if ($this.is(':checked')) {
+      $this.trigger('filter:disabled', {
+        key: $this.attr('id')
+      });            
+    }
+  });
+  this.isEnabled = false;
+};
+
+Filter.prototype.enable = function() {
+  this.$body.find('input, label, button, .label').each(function() {
+    var $this = $(this);
+    $this.removeClass('is-disabled').prop('disabled', false);
+    $this.trigger('filter:enabled', {
+        key: $this.attr('id')
+      });      
+  });
+  this.isEnabled = true;
+}
+
 function SelectFilter(elm) {
   Filter.call(this, elm);
   this.$input = this.$body.find('select');
@@ -284,7 +311,7 @@ SelectFilter.prototype.handleChange = function(e) {
 
 function DateFilter(elm) {
   Filter.call(this, elm);
-
+  this.validateInput = this.$body.data('validate') || false;
   this.$minDate = this.$body.find('.js-min-date');
   this.$maxDate = this.$body.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
@@ -311,6 +338,7 @@ DateFilter.prototype.handleRadioChange = function(e) {
 };
 
 DateFilter.prototype.validate = function() {
+  if (!this.validateInput) { return; }
   var years = [this.minYear, this.maxYear];
   var minDateYear = this.$minDate.val() ?
     parseInt(this.$minDate.val().split('-')[2]) : this.minYear;
@@ -426,6 +454,24 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
   ]);
 };
 
+TypeaheadFilter.prototype.disable = function() {
+  this.$body.find('input, label, button').addClass('is-disabled').prop('disabled', true);
+  this.$body.find('input:checked').each(function() {
+    $(this).trigger('filter:disabled', {
+      key: $(this).attr('id')
+    });            
+  });  
+};
+
+TypeaheadFilter.prototype.enable = function() {
+  this.$body.find('input, button').removeClass('is-disabled').prop('disabled', false);
+  this.$body.find('input:checked').each(function() {
+    $(this).trigger('filter:enabled', {
+      key: $(this).attr('id')
+    });            
+  });    
+};
+
 function ElectionFilter(elm) {
   Filter.call(this, elm);
 
@@ -527,5 +573,34 @@ MultiFilter.constructor = MultiFilter;
 // the filter count gets updated for each one,
 // resulting in inflated numbers.
 MultiFilter.prototype.handleAddEvent = function() { return; };
+
+/* ToggleFilter that has to fire a custom event */
+function ToggleFilter(elm) {
+  Filter.call(this, elm);
+}
+
+ToggleFilter.prototype = Object.create(Filter.prototype);
+ToggleFilter.constructor = ToggleFilter;
+
+ToggleFilter.prototype.fromQuery = function(query) {
+  this.$body.find('input[value="' + query.data_type + '"]').prop('checked', true).change();
+};
+
+ToggleFilter.prototype.handleChange = function(e) {
+  var value = $(e.target).val();
+  var id = this.$input.attr('id');
+  var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';  
+  this.$body.trigger(eventName, [
+    {
+      key: id,
+      value: 'Data type: ' + value,
+      loadedOnce: this.loadedOnce,
+      name: this.name,
+      nonremovable: true
+    }
+  ]);  
+  
+  this.loadedOnce = true;  
+}
 
 module.exports = {Filter: Filter};
