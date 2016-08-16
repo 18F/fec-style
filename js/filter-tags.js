@@ -57,14 +57,14 @@ function TagList(opts) {
 
 TagList.prototype.addTag = function(e, opts) {
   var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
-  var $tagGroup = this.$list.find('[data-tag-group="' + opts.name + '"]');
+  var $tagCategory = this.$list.find('[data-tag-category="' + opts.name + '"]');
   this.removeTag(opts.key, false);
 
-  if ($tagGroup.length > 0) {
-    $tagGroup.append(tag);
+  if ($tagCategory.length > 0) {
+    $tagCategory.append(tag);
   }
   else {
-    this.$list.append('<li data-tag-group="' + opts.name + '" class="tag__group">' + tag + '</li>');
+    this.$list.append('<li data-tag-category="' + opts.name + '" class="tag__category">' + tag + '</li>');
   }
 
   if (this.$list.find('.tag__item').length > 0) {
@@ -79,7 +79,7 @@ TagList.prototype.addTag = function(e, opts) {
 
 TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('[data-id="' + key + '"]');
-  var $tagGroup = $tag.parent();
+  var $tagCategory = $tag.parent();
 
   if ($tag.length > 0) {
     if (emit) {
@@ -88,8 +88,8 @@ TagList.prototype.removeTag = function(key, emit) {
 
     $tag.remove();
 
-    if ($tagGroup.is(':empty')) {
-      $tagGroup.remove();
+    if ($tagCategory.is(':empty')) {
+      $tagCategory.remove();
     }
   }
 
@@ -104,7 +104,7 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 };
 
-TagList.prototype.removeAllTags = function(e) {
+TagList.prototype.removeAllTags = function() {
   var self = this;
 
   this.$list.find('[data-removable]').each(function(){
