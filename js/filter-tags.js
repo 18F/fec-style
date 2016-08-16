@@ -29,7 +29,7 @@ var TAG_TEMPLATE = _.template(
 );
 
 var NONREMOVABLE_TAG_TEMPLATE = _.template(
-  '<div data-id="{{ key }}" data-removable="true" class="tag__item">' +
+  '<div data-id="{{ key }}" data-removable="false" class="tag__item">' +
     '{{ value }}' +
   '</div>',  {interpolate: /\{\{(.+?)\}\}/g}
 );
@@ -83,7 +83,7 @@ TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('[data-id="' + key + '"]');
   var $tagCategory = $tag.parent();
 
-  if ($tag.length > 0) {
+  if ($tag.length > 0 && $tag.attr('data-removable') !== 'false') {
     if (emit) {
       $tag.trigger('tag:removed', [{key: key}]);
     }
