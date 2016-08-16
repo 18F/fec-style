@@ -98,8 +98,11 @@
   }
 
   &.tooltip--left {
-    left: auto;
-    right: u(-14rem);
+    left: u(-2rem);
+
+    &::before {
+      left: u(2.8rem);
+    }
   }
 }
 
