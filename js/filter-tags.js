@@ -19,27 +19,26 @@ var BODY_TEMPLATE = _.template(
 );
 
 var TAG_TEMPLATE = _.template(
-  '<li data-id="{{ key }}" data-removable="true" class="tag">' +
+  '<div data-id="{{ key }}" data-removable="true" class="tag__item">' +
     '{{ value }}' +
     '<button class="button js-close tag__remove">' +
       '<span class="u-visually-hidden">Remove</span>' +
     '</button>' +
-  '</li>',
+  '</div>',
   {interpolate: /\{\{(.+?)\}\}/g}
 );
 
 var NONREMOVABLE_TAG_TEMPLATE = _.template(
-  '<li data-id="{{ key }}" class="tag">' +
+  '<div data-id="{{ key }}" data-removable="true" class="tag__item">' +
     '{{ value }}' +
-  '</li>',
-  {interpolate: /\{\{(.+?)\}\}/g}
+  '</div>',  {interpolate: /\{\{(.+?)\}\}/g}
 );
 
 function TagList(opts) {
   this.opts = opts;
 
   this.$body = $(BODY_TEMPLATE({resultType: this.opts.resultType}));
-  this.$list = this.$body.find('ul');
+  this.$list = this.$body.find('.tags');
   this.$resultType = this.$body.find('.js-result-type');
   this.$clear = this.$body.find('.js-filter-clear');
 
@@ -58,10 +57,17 @@ function TagList(opts) {
 
 TagList.prototype.addTag = function(e, opts) {
   var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
+  var $tagGroup = this.$list.find('[data-tag-group="' + opts.name + '"]');
   this.removeTag(opts.key, false);
-  this.$list.append(tag);
 
-  if (this.$list.find('.tag').length > 0) {
+  if ($tagGroup.length > 0) {
+    $tagGroup.append(tag);
+  }
+  else {
+    this.$list.append('<li data-tag-group="' + opts.name + '" class="tag__group">' + tag + '</li>');
+  }
+
+  if (this.$list.find('.tag__item').length > 0) {
     this.$resultType.html('filtered ' + this.opts.resultType + ' for:');
     this.$list.attr('aria-hidden', false);
   }
@@ -73,19 +79,25 @@ TagList.prototype.addTag = function(e, opts) {
 
 TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('[data-id="' + key + '"]');
+  var $tagGroup = $tag.parent();
 
-  if ($tag.length) {
+  if ($tag.length > 0) {
     if (emit) {
       $tag.trigger('tag:removed', [{key: key}]);
     }
+
     $tag.remove();
+
+    if ($tagGroup.is(':empty')) {
+      $tagGroup.remove();
+    }
   }
 
-  if (this.$list.find('.tag[data-removable]').length === 0) {
+  if (this.$list.find('.tag__item[data-removable]').length === 0) {
     this.$clear.attr('aria-hidden', true);
   }
 
-  if (this.$list.find('.tag').length === 0) {
+  if (this.$list.find('.tag__item').length === 0) {
     var text = this.opts.emptyText ? this.opts.emptyText : this.opts.resultType;
     this.$resultType.html(text);
     this.$list.attr('aria-hidden', true);
@@ -107,7 +119,7 @@ TagList.prototype.removeTagEvt = function(e, opts) {
 };
 
 TagList.prototype.removeTagDom = function(e) {
-  var key = $(e.target).closest('.tag').data('id');
+  var key = $(e.target).closest('.tag__item').data('id');
   this.removeTag(key, true);
 };
 
