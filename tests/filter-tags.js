@@ -39,6 +39,14 @@ describe('filter tags', function() {
       expect(tag.text()).to.contain('timmy');
     });
 
+    it('adds tag in correct category', function () {
+      this.tagList.addTag({}, {key: 'name', name: 'people', value: 'xtine'});
+      this.tagList.addTag({}, {key: 'checkbox', name: 'secretary', value: 'john'});
+      var tagCategory = this.tagList.$list.find('[data-tag-category="people"]');
+      expect(tagCategory.length).to.equal(1);
+      expect(tagCategory.text()).to.contain('xtine');
+    });
+
     it('removes existing tags by key', function() {
       this.tagList.addTag({}, {key: 'name', value: 'timmy'});
       this.tagList.removeTag({}, {key: 'name', value: 'kyle'});
@@ -59,6 +67,7 @@ describe('filter tags', function() {
       var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.find('button')).to.have.length(0);
     });
+
   });
 
   describe('removeTag()', function() {
@@ -76,6 +85,13 @@ describe('filter tags', function() {
       var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(0);
       expect($.prototype.trigger).to.have.been.calledWith('tag:removed', [{key: 'name'}]);
+    });
+
+    it('removes tag category', function() {
+      this.tagList.addTag({}, {key: 'name', name: 'people', value: 'xtine'});
+      this.tagList.removeTag('name', true);
+      var tagCategory = this.tagList.$list.find('[data-tag-category="people"]');
+      expect(tagCategory.length).to.equal(0);
     });
 
     it('removes tag on dom event', function() {
