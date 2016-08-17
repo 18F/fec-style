@@ -43,6 +43,11 @@ function Filter(elm) {
   this.$inputFilter.on('keyup', this.handleInputFilterKeyup.bind(this));
   this.$inputFilterButton.on('click', this.handleInputFilterClick.bind(this));
 
+  // on error message, click to open feedback panel
+  this.$body.on('click', '.js-filter-feedback', function () {
+    $(document.body).trigger('feedback:open');
+  });
+
   this.name = this.$body.data('name') || this.$input.attr('name');
   this.fields = [this.name];
   this.lastAction;

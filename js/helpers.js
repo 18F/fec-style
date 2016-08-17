@@ -12,6 +12,7 @@ var BREAKPOINTS = {
 
 var LOADING_DELAY = 1500;
 var SUCCESS_DELAY = 5000;
+var ERROR_DELAY = 8000;
 
 var formatMap = {
   default: 'MM-DD-YYYY',
@@ -70,5 +71,6 @@ module.exports = {
   getWindowWidth: getWindowWidth,
   helpers: Handlebars.helpers,
   LOADING_DELAY: LOADING_DELAY,
-  SUCCESS_DELAY: SUCCESS_DELAY
+  SUCCESS_DELAY: SUCCESS_DELAY,
+  ERROR_DELAY: ERROR_DELAY
 };

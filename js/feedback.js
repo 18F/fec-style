@@ -34,6 +34,8 @@ function Feedback(url, parent) {
   this.$button.on('click', this.toggle.bind(this));
   this.$reset.on('click', this.reset.bind(this));
   this.$form.on('submit', this.submit.bind(this));
+
+  $(document.body).on('feedback:open', this.show.bind(this));
 }
 
 Feedback.prototype.toggle = function() {
