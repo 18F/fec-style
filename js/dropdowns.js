@@ -41,7 +41,6 @@ function Dropdown(selector, opts) {
     }
   }
 
-  $(document.body).on('tag:removed', this.handleRemoveClick.bind(this));
   $(document.body).on('tag:removeAll', this.handleClearFilters.bind(this));
 
   this.$button.on('click', this.toggle.bind(this));

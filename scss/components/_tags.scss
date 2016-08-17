@@ -15,24 +15,47 @@
 }
 
 .tags {
-  padding: 5px 0;
   width: 100%;
 }
 
-.tag {
+.tag__category {
+  background-color: $gray-light;
+  border-radius: 2px;
   display: inline-block;
-  background-color: $inverse;
-  border: 1px solid $gray;
-  border-radius: 4px;
-  color: $primary;
-  font-family: $sans-serif;
-  letter-spacing: -.3px;
-  margin: 0 4px 2px 0;
-  padding: u(2px .75rem);
+  padding: u(0 .75rem .5rem .7rem);
+  margin: u(.5rem .5rem 0 0);
 
-  &.is-disabled {
-    button {
-      display: none;
+  .tag__item {
+    display: inline-block;
+    background-color: $inverse;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    color: $primary;
+    font-family: $sans-serif;
+    letter-spacing: -.3px;
+    padding: u(0 .5rem 0 .75rem);
+    margin: u(.5rem 3rem 0 0);
+    position: relative;
+
+    &::after {
+      content: 'or';
+      font-weight: bold;
+      position: absolute;
+      right: u(-2.25rem);
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        content: '';
+      }
+    }
+
+    &.is-disabled {
+      button {
+        display: none;
+      }
     }
   }
 }
