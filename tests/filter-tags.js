@@ -101,6 +101,20 @@ describe('filter tags', function() {
       tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.length).to.equal(0);
     });
+
+    it('clear all removes all removable tags', function() {
+      this.tagList.addTag({}, {key: 'name', value: 'hillary'});
+      this.tagList.removeAllTags();
+      var tags = this.tagList.$list.find('li');
+      expect(tags.length).to.equal(0);
+    });
+
+    it('clear all does not remove a nonremovable tag', function() {
+      this.tagList.addTag({}, {key: 'name', value: 'aaron', nonremovable: true});
+      this.tagList.removeAllTags();
+      var tags = this.tagList.$list.find('li');
+      expect(tags.length).to.equal(1);
+    });
   });
 
   describe('renameTag()', function() {
