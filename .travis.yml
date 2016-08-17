@@ -21,8 +21,14 @@ after_success:
   - cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
 
 deploy:
-  provider: script
-  script: ./deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+  - provider: script
+    script: ./deploy.sh
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: npm
+    skip_cleanup: true
+    api_key:
+      secure: "X81F3fbgMkFh982vWYxAjbh6lkabjzs8Ge2trai1TN/Vn49DFA3EjUvxPKqj3e2hzn8MK+AEFYjW3+sw3DoSzUNhgFnKvpi8FYY67XKLSX57jAM6mYTb2VjW2rpHjTr0sj2t4KsV3ij6//roxu9nYg/HAcjKW7/4g/E2nAgQxtBRMs6kF82JRFcyIMWN1IyMDiSS428f3oPBWIlKSNphMdxW6rWhbi3rX5bx6CfkoKbeBWFKhMfggzB+I/HsqEohee6DxsxvJM0ue4Q0CFlrgoczV3NCLBnsBReRNi9E7T93lYLw4x5iLij9a/4Qw5e4jl4J58fQE1NBAAKWeEkLDnMsWxrO+KjRNc0qas67yTEzwOhUYk1bhMh7LXsJWUXUf5xiRSSFor4JwCwGRdrkLczFGbeYKM/1DlUoPy0qp9vRsH+xCvu0igv7h0qC+KlzcH4ur9ZfRc/qpZgZt1EeRiXX91LfY+161abakdzWkx70eCEPt9V2O3zORdY2UctgK3Dv1rfkvACMqngqrsnxW6CHfZdQ/wpoPLhcusabhMCJaLj6MPGLcABt7/Sz8VIuowY4JP5rWzr+JIoLMdv/+teykiqe68adxF8owFrbX8Gc/7NNGzX1vy/kXC2SVDT/uMatq0jD4DzTYt+LHrs3btDemdZmVkwaOh8WW2sUXzw="
+    on:
+      tags: true
