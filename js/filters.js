@@ -244,7 +244,7 @@ Filter.prototype.disable = function() {
     if ($this.is(':checked')) {
       $this.trigger('filter:disabled', {
         key: $this.attr('id')
-      });            
+      });
     }
   });
   this.isEnabled = false;
@@ -256,7 +256,7 @@ Filter.prototype.enable = function() {
     $this.removeClass('is-disabled').prop('disabled', false);
     $this.trigger('filter:enabled', {
         key: $this.attr('id')
-      });      
+      });
   });
   this.isEnabled = true;
 }
@@ -459,17 +459,17 @@ TypeaheadFilter.prototype.disable = function() {
   this.$body.find('input:checked').each(function() {
     $(this).trigger('filter:disabled', {
       key: $(this).attr('id')
-    });            
-  });  
+    });
+  });
 };
 
 TypeaheadFilter.prototype.enable = function() {
-  this.$body.find('input, button').removeClass('is-disabled').prop('disabled', false);
+  this.$body.find('input, label, button').removeClass('is-disabled').prop('disabled', false);
   this.$body.find('input:checked').each(function() {
     $(this).trigger('filter:enabled', {
       key: $(this).attr('id')
-    });            
-  });    
+    });
+  });
 };
 
 function ElectionFilter(elm) {
@@ -589,7 +589,7 @@ ToggleFilter.prototype.fromQuery = function(query) {
 ToggleFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
   var id = this.$input.attr('id');
-  var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';  
+  var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
   this.$body.trigger(eventName, [
     {
       key: id,
@@ -598,9 +598,9 @@ ToggleFilter.prototype.handleChange = function(e) {
       name: this.name,
       nonremovable: true
     }
-  ]);  
-  
-  this.loadedOnce = true;  
+  ]);
+
+  this.loadedOnce = true;
 }
 
 module.exports = {Filter: Filter};
