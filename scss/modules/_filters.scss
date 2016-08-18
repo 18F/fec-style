@@ -256,6 +256,7 @@ $filter-button-width: u(4.6rem);
   color: $error;
 
   button {
+    border-bottom: 1px dotted $error;
     font-size: u(1.3rem);
     color: $error;
     padding: 0;
