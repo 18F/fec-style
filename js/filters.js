@@ -259,7 +259,7 @@ Filter.prototype.enable = function() {
       });
   });
   this.isEnabled = true;
-}
+};
 
 function SelectFilter(elm) {
   Filter.call(this, elm);
