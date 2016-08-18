@@ -113,13 +113,6 @@ describe('dropdown', function() {
       expect(dropdownItem.hasClass('is-checked')).to.be.false;
     });
 
-    it('remove tag also removes input', function() {
-      this.dropdown.selectItem($('#A'));
-      $(document.body).trigger('tag:removed', [{key: 'A'}]);
-      var selectedItems = this.dropdown.$selected.find('.dropdown__item');
-      expect(selectedItems.length).to.equal(0);
-    });
-
     it('clear all tags removes all selected inputs', function() {
       this.dropdown.selectItem($('#A'));
       this.dropdown.selectItem($('#B'));
