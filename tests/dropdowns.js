@@ -115,10 +115,9 @@ describe('dropdown', function() {
 
     it('remove tag also removes input', function() {
       this.dropdown.selectItem($('#A'));
-      this.dropdown.selectItem($('#B'));
       $(document.body).trigger('tag:removed', [{key: 'A'}]);
       var selectedItems = this.dropdown.$selected.find('.dropdown__item');
-      expect(selectedItems.length).to.equal(1);
+      expect(selectedItems.length).to.equal(0);
     });
 
     it('clear all tags removes all selected inputs', function() {
