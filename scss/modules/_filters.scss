@@ -255,8 +255,10 @@ $filter-button-width: u(4.6rem);
   font-size: u(1.3rem);
   color: $error;
 
-  span {
+  button {
+    font-size: u(1.3rem);
     color: $error;
+    padding: 0;
   }
 }
 
