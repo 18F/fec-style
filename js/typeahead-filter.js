@@ -57,6 +57,9 @@ var TypeaheadFilter = function(selector, dataset, allowText) {
   this.$field.on('keyup', this.handleKeypress.bind(this));
   this.$button.on('click', this.handleSubmit.bind(this));
 
+  $(document.body).on('tag:removed', this.removeCheckbox.bind(this));
+  $(document.body).on('tag:removeAll', this.removeAllCheckboxes.bind(this));
+
   this.typeaheadInit();
   this.disableButton();
 };
@@ -136,10 +139,19 @@ TypeaheadFilter.prototype.handleCheckbox = function(e) {
   $input.data('loaded-once', true);
 };
 
-TypeaheadFilter.prototype.removeCheckbox = function(e) {
+TypeaheadFilter.prototype.removeCheckbox = function(e, opts) {
   var $input = $(e.target);
 
+  // tag removal
+  if (opts) {
+    $input = this.$selected.find('#' + opts.key);
+  }
+
   $input.closest('li').remove();
+};
+
+TypeaheadFilter.prototype.removeAllCheckboxes = function() {
+  this.$selected.empty();
 };
 
 TypeaheadFilter.prototype.handleHover = function() {

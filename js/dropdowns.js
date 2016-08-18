@@ -133,11 +133,13 @@ Dropdown.prototype.handleCheckboxRemoval = function($input) {
   var $label = $input.parent().find('label');
   var $button = this.$panel.find('button[data-label="' + $input.attr('id') +'"]');
 
-  $button.parent().append($input);
-  $button.parent().append($label);
-  $button.remove();
+  if ($button.length > 0) {
+    $button.parent().append($input);
+    $button.parent().append($label);
+    $button.remove();
 
-  $item.remove();
+    $item.remove();
+  }
 };
 
 Dropdown.prototype.handleRemoveClick = function(e, opts) {
