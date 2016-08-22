@@ -35,20 +35,20 @@ var textDataset = {
 };
 
 var FilterTypeahead = function(selector, dataset, allowText) {
-  this.$body = $(selector);
+  this.$elm = $(selector);
   this.dataset = dataset;
   this.allowText = allowText;
 
-  this.$field = this.$body.find('input[type="text"]');
-  this.fieldName = this.$body.data('name') || this.$field.attr('name');
-  this.$button = this.$body.find('button');
-  this.$selected = this.$body.find('.dropdown__selected');
+  this.$field = this.$elm.find('input[type="text"]');
+  this.fieldName = this.$elm.data('name') || this.$field.attr('name');
+  this.$button = this.$elm.find('button');
+  this.$selected = this.$elm.find('.dropdown__selected');
 
-  this.$body.on('change', 'input[type="text"]', this.handleChange.bind(this));
-  this.$body.on('change', 'input[type="checkbox"]', this.handleCheckbox.bind(this));
-  this.$body.on('click', '.dropdown__remove', this.removeCheckbox.bind(this));
+  this.$elm.on('change', 'input[type="text"]', this.handleChange.bind(this));
+  this.$elm.on('change', 'input[type="checkbox"]', this.handleCheckbox.bind(this));
+  this.$elm.on('click', '.dropdown__remove', this.removeCheckbox.bind(this));
 
-  this.$body.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
+  this.$elm.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
   $('body').on('filter:modify', this.changeDataset.bind(this));
 
   this.$field.on('typeahead:selected', this.handleSelect.bind(this));
@@ -74,7 +74,7 @@ FilterTypeahead.prototype.typeaheadInit = function() {
     this.$field.typeahead(opts, this.dataset);
   }
 
-  this.$body.find('.tt-menu').attr('aria-live', 'polite');
+  this.$elm.find('.tt-menu').attr('aria-live', 'polite');
 };
 
 FilterTypeahead.prototype.setFirstItem = function() {
@@ -82,8 +82,8 @@ FilterTypeahead.prototype.setFirstItem = function() {
   // This way clicking enter or the button will submit with this datum
   this.firstItem = arguments[1];
   // Add a hover class to the first item to indicate it will be selected
-  $(this.$body.find('.tt-suggestion')[0]).addClass('tt-cursor');
-  if (this.$body.find('.tt-suggestion').length > 0) {
+  $(this.$elm.find('.tt-suggestion')[0]).addClass('tt-cursor');
+  if (this.$elm.find('.tt-suggestion').length > 0) {
     this.enableButton();
   }
 };
@@ -99,7 +99,7 @@ FilterTypeahead.prototype.handleSelect = function(e, datum) {
   });
   this.datum = null;
 
-  this.$body.find('label[for="' + id + '"]').addClass('is-loading');
+  this.$elm.find('label[for="' + id + '"]').addClass('is-loading');
 
   this.$button.focus().addClass('is-loading');
 };
@@ -129,7 +129,7 @@ FilterTypeahead.prototype.handleChange = function() {
 FilterTypeahead.prototype.handleCheckbox = function(e) {
   var $input = $(e.target);
   var id = $input.attr('id');
-  var $label = this.$body.find('label[for="' + id + '"]');
+  var $label = this.$elm.find('label[for="' + id + '"]');
   var loadedOnce = $input.data('loaded-once') || false;
 
   if (loadedOnce) {
@@ -155,7 +155,7 @@ FilterTypeahead.prototype.removeAllCheckboxes = function() {
 };
 
 FilterTypeahead.prototype.handleHover = function() {
-  this.$body.find('.tt-suggestion.tt-cursor').removeClass('tt-cursor');
+  this.$elm.find('.tt-suggestion.tt-cursor').removeClass('tt-cursor');
 };
 
 FilterTypeahead.prototype.handleSubmit = function(e) {
@@ -201,7 +201,7 @@ FilterTypeahead.prototype.checkboxTemplate = _.template(
 );
 
 FilterTypeahead.prototype.appendCheckbox = function(opts) {
-  if (this.$body.find('#' + opts.id).length) {
+  if (this.$elm.find('#' + opts.id).length) {
     return;
   }
   var checkbox = $(this.checkboxTemplate(opts));
@@ -244,8 +244,8 @@ FilterTypeahead.prototype.updateFilters = function(response) {
     var idKey = this.dataset.name + '_id';
     response.results.forEach(function(result) {
       var label = result.name + ' (' + result[idKey] + ')';
-      self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
-      self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
+      self.$elm.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
+      self.$elm.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
         {
           key: result[idKey] + '-checkbox',
           value: label

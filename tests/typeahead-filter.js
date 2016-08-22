@@ -39,7 +39,7 @@ describe('FilterTypeahead', function() {
   });
 
   it('should initialize', function() {
-    var typeahead = this.FilterTypeahead.$body.find('.twitter-typeahead');
+    var typeahead = this.FilterTypeahead.$elm.find('.twitter-typeahead');
     expect(typeahead.length).to.equal(1);
   });
 

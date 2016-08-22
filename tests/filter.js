@@ -10,9 +10,10 @@ var $ = require('jquery');
 
 require('./setup')();
 
-var Filter = require('../js/filter-base');
 var DateFilter = require('../js/date-filter').DateFilter;
 var ElectionFilter = require('../js/election-filter').ElectionFilter;
+var TextFilter = require('../js/text-filter').TextFilter;
+var CheckboxFilter = require('../js/checkbox-filter').CheckboxFilter;
 
 function getChecked($input) {
   return $input.filter(function(idx, elm) {
@@ -36,30 +37,27 @@ describe('filter set', function() {
         '<div class="js-filter">' +
           '<div class="input--removable">' +
             '<input name="name" />' +
-            '<button class="button button--remove"></button>' +
           '</div>' +
         '</div></div>'
       );
-      this.filter = new Filter.Filter(this.$fixture.find('.js-filter'));
+      this.filter = new TextFilter(this.$fixture.find('.js-filter'));
     });
 
     it('locates dom elements', function() {
-      expect(this.filter.$body.is('#fixtures .js-filter')).to.be.true;
+      expect(this.filter.$elm.is('#fixtures .js-filter')).to.be.true;
       expect(this.filter.$input.is('#fixtures input')).to.be.true;
-      expect(this.filter.$remove.is('#fixtures .js-filter .button--remove')).to.be.true;
       expect(this.filter.$filterLabel.is('#fixtures .accordion__trigger')).to.be.true;
     });
 
-    it('pulls name from $body if present', function() {
+    it('pulls name from $elm if present', function() {
       this.$fixture.empty().append(
         '<div class="js-filter" data-name="name-override">' +
           '<div class="input--removable">' +
             '<input name="name" />' +
-            '<button class="button button--remove"></button>' +
           '</div>' +
         '</div>'
       );
-      var filter = new Filter.Filter(this.$fixture.find('.js-filter'));
+      var filter = new TextFilter(this.$fixture.find('.js-filter'));
       expect(filter.name).to.equal('name-override');
     });
 
@@ -76,23 +74,6 @@ describe('filter set', function() {
     it('sets empty values', function() {
       this.filter.setValue();
       expect(this.filter.$input.val()).to.equal('');
-    });
-
-    it('shows remove button with value', function() {
-      this.filter.$input.val('jed').change();
-      expect(this.filter.$remove.is(':visible')).to.be.true;
-    });
-
-    it('hides remove button without value', function() {
-      this.filter.$input.val('').change();
-      expect(this.filter.$remove.is(':visible')).to.be.false;
-    });
-
-    it('clears input on remove click', function() {
-      this.filter.$input.val('jed').change();
-      this.filter.$remove.trigger('click');
-      expect(this.filter.$input.val()).to.equal('');
-      expect(this.filter.$remove.is(':visible')).to.be.false;
     });
 
     it('adds to the filter count if there was no text', function() {
@@ -126,7 +107,7 @@ describe('filter set', function() {
           '</div>' +
         '</div></div>'
       );
-      this.filter = new Filter.Filter(this.$fixture.find('.js-filter'));
+      this.filter = new CheckboxFilter(this.$fixture.find('.js-filter'));
     });
 
     it('sets scalar values', function() {
@@ -181,8 +162,8 @@ describe('filter set', function() {
         min_date: '01-01-2015',
         max_date: '01-01-2015'
       });
-      expect(this.filter.$body.find('[name="min_date"]').val()).to.equal('01-01-2015');
-      expect(this.filter.$body.find('[name="max_date"]').val()).to.equal('01-01-2015');
+      expect(this.filter.$elm.find('[name="min_date"]').val()).to.equal('01-01-2015');
+      expect(this.filter.$elm.find('[name="max_date"]').val()).to.equal('01-01-2015');
     });
   });
 

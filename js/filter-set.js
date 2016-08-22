@@ -5,6 +5,8 @@ var _ = require('underscore');
 var URI = require('urijs');
 
 var Filter = require('./filter-base').Filter;
+var TextFilter = require('./text-filter').TextFilter;
+var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
 var MultiFilter = require('./filter-base').MultiFilter;
 var TypeaheadFilter = require('./typeahead-filter').TypeaheadFilter;
 var SelectFilter = require('./select-filter').SelectFilter;
@@ -22,7 +24,11 @@ function FilterSet(elm) {
 }
 
 FilterSet.prototype.buildFilter = function($elm) {
-  if ($elm.hasClass('js-date-choice-field')) {
+  if ($elm.hasClass('js-text-filter')) {
+    return new TextFilter($elm);
+  } else if ($elm.hasClass('js-checkbox-filter')) {
+    return new CheckboxFilter($elm);
+  } else if ($elm.hasClass('js-date-choice-field')) {
     return new DateFilter($elm);
   } else if ($elm.hasClass('js-typeahead-filter')) {
     return new TypeaheadFilter($elm);
