@@ -1,278 +1,67 @@
 'use strict';
 
-/* global API_LOCATION, API_VERSION, API_KEY */
-
 var $ = require('jquery');
-var URI = require('urijs');
-var _ = require('underscore');
+
+var Filter = require('./filter-base.js');
 var typeahead = require('./typeahead');
+var FilterTypeahead = require('./filter-typeahead').FilterTypeahead;
 
-var ID_PATTERN = /^\w{9}$/;
+function TypeaheadFilter(elm) {
+  Filter.Filter.call(this, elm);
 
-function slugify(value) {
-  return value
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9:._-]/gi, '');
+  var key = this.$body.data('dataset');
+  var allowText = this.$body.data('allow-text') !== undefined;
+  var dataset = key ? typeahead.datasets[key] : null;
+  this.typeaheadFilter = new FilterTypeahead(this.$body, dataset, allowText);
+  this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
 
-function formatLabel(datum) {
-  return datum.name ?
-    datum.name + ' (' + datum.id + ')' :
-    '"' + datum.id + '"';
-}
+TypeaheadFilter.prototype = Object.create(Filter.Filter.prototype);
+TypeaheadFilter.constructor = TypeaheadFilter;
 
-var textDataset = {
-  display: 'id',
-  source: function(query, syncResults) {
-    syncResults([{id: query}]);
-  },
-  templates: {
-    suggestion: function(datum) {
-      return '<span>Search for: "' + datum.id + '"</span>';
-    }
-  }
+TypeaheadFilter.prototype.fromQuery = function(query) {
+  var values = query[this.name] ? Filter.ensureArray(query[this.name]) : [];
+  this.typeaheadFilter.getFilters(values);
+  this.typeaheadFilter.$body.find('input[type="checkbox"]').val(values);
+  return this;
 };
 
-var TypeaheadFilter = function(selector, dataset, allowText) {
-  this.$body = $(selector);
-  this.dataset = dataset;
-  this.allowText = allowText;
+// Ignore changes on typeahead input
+TypeaheadFilter.prototype.handleChange = function() {};
 
-  this.$field = this.$body.find('input[type="text"]');
-  this.fieldName = this.$body.data('name') || this.$field.attr('name');
-  this.$button = this.$body.find('button');
-  this.$selected = this.$body.find('.dropdown__selected');
-
-  this.$body.on('change', 'input[type="text"]', this.handleChange.bind(this));
-  this.$body.on('change', 'input[type="checkbox"]', this.handleCheckbox.bind(this));
-  this.$body.on('click', '.dropdown__remove', this.removeCheckbox.bind(this));
-
-  this.$body.on('mouseenter', '.tt-suggestion', this.handleHover.bind(this));
-  $('body').on('filter:modify', this.changeDataset.bind(this));
-
-  this.$field.on('typeahead:selected', this.handleSelect.bind(this));
-  this.$field.on('typeahead:autocomplete', this.handleAutocomplete.bind(this));
-  this.$field.on('typeahead:render', this.setFirstItem.bind(this));
-  this.$field.on('keyup', this.handleKeypress.bind(this));
-  this.$button.on('click', this.handleSubmit.bind(this));
-
-  $(document.body).on('tag:removed', this.removeCheckbox.bind(this));
-  $(document.body).on('tag:removeAll', this.removeAllCheckboxes.bind(this));
-
-  this.typeaheadInit();
-  this.disableButton();
-};
-
-TypeaheadFilter.prototype.typeaheadInit = function() {
-  var opts = {minLength: 3, hint: false, highlight: true};
-  if (this.allowText && this.dataset) {
-    this.$field.typeahead(opts, textDataset, this.dataset);
-  } else if (this.allowText && !this.dataset) {
-    this.$field.typeahead(opts, textDataset);
-  } else {
-    this.$field.typeahead(opts, this.dataset);
-  }
-
-  this.$body.find('.tt-menu').attr('aria-live', 'polite');
-};
-
-TypeaheadFilter.prototype.setFirstItem = function() {
-  // Set the firstItem to a datum upon each rendering of results
-  // This way clicking enter or the button will submit with this datum
-  this.firstItem = arguments[1];
-  // Add a hover class to the first item to indicate it will be selected
-  $(this.$body.find('.tt-suggestion')[0]).addClass('tt-cursor');
-  if (this.$body.find('.tt-suggestion').length > 0) {
-    this.enableButton();
-  }
-};
-
-TypeaheadFilter.prototype.handleSelect = function(e, datum) {
-  var id = this.fieldName + '-' + slugify(datum.id) + '-checkbox';
-
-  this.appendCheckbox({
-    name: this.fieldName,
-    label: formatLabel(datum),
-    value: datum.id,
-    id: id
-  });
-  this.datum = null;
-
-  this.$body.find('label[for="' + id + '"]').addClass('is-loading');
-
-  this.$button.focus().addClass('is-loading');
-};
-
-TypeaheadFilter.prototype.handleAutocomplete = function(e, datum) {
-  this.datum = datum;
-};
-
-TypeaheadFilter.prototype.handleKeypress = function(e) {
-  this.handleChange();
-
-  if (e.keyCode === 13) {
-    this.handleSubmit(e);
-  }
-};
-
-TypeaheadFilter.prototype.handleChange = function() {
-  if ((this.allowText && this.$field.typeahead('val').length > 1) || this.datum) {
-    this.enableButton();
-  } else if (this.$field.typeahead('val').length === 0 ||
-    (!this.allowText && this.$field.typeahead('val').length < 3)) {
-    this.datum = null;
-    this.disableButton();
-  }
-};
-
-TypeaheadFilter.prototype.handleCheckbox = function(e) {
+TypeaheadFilter.prototype.handleNestedChange = function(e) {
   var $input = $(e.target);
   var id = $input.attr('id');
-  var $label = this.$body.find('label[for="' + id + '"]');
-  var loadedOnce = $input.data('loaded-once') || false;
+  var $label = this.$body.find('[for="' + id + '"]');
 
-  if (loadedOnce) {
-    $label.addClass('is-loading');
-  }
+  var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
 
-  $input.data('loaded-once', true);
-};
-
-TypeaheadFilter.prototype.removeCheckbox = function(e, opts) {
-  var $input = $(e.target);
-
-  // tag removal
-  if (opts) {
-    $input = this.$selected.find('#' + opts.key);
-  }
-
-  $input.closest('li').remove();
-};
-
-TypeaheadFilter.prototype.removeAllCheckboxes = function() {
-  this.$selected.empty();
-};
-
-TypeaheadFilter.prototype.handleHover = function() {
-  this.$body.find('.tt-suggestion.tt-cursor').removeClass('tt-cursor');
-};
-
-TypeaheadFilter.prototype.handleSubmit = function(e) {
-  if (this.datum) {
-    this.handleSelect(e, this.datum);
-  } else if (!this.datum && !this.allowText) {
-    this.handleSelect(e, this.firstItem);
-  } else if (this.allowText && this.$field.typeahead('val').length > 0) {
-    this.handleSelect(e, {id: this.$field.typeahead('val')});
-  }
-};
-
-TypeaheadFilter.prototype.clearInput = function() {
-  this.$field.typeahead('val', null).change();
-  this.disableButton();
-};
-
-TypeaheadFilter.prototype.enableButton = function() {
-  this.searchEnabled = true;
-  this.$button.removeClass('is-disabled').attr('tabindex', '1').attr('disabled', false);
-};
-
-TypeaheadFilter.prototype.disableButton = function() {
-  this.searchEnabled = false;
-  this.$button.addClass('is-disabled').attr('tabindex', '-1').attr('disabled', false);
-};
-
-TypeaheadFilter.prototype.checkboxTemplate = _.template(
-  '<li>' +
-    '<input ' +
-      'id="{{id}}" ' +
-      'name="{{name}}" ' +
-      'value="{{value}}" ' +
-      'type="checkbox" ' +
-      'checked' +
-    '/>' +
-    '<label for="{{id}}">{{label}}</label>' +
-    '<button class="dropdown__remove">' +
-      '<span class="u-visually-hidden">Remove</span>' +
-    '</button>' +
-  '</li>',
-  {interpolate: /\{\{(.+?)\}\}/g}
-);
-
-TypeaheadFilter.prototype.appendCheckbox = function(opts) {
-  if (this.$body.find('#' + opts.id).length) {
-    return;
-  }
-  var checkbox = $(this.checkboxTemplate(opts));
-  checkbox.appendTo(this.$selected);
-  checkbox.find('input').change();
-  this.clearInput();
-};
-
-TypeaheadFilter.prototype.getFilters = function(values) {
-  var self = this;
-  if (this.dataset) {
-    var dataset = this.dataset.name + 's';
-    var idKey = this.dataset.name + '_id';
-    var ids = values.filter(function(value) {
-      return ID_PATTERN.test(value);
-    });
-    values.forEach(function(value) {
-      self.appendCheckbox({
-        name: self.fieldName,
-        id: slugify(value) + '-checkbox',
-        value: value,
-        label: ID_PATTERN.test(value) ? 'Loading...' : value
-      });
-    });
-    if (ids.length) {
-      $.getJSON(
-        URI(API_LOCATION)
-          .path([API_VERSION, dataset].join('/'))
-          .addQuery('api_key', API_KEY)
-          .addQuery(idKey, ids)
-          .toString()
-      ).done(this.updateFilters.bind(this));
+  $input.trigger(eventName, [
+    {
+      key: id,
+      value: $label.text(),
+      name: $input.attr('name'),
+      loadedOnce: true
     }
-  }
+  ]);
 };
 
-TypeaheadFilter.prototype.updateFilters = function(response) {
-  var self = this;
-  if (this.dataset) {
-    var idKey = this.dataset.name + '_id';
-    response.results.forEach(function(result) {
-      var label = result.name + ' (' + result[idKey] + ')';
-      self.$body.find('label[for="' + result[idKey] + '-checkbox"]').text(label);
-      self.$body.find('#' + result[idKey] + '-checkbox').trigger('filter:renamed', [
-        {
-          key: result[idKey] + '-checkbox',
-          value: label
-        }
-      ]);
+TypeaheadFilter.prototype.disable = function() {
+  this.$body.find('input, label, button').addClass('is-disabled').prop('disabled', true);
+  this.$body.find('input:checked').each(function() {
+    $(this).trigger('filter:disabled', {
+      key: $(this).attr('id')
     });
-  }
+  });
 };
 
-TypeaheadFilter.prototype.changeDataset = function(e, opts) {
-  // Method for changing the typeahead suggestion on the "contributor name" filter
-  // when the "individual" or "committee" checkbox filter is changed
-  // If the modify event names this filter, destroy it
-  if (opts.filterName === this.fieldName) {
-    this.$field.typeahead('destroy');
-    // If the value array is only individuals and not committees
-    // set the dataset to empty and re-init
-    if (opts.filterValue.indexOf('individual') > -1 && opts.filterValue.indexOf('committee') < 0) {
-      this.dataset = null;
-      this.allowText = true;
-      this.typeaheadInit();
-    } else {
-      // Otherwise initialize with the committee dataset
-      this.dataset = typeahead.datasets.committees;
-      this.typeaheadInit();
-    }
-  }
+TypeaheadFilter.prototype.enable = function() {
+  this.$body.find('input, label, button').removeClass('is-disabled').prop('disabled', false);
+  this.$body.find('input:checked').each(function() {
+    $(this).trigger('filter:enabled', {
+      key: $(this).attr('id')
+    });
+  });
 };
 
 module.exports = {TypeaheadFilter: TypeaheadFilter};

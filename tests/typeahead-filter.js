@@ -18,10 +18,9 @@ var expect = chai.expect;
 chai.use(sinonChai);
 
 var typeahead = require('../js/typeahead');
+var FilterTypeahead = require('../js/filter-typeahead').FilterTypeahead;
 
-var TypeaheadFilter = require('../js/typeahead-filter').TypeaheadFilter;
-
-describe('typeaheadFilter', function() {
+describe('FilterTypeahead', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
     $('body').append(this.$fixture);
@@ -36,27 +35,27 @@ describe('typeaheadFilter', function() {
       '</div>'
     );
 
-    this.typeaheadFilter = new TypeaheadFilter('.js-typeahead-filter', typeahead.datasets.committees, true);
+    this.FilterTypeahead = new FilterTypeahead('.js-typeahead-filter', typeahead.datasets.committees, true);
   });
 
   it('should initialize', function() {
-    var typeahead = this.typeaheadFilter.$body.find('.twitter-typeahead');
+    var typeahead = this.FilterTypeahead.$body.find('.twitter-typeahead');
     expect(typeahead.length).to.equal(1);
   });
 
   it('should set firstItem', function() {
-    this.typeaheadFilter.setFirstItem({}, {id: 'smith'});
-    expect(this.typeaheadFilter.firstItem.id).to.equal('smith');
+    this.FilterTypeahead.setFirstItem({}, {id: 'smith'});
+    expect(this.FilterTypeahead.firstItem.id).to.equal('smith');
   });
 
   it('should append checkbox and clear datum on typeahead:select', function() {
-    var appendCheckbox = sinon.spy(this.typeaheadFilter, 'appendCheckbox');
+    var appendCheckbox = sinon.spy(this.FilterTypeahead, 'appendCheckbox');
     var datum = {
       name: 'FAKE CANDIDATE',
       id: '12345',
       office: 'Senate'
     };
-    this.typeaheadFilter.handleSelect({}, datum);
+    this.FilterTypeahead.handleSelect({}, datum);
 
     expect(appendCheckbox).to.have.been.calledWith({
       name: 'committee_id',
@@ -64,86 +63,86 @@ describe('typeaheadFilter', function() {
       value: '12345',
       id: 'committee_id-12345-checkbox'
     });
-    expect(this.typeaheadFilter.datum).to.equal(null);
+    expect(this.FilterTypeahead.datum).to.equal(null);
 
-    this.typeaheadFilter.appendCheckbox.restore();
+    this.FilterTypeahead.appendCheckbox.restore();
   });
 
   it('should set this.datum on typeahead:autocomplte', function() {
-    this.typeaheadFilter.handleAutocomplete({}, {id: '12345'});
-    expect(this.typeaheadFilter.datum).to.deep.equal({id: '12345'});
+    this.FilterTypeahead.handleAutocomplete({}, {id: '12345'});
+    expect(this.FilterTypeahead.datum).to.deep.equal({id: '12345'});
   });
 
   it('should submit on enter', function() {
-    var handleSubmit = sinon.spy(this.typeaheadFilter, 'handleSubmit');
-    this.typeaheadFilter.handleKeypress({keyCode: 13});
+    var handleSubmit = sinon.spy(this.FilterTypeahead, 'handleSubmit');
+    this.FilterTypeahead.handleKeypress({keyCode: 13});
     expect(handleSubmit).to.have.been.calledWith({keyCode: 13});
-    this.typeaheadFilter.handleSubmit.restore();
+    this.FilterTypeahead.handleSubmit.restore();
   });
 
   it('should enable and disable button when the input changes', function() {
-    var enableButton = sinon.spy(this.typeaheadFilter, 'enableButton');
-    var disableButton = sinon.spy(this.typeaheadFilter, 'disableButton');
+    var enableButton = sinon.spy(this.FilterTypeahead, 'enableButton');
+    var disableButton = sinon.spy(this.FilterTypeahead, 'disableButton');
 
-    this.typeaheadFilter.$field.typeahead('val', 'FAKE CANDIDATE').change();
+    this.FilterTypeahead.$field.typeahead('val', 'FAKE CANDIDATE').change();
     expect(enableButton).to.have.been.called;
 
-    this.typeaheadFilter.$field.typeahead('val', '').change();
+    this.FilterTypeahead.$field.typeahead('val', '').change();
     expect(disableButton).to.have.been.called;
 
-    this.typeaheadFilter.enableButton.restore();
-    this.typeaheadFilter.disableButton.restore();
+    this.FilterTypeahead.enableButton.restore();
+    this.FilterTypeahead.disableButton.restore();
   });
 
   it('should clear input', function() {
-    this.typeaheadFilter.$field.val('hello');
-    this.typeaheadFilter.enableButton();
-    this.typeaheadFilter.clearInput();
-    expect(this.typeaheadFilter.$field.val()).to.equal('');
-    expect(this.typeaheadFilter.$button.hasClass('is-disabled')).to.be.true;
+    this.FilterTypeahead.$field.val('hello');
+    this.FilterTypeahead.enableButton();
+    this.FilterTypeahead.clearInput();
+    expect(this.FilterTypeahead.$field.val()).to.equal('');
+    expect(this.FilterTypeahead.$button.hasClass('is-disabled')).to.be.true;
   });
 
   it('should enable the search button', function() {
-    this.typeaheadFilter.enableButton();
-    expect(this.typeaheadFilter.searchEnabled).to.be.true;
-    expect(this.typeaheadFilter.$button.hasClass('is-disabled')).to.be.false;
+    this.FilterTypeahead.enableButton();
+    expect(this.FilterTypeahead.searchEnabled).to.be.true;
+    expect(this.FilterTypeahead.$button.hasClass('is-disabled')).to.be.false;
   });
 
   it('should disable the search button', function() {
-    this.typeaheadFilter.disableButton();
-    expect(this.typeaheadFilter.searchEnabled).to.be.false;
-    expect(this.typeaheadFilter.$button.hasClass('is-disabled')).to.be.true;
+    this.FilterTypeahead.disableButton();
+    expect(this.FilterTypeahead.searchEnabled).to.be.false;
+    expect(this.FilterTypeahead.$button.hasClass('is-disabled')).to.be.true;
   });
 
   describe('handleSubmit()', function() {
     beforeEach(function() {
-      this.handleSelect = sinon.spy(this.typeaheadFilter, 'handleSelect');
+      this.handleSelect = sinon.spy(this.FilterTypeahead, 'handleSelect');
       this.e = {name: 'event'};
     });
 
     it('should select this.datum if present', function() {
-      this.typeaheadFilter.datum = {id: '12345'};
-      this.typeaheadFilter.handleSubmit(this.e);
+      this.FilterTypeahead.datum = {id: '12345'};
+      this.FilterTypeahead.handleSubmit(this.e);
       expect(this.handleSelect).to.have.been.called;
     });
 
     it('should select this.firstItem if no datum and it does not allow text', function() {
-      this.typeaheadFilter.datum = null;
-      this.typeaheadFilter.allowText = false;
-      this.typeaheadFilter.firstItem = {id: 'firstItem'};
-      this.typeaheadFilter.handleSubmit(this.e);
+      this.FilterTypeahead.datum = null;
+      this.FilterTypeahead.allowText = false;
+      this.FilterTypeahead.firstItem = {id: 'firstItem'};
+      this.FilterTypeahead.handleSubmit(this.e);
       expect(this.handleSelect).to.have.been.calledWith(this.e, {id: 'firstItem'});
     });
 
     it('should select the free text input if present', function() {
-      this.typeaheadFilter.allowText = true;
-      this.typeaheadFilter.$field.typeahead('val', 'freetext');
-      this.typeaheadFilter.handleSubmit(this.e);
+      this.FilterTypeahead.allowText = true;
+      this.FilterTypeahead.$field.typeahead('val', 'freetext');
+      this.FilterTypeahead.handleSubmit(this.e);
       expect(this.handleSelect).to.have.been.calledWith(this.e, {id: 'freetext'});
     });
 
     afterEach(function() {
-      this.typeaheadFilter.handleSelect.restore();
+      this.FilterTypeahead.handleSelect.restore();
     });
   });
 });
