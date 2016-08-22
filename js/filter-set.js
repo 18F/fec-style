@@ -4,7 +4,13 @@ var $ = require('jquery');
 var _ = require('underscore');
 var URI = require('urijs');
 
-var Filter = require('./filters').Filter;
+var Filter = require('./filter-base').Filter;
+var MultiFilter = require('./filter-base').MultiFilter;
+var TypeaheadFilter = require('./typeahead-filter').TypeaheadFilter;
+var SelectFilter = require('./select-filter').SelectFilter;
+var DateFilter = require('./date-filter').DateFilter;
+var ElectionFilter = require('./election-filter').ElectionFilter;
+var ToggleFilter = require('./toggle-filter').ToggleFilter;
 
 function FilterSet(elm) {
   this.$body = $(elm);
@@ -15,12 +21,31 @@ function FilterSet(elm) {
   this.isValid = true;
 }
 
+FilterSet.prototype.buildFilter = function($elm) {
+  if ($elm.hasClass('js-date-choice-field')) {
+    return new DateFilter($elm);
+  } else if ($elm.hasClass('js-typeahead-filter')) {
+    return new TypeaheadFilter($elm);
+  } else if ($elm.hasClass('js-election-filter')) {
+    return new ElectionFilter($elm);
+  } else if ($elm.hasClass('js-multi-filter')) {
+    return new MultiFilter($elm);
+  } else if ($elm.hasClass('js-select-filter')) {
+    return new SelectFilter($elm);
+  } else if ($elm.hasClass('js-toggle-filter')){
+    return new ToggleFilter($elm);
+  } else {
+    return new Filter($elm);
+  }
+};
+
 FilterSet.prototype.activate = function() {
+  var self = this;
   var query = URI.parseQuery(window.location.search);
   if (_.isEmpty(this.filters)) {
     this.filters = _.chain(this.$body.find('.js-filter'))
       .map(function(elm) {
-        var filter = Filter.build($(elm)); // .fromQuery(query);
+        var filter = self.buildFilter($(elm)); // .fromQuery(query);
         return [filter.name, filter];
       })
       .object()
@@ -73,15 +98,15 @@ FilterSet.prototype.handleValidation = function(e, opts) {
 FilterSet.prototype.disableFilters = function(excludedFilters) {
   _.each(this.filters, function(filter) {
     if (excludedFilters.indexOf(filter.name) < 0) {
-      filter.disable();  
+      filter.disable();
     }
-  }) 
+  });
 };
 
 FilterSet.prototype.enableFilters = function() {
   _.each(this.filters, function(filter) {
     filter.enable();
-  })
+  });
 };
 
 module.exports = {FilterSet: FilterSet};
