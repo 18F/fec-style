@@ -244,12 +244,26 @@ describe('filter set', function() {
     });
 
     it('sets a tag', function() {
+      this.filter.loadedOnce = false;
       this.filter.$election.val('2016');
       this.filter.setTag();
       expect(this.trigger).to.have.been.calledWith('filter:added', [
         {
           key: 'election',
           value: '2016 election: 2013-2014',
+          nonremovable: true
+        }
+      ]);
+    });
+
+    it('renames a tag if it already exitss', function() {
+      this.filter.loadedOnce = true;
+      this.filter.$election.val('2012');
+      this.filter.setTag();
+      expect(this.trigger).to.have.been.calledWith('filter:renamed', [
+        {
+          key: 'election',
+          value: '2012 election: 2013-2014',
           nonremovable: true
         }
       ]);

@@ -489,6 +489,7 @@ function ElectionFilter(elm) {
   this.$cycle = this.$body.find('input[type="hidden"][name="' + this.cycleName + '"]');
   this.$full = this.$body.find('input[type="hidden"][name="' + this.fullName + '"]');
 
+  this.loadedOnce = false;
   this.$election.on('change', this.handleElectionChange.bind(this));
   this.$cycles.on('change', this.handleCycleChange.bind(this));
 
@@ -551,13 +552,15 @@ ElectionFilter.prototype.setTag = function() {
   var election = this.$election.val();
   var cycle = this.$cycles.find(':checked').data('display-value');
   var value = election + ' election: ' + cycle;
-  this.$election.trigger('filter:added', [
+  var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
+  this.$election.trigger(eventName, [
     {
       key: 'election',
       value: value,
       nonremovable: true
     }
   ]);
+  this.loadedOnce = true;
 };
 
 /* MultiFilters used when there are multiple filters that share the
