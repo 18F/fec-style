@@ -21,6 +21,7 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
+  this.$input.on('change', this.handleInputChange.bind(this));
   this.$elm.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
@@ -37,6 +38,44 @@ DateFilter.prototype.handleRadioChange = function(e) {
     this.$minDate.val($input.data('min-date')).change();
     this.$maxDate.val($input.data('max-date')).change();
   }
+};
+
+DateFilter.prototype.handleInputChange = function(e) {
+  var $input = $(e.target);
+  var prefix = $input.data('prefix');
+  var suffix = $input.data('suffix');
+  var value = $input.val();
+  var loadedOnce = $input.data('loaded-once') || false;
+  var eventName;
+
+  if ($input.data('had-value') && value.length > 0) {
+    eventName = 'filter:renamed';
+  } else if (value.length > 0) {
+    eventName = 'filter:added';
+    $input.data('had-value', true);
+  } else {
+    eventName = 'filter:removed';
+    $input.data('had-value', false);
+  }
+
+  if (prefix) {
+    value = prefix + ' ' + value;
+  }
+
+  if (suffix) {
+    value = value + ' ' + suffix;
+  }
+
+  $input.trigger(eventName, [
+    {
+      key: this.id,
+      value: value,
+      loadedOnce: loadedOnce,
+      name: this.name
+    }
+  ]);
+
+  $input.data('loaded-once', true);
 };
 
 DateFilter.prototype.validate = function() {
