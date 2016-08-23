@@ -11,7 +11,7 @@
 //     <thead class="simple-table__header">
 //         <tr>
 //             <th class="simple-table__header-cell">Dates covered</th>
-//             <th class="simple-table__header-cell">Due</th>
+//             <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
 //         </tr>
 //     </thead>
 //     <tbody>
@@ -47,6 +47,10 @@
   .simple-table__header-cell,
   th {
     padding: u(.5rem 0);
+  }
+
+  .simple-table__header-subtext {
+    font-weight: normal;
   }
 }
 

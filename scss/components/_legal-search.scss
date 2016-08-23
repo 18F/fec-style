@@ -3,16 +3,16 @@
 // Styles for legal search results.
 //
 // Markup:
-// <div class="legal-search-results">
-//   <div class="legal-search-results__header-row">
-//     <div class="legal-search-results__header cell--15">Section</div>
-//     <div class="legal-search-results__header">Description</div>
+// <div class="simple-table simple-table--display simple-table--responsive">
+//   <div class="simple-table__header">
+//     <div class="simple-table__header-cell">Section</div>
+//     <div class="simple-table__header-cell">Description <span class="simple-table__header-subtext">| Hit</span></div>
 //   </div>
-//   <div class="legal-search-results__list">
-//     <div class="legal-search-result">
-//       <div class="legal-search-result__field"><a title="" href="/regulations/5-6/2016-annual-5#5-6">§ 5.6</a></div>
-//       <div class="legal-search-result__field">
-//         <strong>Fees.</strong>
+//   <div class="simple-table__row-group">
+//     <div class="simple-table__row legal-search-result">
+//       <div class="simple-table__cell"><a title="" href="/regulations/5-6/2016-annual-5#5-6">§ 5.6</a></div>
+//       <div class="simple-table__cell">
+//         <div class="legal-search-result__name">Fees.</div>
 //         <div class="t-serif legal-search-result__hit">
 //           … per copy, including reproduction and binding).  Cost ($.0006 per
 //           <em>Computer</em> Resource Unit Utilized—CRU … ) to process the
@@ -31,10 +31,6 @@
 //
 // Styleguide components.search-results-legal
 
-
-.legal-search-results__subtext {
-  font-weight: normal;
-}
 
 .legal-search-result__name {
   font-family: $sans-serif;
