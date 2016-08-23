@@ -21,8 +21,12 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
+  this.$input = this.$body.find('input[type="text"]');
+
   this.$body.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
+
+  this.$input.on('click', this.openDatePicker.bind(this));
 }
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -92,6 +96,18 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
     }
     this.validate();
   }
+};
+
+DateFilter.prototype.openDatePicker = function() {
+  var calendar = this.$body.find('.date-range-calendar');
+
+  calendar.show();
+
+  calendar.find('li').hover(function() {
+    $(this).prevAll().removeClass('active').addClass('deactive');
+    $(this).nextAll().removeClass('deactive').addClass('active');
+  });
+
 };
 
 DateFilter.prototype.showWarning = function() {

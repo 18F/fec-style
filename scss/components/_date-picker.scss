@@ -1,0 +1,48 @@
+// Date Range Calendar Picker
+//
+// Filter interaction for filter date fields
+//
+
+.date-range-calendar {
+  font-family: $sans-serif;
+  padding: u(2rem 0);
+  display: none;
+}
+
+.date-range-year {
+  line-height: u(3rem);
+  padding-right: u(.5rem);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.date-range-months {
+  width: 220px;
+  display: inline-block;
+
+  li {
+    width: 35px;
+    background-color: $gray-dark;
+    color: $inverse !important;
+    font-size: u(1.2rem);
+    text-align: center;
+    padding: u(.75rem .5rem);
+    margin: u(0 .1rem .2rem 0);
+    cursor: pointer;
+    float: left;
+
+    &.active {
+      background-color: $gray-dark;
+    }
+
+    &.deactive {
+      background-color: $gray;
+      color: $base !important;
+    }
+
+    &:hover {
+      background-color: $aqua;
+      color: $base !important;
+    }
+  }
+}
