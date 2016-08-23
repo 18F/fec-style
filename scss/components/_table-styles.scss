@@ -2,12 +2,16 @@
 //
 // Simple table with rules
 //
+// .simple-table                - Simple table with rules.
+// .simple-table--responsive    - Display a table on larger screens, collapse to compact display on small screens.
+// .simple-table--display       - More padding with vertical rules and alternating background color similar to `.datatables`.
+//
 // Markup:
-// <table class="simple-table">
+// <table class="simple-table {{ modifier_class }}">
 //     <thead class="simple-table__header">
 //         <tr>
-//             <th>Dates covered</th>
-//             <th>Due</th>
+//             <th class="simple-table__header-cell">Dates covered</th>
+//             <th class="simple-table__header-cell">Due</th>
 //         </tr>
 //     </thead>
 //     <tbody>
@@ -22,7 +26,9 @@
 //     </tbody>
 // </table>
 //
+//
 // Styleguide components.simple-table
+
 
 .simple-table {
   border-color: $primary;
@@ -35,7 +41,10 @@
 
 .simple-table__header {
   border-bottom: 1px solid $primary;
+  font-weight: 600;
+  text-align: left;
 
+  .simple-table__header-cell,
   th {
     padding: u(.5rem 0);
   }
@@ -43,19 +52,14 @@
 
 .simple-table__cell {
   padding: u(1rem 0);
-  border-bottom: 1px solid $neutral;
   vertical-align: top;
-
-  &:only-child {
-    border-bottom: none;
-  }
 }
 
 .simple-table__row {
+  border-bottom: 1px solid $neutral;
+
   &:last-of-type {
-    .simple-table__cell {
-      border-bottom: none;
-    }
+    border-bottom: none;
   }
 }
 
@@ -66,37 +70,22 @@ h3 + .simple-table {
   margin-top: u(-1rem);
 }
 
-.table {
-  .th {
-    text-align: left;
+.simple-table--display {
+  &.simple-table {
+    color: $base;
+    border: none;
+    margin: 0;
   }
 
-  .tr {
-    border-bottom: 1px solid $neutral;
-
-    &:last-child {
-      border-bottom: none;
-    }
-
-  }
-}
-
-.table--display {
-  .thead {
-    border-bottom: 1px solid $primary;
-    font-family: $sans-serif;
-    font-weight: 600;
-  }
-
-  .th {
+  .simple-table__header-cell {
     padding: u(0.5rem 1rem);
   }
 
-  .td {
+  .simple-table__cell {
     padding: u(1rem);
   }
 
-  .tr {
+  .simple-table__row {
     padding: u(1rem);
 
     &:nth-child(even) {
@@ -104,19 +93,27 @@ h3 + .simple-table {
     }
   }
 
-  .th,
-  .td {
+  .simple-table__cell {
     border-left: 1px solid $neutral;
 
     &:first-child {
       border-left: none;
     }
   }
+
+  @include media($med) {
+    // We need to restore the padding on larger screens when combined with .simple-table--responsive
+    &.simple-table--responsive {
+      .simple-table__cell {
+        padding: u(1rem);
+      }
+    }
+  }
 }
 
 // Table-style display
-.table--responsive {
-  .th {
+.simple-table--responsive {
+  .simple-table__header-cell {
     display: none; // Hide all but the first header cell
 
     &:first-child {
@@ -124,40 +121,40 @@ h3 + .simple-table {
     }
   }
 
-  .td {
+  .simple-table__cell {
     padding: 0;
   }
 
-  .td,
-  .th {
+  .simple-table__cell,
+  .simple-table__header-cell {
     border-left: none;
   }
 
   @include media($med) {
-    .table {
+    & {
       border-collapse: collapse;
       display: table;
       table-layout: fixed;
       width: 100%;
     }
 
-    .thead {
+    .simple-table__header {
       display: table-header-group;
     }
 
-    .th {
+    .simple-table__header-cell {
       display: table-cell;
     }
 
-    .tbody {
+    .simple-table__row-group {
       display: table-row-group;
     }
 
-    .tr {
+    .simple-table__row {
       display: table-row;
     }
 
-    .td {
+    .simple-table__cell {
       display: table-cell;
     }
   }
