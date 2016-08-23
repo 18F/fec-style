@@ -65,33 +65,6 @@ describe('filter set', function() {
       expect(this.filter.name).to.equal('name');
       expect(this.filter.fields).to.deep.equal(['name']);
     });
-
-    it('sets values', function() {
-      this.filter.setValue('jed');
-      expect(this.filter.$input.val()).to.equal('jed');
-    });
-
-    it('sets empty values', function() {
-      this.filter.setValue();
-      expect(this.filter.$input.val()).to.equal('');
-    });
-
-    it('adds to the filter count if there was no text', function() {
-      this.filter.$input.val('judy').change();
-      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
-    });
-
-    it('does not add to the filter count if there was already text', function() {
-      this.filter.$input.val('judy').change();
-      this.filter.$input.val('jack').change();
-      expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
-    });
-
-    it('subtracts from the filter count when emptied', function() {
-      this.filter.$input.val('judy').change();
-      this.filter.$input.val('').change();
-      expect(this.filter.$filterLabel.find('.filter-count').length).to.equal(0);
-    });
   });
 
   describe('checkbox filters', function() {
