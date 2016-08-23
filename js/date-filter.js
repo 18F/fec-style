@@ -21,12 +21,11 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
-  this.$input = this.$body.find('input[type="text"]');
-
   this.$body.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
-  this.$input.on('click', this.openDatePicker.bind(this));
+  this.$minDate.on('click', this.handlePickMinDate.bind(this));
+  this.$maxDate.on('click', this.handlePickMaxDate.bind(this));
 }
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -98,10 +97,9 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
   }
 };
 
-DateFilter.prototype.openDatePicker = function() {
+DateFilter.prototype.handlePickMinDate = function() {
   var calendar = this.$body.find('.date-range-calendar');
-
-  calendar.show();
+  calendar.show().removeClass('js-pick-max').addClass('js-pick-min');
 
   calendar.find('li').hover(function() {
     $(this).prevAll().removeClass('active').addClass('deactive');
@@ -109,6 +107,18 @@ DateFilter.prototype.openDatePicker = function() {
   });
 
 };
+
+DateFilter.prototype.handlePickMaxDate = function() {
+  var calendar = this.$body.find('.date-range-calendar');
+  calendar.show().removeClass('js-pick-min').addClass('js-pick-max');
+
+  calendar.find('li').hover(function() {
+    $(this).prevAll().removeClass('deactive').addClass('active');
+    $(this).nextAll().removeClass('active').addClass('deactive');
+  });
+
+};
+
 
 DateFilter.prototype.showWarning = function() {
   if (!this.showingWarning) {

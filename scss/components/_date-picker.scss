@@ -7,6 +7,16 @@
   font-family: $sans-serif;
   padding: u(2rem 0);
   display: none;
+
+  &.js-pick-min li:hover {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+
+  &.js-pick-max li:hover {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
 }
 
 .date-range-year {
@@ -44,5 +54,6 @@
       background-color: $aqua;
       color: $base !important;
     }
+
   }
 }
