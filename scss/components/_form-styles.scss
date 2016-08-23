@@ -230,3 +230,67 @@
     border: 1px solid $error;
   }
 }
+
+
+// Financial range inputs
+//
+// Half width inputs so min and max filters display side by side
+//
+
+.range .js-filter {
+  display: inline-block;
+}
+
+.financial-range-input {
+  font-family: $sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+
+  input[type="text"] {
+    text-align: right;
+    padding-left: u(2rem);
+  }
+
+  input[type="text"],
+  button {
+    display: inline-block;
+  }
+
+  &:before {
+    color: $gray;
+    content:"$";
+    top: u(2.15rem);
+    left: u(1rem);
+    position: absolute;
+  }
+
+  button {
+    width: 20px;
+    height: 3.6rem;
+    background-position: right 50% top 50%;
+    padding: u(1.25rem);
+    margin-left: u(.25rem);
+    vertical-align: top;
+  }
+}
+
+.range__hyphen {
+  padding: u(2rem .25rem);
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.financial-range-input-min {
+  width: 100px;
+}
+
+.financial-range-input-max {
+  width: 140px;
+
+  input[type="text"] {
+    width: 100px;
+  }
+}
+
+
