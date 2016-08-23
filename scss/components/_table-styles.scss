@@ -65,3 +65,100 @@
 h3 + .simple-table {
   margin-top: u(-1rem);
 }
+
+.table {
+  .th {
+    text-align: left;
+  }
+
+  .tr {
+    border-bottom: 1px solid $neutral;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+  }
+}
+
+.table--display {
+  .thead {
+    border-bottom: 1px solid $primary;
+    font-family: $sans-serif;
+    font-weight: 600;
+  }
+
+  .th {
+    padding: u(0.5rem 1rem);
+  }
+
+  .td {
+    padding: u(1rem);
+  }
+
+  .tr {
+    padding: u(1rem);
+
+    &:nth-child(even) {
+      background-color: rgba($gray-lightest, .5);
+    }
+  }
+
+  .th,
+  .td {
+    border-left: 1px solid $neutral;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+// Table-style display
+.table--responsive {
+  .th {
+    display: none; // Hide all but the first header cell
+
+    &:first-child {
+      display: table-cell;
+    }
+  }
+
+  .td {
+    padding: 0;
+  }
+
+  .td,
+  .th {
+    border-left: none;
+  }
+
+  @include media($med) {
+    .table {
+      border-collapse: collapse;
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    .thead {
+      display: table-header-group;
+    }
+
+    .th {
+      display: table-cell;
+    }
+
+    .tbody {
+      display: table-row-group;
+    }
+
+    .tr {
+      display: table-row;
+    }
+
+    .td {
+      display: table-cell;
+    }
+  }
+}

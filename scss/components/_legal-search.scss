@@ -33,38 +33,8 @@
 // Styleguide components.search-results-legal
 
 
-.legal-search-results__header-row {
-  border-bottom: 1px solid $primary;
-  font-family: $sans-serif;
-  font-weight: 600;
-
-}
-
-.legal-search-results__header {
-  display: none; // Hide all but the first header cell
-  padding: u(0.5rem 1rem);
-  text-align: left;
-
-  &:first-child {
-    display: table-cell;
-  }
-}
-
 .legal-search-results__subtext {
   font-weight: normal;
-}
-
-.legal-search-result {
-  border-bottom: 1px solid $neutral;
-  padding: u(1rem);
-
-  &:last-child {
-    border-bottom: none;
-  }
-
-  &:nth-child(even) {
-    background-color: rgba($gray-lightest, .5);
-  }
 }
 
 .legal-search-result__name {
@@ -77,45 +47,5 @@
 
   em {
     @include t-highlight;
-  }
-}
-
-// Table-style display
-@include media($med) {
-  .legal-search-results {
-    border-collapse: collapse;
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-  }
-
-  .legal-search-results__header-row {
-    display: table-header-group;
-  }
-
-  .legal-search-results__header {
-    display: table-cell;
-  }
-
-  .legal-search-results__list {
-    display: table-row-group;
-  }
-
-  .legal-search-result {
-    display: table-row;
-  }
-
-  .legal-search-result__field {
-    display: table-cell;
-    padding: u(1rem);
-  }
-
-  .legal-search-results__header,
-  .legal-search-result__field {
-    border-left: 1px solid $neutral;
-
-    &:first-child {
-      border-left: none;
-    }
   }
 }
