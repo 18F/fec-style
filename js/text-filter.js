@@ -1,104 +1,124 @@
 'use strict';
 
 var $ = require('jquery');
-var Filter = require('./filter-base.js').Filter;
+var _ = require('underscore');
 
-var KEYCODE_ENTER = 13;
+var Filter = require('./filter-base');
+var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
 
 function TextFilter(elm) {
-  Filter.call(this, elm);
+  Filter.Filter.call(this, elm);
+
+  this.id = this.$input.attr('id');
 
   this.$submit = this.$elm.find('button');
 
   this.$input.on('change', this.handleChange.bind(this));
-  this.$input.on('keydown', this.handleKeydown.bind(this));
-  this.$input.on('keyup', this.handleInputFilterKeyup.bind(this));
-  this.$submit.on('click', this.handleInputFilterClick.bind(this));
-
+  this.$input.on('keyup', this.handleKeyup.bind(this));
+  this.$submit.on('click', this.handleClick.bind(this));
 
   if (this.$input.data('inputmask')) {
     this.$input.inputmask();
   }
+
+  this.checkboxIndex = 1;
 }
 
-
-TextFilter.prototype = Object.create(Filter.prototype);
+TextFilter.prototype = Object.create(Filter.Filter.prototype);
 TextFilter.constructor = TextFilter;
 
-TextFilter.prototype.handleChange = function(e) {
-  var $input = $(e.target);
-  var prefix = $input.data('prefix');
-  var suffix = $input.data('suffix');
-  var id = $input.attr('id');
-  var loadedOnce,
-      eventName,
-      value;
+TextFilter.prototype.fromQuery = function(query) {
+  var self = this;
+  var values = query[this.name] ? Filter.ensureArray(query[this.name]) : [];
+  values = values.reverse();
+  values.forEach(function(value) {
+    self.appendCheckbox(value);
+  });
+  return this;
+};
 
-  value = $input.val();
-  loadedOnce = $input.data('loaded-once') || false;
+TextFilter.prototype.handleChange = function() {
+  var prefix = this.$input.data('prefix');
+  var suffix = this.$input.data('suffix');
+  var value = this.$input.val();
+  var loadedOnce = this.$input.data('loaded-once') || false;
 
   // set focus to button
-  $input.next().focus();
+  this.$submit.focus();
 
-  if ($input.data('had-value') && value.length > 0) {
-    eventName = 'filter:renamed';
-  } else if (value.length > 0) {
-    eventName = 'filter:added';
-    $input.data('had-value', true);
-  } else {
-    eventName = 'filter:removed';
-    $input.data('had-value', false);
+  if (prefix) {
+    value = prefix + ' ' + value;
+  }
+
+  if (suffix) {
+    value = value + ' ' + suffix;
   }
 
   if (loadedOnce) {
     this.$submit.addClass('is-loading');
   }
 
-  if (value) {
+  if (value.length > 0) {
     this.$submit.removeClass('is-disabled');
+    this.appendCheckbox(value);
   }
 
-  if (prefix) {
-    value = prefix + ' ' + value;
-  }
-  if (suffix) {
-    value = value + ' ' + suffix;
-  }
-
-  $input.trigger(eventName, [
-    {
-      key: id,
-      value: value,
-      loadedOnce: loadedOnce,
-      name: this.name
-    }
-  ]);
-
-  $input.data('loaded-once', true);
+  this.$input.data('loaded-once', true);
 };
 
-TextFilter.prototype.handleKeydown = function(e) {
-  if (e.which === KEYCODE_ENTER) {
-    e.preventDefault();
-    this.$input.change();
-  }
-};
-
-TextFilter.prototype.handleClear = function() {
-  this.setValue();
-  this.$input.focus();
-};
-
-// text input (no typeahead) keypress
-TextFilter.prototype.handleInputFilterKeyup = function() {
+TextFilter.prototype.handleKeyup = function() {
   this.$submit.removeClass('is-disabled');
 };
 
-// text input (no typeahead) button click
-TextFilter.prototype.handleInputFilterClick = function() {
+TextFilter.prototype.handleClick = function() {
   if (!this.$submit.hasClass('is-disabled')) {
     this.$input.change();
   }
+};
+
+TextFilter.prototype.checkboxTemplate = _.template(
+  '<li>' +
+    '<input ' +
+      'id="{{id}}" ' +
+      'name="{{name}}" ' +
+      'value="{{value}}" ' +
+      'type="checkbox" ' +
+      'checked' +
+    '/>' +
+    '<label for="{{id}}">"{{value}}"</label>' +
+    '<button class="dropdown__remove js-remove">' +
+      '<span class="u-visually-hidden">Remove</span>' +
+    '</button>' +
+  '</li>',
+  {interpolate: /\{\{(.+?)\}\}/g}
+);
+
+// Remove the event handlers for adding and removing tags
+// So the filter count doesn't count double for the text filter and checkbox
+TextFilter.prototype.handleAddEvent = function(){};
+TextFilter.prototype.handleRemoveEvent = function(){};
+
+TextFilter.prototype.appendCheckbox = function(value) {
+  if (!this.checkboxList) {
+    this.appendCheckboxList();
+  }
+  var opts = {
+    id: this.id + this.checkboxIndex.toString(),
+    name: this.name,
+    value: value,
+  };
+  var checkbox = $(this.checkboxTemplate(opts));
+  checkbox.appendTo(this.checkboxList.$elm);
+  checkbox.find('input').change();
+  this.$input.val('');
+  this.checkboxIndex++;
+};
+
+TextFilter.prototype.appendCheckboxList = function() {
+  var $checkboxes = $('<ul class="js-checkbox-filter js-filter dropdown__selected" data-removable="true"></ul>');
+  this.$elm.find('label').after($checkboxes);
+  this.checkboxList = new CheckboxFilter($checkboxes);
+  this.checkboxList.name = this.name;
 };
 
 module.exports = {TextFilter: TextFilter};
