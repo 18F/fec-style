@@ -211,7 +211,7 @@ $search-button-width: u(5.6rem);
 
 // Specific styles for typeahead filters
 // Just testing things out. Refactor to use non-js class if we use it
-.js-typeahead-filter {
+.typeahead-filter {
   .button--search {
     @include u-icon-button($magnifying-glass-arrow);
     background-size: u(2.8rem);

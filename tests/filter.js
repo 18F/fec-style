@@ -113,7 +113,7 @@ describe('filter set', function() {
   describe('date range filters', function() {
     beforeEach(function() {
       this.$fixture.empty().append(
-        '<div class="js-filter js-date-choice-field">' +
+        '<div class="js-filter" data-filter="date">' +
           '<div class="input--removable">' +
             '<input name="date" type="radio" data-min-date="2015-01-01" data-max-date="2015-12-31">' +
             '<input name="date" type="radio" data-min-date="2016-01-01" data-max-date="2016-12-31">' +
@@ -143,7 +143,8 @@ describe('filter set', function() {
   describe('Election filters', function() {
     beforeEach(function() {
       this.$fixture.empty().append(
-        '<div class="js-filter js-election-filter"' +
+        '<div class="js-filter"' +
+          'data-filter="election"' +
           'data-name="election_year"' +
           'data-cycle-name="cycle"' +
           'data-full-name="election_full"' +

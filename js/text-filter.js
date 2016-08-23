@@ -115,7 +115,7 @@ TextFilter.prototype.appendCheckbox = function(value) {
 };
 
 TextFilter.prototype.appendCheckboxList = function() {
-  var $checkboxes = $('<ul class="js-checkbox-filter js-filter dropdown__selected" data-removable="true"></ul>');
+  var $checkboxes = $('<ul class="js-filter dropdown__selected" data-filter="checkbox" data-removable="true"></ul>');
   this.$elm.find('label').after($checkboxes);
   this.checkboxList = new CheckboxFilter($checkboxes);
   this.checkboxList.name = this.name;
