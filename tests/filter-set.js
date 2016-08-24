@@ -18,18 +18,14 @@ describe('filter set', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
       '<form>' +
-        '<div class="js-filter">' +
-          '<div class="input--removable">' +
-            '<input name="name" />' +
-            '<button class="button button-remove"></button>' +
-          '</div>' +
+        '<div class="js-filter" data-filter="text">' +
+          '<input name="name" />' +
+          '<button></button>' +
         '</div>' +
-        '<div class="js-filter">' +
-          '<div class="input--removable">' +
-            '<input name="cycle" type="checkbox" value="2012" />' +
-            '<input name="cycle" type="checkbox" value="2014" />' +
-            '<input name="cycle" type="checkbox" value="2016" />' +
-          '</div>' +
+        '<div class="js-filter" data-filter="checkbox">' +
+          '<input name="cycle" type="checkbox" value="2012" />' +
+          '<input name="cycle" type="checkbox" value="2014" />' +
+          '<input name="cycle" type="checkbox" value="2016" />' +
         '</div>' +
       '</form>'
     );

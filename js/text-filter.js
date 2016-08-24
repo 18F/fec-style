@@ -15,6 +15,7 @@ function TextFilter(elm) {
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keyup', this.handleKeyup.bind(this));
+  this.$input.on('blur', this.handleBlur.bind(this));
   this.$submit.on('click', this.handleClick.bind(this));
 
   if (this.$input.data('inputmask')) {
@@ -45,6 +46,12 @@ TextFilter.prototype.handleChange = function() {
 
   // set focus to button
   this.$submit.focus();
+  if (value.length > 0) {
+    this.$submit.removeClass('is-disabled');
+    this.appendCheckbox(value);
+  } else {
+    this.$submit.addClass('is-disabled');
+  }
 
   if (prefix) {
     value = prefix + ' ' + value;
@@ -58,11 +65,6 @@ TextFilter.prototype.handleChange = function() {
     this.$submit.addClass('is-loading');
   }
 
-  if (value.length > 0) {
-    this.$submit.removeClass('is-disabled');
-    this.appendCheckbox(value);
-  }
-
   this.$input.data('loaded-once', true);
 };
 
@@ -73,6 +75,12 @@ TextFilter.prototype.handleKeyup = function() {
 TextFilter.prototype.handleClick = function() {
   if (!this.$submit.hasClass('is-disabled')) {
     this.$input.change();
+  }
+};
+
+TextFilter.prototype.handleBlur = function() {
+  if (this.$input.val().length === 0) {
+    this.$submit.addClass('is-disabled');
   }
 };
 

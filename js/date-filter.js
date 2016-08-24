@@ -68,7 +68,7 @@ DateFilter.prototype.handleInputChange = function(e) {
 
   $input.trigger(eventName, [
     {
-      key: this.id,
+      key: $input.attr('id'),
       value: value,
       loadedOnce: loadedOnce,
       name: this.name

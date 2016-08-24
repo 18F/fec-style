@@ -1,8 +1,5 @@
 'use strict';
 
-var $ = require('jquery');
-var _ = require('underscore');
-
 var Filter = require('./filter-base');
 
 function RangeFilter(elm) {
@@ -19,7 +16,6 @@ function RangeFilter(elm) {
   if (this.$input.data('inputmask')) {
     this.$input.inputmask();
   }
-
 }
 
 RangeFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -44,6 +40,12 @@ RangeFilter.prototype.handleChange = function() {
     this.$input.data('had-value', false);
   }
 
+  if (value.length > 0) {
+    this.$submit.removeClass('is-disabled');
+  } else {
+    this.$submit.addClass('is-disabled');
+  }
+
   if (prefix) {
     value = prefix + ' ' + value;
   }
@@ -54,10 +56,6 @@ RangeFilter.prototype.handleChange = function() {
 
   if (loadedOnce) {
     this.$submit.addClass('is-loading');
-  }
-
-  if (value.length > 0) {
-    this.$submit.removeClass('is-disabled');
   }
 
   this.$input.trigger(eventName, [
