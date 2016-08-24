@@ -232,16 +232,44 @@
 }
 
 
-// Financial range inputs
+// Inline range inputs
 //
 // Half width inputs so min and max filters display side by side
 //
 
-.range .js-filter {
-  display: inline-block;
+.range {
+  margin-bottom: u(1rem);
+  position: relative;
+
+  .js-filter {
+    display: inline-block;
+  }
+
+  .button--standard {
+    height: 3.6rem;
+    background-position: right 50% top 50%;
+    padding: u(1.25rem 1.5rem);
+    margin-left: u(.25rem);
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    &.is-loading {
+      background-image: url('../img/loading-ellipsis-gray.gif');
+      background-size: u(2rem);
+      background-position: 50%;
+    }
+
+    &.is-successful {
+      @include u-icon-button($check);
+      background-size: u(2rem);
+      background-position: 50%;
+      padding: u(1.5rem);
+    }
+  }
 }
 
-.financial-range-input {
+.range__input {
   font-family: $sans-serif;
   display: inline-block;
   vertical-align: top;
@@ -250,6 +278,7 @@
   input[type="text"] {
     text-align: right;
     padding-left: u(2rem);
+    margin-bottom: 0;
   }
 
   input[type="text"],
@@ -264,33 +293,15 @@
     left: u(1rem);
     position: absolute;
   }
-
-  button {
-    width: 20px;
-    height: 3.6rem;
-    background-position: right 50% top 50%;
-    padding: u(1.25rem);
-    margin-left: u(.25rem);
-    vertical-align: top;
-  }
 }
 
 .range__hyphen {
-  padding: u(2rem .25rem);
+  padding: u(0 .25rem 1rem .25rem);
   vertical-align: bottom;
   display: inline-block;
 }
 
-.financial-range-input-min {
+.range__input {
   width: 100px;
 }
-
-.financial-range-input-max {
-  width: 140px;
-
-  input[type="text"] {
-    width: 100px;
-  }
-}
-
 

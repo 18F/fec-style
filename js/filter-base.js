@@ -139,6 +139,12 @@ Filter.prototype.handleChange = function(e) {
 
     if (loadedOnce) {
       this.$inputFilterButton.addClass('is-loading');
+
+      // trigger button loading state on side by side range inputs
+      // because min input doesn't have button within js-filter
+      if ($input.parent().hasClass('range__input')) {
+        this.$body.parent().find('.button--go').addClass('is-loading');
+      }
     }
 
     if (value) {
