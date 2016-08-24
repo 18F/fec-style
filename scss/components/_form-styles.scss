@@ -270,6 +270,7 @@
 }
 
 .range__input {
+  width: 100px;
   font-family: $sans-serif;
   display: inline-block;
   vertical-align: top;
@@ -286,9 +287,9 @@
     display: inline-block;
   }
 
-  &:before {
+  &::before {
     color: $gray;
-    content:"$";
+    content: '$';
     top: u(2.15rem);
     left: u(1rem);
     position: absolute;
@@ -299,9 +300,5 @@
   padding: u(0 .25rem 1rem .25rem);
   vertical-align: bottom;
   display: inline-block;
-}
-
-.range__input {
-  width: 100px;
 }
 
