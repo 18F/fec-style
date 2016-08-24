@@ -35,7 +35,7 @@ describe('FilterTypeahead', function() {
       '</div>'
     );
 
-    this.FilterTypeahead = new FilterTypeahead('.js-typeahead-filter', typeahead.datasets.committees, true);
+    this.FilterTypeahead = new FilterTypeahead('[data-filter="typeahead"]', typeahead.datasets.committees, true);
   });
 
   it('should initialize', function() {
