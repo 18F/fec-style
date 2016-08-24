@@ -4,7 +4,6 @@ var $ = require('jquery');
 var _ = require('underscore');
 var URI = require('urijs');
 
-var Filter = require('./filter-base').Filter;
 var TextFilter = require('./text-filter').TextFilter;
 var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
 var MultiFilter = require('./filter-base').MultiFilter;
@@ -34,13 +33,10 @@ var filterMap = {
   'select': SelectFilter,
   'toggle': ToggleFilter,
   'range': RangeFilter,
-  'base': Filter
 };
 
 FilterSet.prototype.buildFilter = function($elm) {
   var filterType = $elm.attr('data-filter');
-  var F = filterMap[filterType];
-  new F($elm);
   var F = filterMap[filterType].constructor;
   return new F($elm);
 };
