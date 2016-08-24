@@ -47,6 +47,7 @@ RangeFilter.prototype.handleChange = function() {
   }
 
   if (prefix) {
+    prefix = prefix === '$' ? prefix : prefix + ' ';
     value = prefix + ' ' + value;
   }
 
