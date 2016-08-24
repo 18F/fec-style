@@ -241,12 +241,8 @@
   margin-bottom: u(1rem);
   position: relative;
 
-  .js-filter {
-    display: inline-block;
-  }
-
   .button--standard {
-    height: 3.6rem;
+    height: u(3.6rem);
     background-position: right 50% top 50%;
     padding: u(1.25rem 1.5rem);
     margin-left: u(.25rem);
