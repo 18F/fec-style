@@ -149,7 +149,9 @@ Filter.prototype.handleChange = function(e) {
   }
 
   if (prefix) {
-    value = prefix + ' ' + value;
+    prefix = prefix === '$' ? prefix : prefix + ' ';
+
+    value = prefix + value;
   }
   if (suffix) {
     value = value + ' ' + suffix;
