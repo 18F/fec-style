@@ -126,7 +126,12 @@ Filter.prototype.handleChange = function(e) {
     loadedOnce = $input.data('loaded-once') || false;
 
     // set focus to button
-    $input.next().focus();
+    if ($input.parent().hasClass('range__input')) {
+      $input.parent().next().focus();
+    }
+    else {
+      $input.next().focus();
+    }
 
     if ($input.data('had-value') && value.length > 0) {
       eventName = 'filter:renamed';
