@@ -1,5 +1,6 @@
 'use strict';
 
+var $ = require('jquery');
 var Filter = require('./filter-base');
 
 function RangeFilter(elm) {
@@ -18,22 +19,24 @@ function RangeFilter(elm) {
 RangeFilter.prototype = Object.create(Filter.Filter.prototype);
 RangeFilter.constructor = RangeFilter;
 
-RangeFilter.prototype.handleChange = function() {
-  var value = this.$input.val();
-  var loadedOnce = this.$input.data('loaded-once') || false;
-  var range = this.$input.data('range') || 'false';
+RangeFilter.prototype.handleChange = function(e) {
+  var $input = $(e.target);
+  var value = $input.val();
+  var loadedOnce = $input.data('loaded-once') || false;
+  var range = $input.data('range') || 'false';
   var eventName;
 
   // set focus to button
   this.$submit.focus();
-  if (this.$input.data('had-value') && value.length > 0) {
+
+  if ($input.data('had-value') && value.length > 0) {
     eventName = 'filter:renamed';
   } else if (value.length > 0) {
     eventName = 'filter:added';
-    this.$input.data('had-value', true);
+    $input.data('had-value', true);
   } else {
     eventName = 'filter:removed';
-    this.$input.data('had-value', false);
+    $input.data('had-value', false);
   }
 
   this.$submit.parent().next().focus();
@@ -48,17 +51,18 @@ RangeFilter.prototype.handleChange = function() {
     this.$submit.addClass('is-loading');
   }
 
-  this.$input.trigger(eventName, [
+  $input.trigger(eventName, [
     {
-      key: this.id,
-      value: this.formatValue(this.$input, value),
+      key: $input.attr('id'),
+      value: this.formatValue($input, value),
       loadedOnce: loadedOnce,
       name: this.name,
-      range: range
+      range: range,
+      rangeName: this.name.split('_')[1]
     }
   ]);
 
-  this.$input.data('loaded-once', true);
+  $input.data('loaded-once', true);
 };
 
 RangeFilter.prototype.handleKeyup = function() {

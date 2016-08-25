@@ -59,14 +59,15 @@ function TagList(opts) {
 
 TagList.prototype.addTag = function(e, opts) {
   var tag = opts.nonremovable ? NONREMOVABLE_TAG_TEMPLATE(opts) : TAG_TEMPLATE(opts);
-  var $tagCategory = this.$list.find('[data-tag-category="' + opts.name + '"]');
+  var name = opts.range ? opts.rangeName : opts.name;
+  var $tagCategory = this.$list.find('[data-tag-category="' + name + '"]');
   this.removeTag(opts.key, false);
 
   if ($tagCategory.length > 0) {
     this.addTagItem($tagCategory, tag, opts);
   }
   else {
-    this.$list.append('<li data-tag-category="' + opts.name + '" class="tag__category">' + tag + '</li>');
+    this.$list.append('<li data-tag-category="' + name + '" class="tag__category">' + tag + '</li>');
   }
 
   if (this.$list.find('.tag__item').length > 0) {
