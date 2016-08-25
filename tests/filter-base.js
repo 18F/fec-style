@@ -68,7 +68,7 @@ describe('base filter', function() {
   it('prepares the value with a prefix or suffix', function() {
     var $input = $('<input data-prefix="$" data-suffix="and more" type="text">');
     var value = this.filter.formatValue($input, 100);
-    expect(value).to.equal('$100 and more');
+    expect(value).to.equal('<span class="prefix">$</span>100<span class="suffix"> and more</span>');
   });
 
   it('increases filter count', function() {
