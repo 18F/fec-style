@@ -58,7 +58,7 @@ Filter.prototype.formatValue = function($input, value) {
 
   if (prefix) {
     prefix = prefix === '$' ? prefix : prefix + ' ';
-    value = prefix + ' ' + value;
+    value = prefix + value;
   }
   if (suffix) {
     value = value + ' ' + suffix;
@@ -115,7 +115,7 @@ Filter.prototype.disable = function() {
     var $this = $(this);
     $this.addClass('is-disabled').prop('disabled', true);
     // Disable the tag if it's checked
-    if ($this.is(':checked')) {
+    if ($this.is(':checked') || $this.val()) {
       $this.trigger('filter:disabled', {
         key: $this.attr('id')
       });
