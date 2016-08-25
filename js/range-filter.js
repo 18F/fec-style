@@ -22,8 +22,6 @@ RangeFilter.prototype = Object.create(Filter.Filter.prototype);
 RangeFilter.constructor = RangeFilter;
 
 RangeFilter.prototype.handleChange = function() {
-  var prefix = this.$input.data('prefix');
-  var suffix = this.$input.data('suffix');
   var value = this.$input.val();
   var loadedOnce = this.$input.data('loaded-once') || false;
   var eventName;
@@ -46,15 +44,6 @@ RangeFilter.prototype.handleChange = function() {
     this.$submit.addClass('is-disabled');
   }
 
-  if (prefix) {
-    prefix = prefix === '$' ? prefix : prefix + ' ';
-    value = prefix + ' ' + value;
-  }
-
-  if (suffix) {
-    value = value + ' ' + suffix;
-  }
-
   if (loadedOnce) {
     this.$submit.addClass('is-loading');
   }
@@ -62,7 +51,7 @@ RangeFilter.prototype.handleChange = function() {
   this.$input.trigger(eventName, [
     {
       key: this.id,
-      value: value,
+      value: this.prepareValue(this.$input, value),
       loadedOnce: loadedOnce,
       name: this.name
     }

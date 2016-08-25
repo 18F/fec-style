@@ -52,6 +52,21 @@ Filter.prototype.setValue = function(value) {
   return this;
 };
 
+Filter.prototype.prepareValue = function($input, value) {
+  var prefix = $input.data('prefix');
+  var suffix = $input.data('suffix');
+
+  if (prefix) {
+    prefix = prefix === '$' ? prefix : prefix + ' ';
+    value = prefix + ' ' + value;
+  }
+  if (suffix) {
+    value = value + ' ' + suffix;
+  }
+
+  return value;
+};
+
 Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
 

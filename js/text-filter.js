@@ -38,8 +38,6 @@ TextFilter.prototype.fromQuery = function(query) {
 };
 
 TextFilter.prototype.handleChange = function() {
-  var prefix = this.$input.data('prefix');
-  var suffix = this.$input.data('suffix');
   var value = this.$input.val();
   var loadedOnce = this.$input.data('loaded-once') || false;
 
@@ -50,14 +48,6 @@ TextFilter.prototype.handleChange = function() {
     this.appendCheckbox(value);
   } else {
     this.$submit.addClass('is-disabled');
-  }
-
-  if (prefix) {
-    value = prefix + ' ' + value;
-  }
-
-  if (suffix) {
-    value = value + ' ' + suffix;
   }
 
   if (loadedOnce) {

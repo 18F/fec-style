@@ -42,8 +42,6 @@ DateFilter.prototype.handleRadioChange = function(e) {
 
 DateFilter.prototype.handleInputChange = function(e) {
   var $input = $(e.target);
-  var prefix = $input.data('prefix');
-  var suffix = $input.data('suffix');
   var value = $input.val();
   var loadedOnce = $input.data('loaded-once') || false;
   var eventName;
@@ -58,18 +56,10 @@ DateFilter.prototype.handleInputChange = function(e) {
     $input.data('had-value', false);
   }
 
-  if (prefix) {
-    value = prefix + ' ' + value;
-  }
-
-  if (suffix) {
-    value = value + ' ' + suffix;
-  }
-
   $input.trigger(eventName, [
     {
       key: $input.attr('id'),
-      value: value,
+      value: this.prepareValue($input, value),
       loadedOnce: loadedOnce,
       name: this.name
     }

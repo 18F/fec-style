@@ -21,17 +21,13 @@ CheckboxFilter.constructor = CheckboxFilter;
 
 CheckboxFilter.prototype.handleChange = function(e) {
   var $input = $(e.target);
-  var prefix = $input.data('prefix');
-  var suffix = $input.data('suffix');
   var id = $input.attr('id');
   var loadedOnce,
-      eventName,
-      value;
+      eventName;
 
   var $label = this.$elm.find('label[for="' + id + '"]');
   loadedOnce = $input.data('loaded-once') || false;
   eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
-  value = $label.text();
 
   if (loadedOnce) {
     $label.addClass('is-loading');
@@ -42,17 +38,10 @@ CheckboxFilter.prototype.handleChange = function(e) {
     }
   }
 
-  if (prefix) {
-    value = prefix + ' ' + value;
-  }
-  if (suffix) {
-    value = value + ' ' + suffix;
-  }
-
   $input.trigger(eventName, [
     {
       key: id,
-      value: value,
+      value: this.prepareValue($input, $label.text()),
       loadedOnce: loadedOnce,
       name: this.name
     }
