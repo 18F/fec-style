@@ -62,13 +62,8 @@ TagList.prototype.addTag = function(e, opts) {
   var $tagCategory = this.$list.find('[data-tag-category="' + opts.name + '"]');
   this.removeTag(opts.key, false);
 
-  if (opts.range === 'min' || opts.range === 'max') {
-    this.addRangeTag(tag, $tagCategory, opts);
-    return;
-  }
-
   if ($tagCategory.length > 0) {
-    $tagCategory.append(tag);
+    this.addTagItem($tagCategory, tag, opts);
   }
   else {
     this.$list.append('<li data-tag-category="' + opts.name + '" class="tag__category">' + tag + '</li>');
@@ -84,15 +79,15 @@ TagList.prototype.addTag = function(e, opts) {
   }
 };
 
-TagList.prototype.addRangeTag = function(tag, $tagCategory, opts) {
-  if ($tagCategory.length > 0 && opts.range == 'min') {
+TagList.prototype.addTagItem = function($tagCategory, tag, opts) {
+  if (opts.range == 'min') {
     $tagCategory.addClass('tag__category--range').prepend(tag);
   }
-  else if ($tagCategory.length > 0 && opts.range == 'max') {
+  else if (opts.range == 'max') {
     $tagCategory.addClass('tag__category--range').append(tag);
   }
   else {
-    this.$list.append('<li data-tag-category="' + opts.name + '" class="tag__category">' + tag + '</li>');
+    $tagCategory.append(tag);
   }
 };
 
