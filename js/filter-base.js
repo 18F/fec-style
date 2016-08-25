@@ -55,15 +55,13 @@ Filter.prototype.setValue = function(value) {
 Filter.prototype.formatValue = function($input, value) {
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
-
   if (prefix) {
     prefix = prefix === '$' ? prefix : prefix + ' ';
-    value = prefix + value;
+    value = '<span class="prefix">' + prefix + '</span>' + value;
   }
   if (suffix) {
-    value = value + ' ' + suffix;
+    value = value + '<span class="suffix"> ' + suffix + '</span>';
   }
-
   return value;
 };
 
