@@ -81,13 +81,13 @@ describe('checkbox filters', function() {
     it('sets loaded-once on the input after loading', function() {
       this.$input.prop('checked', true).change();
       expect(this.$input.data('loaded-once')).to.be.true;
-      expect(this.$label.attr('class')).to.not.contain('is-loading');
+      expect(this.$label.attr('class')).to.not.equal('is-loading');
     });
 
     it('adds the loading class if it has loaded once', function() {
       this.$input.prop('checked', true).change();
       this.$input.prop('checked', false).change();
-      expect(this.$label.attr('class')).to.contain('is-loading');
+      expect(this.$label.attr('class')).to.equal('is-loading');
     });
 
     it('triggers the add event on checking a checkbox', function() {
