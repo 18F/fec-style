@@ -31,7 +31,8 @@ var defaultOpts = {
   cmsUrl: 'http://localhost:8000',
   webAppUrl: 'http://localhost:3000',
   cycle: 2016,
-  today: moment(today).format('MM-DD-YYYY')
+  today: moment(today).format('MM-DD-YYYY'),
+  tomorrow: moment(today).add(1, 'day').format('MM-DD-YYYY')
 };
 
 function SiteNav(selector, opts) {
