@@ -52,7 +52,7 @@ Filter.prototype.setValue = function(value) {
   return this;
 };
 
-Filter.prototype.prepareValue = function($input, value) {
+Filter.prototype.formatValue = function($input, value) {
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
 

@@ -41,7 +41,7 @@ CheckboxFilter.prototype.handleChange = function(e) {
   $input.trigger(eventName, [
     {
       key: id,
-      value: this.prepareValue($input, $label.text()),
+      value: this.formatValue($input, $label.text()),
       loadedOnce: loadedOnce,
       name: this.name
     }

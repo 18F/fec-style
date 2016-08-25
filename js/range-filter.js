@@ -51,7 +51,7 @@ RangeFilter.prototype.handleChange = function() {
   this.$input.trigger(eventName, [
     {
       key: this.id,
-      value: this.prepareValue(this.$input, value),
+      value: this.formatValue(this.$input, value),
       loadedOnce: loadedOnce,
       name: this.name
     }
