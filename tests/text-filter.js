@@ -39,16 +39,6 @@ describe('text filters', function() {
     expect(this.filter.$filterLabel.is('#fixtures .accordion__trigger')).to.be.true;
   });
 
-  it('pulls name from $elm if present', function() {
-    this.$fixture.empty().append(
-      '<div class="js-filter" data-name="name-override">' +
-        '<input name="name">' +
-      '</div>'
-    );
-    var filter = new TextFilter(this.$fixture.find('.js-filter'));
-    expect(filter.name).to.equal('name-override');
-  });
-
   it('sets its initial state', function() {
     expect(this.filter.name).to.equal('name');
     expect(this.filter.fields).to.deep.equal(['name']);

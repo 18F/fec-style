@@ -41,16 +41,6 @@ describe('checkbox filters', function() {
     expect(this.filter.$filterLabel.is('#fixtures .accordion__trigger')).to.be.true;
   });
 
-  it('pulls name from $elm if present', function() {
-    this.$fixture.empty().append(
-      '<div class="js-filter" data-name="name-override">' +
-        '<input name="name">' +
-      '</div>'
-    );
-    var filter = new CheckboxFilter(this.$fixture.find('.js-filter'));
-    expect(filter.name).to.equal('name-override');
-  });
-
   it('sets its initial state', function() {
     expect(this.filter.name).to.equal('office');
     expect(this.filter.fields).to.deep.equal(['office']);
@@ -63,6 +53,17 @@ describe('checkbox filters', function() {
     expect(this.filter.$elm.find('#president').is(':checked')).to.be.true;
     expect(this.filter.$elm.find('#senate').is(':checked')).to.be.true;
     expect(this.filter.$elm.find('#house').is(':checked')).to.be.false;
+  });
+
+  it('increments the filter count when checked', function() {
+    this.filter.setValue(['p', 's']);
+    expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('2');
+  });
+
+  it('decrements the filter count when unchecked', function() {
+    this.filter.setValue(['p', 's']);
+    this.filter.setValue('p');
+    expect(this.filter.$filterLabel.find('.filter-count').html()).to.equal('1');
   });
 
   describe('handleChange()', function() {
