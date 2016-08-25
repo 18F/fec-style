@@ -249,3 +249,71 @@
     border: 1px solid $error;
   }
 }
+
+
+// Inline range inputs
+//
+// Half width inputs so min and max filters display side by side
+//
+
+.range {
+  margin-bottom: u(1rem);
+  position: relative;
+
+  .button--standard {
+    height: u(3.6rem);
+    background-position: right 50% top 50%;
+    padding: u(1.25rem 1.5rem);
+    margin-left: u(.25rem);
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    &.is-loading {
+      background-image: url('../img/loading-ellipsis-gray.gif');
+      background-size: u(2rem);
+      background-position: 50%;
+    }
+
+    &.is-successful {
+      @include u-icon-button($check);
+      background-size: u(2rem);
+      background-position: 50%;
+      padding: u(1.5rem);
+    }
+  }
+}
+
+.range__input {
+  width: 100px;
+  font-family: $sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+
+  input[type="text"] {
+    text-align: right;
+    padding-left: u(2rem);
+    margin-bottom: 0;
+  }
+
+  input[type="text"],
+  button {
+    display: inline-block;
+  }
+
+  &::before {
+    color: $gray;
+    content: '$';
+    top: u(2.15rem);
+    left: u(1rem);
+    position: absolute;
+  }
+}
+
+.range__hyphen {
+  padding: u(0 .25rem 1rem .25rem);
+  vertical-align: bottom;
+  display: inline-block;
+}
+

@@ -79,11 +79,6 @@ And then we're using a custom template for the styleguide, which lives in
 
     $ npm run build-styleguide
 
-Host the styleguide on a local server:
-
-    $ npm install http-server
-    $ http-server
-
 To upload screenshots to [percy.io](https://percy.io):
 
     $ gem install percy
@@ -121,11 +116,12 @@ We use [Semantic Versioning](http://semver.org/):
 When changes in master are ready to be released, follow these steps to update the package version and publish to npm:
 
     npm version <major | minor | patch>
-    git push
-    git push --tags
-    npm publish
+    git push --follow-tags
 
 Use `npm version minor` or `npm version major` for minor and major updates respectively, and `npm version patch` for small updates that only add small bits of functionality to existing features. For details on npm versioning, see `npm version --help`.
+
+Travis will run a clean build with tests. Assuming all goes well, Travis will
+publish to npm for you.
 
 Downstream applications should pin versions as appropriate. For example, to get bug fixes but not new features, pin to the minor version:
 

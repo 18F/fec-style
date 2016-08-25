@@ -10,7 +10,9 @@ var $ = require('jquery');
 
 require('./setup')();
 
-var Filter = require('../js/filters').Filter;
+var Filter = require('../js/filter-base');
+var DateFilter = require('../js/date-filter').DateFilter;
+var ElectionFilter = require('../js/election-filter').ElectionFilter;
 
 function getChecked($input) {
   return $input.filter(function(idx, elm) {
@@ -38,7 +40,7 @@ describe('filter set', function() {
           '</div>' +
         '</div></div>'
       );
-      this.filter = Filter.build(this.$fixture.find('.js-filter'));
+      this.filter = new Filter.Filter(this.$fixture.find('.js-filter'));
     });
 
     it('locates dom elements', function() {
@@ -57,7 +59,7 @@ describe('filter set', function() {
           '</div>' +
         '</div>'
       );
-      var filter = Filter.build(this.$fixture.find('.js-filter'));
+      var filter = new Filter.Filter(this.$fixture.find('.js-filter'));
       expect(filter.name).to.equal('name-override');
     });
 
@@ -124,7 +126,7 @@ describe('filter set', function() {
           '</div>' +
         '</div></div>'
       );
-      this.filter = Filter.build(this.$fixture.find('.js-filter'));
+      this.filter = new Filter.Filter(this.$fixture.find('.js-filter'));
     });
 
     it('sets scalar values', function() {
@@ -166,7 +168,7 @@ describe('filter set', function() {
           '</div>' +
         '</div>'
       );
-      this.filter = Filter.build(this.$fixture.find('.js-filter'));
+      this.filter = new DateFilter(this.$fixture.find('.js-filter'));
     });
 
     it('sets its initial state', function() {
@@ -205,7 +207,7 @@ describe('filter set', function() {
           '<input type="hidden" name="election_full"">' +
         '</div>'
       );
-      this.filter = Filter.build(this.$fixture.find('.js-filter'));
+      this.filter = new ElectionFilter(this.$fixture.find('.js-filter'));
       this.filter.fromQuery({
         election_year: '2016',
         cycle: '2014',
@@ -244,12 +246,26 @@ describe('filter set', function() {
     });
 
     it('sets a tag', function() {
+      this.filter.loadedOnce = false;
       this.filter.$election.val('2016');
       this.filter.setTag();
       expect(this.trigger).to.have.been.calledWith('filter:added', [
         {
           key: 'election',
           value: '2016 election: 2013-2014',
+          nonremovable: true
+        }
+      ]);
+    });
+
+    it('renames a tag if it already exitss', function() {
+      this.filter.loadedOnce = true;
+      this.filter.$election.val('2012');
+      this.filter.setTag();
+      expect(this.trigger).to.have.been.calledWith('filter:renamed', [
+        {
+          key: 'election',
+          value: '2012 election: 2013-2014',
           nonremovable: true
         }
       ]);

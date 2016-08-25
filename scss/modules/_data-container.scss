@@ -6,10 +6,8 @@
 
 .data-container {
   @include clearfix();
-  border-top: 2px solid $neutral;
   position: relative;
   width: 100%;
-  padding-top: u(2rem);
 }
 
 .is-showing-filters {
@@ -18,31 +16,53 @@
 
 .data-container__widgets {
   @include clearfix();
-  color: $inverse;
-  background-color: $primary;
-  border-top: 1px solid $inverse;
+  border-bottom: 2px solid $primary;
   font-family: $sans-serif;
-  padding: u(2rem);
+}
+
+.data-container__action {
+  @include clearfix();
+  float: right;
+}
+
+.data-container__share {
+  display: inline-block;
+  width: u(4rem);
+  padding: 8px 0;
+  background-position: 50%;
+  text-indent: -9999px;
+  margin-bottom: 0;
+}
+
+.data-container__export {
+  display: none;
 }
 
 .data-container__widgets--secondary {
   background-color: $secondary;
 }
 
+
+.data-container__head {
+  @include clearfix();
+  border-bottom: 1px solid $gray;
+  padding: u(1rem);
+}
+
+.data-container__title {
+  border-bottom: none;
+  line-height: u(3.4rem);
+  margin: 0;
+  float: left;
+}
+
 .data-container__body {
   padding: u(0 1rem);
-
-  &.fade-in {
-    opacity: 0;
-  }
 }
 
 .data-container__tags {
   @include clearfix();
-}
-
-.data-container__export {
-  margin-top: u(1rem);
+  padding: u(1rem);
 }
 
 .export-widget {
@@ -66,6 +86,8 @@
   }
 
   .data-container {
+    display: table-cell;
+    width: calc(100% - 4rem);
     padding: 0;
   }
 
@@ -76,30 +98,50 @@
     }
   }
 
+  .data-container__head {
+    padding: u(0 2rem 1rem 2rem);
+  }
+
   .data-container__body {
     border-top: 0;
-    padding: u(0 2rem 2rem 2rem);
+    padding: u(0 2rem);
+  }
+
+  .data-container__datatable {
+    padding: u(0 0 0 2rem);
   }
 
   .data-container__widgets {
-    padding: u(1rem 2rem);
+    padding: u(1rem 0 0 0);
   }
 
-  .data-container__export {
+  .data-container__action {
     @include span-columns(4);
     float: right;
-    margin-top: 0;
     text-align: right;
   }
 
+  .data-container__share {
+    @include u-icon-button($share, right);
+    padding-left: u(2rem);
+    text-indent: 0;
+    width: auto;
+    margin-right: u(1rem);
+  }
+
+  .data-container__export {
+    display: inline-block;
+  }
+
+
   .data-container__tags {
-    @include span-columns(8);
+    padding: u(1rem 2rem);
   }
 
   .export-widget {
     float: left;
     margin-right: u(1rem);
-    width: calc(50% - .5rem);
+    width: auto;
 
     &:last-of-type {
       margin: 0;

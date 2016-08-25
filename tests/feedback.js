@@ -70,14 +70,14 @@ describe('feedback', function() {
   describe('messages', function() {
     it('shows a message with expected class', function() {
       this.feedback.message('foo', 'bar', 'success');
-      expect(this.feedback.$status.hasClass('message--success')).to.be.true;
+      expect(this.feedback.$message.hasClass('message--success')).to.be.true;
     });
 
     it('hides previous classes', function() {
       this.feedback.message('foo', 'bar', 'success');
       this.feedback.message('foo', 'bar', 'error');
-      expect(this.feedback.$status.hasClass('message--success')).to.be.false;
-      expect(this.feedback.$status.hasClass('message--error')).to.be.true;
+      expect(this.feedback.$message.hasClass('message--success')).to.be.false;
+      expect(this.feedback.$message.hasClass('message--error')).to.be.true;
     });
   });
 

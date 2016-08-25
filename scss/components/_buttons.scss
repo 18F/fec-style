@@ -338,17 +338,17 @@
 // Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
 // Defaults to the styles for button--alt and button--standard, with overrides for other classes
 //
-// .button--go          - Go
-// .button--browse      - For links to the datatable view
-// .button--map         - Map button
-// .button--table       - Table button
+// .button--browse                  - For links to the datatable view
+// .button--document                - Document button
+// .button--download                - Download button
+// .button--list                    - List view button
+// .button--map                     - Map button
+// .button--search--text            - Search with text
+// .button--subscribe               - Subscribe button
 // .button--two-candidates          - Toggle two-candidate view on map comparison
 // .button--export                  - Export button
-// .button--download                - Download button
-// .button--subscribe               - Subscribe button
-// .button--cal                     - Calendar view button
-// .button--list                    - List view button
-// .button--search--text            - Search with text
+// .button--go                      - Go
+// .button--table                   - Table button
 //
 // Markup:
 // <button class="button--standard {{ modifier_class }}">Button</button>
@@ -384,13 +384,22 @@
   @include u-icon-button($person-location, left);
 }
 
-.button--export,
+.button--export {
+  @include u-icon-button($download, right);
+}
+
+.button--document {
+  @include u-icon-button($document, left);
+}
+
 .button--download {
   @include u-icon-button($download, left);
+  padding-right: u(6rem);
 }
 
 .button--subscribe {
   @include u-icon-button($signal, left);
+  padding-right: u(6rem);
 }
 
 .button--grid {
@@ -432,6 +441,7 @@
 // .button--close--primary          - Primary close button
 // .button--down                    - Down button
 // .button--cancel                  - Cancel button
+// .button--unstyled                - Unstyled button
 // .button--panel                   - Panel trigger button
 //
 // Markup:
@@ -471,6 +481,12 @@
 
 .button--cancel {
   @include u-icon($x-circle, $primary, 2rem, 2rem, contain);
+}
+
+.button--unstyled {
+  border-bottom: 1px dotted $primary;
+  font-size: u(1.4rem);
+  padding: 0;
 }
 
 .button--panel {

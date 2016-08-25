@@ -39,10 +39,10 @@
 .tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
+  text-transform: initial;
   font-size: u(1.4rem);
   font-weight: normal;
   line-height: 1.4;
-  margin-bottom: 0;
 
   a {
     border-bottom-color: $primary;
@@ -51,6 +51,10 @@
 
   li {
     font-size: u(1.4rem);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -97,8 +101,11 @@
   }
 
   &.tooltip--left {
-    left: auto;
-    right: u(-14rem);
+    left: u(-2rem);
+
+    &::before {
+      left: u(2.8rem);
+    }
   }
 }
 
