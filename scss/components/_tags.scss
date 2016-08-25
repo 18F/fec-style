@@ -60,6 +60,26 @@
   }
 }
 
+.tag__category--range {
+  .tag__item {
+    margin-right: u(2rem);
+
+    .suffix {
+      display: none;
+    }
+
+    .tag__remove {
+      padding-left: u(1rem);
+    }
+
+    &::after {
+      content: '-';
+      padding: 0;
+      right: u(-1.5rem);
+    }
+  }
+}
+
 .tag__remove {
   @include u-icon-bg($x, $primary);
   background-size: u(1.4rem);

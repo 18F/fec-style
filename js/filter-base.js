@@ -98,6 +98,7 @@ Filter.prototype.handleChange = function(e) {
   var type = $input.attr('type') || 'text';
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
+  var range = $input.data('range') || 'false';
   var id = $input.attr('id');
   var loadedOnce,
       eventName,
@@ -151,10 +152,10 @@ Filter.prototype.handleChange = function(e) {
   if (prefix) {
     prefix = prefix === '$' ? prefix : prefix + ' ';
 
-    value = prefix + value;
+    value = '<span class="prefix">' + prefix + '</span>' + value;
   }
   if (suffix) {
-    value = value + ' ' + suffix;
+    value = value + '<span class="suffix"> ' + suffix + '</span>';
   }
 
   $input.trigger(eventName, [
@@ -162,7 +163,8 @@ Filter.prototype.handleChange = function(e) {
       key: id,
       value: value,
       loadedOnce: loadedOnce,
-      name: this.name
+      name: this.name,
+      range: range
     }
   ]);
 

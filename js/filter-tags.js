@@ -62,6 +62,11 @@ TagList.prototype.addTag = function(e, opts) {
   var $tagCategory = this.$list.find('[data-tag-category="' + opts.name + '"]');
   this.removeTag(opts.key, false);
 
+  if (opts.range === 'min' || opts.range === 'max') {
+    this.addRangeTag(tag, $tagCategory, opts);
+    return;
+  }
+
   if ($tagCategory.length > 0) {
     $tagCategory.append(tag);
   }
@@ -79,6 +84,18 @@ TagList.prototype.addTag = function(e, opts) {
   }
 };
 
+TagList.prototype.addRangeTag = function(tag, $tagCategory, opts) {
+  if ($tagCategory.length > 0 && opts.range == 'min') {
+    $tagCategory.addClass('tag__category--range').prepend(tag);
+  }
+  else if ($tagCategory.length > 0 && opts.range == 'max') {
+    $tagCategory.addClass('tag__category--range').append(tag);
+  }
+  else {
+    this.$list.append('<li data-tag-category="' + opts.name + '" class="tag__category">' + tag + '</li>');
+  }
+};
+
 TagList.prototype.removeTag = function(key, emit) {
   var $tag = this.$list.find('[data-id="' + key + '"]');
   var $tagCategory = $tag.parent();
@@ -89,6 +106,10 @@ TagList.prototype.removeTag = function(key, emit) {
     }
 
     $tag.remove();
+
+    if ($tagCategory.hasClass('tag__category--range')) {
+      $tagCategory.removeClass('tag__category--range');
+    }
 
     if ($tagCategory.is(':empty')) {
       $tagCategory.remove();
