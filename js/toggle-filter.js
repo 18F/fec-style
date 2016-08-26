@@ -14,14 +14,14 @@ ToggleFilter.prototype = Object.create(Filter.prototype);
 ToggleFilter.constructor = ToggleFilter;
 
 ToggleFilter.prototype.fromQuery = function(query) {
-  this.$body.find('input[value="' + query.data_type + '"]').prop('checked', true).change();
+  this.$elm.find('input[value="' + query.data_type + '"]').prop('checked', true).change();
 };
 
 ToggleFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
   var id = this.$input.attr('id');
   var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
-  this.$body.trigger(eventName, [
+  this.$elm.trigger(eventName, [
     {
       key: id,
       value: 'Data type: ' + value,

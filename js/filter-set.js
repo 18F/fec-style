@@ -4,13 +4,15 @@ var $ = require('jquery');
 var _ = require('underscore');
 var URI = require('urijs');
 
-var Filter = require('./filter-base').Filter;
+var TextFilter = require('./text-filter').TextFilter;
+var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
 var MultiFilter = require('./filter-base').MultiFilter;
 var TypeaheadFilter = require('./typeahead-filter').TypeaheadFilter;
 var SelectFilter = require('./select-filter').SelectFilter;
 var DateFilter = require('./date-filter').DateFilter;
 var ElectionFilter = require('./election-filter').ElectionFilter;
 var ToggleFilter = require('./toggle-filter').ToggleFilter;
+var RangeFilter = require('./range-filter').RangeFilter;
 
 function FilterSet(elm) {
   this.$body = $(elm);
@@ -21,22 +23,22 @@ function FilterSet(elm) {
   this.isValid = true;
 }
 
+var filterMap = {
+  'text': TextFilter,
+  'checkbox': CheckboxFilter,
+  'date': DateFilter,
+  'typeahead': TypeaheadFilter,
+  'election': ElectionFilter,
+  'multi': MultiFilter,
+  'select': SelectFilter,
+  'toggle': ToggleFilter,
+  'range': RangeFilter,
+};
+
 FilterSet.prototype.buildFilter = function($elm) {
-  if ($elm.hasClass('js-date-choice-field')) {
-    return new DateFilter($elm);
-  } else if ($elm.hasClass('js-typeahead-filter')) {
-    return new TypeaheadFilter($elm);
-  } else if ($elm.hasClass('js-election-filter')) {
-    return new ElectionFilter($elm);
-  } else if ($elm.hasClass('js-multi-filter')) {
-    return new MultiFilter($elm);
-  } else if ($elm.hasClass('js-select-filter')) {
-    return new SelectFilter($elm);
-  } else if ($elm.hasClass('js-toggle-filter')){
-    return new ToggleFilter($elm);
-  } else {
-    return new Filter($elm);
-  }
+  var filterType = $elm.attr('data-filter');
+  var F = filterMap[filterType].constructor;
+  return new F($elm);
 };
 
 FilterSet.prototype.activate = function() {

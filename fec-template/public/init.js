@@ -26,7 +26,7 @@ new feedback.Feedback();
 
 new typeahead.Typeahead('.js-search-input', $('.js-search-type').val());
 
-new typeaheadFilter.TypeaheadFilter('.js-typeahead-filter', typeahead.datasets.committees);
+new typeaheadFilter.TypeaheadFilter('[data-filter="typeahead"]', typeahead.datasets.committees);
 
 $('.js-accordion').each(function(){
   var contentPrefix = $(this).data('content-prefix') || 'accordion';

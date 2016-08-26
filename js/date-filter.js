@@ -11,9 +11,9 @@ require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
 
 function DateFilter(elm) {
   Filter.Filter.call(this, elm);
-  this.validateInput = this.$body.data('validate') || false;
-  this.$minDate = this.$body.find('.js-min-date');
-  this.$maxDate = this.$body.find('.js-max-date');
+  this.validateInput = this.$elm.data('validate') || false;
+  this.$minDate = this.$elm.find('.js-min-date');
+  this.$maxDate = this.$elm.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
     oncomplete: this.validate.bind(this)
   });
@@ -21,8 +21,11 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
-  this.$body.on('change', this.handleRadioChange.bind(this));
+  this.$input.on('change', this.handleInputChange.bind(this));
+  this.$elm.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
+
+  $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
 }
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -37,6 +40,34 @@ DateFilter.prototype.handleRadioChange = function(e) {
   }
 };
 
+DateFilter.prototype.handleInputChange = function(e) {
+  var $input = $(e.target);
+  var value = $input.val();
+  var loadedOnce = $input.data('loaded-once') || false;
+  var eventName;
+
+  if ($input.data('had-value') && value.length > 0) {
+    eventName = 'filter:renamed';
+  } else if (value.length > 0) {
+    eventName = 'filter:added';
+    $input.data('had-value', true);
+  } else {
+    eventName = 'filter:removed';
+    $input.data('had-value', false);
+  }
+
+  $input.trigger(eventName, [
+    {
+      key: $input.attr('id'),
+      value: this.formatValue($input, value),
+      loadedOnce: loadedOnce,
+      name: this.name
+    }
+  ]);
+
+  $input.data('loaded-once', true);
+};
+
 DateFilter.prototype.validate = function() {
   if (!this.validateInput) { return; }
   var years = [this.minYear, this.maxYear];
@@ -46,14 +77,14 @@ DateFilter.prototype.validate = function() {
     parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
   if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
     this.hideWarning();
-    this.$body.trigger('filters:validation', [
+    this.$elm.trigger('filters:validation', [
       {
         isValid: true,
       }
     ]);
   } else {
     this.showWarning();
-    this.$body.trigger('filters:validation', [
+    this.$elm.trigger('filters:validation', [
       {
         isValid: false,
       }
@@ -109,7 +140,7 @@ DateFilter.prototype.showWarning = function() {
 
 DateFilter.prototype.hideWarning = function() {
   if (this.showingWarning) {
-    this.$body.find('.message').remove();
+    this.$elm.find('.message').remove();
     this.showingWarning = false;
   }
 };

@@ -6,9 +6,9 @@ var Filter = require('./filter-base.js').Filter;
 
 function SelectFilter(elm) {
   Filter.call(this, elm);
-  this.$input = this.$body.find('select');
+  this.$input = this.$elm.find('select');
   this.name = this.$input.attr('name');
-  this.requiredDefault = this.$body.data('required-default') || null; // If a default is required
+  this.requiredDefault = this.$elm.data('required-default') || null; // If a default is required
   this.loadedOnce = false;
 
   this.$input.on('change', this.handleChange.bind(this));

@@ -28,18 +28,18 @@ describe('FilterTypeahead', function() {
 
   beforeEach(function() {
     this.$fixture.empty().append(
-      '<div class="js-typeahead-filter" data-dataset="committees">' +
+      '<div class="typeahead-filter" data-filter="typeahead" data-dataset="committees">' +
         '<ul class="dropdown__selected"></ul>' +
         '<input type="text" name="committee_id">' +
         '<button type="button"></button>' +
       '</div>'
     );
 
-    this.FilterTypeahead = new FilterTypeahead('.js-typeahead-filter', typeahead.datasets.committees, true);
+    this.FilterTypeahead = new FilterTypeahead('[data-filter="typeahead"]', typeahead.datasets.committees, true);
   });
 
   it('should initialize', function() {
-    var typeahead = this.FilterTypeahead.$body.find('.twitter-typeahead');
+    var typeahead = this.FilterTypeahead.$elm.find('.twitter-typeahead');
     expect(typeahead.length).to.equal(1);
   });
 

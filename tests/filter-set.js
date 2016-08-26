@@ -18,18 +18,14 @@ describe('filter set', function() {
   beforeEach(function() {
     this.$fixture.empty().append(
       '<form>' +
-        '<div class="js-filter">' +
-          '<div class="input--removable">' +
-            '<input name="name" />' +
-            '<button class="button button-remove"></button>' +
-          '</div>' +
+        '<div class="js-filter" data-filter="text">' +
+          '<input name="name">' +
+          '<button></button>' +
         '</div>' +
-        '<div class="js-filter">' +
-          '<div class="input--removable">' +
-            '<input name="cycle" type="checkbox" value="2012" />' +
-            '<input name="cycle" type="checkbox" value="2014" />' +
-            '<input name="cycle" type="checkbox" value="2016" />' +
-          '</div>' +
+        '<div class="js-filter" data-filter="checkbox">' +
+          '<input name="cycle" type="checkbox" value="2012" />' +
+          '<input name="cycle" type="checkbox" value="2014" />' +
+          '<input name="cycle" type="checkbox" value="2016" />' +
         '</div>' +
       '</form>'
     );
@@ -49,9 +45,8 @@ describe('filter set', function() {
   });
 
   it('sets initial values on nested fields', function() {
-    window.history.replaceState({}, null, '?name=jed&cycle=2012&cycle=2014');
+    window.history.replaceState({}, null, '?cycle=2012&cycle=2014');
     this.filterSet.activate();
-    expect(this.filterSet.filters.name.$input.val()).to.equal('jed');
     expect(
       this.filterSet.filters.cycle.$input.filter(function(idx, elm) {
         return $(elm).is(':checked');
@@ -63,10 +58,8 @@ describe('filter set', function() {
 
   it('serializes form values', function() {
     this.filterSet.activate();
-    this.filterSet.filters.name.setValue('jed');
     this.filterSet.filters.cycle.setValue(['2012', '2014']);
     expect(this.filterSet.serialize()).to.deep.equal({
-      name: ['jed'],
       cycle: ['2012', '2014']
     });
   });
