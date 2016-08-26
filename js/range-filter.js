@@ -6,7 +6,7 @@ var Filter = require('./filter-base');
 function RangeFilter(elm) {
   Filter.Filter.call(this, elm);
   this.id = this.$input.attr('id');
-  this.$submit = this.$elm.find('button');
+  this.$submit = this.$elm.parent().find('button');
 
   this.$input.on('change', this.handleChange.bind(this));
   this.$input.on('keyup', this.handleKeyup.bind(this));
@@ -26,9 +26,6 @@ RangeFilter.prototype.handleChange = function(e) {
   var range = $input.data('range') || 'false';
   var eventName;
 
-  // set focus to button
-  this.$submit.focus();
-
   if ($input.data('had-value') && value.length > 0) {
     eventName = 'filter:renamed';
   } else if (value.length > 0) {
@@ -38,8 +35,6 @@ RangeFilter.prototype.handleChange = function(e) {
     eventName = 'filter:removed';
     $input.data('had-value', false);
   }
-
-  this.$submit.parent().next().focus();
 
   if (value.length > 0) {
     this.$submit.removeClass('is-disabled');
