@@ -98,6 +98,7 @@ Filter.prototype.handleChange = function(e) {
   var type = $input.attr('type') || 'text';
   var prefix = $input.data('prefix');
   var suffix = $input.data('suffix');
+  var range = $input.data('range') || 'false';
   var id = $input.attr('id');
   var loadedOnce,
       eventName,
@@ -125,7 +126,12 @@ Filter.prototype.handleChange = function(e) {
     loadedOnce = $input.data('loaded-once') || false;
 
     // set focus to button
-    $input.next().focus();
+    if ($input.parent().hasClass('range__input')) {
+      $input.parent().next().focus();
+    }
+    else {
+      $input.next().focus();
+    }
 
     if ($input.data('had-value') && value.length > 0) {
       eventName = 'filter:renamed';
@@ -149,10 +155,12 @@ Filter.prototype.handleChange = function(e) {
   }
 
   if (prefix) {
-    value = prefix + ' ' + value;
+    prefix = prefix === '$' ? prefix : prefix + ' ';
+
+    value = '<span class="prefix">' + prefix + '</span>' + value;
   }
   if (suffix) {
-    value = value + ' ' + suffix;
+    value = value + '<span class="suffix"> ' + suffix + '</span>';
   }
 
   $input.trigger(eventName, [
@@ -160,7 +168,8 @@ Filter.prototype.handleChange = function(e) {
       key: id,
       value: value,
       loadedOnce: loadedOnce,
-      name: this.name
+      name: this.name,
+      range: range
     }
   ]);
 

@@ -2,7 +2,40 @@
 //
 // Styles for legal search results.
 //
+// Markup:
+// <div class="simple-table simple-table--display simple-table--responsive">
+//   <div class="simple-table__header">
+//     <div class="simple-table__header-cell">Section</div>
+//     <div class="simple-table__header-cell">Description <span class="simple-table__header-subtext">| Hit</span></div>
+//   </div>
+//   <div class="simple-table__row-group">
+//     <div class="simple-table__row legal-search-result">
+//       <div class="simple-table__cell"><a title="" href="/regulations/5-6/2016-annual-5#5-6">§ 5.6</a></div>
+//       <div class="simple-table__cell">
+//         <div class="legal-search-result__name">Fees.</div>
+//         <div class="t-serif legal-search-result__hit">
+//           … per copy, including reproduction and binding).  Cost ($.0006 per
+//           <em>Computer</em> Resource Unit Utilized—CRU … ) to process the
+//           request plus the cost of the <em>computer</em> tape ($25) and
+//           professional staff time (see … Research Time). The cost varies based
+//           upon request.  No charge for 20 or fewer requests for
+//           <em>computer</em> … ID numbers will cost $2.00 for each ID number
+//           requested. Other <em>computer</em> index requests for more … than 20
+//           ID numbers will cost $.0006 per CRU (<em>Computer</em> Resource Unit)
+//           utilized. Name Search—A <em>computer</em> …
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
 // Styleguide components.search-results-legal
+
+
+.legal-search-result__name {
+  font-family: $sans-serif;
+  font-weight: 600;
+}
 
 .legal-search-result__hit {
   font-style: italic;
@@ -10,8 +43,4 @@
   em {
     @include t-highlight;
   }
-}
-
-.legal-search-result__display-all {
-  margin: 0.5em 0;
 }

@@ -98,11 +98,12 @@
 
 <div id="nav-advanced-filings" class="site-nav__panel site-nav__panel--sub" aria-hidden="true">
   <button class="site-nav__back button--back button--alt-primary js-panel-close" aria-controls="nav-advanced-filings">Advanced data</button>
-  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/filings/?max_receipt_date={{today}}">Filings</a></h3>
+  <h3 class="site-nav__title"><a class="site-nav__link--underline" href="{{webAppUrl}}/filings/?max_receipt_date={{tomorrow}}">Filings</a></h3>
   <ul>
-    <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/filings/?max_receipt_date={{today}}">All filings</a></li>
-    <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Authorized committee reports</a></li>
-    <li class="site-nav__item site-nav__item--sub is-disabled"><a class="site-nav__link">Unauthorized committee reports</a></li>
+    <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/reports/presidential/?is_amended=false">Presidential committee reports</a></li>
+    <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/reports/house-senate/?is_amended=false">House and Senate committee reports</a></li>
+    <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/reports/pac-party/?is_amended=false">PAC and party committee reports</a></li>
+    <li class="site-nav__item site-nav__item--sub"><a class="site-nav__link" href="{{webAppUrl}}/filings/?max_receipt_date={{tomorrow}}">All filings</a></li>
   </ul>
 </div>
 </div>
