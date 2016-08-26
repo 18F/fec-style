@@ -16,6 +16,7 @@
 //
 // Styleguide components.list-styles
 
+.list--numbered,
 .list--bulleted {
   li {
     list-style-type: disc;
@@ -29,10 +30,16 @@
   }
 }
 
+.list--bulleted {
+  li {
+    list-style-type: disc;
+  }
+}
+
 .list--numbered {
-  list-style-type: decimal;
-  margin: 0;
-  padding-left: u(1rem);
+  li {
+    list-style-type: decimal;
+  }
 }
 
 .list--flat {
