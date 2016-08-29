@@ -9,11 +9,11 @@ var FilterTypeahead = require('./filter-typeahead').FilterTypeahead;
 function TypeaheadFilter(elm) {
   Filter.Filter.call(this, elm);
 
-  var key = this.$body.data('dataset');
-  var allowText = this.$body.data('allow-text') !== undefined;
+  var key = this.$elm.data('dataset');
+  var allowText = this.$elm.data('allow-text') !== undefined;
   var dataset = key ? typeahead.datasets[key] : null;
-  this.typeaheadFilter = new FilterTypeahead(this.$body, dataset, allowText);
-  this.typeaheadFilter.$body.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
+  this.typeaheadFilter = new FilterTypeahead(this.$elm, dataset, allowText);
+  this.typeaheadFilter.$elm.on('change', 'input[type="checkbox"]', this.handleNestedChange.bind(this));
 }
 
 TypeaheadFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -22,7 +22,7 @@ TypeaheadFilter.constructor = TypeaheadFilter;
 TypeaheadFilter.prototype.fromQuery = function(query) {
   var values = query[this.name] ? Filter.ensureArray(query[this.name]) : [];
   this.typeaheadFilter.getFilters(values);
-  this.typeaheadFilter.$body.find('input[type="checkbox"]').val(values);
+  this.typeaheadFilter.$elm.find('input[type="checkbox"]').val(values);
   return this;
 };
 
@@ -32,7 +32,7 @@ TypeaheadFilter.prototype.handleChange = function() {};
 TypeaheadFilter.prototype.handleNestedChange = function(e) {
   var $input = $(e.target);
   var id = $input.attr('id');
-  var $label = this.$body.find('[for="' + id + '"]');
+  var $label = this.$elm.find('[for="' + id + '"]');
 
   var eventName = $input.is(':checked') ? 'filter:added' : 'filter:removed';
 
@@ -47,8 +47,8 @@ TypeaheadFilter.prototype.handleNestedChange = function(e) {
 };
 
 TypeaheadFilter.prototype.disable = function() {
-  this.$body.find('input, label, button').addClass('is-disabled').prop('disabled', true);
-  this.$body.find('input:checked').each(function() {
+  this.$elm.find('input, label, button').addClass('is-disabled').prop('disabled', true);
+  this.$elm.find('input:checked').each(function() {
     $(this).trigger('filter:disabled', {
       key: $(this).attr('id')
     });
@@ -56,8 +56,8 @@ TypeaheadFilter.prototype.disable = function() {
 };
 
 TypeaheadFilter.prototype.enable = function() {
-  this.$body.find('input, label, button').removeClass('is-disabled').prop('disabled', false);
-  this.$body.find('input:checked').each(function() {
+  this.$elm.find('input, label, button').removeClass('is-disabled').prop('disabled', false);
+  this.$elm.find('input:checked').each(function() {
     $(this).trigger('filter:enabled', {
       key: $(this).attr('id')
     });

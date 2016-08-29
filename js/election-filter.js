@@ -11,14 +11,14 @@ var cyclesTemplate = require('./templates/election-cycles.hbs');
 function ElectionFilter(elm) {
   Filter.call(this, elm);
 
-  this.duration = parseInt(this.$body.data('duration'));
-  this.cycleName = this.$body.data('cycle-name');
-  this.fullName = this.$body.data('full-name');
+  this.duration = parseInt(this.$elm.data('duration'));
+  this.cycleName = this.$elm.data('cycle-name');
+  this.fullName = this.$elm.data('full-name');
 
-  this.$election = this.$body.find('.js-election');
-  this.$cycles = this.$body.find('.js-cycles');
-  this.$cycle = this.$body.find('input[type="hidden"][name="' + this.cycleName + '"]');
-  this.$full = this.$body.find('input[type="hidden"][name="' + this.fullName + '"]');
+  this.$election = this.$elm.find('.js-election');
+  this.$cycles = this.$elm.find('.js-cycles');
+  this.$cycle = this.$elm.find('input[type="hidden"][name="' + this.cycleName + '"]');
+  this.$full = this.$elm.find('input[type="hidden"][name="' + this.fullName + '"]');
 
   this.loadedOnce = false;
   this.$election.on('change', this.handleElectionChange.bind(this));
