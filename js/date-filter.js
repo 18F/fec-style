@@ -75,9 +75,9 @@ DateFilter.prototype.validate = function() {
   if (!this.validateInput) { return; }
   var years = [this.minYear, this.maxYear];
   var minDateYear = this.$minDate.val() ?
-    parseInt(this.$minDate.val().split('-')[2]) : this.minYear;
+    parseInt(this.$minDate.val().split('/')[2]) : this.minYear;
   var maxDateYear = this.$maxDate.val() ?
-    parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
+    parseInt(this.$maxDate.val().split('/')[2]) : this.maxYear;
   if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
     this.hideWarning();
     this.$elm.trigger('filters:validation', [
@@ -129,7 +129,8 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
 };
 
 DateFilter.prototype.handlePickMinDate = function() {
-  var calendar = this.$body.find('.date-range-calendar');
+  var calendar = this.$elm.find('.date-range-calendar');
+
   calendar.show().removeClass('js-pick-max').addClass('js-pick-min');
 
   calendar.find('li').hover(function() {
@@ -140,7 +141,7 @@ DateFilter.prototype.handlePickMinDate = function() {
 };
 
 DateFilter.prototype.handlePickMaxDate = function() {
-  var calendar = this.$body.find('.date-range-calendar');
+  var calendar = this.$elm.find('.date-range-calendar');
   calendar.show().removeClass('js-pick-min').addClass('js-pick-max');
 
   calendar.find('li').hover(function() {
