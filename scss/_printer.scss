@@ -1,0 +1,33 @@
+// Styles for printers
+
+@media print {
+  // Hide the header, footer and asides
+  .site-header,
+  .footer,
+  .card,
+  .sidebar,
+  .feedback__toggle,
+  aside {
+    display: none;
+  }
+
+  // Reset all slabs to white background
+  .slab,
+  .slab--neutral,
+  .slab--primary,
+  .slab--secondary {
+    background: $inverse;
+    color: $base;
+  }
+
+  body {
+    color: $base;
+  }
+
+  // Hide the glossary icons from terms
+  .term {
+    background-image: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
