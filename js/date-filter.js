@@ -12,6 +12,7 @@ require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
 function DateFilter(elm) {
   Filter.Filter.call(this, elm);
   this.validateInput = this.$elm.data('validate') || false;
+  this.$range = this.$elm.find('.range');
   this.$minDate = this.$elm.find('.js-min-date');
   this.$maxDate = this.$elm.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
@@ -133,22 +134,30 @@ DateFilter.prototype.handlePickMinDate = function() {
 
   calendar.show().removeClass('js-pick-max').addClass('js-pick-min');
 
-  calendar.find('li').hover(function() {
-    $(this).prevAll().removeClass('active').addClass('deactive');
-    $(this).nextAll().removeClass('deactive').addClass('active');
-  });
-
+  calendar.find('li').hover(
+    function() {
+      $(this).prevAll().removeClass('active').addClass('inactive');
+      $(this).nextAll().removeClass('inactive').addClass('active');
+    },
+    function() {
+      $(this).siblings().removeClass('active').removeClass('inactive');
+    }
+  );
 };
 
 DateFilter.prototype.handlePickMaxDate = function() {
   var calendar = this.$elm.find('.date-range-calendar');
   calendar.show().removeClass('js-pick-min').addClass('js-pick-max');
 
-  calendar.find('li').hover(function() {
-    $(this).prevAll().removeClass('deactive').addClass('active');
-    $(this).nextAll().removeClass('active').addClass('deactive');
-  });
-
+  calendar.find('li').hover(
+    function() {
+      $(this).prevAll().removeClass('inactive').addClass('active');
+      $(this).nextAll().removeClass('active').addClass('inactive');
+    },
+    function() {
+      $(this).siblings().removeClass('active').removeClass('inactive');
+    }
+  );
 };
 
 
@@ -160,7 +169,7 @@ DateFilter.prototype.showWarning = function() {
       'Please enter a receipt date from ' +
       '<strong>' + this.minYear + '-' + this.maxYear + '</strong>' +
     '</div>';
-    this.$maxDate.after(warning);
+    this.$range.after(warning);
     this.showingWarning = true;
   }
 };
