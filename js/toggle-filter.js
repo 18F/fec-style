@@ -8,6 +8,8 @@ var Filter = require('./filter-base.js').Filter;
 /* ToggleFilter that has to fire a custom event */
 function ToggleFilter(elm) {
   Filter.call(this, elm);
+  this.$elm.on('change', this.handleChange.bind(this));
+  this.setInitialValue();
 }
 
 ToggleFilter.prototype = Object.create(Filter.prototype);
@@ -19,19 +21,26 @@ ToggleFilter.prototype.fromQuery = function(query) {
 
 ToggleFilter.prototype.handleChange = function(e) {
   var value = $(e.target).val();
-  var id = this.$input.attr('id');
   var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
   this.$elm.trigger(eventName, [
     {
-      key: id,
+      key: this.name + '-toggle',
       value: 'Data type: ' + value,
-      loadedOnce: this.loadedOnce,
+      loadedOnce: this.loadedOnce || false,
       name: this.name,
       nonremovable: true
     }
   ]);
 
   this.loadedOnce = true;
+};
+
+ToggleFilter.prototype.setInitialValue = function() {
+  // If a toggle is checked by default in the DOM, call handleChange()
+  var $checked = this.$elm.find('input:checked');
+  if ($checked.length > 0) {
+    this.handleChange({target: $checked});
+  }
 };
 
 module.exports = {ToggleFilter: ToggleFilter};
