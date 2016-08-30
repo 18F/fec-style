@@ -81,11 +81,13 @@ TagList.prototype.addTag = function(e, opts) {
 };
 
 TagList.prototype.addTagItem = function($tagCategory, tag, opts) {
+  var rangeClass = 'tag__category__range--' + opts.rangeName;
+
   if (opts.range == 'min') {
-    $tagCategory.addClass('tag__category--range').prepend(tag);
+    $tagCategory.addClass(rangeClass).prepend(tag);
   }
   else if (opts.range == 'max') {
-    $tagCategory.addClass('tag__category--range').append(tag);
+    $tagCategory.addClass(rangeClass).append(tag);
   }
   else {
     $tagCategory.append(tag);
@@ -103,9 +105,7 @@ TagList.prototype.removeTag = function(key, emit) {
 
     $tag.remove();
 
-    if ($tagCategory.hasClass('tag__category--range')) {
-      $tagCategory.removeClass('tag__category--range');
-    }
+    $tagCategory.removeClass('tag__category__range--amount tag__category__range--date');
 
     if ($tagCategory.is(':empty')) {
       $tagCategory.remove();

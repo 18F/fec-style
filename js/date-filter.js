@@ -48,6 +48,8 @@ DateFilter.prototype.handleInputChange = function(e) {
   var $input = $(e.target);
   var value = $input.val();
   var loadedOnce = $input.data('loaded-once') || false;
+  var range = $input.data('range') || 'false';
+  var rangename = 'date';
   var eventName;
 
   if ($input.data('had-value') && value.length > 0) {
@@ -65,6 +67,8 @@ DateFilter.prototype.handleInputChange = function(e) {
       key: $input.attr('id'),
       value: this.formatValue($input, value),
       loadedOnce: loadedOnce,
+      range: range,
+      rangeName: rangename,
       name: this.name
     }
   ]);
