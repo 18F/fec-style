@@ -3,7 +3,7 @@
 // Filter interaction for filter date fields
 //
 
-.date-range-calendar {
+.date-range-grid {
   font-family: $sans-serif;
   padding: u(2rem 0);
   display: none;
@@ -19,16 +19,16 @@
   }
 }
 
+
 .date-range-year {
   line-height: u(3rem);
-  padding-right: u(.5rem);
-  display: inline-block;
-  vertical-align: top;
+  float: left;
+  clear: both;
 }
 
 .date-range-months {
   width: 220px;
-  display: inline-block;
+  float: right;
 
   li {
     width: 35px;
@@ -37,9 +37,19 @@
     font-size: u(1.2rem);
     text-align: center;
     padding: u(.75rem .5rem);
-    margin: u(0 .1rem .2rem 0);
+    margin: u(0 0 .2rem .1rem);
     cursor: pointer;
     float: left;
+
+    &.beginning {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+
+    &.end {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
 
     &.active {
       background-color: $gray-dark;
@@ -54,6 +64,5 @@
       background-color: $aqua;
       color: $base !important;
     }
-
   }
 }

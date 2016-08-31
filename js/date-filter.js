@@ -13,6 +13,7 @@ function DateFilter(elm) {
   Filter.Filter.call(this, elm);
   this.validateInput = this.$elm.data('validate') || false;
   this.$range = this.$elm.find('.range');
+  this.$grid = this.$elm.find('.date-range-grid');
   this.$minDate = this.$elm.find('.js-min-date');
   this.$maxDate = this.$elm.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
@@ -62,6 +63,8 @@ DateFilter.prototype.handleInputChange = function(e) {
     $input.data('had-value', false);
   }
 
+  this.setDateGrid();
+
   $input.trigger(eventName, [
     {
       key: $input.attr('id'),
@@ -74,6 +77,25 @@ DateFilter.prototype.handleInputChange = function(e) {
   ]);
 
   $input.data('loaded-once', true);
+};
+
+DateFilter.prototype.setDateGrid = function() {
+  var dateBeginning = this.$minDate.val().split('/');
+  var dateBeginningMonth = this.$grid.find('ul[data-year="' + dateBeginning[2] + '"] ' +
+    'li[data-month="' + dateBeginning[0] + '"]');
+  var dateEnd = this.$maxDate.val().split('/');
+  var dateEndMonth = this.$grid.find('ul[data-year="' + dateEnd[2] + '"] ' +
+    'li[data-month="' + dateEnd[0] + '"]');
+
+  this.$grid.find('li').removeClass('beginning end active').addClass('inactive');
+
+  dateBeginningMonth.removeClass('inactive').addClass('active beginning');
+  dateEndMonth.removeClass('inactive').addClass('active end');
+
+  if (!dateBeginningMonth.is(dateEndMonth)) {
+    dateBeginningMonth.nextUntil('.end').removeClass('inactive').addClass('active');
+    dateEndMonth.prevUntil('.beginning').removeClass('inactive').addClass('active');
+  }
 };
 
 DateFilter.prototype.validate = function() {
@@ -134,36 +156,36 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
 };
 
 DateFilter.prototype.handlePickMinDate = function() {
-  var calendar = this.$elm.find('.date-range-calendar');
+  var self = this;
 
-  calendar.show().removeClass('js-pick-max').addClass('js-pick-min');
+  this.$grid.show().removeClass('js-pick-max').addClass('js-pick-min');
 
-  calendar.find('li').hover(
+  this.$grid.find('li').hover(
     function() {
       $(this).prevAll().removeClass('active').addClass('inactive');
       $(this).nextAll().removeClass('inactive').addClass('active');
     },
     function() {
-      $(this).siblings().removeClass('active').removeClass('inactive');
+      self.setDateGrid();
     }
   );
 };
 
 DateFilter.prototype.handlePickMaxDate = function() {
-  var calendar = this.$elm.find('.date-range-calendar');
-  calendar.show().removeClass('js-pick-min').addClass('js-pick-max');
+  var self = this;
 
-  calendar.find('li').hover(
+  this.$grid.show().removeClass('js-pick-min').addClass('js-pick-max');
+
+  this.$grid.find('li').hover(
     function() {
       $(this).prevAll().removeClass('inactive').addClass('active');
       $(this).nextAll().removeClass('active').addClass('inactive');
     },
     function() {
-      $(this).siblings().removeClass('active').removeClass('inactive');
+      self.setDateGrid();
     }
   );
 };
-
 
 DateFilter.prototype.showWarning = function() {
   if (!this.showingWarning) {
