@@ -32,8 +32,8 @@
 
   li {
     width: 35px;
-    background-color: $gray-dark;
-    color: $inverse !important;
+    background-color: $gray;
+    color: $base !important;
     font-size: u(1.2rem);
     text-align: center;
     padding: u(.75rem .5rem);
@@ -51,15 +51,12 @@
       border-bottom-right-radius: 15px;
     }
 
-    &.active {
+    &.selected {
       background-color: $gray-dark;
+      color: $inverse !important;
     }
 
-    &.inactive {
-      background-color: $gray;
-      color: $base !important;
-    }
-
+    &.active,
     &:hover {
       background-color: $aqua;
       color: $base !important;
