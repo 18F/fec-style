@@ -20,6 +20,7 @@
 // .main__content             - The area below page headers, next to sidebar
 // .main__content--full       - Full-width main content area
 // .content__section          - Adds padding for breaking up sections of body content
+// .content__section--narrow  - Narrow container for text interspersed with other elements
 // .content__section--ruled   - Adds a border
 //
 // Styleguide layout.elements
@@ -94,6 +95,10 @@
   @include media($lg) {
     padding: u(4rem 0);
   }
+}
+
+.content__section--narrow {
+  max-width: u(80rem); // matches `p` tags
 }
 
 .content__section--ruled {
