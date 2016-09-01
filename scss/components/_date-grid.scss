@@ -15,14 +15,14 @@
       border-top-left-radius: u(1.5rem);
       border-bottom-left-radius: u(1.5rem);
       background-color: $aqua;
-      color: $base !important;
+      color: $base;
     }
 
     &.pick-max li:hover div {
       border-top-right-radius: u(1.5rem);
       border-bottom-right-radius: u(1.5rem);
       background-color: $aqua;
-      color: $base !important;
+      color: $base;
     }
 
     &.pick-min,
@@ -46,7 +46,6 @@
 
   li {
     width: 35px;
-    color: $base !important;
     font-size: u(1.2rem);
     text-align: center;
     padding: u(0 0 .2rem .1rem);
@@ -69,12 +68,12 @@
 
     &.selected div {
       background-color: $gray-dark;
-      color: $inverse !important;
+      color: $inverse;
     }
 
     &.is-active div {
       background-color: $aqua;
-      color: $base !important;
+      color: $base;
     }
   }
 }
