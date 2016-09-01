@@ -155,18 +155,16 @@ DateFilter.prototype.setupDateGrid = function() {
   var minDateYear = dateBegin[2];
   var maxDateMonth = dateEnd[0];
   var maxDateYear = dateEnd[2];
+  var transactionYear = $('#two-year-transaction-period').val();
   var $dateBegin;
   var $dateEnd;
 
-  // based on the beginning and end transaction dates,
-  // set the template of the date grid to the correct year
-  dateRangeFirst.find('.date-range-year').html(minDateYear);
-  dateRangeFirst.find('ul').attr('data-year', minDateYear);
+  // the transaction year starts with the later, so begin before
+  dateRangeFirst.find('.date-range-year').html(parseInt(transactionYear - 1));
+  dateRangeFirst.find('ul').attr('data-year', parseInt(transactionYear - 1));
 
-  // because transactions are done in two year periods
-  // second year in grid is always the year after the beginning year
-  dateRangeSecond.find('.date-range-year').html(parseInt(minDateYear) + 1);
-  dateRangeSecond.find('ul').attr('data-year', parseInt(minDateYear) + 1);
+  dateRangeSecond.find('.date-range-year').html(transactionYear);
+  dateRangeSecond.find('ul').attr('data-year', transactionYear);
 
   // get the elements of the beginning and ending dates
   $dateBegin = this.$grid.find('ul[data-year="' + minDateYear + '"] ' +
@@ -236,12 +234,12 @@ DateFilter.prototype.dateGridSelect = function (e) {
   var value = [];
 
   if (this.$grid.hasClass('pick-min')) {
-    value[0] = $(e.target).data('month') + '/01/' + $(e.target).parent().data('year');
+    value[0] = $(e.target).data('month') + '/01/' + $(e.target).parent().attr('data-year');
     value[1] = this.$maxDate.val();
   }
   else {
     value[0] = this.$minDate.val();
-    value[1] = $(e.target).data('month') + '/01/' + $(e.target).parent().data('year');
+    value[1] = $(e.target).data('month') + '/01/' + $(e.target).parent().attr('data-year');
   }
 
   this.$grid.removeClass('pick-min pick-max');
