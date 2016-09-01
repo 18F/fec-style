@@ -175,15 +175,15 @@ DateFilter.prototype.setupDateGrid = function() {
   this.handleDateGridRange($dateBegin, $dateEnd);
 };
 
-DateFilter.prototype.handleDateGridRange = function($dateHoverBegin, $dateHoverEnd) {
+DateFilter.prototype.handleDateGridRange = function($dateBegin, $dateEnd) {
   this.$grid.find('li').removeClass();
 
-  $dateHoverBegin.addClass('selected month--begin');
-  $dateHoverEnd.addClass('selected month--end');
+  $dateBegin.addClass('selected month--begin');
+  $dateEnd.addClass('selected month--end');
 
-  if (!$dateHoverBegin.is($dateHoverEnd)) {
-    $dateHoverBegin.nextUntil('.month--end').addClass('selected');
-    $dateHoverEnd.prevUntil('.month--begin').addClass('selected');
+  if (!$dateBegin.is($dateEnd)) {
+    $dateBegin.nextUntil('.month--end').addClass('selected');
+    $dateEnd.prevUntil('.month--begin').addClass('selected');
   }
 };
 
@@ -227,8 +227,12 @@ DateFilter.prototype.handleMaxDateSelect = function() {
 
   this.$grid.find('li').hover(
     function() {
-      var dateBeginNum = parseInt($dateBegin.parent().attr('data-year') + $dateBegin.attr('data-month'));
-      var dateEndNum = parseInt($(this).parent().attr('data-year') + $(this).attr('data-month'));
+      // turn dates to numbers for comparsion
+      // to make sure hover date range is valid
+      var dateBeginNum =
+        parseInt($dateBegin.parent().attr('data-year') + $dateBegin.attr('data-month'));
+      var dateEndNum =
+        parseInt($(this).parent().attr('data-year') + $(this).attr('data-month'));
 
       if (dateBeginNum <= dateEndNum) {
         self.$grid.removeClass('is-invalid');
