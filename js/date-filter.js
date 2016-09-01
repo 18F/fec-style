@@ -232,14 +232,15 @@ DateFilter.prototype.handleMaxDateSelect = function() {
 
 DateFilter.prototype.dateGridSelect = function (e) {
   var value = [];
+  var $selectDate = $(e.target).parent();
 
   if (this.$grid.hasClass('pick-min')) {
-    value[0] = $(e.target).data('month') + '/01/' + $(e.target).parent().attr('data-year');
+    value[0] = $selectDate.data('month') + '/01/' + $selectDate.parent().attr('data-year');
     value[1] = this.$maxDate.val();
   }
   else {
     value[0] = this.$minDate.val();
-    value[1] = $(e.target).data('month') + '/01/' + $(e.target).parent().attr('data-year');
+    value[1] = $selectDate.data('month') + '/01/' + $selectDate.parent().attr('data-year');
   }
 
   this.$grid.removeClass('pick-min pick-max');

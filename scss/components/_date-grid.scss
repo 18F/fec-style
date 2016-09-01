@@ -9,14 +9,14 @@
   padding: u(2rem 0);
   display: none;
 
-  &.pick-min li:hover {
+  &.pick-min li:hover div {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     background-color: $aqua;
     color: $base !important;
   }
 
-  &.pick-max li:hover {
+  &.pick-max li:hover div {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: $aqua;
@@ -43,30 +43,33 @@
 
   li {
     width: 35px;
-    background-color: $gray;
     color: $base !important;
     font-size: u(1.2rem);
     text-align: center;
-    padding: u(.75rem .5rem);
-    margin: u(0 0 .2rem .1rem);
+    padding: u(0 0 .2rem .1rem);
     float: left;
 
-    &.begin {
+    div {
+      background-color: $gray;
+      padding: u(.75rem .5rem);
+    }
+
+    &.begin div {
       border-top-left-radius: 15px;
       border-bottom-left-radius: 15px;
     }
 
-    &.end {
+    &.end div {
       border-top-right-radius: 15px;
       border-bottom-right-radius: 15px;
     }
 
-    &.selected {
+    &.selected div {
       background-color: $gray-dark;
       color: $inverse !important;
     }
 
-    &.active {
+    &.active div {
       background-color: $aqua;
       color: $base !important;
     }
