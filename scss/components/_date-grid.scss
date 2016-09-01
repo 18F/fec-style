@@ -9,24 +9,27 @@
   padding: u(2rem 0);
   display: none;
 
-  &.pick-min li:hover div {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    background-color: $aqua;
-    color: $base !important;
-  }
+  &:not(.invalid) {
 
-  &.pick-max li:hover div {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: $aqua;
-    color: $base !important;
-  }
+    &.pick-min li:hover div {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      background-color: $aqua;
+      color: $base !important;
+    }
 
-  &.pick-min,
-  &.pick-max {
-    li {
-      cursor: pointer;
+    &.pick-max li:hover div {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: $aqua;
+      color: $base !important;
+    }
+
+    &.pick-min,
+    &.pick-max {
+      li {
+        cursor: pointer;
+      }
     }
   }
 }
