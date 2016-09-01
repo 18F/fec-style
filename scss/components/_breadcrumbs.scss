@@ -25,33 +25,33 @@
 
 .breadcrumbs {
   display: none;
+  color: $gray;
+  float: left;
+  font-family: $sans-serif;
+  letter-spacing: -.3px;
+}
+
+.breadcrumbs__item {
+  @include u-truncate();
+  float: left;
+  max-width: u(20rem);
+  padding: u(.8rem 0);
+}
+
+.breadcrumbs__item--current {
+  color: $inverse;
+}
+
+.breadcrumbs__link {
+  color: $inverse;
+}
+
+.breadcrumbs__separator {
+  padding: u(.5rem .8rem);
 }
 
 @include media($lg) {
   .breadcrumbs {
-    color: $gray;
     display: block;
-    float: left;
-    font-family: $sans-serif;
-    letter-spacing: -.3px;
-  }
-
-  .breadcrumbs__item {
-    @include u-truncate();
-    float: left;
-    max-width: u(20rem);
-    padding: u(.8rem 0);
-  }
-
-  .breadcrumbs__item--current {
-    color: $inverse;
-  }
-
-  .breadcrumbs__link {
-    color: $inverse;
-  }
-
-  .breadcrumbs__separator {
-    padding: u(.5rem .8rem);
   }
 }
