@@ -263,6 +263,8 @@ DateFilter.prototype.dateGridSelect = function (e) {
     this.$grid.find('li').unbind('mouseenter mouseleave');
 
     this.setValue(value);
+
+    this.$grid.addClass('is-invalid');
   }
 };
 
