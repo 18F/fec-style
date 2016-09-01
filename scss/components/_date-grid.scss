@@ -1,24 +1,35 @@
-// Date Range Calendar Picker
+// Date Range Calendar Grid Date Picker
 //
 // Filter interaction for filter date fields
 //
 
 .date-range-grid {
+  @include clearfix();
   font-family: $sans-serif;
   padding: u(2rem 0);
   display: none;
 
-  &.js-pick-min li:hover {
+  &.pick-min li:hover {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    background-color: $aqua;
+    color: $base !important;
   }
 
-  &.js-pick-max li:hover {
+  &.pick-max li:hover {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    background-color: $aqua;
+    color: $base !important;
+  }
+
+  &.pick-min,
+  &.pick-max {
+    li {
+      cursor: pointer;
+    }
   }
 }
-
 
 .date-range-year {
   line-height: u(3rem);
@@ -38,7 +49,6 @@
     text-align: center;
     padding: u(.75rem .5rem);
     margin: u(0 0 .2rem .1rem);
-    cursor: pointer;
     float: left;
 
     &.beginning {
@@ -56,8 +66,7 @@
       color: $inverse !important;
     }
 
-    &.active,
-    &:hover {
+    &.active {
       background-color: $aqua;
       color: $base !important;
     }

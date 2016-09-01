@@ -22,6 +22,7 @@ function DateFilter(elm) {
   this.$maxDate.inputmask('mm-dd-yyyy', {
     oncomplete: this.validate.bind(this)
   });
+  this.$submit = this.$elm.find('button');
 
   this.$input.on('change', this.handleInputChange.bind(this));
   this.$elm.on('change', this.handleRadioChange.bind(this));
@@ -67,6 +68,10 @@ DateFilter.prototype.handleInputChange = function(e) {
 
   this.setDateGrid();
 
+  if (loadedOnce) {
+    this.$submit.addClass('is-loading');
+  }
+
   $input.trigger(eventName, [
     {
       key: $input.attr('id'),
@@ -74,11 +79,14 @@ DateFilter.prototype.handleInputChange = function(e) {
       loadedOnce: loadedOnce,
       range: range,
       rangeName: rangename,
-      name: this.name
+      name: this.name,
+      nonremovable: true
     }
   ]);
 
-  $input.data('loaded-once', true);
+  if (eventName === 'filter:renamed') {
+    $input.data('loaded-once', true);
+  }
 };
 
 DateFilter.prototype.validate = function() {
@@ -140,20 +148,29 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
 
 DateFilter.prototype.setDateGrid = function() {
   var dateBeginning = this.$minDate.val().split('/');
-  var dateBeginningMonth = this.$grid.find('ul[data-year="' + dateBeginning[2] + '"] ' +
-    'li[data-month="' + dateBeginning[0] + '"]');
   var dateEnd = this.$maxDate.val().split('/');
-  var dateEndMonth = this.$grid.find('ul[data-year="' + dateEnd[2] + '"] ' +
+  var dateRangeFirst = this.$grid.find('.date-range-first');
+  var dateRangeSecond = this.$grid.find('.date-range-second');
+
+  dateRangeFirst.find('.date-range-year').html(dateBeginning[2]);
+  dateRangeFirst.find('ul').attr('data-year', dateBeginning[2]);
+
+  dateRangeSecond.find('.date-range-year').html(dateEnd[2]);
+  dateRangeSecond.find('ul').attr('data-year', dateEnd[2]);
+
+  dateBeginning = this.$grid.find('ul[data-year="' + dateBeginning[2] + '"] ' +
+    'li[data-month="' + dateBeginning[0] + '"]');
+  dateEnd = this.$grid.find('ul[data-year="' + dateEnd[2] + '"] ' +
     'li[data-month="' + dateEnd[0] + '"]');
 
   this.$grid.find('li').removeClass();
 
-  dateBeginningMonth.addClass('selected beginning');
-  dateEndMonth.addClass('selected end');
+  dateBeginning.addClass('selected beginning');
+  dateEnd.addClass('selected end');
 
-  if (!dateBeginningMonth.is(dateEndMonth)) {
-    dateBeginningMonth.nextUntil('.end').addClass('selected');
-    dateEndMonth.prevUntil('.beginning').addClass('selected');
+  if (!dateBeginning.is(dateEnd)) {
+    dateBeginning.nextUntil('.end').addClass('selected');
+    dateEnd.prevUntil('.beginning').addClass('selected');
   }
 };
 
@@ -161,15 +178,16 @@ DateFilter.prototype.handleSelectMinDate = function() {
   var self = this;
   var endDate = this.$grid.find('.end');
 
-  this.$grid.show().removeClass('js-pick-max').addClass('js-pick-min');
+  this.$grid.show().removeClass('pick-max').addClass('pick-min');
   this.$grid.find('li').removeClass('active');
   this.$grid.find('.beginning').addClass('active');
 
   this.$grid.find('li').hover(
     function() {
-      $(this).prevAll().removeClass();
-      $(this).nextUntil('.end').removeClass('beginning active').addClass('selected');
-      endDate.prevUntil(this).removeClass().addClass('selected');
+      self.$grid.find('li').removeClass();
+      $(this).prevAll().removeClass('selected');
+      endDate.addClass('end');
+      $(this).nextUntil('.end').addClass('selected');
     },
     function() {
       self.setDateGrid();
@@ -181,7 +199,7 @@ DateFilter.prototype.handleSelectMinDate = function() {
 DateFilter.prototype.handleSelectMaxDate = function() {
   var self = this;
 
-  this.$grid.show().removeClass('js-pick-min').addClass('js-pick-max');
+  this.$grid.show().removeClass('pick-min').addClass('pick-max');
   this.$grid.find('li').removeClass('active');
   this.$grid.find('.end').addClass('active');
 
@@ -200,7 +218,7 @@ DateFilter.prototype.handleSelectMaxDate = function() {
 DateFilter.prototype.handleGridDateSelect = function (e) {
   var value = [];
 
-  if (this.$grid.hasClass('js-pick-min')) {
+  if (this.$grid.hasClass('pick-min')) {
     value[0] = $(e.target).data('month') + '/01/' + $(e.target).parent().data('year');
     value[1] = this.$maxDate.val();
   }
@@ -208,6 +226,9 @@ DateFilter.prototype.handleGridDateSelect = function (e) {
     value[0] = this.$minDate.val();
     value[1] = $(e.target).data('month') + '/01/' + $(e.target).parent().data('year');
   }
+
+  this.$grid.removeClass('pick-min pick-max');
+  this.$grid.find('li').unbind('mouseenter mouseleave');
 
   this.setValue(value);
 };
@@ -222,6 +243,7 @@ DateFilter.prototype.showWarning = function() {
     '</div>';
     this.$range.after(warning);
     this.showingWarning = true;
+    this.$grid.hide();
   }
 };
 
