@@ -9,18 +9,18 @@
   padding: u(2rem 0);
   display: none;
 
-  &:not(.invalid) {
+  &:not(.is-invalid) {
 
     &.pick-min li:hover div {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+      border-top-left-radius: u(1.5rem);
+      border-bottom-left-radius: u(1.5rem);
       background-color: $aqua;
       color: $base !important;
     }
 
     &.pick-max li:hover div {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
+      border-top-right-radius: u(1.5rem);
+      border-bottom-right-radius: u(1.5rem);
       background-color: $aqua;
       color: $base !important;
     }
@@ -57,14 +57,14 @@
       padding: u(.75rem .5rem);
     }
 
-    &.begin div {
-      border-top-left-radius: 15px;
-      border-bottom-left-radius: 15px;
+    &.month--begin div {
+      border-top-left-radius: u(1.5rem);
+      border-bottom-left-radius: u(1.5rem);
     }
 
-    &.end div {
-      border-top-right-radius: 15px;
-      border-bottom-right-radius: 15px;
+    &.month--end div {
+      border-top-right-radius: u(1.5rem);
+      border-bottom-right-radius: u(1.5rem);
     }
 
     &.selected div {
@@ -72,7 +72,7 @@
       color: $inverse !important;
     }
 
-    &.active div {
+    &.is-active div {
       background-color: $aqua;
       color: $base !important;
     }
