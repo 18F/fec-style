@@ -55,3 +55,17 @@
     display: block;
   }
 }
+
+@media print {
+  .breadcrumbs {
+    display: block;
+    float: none;
+
+    .breadcrumbs__link,
+    .breadcrumbs__item {
+      color: $gray-dark;
+      border-bottom: none;
+      max-width: 100%;
+    }
+  }
+}

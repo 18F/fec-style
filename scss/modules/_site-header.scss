@@ -73,22 +73,6 @@
   }
 }
 
-@include media($med) {
-  .disclaimer {
-    float: right;
-    width: calc(100% - 9rem);
-  }
-
-  .disclaimer__left {
-    display: block;
-    padding-left: u(1rem);
-  }
-
-  .disclaimer__right {
-    float: right;
-  }
-}
-
 // Masthead
 //
 // The combination of the logo, site title and utility nav
@@ -108,24 +92,11 @@
 
 .masthead {
   @include clearfix();
-
-  @include media($med) {
-    @include u-background-image('seal--cropped', 0% 100%);
-    border-bottom: 2px solid $neutral;
-    display: block;
-    background-size: u(11rem);
-  }
 }
 
 .site-header {
   border-bottom: 1px solid $neutral;
   position: relative;
-
-  @include media($lg) {
-    border-bottom: none;
-    position: relative;
-    z-index: $z-header;
-  }
 }
 
 .site-title {
@@ -134,8 +105,50 @@
   display: none;
   float: left;
   width: 100%;
+}
 
-  @include media($med) {
+.utility-nav {
+  font-family: $sans-serif;
+  display: none;
+  float: right;
+  padding: u(1.6rem 0);
+}
+
+.site-nav {
+  .site-title {
+    @include u-background-image('wordmark', 0% 50%);
+    background-size: contain;
+    display: block;
+    height: u(3rem);
+    margin: u(.5rem 1rem);
+    width: calc(100% - 15rem);
+    max-width: u(40rem);
+  }
+}
+
+@media (min-width: $medium-screen), print {
+  .disclaimer {
+    float: right;
+    width: calc(100% - 9rem);
+  }
+
+  .disclaimer__left {
+    display: block;
+    padding-left: u(1rem);
+  }
+
+  .disclaimer__right {
+    float: right;
+  }
+
+  .masthead {
+    @include u-background-image('seal--cropped', 0% 100%);
+    border-bottom: 2px solid $neutral;
+    display: block;
+    background-size: u(11rem);
+  }
+
+  .site-title {
     @include u-background-image('wordmark', u(12rem) 50%);
     background-size: contain;
     display: block;
@@ -145,24 +158,28 @@
     width: 100%;
   }
 
-  @include media($lg) {
+  // Mobile site title is included in the .site-nav nav element
+  .site-nav .site-title {
+    display: none;
+  }
+}
+
+@media (min-width: $large-screen), print {
+  .site-header {
+    border-bottom: none;
+    position: relative;
+    z-index: $z-header;
+  }
+
+  .site-title {
     width: 50%;
   }
-}
 
-.utility-nav {
-  font-family: $sans-serif;
-  display: none;
-  float: right;
-  padding: u(1.6rem 0);
-
-  @include media($lg) {
+  .utility-nav {
     display: block;
   }
-}
 
-li.utility-nav__item {
-  @include media($lg) {
+  li.utility-nav__item {
     border-left: 1px solid $gray;
     margin-right: 0;
     padding: u(0 1.5rem);
@@ -188,20 +205,31 @@ li.utility-nav__item {
   }
 }
 
+@media print {
+  .disclaimer {
+    width: 100%;
+    padding: 0 0 u(1rem) 0;
+    margin-bottom: u(1rem);
+  }
 
-// Mobile site title is included in the .site-nav nav element
-.site-nav {
+  .disclaimer__left,
+  .disclaimer__right {
+    padding: 0;
+  }
+
+  .site-header {
+    border-bottom: 1px solid $primary;
+  }
+
+  .masthead {
+    background: none;
+  }
+
   .site-title {
-    @include u-background-image('wordmark', 0% 50%);
-    background-size: contain;
-    display: block;
-    height: u(3rem);
-    margin: u(.5rem 1rem);
-    width: calc(100% - 15rem);
-    max-width: u(40rem);
+    display: none;
+  }
 
-    @include media($med) {
-      display: none;
-    }
+  .utility-nav {
+    display: none;
   }
 }

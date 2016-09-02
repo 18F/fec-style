@@ -42,3 +42,14 @@
 .slab--spacious {
   padding: u(4rem 0);
 }
+
+// Reset all slab colors on print
+@media print {
+  .slab,
+  .slab--neutral,
+  .slab--primary,
+  .slab--secondary {
+    background: $inverse;
+    color: $base;
+  }
+}

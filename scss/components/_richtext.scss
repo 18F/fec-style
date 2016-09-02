@@ -48,3 +48,9 @@
     @extend .simple-table__cell;
   }
 }
+
+@media print {
+  .rich-text table {
+    page-break-inside: avoid;
+  }
+}

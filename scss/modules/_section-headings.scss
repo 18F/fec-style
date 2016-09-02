@@ -116,3 +116,9 @@
     float: right;
   }
 }
+
+@media print {
+  .heading__action {
+    display: none;
+  }
+}

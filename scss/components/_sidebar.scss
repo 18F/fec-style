@@ -102,3 +102,9 @@
   @include u-font-color($base);
   border-top: 4px solid $primary;
 }
+
+@media print {
+  .sidebar {
+    display: none;
+  }
+}

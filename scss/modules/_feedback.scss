@@ -76,3 +76,9 @@
 .feedback__button {
   margin-top: u(1rem);
 }
+
+@media print {
+  .feedback__toggle {
+    display: none;
+  }
+}
