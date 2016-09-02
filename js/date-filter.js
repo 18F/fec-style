@@ -13,7 +13,7 @@ function DateFilter(elm) {
   Filter.Filter.call(this, elm);
   this.validateInput = this.$elm.data('validate') || false;
   this.$range = this.$elm.find('.range');
-  this.$grid = this.$elm.find('.date__range--grid');
+  this.$grid = this.$elm.find('.date-range__grid');
   this.$minDate = this.$elm.find('.js-min-date');
   this.$maxDate = this.$elm.find('.js-max-date');
   this.$minDate.inputmask('mm-dd-yyyy', {
@@ -31,7 +31,7 @@ function DateFilter(elm) {
   this.$minDate.on('click', this.handleMinDateSelect.bind(this));
   this.$maxDate.on('click', this.handleMaxDateSelect.bind(this));
 
-  this.$elm.on('click', '.date__range--grid li', this.dateGridSelect.bind(this));
+  this.$elm.on('click', '.date-range__grid li', this.dateGridSelect.bind(this));
 
   $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
 }
@@ -149,8 +149,8 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
 DateFilter.prototype.setupDateGrid = function() {
   var dateBegin = this.$minDate.val().split('/');
   var dateEnd = this.$maxDate.val().split('/');
-  var dateRangeFirst = this.$grid.find('.date__range--row').eq(0);
-  var dateRangeSecond = this.$grid.find('.date__range--row').eq(1);
+  var dateRangeFirst = this.$grid.find('.date-range__row').eq(0);
+  var dateRangeSecond = this.$grid.find('.date-range__row').eq(1);
   var minDateMonth = dateBegin[0];
   var minDateYear = dateBegin[2];
   var maxDateMonth = dateEnd[0];
@@ -159,10 +159,10 @@ DateFilter.prototype.setupDateGrid = function() {
   var $dateEnd;
 
   // the transaction year starts with the later, so begin before
-  dateRangeFirst.find('.date__range--year').html(this.minYear);
+  dateRangeFirst.find('.date-range__year').html(this.minYear);
   dateRangeFirst.find('ul').attr('data-year', this.minYear);
 
-  dateRangeSecond.find('.date__range--year').html(this.maxYear);
+  dateRangeSecond.find('.date-range__year').html(this.maxYear);
   dateRangeSecond.find('ul').attr('data-year', this.maxYear);
 
   // get the elements of the beginning and ending dates

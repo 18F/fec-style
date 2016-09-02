@@ -3,7 +3,7 @@
 // Filter interaction for filter date fields
 //
 
-.date__range--grid {
+.date-range__grid {
   @include clearfix();
   font-family: $sans-serif;
   padding: u(2rem 0);
@@ -34,13 +34,13 @@
   }
 }
 
-.date__range--year {
+.date-range__year {
   line-height: u(3rem);
   float: left;
   clear: both;
 }
 
-.date__range--months {
+.date-range__months {
   width: 220px;
   float: right;
 
