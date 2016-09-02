@@ -207,18 +207,11 @@
 
 @media print {
   .disclaimer {
-    width: 100%;
-    padding: 0 0 u(1rem) 0;
-    margin-bottom: u(1rem);
-  }
-
-  .disclaimer__left,
-  .disclaimer__right {
-    padding: 0;
+    display: none;
   }
 
   .site-header {
-    border-bottom: 1px solid $primary;
+    border-bottom: none !important;
   }
 
   .masthead {
