@@ -18,6 +18,24 @@
   width: 100%;
 }
 
+.tag {
+  background-color: $inverse;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  color: $primary;
+  display: inline-block;
+  font-family: $sans-serif;
+  letter-spacing: -.3px;
+  padding: u(0 .5rem 0 .75rem);
+  margin: u(.5rem 3rem 0 0);
+}
+
+.tag--secondary {
+  border-color: $secondary;
+  color: $base;
+  font-weight: bold;
+}
+
 .tag__category {
   background-color: $gray-light;
   border-radius: 2px;
@@ -26,15 +44,7 @@
   margin: u(.5rem .5rem 0 0);
 
   .tag__item {
-    display: inline-block;
-    background-color: $inverse;
-    border: 1px solid $gray;
-    border-radius: 4px;
-    color: $primary;
-    font-family: $sans-serif;
-    letter-spacing: -.3px;
-    padding: u(0 .5rem 0 .75rem);
-    margin: u(.5rem 3rem 0 0);
+    @extend .tag;
     position: relative;
 
     &::after {
