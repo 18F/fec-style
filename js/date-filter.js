@@ -12,12 +12,16 @@ require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
 function DateFilter(elm) {
   Filter.Filter.call(this, elm);
   this.validateInput = this.$elm.data('validate') || false;
+  this.$range = this.$elm.find('.js-date-range');
+  this.$grid = this.$elm.find('.js-date-grid');
   this.$minDate = this.$elm.find('.js-min-date');
   this.$maxDate = this.$elm.find('.js-max-date');
-  this.$minDate.inputmask('mm-dd-yyyy', {
+  this.$submit = this.$elm.find('button');
+
+  this.$minDate.inputmask('mm/dd/yyyy', {
     oncomplete: this.validate.bind(this)
   });
-  this.$maxDate.inputmask('mm-dd-yyyy', {
+  this.$maxDate.inputmask('mm/dd/yyyy', {
     oncomplete: this.validate.bind(this)
   });
 
@@ -25,12 +29,18 @@ function DateFilter(elm) {
   this.$elm.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
+  this.$minDate.on('focus', this.handleMinDateSelect.bind(this));
+  this.$maxDate.on('focus', this.handleMaxDateSelect.bind(this));
+
+  this.$elm.on('click', '.date-range__grid li', this.handleGridItemSelect.bind(this));
+
   $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
 }
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
 DateFilter.constructor = DateFilter;
 
+// TODO: Remove once date filters no longer have radios
 DateFilter.prototype.handleRadioChange = function(e) {
   var $input = $(e.target);
   if (!$input.is(':checked')) { return; }
@@ -44,6 +54,8 @@ DateFilter.prototype.handleInputChange = function(e) {
   var $input = $(e.target);
   var value = $input.val();
   var loadedOnce = $input.data('loaded-once') || false;
+  var range = $input.data('range') || false;
+  var rangename = 'date';
   var eventName;
 
   if ($input.data('had-value') && value.length > 0) {
@@ -56,25 +68,36 @@ DateFilter.prototype.handleInputChange = function(e) {
     $input.data('had-value', false);
   }
 
+  this.setupDateGrid();
+
+  if (loadedOnce) {
+    this.$submit.addClass('is-loading');
+  }
+
   $input.trigger(eventName, [
     {
       key: $input.attr('id'),
       value: this.formatValue($input, value),
       loadedOnce: loadedOnce,
-      name: this.name
+      range: range,
+      rangeName: rangename,
+      name: this.name,
+      nonremovable: true
     }
   ]);
 
-  $input.data('loaded-once', true);
+  if (eventName === 'filter:renamed') {
+    $input.data('loaded-once', true);
+  }
 };
 
 DateFilter.prototype.validate = function() {
   if (!this.validateInput) { return; }
   var years = [this.minYear, this.maxYear];
   var minDateYear = this.$minDate.val() ?
-    parseInt(this.$minDate.val().split('-')[2]) : this.minYear;
+    parseInt(this.$minDate.val().split('/')[2]) : this.minYear;
   var maxDateYear = this.$maxDate.val() ?
-    parseInt(this.$maxDate.val().split('-')[2]) : this.maxYear;
+    parseInt(this.$maxDate.val().split('/')[2]) : this.maxYear;
   if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
     this.hideWarning();
     this.$elm.trigger('filters:validation', [
@@ -114,14 +137,140 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
   if (opts.filterName === this.name) {
     this.maxYear = parseInt(opts.filterValue);
     this.minYear = this.maxYear - 1;
-    this.$minDate.val('01-01-' + this.minYear.toString()).change();
+    this.$minDate.val('01/01/' + this.minYear.toString()).change();
     if (this.maxYear === today.getFullYear()) {
-      today = moment(today).format('MM-DD-YYYY');
+      today = moment(today).format('MM/DD/YYYY');
       this.$maxDate.val(today).change();
     } else {
-      this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+      this.$maxDate.val('12/31/' + this.maxYear.toString()).change();
     }
     this.validate();
+  }
+};
+
+DateFilter.prototype.setupDateGrid = function() {
+  var dateBegin = this.$minDate.val().split('/');
+  var dateEnd = this.$maxDate.val().split('/');
+  var dateRangeFirst = this.$grid.find('.date-range__row').eq(0);
+  var dateRangeSecond = this.$grid.find('.date-range__row').eq(1);
+  var minDateMonth = dateBegin[0];
+  var minDateYear = dateBegin[2];
+  var maxDateMonth = dateEnd[0];
+  var maxDateYear = dateEnd[2];
+  var $dateBegin;
+  var $dateEnd;
+
+  // the transaction year starts with the later, so begin before
+  dateRangeFirst.find('.date-range__year').html(this.minYear);
+  dateRangeFirst.find('ul').attr('data-year', this.minYear);
+
+  dateRangeSecond.find('.date-range__year').html(this.maxYear);
+  dateRangeSecond.find('ul').attr('data-year', this.maxYear);
+
+  // get the elements of the beginning and ending dates
+  $dateBegin = this.$grid.find('ul[data-year="' + minDateYear + '"] ' +
+    'li[data-month="' + minDateMonth + '"]');
+  $dateEnd = this.$grid.find('ul[data-year="' + maxDateYear + '"] ' +
+    'li[data-month="' + maxDateMonth + '"]');
+
+  // set the selected date range in the grid
+  this.handleDateGridRange($dateBegin, $dateEnd);
+};
+
+DateFilter.prototype.handleDateGridRange = function($dateBegin, $dateEnd) {
+  this.$grid.find('li').removeClass();
+
+  $dateBegin.addClass('selected month--begin');
+  $dateEnd.addClass('selected month--end');
+
+  if (!$dateBegin.is($dateEnd)) {
+    $dateBegin.nextUntil('.month--end').addClass('selected');
+    $dateEnd.prevUntil('.month--begin').addClass('selected');
+  }
+};
+
+DateFilter.prototype.handleMinDateSelect = function() {
+  var self = this;
+  var $dateBegin = this.$grid.find('.month--begin');
+  var $dateEnd = this.$grid.find('.month--end');
+
+  this.$grid.show().removeClass('pick-max').addClass('pick-min');
+  this.$grid.find('.is-active').removeClass('is-active');
+  $dateBegin.addClass('is-active');
+
+  this.$grid.find('li').hover(
+    function() {
+      var dateBeginNum = parseInt($(this).parent().attr('data-year') + $(this).attr('data-month'));
+      var dateEndNum = parseInt($dateEnd.parent().attr('data-year') + $dateEnd.attr('data-month'));
+
+      if (dateBeginNum <= dateEndNum) {
+        self.$grid.removeClass('is-invalid');
+        self.handleDateGridRange($(this), $dateEnd);
+      }
+      else {
+        self.$grid.addClass('is-invalid');
+      }
+    },
+    function() {
+      self.handleDateGridRange($dateBegin, $dateEnd);
+      $dateBegin.addClass('is-active');
+    }
+  );
+};
+
+DateFilter.prototype.handleMaxDateSelect = function() {
+  var self = this;
+  var $dateBegin = this.$grid.find('.month--begin');
+  var $dateEnd = this.$grid.find('.month--end');
+
+  this.$grid.show().removeClass('pick-min').addClass('pick-max');
+  this.$grid.find('.is-active').removeClass('is-active');
+  $dateEnd.addClass('is-active');
+
+  this.$grid.find('li').hover(
+    function() {
+      // turn dates to numbers for comparsion
+      // to make sure hover date range is valid
+      var dateBeginNum =
+        parseInt($dateBegin.parent().attr('data-year') + $dateBegin.attr('data-month'));
+      var dateEndNum =
+        parseInt($(this).parent().attr('data-year') + $(this).attr('data-month'));
+
+      if (dateBeginNum <= dateEndNum) {
+        self.$grid.removeClass('is-invalid');
+        self.handleDateGridRange($dateBegin, $(this));
+      }
+      else {
+        self.$grid.addClass('is-invalid');
+      }
+    },
+    function() {
+      self.handleDateGridRange($dateBegin, $dateEnd);
+      $dateEnd.addClass('is-active');
+    }
+  );
+};
+
+DateFilter.prototype.handleGridItemSelect = function(e) {
+  var value = [];
+  var $selectDate = $(e.target).parent();
+
+  if (this.$grid.hasClass('pick-min')) {
+    value[0] = $selectDate.data('month') + '/01/' + $selectDate.parent().attr('data-year');
+    value[1] = this.$maxDate.val();
+  }
+  else {
+    value[0] = this.$minDate.val();
+    value[1] = $selectDate.data('month') + '/01/' + $selectDate.parent().attr('data-year');
+  }
+
+  if (!this.$grid.hasClass('is-invalid')) {
+    var $nextItem = this.$grid.hasClass('pick-min') ? this.$maxDate : this.$submit;
+    this.$grid.removeClass('pick-min pick-max');
+    this.$grid.find('li').unbind('mouseenter mouseleave');
+    this.setValue(value);
+    this.$grid.addClass('is-invalid');
+    $nextItem.focus();
   }
 };
 
@@ -133,8 +282,9 @@ DateFilter.prototype.showWarning = function() {
       'Please enter a receipt date from ' +
       '<strong>' + this.minYear + '-' + this.maxYear + '</strong>' +
     '</div>';
-    this.$maxDate.after(warning);
+    this.$range.after(warning);
     this.showingWarning = true;
+    this.$grid.hide();
   }
 };
 

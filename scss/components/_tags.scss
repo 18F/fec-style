@@ -60,13 +60,10 @@
   }
 }
 
-.tag__category--range {
+.tag__category__range--amount,
+.tag__category__range--date {
   .tag__item {
     margin-right: u(2rem);
-
-    .suffix {
-      display: none;
-    }
 
     .tag__remove {
       padding-left: u(1rem);
@@ -77,6 +74,18 @@
       padding: 0;
       right: u(-1.5rem);
     }
+  }
+}
+
+.tag__category__range--amount {
+  .suffix {
+    display: none;
+  }
+}
+
+.tag__category__range--date {
+  .prefix {
+    display: none;
   }
 }
 

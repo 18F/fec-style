@@ -265,6 +265,23 @@
   }
 }
 
+.range--currency {
+  .range__input {
+    input[type="text"] {
+      padding-left: u(2rem);
+      text-align: right;
+    }
+
+    &::before {
+      color: $gray;
+      content: '$';
+      top: u(2.15rem);
+      left: u(1rem);
+      position: absolute;
+    }
+  }
+}
+
 .range__input {
   width: 100px;
   font-family: $sans-serif;
@@ -272,23 +289,17 @@
   vertical-align: top;
   position: relative;
 
+  label {
+    padding-bottom: u(.3rem);
+  }
+
   input[type="text"] {
-    text-align: right;
-    padding-left: u(2rem);
     margin-bottom: 0;
   }
 
   input[type="text"],
   button {
     display: inline-block;
-  }
-
-  &::before {
-    color: $gray;
-    content: '$';
-    top: u(2.15rem);
-    left: u(1rem);
-    position: absolute;
   }
 }
 
