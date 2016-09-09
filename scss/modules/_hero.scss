@@ -69,6 +69,12 @@
   }
 }
 
+.hero--press {
+  .hero__image {
+    background-image: url('../img/hero-press.jpg');
+  }
+}
+
 .hero__content {
   padding-top: u(1rem);
 

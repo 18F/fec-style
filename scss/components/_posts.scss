@@ -1,0 +1,36 @@
+// Latest update posts
+
+.post-feed {
+  padding: u(1rem 0 1rem 2rem);
+}
+
+.post {
+  border-top: 1px solid $gray-light;
+  padding: u(2rem 0);
+
+  &:last-of-type {
+    border-bottom: 1px solid $gray-light;
+  }
+
+  h3 {
+    margin-bottom: u(1rem);
+  }
+}
+
+.post__pre {
+  @include clearfix();
+  color: $gray-dark;
+  font-family: $sans-serif;
+  padding-bottom: 5px;
+}
+
+.post__meta {
+  .tag {
+    margin-right: 5px;
+    text-transform: uppercase;
+
+    &:hover {
+      border-color: $secondary;
+    }
+  }
+}
