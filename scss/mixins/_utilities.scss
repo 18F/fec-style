@@ -383,3 +383,15 @@
 .u-fade-in {
   @include animation(fadeIn .8s ease-out);
 }
+
+// Printer style utitlity
+.u-print-only {
+  display: none;
+}
+
+@media print {
+  .u-print-only {
+    display: block;
+  }
+}
+

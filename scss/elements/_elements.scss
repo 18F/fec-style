@@ -46,3 +46,12 @@ main {
 [aria-hidden=true] {
   display: none !important;
 }
+
+// Printer settings
+@media print {
+  nav,
+  aside,
+  footer {
+    display: none;
+  }
+}

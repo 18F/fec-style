@@ -294,3 +294,13 @@
     }
   }
 }
+
+// Print styling
+@media print {
+  .card--primary,
+  .card--secondary {
+    border: 1px solid $gray;
+    background: $inverse;
+    color: $base;
+  }
+}

@@ -80,3 +80,13 @@
     }
   }
 }
+
+@media print {
+  .page-header {
+    @include clearfix();
+    display: block;
+    background: $inverse;
+    border-bottom: 1px solid $gray;
+    color: $gray-dark;
+  }
+}

@@ -138,3 +138,9 @@
   overflow-x: hidden;
   position: relative;
 }
+
+@media print {
+  .container {
+    padding: 0;
+  }
+}

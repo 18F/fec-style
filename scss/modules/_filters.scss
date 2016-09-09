@@ -373,3 +373,9 @@ $filter-button-width: u(4.6rem);
     }
   }
 }
+
+@media print {
+  .filters {
+    display: none;
+  }
+}
