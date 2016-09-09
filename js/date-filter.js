@@ -12,26 +12,27 @@ require('jquery.inputmask/dist/inputmask/inputmask.numeric.extensions.js');
 function DateFilter(elm) {
   Filter.Filter.call(this, elm);
   this.validateInput = this.$elm.data('validate') || false;
-  this.$range = this.$elm.find('.range');
-  this.$grid = this.$elm.find('.date-range__grid');
+  this.$range = this.$elm.find('.js-date-range');
+  this.$grid = this.$elm.find('.js-date-grid');
   this.$minDate = this.$elm.find('.js-min-date');
   this.$maxDate = this.$elm.find('.js-max-date');
-  this.$minDate.inputmask('mm-dd-yyyy', {
-    oncomplete: this.validate.bind(this)
-  });
-  this.$maxDate.inputmask('mm-dd-yyyy', {
-    oncomplete: this.validate.bind(this)
-  });
   this.$submit = this.$elm.find('button');
+
+  this.$minDate.inputmask('mm/dd/yyyy', {
+    oncomplete: this.validate.bind(this)
+  });
+  this.$maxDate.inputmask('mm/dd/yyyy', {
+    oncomplete: this.validate.bind(this)
+  });
 
   this.$input.on('change', this.handleInputChange.bind(this));
   this.$elm.on('change', this.handleRadioChange.bind(this));
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
-  this.$minDate.on('click', this.handleMinDateSelect.bind(this));
-  this.$maxDate.on('click', this.handleMaxDateSelect.bind(this));
+  this.$minDate.on('focus', this.handleMinDateSelect.bind(this));
+  this.$maxDate.on('focus', this.handleMaxDateSelect.bind(this));
 
-  this.$elm.on('click', '.date-range__grid li', this.dateGridSelect.bind(this));
+  this.$elm.on('click', '.date-range__grid li', this.handleGridItemSelect.bind(this));
 
   $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
 }
@@ -39,6 +40,7 @@ function DateFilter(elm) {
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
 DateFilter.constructor = DateFilter;
 
+// TODO: Remove once date filters no longer have radios
 DateFilter.prototype.handleRadioChange = function(e) {
   var $input = $(e.target);
   if (!$input.is(':checked')) { return; }
@@ -135,12 +137,12 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
   if (opts.filterName === this.name) {
     this.maxYear = parseInt(opts.filterValue);
     this.minYear = this.maxYear - 1;
-    this.$minDate.val('01-01-' + this.minYear.toString()).change();
+    this.$minDate.val('01/01/' + this.minYear.toString()).change();
     if (this.maxYear === today.getFullYear()) {
-      today = moment(today).format('MM-DD-YYYY');
+      today = moment(today).format('MM/DD/YYYY');
       this.$maxDate.val(today).change();
     } else {
-      this.$maxDate.val('12-31-' + this.maxYear.toString()).change();
+      this.$maxDate.val('12/31/' + this.maxYear.toString()).change();
     }
     this.validate();
   }
@@ -167,9 +169,9 @@ DateFilter.prototype.setupDateGrid = function() {
 
   // get the elements of the beginning and ending dates
   $dateBegin = this.$grid.find('ul[data-year="' + minDateYear + '"] ' +
-    'li[data-month="' + minDateMonth + '"]').addClass('begin');
+    'li[data-month="' + minDateMonth + '"]');
   $dateEnd = this.$grid.find('ul[data-year="' + maxDateYear + '"] ' +
-    'li[data-month="' + maxDateMonth + '"]').addClass('end');
+    'li[data-month="' + maxDateMonth + '"]');
 
   // set the selected date range in the grid
   this.handleDateGridRange($dateBegin, $dateEnd);
@@ -249,7 +251,7 @@ DateFilter.prototype.handleMaxDateSelect = function() {
   );
 };
 
-DateFilter.prototype.dateGridSelect = function (e) {
+DateFilter.prototype.handleGridItemSelect = function(e) {
   var value = [];
   var $selectDate = $(e.target).parent();
 
@@ -263,12 +265,12 @@ DateFilter.prototype.dateGridSelect = function (e) {
   }
 
   if (!this.$grid.hasClass('is-invalid')) {
+    var $nextItem = this.$grid.hasClass('pick-min') ? this.$maxDate : this.$submit;
     this.$grid.removeClass('pick-min pick-max');
     this.$grid.find('li').unbind('mouseenter mouseleave');
-
     this.setValue(value);
-
     this.$grid.addClass('is-invalid');
+    $nextItem.focus();
   }
 };
 
