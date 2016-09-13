@@ -46,6 +46,10 @@
 .glossary__definition {
   font-family: $sans-serif;
   letter-spacing: -.3px;
+
+  p, li {
+    font-size: u(1.4rem);
+  }
 }
 
 .glossary__toggle {
