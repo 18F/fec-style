@@ -246,9 +246,7 @@
     background-position: right 50% top 50%;
     padding: u(1.25rem 1.5rem);
     margin-left: u(.25rem);
-    right: 0;
-    bottom: 0;
-    position: absolute;
+    vertical-align: bottom;
 
     &.is-loading {
       background-image: url('../img/loading-ellipsis-gray.gif');
