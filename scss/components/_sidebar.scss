@@ -12,7 +12,7 @@
 // <aside class="sidebar {{modifier_class}}">
 //  <h4 class="sidebar__title">Sidebar title</h4>
 //  <div class="sidebar__content">
-//  <h2>Legal Resources</h2>
+//  <h5>Legal Resources</h5>
 //  <ul>
 //    <li><a href="#">102.2(a) »</a></li>
 //    <li><a href="#">102.7(a), (b), (c) »</a></li>
@@ -38,6 +38,15 @@
 
 .sidebar {
   font-family: $sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $sans-serif;
+  }
 
   &.is-fixed {
     position: fixed;
