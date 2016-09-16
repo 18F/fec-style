@@ -255,6 +255,11 @@ DateFilter.prototype.handleGridItemSelect = function(e) {
   var value = [];
   var $selectDate = $(e.target).parent();
 
+  // if user clicks outside of border radius within the date box
+  if ($(e.target).hasClass('selected')) {
+    $selectDate = $(e.target);
+  }
+
   if (this.$grid.hasClass('pick-min')) {
     value[0] = $selectDate.data('month') + '/01/' + $selectDate.parent().attr('data-year');
     value[1] = this.$maxDate.val();
