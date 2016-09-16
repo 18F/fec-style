@@ -254,20 +254,20 @@ DateFilter.prototype.handleMaxDateSelect = function() {
 DateFilter.prototype.handleGridItemSelect = function(e) {
   var value = [];
   var $selectDate = $(e.target).parent();
-  var $selectDateMonth = $selectDate.data('month');
-  var $selectDateYear = $selectDate.parent().attr('data-year');
+  var selectDateMonth = $selectDate.data('month');
+  var selectDateYear = $selectDate.parent().attr('data-year');
 
   if (this.$grid.hasClass('pick-min')) {
-    value[0] = $selectDateMonth + '/01/' + $selectDateYear;
+    value[0] = selectDateMonth + '/01/' + selectDateYear;
     value[1] = this.$maxDate.val();
   }
   else {
     // calculate last day of month for end date
-    var lastDay = new Date($selectDateYear, $selectDateMonth, 0);
+    var lastDay = new Date(selectDateYear, selectDateMonth, 0);
     lastDay = lastDay.getDate();
 
     value[0] = this.$minDate.val();
-    value[1] = $selectDateMonth + '/' + lastDay +'/' + $selectDateYear;
+    value[1] = selectDateMonth + '/' + lastDay +'/' + selectDateYear;
   }
 
   if (!this.$grid.hasClass('is-invalid')) {
