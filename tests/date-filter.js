@@ -104,10 +104,10 @@ describe('date filter', function() {
   it('pulls values from query', function() {
     this.filter.fromQuery({
       min_date: '01/01/2015',
-      max_date: '01/01/2016'
+      max_date: '01/31/2016'
     });
     expect(this.filter.$elm.find('[name="min_date"]').val()).to.equal('01/01/2015');
-    expect(this.filter.$elm.find('[name="max_date"]').val()).to.equal('01/01/2016');
+    expect(this.filter.$elm.find('[name="max_date"]').val()).to.equal('01/31/2016');
   });
 
   describe('handleInputChange()', function() {
@@ -154,7 +154,7 @@ describe('date filter', function() {
     });
   });
 
-  describe('handleModifiyEvent()', function() {
+  describe('handleModifyEvent()', function() {
     beforeEach(function() {
       var today = new Date();
       this.today = moment(today).format('MM/DD/YYYY');
@@ -322,7 +322,7 @@ describe('date filter', function() {
       this.filter.$grid.addClass('pick-max');
       this.filter.handleGridItemSelect({target: this.target});
       expect(this.filter.$minDate.val()).to.equal('01/01/2013');
-      expect(this.filter.$maxDate.val()).to.equal('09/01/2014');
+      expect(this.filter.$maxDate.val()).to.equal('09/30/2014');
     });
 
     it('focuses on the max input after selecting a min', function() {
