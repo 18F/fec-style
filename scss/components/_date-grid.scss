@@ -36,13 +36,14 @@
 
 .date-range__year {
   line-height: u(3rem);
+  padding-right: u(1rem);
   float: left;
   clear: both;
 }
 
 .date-range__months {
-  width: 220px;
-  float: right;
+  width: 215px;
+  float: left;
 
   li {
     width: 35px;
