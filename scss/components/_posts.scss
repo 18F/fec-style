@@ -30,3 +30,29 @@
     }
   }
 }
+
+// Special press release styling
+// .press_release_content is an inheritied class from the scraped content
+// A lot of the scraped content contains tables or other weird things
+// So this allows us to target just that
+
+.body-blocks .press_release_content {
+  table {
+    border-width: 0;
+    font-family: $serif;
+    color: $base;
+  }
+
+  tr {
+    border: none;
+  }
+
+  td {
+    padding: 0;
+  }
+
+  ul {
+    @extend .list--bulleted;
+  }
+
+}
