@@ -17,7 +17,11 @@
 // Styleguide components.side-nav
 
 .side-nav {
-  display: none;
+  margin-bottom: 2rem; // For small screens
+
+  .is-stuck & {
+    display: none;
+  }
 }
 
 .side-nav__item {
@@ -60,6 +64,10 @@
 
 @include media($med) {
   .side-nav {
-    display: block;
+    margin-bottom: 0;
+
+    .is-stuck & {
+      display: block;
+    }
   }
 }
