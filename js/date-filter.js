@@ -25,8 +25,13 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
+  if (this.$minDate.attr('data-min-date')) {
+    this.$minDate.val(this.$minDate.data('min-date')).change();
+    this.$maxDate.val(this.$maxDate.data('max-date')).change();
+  }
+
   this.$input.on('change', this.handleInputChange.bind(this));
-  this.$elm.on('change', this.handleRadioChange.bind(this));
+
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
   this.$minDate.on('focus', this.handleMinDateSelect.bind(this));
@@ -39,16 +44,6 @@ function DateFilter(elm) {
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
 DateFilter.constructor = DateFilter;
-
-// TODO: Remove once date filters no longer have radios
-DateFilter.prototype.handleRadioChange = function(e) {
-  var $input = $(e.target);
-  if (!$input.is(':checked')) { return; }
-  if ($input.attr('data-min-date')) {
-    this.$minDate.val($input.data('min-date')).change();
-    this.$maxDate.val($input.data('max-date')).change();
-  }
-};
 
 DateFilter.prototype.handleInputChange = function(e) {
   var $input = $(e.target);
