@@ -2,37 +2,19 @@
 //
 // These are styles specifically for content output by the CMS
 
-.rich-text {
- ul:not(.list--checks) {
-  li {
-    font-size: u(1.6rem);
-  }
-
+.rich-text,
+.body-blocks {
   ul {
-    margin-bottom: u(1rem);
-
-    li {
-      list-style-type: disc;
-      margin-left: u(2rem);
-      padding: u(0 0 .5rem 0);
-      margin-bottom: 0;
-
-      // Hack because the editor is putting all text in <p>s
-      p {
-        margin-bottom: 0;
-      }
-    }
-  }
- }
+    @extend .list--bulleted;
+   }
 
   ol {
-    li {
-      list-style-type: decimal;
-      margin: 0;
-      padding-left: u(1rem);
-    }
+    @extend .list--numbered;
   }
+}
 
+.rich-text,
+.block-table {
   table {
     @extend .simple-table;
   }
@@ -51,7 +33,8 @@
 }
 
 @media print {
-  .rich-text table {
+  .rich-text table,
+  .block-table table {
     page-break-inside: avoid;
   }
 }

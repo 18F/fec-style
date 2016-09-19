@@ -2,10 +2,11 @@
 //
 // These are classes to be applied to lists to give them particular styles
 //
-// .list--bulleted  - Bulleted list (for ul)
-// .list--numbered  - Numbered list (for ol)
-// .list--flat      - Lay out items horizontally
-// .list--spacious  - Adds padding above and below list items
+// .list--bulleted      - Bulleted list (for ul)
+// .list--bulleted--alt - Bulleted list where child lists don't have bullets
+// .list--numbered      - Numbered list (for ol)
+// .list--flat          - Lay out items horizontally
+// .list--spacious      - Adds padding above and below list items
 //
 // Markup:
 // <ul class="{{modifier_class}}">
@@ -17,9 +18,9 @@
 // Styleguide components.list-styles
 
 .list--numbered,
-.list--bulleted {
+.list--bulleted,
+.list--bulleted--alt {
   li {
-    list-style-type: disc;
     margin-left: u(2rem);
     padding: u(.5rem 0);
     font-size: u(1.6rem);
@@ -33,6 +34,16 @@
 .list--bulleted {
   li {
     list-style-type: disc;
+  }
+}
+
+.list--bulleted--alt {
+  & > li {
+    list-style-type: disc;
+  }
+
+  ul li {
+    list-style-type: none;
   }
 }
 
