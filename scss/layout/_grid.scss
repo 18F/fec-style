@@ -20,12 +20,24 @@
 //   <div class="grid__item">
 //     Grid item
 //   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
+//   <div class="grid__item">
+//     Grid item
+//   </div>
 // </div>
 //
 // Styleguide layout.grids
 
 .grid {
-  @include clearfix();
+  @include outer-container;
 }
 
 .grid__item {
@@ -34,16 +46,17 @@
 }
 
 // BREAKPOINT: MEDIUM
-@include media($med) {
+// We set a max-width to prevent the omega mixins from applying multiple times.
+// This is based on $large-screen, but we have to convert to px so that we can
+// subtract a pixel. Otherwise, the breakpoints will overlap at 860px (the
+// large breakpoint).
+@include media(min-width $medium-screen max-width (strip-units($large-screen) * $em-base - 1)) {
   .grid--2-wide,
   .grid--3-wide,
   .grid--4-wide {
     .grid__item {
       @include span-columns(6);
-
-      &:nth-child(2) {
-        margin-right: 0;
-      }
+      @include omega(2n);
     }
   }
 
@@ -54,29 +67,24 @@
 
 // BREAKPOINT: LARGE
 @include media($lg) {
+  .grid--2-wide {
+    .grid__item {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+
   .grid--3-wide {
     .grid__item {
       @include span-columns(4);
-      margin-bottom: 0;
-
-      &:nth-child(2) {
-        margin-right: flex-gutter();
-      }
-
-      &:nth-child(3) {
-        margin-right: 0;
-      }
+      @include omega(3n);
     }
   }
 
   .grid--4-wide {
     .grid__item {
       @include span-columns(3);
-      margin-bottom: 0;
-
-      &:nth-child(2) {
-        margin-right: flex-gutter();
-      }
+      @include omega(4n);
     }
   }
 }
