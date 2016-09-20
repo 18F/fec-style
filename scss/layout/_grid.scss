@@ -65,18 +65,15 @@
   }
 }
 
-// BREAKPOINT: MEDIUM
-@include media($med) {
+// BREAKPOINT: LARGE
+@include media($lg) {
   .grid--2-wide {
     .grid__item {
       @include span-columns(6);
       @include omega(2n);
     }
   }
-}
 
-// BREAKPOINT: LARGE
-@include media($lg) {
   .grid--3-wide {
     .grid__item {
       @include span-columns(4);
