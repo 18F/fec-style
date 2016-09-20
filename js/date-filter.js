@@ -25,11 +25,6 @@ function DateFilter(elm) {
     oncomplete: this.validate.bind(this)
   });
 
-  if (this.$minDate.attr('data-min-date')) {
-    this.$minDate.val(this.$minDate.data('min-date')).change();
-    this.$maxDate.val(this.$maxDate.data('max-date')).change();
-  }
-
   this.$input.on('change', this.handleInputChange.bind(this));
 
   this.fields = ['min_' + this.name, 'max_' + this.name];
