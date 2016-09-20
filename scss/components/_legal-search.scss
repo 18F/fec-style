@@ -80,3 +80,22 @@
     margin-left: u(1rem);
   }
 }
+
+.legal-top {
+  font-family: $sans-serif;
+  border-bottom: none;
+
+  &::before {
+    @include u-icon-bg($arrow-up-circle, $gray);
+    content: '';
+    display: inline-block;
+    height: 2rem;
+    margin-right: 0.5rem;
+    vertical-align: top;
+    width: 2rem;
+  }
+
+  @include media($med) {
+    display: none;
+  }
+}
