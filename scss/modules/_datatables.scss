@@ -115,8 +115,13 @@
     background-color: $inverse;
     border-bottom: 1px solid $neutral;
 
+    &.row-color-contrast,
     &:nth-child(even) {
       background-color: rgba($gray-lightest, .5);
+    }
+
+    &.row-color-normal {
+      background-color: $inverse;
     }
 
     &.row-active {

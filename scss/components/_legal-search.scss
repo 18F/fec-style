@@ -45,14 +45,57 @@
   }
 }
 
-.legal-mur__archive {
-  font-size: u(1.3rem);
-  margin-top: u(0.8rem);
+.legal-mur {
+  .legal-mur__archive {
+    font-family: $sans-serif;
+    font-size: u(1.3rem);
+    margin: u(0.8rem 0 1.5rem);
 
-  .legal-mur__archive-icon {
-    @include u-icon($file-box, $base, 1.5rem, 1.5rem, 100%);
+    .legal-search-result & {
+      margin-bottom: 0;
+    }
+
+    .legal-mur__archive-icon {
+      @include u-icon($file-box, $base, 1.5rem, 1.5rem, 100%);
+      display: inline-block;
+      margin-right: u(0.7rem);
+      vertical-align: top;
+    }
+  }
+
+  .legal-mur__document-button {
+    margin-right: u(1.5rem);
+  }
+
+  .legal-mur__property {
+    margin-bottom: u(1rem);
+  }
+
+  .legal-mur__subject-list {
+    list-style: disc;
+    margin-left: u(2rem);
+  }
+
+  .legal-mur__subject-list-item {
+    margin-left: u(1rem);
+  }
+}
+
+.legal-top {
+  font-family: $sans-serif;
+  border-bottom: none;
+
+  &::before {
+    @include u-icon-bg($arrow-up-circle, $gray);
+    content: '';
     display: inline-block;
-    margin-right: u(0.7rem);
+    height: 2rem;
+    margin-right: 0.5rem;
     vertical-align: top;
+    width: 2rem;
+  }
+
+  @include media($med) {
+    display: none;
   }
 }
