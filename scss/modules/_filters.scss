@@ -104,6 +104,7 @@ $filter-button-width: u(4.6rem);
       &::after {
         @include u-icon-bg($x, $error);
         background-position: 50%;
+        right: u(-3rem);
       }
     }
   }
