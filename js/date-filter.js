@@ -45,8 +45,15 @@ DateFilter.prototype.handleInputChange = function(e) {
   var value = $input.val();
   var loadedOnce = $input.data('loaded-once') || false;
   var range = $input.data('range') || false;
+  var nonremovable = true;
   var rangename = 'date';
   var eventName;
+
+  // on dates that aren't tied to two-year transactional periods
+  // tags should be removable
+  if ($input.data('removable')) {
+    nonremovable = false;
+  }
 
   if ($input.data('had-value') && value.length > 0) {
     eventName = 'filter:renamed';
@@ -72,7 +79,7 @@ DateFilter.prototype.handleInputChange = function(e) {
       range: range,
       rangeName: rangename,
       name: this.name,
-      nonremovable: true
+      nonremovable: nonremovable
     }
   ]);
 
