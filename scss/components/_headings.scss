@@ -1,8 +1,8 @@
 // Headings
 //
 // Contain the title, date select and action button.
-// .heading--main       - When the heading is the top-level heading on a page. Provides extra margin-bottom
-// .heading--section    - When the heading is just a heading of a section on a page. Less margin-bottom
+// Use .heading--main when the heading is the top-level heading on a page as it provides extra margin-bottom
+// Use .heading--section When the heading is just a heading of a section on a page for less margin-bottom
 //
 // Markup:
 // <div class="heading--main">
@@ -49,14 +49,14 @@
   text-transform: uppercase;
 }
 
-// With action
+// Headings with actions
 //
 // When the heading title includes an action, add this class to one of the base classes.
 // Set line height to the height of the buttons or selects in the heading
 // Use .heading__left and .heading__right to float elements at $med breakpoints
 //
 // Markup:
-// <div class="heading--with-action">
+// <div class="heading--section heading--with-action">
 //  <h2 class="heading__left">A heading with an action</h2>
 //  <div class="heading__right">
 //    <ul class="list--buttons">
@@ -65,8 +65,7 @@
 //    </ul>
 //  </div>
 //
-// Styleguide modules.section-headings.1
-//
+// Styleguide components.headings-with-action.1
 
 .heading--with-action {
   h1,
@@ -76,9 +75,6 @@
     line-height: u(3.4rem);
   }
 }
-
-// BREAKPOINT: MEDIUM
-// Float the action button to the right
 
 @include media($med) {
   .heading__left {
