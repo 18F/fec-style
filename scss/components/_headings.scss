@@ -30,9 +30,16 @@
 }
 
 // Has extra margin
+// h1 breaks onto multiple lines if it's long on large screens
 .heading--main {
   @extend %heading;
   margin-bottom: u(3rem);
+
+  @include media($lg) {
+    h1 {
+      max-width: 75%;
+    }
+  }
 }
 
 // Has smaller margin
@@ -74,14 +81,44 @@
   h4 {
     line-height: u(3.4rem);
   }
+
+  @include media($med) {
+    .heading__left {
+      float: left;
+    }
+
+    .heading__right {
+      float: right;
+    }
+  }
 }
 
-@include media($med) {
-  .heading__left {
-    float: left;
-  }
+// Headings with dates
+//
+// Add this class when a heading includes a date on the right side, as with Press Releases
+//
+// Markup:
+// <div class="heading--main heading--with-date">
+//   <h1 class="heading__left">Press release</h1>
+//   <div class="heading__right">
+//     <span class="t-sans">September 14, 2016</span>
+//   </div>
+// </div>
+//
+// Styleguide components.headings-with-date.2
 
-  .heading__right {
-    float: right;
+.heading--with-date {
+  @include media($med) {
+    .heading__left {
+      display: inline-block;
+      max-width: 75%;
+      width: 75%;
+    }
+
+    .heading__right {
+      display: inline-block;
+      text-align: right;
+      width: 25%;
+    }
   }
 }
