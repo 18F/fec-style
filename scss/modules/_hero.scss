@@ -9,10 +9,8 @@
 // Markup:
 // <section class="hero {{modifier_class}}">
 //  <div class="container">
-//    <h1 class="t-display">Explore campaign finance data</h1>
-//    <h2 class="t-ruled">See how money is raised and spent in federal elections</h2>
-//    <div class="hero__content">
-//      <a class="hero__action hero__down">Centered call out component</a>
+//    <div class="heading">
+//      <h1 class="t-display">Explore campaign finance data</h1>
 //    </div>
 //    </div>
 //  </div>
@@ -23,6 +21,11 @@
 .hero {
   padding-bottom: u(2rem);
   text-align: left;
+
+  .heading {
+    border-bottom-color: $inverse;
+    padding-top: u(3rem);
+  }
 }
 
 .hero--primary {
@@ -45,10 +48,6 @@
   background-size: cover;
   height: u(3rem);
   width: 100%;
-}
-
-.hero__title {
-  margin: u(2rem) 0 0 0;
 }
 
 .hero--data {

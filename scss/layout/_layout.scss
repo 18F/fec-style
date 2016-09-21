@@ -45,8 +45,8 @@
   position: relative;
 
   @include media($lg) {
-    padding-top: u(4rem);
-    padding-bottom: u(4rem);
+    padding-top: u(3rem);
+    padding-bottom: u(3rem);
   }
 }
 
@@ -71,11 +71,6 @@
   @include media($med) {
     @include span-columns(9);
   }
-}
-
-.main__title {
-  border-bottom: 2px solid $primary;
-  margin-bottom: u(3rem);
 }
 
 .main__content--full {

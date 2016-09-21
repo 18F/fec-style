@@ -1,0 +1,91 @@
+// Headings
+//
+// Contain the title, date select and action button.
+// .heading--main       - When the heading is the top-level heading on a page. Provides extra margin-bottom
+// .heading--section    - When the heading is just a heading of a section on a page. Less margin-bottom
+//
+// Markup:
+// <div class="heading--main">
+//   <h1>Page heading</h1>
+// </div>
+// <div class="heading--section">
+//  <h2>Section heading</h2>
+//   <span class="heading__subtitle">Heading subtitle</span>
+// </div>
+//
+// Styleguide components.headings.0
+
+// %heading is a placeholder selector that provides base styles extended by the base classes
+%heading {
+  @include clearfix();
+  border-bottom: 2px solid $base;
+  padding-bottom: u(1rem);
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+}
+
+// Has extra margin
+.heading--main {
+  @extend .heading;
+  margin-bottom: u(3rem);
+}
+
+// Has smaller margin
+.heading--section {
+  @extend .heading;
+  margin-bottom: u(1rem);
+}
+
+.heading__subtitle {
+  font-family: $sans-serif;
+  font-weight: bold;
+  letter-spacing: -.3px;
+  margin-bottom: u(1rem);
+  text-transform: uppercase;
+}
+
+// With action
+//
+// When the heading title includes an action, add this class to one of the base classes.
+// Set line height to the height of the buttons or selects in the heading
+// Use .heading__left and .heading__right to float elements at $med breakpoints
+//
+// Markup:
+// <div class="heading--with-action">
+//  <h2 class="heading__left">A heading with an action</h2>
+//  <div class="heading__right">
+//    <ul class="list--buttons">
+//      <li><a class="button button--standard button--table" href="#">Explore data</a></li>
+//      <li><button class="button button--standard button--share">Share</button></li>
+//    </ul>
+//  </div>
+//
+// Styleguide modules.section-headings.1
+//
+
+.heading--with-action {
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: u(3.4rem);
+  }
+}
+
+// BREAKPOINT: MEDIUM
+// Float the action button to the right
+
+@include media($med) {
+  .heading__left {
+    float: left;
+  }
+
+  .heading__right {
+    float: right;
+  }
+}

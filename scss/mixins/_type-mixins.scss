@@ -4,7 +4,6 @@
   margin: 0 0 1em 0;
 
   @if $level == display {
-    border-bottom: 0;
     font-family: $serif;
     font-size: u(3.6rem);
     font-weight: bold;
@@ -18,15 +17,15 @@
   }
 
   @if $level == h1 {
-    border-bottom: 2px solid $base;
     font-family: $serif;
     font-size: u(2.4rem);
     font-weight: bold;
     line-height: 1.15;
+    margin: 0;
 
     @include media($med) {
-      font-size: u(3rem);
-      line-height: 1.5;
+      font-size: u(3.6rem);
+      line-height: 1.2;
     }
   }
 
@@ -52,9 +51,9 @@
     font-family: $sans-serif;
     font-size: u(1.8rem);
     font-weight: normal;
-    margin: u(2rem 0 .5rem 0);
     line-height: 1.2;
     letter-spacing: -.3px;
+    margin: 0;
   }
 
   @if $level == h5 {
