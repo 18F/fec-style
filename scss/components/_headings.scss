@@ -31,13 +31,13 @@
 
 // Has extra margin
 .heading--main {
-  @extend .heading;
+  @extend %heading;
   margin-bottom: u(3rem);
 }
 
 // Has smaller margin
 .heading--section {
-  @extend .heading;
+  @extend %heading;
   margin-bottom: u(1rem);
 }
 
