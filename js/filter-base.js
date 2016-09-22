@@ -140,3 +140,10 @@ Filter.prototype.enable = function() {
   });
   this.isEnabled = true;
 };
+
+module.exports = {
+  Filter: Filter,
+  ensureArray: ensureArray,
+  prepareValue: prepareValue
+};
+
