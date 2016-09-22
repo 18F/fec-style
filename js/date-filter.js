@@ -53,6 +53,7 @@ DateFilter.prototype.handleInputChange = function(e) {
   // tags should be removable
   if ($input.data('removable')) {
     nonremovable = false;
+    $input.data('loaded-once', true);
   }
 
   if ($input.data('had-value') && value.length > 0) {
