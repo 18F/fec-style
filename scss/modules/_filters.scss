@@ -65,6 +65,7 @@ $filter-button-width: u(4.6rem);
 
   // Loading states
   label {
+    position: relative;
 
     &::after {
       background: transparent;
@@ -224,6 +225,7 @@ $filter-button-width: u(4.6rem);
   }
 
   label {
+    max-width: 90%;
     line-height: 1;
   }
 
