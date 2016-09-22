@@ -18,6 +18,7 @@ function prepareValue($elm, value) {
 function Filter(elm) {
   this.$elm = $(elm);
   this.$input = this.$elm.find('input:not([name^="_"])');
+  this.$label = this.$elm.find('label').attr('for');
   this.$filterLabel = this.$elm.closest('.accordion__content').prev();
 
   // on error message, click to open feedback panel
@@ -26,6 +27,13 @@ function Filter(elm) {
   });
 
   this.name = this.$elm.data('name') || this.$input.attr('name');
+
+  // when there are multiple filters with the same name
+  // set the name to label to avoid inflated filter counts
+  if (this.$elm.hasClass('js-multi-filter')) {
+    this.name = this.$label;
+  }
+
   this.fields = [this.name];
   this.lastAction;
 
@@ -132,30 +140,3 @@ Filter.prototype.enable = function() {
   });
   this.isEnabled = true;
 };
-
-/* MultiFilters used when there are multiple filters that share the
- * same name attribute
-*/
-
-function MultiFilter(elm) {
-  Filter.call(this, elm);
-  this.$group = $(this.$elm.data('filter-group'));
-  this.$input = this.$group.find('input[name=' + this.name + ']');
-}
-
-MultiFilter.prototype = Object.create(Filter.prototype);
-MultiFilter.constructor = MultiFilter;
-
-// This is a temporary override for the calendar filters to not show filter count
-// Because this filter has multiple inputs with the same name,
-// the filter count gets updated for each one,
-// resulting in inflated numbers.
-MultiFilter.prototype.handleAddEvent = function() { return; };
-
-module.exports = {
-  Filter: Filter,
-  MultiFilter: MultiFilter,
-  ensureArray: ensureArray,
-  prepareValue: prepareValue
-};
-
