@@ -17,6 +17,36 @@
 //
 // Styleguide modules.footer
 
+.container {
+  border: 1px solid red;
+}
+
+.footer-links {
+  background-color: $navy;
+  color: $inverse;
+  font-size: u(1.6rem);
+  padding: u(1rem 0);
+
+  a {
+    border-bottom-color: $inverse;
+    color: $inverse;
+  }
+
+  .footer-links__column {
+    @include span-columns(6);
+    float: right;
+
+    ul {
+      @include span-columns(3 of 6);
+      display: block;
+    }
+
+    li {
+      padding: u(.5rem);
+    }
+  }
+}
+
 .footer {
   @include u-bg--primary();
   @include u-font-color($neutral);
@@ -35,12 +65,11 @@
 
   @include media($med) {
     .seal {
-      @include span-columns(6);
+      @include span-columns(9);
     }
 
     .address {
-      @include span-columns(6);
-      text-align: right;
+      @include span-columns(3);
     }
   }
 }
