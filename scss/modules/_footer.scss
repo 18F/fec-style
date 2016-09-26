@@ -17,14 +17,9 @@
 //
 // Styleguide modules.footer
 
-.container {
-  border: 1px solid red;
-}
-
 .footer-links {
   background-color: $navy;
   color: $inverse;
-  font-size: u(1.6rem);
   padding: u(1rem 0);
 
   a {
@@ -38,11 +33,13 @@
 
     ul {
       @include span-columns(3 of 6);
+      padding: u(1rem 0);
       display: block;
     }
 
     li {
-      padding: u(.5rem);
+      font-size: u(1.6rem);
+      padding: u(.5rem 0);
     }
   }
 }
