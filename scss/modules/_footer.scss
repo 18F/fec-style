@@ -27,19 +27,25 @@
     color: $inverse;
   }
 
-  .footer-links__column {
-    @include span-columns(6);
-    float: right;
+  .footer-links__column li {
+    font-size: u(1.8rem);
+  }
 
-    ul {
-      @include span-columns(3 of 6);
-      padding: u(1rem 0);
-      display: block;
-    }
+  @include media($med) {
+    .footer-links__column {
+      @include span-columns(6);
+      float: right;
 
-    li {
-      font-size: u(1.6rem);
-      padding: u(.5rem 0);
+      ul {
+        @include span-columns(3 of 6);
+        padding: u(1rem 0);
+        display: block;
+      }
+
+      li {
+        font-size: u(1.6rem);
+        padding: u(.5rem 0);
+      }
     }
   }
 }
