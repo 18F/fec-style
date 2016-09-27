@@ -66,6 +66,34 @@
     margin-top: u(2rem);
   }
 
+  .social-media {
+    margin-bottom: u(2rem);
+
+    .icon--twitter {
+      @include u-icon($twitter-circle, $inverse, 3rem, 3rem, contain);
+    }
+
+    .icon--facebook {
+      @include u-icon($facebook-circle, $inverse, 3rem, 3rem, contain);
+    }
+
+    .icon--youtube {
+      @include u-icon($youtube-circle, $inverse, 3rem, 3rem, contain);
+    }
+
+    li {
+      margin-right: u(1.5rem);
+      display: inline-block;
+    }
+
+    a {
+      width: inherit;
+      height: inherit;
+      border: none;
+      display: block;
+    }
+  }
+
   @include media($med) {
     .seal {
       @include span-columns(9);
