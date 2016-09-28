@@ -17,6 +17,39 @@
 //
 // Styleguide modules.footer
 
+.footer-links {
+  background-color: $navy;
+  color: $inverse;
+  padding: u(1rem 0);
+
+  a {
+    border-bottom-color: $inverse;
+    color: $inverse;
+  }
+
+  .footer-links__column li {
+    font-size: u(1.8rem);
+  }
+
+  @include media($med) {
+    .footer-links__column {
+      @include span-columns(6);
+      float: right;
+
+      ul {
+        @include span-columns(3 of 6);
+        padding: u(1rem 0);
+        display: block;
+      }
+
+      li {
+        font-size: u(1.6rem);
+        padding: u(.5rem 0);
+      }
+    }
+  }
+}
+
 .footer {
   @include u-bg--primary();
   @include u-font-color($neutral);
@@ -27,20 +60,37 @@
     font-weight: bold;
   }
 
-  .address__subtitle {
-    font-size: u(1.8rem);
-    font-weight: bold;
-    margin-top: u(2rem);
+  .social-media {
+    margin-bottom: u(2rem);
+
+    .icon--twitter {
+      @include u-icon($twitter-circle, $inverse, 3rem, 3rem, contain);
+    }
+
+    .icon--youtube {
+      @include u-icon($youtube-circle, $inverse, 3rem, 3rem, contain);
+    }
+
+    li {
+      margin-right: u(1.5rem);
+      display: inline-block;
+    }
+
+    a {
+      width: inherit;
+      height: inherit;
+      border: none;
+      display: block;
+    }
   }
 
   @include media($med) {
     .seal {
-      @include span-columns(6);
+      @include span-columns(9);
     }
 
     .address {
-      @include span-columns(6);
-      text-align: right;
+      @include span-columns(3);
     }
   }
 }
@@ -48,6 +98,7 @@
 .seal__img {
   max-width: 140px;
   height: auto;
+  margin-bottom: u(2.5rem);
 }
 
 // Beta content disclaimer on CMS pages
