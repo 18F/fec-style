@@ -1,12 +1,17 @@
 // Latest update posts
 
 .post-feed {
+  border-top: 1px solid $gray;
   padding: u(1rem 0 1rem 2rem);
 }
 
 .post {
   border-bottom: 1px solid $gray-light;
   padding: u(2rem 0);
+
+  &:last-of-type {
+    margin-bottom: u(2rem);
+  }
 
   h3 {
     margin-bottom: u(1rem);
