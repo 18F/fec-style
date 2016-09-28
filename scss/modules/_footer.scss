@@ -73,10 +73,6 @@
       @include u-icon($twitter-circle, $inverse, 3rem, 3rem, contain);
     }
 
-    .icon--facebook {
-      @include u-icon($facebook-circle, $inverse, 3rem, 3rem, contain);
-    }
-
     .icon--youtube {
       @include u-icon($youtube-circle, $inverse, 3rem, 3rem, contain);
     }
