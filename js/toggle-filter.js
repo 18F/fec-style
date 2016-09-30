@@ -20,12 +20,12 @@ ToggleFilter.prototype.fromQuery = function(query) {
 };
 
 ToggleFilter.prototype.handleChange = function(e) {
-  var value = $(e.target).val();
+  var value = $(e.target).data('tag-value');
   var eventName = this.loadedOnce ? 'filter:renamed' : 'filter:added';
   this.$elm.trigger(eventName, [
     {
       key: this.name + '-toggle',
-      value: 'Data type: ' + value,
+      value: value,
       loadedOnce: this.loadedOnce || false,
       name: this.name,
       nonremovable: true
