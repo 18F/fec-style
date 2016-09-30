@@ -2,21 +2,81 @@
 //
 // Banners and alerts
 //
-// .message--no-icon  - No icon
-// .message--success  - Success message
-// .message--error    - Error message
-// .message--alert    - Alert message
-// .message--info     - Info messages
-//
 // Markup:
-// <div class="message {{ modifier_class }}">
+// <div class="kss-modifier__name kss-style">
+//    <pre>.message--no-icon</pre>
+// </div>
+// <div class="kss-modifier__description kss-style">
+//    Results message. Communicates information about search results that don't return data.
+// </div>
+// <div class="message message--no-icon">
 //   <h2 class="message__title">No results</h2>
-//   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
-//   <p>For complete data, search the <a href="http://www.fec.gov/finance/disclosure/candcmte_info.shtml">FEC Candidate and Committee Viewer</a>.</p>
+//   <p>Sorry, we didn't find any financial data for <strong>Committee Name</strong> in the <strong>2007–2012</strong> election cycle.</p>
 //   <div class="message--alert__bottom">
-//       <p>Is this information incorrect? Let us know.</p>
-//       <a class="button button--standard" href="mailto:{{ contact_email }}">Contact support <i class="ti-email"></i></a>
+//       <p>Is this information incorrect? Please let us know.</p>
+//       <ul class="list--buttons">
+//         <li><a class="button button--standard" href="#">File an issue</a></li>
+//         <li><a class="button button--standard" href="#">Email our team</a></li>
+//       </ul>
 //   </div>
+// </div>
+// <div class="kss-modifier__name kss-style">
+//    <pre>.message--success</pre>
+// </div>
+// <div class="kss-modifier__description kss-style">
+//    Success message. The user has taken an action that successfully completes. Always help them find what to do next, including confirming their previous action.
+// </div>
+// <div class="message message--success">
+//   <h2 class="message__title">Thanks for helping us improve</h2>
+//   <p>This information has been reported on GitHub, where it's publicly visible.</p>
+//   <div class="message--alert__bottom">
+//       <ul class="list--buttons">
+//         <li><a class="button button--standard" href="#">Track your feedback</a></li>
+//         <li><a class="button button--standard" href="#">Submit another issue</a></li>
+//       </ul>
+//   </div>
+// </div>
+// <div class="kss-modifier__name kss-style">
+//    <pre>.message--error</pre>
+// </div>
+// <div class="kss-modifier__description kss-style">
+//    Error message. The user has taken an action that the system cannot accept. Always offer guidance to correcting their action.
+// </div>
+// <div class="message message--error">
+//   <h2 class="message__title">Input required</h2>
+//   <p>Please fill out at least one field.</p>
+//   <div class="message--alert__bottom">
+//       <ul class="list--buttons">
+//         <li><a class="button button--standard" href="#">Try again</a></li>
+//       </ul>
+//   </div>
+// </div>
+// <div class="kss-modifier__name kss-style">
+//    <pre>.message--alert</pre>
+// </div>
+// <div class="kss-modifier__description kss-style">
+//    Warning message. The user has reached a dead end through their navigation. Either they’ve entered a search which returns no results, or there is no data available in this entry. Offer users navigational assistance to get them back on the main trail. Be careful not to treat this like an error. It’s the site that has returned no data, not an error on the user’s part.
+// </div>
+// <div class="message message--alert">
+//   <h2 class="message__title">Oops: We messed up</h2>
+//   <p>We had trouble processing your request. Please try reloading the page.</p>
+//   <div class="message--alert__bottom">
+//       <p>Still not working?</p>
+//       <ul class="list--buttons">
+//         <li><a class="button button--cta" href="#">Return home</a></li>
+//         <li><a class="button button--standard" href="#">File an issue</a></li>
+//         <li><a class="button button--standard" href="#">Email our team</a></li>
+//       </ul>
+//   </div>
+// </div>
+// <div class="kss-modifier__name kss-style">
+//    <pre>.message--info</pre>
+// </div>
+// <div class="kss-modifier__description kss-style">
+//    Informational alert. The user needs this information, but does not need to take any action. This should be used sparingly, as it interrupts the viewing flow intentionally.
+// </div>
+// <div class="message message--info">
+//   <p>Due to the large number of transactions, records begin in 2011.</p>
 // </div>
 //
 // Styleguide components.messages
@@ -49,11 +109,6 @@
 
 .message--info {
   @include u-icon-bg($info-circle, $primary);
-}
-
-.message--no-icon {
-  padding-left: u(2rem 2rem 2rem 6rem);
-
 }
 
 .message--alert__bottom {
@@ -193,7 +248,4 @@
     padding: u(1rem 1rem 1rem 4rem);
   }
 
-  .message--no-icon {
-    padding: u(2rem);
-  }
 }
