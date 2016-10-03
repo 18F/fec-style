@@ -1,76 +1,16 @@
-// Hero
+// Heroes
 //
-// <div class="kss-description">
-//  <p>Hero units are special solid-colored slabs that have a thin image slice at the top. They are used on landing pages for top-level sections.</p>
-// </div>
-// <div class="kss-modifier__wrapper">
-//   <div class="kss-modifier__heading kss-style"
-//          Examples
-//          <button class="js-toggle-markup markup-toggle">Show markup</button>
-//   </div>
-//   <div class="kss-modifier__name kss-style">
-//     <pre>.hero--primary</pre>
-//   </div>
-//   <div class="kss-modifier__description kss-style">
-//   Hero panel for the campaign finance data section.
-//   </div>
-//   <div class="kss-modifier__example clearfix">
-//      <section class="hero hero--primary hero--data">
-//        <div class="hero__image"></div>
-//        <div class="container">
-//          <h1 id="hero-heading" class="hero__title">Campaign finance data</h1>
-//          <p class="hero__content">See how candidates and committees raise and spend money in federal elections. This financial data helps voters make informed decisions.</p>
-//        </div>
-//      </section>
-//   </div>
-//   <div class="kss-modifier__name kss-style">
-//     <pre>.hero--primary</pre>
-//   </div>
-//   <div class="kss-modifier__description kss-style">
-//   Hero panel for the legal resources section.
-//   </div>
-//   <div class="kss-modifier__example clearfix">
-//      <section class="hero hero--primary hero--legal">
-//        <div class="hero__image"></div>
-//        <div class="container">
-//          <h1 id="hero-heading" class="hero__title">Legal resources</h1>
-//          <p class="hero__content">Explore relevant statutes, regulations, Commission actions and court cases. Making these resources public clarifies campaign finance legal requirements.</p>
-//        </div>
-//      </section>
-//   </div>
-//   <div class="kss-modifier__name kss-style">
-//     <pre>.hero--secondary</pre>
-//   </div>
-//   <div class="kss-modifier__description kss-style">
-//   Hero panel for the registration and reporting section.
-//   </div>
-//   <div class="kss-modifier__example clearfix">
-//      <section class="hero hero--secondary hero--registration">
-//        <div class="hero__image"></div>
-//        <div class="container">
-//          <h1 id="hero-heading" class="hero__title">Registration and reporting</h1>
-//          <p class="hero__content">Federal candidates and political committees must register with the FEC when they reach certain thresholds. Once registered, they file regular reports about their financial activity. Learn more about these groups and the requirements that apply to them.</p>
-//        </div>
-//      </section>
-//   </div>
-//   <div class="kss-modifier__name kss-style">
-//     <pre>.hero--secondary</pre>
-//   </div>
-//   <div class="kss-modifier__description kss-style">
-//   Hero panel for the press section.
-//   </div>
-//   <div class="kss-modifier__example clearfix">
-//      <section class="hero hero--secondary hero--press">
-//        <div class="hero__image"></div>
-//        <div class="container">
-//          <h1 id="hero-heading" class="hero__title">Press</h1>
-//          <p class="hero__content">The Press Office educates reporters about Commission actions and campaign finance activity, law and regulations. The Office keeps the public up-to-date on Commission activities through press releases and a Weekly Digest.</p>
-//        </div>
-//      </section>
-//   </div>
-// </div>
+// Hero units are special solid-colored slabs that have a thin image slice at the top. They are used on landing pages for top-level sections.
 //
-// Styleguide modules.hero
+// .hero--data            - Hero panel for the campaign finance data section.
+// .hero--legal           - Hero panel for the legal resources section.
+// .hero--registration    - Hero panel for the registration and reporting section.
+// .hero--press           - Hero panel for the press section.
+//
+// Markup: heroes.hbs
+//
+// Styleguide modules.heroes
+//
 
 .hero {
   padding-bottom: u(2rem);
