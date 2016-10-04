@@ -112,16 +112,20 @@
 
 .heading--with-date {
   @include media($med) {
+    .row {
+      display: table-row;
+    }
+
     .heading__left {
-      display: inline-block;
-      max-width: 75%;
-      width: 75%;
+      display: table-cell;
+      width: 100%;
     }
 
     .heading__right {
-      display: inline-block;
+      display: table-cell;
       text-align: right;
-      width: 25%;
+      vertical-align: bottom;
+      white-space: nowrap;
     }
   }
 }
