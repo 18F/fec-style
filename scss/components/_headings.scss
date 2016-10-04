@@ -1,8 +1,8 @@
 // Headings
 //
 // Contain the title, date select and action button.
-// Use .heading--main when the heading is the top-level heading on a page as it provides extra margin-bottom
-// Use .heading--section When the heading is just a heading of a section on a page for less margin-bottom
+// Use `.heading--main` when the heading is the top-level heading on a page as it provides extra margin-bottom.
+// Use `.heading--section` When the heading is just a heading of a section on a page for less margin-bottom.
 //
 // Markup:
 // <header class="heading--main">
@@ -59,8 +59,8 @@
 // Headings with actions
 //
 // When the heading title includes an action, add this class to one of the base classes.
-// Set line height to the height of the buttons or selects in the heading
-// Use .heading__left and .heading__right to float elements at $med breakpoints
+// Set line height to the height of the buttons or selects in the heading.
+// Use `.heading__left` and `.heading__right` to float elements at `$med` breakpoints
 //
 // Markup:
 // <header class="heading--section heading--with-action">
