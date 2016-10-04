@@ -26,7 +26,7 @@ function DateFilter(elm) {
   });
 
   this.$input.on('change', this.handleInputChange.bind(this));
-  this.$elm.on('change', this.handleRadioChange.bind(this));
+
   this.fields = ['min_' + this.name, 'max_' + this.name];
 
   this.$minDate.on('focus', this.handleMinDateSelect.bind(this));
@@ -40,23 +40,21 @@ function DateFilter(elm) {
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
 DateFilter.constructor = DateFilter;
 
-// TODO: Remove once date filters no longer have radios
-DateFilter.prototype.handleRadioChange = function(e) {
-  var $input = $(e.target);
-  if (!$input.is(':checked')) { return; }
-  if ($input.attr('data-min-date')) {
-    this.$minDate.val($input.data('min-date')).change();
-    this.$maxDate.val($input.data('max-date')).change();
-  }
-};
-
 DateFilter.prototype.handleInputChange = function(e) {
   var $input = $(e.target);
   var value = $input.val();
   var loadedOnce = $input.data('loaded-once') || false;
   var range = $input.data('range') || false;
+  var nonremovable = true;
   var rangename = 'date';
   var eventName;
+
+  // on dates that aren't tied to two-year transactional periods
+  // tags should be removable
+  if ($input.data('removable')) {
+    nonremovable = false;
+    $input.data('loaded-once', true);
+  }
 
   if ($input.data('had-value') && value.length > 0) {
     eventName = 'filter:renamed';
@@ -82,7 +80,7 @@ DateFilter.prototype.handleInputChange = function(e) {
       range: range,
       rangeName: rangename,
       name: this.name,
-      nonremovable: true
+      nonremovable: nonremovable
     }
   ]);
 
@@ -289,7 +287,7 @@ DateFilter.prototype.showWarning = function() {
   if (!this.showingWarning) {
     var warning =
     '<div class="message message--error message--small">' +
-      'You entered a date that\'s outside the selected transaction period. ' +
+      'You entered a date that\'s outside the two-year time period. ' +
       'Please enter a receipt date from ' +
       '<strong>' + this.minYear + '-' + this.maxYear + '</strong>' +
     '</div>';

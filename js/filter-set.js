@@ -6,7 +6,6 @@ var URI = require('urijs');
 
 var TextFilter = require('./text-filter').TextFilter;
 var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
-var MultiFilter = require('./filter-base').MultiFilter;
 var TypeaheadFilter = require('./typeahead-filter').TypeaheadFilter;
 var SelectFilter = require('./select-filter').SelectFilter;
 var DateFilter = require('./date-filter').DateFilter;
@@ -29,7 +28,6 @@ var filterMap = {
   'date': DateFilter,
   'typeahead': TypeaheadFilter,
   'election': ElectionFilter,
-  'multi': MultiFilter,
   'select': SelectFilter,
   'toggle': ToggleFilter,
   'range': RangeFilter,
