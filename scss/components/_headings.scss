@@ -5,13 +5,13 @@
 // Use .heading--section When the heading is just a heading of a section on a page for less margin-bottom
 //
 // Markup:
-// <div class="heading--main">
+// <header class="heading--main">
 //   <h1>Page heading</h1>
-// </div>
-// <div class="heading--section">
+// </header>
+// <header class="heading--section">
 //  <h2>Section heading</h2>
-//   <span class="heading__subtitle">Heading subtitle</span>
-// </div>
+//  <span class="heading__subtitle">Heading subtitle</span>
+// </header>
 //
 // Styleguide components.headings.0
 
@@ -63,7 +63,7 @@
 // Use .heading__left and .heading__right to float elements at $med breakpoints
 //
 // Markup:
-// <div class="heading--section heading--with-action">
+// <header class="heading--section heading--with-action">
 //  <h2 class="heading__left">A heading with an action</h2>
 //  <div class="heading__right">
 //    <ul class="list--buttons">
@@ -71,6 +71,7 @@
 //      <li><button class="button button--standard button--share">Share</button></li>
 //    </ul>
 //  </div>
+// </header>
 //
 // Styleguide components.headings-with-action.1
 
@@ -98,12 +99,14 @@
 // Add this class when a heading includes a date on the right side, as with Press Releases
 //
 // Markup:
-// <div class="heading--main heading--with-date">
-//   <h1 class="heading__left">Press release</h1>
-//   <div class="heading__right">
-//     <span class="t-sans">September 14, 2016</span>
+// <header class="heading--main heading--with-date">
+//   <div class="row">
+//     <h1 class="heading__left">Press release</h1>
+//     <div class="heading__right">
+//       <span class="t-sans">September 14, 2016</span>
+//     </div>
 //   </div>
-// </div>
+// </header>
 //
 // Styleguide components.headings-with-date.2
 
