@@ -14,11 +14,11 @@ var ToggleFilter = require('../js/toggle-filter').ToggleFilter;
 var DOM = '<fieldset class="js-filter">' +
             '<legend class="label">Data type</legend>' +
             '<label for="processed">' +
-              '<input type="radio" value="processed" id="processed" checked name="data_type">' +
+              '<input type="radio" value="processed" id="processed" checked name="data_type" data-tag-value="Data type: processed">' +
               '<span>Processed data</span>' +
             '</label>' +
             '<label for="efiling">' +
-              '<input type="radio" value="efiling" id="efiling" name="data_type">' +
+              '<input type="radio" value="efiling" id="efiling" name="data_type" data-tag-value="Data type: efiling">' +
               '<span>eFilings</span>' +
             '</label>' +
           '</fieldset>';
