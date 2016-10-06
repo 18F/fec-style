@@ -387,11 +387,14 @@
 // Printer style utitlity
 .u-print-only {
   display: none;
-}
 
-@media print {
-  .u-print-only {
+  @media print {
     display: block;
   }
 }
 
+.u-no-print {
+  @media print {
+    display: none;
+  }
+}

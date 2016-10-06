@@ -44,6 +44,12 @@ $search-button-width: u(5.6rem);
   margin-top: u(1rem);
 }
 
+.combo--search--inline {
+  .combo__input {
+    border-radius: 4px 0 0 4px;
+  }
+}
+
 .combo--search--mini {
   .twitter-typeahead,
   .combo__input {
@@ -91,10 +97,6 @@ $search-button-width: u(5.6rem);
     }
   }
 
-  .search__example {
-    margin: u(1rem) 0 0 u(21rem);
-  }
-
   .combo--search--large {
     height: u(6rem);
 
@@ -125,6 +127,11 @@ $search-button-width: u(5.6rem);
     .tt-suggestion__header {
       display: none;
     }
+  }
+
+  // For aligning the example text after a select input
+  .search__example--with-select {
+    margin: u(1rem) 0 0 u(21rem);
   }
 }
 

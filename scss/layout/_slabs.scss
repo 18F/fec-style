@@ -43,6 +43,17 @@
   padding: u(4rem 0);
 }
 
+.slab--inline {
+  border-radius: 4px;
+}
+
+@include media($lg) {
+  .slab--inline .container {
+    padding-left: u(2rem);
+    padding-right: u(2rem);
+  }
+}
+
 // Reset all slab colors on print
 @media print {
   .slab,
