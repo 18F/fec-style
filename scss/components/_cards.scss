@@ -292,6 +292,11 @@
       @include u-icon-bg($training, $secondary-contrast);
       background-size: 60%;
     }
+
+    &.i-table {
+      @include u-icon-bg($table, $secondary-contrast);
+      background-size: 60%;
+    }
   }
 }
 

@@ -273,6 +273,10 @@ $filter-button-width: u(4.6rem);
   background-color: $neutral;
   margin-bottom: u(2rem);
   padding: u(2rem);
+
+  select {
+    width: 100%;
+  }
 }
 
 // BREAKPOINT: MEDIUM
@@ -376,10 +380,6 @@ $filter-button-width: u(4.6rem);
         border-right: none;
         padding-right: 0;
       }
-    }
-
-    select {
-      width: 100%;
     }
   }
 }
