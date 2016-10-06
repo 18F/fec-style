@@ -42,11 +42,6 @@ $search-button-width: u(5.6rem);
 
 .search__example {
   margin-top: u(1rem);
-
-  // For aligning the example text after a select input
-  &.search__example--with-select {
-    margin: u(1rem) 0 0 u(21rem);
-  }
 }
 
 .combo--search--inline {
@@ -132,6 +127,11 @@ $search-button-width: u(5.6rem);
     .tt-suggestion__header {
       display: none;
     }
+  }
+
+  // For aligning the example text after a select input
+  .search__example--with-select {
+    margin: u(1rem) 0 0 u(21rem);
   }
 }
 
