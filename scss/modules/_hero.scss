@@ -10,11 +10,15 @@
 // Markup: heroes.hbs
 //
 // Styleguide modules.heroes
-//
 
 .hero {
   padding-bottom: u(2rem);
   text-align: left;
+
+  h1 {
+    border-bottom: 2px solid $inverse;
+    padding: u(3rem 0 1rem 0);
+  }
 }
 
 .hero--primary {
@@ -37,10 +41,6 @@
   background-size: cover;
   height: u(3rem);
   width: 100%;
-}
-
-.hero__title {
-  margin: u(2rem) 0 0 0;
 }
 
 .hero--data {
