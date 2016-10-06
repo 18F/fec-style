@@ -80,7 +80,7 @@
   h2,
   h3,
   h4 {
-    line-height: u(3.4rem);
+    line-height: u(3.4rem); // Setting explicit value to height of the action button for vertical alignment
   }
 
   @include media($med) {
