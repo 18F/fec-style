@@ -25,6 +25,16 @@
   padding-bottom: 5px;
 }
 
+@include media($med) {
+  .post__date {
+    float: left;
+  }
+
+  .post__byline {
+    float: right;
+  }
+}
+
 .post__meta {
   .tag {
     margin-right: 5px;
