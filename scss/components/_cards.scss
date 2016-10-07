@@ -293,8 +293,13 @@
       background-size: 60%;
     }
 
-    &.i-table {
-      @include u-icon-bg($table, $secondary-contrast);
+    &.i-data-flag {
+      @include u-icon-bg($data-flag, $secondary-contrast);
+      background-size: 60%;
+    }
+
+    &.i-updates {
+      @include u-icon-bg($updates, $secondary-contrast);
       background-size: 60%;
     }
   }
