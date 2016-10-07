@@ -40,9 +40,14 @@ TextFilter.prototype.fromQuery = function(query) {
 TextFilter.prototype.handleChange = function() {
   var value = this.$input.val();
   var loadedOnce = this.$input.data('loaded-once') || false;
+  var button = this.$submit;
 
-  // set focus to button
-  this.$submit.focus();
+  // wrap the button focus with a 0 timeout
+  // to prevent change event from firing twice
+  setTimeout(function() {
+    button.focus();
+  }, 0);
+
   if (value.length > 0) {
     this.$submit.removeClass('is-disabled');
     this.appendCheckbox(value);
