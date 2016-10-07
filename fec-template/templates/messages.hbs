@@ -1,0 +1,52 @@
+<div class="message {{modifier_class}}">
+  {{#if (eq modifier_class 'message--no-icon')}}
+    <h2 class="message__title">No results</h2>
+    <p>Sorry, we didn't find any financial data for <strong>Committee Name</strong> in the <strong>2007–2012</strong> election cycle.</p>
+    <div class="message--alert__bottom">
+        <p>Is this information incorrect? Please let us know.</p>
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">File an issue</a></li>
+          <li><a class="button button--standard" href="#">Email our team</a></li>
+        </ul>
+    </div>
+  {{/if}}
+
+  {{#if (eq modifier_class 'message--success')}}
+    <h2 class="message__title">Thanks for helping us improve</h2>
+    <p>This information has been reported on GitHub, where it's publicly visible.</p>
+    <div class="message--alert__bottom">
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">Track your feedback</a></li>
+          <li><a class="button button--standard" href="#">Submit another issue</a></li>
+        </ul>
+    </div>
+  {{/if}}
+
+  {{#if (eq modifier_class 'message--error')}}
+    <h2 class="message__title">Input required</h2>
+    <p>Please fill out at least one field.</p>
+    <div class="message--alert__bottom">
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">Try again</a></li>
+        </ul>
+    </div>
+  {{/if}}
+
+  {{#if (eq modifier_class 'message--alert')}}
+    <h2 class="message__title">Oops: We messed up</h2>
+    <p>We had trouble processing your request. Please try reloading the page.</p>
+    <div class="message--alert__bottom">
+        <p>Still not working?</p>
+        <ul class="list--buttons">
+          <li><a class="button button--cta" href="#">Return home</a></li>
+          <li><a class="button button--standard" href="#">File an issue</a></li>
+          <li><a class="button button--standard" href="#">Email our team</a></li>
+        </ul>
+    </div>
+  {{/if}}
+
+  {{#if (eq modifier_class 'message--info')}}
+    <p>Due to the large number of transactions, records begin in 2011.</p>
+  {{/if}}
+
+</div>
