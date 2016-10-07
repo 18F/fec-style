@@ -45,6 +45,7 @@
 
 .slab--inline {
   border-radius: 4px;
+  margin: u(2rem 0);
 }
 
 @include media($lg) {

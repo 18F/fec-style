@@ -97,6 +97,28 @@ $search-button-width: u(5.6rem);
     }
   }
 
+  .combo--search--medium {
+    height: u(4.2rem);
+
+    .combo__input {
+      font-size: u(1.6rem);
+      height: u(4.2rem);
+      line-height: 1;
+      width: calc(100% - 31rem);
+    }
+
+    .combo__button {
+      height: u(4.2rem);
+      width: u(10rem);
+    }
+
+    .search__select {
+      height: u(4.2rem);
+      width: u(21rem);
+      font-size: u(1.6rem);
+    }
+  }
+
   .combo--search--large {
     height: u(6rem);
 
