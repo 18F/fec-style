@@ -42,7 +42,7 @@ TextFilter.prototype.handleChange = function() {
   var loadedOnce = this.$input.data('loaded-once') || false;
   var button = this.$submit;
 
-  // wrap the button focus with a 0 timeout
+  // set the button focus within a timeout
   // to prevent change event from firing twice
   setTimeout(function() {
     button.focus();
