@@ -9,6 +9,10 @@
   border-top: 2px solid $primary;
   border-bottom: 2px solid $primary;
   padding: u(1rem 0);
+
+  .button--export {
+    float: right;
+  }
 }
 
 .results-info__left {
@@ -22,6 +26,8 @@
 
 .results-info__title {
   border: none;
+  float: left;
+  line-height: u(3.4rem);
   margin: 0;
 }
 
@@ -87,7 +93,7 @@
       }
 
       .dataTables_paginate {
-        padding: u(.5rem 2rem .5rem .5rem);
+        padding: u(.5rem 0 .5rem .5rem);
       }
 
       .dataTables_info {
