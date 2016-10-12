@@ -14,11 +14,11 @@ var ToggleFilter = require('../js/toggle-filter').ToggleFilter;
 var DOM = '<fieldset class="js-filter">' +
             '<legend class="label">Data type</legend>' +
             '<label for="processed">' +
-              '<input type="radio" value="processed" id="processed" checked name="data_type" data-tag-value="Data type: processed">' +
+              '<input type="radio" value="processed" id="processed" checked name="data_type" data-prefix="Data type:" data-tag-value="processed">' +
               '<span>Processed data</span>' +
             '</label>' +
             '<label for="efiling">' +
-              '<input type="radio" value="efiling" id="efiling" name="data_type" data-tag-value="Data type: efiling">' +
+              '<input type="radio" value="efiling" id="efiling" name="data_type" data-prefix="Data type:" data-tag-value="efiling">' +
               '<span>eFilings</span>' +
             '</label>' +
           '</fieldset>';
@@ -84,7 +84,7 @@ describe('checkbox filters', function() {
       expect(this.trigger).to.have.been.calledWith('filter:added', [
         {
           key: 'data_type-toggle',
-          value: 'Data type: processed',
+          value: '<span class="prefix">Data type: </span>processed',
           loadedOnce: false,
           name: 'data_type',
           nonremovable: true
@@ -97,7 +97,7 @@ describe('checkbox filters', function() {
       expect(this.trigger).to.have.been.calledWith('filter:renamed', [
         {
           key: 'data_type-toggle',
-          value: 'Data type: efiling',
+          value: '<span class="prefix">Data type: </span>efiling',
           loadedOnce: true,
           name: 'data_type',
           nonremovable: true
