@@ -59,6 +59,8 @@ Dropdown.prototype.toggle = function(e) {
   e.preventDefault();
   var method = this.isOpen ? this.hide : this.show;
   method.apply(this);
+
+  return false;
 };
 
 Dropdown.prototype.show = function() {
