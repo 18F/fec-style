@@ -76,6 +76,36 @@
   padding-top: u(.5rem);
 }
 
+.report-type-col {
+  .document-description {
+    margin-right: 0;
+  }
+
+  .dropdown {
+    margin-top: u(.5rem);
+  }
+}
+
+@include media($med) {
+  .report-type-col {
+    position: relative;
+
+    .document-description {
+      margin-right: u(5.75rem);
+      padding: u(.25rem 0);
+    }
+
+    .dropdown {
+      position: initial;
+    }
+
+    .button--download--mini {
+      top: u(.75rem);
+      right: u(1rem);
+      position: absolute;
+    }
+  }
+}
 
 // BREAKPOINT: LARGE
 // Data-container shrinks and floats
@@ -154,5 +184,4 @@
       width: 100%;
     }
   }
-
 }

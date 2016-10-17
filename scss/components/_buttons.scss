@@ -324,13 +324,38 @@
   padding-right: u(6rem);
 }
 
-
 .button--calendar--mini {
   @include u-icon-bg($cal-add, $base);
   background-position: u(1rem .7rem);
   background-size: u(2rem);
   max-width: u(7.4rem);
   padding-left: u(5rem);
+}
+
+
+// Buttons: Download dropdown buttons
+
+.button--download--mini {
+  @include u-icon-bg($download, $base);
+  background-position: u(.75rem .5rem);
+  background-size: u(1.75rem);
+  background-color: $gray-light;
+  border-color: $gray;
+  max-width: u(5rem);
+  padding-left: u(2.75rem);
+  min-height: u(3rem) !important;
+
+  &::after {
+    border-left: none !important;
+    padding-top: u(.5rem) !important;
+    background-size: 10px !important;
+  }
+
+  &:hover:not(.is-disabled):not(.is-active) {
+    background-color: $gray;
+    border-color: $gray-dark;
+    color: $base;
+  }
 }
 
 // Buttons: Icon and text buttons
