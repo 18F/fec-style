@@ -84,6 +84,16 @@
   .dropdown {
     margin-top: u(.5rem);
   }
+
+  .dropdown__panel {
+    min-width: 70px;
+    right: u(1rem);
+    margin-top: u(.15rem);
+  }
+
+  .dropdown__value {
+    padding: u(0 .75rem);
+  }
 }
 
 @include media($med) {
