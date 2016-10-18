@@ -7,8 +7,8 @@
   left: 0;
   clear: both;
   position: relative;
-  overflow: hidden;
   width: 200%;
+  z-index: $z1;
 
   .data-table {
     float: left;

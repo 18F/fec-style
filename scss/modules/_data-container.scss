@@ -87,8 +87,9 @@
 
   .dropdown__panel {
     min-width: 70px;
-    right: u(1rem);
-    margin-top: u(.15rem);
+    left: 0;
+    right: auto;
+    margin-top: u(-.5rem);
   }
 
   .dropdown__value {
@@ -107,6 +108,12 @@
 
     .dropdown {
       position: initial;
+    }
+
+    .dropdown__panel {
+      right: u(1rem);
+      left: auto;
+      margin-top: u(.15rem);
     }
 
     .button--download--mini {

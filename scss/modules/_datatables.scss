@@ -132,7 +132,6 @@
   td {
     @include transition(padding-left, .2s);
     padding: u(1rem);
-    overflow: hidden;
     border-left: 1px solid $neutral;
 
     &.column--number {
