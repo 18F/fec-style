@@ -16,7 +16,7 @@ ToggleFilter.prototype = Object.create(Filter.prototype);
 ToggleFilter.constructor = ToggleFilter;
 
 ToggleFilter.prototype.fromQuery = function(query) {
-  this.$elm.find('input[value="' + query.data_type + '"]').prop('checked', true).change();
+  this.$elm.find('input[value="' + query[this.name] + '"]').prop('checked', true).change();
 };
 
 ToggleFilter.prototype.handleChange = function(e) {
