@@ -5,7 +5,6 @@
 // Tooltips: General
 //
 // .tooltip--above        - When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
-// .tooltip--under        - When the tooltip is under the content. Puts the arrow at the top left of the tooltip
 //
 // Markup:
 // <div class="sg-absolute-container">
@@ -80,6 +79,23 @@
   }
 }
 
+// Tooltips under an element
+//
+// By default, this class centers a tooltip below the element it's referencing and centers the point.
+//
+// .tooltip--left      - Aligns the tooltip along the left side of an element; useful when the element is near the left side of the page.
+// .tooltip--right     - Aligns the tooltip along the right side of the element; useful when the element is near the right side of the page.
+//
+// Markup:
+// <div style="position:relative; display: inline-block; margin-bottom: 50px;">
+//   <button class="button button--cta button--export">Export</button>
+//   <div class="tooltip {{ modifier_class }} tooltip--under">
+//     <p class="tooltip__content">Explanatory content about this element</p>
+//   </div>
+// </div>
+//
+// Styleguide components.tooltips
+
 .tooltip--under {
   $top: u(1rem);
   width: u(30rem);
@@ -100,11 +116,22 @@
     width: u(2rem);
   }
 
+  // Tooltip
   &.tooltip--left {
     left: u(-2rem);
 
     &::before {
       left: u(2.8rem);
+    }
+  }
+
+  &.tooltip--right {
+    left: auto;
+    right: u(2rem);
+
+    &::before {
+      left: auto;
+      right: u(2.8rem);
     }
   }
 }
