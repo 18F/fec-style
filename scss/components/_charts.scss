@@ -305,6 +305,14 @@ $tooltip-border-color: #999;
 
 .value-bar {
   background-color: $primary;
+
+  &[data-party="DEM"] {
+    background-color: $dem;
+  }
+
+  &[data-party="REP"] {
+    background-color: $rep;
+  }
 }
 
 // New SVG bar chart styles

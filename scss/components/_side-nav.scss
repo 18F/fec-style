@@ -58,6 +58,12 @@
   }
 }
 
+.side-nav__sublink {
+  @extend .side-nav__link;
+  padding-left: u(2rem);
+  text-transform: none;
+}
+
 @include media($med) {
   .side-nav {
     display: block;

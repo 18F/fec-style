@@ -160,3 +160,26 @@ h3 + .simple-table {
     }
   }
 }
+
+// Chart Table
+// Table style used on breakdown charts
+// Very similar to simple-table, but with slight differences
+.chart-table {
+  border-top: 2px solid $primary;
+  color: $primary;
+  font-family: $sans-serif;
+
+  .bar-container {
+    margin-left: u(1rem);
+    width: calc(100% - 1rem);
+  }
+
+  .value-bar {
+    @include transition('width' .2s ease-out);
+    height: u(2rem);
+  }
+
+  & + .results-info {
+    border-top-width: 1px;
+  }
+}
