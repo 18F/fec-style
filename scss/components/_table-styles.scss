@@ -176,11 +176,11 @@ h3 + .simple-table {
     height: u(2rem);
 
     &[data-party="DEM"] {
-      background-color: $dem;
+      background-color: $blue-data;
     }
 
     &[data-party="REP"] {
-      background-color: $rep;
+      background-color: $red-data;
     }
   }
 
