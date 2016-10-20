@@ -42,7 +42,6 @@
   background-color: $secondary;
 }
 
-
 .data-container__head {
   @include clearfix();
   border-bottom: 1px solid $gray;
@@ -89,7 +88,7 @@
     min-width: 70px;
     left: 0;
     right: auto;
-    margin-top: u(-.5rem);
+    top: u(3rem);
   }
 
   .dropdown__value {
@@ -113,7 +112,7 @@
     .dropdown__panel {
       right: u(1rem);
       left: auto;
-      margin-top: u(.15rem);
+      top: u(4rem);
     }
 
     .button--download--mini {
@@ -182,7 +181,6 @@
     display: inline-block;
   }
 
-
   .data-container__tags {
     padding: u(1rem 2rem);
   }
@@ -196,7 +194,7 @@
       margin: 0;
     }
 
-    .dropdown ,
+    .dropdown,
     .button {
       float: right;
       width: 100%;
