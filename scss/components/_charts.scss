@@ -353,7 +353,7 @@ $tooltip-border-color: #999;
 }
 
 // Line charts
-.line--candidates {
+.line--candidate {
   stroke: $deep-aqua;
 
   circle {
@@ -361,7 +361,7 @@ $tooltip-border-color: #999;
   }
 }
 
-.line--pacs {
+.line--pac {
   stroke: $gray;
 
   circle {
