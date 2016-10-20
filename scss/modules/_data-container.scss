@@ -117,7 +117,8 @@
     }
 
     .button--download--mini {
-      top: u(.75rem);
+      top: 50%;
+      margin-top: u(-1.5rem);
       right: u(1rem);
       position: absolute;
     }
