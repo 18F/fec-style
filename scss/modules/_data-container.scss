@@ -75,55 +75,6 @@
   padding-top: u(.5rem);
 }
 
-.report-type-col {
-  .document-description {
-    margin-right: 0;
-  }
-
-  .dropdown {
-    margin-top: u(.5rem);
-  }
-
-  .dropdown__panel {
-    min-width: 70px;
-    left: 0;
-    right: auto;
-    top: u(3rem);
-  }
-
-  .dropdown__value {
-    padding: u(0 .75rem);
-  }
-}
-
-@include media($med) {
-  .report-type-col {
-    position: relative;
-
-    .document-description {
-      margin-right: u(6.5rem);
-      padding: u(.25rem 0);
-    }
-
-    .dropdown {
-      position: initial;
-    }
-
-    .dropdown__panel {
-      right: u(1rem);
-      left: auto;
-      top: u(4rem);
-    }
-
-    .button--download--mini {
-      top: 50%;
-      margin-top: u(-1.5rem);
-      right: u(1rem);
-      position: absolute;
-    }
-  }
-}
-
 // BREAKPOINT: LARGE
 // Data-container shrinks and floats
 

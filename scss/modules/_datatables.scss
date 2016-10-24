@@ -209,6 +209,30 @@
   }
 }
 
+// Special styles for the document description column with the dropdown button
+.column--doc-download {
+  .document-description {
+    display: table-cell;
+    padding-right: u(1rem);
+    width: 100%;
+  }
+
+  .dropdown {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .dropdown__panel {
+    left: 0;
+    top: u(3rem);
+    min-width: 70px;
+  }
+
+  .dropdown__value {
+    padding: u(0 .75rem);
+  }
+}
+
 // Miscellaneous classes
 //
 // .is-incumbent      - If used, applied to candidate that currently holds the office in election tables
