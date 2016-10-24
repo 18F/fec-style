@@ -132,7 +132,6 @@
   td {
     @include transition(padding-left, .2s);
     padding: u(1rem);
-    overflow: hidden;
     border-left: 1px solid $neutral;
 
     &.column--number {
@@ -207,6 +206,30 @@
   td:first-child {
     padding-left: u(1rem);
     border-left: 1px solid $gray-lightest;
+  }
+}
+
+// Special styles for the document description column with the dropdown button
+.column--doc-download {
+  .document-description {
+    display: table-cell;
+    padding-right: u(1rem);
+    width: 100%;
+  }
+
+  .dropdown {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .dropdown__panel {
+    right: 0;
+    top: u(3rem);
+    min-width: 70px;
+  }
+
+  .dropdown__value {
+    padding: u(0 .75rem);
   }
 }
 

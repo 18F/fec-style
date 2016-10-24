@@ -42,7 +42,6 @@
   background-color: $secondary;
 }
 
-
 .data-container__head {
   @include clearfix();
   border-bottom: 1px solid $gray;
@@ -75,7 +74,6 @@
   clear: both;
   padding-top: u(.5rem);
 }
-
 
 // BREAKPOINT: LARGE
 // Data-container shrinks and floats
@@ -135,7 +133,6 @@
     position: relative;
   }
 
-
   .data-container__tags {
     padding: u(1rem 2rem);
   }
@@ -149,11 +146,10 @@
       margin: 0;
     }
 
-    .dropdown ,
+    .dropdown,
     .button {
       float: right;
       width: 100%;
     }
   }
-
 }
