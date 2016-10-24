@@ -112,6 +112,17 @@
   border-top: 4px solid $primary;
 }
 
+.sidebar--breakdown {
+  background-color: $neutral;
+  color: $base;
+
+  .sidebar__title {
+    background-color: $gray-dark;
+    color: $inverse;
+    display: block;
+  }
+}
+
 @media print {
   .sidebar {
     display: none;

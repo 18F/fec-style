@@ -22,6 +22,12 @@
   }
 }
 
+.breakdown-link {
+  @include heading(h4);
+  display: inline-block;
+  padding-top: u(2rem);
+}
+
 .top-list {
   border-style: solid;
   border-color: $base;
