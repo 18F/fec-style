@@ -1,0 +1,36 @@
+// Placeholder
+//
+// Static placeholders for charts
+
+%placeholder {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: rgba($primary, .8);
+  color: $inverse;
+  font-family: $sans-serif;
+  padding: 2rem;
+  width: 100%;
+
+  @include media($med) {
+    padding: 39% 2rem 0 2rem;
+    position: relative;
+  }
+}
+
+.placeholder--raising {
+  @extend %placeholder;
+  background-image: url('/static/img/raising-placeholder.png');
+}
+
+.placeholder--spending {
+  @extend %placeholder;
+  background-image: url('/static/img/spending-placeholder.png');
+}
+
+@include media($med) {
+  .placeholder__content {
+    position: absolute;
+    top: 5rem;
+    left: 8rem;
+  }
+}
