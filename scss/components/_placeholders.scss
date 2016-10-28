@@ -19,12 +19,12 @@
 
 .placeholder--raising {
   @extend %placeholder;
-  background-image: url('/static/img/raising-placeholder.png');
+  background-image: url('../img/raising-placeholder.png');
 }
 
 .placeholder--spending {
   @extend %placeholder;
-  background-image: url('/static/img/spending-placeholder.png');
+  background-image: url('../img/spending-placeholder.png');
 }
 
 @include media($med) {
