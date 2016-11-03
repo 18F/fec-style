@@ -8,10 +8,9 @@
     <li class="site-nav__block">
       <a class="site-nav__link--underline" href="{{webAppUrl}}">Profiles</a>
       <form action="{{webAppUrl}}" method="GET" autocomplete="off">
-        <label class="t-sans" for="menu-search">Search for candidates and committees</label>
+        <label class="t-sans" for="menu-search">Search for candidates</label>
         <div class="combo--search--mini">
           <input id="menu-search" name="search" class="combo__input js-menu-search" type="text"
-          placeholder="Search for candidates"
           autocomplete="off"
           autocorrect="off"
           autocapitalize="off"
@@ -26,7 +25,7 @@
       <form action="{{webAppUrl}}/elections?cycle={{cycle}}" method="GET">
         <label class="t-sans mega__item" for="menu-election-search">Find elections and candidates by ZIP code</label>
         <div class="combo--search--mini">
-          <input id="menu-election-search" name="zip" class="combo__input" type="text" placeholder="Search by ZIP code">
+          <input id="menu-election-search" name="zip" class="combo__input" type="text">
           <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
         </div>
       </form>
