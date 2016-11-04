@@ -1,3 +1,10 @@
+.breakdown-container {
+  @include clearfix();
+  padding: u(0 2rem);
+  position: relative;
+  width: 100%;
+}
+
 .breakdown-cycle {
   border-top: 4px solid $primary;
   padding: u(2rem 0);
