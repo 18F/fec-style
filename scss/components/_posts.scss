@@ -71,3 +71,17 @@
   }
 
 }
+
+// Post boilerplate
+// The .post__boilerplate div is the blurb about the FEC
+// on press releases. This is hidden on 2016 and newer releases on screen, but is visible when printed.
+// For earlier press releases, this isn't a separate div
+
+.post__boilerplate {
+  padding-top: u(1rem);
+  font-style: italic;
+
+  p {
+    font-size: u(1.4rem);
+  }
+}
