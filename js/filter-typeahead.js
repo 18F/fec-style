@@ -29,7 +29,7 @@ var textDataset = {
   },
   templates: {
     suggestion: function(datum) {
-      return '<span>Search for: "' + datum.id + '"</span>';
+      return '<span>none of these, add new</span>';
     }
   }
 };

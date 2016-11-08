@@ -91,7 +91,7 @@ var committeeDataset = {
   display: 'name',
   source: committeeEngine,
   templates: {
-    header: '<span class="tt-suggestion__header">none of these, add new</span>',
+    header: '<span class="tt-suggestion__header">Select a committee:</span>',
     pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
     notFound: Handlebars.compile(
       '<span class="tt-suggestion__header tt-suggestion__missing">No committees found matching "{{query}}"</span>'
