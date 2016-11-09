@@ -3,14 +3,6 @@
   padding: u(0 2rem);
   position: relative;
   width: 100%;
-
-  .sidebar-container {
-    max-width: 221px;
-  }
-
-  .main__content--right {
-    @include calc(width, '100% - 260px');
-  }
 }
 
 .breakdown-cycle {
@@ -25,4 +17,30 @@
 .breakdown__title {
   line-height: u(3.4rem);
   margin: 0;
+}
+
+@include media($med) {
+  .breakdown-container {
+    .map-table {
+      width: 100%;
+      margin-bottom: u(1rem);
+      float: none;
+    }
+
+    .map-panel:last-child {
+      width: 100%;
+    }
+  }
+}
+
+@include media($lg) {
+  .breakdown-container {
+    .sidebar-container {
+      max-width: 221px;
+    }
+
+    .main__content--right {
+      @include calc(width, '100% - 260px');
+    }
+  }
 }
