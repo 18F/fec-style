@@ -18,8 +18,8 @@ var DOM = '<fieldset class="js-filter">' +
               '<span>Processed data</span>' +
             '</label>' +
             '<label for="efiling">' +
-              '<input type="radio" value="efiling" id="efiling" name="data_type" data-prefix="Data type:" data-tag-value="efiling">' +
-              '<span>eFilings</span>' +
+              '<input type="radio" value="efiling" id="efiling" name="data_type" data-prefix="Data type:" data-tag-value="electronic filings">' +
+              '<span>Electronic filings</span>' +
             '</label>' +
           '</fieldset>';
 
@@ -97,7 +97,7 @@ describe('checkbox filters', function() {
       expect(this.trigger).to.have.been.calledWith('filter:renamed', [
         {
           key: 'data_type-toggle',
-          value: '<span class="prefix">Data type: </span>efiling',
+          value: '<span class="prefix">Data type: </span>electronic filings',
           loadedOnce: true,
           name: 'data_type',
           nonremovable: true
