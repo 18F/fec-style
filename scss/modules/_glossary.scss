@@ -6,6 +6,7 @@
   @include transition(right, .3s);
   background-color: $base;
   bottom: 0;
+  color: $inverse;
   max-width: u(30rem);
   overflow-y: scroll;
   padding: u(8rem 3rem);
