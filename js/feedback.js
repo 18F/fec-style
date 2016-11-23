@@ -24,8 +24,6 @@ function Feedback(url, parent) {
 
   this.$button = this.$feedback.find('.js-feedback');
   this.$reset = this.$feedback.find('.js-reset');
-  this.$ethnioPrompt = this.$feedback.find('.js-ethnio-prompt');
-  this.$ethnio = this.$feedback.find('.js-ethnio');
   this.$box = this.$feedback.find('.js-feedback-box');
   this.$status = this.$box.find('.js-status');
   this.$message = this.$box.find('.js-message');
@@ -109,10 +107,6 @@ Feedback.prototype.message = function(text, buttonText, style) {
     self.$message.removeClass(value);
   });
   this.$message.html(text).addClass(statusClasses[style]);
-  if (style === 'success') {
-    this.$ethnioPrompt.attr('aria-hidden', false);
-    this.$ethnio.attr('aria-hidden', false);
-  }
 };
 
 Feedback.prototype.reset = function() {
