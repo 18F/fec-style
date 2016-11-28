@@ -8,6 +8,7 @@
 // .icon--inline--left    - Vertically centering and adding slight margin to inline icons
 
 .icon {
+  background-size: 100%;
   display: block;
   height: u(2rem);
   width: u(2rem);
@@ -19,11 +20,13 @@
 }
 
 .icon--inline--right {
+  display: inline-block;
   margin-left: u(1rem);
   vertical-align: middle;
 }
 
 .icon--inline--left {
+  display: inline-block;
   margin-right: u(1rem);
   vertical-align: middle;
 }
