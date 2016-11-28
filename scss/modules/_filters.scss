@@ -38,7 +38,7 @@ $filter-button-width: u(4.6rem);
     // 7rem = width of filter icon + arrow icon + margin
     .filters__title {
       display: inline-block;
-      width: calc(100% - 7rem)
+      width: calc(100% - 7rem);
     }
 
     .filters__header {
