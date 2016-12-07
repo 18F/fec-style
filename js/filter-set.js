@@ -6,7 +6,7 @@ var URI = require('urijs');
 
 var TextFilter = require('./text-filter').TextFilter;
 var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
-var MultiFilter = require('./filter-base').MultiFilter;
+var MultiFilter = require('./multi-filter').MultiFilter;
 var TypeaheadFilter = require('./typeahead-filter').TypeaheadFilter;
 var SelectFilter = require('./select-filter').SelectFilter;
 var DateFilter = require('./date-filter').DateFilter;
