@@ -36,6 +36,11 @@ function Filter(elm) {
   if (this.$elm.hasClass('js-filter-control')) {
     new FilterControl(this.$elm);
   }
+
+  // For filters that are part of a MultiFilter, set a property
+  if (this.$elm.hasClass('js-sub-filter')) {
+    this.isSubfilter = true;
+  }
 }
 
 Filter.prototype.fromQuery = function(query) {
@@ -67,23 +72,31 @@ Filter.prototype.formatValue = function($input, value) {
 
 Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
-
-  var filterCount = this.$filterLabel.find('.filter-count');
-
-  if (filterCount.html()) {
-    filterCount.html(parseInt(filterCount.html(), 10) + 1);
-  }
-  else {
-    this.$filterLabel.append(' <span class="filter-count">1</span>');
-  }
-
+  this.increment();
   this.setLastAction(e, opts);
 };
 
 Filter.prototype.handleRemoveEvent = function(e, opts) {
   // Don't decrement on initial page load
   if (opts.name !== this.name || opts.loadedOnce !== true) { return; }
+  this.decrement();
+  this.setLastAction(e, opts);
+};
 
+Filter.prototype.increment = function() {
+  if (!this.isSubfilter) {
+    var filterCount = this.$filterLabel.find('.filter-count');
+
+    if (filterCount.html()) {
+      filterCount.html(parseInt(filterCount.html(), 10) + 1);
+    }
+    else {
+      this.$filterLabel.append(' <span class="filter-count">1</span>');
+    }
+  }
+};
+
+Filter.prototype.decrement = function() {
   var filterCount = this.$filterLabel.find('.filter-count');
 
   if (filterCount.html() === '1') {
@@ -92,8 +105,6 @@ Filter.prototype.handleRemoveEvent = function(e, opts) {
   else {
     filterCount.html(parseInt(filterCount.html(), 10) - 1);
   }
-
-  this.setLastAction(e, opts);
 };
 
 Filter.prototype.setLastAction = function(e, opts) {
