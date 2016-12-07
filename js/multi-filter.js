@@ -13,7 +13,10 @@ function MultiFilter(elm) {
   this.$subfilters = this.$elm.find('.js-sub-filter[data-name="' + this.name + '"]');
 
   this.$subfilters.each(function() {
-    new CheckboxFilter(this);
+    var subfilter = new CheckboxFilter(this);
+    // Explicitly assign filterLabel, which will show the count
+    // Necessary because each subfilter may be part of a different accordion
+    subfilter.$filterLabel = $('#' + subfilter.$elm.data('filter-label'));
   });
 }
 

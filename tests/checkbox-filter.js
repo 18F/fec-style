@@ -97,7 +97,8 @@ describe('checkbox filters', function() {
           key: 'president',
           value: 'President',
           loadedOnce: false,
-          name: 'office'
+          filterLabel: this.filter.$filterLabel,
+          name: 'office',
         }
       ]);
     });
@@ -109,6 +110,7 @@ describe('checkbox filters', function() {
           key: 'president',
           value: 'President',
           loadedOnce: false,
+          filterLabel: this.filter.$filterLabel,
           name: 'office'
         }
       ]);

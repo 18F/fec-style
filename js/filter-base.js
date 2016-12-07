@@ -29,10 +29,6 @@ function Filter(elm) {
   this.fields = [this.name];
   this.lastAction;
 
-  $(document.body).on('filter:added', this.handleAddEvent.bind(this));
-  $(document.body).on('filter:removed', this.handleRemoveEvent.bind(this));
-  $(document.body).on('filter:changed', this.setLastAction.bind(this));
-
   if (this.$elm.hasClass('js-filter-control')) {
     new FilterControl(this.$elm);
   }
@@ -40,6 +36,12 @@ function Filter(elm) {
   // For filters that are part of a MultiFilter, set a property
   if (this.$elm.hasClass('js-sub-filter')) {
     this.isSubfilter = true;
+  }
+
+  if (!this.isSubfilter) {
+    $(document.body).on('filter:added', this.handleAddEvent.bind(this));
+    $(document.body).on('filter:removed', this.handleRemoveEvent.bind(this));
+    $(document.body).on('filter:changed', this.setLastAction.bind(this));
   }
 }
 
@@ -72,39 +74,29 @@ Filter.prototype.formatValue = function($input, value) {
 
 Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
-  this.increment();
+  var $filterLabel = opts.filterLabel || this.$filterLabel;
+  var filterCount = $filterLabel.find('.filter-count');
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    $filterLabel.append(' <span class="filter-count">1</span>');
+  }
   this.setLastAction(e, opts);
 };
 
 Filter.prototype.handleRemoveEvent = function(e, opts) {
   // Don't decrement on initial page load
   if (opts.name !== this.name || opts.loadedOnce !== true) { return; }
-  this.decrement();
-  this.setLastAction(e, opts);
-};
-
-Filter.prototype.increment = function() {
-  if (!this.isSubfilter) {
-    var filterCount = this.$filterLabel.find('.filter-count');
-
-    if (filterCount.html()) {
-      filterCount.html(parseInt(filterCount.html(), 10) + 1);
-    }
-    else {
-      this.$filterLabel.append(' <span class="filter-count">1</span>');
-    }
-  }
-};
-
-Filter.prototype.decrement = function() {
-  var filterCount = this.$filterLabel.find('.filter-count');
-
+  var $filterLabel = opts.filterLabel || this.$filterLabel;
+  var filterCount = $filterLabel.find('.filter-count');
   if (filterCount.html() === '1') {
     filterCount.remove();
   }
   else {
     filterCount.html(parseInt(filterCount.html(), 10) - 1);
   }
+  this.setLastAction(e, opts);
 };
 
 Filter.prototype.setLastAction = function(e, opts) {
