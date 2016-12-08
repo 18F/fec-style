@@ -19,7 +19,6 @@ function Filter(elm) {
   this.$elm = $(elm);
   this.$input = this.$elm.find('input:not([name^="_"])');
   this.$filterLabel = this.$elm.closest('.accordion__content').prev();
-
   // on error message, click to open feedback panel
   this.$elm.on('click', '.js-filter-feedback', function () {
     $(document.body).trigger('feedback:open');
@@ -74,6 +73,12 @@ Filter.prototype.formatValue = function($input, value) {
 
 Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
+  // The only time when opts.filterLabel != this.$filterLabel
+  // is when a checkbox is a subfilter of a multifilter.
+  // In that case, the multifilter explicitly sets the label and the checkbox
+  // passes that value through via the event options.
+  // Subfilters don't add listeners that trigger this handler, so it will only
+  // be called by the MultiFilter.
   var $filterLabel = opts.filterLabel || this.$filterLabel;
   var filterCount = $filterLabel.find('.filter-count');
   if (filterCount.html()) {
