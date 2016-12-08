@@ -80,13 +80,7 @@ Filter.prototype.handleAddEvent = function(e, opts) {
   // Subfilters don't add listeners that trigger this handler, so it will only
   // be called by the MultiFilter.
   var $filterLabel = opts.filterLabel || this.$filterLabel;
-  var filterCount = $filterLabel.find('.filter-count');
-  if (filterCount.html()) {
-    filterCount.html(parseInt(filterCount.html(), 10) + 1);
-  }
-  else {
-    $filterLabel.append(' <span class="filter-count">1</span>');
-  }
+  this.increment($filterLabel);
   this.setLastAction(e, opts);
 };
 
@@ -94,6 +88,21 @@ Filter.prototype.handleRemoveEvent = function(e, opts) {
   // Don't decrement on initial page load
   if (opts.name !== this.name || opts.loadedOnce !== true) { return; }
   var $filterLabel = opts.filterLabel || this.$filterLabel;
+  this.decrement($filterLabel);
+  this.setLastAction(e, opts);
+};
+
+Filter.prototype.increment = function($filterLabel) {
+  var filterCount = $filterLabel.find('.filter-count');
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    $filterLabel.append(' <span class="filter-count">1</span>');
+  }
+};
+
+Filter.prototype.decrement = function($filterLabel) {
   var filterCount = $filterLabel.find('.filter-count');
   if (filterCount.html() === '1') {
     filterCount.remove();
@@ -101,7 +110,6 @@ Filter.prototype.handleRemoveEvent = function(e, opts) {
   else {
     filterCount.html(parseInt(filterCount.html(), 10) - 1);
   }
-  this.setLastAction(e, opts);
 };
 
 Filter.prototype.setLastAction = function(e, opts) {
