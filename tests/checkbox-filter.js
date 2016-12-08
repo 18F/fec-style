@@ -19,6 +19,10 @@ describe('checkbox filters', function() {
   });
 
   beforeEach(function() {
+    $(document.body).off('filter:added');
+    $(document.body).off('filter:removed');
+    $(document.body).off('filter:changed');
+
     this.$fixture.empty().append(
       '<button class="accordion__trigger">Filter category</button>' +
       '<div class="accordion__content">' +
