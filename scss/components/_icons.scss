@@ -30,3 +30,22 @@
   margin-right: u(1rem);
   vertical-align: text-bottom;
 }
+
+
+.icon-circle--calendar {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($calendar, $secondary, $inverse, 3.4rem);
+    content: '';
+  }
+}
+
+.icon-circle--search {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($magnifying-glass, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
