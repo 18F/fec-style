@@ -1,31 +1,3 @@
-// Contact items
-//
-// List items on the contact page
-//
-// Markup:
-// <div class="grid grid--2-wide">
-//   <ul class="grid__item">
-//     <li class="contact-item">
-//       <div class="contact-item__icon">
-//         <img src="img/i-phone--primary.svg" alt="Icon of a phone">
-//       </div>
-//       <div class="contact-item__content">
-//         <h5 class="contact-item__title">Toll free</h5>
-//         <span class="t-block">1-800-424-9530</span>
-//         <span class="t-block">8:30 a.m. to 5:30 p.m. Eastern Time</span>
-//       </div>
-//     </li>
-//     <li class="contact-item">
-//       <div class="contact-item__content--offset">
-//         <h5 class="contact-item__title">Local</h5>
-//         <span class="t-block">202-694-1000</span>
-//       </div>
-//     </li>
-//   </ul>
-// </div>
-//
-// Styleguide components.contact-items
-
 .contact-item {
   @include clearfix();
   margin-bottom: u(4rem);
@@ -62,4 +34,45 @@
 .contact-item__phone {
   display: block;
   padding-top: u(1rem);
+}
+
+.contact-item--email {
+  @include u-icon-bg($moving-envelope-circle, $primary);
+  background-size: 3.4rem;
+  padding-left: 4rem;
+}
+
+.contact-item--fax {
+  display: table;
+
+  .contact-item__content {
+    display: table-cell;
+    float: none;
+    vertical-align: top;
+  }
+
+  &::before {
+    @include u-icon-circle($fax, $primary, $inverse, 3.4rem);
+    content: '';
+    background-size: 90%;
+    margin-right: 1rem;
+  }
+}
+
+.contact-item--hand {
+  display: table;
+
+  .contact-item__content {
+    display: table-cell;
+    float: none;
+    vertical-align: top;
+  }
+
+  &::before {
+    @include u-icon-circle($hand-envelope, $primary, $inverse, 3.4rem);
+    content: '';
+    background-size: 90%;
+    margin-right: 1rem;
+    float: left;
+  }
 }
