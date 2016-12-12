@@ -106,6 +106,10 @@
   position: relative;
 }
 
+.homepage-seal {
+  display: none;
+}
+
 .site-title {
   margin-bottom: 0;
   border-bottom: 0;
@@ -195,7 +199,7 @@
     }
 
     .site-nav__panel {
-      padding-left: u(18rem) !important;
+      padding-left: u(20rem) !important;
     }
   }
 }
