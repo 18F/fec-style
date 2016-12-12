@@ -153,7 +153,7 @@ TagList.prototype.renameTag = function(e, opts) {
 TagList.prototype.disableTag = function(e, opts) {
   var $tag = this.$list.find('[data-id="' + opts.key + '"]');
   $tag.addClass('is-disabled');
-  $tag.attr('title', 'This filter is not avaible for efiling data');
+  $tag.attr('title', 'This filter is not available for electronic filings data');
 };
 
 TagList.prototype.enableTag = function(e, opts) {

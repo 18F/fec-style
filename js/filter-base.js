@@ -18,31 +18,29 @@ function prepareValue($elm, value) {
 function Filter(elm) {
   this.$elm = $(elm);
   this.$input = this.$elm.find('input:not([name^="_"])');
-  this.$label = this.$elm.find('label').attr('for');
   this.$filterLabel = this.$elm.closest('.accordion__content').prev();
-
   // on error message, click to open feedback panel
   this.$elm.on('click', '.js-filter-feedback', function () {
     $(document.body).trigger('feedback:open');
   });
 
   this.name = this.$elm.data('name') || this.$input.attr('name');
-
-  // when there are multiple filters with the same name
-  // set the name to label to avoid inflated filter counts
-  if (this.$elm.hasClass('js-multi-filter')) {
-    this.name = this.$label;
-  }
-
   this.fields = [this.name];
   this.lastAction;
 
-  $(document.body).on('filter:added', this.handleAddEvent.bind(this));
-  $(document.body).on('filter:removed', this.handleRemoveEvent.bind(this));
-  $(document.body).on('filter:changed', this.setLastAction.bind(this));
-
   if (this.$elm.hasClass('js-filter-control')) {
     new FilterControl(this.$elm);
+  }
+
+  // For filters that are part of a MultiFilter, set a property
+  if (this.$elm.hasClass('js-sub-filter')) {
+    this.isSubfilter = true;
+  }
+
+  if (!this.isSubfilter) {
+    $(document.body).on('filter:added', this.handleAddEvent.bind(this));
+    $(document.body).on('filter:removed', this.handleRemoveEvent.bind(this));
+    $(document.body).on('filter:changed', this.setLastAction.bind(this));
   }
 }
 
@@ -75,33 +73,43 @@ Filter.prototype.formatValue = function($input, value) {
 
 Filter.prototype.handleAddEvent = function(e, opts) {
   if (opts.name !== this.name) { return; }
-
-  var filterCount = this.$filterLabel.find('.filter-count');
-
-  if (filterCount.html()) {
-    filterCount.html(parseInt(filterCount.html(), 10) + 1);
-  }
-  else {
-    this.$filterLabel.append(' <span class="filter-count">1</span>');
-  }
-
+  // The only time when opts.filterLabel != this.$filterLabel
+  // is when a checkbox is a subfilter of a multifilter.
+  // In that case, the multifilter explicitly sets the label and the checkbox
+  // passes that value through via the event options.
+  // Subfilters don't add listeners that trigger this handler, so it will only
+  // be called by the MultiFilter.
+  var $filterLabel = opts.filterLabel || this.$filterLabel;
+  this.increment($filterLabel);
   this.setLastAction(e, opts);
 };
 
 Filter.prototype.handleRemoveEvent = function(e, opts) {
   // Don't decrement on initial page load
   if (opts.name !== this.name || opts.loadedOnce !== true) { return; }
+  var $filterLabel = opts.filterLabel || this.$filterLabel;
+  this.decrement($filterLabel);
+  this.setLastAction(e, opts);
+};
 
-  var filterCount = this.$filterLabel.find('.filter-count');
+Filter.prototype.increment = function($filterLabel) {
+  var filterCount = $filterLabel.find('.filter-count');
+  if (filterCount.html()) {
+    filterCount.html(parseInt(filterCount.html(), 10) + 1);
+  }
+  else {
+    $filterLabel.append(' <span class="filter-count">1</span>');
+  }
+};
 
+Filter.prototype.decrement = function($filterLabel) {
+  var filterCount = $filterLabel.find('.filter-count');
   if (filterCount.html() === '1') {
     filterCount.remove();
   }
   else {
     filterCount.html(parseInt(filterCount.html(), 10) - 1);
   }
-
-  this.setLastAction(e, opts);
 };
 
 Filter.prototype.setLastAction = function(e, opts) {

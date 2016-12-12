@@ -34,6 +34,13 @@ $filter-button-width: u(4.6rem);
       left: 0;
     }
 
+    // For long filter titles, wrap them in a class to force icons to line up
+    // 7rem = width of filter icon + arrow icon + margin
+    .filters__title {
+      display: inline-block;
+      width: calc(100% - 7rem);
+    }
+
     .filters__header {
       &::after {
         @include u-icon($arrow-left-border, $primary, $icon-size, $icon-size);

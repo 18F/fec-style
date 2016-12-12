@@ -43,6 +43,7 @@ CheckboxFilter.prototype.handleChange = function(e) {
       key: id,
       value: this.formatValue($input, $label.text()),
       loadedOnce: loadedOnce,
+      filterLabel: this.$filterLabel,
       name: this.name
     }
   ]);
