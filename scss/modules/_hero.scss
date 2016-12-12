@@ -43,6 +43,12 @@
   width: 100%;
 }
 
+.hero--home {
+  .hero__banner {
+    background-image: url('../img/fec-table-tint.png');
+  }
+}
+
 .hero--data {
   .hero__image {
     background-image: url('../img/hero-data.jpg');
@@ -77,13 +83,18 @@
 
 .hero--home {
   @include u-bg--neutral();
-  padding: 0;
+
+  h2 {
+    color: $inverse-translucent;
+  }
 
   .hero__content {
-    @include span-columns(8);
-    @include shift(2);
-    padding: u(2rem 0);
-    text-align: center;
+    padding: u(2rem);
+    text-align: left;
+
+    @include media($lg) {
+      padding: u(8rem 4.5rem 7rem 4.5rem);
+    }
   }
 }
 
