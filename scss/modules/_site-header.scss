@@ -191,11 +191,11 @@
   .site-header-homepage {
     .masthead {
       background: none;
-      margin-left: u(5rem);
+      margin-left: u(4rem);
     }
 
     .site-title {
-      @include u-background-image('wordmark', u(15.5rem) 50%);
+      @include u-background-image('wordmark', u(16.5rem) 50%);
     }
 
     .site-nav__panel {
