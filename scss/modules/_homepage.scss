@@ -3,15 +3,19 @@
 // Campaign Finance Data Homepage Styles
 .slab.slab--primary .blue {
   color: $primary-contrast;
-  border-bottom: 1px dotted #5e7289;
+  border-bottom: 1px dotted $gray-dark;
 
   &:active,
   &:hover {
-    border-bottom-color: #fff;
+    border-bottom-color: $inverse;
   }
 }
 
 .grid__item.horizontal-bar {
-  border-top: 1px solid #8796a7;
+  border-top: 1px solid $gray-medium;
   padding-top: 33px;
+}
+
+.combo--search .button--search {
+	@include u-icon-bg($info-person, $secondary-contrast);
 }
