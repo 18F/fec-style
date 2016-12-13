@@ -143,8 +143,6 @@ Typeahead.prototype.select = function(event, datum) {
   window.location = this.url + this.dataset.name + '/' + datum.id;
 };
 
-
-
 module.exports = {
   Typeahead: Typeahead,
   datasets: datasets
