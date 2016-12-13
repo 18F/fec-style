@@ -99,3 +99,17 @@
     display: none;
   }
 }
+
+.pending-ao__title a {
+  position: relative;
+
+  &::after {
+    @include u-icon-bg($timer, $base);
+    display: inline-block;
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: -3rem;
+  }
+}

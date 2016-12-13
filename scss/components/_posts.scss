@@ -25,6 +25,18 @@
   padding-bottom: 5px;
 }
 
+.post__doc {
+  &::before {
+    @include u-icon-bg($document, $base);
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
+}
+
 @include media($med) {
   .post__date {
     float: left;
