@@ -147,7 +147,7 @@
 // icons for homepage - registration and reporting (on secondary [red] slab)
 .icon-heading--checklist-circle {
   &::before {
-    @include u-icon-circle($checklist, $inverse, $deep-orange, 4.5rem);
+    @include u-icon-circle($checklist, $inverse, $secondary-contrast, 4.5rem);
     background-size: u(4rem);
     content: '';
     float: left;
@@ -157,7 +157,7 @@
 
 .icon-heading--question-bubble-circle {
   &::before {
-    @include u-icon-circle($question-bubble, $inverse, $deep-orange, 4.5rem);
+    @include u-icon-circle($question-bubble, $inverse, $secondary-contrast, 4.5rem);
     background-size: u(4rem);
     content: '';
     float: left;
@@ -165,18 +165,20 @@
   }
 }
 
-.icon-heading--calendar-circle-secondary {
-  &::before {
-    @include u-icon-circle($calendar, $inverse, $deep-orange, 4.5rem);
-    content: '';
-    float: left;
-    margin-right: u(1rem);
+.slab--secondary {
+  .icon-heading--calendar-circle {
+    &::before {
+      @include u-icon-circle($calendar, $inverse, $secondary-contrast, 4.5rem);
+      content: '';
+      float: left;
+      margin-right: u(1rem);
+    }
   }
 }
 
 .icon-heading--training-circle {
   &::before {
-    @include u-icon-circle($training, $inverse, $deep-orange, 4.5rem);
+    @include u-icon-circle($training, $inverse, $secondary-contrast, 4.5rem);
     content: '';
     float: left;
     margin-right: u(1rem);
