@@ -1,6 +1,18 @@
 .contact-item {
   @include clearfix();
+  display: table;
   margin-bottom: u(4rem);
+
+  &:not(.contact-item--half) {
+    &::before {
+      content: '';
+      display: block;
+      background-size: 90%;
+      margin-right: 2rem;
+      width: 3.4rem;
+      height: 3.4rem;
+    }
+  }
 }
 
 .contact-item--half {
@@ -18,13 +30,9 @@
   margin-top: 0;
 }
 
-.contact-item__icon {
-  float: left;
-  margin-right: u(2rem);
-}
-
 .contact-item__content {
-  float: left;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .contact-item__content--offset {
@@ -36,43 +44,43 @@
   padding-top: u(1rem);
 }
 
+.contact-item--phone {
+  &::before {
+    @include u-icon-bg($telephone-circle, $primary);
+  }
+}
+
+.contact-item--mail {
+  &::before {
+    @include u-icon-bg($stamp-circle, $primary);
+  }
+}
+
+.contact-item--github {
+  &::before {
+    @include u-icon-bg($github-circle, $primary);
+  }
+}
+
 .contact-item--email {
-  @include u-icon-bg($moving-envelope-circle, $primary);
-  background-size: 3.4rem;
-  padding-left: 4rem;
+  &::before {
+    @include u-icon-bg($moving-envelope-circle, $primary);
+  }
 }
 
 .contact-item--fax {
-  display: table;
-
-  .contact-item__content {
-    display: table-cell;
-    float: none;
-    vertical-align: top;
-  }
-
   &::before {
     @include u-icon-circle($fax, $primary, $inverse, 3.4rem);
-    content: '';
-    background-size: 90%;
-    margin-right: 1rem;
   }
 }
 
 .contact-item--hand {
-  display: table;
-
-  .contact-item__content {
-    display: table-cell;
-    float: none;
-    vertical-align: top;
-  }
-
   &::before {
     @include u-icon-circle($hand-envelope, $primary, $inverse, 3.4rem);
-    content: '';
-    background-size: 90%;
-    margin-right: 1rem;
-    float: left;
   }
+}
+
+.address span {
+  display: block;
+  margin-bottom: .8rem;
 }
