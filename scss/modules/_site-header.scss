@@ -138,18 +138,6 @@
 }
 
 @media (min-width: $medium-screen), print {
-  .homepage-seal {
-    width: 160px;
-    top: u(1rem);
-    left: u(3rem);
-    display: block;
-    position: absolute;
-    z-index: $z6;
-
-    img {
-      width: 100%;
-    }
-  }
 
   .disclaimer {
     float: right;
@@ -172,7 +160,6 @@
     background-size: u(11rem);
   }
 
-
   .site-title {
     @include u-background-image('wordmark', u(12rem) 50%);
     background-size: contain;
@@ -186,6 +173,27 @@
   // Mobile site title is included in the .site-nav nav element
   .site-nav .site-title {
     display: none;
+  }
+}
+
+@media (min-width: $large-screen), print {
+  .homepage-seal {
+    width: 160px;
+    top: u(1rem);
+    left: u(3rem);
+    display: block;
+    position: absolute;
+    z-index: $z6;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .site-header {
+    border-bottom: none;
+    position: relative;
+    z-index: $z-header;
   }
 
   .site-header--homepage {
@@ -201,14 +209,6 @@
     .site-nav__panel {
       padding-left: u(20rem) !important;
     }
-  }
-}
-
-@media (min-width: $large-screen), print {
-  .site-header {
-    border-bottom: none;
-    position: relative;
-    z-index: $z-header;
   }
 
   .site-title {
