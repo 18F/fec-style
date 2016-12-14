@@ -16,20 +16,13 @@
   padding-top: 33px;
 }
 
-.home-data-search .combo__button.button--search {
-	@include u-icon-bg($magnifying-glass, $gray-dark);
-	background-color: $gray;
-	border: 2px solid $gray;
-	width: 4rem;
-} 
-
 .home-data-search .combo--search select {
   @include u-icon-bg($arrow-down, $federal-blue);
   border: 2px solid $gray;
   color: $federal-blue;
   font-weight: bold;
   background-color: $gray-lightest;
-  width: 16rem;
+  width: u(16rem);
 
   &:hover:not(.is-disabled):not([disabled]) {
     border-color: $inverse;
@@ -61,3 +54,10 @@
 	background-color: $gray-light;
 	width: calc(100% - 20rem);
 }
+
+.home-data-search .combo__button.button--search {
+	@include u-icon-bg($magnifying-glass, $gray-dark);
+	background-color: $gray;
+	border: 2px solid $gray;
+	width: u(4rem);
+} 

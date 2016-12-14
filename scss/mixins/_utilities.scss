@@ -399,18 +399,4 @@
   }
 }
 
-// Campaign Finance Data Homepage Styles
-.slab.slab--primary .blue {
-  color: $primary-contrast;
-  border-bottom: 1px dotted #5e7289;
 
-  &:active,
-  &:hover {
-    border-bottom-color: #fff;
-  }
-}
-
-.grid__item.horizontal-bar {
-  border-top: 1px solid #8796a7;
-  padding-top: 33px;
-}
