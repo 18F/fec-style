@@ -72,6 +72,14 @@
   }
 }
 
+.site-header--homepage .disclaimer {
+  padding: u(.75rem 2rem);
+
+  .flag {
+    margin-left: u(1rem);
+  }
+}
+
 // Masthead
 //
 // The combination of the logo, site title and utility nav
@@ -96,6 +104,10 @@
 .site-header {
   border-bottom: 1px solid $neutral;
   position: relative;
+}
+
+.homepage-seal {
+  display: none;
 }
 
 .site-title {
@@ -126,6 +138,7 @@
 }
 
 @media (min-width: $medium-screen), print {
+
   .disclaimer {
     float: right;
     width: calc(100% - 9rem);
@@ -164,10 +177,38 @@
 }
 
 @media (min-width: $large-screen), print {
+  .homepage-seal {
+    width: 160px;
+    top: u(1rem);
+    left: u(3rem);
+    display: block;
+    position: absolute;
+    z-index: $z6;
+
+    img {
+      width: 100%;
+    }
+  }
+
   .site-header {
     border-bottom: none;
     position: relative;
     z-index: $z-header;
+  }
+
+  .site-header--homepage {
+    .masthead {
+      background: none;
+      margin-left: u(4rem);
+    }
+
+    .site-title {
+      @include u-background-image('wordmark', u(16.5rem) 50%);
+    }
+
+    .site-nav__panel {
+      padding-left: u(20rem);
+    }
   }
 
   .site-title {
