@@ -75,8 +75,10 @@
 }
 
 .contact-item--hand {
-  &::before {
+  &.contact-item::before {
     @include u-icon-circle($hand-envelope, $primary, $inverse, 3.4rem);
+    background-size: 100%;
+    background-position: 100% 50%;
   }
 }
 
