@@ -9,8 +9,8 @@
       display: block;
       background-size: 90%;
       margin-right: 2rem;
-      width: 3.4rem;
-      height: 3.4rem;
+      width: u(3.4rem);
+      height: u(3.4rem);
     }
   }
 }
@@ -84,5 +84,5 @@
 
 .address span {
   display: block;
-  margin-bottom: .8rem;
+  margin-bottom: u(.8rem);
 }
