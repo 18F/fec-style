@@ -25,10 +25,14 @@
 
 .icon-heading__content {
   @include span-columns(11);
-  max-width: 80%;
+  max-width: 75%;
 
   p {
     margin: 0;
+  }
+
+  @include media($lg) {
+    max-width: 80%;
   }
 }
 
@@ -131,7 +135,7 @@
     @include u-icon-circle($calendar, $secondary, $inverse, $size);
     content: '';
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
   }
 }
 
@@ -141,7 +145,7 @@
     @include u-icon-circle($piggy-bank, $primary, $inverse, $size);
     content: '';
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
   }
 }
 
@@ -151,7 +155,47 @@
     @include u-icon-circle($disbursement, $primary, $inverse, $size);
     content: '';
     float: left;
-    margin-right: 1rem;
+    margin-right: u(1rem);
   }
 }
 
+// icons for homepage - registration and reporting (on secondary [red] slab)
+.icon-heading--checklist-circle {
+  &::before {
+    @include u-icon-circle($checklist, $inverse, $secondary-contrast, 4.5rem);
+    background-size: u(4rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+.icon-heading--question-bubble-circle {
+  &::before {
+    @include u-icon-circle($question-bubble, $inverse, $secondary-contrast, 4.5rem);
+    background-size: u(4rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+.slab--secondary {
+  .icon-heading--calendar-circle {
+    &::before {
+      @include u-icon-circle($calendar, $inverse, $secondary-contrast, 4.5rem);
+      content: '';
+      float: left;
+      margin-right: u(1.5rem);
+    }
+  }
+}
+
+.icon-heading--training-circle {
+  &::before {
+    @include u-icon-circle($training, $inverse, $secondary-contrast, 4.5rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
