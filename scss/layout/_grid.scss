@@ -45,6 +45,30 @@
   width: 100%;
 }
 
+.slab .grid {
+  padding-top: u(3rem);
+
+  .grid__item {
+    border-bottom: 1px solid $inverse;
+    padding-bottom: u(2rem);
+
+    &:nth-last-child(1) {
+      border-bottom: none;
+    }
+  }
+}
+
+.slab--secondary .grid {
+  a {
+    color: $secondary-contrast;
+    border-bottom-color: $secondary-contrast;
+
+    &:hover {
+      border-bottom-color: $inverse;
+    }
+  }
+}
+
 // BREAKPOINT: MEDIUM
 // We set a max-width to prevent the omega mixins from applying multiple times.
 // This is based on $large-screen, but we have to convert to px so that we can
@@ -62,6 +86,13 @@
 
   .grid__item--no-margin {
     margin-bottom: 0;
+  }
+
+  .slab .grid {
+    .grid__item:nth-last-child(-n+2) {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -85,6 +116,17 @@
     .grid__item {
       @include span-columns(3);
       @include omega(4n);
+    }
+  }
+
+  .slab .grid {
+    .grid__item:nth-last-child(-n+2) {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      line-height: 1.5;
     }
   }
 }
