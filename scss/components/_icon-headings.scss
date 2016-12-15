@@ -32,6 +32,18 @@
   }
 }
 
+.grid--3-wide {
+  .icon-heading__image {
+    @include span-columns(3);
+  }
+
+  .icon-heading__content {
+    @include span-columns(8);
+    padding-left: u(.5rem);
+  }
+}
+
+
 .icon-heading__title {
   margin-bottom: 0;
 }
