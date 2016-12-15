@@ -118,16 +118,6 @@
   padding-left: u(3rem);
 }
 
-.icon-heading--calendar-circle {
-  &::before {
-    $size: u(2.5rem);
-    @include u-icon-circle($calendar, $secondary, $inverse, $size);
-    content: '';
-    float: left;
-    margin-right: u(1rem);
-  }
-}
-
 .icon-heading--raising-circle {
   &::before {
     $size: u(4rem);
@@ -169,14 +159,12 @@
   }
 }
 
-.slab--secondary {
-  .icon-heading--calendar-circle {
-    &::before {
-      @include u-icon-circle($calendar, $inverse, $secondary-contrast, 4.5rem);
-      content: '';
-      float: left;
-      margin-right: u(1.5rem);
-    }
+.icon-heading--calendar-circle {
+  &::before {
+    @include u-icon-circle($calendar, $inverse, $secondary-contrast, 4.5rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
   }
 }
 
