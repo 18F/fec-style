@@ -25,10 +25,14 @@
 
 .icon-heading__content {
   @include span-columns(11);
-  max-width: 80%;
+  max-width: 75%;
 
   p {
     margin: 0;
+  }
+
+  @include media($lg) {
+    max-width: 80%;
   }
 }
 
@@ -151,7 +155,7 @@
     background-size: u(4rem);
     content: '';
     float: left;
-    margin-right: u(1rem);
+    margin-right: u(1.5rem);
   }
 }
 
@@ -161,7 +165,7 @@
     background-size: u(4rem);
     content: '';
     float: left;
-    margin-right: u(1rem);
+    margin-right: u(1.5rem);
   }
 }
 
@@ -171,7 +175,7 @@
       @include u-icon-circle($calendar, $inverse, $secondary-contrast, 4.5rem);
       content: '';
       float: left;
-      margin-right: u(1rem);
+      margin-right: u(1.5rem);
     }
   }
 }
@@ -181,6 +185,6 @@
     @include u-icon-circle($training, $inverse, $secondary-contrast, 4.5rem);
     content: '';
     float: left;
-    margin-right: u(1rem);
+    margin-right: u(1.5rem);
   }
 }
