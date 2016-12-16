@@ -14,10 +14,10 @@ var LOADING_DELAY = 1500;
 var SUCCESS_DELAY = 5000;
 
 var formatMap = {
-  default: 'MM-DD-YYYY',
-  pretty: 'MMM D, YYYY',
+  default: 'MM/DD/YYYY',
+  pretty: 'MMMM D, YYYY',
   time: 'h:mma',
-  dateTime: 'MMM D, h:mma',
+  dateTime: 'MMMM D, h:mma',
   dayOfWeek: 'ddd',
   fullDayOfWeek: 'dddd'
 };

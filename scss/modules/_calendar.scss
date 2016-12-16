@@ -500,6 +500,7 @@
   width: u(22rem);
 
   .fc-header {
+    @include clearfix();
     background: $neutral;
     padding: u(3px .5rem);
 

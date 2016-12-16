@@ -2,6 +2,7 @@
 
 .post-feed {
   border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
   padding: u(1rem 0 1rem 2rem);
 }
 
@@ -10,7 +11,8 @@
   padding: u(2rem 0);
 
   &:last-of-type {
-    margin-bottom: u(2rem);
+    margin-bottom: 0;
+    border-bottom: none;
   }
 
   h3 {
@@ -23,6 +25,18 @@
   color: $gray-dark;
   font-family: $sans-serif;
   padding-bottom: 5px;
+}
+
+.post__doc {
+  &::before {
+    @include u-icon-bg($document, $base);
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+  }
 }
 
 @include media($med) {
