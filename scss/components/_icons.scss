@@ -48,3 +48,13 @@
     content: '';
   }
 }
+
+.icon-circle--checklist {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($checklist, $secondary, $inverse, 3.4rem);
+    content: '';
+    background-size: 80%;
+  }
+}
