@@ -66,6 +66,10 @@
       padding: 0;
     }
   }
+  .grid--no-margin {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .slab--secondary .grid {
@@ -76,6 +80,12 @@
     &:hover {
       border-bottom-color: $inverse;
     }
+  }
+}
+
+.slab--neutral .grid {
+  .grid__item {
+    border-bottom: 1px solid $gray;
   }
 }
 
