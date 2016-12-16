@@ -53,6 +53,8 @@
 
   h2 {
     color: $inverse;
+    font-size: 3rem;
+    font-weight: normal;
     line-height: 1.3;
   }
 
@@ -72,8 +74,8 @@
     }
 
     .hero__content {
-      padding-top: u(7rem);
-      padding-bottom: u(4rem);
+      padding-top: u(6rem);
+      padding-bottom: u(1rem);
       @include span-columns(12);
     }
 
