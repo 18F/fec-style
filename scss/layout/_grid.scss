@@ -53,11 +53,6 @@
       border-top: 1px solid $inverse-translucent;
       padding-top: u(2.5rem);
 
-      a {
-        font-family: $sans-serif;
-        letter-spacing: -.3px;
-      }
-
       &:nth-child(1) {
         border-top: none;
         padding-top: 0;
