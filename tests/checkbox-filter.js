@@ -46,7 +46,7 @@ describe('checkbox filters', function() {
   });
 
   it('sets its initial state', function() {
-    expect(this.filter.name).to.equal('fdas');
+    expect(this.filter.name).to.equal('office');
     expect(this.filter.fields).to.deep.equal(['office']);
     expect(this.filter.removable).to.be.false;
   });
