@@ -271,6 +271,22 @@
     &.i-elections {
       @include u-icon-bg($person-location, $primary-contrast);
     }
+	&.i-mallet {
+      @include u-icon-bg($mallet, $primary-contrast);
+	  background-size: 100%;
+    }
+	&.i-subsection-doc {
+      @include u-icon-bg($subsection-doc, $primary-contrast);
+	  background-size: 100%;
+    }
+	&.i-direction-sign {
+      @include u-icon-bg($direction-sign, $primary-contrast);
+	  background-size: 100%;
+    }
+	&.i-shield {
+      @include u-icon-bg($shield, $primary-contrast);
+	  background-size: 100%;
+    }
   }
 }
 
@@ -302,6 +318,7 @@
       @include u-icon-bg($updates, $secondary-contrast);
       background-size: 60%;
     }
+	
   }
 }
 
