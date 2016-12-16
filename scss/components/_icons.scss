@@ -78,3 +78,21 @@
     content: '';
   }
 }
+
+.icon-circle--raising {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($piggy-bank, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
+
+.icon-circle--spending {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($disbursement, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
