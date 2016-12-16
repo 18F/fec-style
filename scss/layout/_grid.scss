@@ -50,8 +50,8 @@
     padding-top: u(3rem);
 
     .grid__item {
-      border-top: 1px solid $inverse;
-      padding-top: u(2rem);
+      border-top: 1px solid $inverse-translucent;
+      padding-top: u(2.5rem);
 
       a {
         font-family: $sans-serif;
