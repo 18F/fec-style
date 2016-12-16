@@ -69,3 +69,12 @@
     background-size: 50%;
   }
 }
+
+.icon-circle--committee {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($committee, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
