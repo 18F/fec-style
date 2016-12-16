@@ -58,3 +58,14 @@
     background-size: 80%;
   }
 }
+
+.icon-circle--candidate {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($candidate, $primary, $inverse, 3.4rem);
+    content: '';
+    background-position: 60% 50%;
+    background-size: 50%;
+  }
+}
