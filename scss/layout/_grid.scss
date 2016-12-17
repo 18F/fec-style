@@ -53,7 +53,7 @@
       border-top: 1px solid $inverse;
       padding-top: u(2rem);
 
-      &:nth-child(1) {
+      &:nth-child(-n+2) {
         border-top: none;
         padding-top: 0;
       }
@@ -149,17 +149,14 @@
     }
 
     .grid--2-wide {
-      .grid__item:nth-child(1),
-      .grid__item:nth-child(2) {
+      .grid__item:nth-child(-n+2) {
         border-top: none;
         padding-top: 0;
       }
     }
 
     .grid--3-wide {
-      .grid__item:nth-child(1),
-      .grid__item:nth-child(2),
-      .grid__item:nth-child(3) {
+      .grid__item:nth-child(-n+3) {
         border-top: none;
         padding-top: 0;
       }
