@@ -90,7 +90,7 @@
 .list--border {
   li {
     border-top: 1px solid $gray;
-    padding: u(1rem 0);
+    padding: u(.75rem 1rem);
 
     &.list__item--no-border {
       border-top: none;
@@ -98,6 +98,7 @@
     }
   }
 }
+
 
 // Checkbox Lists
 //
