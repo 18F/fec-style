@@ -203,7 +203,7 @@
 .icon-heading--subsection-doc-circle {
   &::before {
     @include u-icon-circle($subsection-doc, $inverse, $primary-contrast, 4.5rem);
-    background-size: 80%;
+    background-size: u(4rem);
     content: '';
     float: left;
     margin-right: u(1.5rem);
@@ -213,7 +213,7 @@
 .icon-heading--direction-sign-circle {
   &::before {
     @include u-icon-circle($direction-sign, $inverse, $primary-contrast, 4.5rem);
-    background-size: 80%;
+    background-size: u(4rem);
     content: '';
     float: left;
     margin-right: u(1.5rem);
@@ -223,7 +223,7 @@
 .icon-heading--shield-circle {
   &::before {
     @include u-icon-circle($shield, $inverse, $primary-contrast, 4.5rem);
-    background-size: 80%;
+    background-size: u(4rem);
     content: '';
     float: left;
     margin-right: u(1.5rem);
