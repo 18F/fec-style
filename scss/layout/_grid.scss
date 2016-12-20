@@ -62,7 +62,7 @@
     padding-top: u(1rem);
 
     .grid__item {
-      border: none;
+      border-bottom: none !important;
       padding: 0;
     }
   }

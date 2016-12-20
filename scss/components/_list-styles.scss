@@ -87,6 +87,18 @@
   }
 }
 
+.list--border {
+  li {
+    border-top: 1px solid $gray;
+    padding: u(1rem 0);
+
+    &.list__item--no-border {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+}
+
 // Checkbox Lists
 //
 // For check marks as list bullets
