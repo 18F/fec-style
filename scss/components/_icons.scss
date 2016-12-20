@@ -40,11 +40,40 @@
   }
 }
 
+.icon-circle--updates--inline--left {
+  display: inline-block;
+  margin-right: u(1.5rem);
+
+  &::before {
+    @include u-icon-circle($updates, $secondary, $inverse, 3rem);
+    content: '';
+  }
+}
+
+.icon-circle--calendar--inline--left {
+  display: inline-block;
+  margin-right: u(1.5rem);
+
+  &::before {
+    @include u-icon-circle($calendar, $secondary, $inverse, 3rem);
+    content: '';
+  }
+}
+
 .icon-circle--search {
   display: block;
 
   &::before {
     @include u-icon-circle($magnifying-glass, $primary, $inverse, 3.4rem);
     content: '';
+  }
+}
+
+.icon-circle-updates {
+  &::before {
+    @include u-icon-circle($updates, $secondary, $inverse, 2.5rem);
+    content: '';
+    float: left;
+    margin-right: u(.75em);
   }
 }

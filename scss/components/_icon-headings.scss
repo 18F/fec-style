@@ -149,7 +149,7 @@
   }
 }
 
-// icons for homepage - registration and reporting (on secondary [red] slab)
+// homepage - registration and reporting (on secondary [red] slab)
 .icon-heading--checklist-circle {
   &::before {
     @include u-icon-circle($checklist, $inverse, $secondary-contrast, 4.5rem);
