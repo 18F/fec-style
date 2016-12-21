@@ -149,7 +149,7 @@
   }
 }
 
-// icons for homepage - registration and reporting (on secondary [red] slab)
+// homepage - registration and reporting (on secondary [red] slab)
 .icon-heading--checklist-circle {
   &::before {
     @include u-icon-circle($checklist, $inverse, $secondary-contrast, 4.5rem);
@@ -182,6 +182,48 @@
 .icon-heading--training-circle {
   &::before {
     @include u-icon-circle($training, $inverse, $secondary-contrast, 4.5rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+
+// icons for homepage - legal resources (on primary [blue] slab)
+.icon-heading--mallet-circle {
+  &::before {
+    @include u-icon-circle($mallet, $inverse, $primary-contrast, 4.5rem);
+    background-size: u(4rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+.icon-heading--subsection-doc-circle {
+  &::before {
+    @include u-icon-circle($subsection-doc, $inverse, $primary-contrast, 4.5rem);
+    background-size: u(4rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+.icon-heading--direction-sign-circle {
+  &::before {
+    @include u-icon-circle($direction-sign, $inverse, $primary-contrast, 4.5rem);
+    background-size: u(4rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
+.icon-heading--shield-circle {
+  &::before {
+    @include u-icon-circle($shield, $inverse, $primary-contrast, 4.5rem);
+    background-size: u(4rem);
     content: '';
     float: left;
     margin-right: u(1.5rem);
