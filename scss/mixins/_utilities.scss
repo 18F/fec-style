@@ -50,6 +50,10 @@
   border-bottom: none;
 }
 
+.u-border-top-inverse {
+  border-top: 2px solid $inverse;
+}
+
 .u-no-margin {
   margin: 0 !important;
 }
