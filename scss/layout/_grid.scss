@@ -45,7 +45,7 @@
   width: 100%;
 }
 
-.slab {
+.slab.slab--home {
   .grid {
     padding-top: u(3rem);
 
@@ -69,7 +69,7 @@
   }
 }
 
-.slab--primary .grid {
+.slab--primary.slab--home .grid {
   a {
     color: $primary-contrast;
     border-bottom-color: $primary-contrast;
@@ -79,7 +79,7 @@
     }
   }
 }
-.slab--secondary .grid {
+.slab--secondary.slab--home .grid {
   a {
     color: $secondary-contrast;
     border-bottom-color: $secondary-contrast;
@@ -112,7 +112,7 @@
 
   .slab .grid {
     .grid__item:nth-last-child(-n+2) {
-      border-top: none;
+      border-top: 1px solid $inverse;
       margin-top: 0;
     }
   }
