@@ -14,6 +14,12 @@
   width: u(2rem);
 }
 
+.icon--small {
+  display: inline-block;
+  max-height: u(1rem);
+  max-width: u(1rem);
+}
+
 .icon--complex {
   max-height: u(6rem);
   max-width: u(6rem);
