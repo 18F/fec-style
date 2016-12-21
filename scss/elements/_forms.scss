@@ -243,7 +243,7 @@ button {
 
 // Homepage candidate/commitee search box styles
 
-.slab--primary .grid__item .js-search-type {
+.slab--primary .grid__item select {
   @include u-icon-bg($arrow-down, $federal-blue);
   border: 2px solid $gray;
   color: $federal-blue;
@@ -280,7 +280,7 @@ button {
   background-color: $gray-light;
 }
 
-.slab--primary .grid__item .button--search {
+.slab--primary .grid__item button {
   @include u-icon-bg($magnifying-glass, $gray-dark);
   background-color: $gray;
   border: 2px solid $gray;
