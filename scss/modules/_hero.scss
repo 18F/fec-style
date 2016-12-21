@@ -53,9 +53,6 @@
 
   h2 {
     color: $inverse;
-    font-size: 3rem;
-    font-weight: normal;
-    line-height: 1.3;
   }
 
   .hero__content,
@@ -69,6 +66,13 @@
   }
 
   @include media($lg) {
+    h2 {
+      color: $inverse;
+      font-size: 3rem;
+      font-weight: normal;
+      line-height: 1.3;
+    }
+
     .hero__banner {
       height: u(25rem);
     }
