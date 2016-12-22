@@ -111,4 +111,9 @@ FilterSet.prototype.enableFilters = function() {
   });
 };
 
+FilterSet.prototype.switchFilters = function(dataType) {
+  this.$body.find('.js-filters').attr('aria-hidden', true);
+  this.$body.find('.js-filters[data-filters-data="' + dataType + '"]').attr('aria-hidden', false);
+};
+
 module.exports = {FilterSet: FilterSet};
