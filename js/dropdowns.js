@@ -157,10 +157,11 @@ Dropdown.prototype.handleRemoveClick = function(e, opts) {
 // "Clear all filters" will remove unchecked dropdown checkboxes
 Dropdown.prototype.handleClearFilters = function() {
   var self = this;
-
-  this.$selected.find('input:checkbox:not(:checked)').each(function () {
-    self.handleCheckboxRemoval($(this));
-  });
+  if (this.$selected) {
+    this.$selected.find('input:checkbox:not(:checked)').each(function () {
+      self.handleCheckboxRemoval($(this));
+    });
+  }
 };
 
 Dropdown.prototype.selectItem = function($input) {
