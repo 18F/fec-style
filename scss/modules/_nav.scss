@@ -198,7 +198,6 @@
   .site-nav__container {
     @include clearfix();
     @include transform(translateX(0));
-    background: $inverse;
     height: auto;
     float: left;
     overflow: visible;
