@@ -97,23 +97,29 @@ FilterSet.prototype.handleValidation = function(e, opts) {
   this.isValid = opts.isValid;
 };
 
-FilterSet.prototype.disableFilters = function(excludedFilters) {
-  _.each(this.filters, function(filter) {
-    if (excludedFilters.indexOf(filter.name) < 0) {
-      filter.disable();
-    }
-  });
-};
-
-FilterSet.prototype.enableFilters = function() {
-  _.each(this.filters, function(filter) {
-    filter.enable();
-  });
-};
-
 FilterSet.prototype.switchFilters = function(dataType) {
-  this.$body.find('.js-filters').attr('aria-hidden', true);
-  this.$body.find('.js-filters[data-filters-data="' + dataType + '"]').attr('aria-hidden', false);
+  // Save the current query for later
+  var query = URI.parseQuery(window.location.search);
+  var $currentFilters = this.$body.find('.js-' + dataType + '-filters');
+  var otherFilters = dataType == 'efiling' ? '.js-processed-filters' : '.js-efiling-filters';
+  // Toggle visibility of filters
+  this.$body.find(otherFilters).attr('aria-hidden', true);
+  $currentFilters.attr('aria-hidden', false);
+  this.$body.trigger('tag:removeAll');
+
+  // If there was a previous query, activate filters
+  if (this.previousQuery) {
+    var previousQuery = this.previousQuery;
+    _.each(this.filters, function(filter) {
+      // Set the value if it's in the current filter set
+      if (filter.$elm.closest('.js-filters').is($currentFilters)) {
+        filter.fromQuery(previousQuery);
+      }
+    });
+  }
+
+  // Store the previous query for future reference
+  this.previousQuery = query;
 };
 
 module.exports = {FilterSet: FilterSet};
