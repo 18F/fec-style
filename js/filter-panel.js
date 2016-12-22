@@ -11,9 +11,10 @@ var defaultOptions = {
   body: '.filters',
   content: '.filters__content',
   dataContainer: '.data-container',
+  filterHeader: '.js-filter-header',
   form: '#category-filters',
   focus: '.js-filter-toggle',
-  toggle: '.js-filter-toggle',
+  toggle: '.js-filter-toggle'
 };
 
 function FilterPanel(options) {
@@ -26,6 +27,7 @@ function FilterPanel(options) {
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
+  this.$filterHeader = $(this.options.filterHeader);
 
   this.$toggle.on('click', this.toggle.bind(this));
   this.$body.on('filter:added', this.handleAddEvent.bind(this));
@@ -79,20 +81,20 @@ FilterPanel.prototype.toggle = function() {
 };
 
 FilterPanel.prototype.handleAddEvent = function() {
-  var filterCount = this.$toggle.find('.filter-count');
+  var filterCount = this.$filterHeader.find('.filter-count');
 
   if (filterCount.html()) {
     filterCount.html(parseInt(filterCount.html(), 10) + 1);
   }
   else {
-    this.$toggle.append(' <span class="filter-count">1</span>');
+    this.$filterHeader.append(' <span class="filter-count">1</span>');
   }
 };
 
 FilterPanel.prototype.handleRemoveEvent = function(e, opts) {
   if (opts.loadedOnce !== true) { return; }
 
-  var filterCount = this.$toggle.find('.filter-count');
+  var filterCount = this.$filterHeader.find('.filter-count');
 
   if (filterCount.html() === '1') {
     filterCount.remove();
