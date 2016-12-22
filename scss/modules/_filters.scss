@@ -41,7 +41,7 @@ $filter-button-width: u(4.6rem);
       width: calc(100% - 7rem);
     }
 
-    .filters__header {
+    .filters__toggle {
       &::after {
         @include u-icon($arrow-left-border, $primary, $icon-size, $icon-size);
         background-size: 65%;
@@ -146,11 +146,13 @@ $filter-button-width: u(4.6rem);
   border-top: 2px solid $primary;
   color: $primary;
   line-height: u(3rem);
-  margin-bottom: 0;
+  margin: 0;
   padding: u(1rem);
   text-align: left;
   width: 100%;
+}
 
+.filters__toggle {
   &::before {
     @include u-icon-circle($filter, $primary, $inverse, $icon-size);
     background-position: 50% 45%;
