@@ -100,11 +100,12 @@ FilterSet.prototype.handleValidation = function(e, opts) {
 FilterSet.prototype.switchFilters = function(dataType) {
   // Save the current query for later
   var query = URI.parseQuery(window.location.search);
-  var $currentFilters = this.$body.find('.js-' + dataType + '-filters');
+  var currentFilters = '.js-' + dataType + '-filters';
   var otherFilters = dataType == 'efiling' ? '.js-processed-filters' : '.js-efiling-filters';
+
   // Toggle visibility of filters
   this.$body.find(otherFilters).attr('aria-hidden', true);
-  $currentFilters.attr('aria-hidden', false);
+  this.$body.find(currentFilters).attr('aria-hidden', false);
   this.$body.trigger('tag:removeAll');
 
   // If there was a previous query, activate filters
@@ -112,7 +113,7 @@ FilterSet.prototype.switchFilters = function(dataType) {
     var previousQuery = this.previousQuery;
     _.each(this.filters, function(filter) {
       // Set the value if it's in the current filter set
-      if (filter.$elm.closest('.js-filters').is($currentFilters)) {
+      if (filter.$elm.closest('.js-' + dataType + '-filters').length > 0) {
         filter.fromQuery(previousQuery);
       }
     });
