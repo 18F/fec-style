@@ -398,3 +398,20 @@ $filter-button-width: u(4.6rem);
     display: none;
   }
 }
+
+.data-type {
+  border-top: 1px solid $gray-dark;
+  border-bottom: 1px solid $gray-dark;
+  margin-top: -1px; // To line up the border
+}
+
+.data-type__message {
+  padding-top: u(1rem);
+
+  p {
+    font-size: u(1.2rem);
+    font-family: $sans-serif;
+    letter-spacing: -.3px;
+    margin: 0;
+  }
+}
