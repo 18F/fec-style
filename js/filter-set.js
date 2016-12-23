@@ -158,7 +158,7 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
 
   // If this is the first page load OR there's a previous query, activate filters
   // This way we don't activate the initial query when toggling data type for the first time
-  if (this.firstLoad || this.previousQuery['data_type'] == dataType) {
+  if (this.firstLoad || this.previousQuery.data_type == dataType) {
     var previousQuery = this.previousQuery || query;
 
     _.each(this.filters, function(filter) {
