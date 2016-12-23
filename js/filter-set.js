@@ -155,16 +155,14 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   var query = URI.parseQuery(window.location.search);
   // Identify which set of filters to activate and store as this.filters
   this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
-
   // If this is the first page load OR there's a previous query, activate filters
   // This way we don't activate the initial query when toggling data type for the first time
-  if (this.firstLoad || this.previousQuery.data_type == dataType) {
+  if (this.firstLoad || this.previousQuery.data_type === dataType) {
     var previousQuery = this.previousQuery || query;
 
     _.each(this.filters, function(filter) {
       filter.fromQuery(previousQuery);
     });
-
   }
 
   // Store the query for future reference
