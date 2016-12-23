@@ -47,10 +47,11 @@ function TagList(opts) {
     .on('filter:removed', this.removeTagEvt.bind(this))
     .on('filter:renamed', this.renameTag.bind(this))
     .on('filter:disabled', this.disableTag.bind(this))
-    .on('filter:enabled', this.enableTag.bind(this));
+    .on('filter:enabled', this.enableTag.bind(this))
+    .on('tag:removeAll', this.removeAllTags.bind(this));
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
-  this.$clear.on('click', this.removeAllTags.bind(this));
+  this.$clear.on('click', this.removeAllTags.bind(this, true));
 
   if (this.opts.showResultCount) {
     this.$body.find('.js-count').attr('aria-hidden', false);
@@ -123,14 +124,18 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 };
 
-TagList.prototype.removeAllTags = function() {
+TagList.prototype.removeAllTags = function(e, emit) {
   var self = this;
 
   this.$list.find('[data-removable]').each(function(){
     self.removeTag($(this).data('id'), true);
   });
 
-  $(document.body).trigger('tag:removeAll');
+  // Don't emit another event unless told to do so
+  // This way it can be triggered as an event listener without creating more
+  if (emit) {
+    $(document.body).trigger('tag:removeAll');
+  }
 };
 
 TagList.prototype.removeTagEvt = function(e, opts) {
@@ -152,14 +157,12 @@ TagList.prototype.renameTag = function(e, opts) {
 
 TagList.prototype.disableTag = function(e, opts) {
   var $tag = this.$list.find('[data-id="' + opts.key + '"]');
-  $tag.addClass('is-disabled');
-  $tag.attr('title', 'This filter is not available for electronic filings data');
+  $tag.closest('.tag__category').hide();
 };
 
 TagList.prototype.enableTag = function(e, opts) {
   var $tag = this.$list.find('[data-id="' + opts.key + '"]');
-  $tag.removeClass('is-disabled');
-  $tag.attr('title', false);
+  $tag.closest('.tag__category').show();
 };
 
 module.exports = {TagList: TagList};
