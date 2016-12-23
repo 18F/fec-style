@@ -33,7 +33,7 @@ function FilterPanel(options) {
   this.$body.on('filter:added', this.handleAddEvent.bind(this));
   this.$body.on('filter:removed', this.handleRemoveEvent.bind(this));
 
-  this.filterSet = new FilterSet(this.$form).activate();
+  this.filterSet = new FilterSet(this.$form).activateAll();
 
   this.setInitialDisplay();
 }
