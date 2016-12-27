@@ -29,7 +29,7 @@
   },
   {
     "term": "Total disbursements",
-    "definition": "The sum of all purchases and payments made during a filing period by a political committee or any other person, including an organization that is not a political committee that is subject to the Act."
+    "definition": "The sum of all purchases and payments made during a filing period by a political committee or any other person, including an organization that is not a political committee that is subject to the Federal Election Campaign Act."
   },
   {
     "term": "Ending cash on hand",
@@ -70,7 +70,7 @@
   {
 
     "term": "Candidate",
-    "definition": "An individual seeking nomination for election, or election, to a federal office becomes a candidate when he or she (or persons working on his or her behalf) receives contributions or makes expenditures that exceed $5,000."
+    "definition": "An individual seeking nomination for election, or reelection, to a federal office becomes a candidate when he or she (or persons working on his or her behalf) receives contributions or makes expenditures that exceed $5,000."
   },
   {
     "term": "None",
@@ -90,7 +90,7 @@
   },
   {
     "term": "Disbursement",
-    "definition": "Any purchase or payment made by a political committee or any other person that is subject to the Act. 300.2(d)."
+    "definition": "Any purchase or payment made by a political committee or any other person that is subject to the Federal Election Campaign Act. 300.2(d)."
   },
   {
     "term": "Donation",
