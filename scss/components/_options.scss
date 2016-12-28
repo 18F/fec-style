@@ -41,6 +41,12 @@
   padding-top: u(2rem);
 }
 
+.option__aside__block + .option__aside__block {
+  border-top: 1px solid $primary;
+  margin-top: u(2rem);
+  padding-top: u(2rem);
+}
+
 .option__content {
   .label {
     margin-bottom: u(2rem);
