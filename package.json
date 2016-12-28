@@ -23,11 +23,10 @@
     "test-single": "karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
-    "@frctl/fractal": "^1.0.11",
     "accessible-mega-menu": "git+https://github.com/noahmanger/Accessible-Mega-Menu.git",
     "aria-accordion": "0.1.1",
-    "eventemitter2": "0.4.14",
     "glossary-panel": "0.1.2",
+    "eventemitter2": "0.4.14",
     "jquery": "2.1.4",
     "jquery.inputmask": "3.2.7",
     "moment": "2.10.3",
