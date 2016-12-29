@@ -38,8 +38,24 @@
   padding: 0 !important;
 }
 
+.u-no-padding-left {
+  padding-left: 0 !important;
+}
+
+.u-no-padding-right {
+  padding-right: 0 !important;
+}
+
 .u-no-border {
   border-bottom: none;
+}
+
+.u-border-top-inverse {
+  border-top: 2px solid $inverse;
+}
+
+.u-border-top-gray {
+  border-top: 1px solid $gray;
 }
 
 .u-no-margin {
@@ -50,6 +66,11 @@
   display: inline-block;
   border-bottom: 1px solid $inverse;
   width: u(5rem);
+}
+
+.u-gray-background {
+  background-color: $gray-medium;
+  padding: u(1rem);
 }
 
 // u-icon-bg()
