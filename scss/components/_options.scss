@@ -34,6 +34,11 @@
   &.option--border-bottom {
     border-bottom: 1px solid $primary;
   }
+
+  &.option--no-top-border {
+    border-top: none;
+    padding-top: 0;
+  }
 }
 
 .option__aside {
