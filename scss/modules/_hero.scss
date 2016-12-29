@@ -113,6 +113,12 @@
   }
 }
 
+.hero--about {
+  .hero__image {
+    background-image: url('../img/hero-about.jpg');
+  }
+}
+
 .hero__content {
   padding-top: u(1rem);
 
