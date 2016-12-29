@@ -75,11 +75,50 @@
   }
 }
 
-.icon-circle-updates {
+.icon-circle--checklist {
+  display: block;
+
   &::before {
-    @include u-icon-circle($updates, $secondary, $inverse, 2.5rem);
+    @include u-icon-circle($checklist, $secondary, $inverse, 3.4rem);
     content: '';
-    float: left;
-    margin-right: u(.75em);
+    background-size: 80%;
+  }
+}
+
+.icon-circle--candidate {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($candidate, $primary, $inverse, 3.4rem);
+    content: '';
+    background-position: 60% 50%;
+    background-size: 50%;
+  }
+}
+
+.icon-circle--committee {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($committee, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
+
+.icon-circle--raising {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($piggy-bank, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
+
+.icon-circle--spending {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($disbursement, $primary, $inverse, 3.4rem);
+    content: '';
   }
 }
