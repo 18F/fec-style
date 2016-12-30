@@ -183,7 +183,8 @@
   color: $secondary-contrast;
 }
 
-.t-lead {
+.t-lead,
+.t-lead p {
   font-weight: regular;
   font-size: u(1.8rem);
   line-height: u(2.8rem);
