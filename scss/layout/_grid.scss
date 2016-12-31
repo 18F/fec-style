@@ -94,7 +94,15 @@
   }
 }
 
-.slab--neutral .grid {
+.slab--neutral {
+  &.slab--home {
+    .grid .grid__item {
+      border-top: none;
+      margin-bottom: 0;
+      padding-bottom: 2rem;
+    }
+  }
+
   .grid__item {
     border-bottom: 1px solid $gray;
   }
