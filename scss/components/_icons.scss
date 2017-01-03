@@ -66,6 +66,31 @@
   }
 }
 
+.icon-circle--check-outline--inline--left {
+  margin-right: u(.5rem);
+  display: inline-block;
+  vertical-align: middle;
+
+  &::before {
+    @include u-icon-circle($check-circle-outline, $inverse, $aqua, 1.5rem);
+    content: '';
+    background-size: 100%;
+  }
+}
+
+.icon-circle--clock-reverse--inline--left {
+  margin-right: u(.5rem);
+  display: inline-block;
+  vertical-align: middle;
+
+  &::before {
+    @include u-icon-circle($clock-reverse, $inverse, $primary, 1.5rem);
+    content: '';
+    background-size: 100%;
+  }
+}
+
+
 .icon-circle--search {
   display: block;
 
