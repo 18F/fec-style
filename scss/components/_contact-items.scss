@@ -86,3 +86,10 @@
   display: block;
   margin-bottom: u(.8rem);
 }
+
+.grid__item {
+  // If it's inside a grid__item we don't want the margin
+  .contact-item {
+    margin-bottom: 0;
+  }
+}
