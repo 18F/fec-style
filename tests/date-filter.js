@@ -174,7 +174,7 @@ describe('date filter', function() {
     });
 
     it('sets the min date to the first of the min year', function() {
-      expect(this.filter.$minDate.val()).to.equal('01/01/2015');
+      expect(this.filter.$minDate.val()).to.equal('01/01/2016');
     });
 
     it('sets the max date to today if max year is this year', function() {
