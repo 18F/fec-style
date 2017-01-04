@@ -121,6 +121,26 @@
       bottom: u(-6.5rem);
     }
   }
+
+  // We make it shorter on the home page
+  .slab--home {
+    .search-controls__or--vertical {
+      margin: u(2rem 0);
+
+      &::before,
+      &::after {
+        height: u(3rem);
+      }
+
+      &::before {
+        top: u(-3rem);
+      }
+
+      &::after {
+        bottom: u(-3rem);
+      }
+    }
+  }
 }
 
 // BREAKPOINT: MEDIUM
