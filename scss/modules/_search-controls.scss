@@ -125,19 +125,19 @@
   // We make it shorter on the home page
   .slab--home {
     .search-controls__or--vertical {
-      margin: 2rem 0;
+      margin: u(2rem 0);
 
       &::before,
       &::after {
-        height: 3rem;
+        height: u(3rem);
       }
 
       &::before {
-        top: -3rem;
+        top: u(-3rem);
       }
 
       &::after {
-        bottom: -3rem;
+        bottom: u(-3rem);
       }
     }
   }
