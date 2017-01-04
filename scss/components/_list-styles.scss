@@ -87,6 +87,12 @@
   }
 }
 
+.list--extra-spacious {
+  li {
+    padding: u(2rem 0) !important;
+  }
+}
+
 .list--border {
   li {
     border-top: 1px solid $gray;
