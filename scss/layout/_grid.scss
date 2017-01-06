@@ -160,12 +160,6 @@
   }
 
   .slab {
-    .grid {
-      h3 {
-        line-height: 1.5;
-      }
-    }
-
     .grid--2-wide {
       .grid__item:nth-child(-n+2) {
         border-top: none;
@@ -187,4 +181,3 @@
     }
   }
 }
-
