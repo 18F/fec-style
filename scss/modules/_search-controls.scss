@@ -89,15 +89,15 @@
   }
 
   .search-controls__either {
-    @include span-columns(5);
+    @include span-columns(5.5);
   }
 
   .search-controls__submit {
-    @include span-columns(1 of 5);
+    @include span-columns(1.5 of 5.5);
   }
 
   .search-controls__zip {
-    @include span-columns(3 of 5);
+    @include span-columns(3.5 of 5.5);
   }
 
   .search-controls__or--vertical {
@@ -149,6 +149,6 @@
 @include media($lg) {
   .search-controls__state,
   .search-controls__district {
-    @include span-columns(2 of 5);
+    @include span-columns(2 of 5.5);
   }
 }

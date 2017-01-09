@@ -30,6 +30,10 @@
     .billboard__content {
       @include span-columns(8);
       vertical-align: middle;
+
+      .search-controls__either {
+        @include span-columns(5);
+      }
     }
   }
 }
