@@ -140,6 +140,20 @@
         bottom: u(-3rem);
       }
     }
+
+    .search-controls__zip {
+      width: 100%;
+    }
+
+    .search-controls__state,
+    .search-controls__district {
+      width: 100%;
+    }
+
+    .search-controls__submit {
+      margin-top: u(1rem);
+      clear: both;
+    }
   }
 }
 
@@ -150,5 +164,25 @@
   .search-controls__state,
   .search-controls__district {
     @include span-columns(2 of 5.5);
+  }
+
+  .slab--home {
+    .search-controls__either {
+      @include span-columns(5);
+    }
+
+    .search-controls__zip {
+      @include span-columns(3.5 of 5.5);
+    }
+
+    .search-controls__state,
+    .search-controls__district {
+      @include span-columns(2 of 5.5);
+    }
+
+    .search-controls__submit {
+      margin-top: 0;
+      clear: none;
+    }
   }
 }
