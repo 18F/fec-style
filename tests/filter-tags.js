@@ -63,7 +63,7 @@ describe('filter tags', function() {
     });
 
     it('it does not add remove button if nonremovable is true', function(){
-      $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy', nonremovable: true}]);
+      $(document.body).trigger('filter:added', [{key: 'name', value: 'timmy', nonremovable: true, removeOnSwitch: false}]);
       var tag = this.tagList.$list.find('[data-id="name"]');
       expect(tag.find('button')).to.have.length(0);
     });
@@ -104,14 +104,14 @@ describe('filter tags', function() {
 
     it('clear all removes all removable tags', function() {
       this.tagList.addTag({}, {key: 'name', value: 'hillary'});
-      this.tagList.removeAllTags();
+      this.tagList.removeAllTags({}, {});
       var tags = this.tagList.$list.find('li');
       expect(tags.length).to.equal(0);
     });
 
     it('clear all does not remove a nonremovable tag', function() {
-      this.tagList.addTag({}, {key: 'name', value: 'aaron', nonremovable: true});
-      this.tagList.removeAllTags();
+      this.tagList.addTag({}, {key: 'name', value: 'aaron', nonremovable: true, removeOnSwitch: false});
+      this.tagList.removeAllTags({}, {});
       var tags = this.tagList.$list.find('li');
       expect(tags.length).to.equal(1);
     });

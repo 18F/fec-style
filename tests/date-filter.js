@@ -128,7 +128,8 @@ describe('date filter', function() {
         range: 'min',
         rangeName: 'date',
         name: 'date',
-        nonremovable: true
+        nonremovable: true,
+        removeOnSwitch: true
       }]);
     });
 

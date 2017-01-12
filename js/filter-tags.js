@@ -29,7 +29,7 @@ var TAG_TEMPLATE = _.template(
 );
 
 var NONREMOVABLE_TAG_TEMPLATE = _.template(
-  '<div data-id="{{ key }}" data-removable="false" class="tag__item">' +
+  '<div data-id="{{ key }}" data-removable="false" data-remove-on-switch="{{ removeOnSwitch }}" class="tag__item">' +
     '{{ value }}' +
   '</div>',  {interpolate: /\{\{(.+?)\}\}/g}
 );
@@ -51,7 +51,7 @@ function TagList(opts) {
     .on('tag:removeAll', this.removeAllTags.bind(this));
 
   this.$list.on('click', '.js-close', this.removeTagDom.bind(this));
-  this.$clear.on('click', this.removeAllTags.bind(this, true));
+  this.$clear.on('click', this.removeAllTags.bind(this, {}, true));
 
   if (this.opts.showResultCount) {
     this.$body.find('.js-count').attr('aria-hidden', false);
@@ -95,28 +95,42 @@ TagList.prototype.addTagItem = function($tagCategory, tag, opts) {
   }
 };
 
-TagList.prototype.removeTag = function(key, emit) {
-  var $tag = this.$list.find('[data-id="' + key + '"]');
+TagList.prototype.removeTagElement = function($tag, emit) {
+  // This handles the actual removal of the DOM elementrs
   var $tagCategory = $tag.parent();
+  var key = $tag.data('id');
+  $tag.remove();
 
-  if ($tag.length > 0 && $tag.attr('data-removable') !== 'false') {
-    if (emit) {
-      $tag.trigger('tag:removed', [{key: key}]);
+  $tagCategory.removeClass('tag__category__range--amount tag__category__range--date');
+
+  if ($tagCategory.is(':empty')) {
+    $tagCategory.remove();
+  }
+
+  if (emit) {
+    $tag.trigger('tag:removed', [{key: key}]);
+  }
+};
+
+TagList.prototype.removeTag = function(key, emit, forceRemove) {
+  var $tag = this.$list.find('[data-id="' + key + '"]');
+  if ($tag.length > 0) {
+    // If the tag exists, remove the element if it's removable
+    if ($tag.attr('data-removable') !== 'false') {
+      this.removeTagElement($tag, emit);
     }
-
-    $tag.remove();
-
-    $tagCategory.removeClass('tag__category__range--amount tag__category__range--date');
-
-    if ($tagCategory.is(':empty')) {
-      $tagCategory.remove();
+    // Or if it's a forceRemove event and the tag should be removed on table switch
+    else if (forceRemove && $tag.attr('data-remove-on-switch') === 'true') {
+      this.removeTagElement($tag, emit);
     }
   }
 
+  // Show the clear button if all removable tags are gone
   if (this.$list.find('.tag__item[data-removable]').length === 0) {
     this.$clear.attr('aria-hidden', true);
   }
 
+  // Update the text display
   if (this.$list.find('.tag__item').length === 0) {
     var text = this.opts.emptyText ? this.opts.emptyText : this.opts.resultType;
     this.$resultType.html(text);
@@ -124,11 +138,11 @@ TagList.prototype.removeTag = function(key, emit) {
   }
 };
 
-TagList.prototype.removeAllTags = function(e, emit) {
+TagList.prototype.removeAllTags = function(e, opts, emit) {
   var self = this;
-
+  var forceRemove = opts.forceRemove || false;
   this.$list.find('[data-removable]').each(function(){
-    self.removeTag($(this).data('id'), true);
+    self.removeTag($(this).data('id'), true, forceRemove);
   });
 
   // Don't emit another event unless told to do so

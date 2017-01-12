@@ -116,7 +116,7 @@ describe('dropdown', function() {
     it('clear all tags removes all selected inputs', function() {
       this.dropdown.selectItem($('#A'));
       this.dropdown.selectItem($('#B'));
-      $(document.body).trigger('tag:removeAll');
+      $(document.body).trigger('tag:removeAll', {});
       var selectedItems = this.dropdown.$selected.find('.dropdown__item');
       var panelItems = this.dropdown.$panel.find('.dropdown__item');
       expect(selectedItems.length).to.equal(0);
@@ -245,7 +245,7 @@ describe('dropdown', function() {
       this.dropdown.selectItem($('#A'));
       var selectedItems = this.dropdown.$selected.find('.dropdown__item');
       expect(selectedItems.length).to.equal(3);
-      $(document.body).trigger('tag:removeAll');
+      $(document.body).trigger('tag:removeAll', {});
       selectedItems = this.dropdown.$selected.find('.dropdown__item');
       expect(selectedItems.length).to.equal(2);
     });

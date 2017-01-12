@@ -87,7 +87,8 @@ describe('checkbox filters', function() {
           value: '<span class="prefix">Data type: </span>processed',
           loadedOnce: false,
           name: 'data_type',
-          nonremovable: true
+          nonremovable: true,
+          removeOnSwitch: false
         }
       ]);
     });
@@ -100,7 +101,8 @@ describe('checkbox filters', function() {
           value: '<span class="prefix">Data type: </span>electronic filings',
           loadedOnce: true,
           name: 'data_type',
-          nonremovable: true
+          nonremovable: true,
+          removeOnSwitch: false
         }
       ]);
     });

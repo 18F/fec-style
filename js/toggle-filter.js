@@ -29,7 +29,8 @@ ToggleFilter.prototype.handleChange = function(e) {
       value: this.formatValue($input, value),
       loadedOnce: this.loadedOnce || false,
       name: this.name,
-      nonremovable: true
+      nonremovable: true,
+      removeOnSwitch: false
     }
   ]);
 

@@ -145,14 +145,19 @@ FilterSet.prototype.switchFilters = function(dataType) {
   this.$body.find(otherFilters).attr('aria-hidden', true);
   this.$body.find(currentFilters).attr('aria-hidden', false);
 
-  // Clear all filters by firing this event
-  this.$body.trigger('tag:removeAll');
   this.activateSwitchedFilters(dataType);
 };
 
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   // Save the current query for later
   var query = URI.parseQuery(window.location.search);
+
+  // Clear filters if this isn't the first page load
+  // Set forceRemove: true to clear date filters that are usually nonremovable
+  if (!this.firstLoad) {
+    this.$body.trigger('tag:removeAll', {forceRemove: true});
+  }
+
   // Identify which set of filters to activate and store as this.filters
   this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
   // If this is the first page load OR there's a previous query, activate filters

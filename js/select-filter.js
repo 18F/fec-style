@@ -11,7 +11,7 @@ function SelectFilter(elm) {
   this.requiredDefault = this.$elm.data('required-default') || null; // If a default is required
   this.loadedOnce = false;
 
-  this.$input.on('change', this.handleChange.bind(this));
+  // this.$input.on('change', this.handleChange.bind(this));
   this.setRequiredDefault();
 }
 
@@ -45,7 +45,8 @@ SelectFilter.prototype.handleChange = function(e) {
       value: 'Transaction period: ' + (value - 1) + '-' + value,
       loadedOnce: this.loadedOnce,
       name: this.name,
-      nonremovable: true
+      nonremovable: true,
+      removeOnSwitch: true,
     }
   ]);
 
