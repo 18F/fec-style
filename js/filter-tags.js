@@ -148,7 +148,7 @@ TagList.prototype.removeAllTags = function(e, opts, emit) {
   // Don't emit another event unless told to do so
   // This way it can be triggered as an event listener without creating more
   if (emit) {
-    $(document.body).trigger('tag:removeAll');
+    $(document.body).trigger('tag:removeAll', {removeAll: false});
   }
 };
 
