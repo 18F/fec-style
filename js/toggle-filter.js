@@ -8,6 +8,7 @@ var Filter = require('./filter-base.js').Filter;
 /* ToggleFilter that has to fire a custom event */
 function ToggleFilter(elm) {
   Filter.call(this, elm);
+  this.removeOnSwitch = this.$elm.data('remove-on-switch') || false;
   this.$elm.on('change', this.handleChange.bind(this));
   this.setInitialValue();
 }
@@ -30,7 +31,7 @@ ToggleFilter.prototype.handleChange = function(e) {
       loadedOnce: this.loadedOnce || false,
       name: this.name,
       nonremovable: true,
-      removeOnSwitch: false
+      removeOnSwitch: this.removeOnSwitch
     }
   ]);
 
