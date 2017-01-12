@@ -99,16 +99,13 @@ TagList.prototype.removeTagElement = function($tag, emit) {
   // This handles the actual removal of the DOM elementrs
   var $tagCategory = $tag.parent();
   var key = $tag.data('id');
-  $tag.remove();
-
-  $tagCategory.removeClass('tag__category__range--amount tag__category__range--date');
-
-  if ($tagCategory.is(':empty')) {
-    $tagCategory.remove();
-  }
-
   if (emit) {
     $tag.trigger('tag:removed', [{key: key}]);
+  }
+  $tag.remove();
+  $tagCategory.removeClass('tag__category__range--amount tag__category__range--date');
+  if ($tagCategory.is(':empty')) {
+    $tagCategory.remove();
   }
 };
 
