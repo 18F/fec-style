@@ -6,8 +6,8 @@ sudo: false
 
 env:
   global:
-    - GITHUB_REPO: github.com/$TRAVIS_REPO_SLUG
-    - secure: "kyLbeW9FsgtpwtCjmgn5J21J8s4IoU+JHGakcVcU30yB2H9zIeJalM1z1UVBUTy8JO0F3oH/+eWNbKiEfqsM92APEK+lpwlxuJH717PTMM0X3ykG1I80Hq6dmCULl+FSaYOJ2WNMyCRSjqwzrfDNim0aGecAm7Ocj15omQXKBPhFstzu6tLOAft3FLPQfzV4thVW6y6fPRCMoCCDfpuNc+Dy7QgZ3K5uB7s69bx/iAuxgcZ2+6FfNJj0l6c5voTRJDHORGWmjTfAqFCCaYnkY881Zwc6IoxbynugON+6vbKi3T42o1lctqxL5Fo7aP50Ptpai/jqTu4uEVJuLGfnaLVysoV3wE4qoCl8LSJYxz51bqsOpZFG/24Y0xIBJ7HLUJ2X4/Ieau7gR2PhkVMiZTVliFkEzomaoIQ4MqWlkryT/O+LQQ9UB3oFoKDDAaIkuANLvlXsPUZfEku5EUxNUvTzq+y7dtCUl6F2vgsjdh0K7RpdzsiSSoijYotA6KkJyUsKsc5T5Ons684LZSI5Be5Z7LpjLnTHikR/ZXqPjxPhgcibOIoGLOa22TdOCpWO4Bm5aoYjMeU6X2ZIllmhplZsA88uIkELa7wyN6Xk2qY6v4Gfu86xGsQqmFyXVNtcPZ46CgODx5DxEoLr2WJ21SN+NqHZRvWat9RQk463Vc8=" # GITHUB_TOKEN
+    - CF_DEPLOY_USER: fec_deployer
+    - secure: "Z4yChO0zWjQG1pz3bM3/ECXXkPXkdt78Bl0yWonj7JEKPUSeFlp1bg8adl+7Mu1vZMEiqoL/7SjzRSI6ZD1xF4yBbIBUV0JEFeL8/mFSA/AGkr7eI72Acv4Pe4eFqFnHxC3dHEoxMR+w06SidLOtg+fBkRi+74xHH/VxXpLbHN5F4n8R+QDnYQq06NCltz4wtue5ZmrmxuQZN6HMFwTAuEYgOHyHx99M5dsmFepqgPa/Pp2MrgEDnUAZaSo9mED7oLMgmE+Upt+Ow1FlhchJAh33YpxgA0Uwl/B4ZF902vLcd9Cl4ajS3b9bPZIzn6SKx5QK17eQaVVLLPcuBKfsu9xoJjJKUZfxFSo2tsgMGs9O2Dv9TLoueX/TPp3DWnj4wq7welS5anJqOWrS9WYImADrzPGDMhJFtwwOVBnu7Q+Gw3pWuI7WeYZ7R9S7rk6uQkUxcCLYM6SOeHhenvTsQNfMvos5Ke4ioUsOPcR7jocIhbNiWkBwrOX5ZYDuKon2JHWSdvO9ehQqIEh61ir5iug7du3huPRVPqOen0Hsr4uG3AZxXg16qGy4QMy1mHN29d3J28p/qELi8nhhMndiwdw6bLBGQhs0jJ533zgDb42xZJTj+0yTFiwm8B9h0+h3wiiuXPxUfMQ/zV729oxP4Gs0DqviwK/OcmR/H2cQpvY=" # CF_DEPLOY_PASSWORD
 
 before_script:
   - travis_retry npm install codecov.io
@@ -20,9 +20,16 @@ script:
 after_success:
   - cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
 
+before_deploy:
+  - npm run build
+  - mkdir $HOME/bin
+  - export PATH=$HOME/bin:$PATH
+  - travis_retry curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&version=6.23.0" | tar xzv -C $HOME/bin
+  - travis_retry cf install-plugin autopilot -f -r CF-Community
+
 deploy:
   - provider: script
-    script: ./deploy.sh
+    script: ./bin/cf_deploy.sh fec-style fec dev
     skip_cleanup: true
     on:
       branch: master
