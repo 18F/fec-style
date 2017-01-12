@@ -149,11 +149,11 @@ FilterSet.prototype.switchFilters = function(dataType) {
 };
 
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
-  // Don't do anything on the first load because they will already be activated
-  if (this.firstLoad) { return; }
-
   // Save the current query for later
   var query = URI.parseQuery(window.location.search);
+
+  // Identify which set of filters to activate and store as this.filters
+  this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
 
   // Clear filters if this isn't the first page load
   // Set forceRemove: true to clear date filters that are usually nonremovable
@@ -161,11 +161,9 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
     this.$body.trigger('tag:removeAll', {forceRemove: true});
   }
 
-  // Identify which set of filters to activate and store as this.filters
-  this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
   // If there's a previous query, activate filters
   // This way we don't activate the initial query when toggling data type for the first time
-  if (this.previousQuery.data_type === dataType) {
+  if (!this.firstLoad && this.previousQuery.data_type === dataType) {
     var previousQuery = this.previousQuery || query;
 
     _.each(this.filters, function(filter) {
