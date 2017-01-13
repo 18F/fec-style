@@ -88,7 +88,8 @@ ElectionFilter.prototype.setTag = function() {
     {
       key: 'election',
       value: value,
-      nonremovable: true
+      nonremovable: true,
+      removeOnSwitch: false
     }
   ]);
   this.loadedOnce = true;

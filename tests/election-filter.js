@@ -85,7 +85,8 @@ describe('Election filter', function() {
       {
         key: 'election',
         value: '2016 election: 2013-2014',
-        nonremovable: true
+        nonremovable: true,
+        removeOnSwitch: false
       }
     ]);
   });
@@ -98,7 +99,8 @@ describe('Election filter', function() {
       {
         key: 'election',
         value: '2012 election: 2013-2014',
-        nonremovable: true
+        nonremovable: true,
+        removeOnSwitch: false
       }
     ]);
   });
