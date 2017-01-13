@@ -238,6 +238,10 @@ $filter-button-width: u(4.6rem);
     line-height: 1;
   }
 
+  select {
+    max-width: 26rem;
+  }
+
   [type="text"],
   select,
   .dropdown__button {
