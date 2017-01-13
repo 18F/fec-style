@@ -43,6 +43,10 @@
 .grid__item {
   margin-bottom: u(2rem);
   width: 100%;
+
+  &.commissioner-height {
+    min-height: u(10rem);
+  }
 }
 
 .slab.slab--home {
