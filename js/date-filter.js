@@ -82,7 +82,7 @@ DateFilter.prototype.handleInputChange = function(e) {
       rangeName: rangename,
       name: this.name,
       nonremovable: nonremovable,
-      removeOnSwitch: true,
+      removeOnSwitch: true
     }
   ]);
 
