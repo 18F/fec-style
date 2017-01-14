@@ -58,8 +58,7 @@ describe('toggle filters', function() {
     expect(this.filter.$elm.find('#efiling').is(':checked')).to.be.true;
   });
 
-  it('calls handleChange() if no query matches', function() {
-    this.filter.fromQuery({'x': 'y'});
+  it('calls handleChange() on initial load', function() {
     expect(this.handleChange).to.have.been.called;
   });
 
@@ -73,7 +72,6 @@ describe('toggle filters', function() {
       this.trigger = sinon.spy($.prototype, 'trigger');
       this.$fixture.empty().append(DOM);
       this.filter = new ToggleFilter(this.$fixture.find('.js-filter'));
-      this.filter.fromQuery({});
     });
 
     afterEach(function() {
