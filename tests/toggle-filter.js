@@ -11,7 +11,7 @@ var $ = require('jquery');
 require('./setup')();
 
 var ToggleFilter = require('../js/toggle-filter').ToggleFilter;
-var DOM = '<fieldset class="js-filter">' +
+var DOM = '<fieldset class="js-filter" data-filter-ignore-count="true">' +
             '<legend class="label">Data type</legend>' +
             '<label for="processed">' +
               '<input type="radio" value="processed" id="processed" checked name="data_type" data-prefix="Data type:" data-tag-value="processed">' +
@@ -23,7 +23,7 @@ var DOM = '<fieldset class="js-filter">' +
             '</label>' +
           '</fieldset>';
 
-describe('checkbox filters', function() {
+describe('toggle filters', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
     $('body').append(this.$fixture);
@@ -46,6 +46,8 @@ describe('checkbox filters', function() {
 
   it('sets its initial state', function() {
     expect(this.filter.name).to.equal('data_type');
+    expect(this.filter.ignoreCount).to.be.true;
+    expect(this.filter.removeOnSwitch).to.be.false;
     expect(this.filter.fields).to.deep.equal(['data_type']);
   });
 
@@ -56,7 +58,8 @@ describe('checkbox filters', function() {
     expect(this.filter.$elm.find('#efiling').is(':checked')).to.be.true;
   });
 
-  it('calls handleChange() on initial load', function() {
+  it('calls handleChange() if no query matches', function() {
+    this.filter.fromQuery({'x': 'y'});
     expect(this.handleChange).to.have.been.called;
   });
 
@@ -70,6 +73,7 @@ describe('checkbox filters', function() {
       this.trigger = sinon.spy($.prototype, 'trigger');
       this.$fixture.empty().append(DOM);
       this.filter = new ToggleFilter(this.$fixture.find('.js-filter'));
+      this.filter.fromQuery({});
     });
 
     afterEach(function() {
@@ -88,7 +92,8 @@ describe('checkbox filters', function() {
           loadedOnce: false,
           name: 'data_type',
           nonremovable: true,
-          removeOnSwitch: false
+          removeOnSwitch: false,
+          ignoreCount: true
         }
       ]);
     });
@@ -102,7 +107,8 @@ describe('checkbox filters', function() {
           loadedOnce: true,
           name: 'data_type',
           nonremovable: true,
-          removeOnSwitch: false
+          removeOnSwitch: false,
+          ignoreCount: true
         }
       ]);
     });

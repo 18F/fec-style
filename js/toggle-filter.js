@@ -9,8 +9,8 @@ var Filter = require('./filter-base.js').Filter;
 function ToggleFilter(elm) {
   Filter.call(this, elm);
   this.removeOnSwitch = this.$elm.data('remove-on-switch') || false;
+  this.ignoreCount = this.$elm.data('filter-ignore-count') || false;
   this.$elm.on('change', this.handleChange.bind(this));
-  this.setInitialValue();
 }
 
 ToggleFilter.prototype = Object.create(Filter.prototype);
@@ -18,6 +18,9 @@ ToggleFilter.constructor = ToggleFilter;
 
 ToggleFilter.prototype.fromQuery = function(query) {
   this.$elm.find('input[value="' + query[this.name] + '"]').prop('checked', true).change();
+  if (!query[this.name]) {
+    this.setInitialValue();
+  }
 };
 
 ToggleFilter.prototype.handleChange = function(e) {
@@ -31,7 +34,8 @@ ToggleFilter.prototype.handleChange = function(e) {
       loadedOnce: this.loadedOnce || false,
       name: this.name,
       nonremovable: true,
-      removeOnSwitch: this.removeOnSwitch
+      removeOnSwitch: this.removeOnSwitch,
+      ignoreCount: this.ignoreCount
     }
   ]);
 
