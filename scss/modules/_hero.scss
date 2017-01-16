@@ -46,13 +46,24 @@
 .hero--home {
   .hero__banner {
     background-image: url('../img/fec-table-tint.png');
+    background-position: 50% 50%;
     width: 100%;
-    height: u(22rem);
+    height: u(12rem);
     position: absolute;
   }
 
   h2 {
     color: $inverse;
+    margin-bottom: u(1rem);
+  }
+
+  .hero__content {
+    padding-bottom: u(2rem);
+
+    a {
+      border-color: $inverse;
+      color: $inverse;
+    }
   }
 
   .hero__content,
@@ -61,8 +72,18 @@
   }
 
   .grid__item img {
-    width: 100%;
-    margin-bottom: u(2rem);
+    display: block;
+    margin: 0 auto (2rem) auto;
+  }
+
+  @include media($med) {
+    .grid--3-wide .grid__item {
+      @include span-columns(4);
+
+      &:nth-child(2n+1) {
+        clear: none;
+      }
+    }
   }
 
   @include media($lg) {
@@ -79,7 +100,7 @@
 
     .hero__content {
       padding-top: u(6rem);
-      padding-bottom: u(1rem);
+      padding-bottom: u(5rem);
       @include span-columns(12);
     }
 
