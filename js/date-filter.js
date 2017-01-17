@@ -152,11 +152,16 @@ DateFilter.prototype.handleRemoveAll = function(e, opts) {
   // If this is a forceRemove event that means it was triggered by table switch
   // So we need to clear these inputs and set had-value to false so that it fires filter:added
   var forceRemove = opts.forceRemove || false;
+
+  function remove($filter) {
+    $filter.val('');
+    $filter.data('had-value', false);
+    $filter.trigger('filter:removed', {loadedOnce: true});
+  }
+
   if (forceRemove) {
-   this.$minDate.val('');
-   this.$maxDate.val('');
-   this.$minDate.data('had-value', false);
-   this.$maxDate.data('had-value', false);
+   remove(this.$minDate);
+   remove(this.$maxDate);
   }
 };
 
