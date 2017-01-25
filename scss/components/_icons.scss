@@ -84,7 +84,7 @@
   vertical-align: middle;
 
   &::before {
-    @include u-icon-circle($clock-reverse, $inverse, $primary, 1.5rem);
+    @include u-icon-circle($clock-reverse, $inverse, $primary, 1.7rem);
     content: '';
     background-size: 100%;
   }
