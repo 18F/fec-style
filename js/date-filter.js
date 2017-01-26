@@ -35,6 +35,7 @@ function DateFilter(elm) {
   this.$elm.on('click', '.date-range__grid li', this.handleGridItemSelect.bind(this));
 
   $(document.body).on('filter:modify', this.handleModifyEvent.bind(this));
+  $(document.body).on('tag:removeAll', this.handleRemoveAll.bind(this));
 }
 
 DateFilter.prototype = Object.create(Filter.Filter.prototype);
@@ -80,7 +81,8 @@ DateFilter.prototype.handleInputChange = function(e) {
       range: range,
       rangeName: rangename,
       name: this.name,
-      nonremovable: nonremovable
+      nonremovable: nonremovable,
+      removeOnSwitch: true
     }
   ]);
 
@@ -143,6 +145,23 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
       this.$maxDate.val('12/31/' + this.maxYear.toString()).change();
     }
     this.validate();
+  }
+};
+
+DateFilter.prototype.handleRemoveAll = function(e, opts) {
+  // If this is a forceRemove event that means it was triggered by table switch
+  // So we need to clear these inputs and set had-value to false so that it fires filter:added
+  var forceRemove = opts.forceRemove || false;
+
+  function remove($filter) {
+    $filter.val('');
+    $filter.data('had-value', false);
+    $filter.trigger('filter:removed', {loadedOnce: true});
+  }
+
+  if (forceRemove) {
+   remove(this.$minDate);
+   remove(this.$maxDate);
   }
 };
 

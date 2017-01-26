@@ -116,9 +116,9 @@ describe('FilterSet', function() {
       expect(Object.keys(this.filterSet.efilingFilters)).to.deep.equal(['name']);
     });
 
-    it('stores all of the field names together', function() {
+    it('does not activate filters if it has efiling filters', function() {
       this.filterSet.activateAll();
-      expect(this.filterSet.fields).to.deep.equal(['name', 'cycle', 'name']);
+      expect(this.filterSet.fields).to.deep.equal([]);
     });
 
     it('toggles the visibility of filter panels', function() {
@@ -140,7 +140,7 @@ describe('FilterSet', function() {
       this.filterSet.activateAll();
       this.filterSet.firstLoad = false;
       this.filterSet.previousQuery = {cycle: ['2012'], data_type: 'processed'};
-      this.filterSet.activateSwitchedFilters('processed');
+      this.filterSet.switchFilters('processed');
       expect(this.filterSet.$body.find('.js-processed-filters input[value="2012"]').is(':checked')).to.be.true;
     });
   });

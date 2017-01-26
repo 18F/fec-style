@@ -91,10 +91,9 @@ FilterSet.prototype.activateDataType = function() {
 };
 
 FilterSet.prototype.activateAll = function() {
-  // If the panel uses efiling filters, activate each separately
+  // If the panel uses efiling filters, activate the data type filter
+  // and activate the others when necessary
   if (this.efiling) {
-    this.activateProcessed();
-    this.activateEfiling();
     this.activateDataType();
   } else {
     this.filters = this.activate(this.$body.find('.js-filter'));
@@ -145,19 +144,37 @@ FilterSet.prototype.switchFilters = function(dataType) {
   this.$body.find(otherFilters).attr('aria-hidden', true);
   this.$body.find(currentFilters).attr('aria-hidden', false);
 
-  // Clear all filters by firing this event
-  this.$body.trigger('tag:removeAll');
+  // If necessary activate the filters
+  if (dataType === 'efiling' && _.isEmpty(this.efilingFilters)) {
+    this.activateEfiling();
+  } else if (dataType === 'processed' && _.isEmpty(this.processedFilters)) {
+    this.activateProcessed();
+  }
+
   this.activateSwitchedFilters(dataType);
 };
 
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   // Save the current query for later
   var query = URI.parseQuery(window.location.search);
+  // Clear filters if this isn't the first page load
+  // Set forceRemove: true to clear date filters that are usually nonremovable
+  if (!this.firstLoad) {
+    this.$body.trigger('tag:removeAll', {forceRemove: true});
+    // Go through the current panel and set loaded-once on each input
+    // So that they don't show loading indicators
+    _.each(this.filters, function(filter) {
+      filter.loadedOnce = false;
+      filter.$elm.find('input').data('loaded-once', false);
+    });
+  }
+
   // Identify which set of filters to activate and store as this.filters
   this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
-  // If this is the first page load OR there's a previous query, activate filters
+
+  // If there's a previous query, activate filters
   // This way we don't activate the initial query when toggling data type for the first time
-  if (this.firstLoad || this.previousQuery.data_type === dataType) {
+  if (!this.firstLoad && this.previousQuery.data_type === dataType) {
     var previousQuery = this.previousQuery || query;
 
     _.each(this.filters, function(filter) {
