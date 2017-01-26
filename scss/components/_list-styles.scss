@@ -4,6 +4,7 @@
 //
 // .list--bulleted      - Bulleted list (for ul)
 // .list--bulleted--alt - Bulleted list where child lists don't have bullets
+// .list--numbered--alt - Numbered list where child lists have bullets
 // .list--numbered      - Numbered list (for ol)
 // .list--flat          - Lay out items horizontally
 // .list--spacious      - Adds padding above and below list items
@@ -50,6 +51,16 @@
 .list--numbered {
   li {
     list-style-type: decimal;
+  }
+}
+
+.list--numbered--alt {
+  & > li {
+    list-style-type: decimal;
+  }
+
+  ul li {
+    list-style-type: disc;
   }
 }
 
