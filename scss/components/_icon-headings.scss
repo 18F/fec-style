@@ -36,6 +36,7 @@
   }
 }
 
+.grid--2-wide,
 .grid--3-wide {
   .icon-heading__image {
     @include span-columns(3);

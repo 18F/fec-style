@@ -7,7 +7,7 @@
     &::before {
       content: '';
       display: block;
-      background-size: 90%;
+      background-size: 100%;
       margin-right: 2rem;
       width: u(3.4rem);
       height: u(3.4rem);
@@ -77,8 +77,8 @@
 .contact-item--hand {
   &.contact-item::before {
     @include u-icon-circle($hand-envelope, $primary, $inverse, 3.4rem);
-    background-size: 100%;
     background-position: 100% 50%;
+    background-size: 100%;
   }
 }
 
