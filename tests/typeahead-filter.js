@@ -77,7 +77,7 @@ describe('FilterTypeahead', function() {
       name: 'committee_id',
       label: 'George Washington',
       value: 'George Washington',
-      id: 'committee_id-George-Washington-checkbox'
+      id: 'George-Washington-checkbox'
     };
 
     var output = this.FilterTypeahead.formatCheckboxData(input);
@@ -98,7 +98,7 @@ describe('FilterTypeahead', function() {
       name: 'committee_id',
       label: 'Washington Committee (12345)',
       value: '12345',
-      id: 'committee_id-12345-checkbox'
+      id: '12345-checkbox'
     };
 
     var output = this.FilterTypeahead.formatCheckboxData(input);

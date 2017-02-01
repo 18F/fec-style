@@ -22,8 +22,8 @@ function formatLabel(datum) {
     '"' + stripQuotes(datum.id) + '"';
 }
 
-function formatId(name, value) {
-  return name + '-' + slugify(value) + '-checkbox';
+function formatId(value) {
+  return slugify(value) + '-checkbox';
 }
 
 function stripQuotes(value) {
@@ -98,7 +98,7 @@ FilterTypeahead.prototype.setFirstItem = function() {
 };
 
 FilterTypeahead.prototype.handleSelect = function(e, datum) {
-  var id = formatId(this.fieldName, datum.id);
+  var id = formatId(datum.id);
   this.appendCheckbox({
     name: this.fieldName,
     value: datum.id,
@@ -224,7 +224,7 @@ FilterTypeahead.prototype.formatCheckboxData = function(input) {
     name: input.name,
     label: input.datum ? formatLabel(input.datum) : stripQuotes(input.value),
     value: stripQuotes(input.value),
-    id: formatId(this.fieldName, input.value)
+    id: formatId(input.value)
   };
 
   return output;
