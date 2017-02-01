@@ -53,19 +53,56 @@ describe('FilterTypeahead', function() {
     var datum = {
       name: 'FAKE CANDIDATE',
       id: '12345',
-      office: 'Senate'
     };
     this.FilterTypeahead.handleSelect({}, datum);
 
     expect(appendCheckbox).to.have.been.calledWith({
       name: 'committee_id',
-      label: 'FAKE CANDIDATE (12345)',
       value: '12345',
-      id: 'committee_id-12345-checkbox'
+      datum: datum
     });
     expect(this.FilterTypeahead.datum).to.equal(null);
 
     this.FilterTypeahead.appendCheckbox.restore();
+  });
+
+  it('should format the data when no typeahead datum is passed in', function() {
+    var input = {
+      name: 'committee_id',
+      label: '"George Washington"',
+      value: '"George Washington"',
+    };
+
+    var expectedOutput = {
+      name: 'committee_id',
+      label: 'George Washington',
+      value: 'George Washington',
+      id: 'George-Washington-checkbox'
+    };
+
+    var output = this.FilterTypeahead.formatCheckboxData(input);
+    expect(output).to.deep.equal(expectedOutput);
+  });
+
+  it('should format the data when a typeahead datum is passed in', function() {
+    var input = {
+      name: 'committee_id',
+      value: '12345',
+      datum: {
+        name: 'Washington Committee',
+        id: '12345'
+      }
+    };
+
+    var expectedOutput = {
+      name: 'committee_id',
+      label: 'Washington Committee (12345)',
+      value: '12345',
+      id: '12345-checkbox'
+    };
+
+    var output = this.FilterTypeahead.formatCheckboxData(input);
+    expect(output).to.deep.equal(expectedOutput);
   });
 
   it('should set this.datum on typeahead:autocomplte', function() {

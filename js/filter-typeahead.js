@@ -19,8 +19,17 @@ function slugify(value) {
 function formatLabel(datum) {
   return datum.name ?
     datum.name + ' (' + datum.id + ')' :
-    '"' + datum.id + '"';
+    '"' + stripQuotes(datum.id) + '"';
 }
+
+function formatId(value) {
+  return slugify(value) + '-checkbox';
+}
+
+function stripQuotes(value) {
+  return value.replace(/["]+/g, '');
+}
+
 
 var textDataset = {
   display: 'id',
@@ -89,13 +98,11 @@ FilterTypeahead.prototype.setFirstItem = function() {
 };
 
 FilterTypeahead.prototype.handleSelect = function(e, datum) {
-  var id = this.fieldName + '-' + slugify(datum.id) + '-checkbox';
-
+  var id = formatId(datum.id);
   this.appendCheckbox({
     name: this.fieldName,
-    label: formatLabel(datum),
     value: datum.id,
-    id: id
+    datum: datum
   });
   this.datum = null;
 
@@ -201,13 +208,26 @@ FilterTypeahead.prototype.checkboxTemplate = _.template(
 );
 
 FilterTypeahead.prototype.appendCheckbox = function(opts) {
-  if (this.$elm.find('#' + opts.id).length) {
+  var data = this.formatCheckboxData(opts);
+
+  if (this.$elm.find('#' + data.id).length) {
     return;
   }
-  var checkbox = $(this.checkboxTemplate(opts));
+  var checkbox = $(this.checkboxTemplate(data));
   checkbox.appendTo(this.$selected);
   checkbox.find('input').change();
   this.clearInput();
+};
+
+FilterTypeahead.prototype.formatCheckboxData = function(input) {
+  var output = {
+    name: input.name,
+    label: input.datum ? formatLabel(input.datum) : stripQuotes(input.value),
+    value: stripQuotes(input.value),
+    id: formatId(input.value)
+  };
+
+  return output;
 };
 
 FilterTypeahead.prototype.getFilters = function(values) {
@@ -221,9 +241,8 @@ FilterTypeahead.prototype.getFilters = function(values) {
     values.forEach(function(value) {
       self.appendCheckbox({
         name: self.fieldName,
-        id: slugify(value) + '-checkbox',
-        value: value,
-        label: ID_PATTERN.test(value) ? 'Loading...' : value
+        label: ID_PATTERN.test(value) ? 'Loading...' : value,
+        value: value
       });
     });
     if (ids.length) {
