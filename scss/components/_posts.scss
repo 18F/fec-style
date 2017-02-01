@@ -18,6 +18,13 @@
   h3 {
     margin-bottom: u(1rem);
   }
+
+  img {
+    float: right;
+    margin-left: u(2rem);
+    height: 150px;
+    width: auto;
+  }
 }
 
 .post__pre {
@@ -37,6 +44,12 @@
     vertical-align: middle;
     margin-right: 1rem;
   }
+}
+
+.post__read-more {
+  display: inline;
+  font-weight: bold;
+  margin-left: u(1rem);
 }
 
 @include media($med) {
