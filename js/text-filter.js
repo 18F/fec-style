@@ -101,7 +101,7 @@ TextFilter.prototype.appendCheckbox = function(value) {
   var opts = {
     id: this.id + this.checkboxIndex.toString(),
     name: this.name,
-    value: value,
+    value: value.replace(/["]+/g, '')
   };
   var checkbox = $(this.checkboxTemplate(opts));
   checkbox.appendTo(this.checkboxList.$elm);

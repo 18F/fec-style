@@ -92,6 +92,12 @@ describe('text filters', function() {
     expect(TextFilter.prototype.appendCheckboxList).to.have.not.been.called;
   });
 
+  it('strips quotes from the value', function() {
+    this.filter.appendCheckbox('"george washington"');
+    var $checkbox = this.$fixture.find('input[type="checkbox"]');
+    expect($checkbox.attr('value')).to.equal('george washington');
+  });
+
   describe('handleChange()', function() {
     it('removes the disabled class when the field has a value', function() {
       this.filter.$input.val('martha');
