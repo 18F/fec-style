@@ -84,7 +84,7 @@
   vertical-align: middle;
 
   &::before {
-    @include u-icon-circle($clock-reverse, $inverse, $primary, 1.5rem);
+    @include u-icon-circle($clock-reverse, $inverse, $primary, 1.7rem);
     content: '';
     background-size: 100%;
   }
@@ -144,5 +144,19 @@
   &::before {
     @include u-icon-circle($disbursement, $primary, $inverse, 3.4rem);
     content: '';
+  }
+}
+
+.icon-document--inline--left {
+  display: inline-block;
+  vertical-align: middle;
+
+  &::before {
+    @include u-icon-bg($document, $primary);
+    content: '';
+    background-size: 75%;
+    display: block;
+    width: u(1.5rem);
+    height: u(1.5rem);
   }
 }
