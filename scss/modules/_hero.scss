@@ -59,6 +59,7 @@
 
   .hero__content {
     padding-bottom: u(2rem);
+    z-index: $z1;
 
     a {
       border-color: $inverse;
