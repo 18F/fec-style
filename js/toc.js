@@ -56,8 +56,8 @@ TOC.prototype.scrollTo = function(e) {
   e.preventDefault();
   var $link = $(e.target);
   var section = $link.attr('href');
-  var sectionTop = $(section).offset().top;
-  $(document.body).animate({
+  var sectionTop = $(section).offset().top + 10;
+  $('body, html').animate({
     scrollTop: sectionTop
   });
 };
