@@ -69,10 +69,6 @@
     }
   }
 
-  .side-nav__tab {
-    display: block;
-  }
-
   .side-nav__link {
     padding: u(.85rem 1rem .85rem 1.8rem);
 
@@ -87,10 +83,6 @@
       padding-left: 1.4rem;
     }
   }
-}
-
-.side-nav__tab {
-  display: none;
 }
 
 @include media($med) {
