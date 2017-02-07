@@ -19,6 +19,8 @@ SelectFilter.constructor = SelectFilter;
 
 SelectFilter.prototype.setRequiredDefault = function() {
   if (this.requiredDefault) {
+    // If there's an empty "Select an option" option, remove it
+    this.$input.find('option[value=""]').remove();
     this.setValue(this.requiredDefault);
   }
 };
@@ -28,8 +30,8 @@ SelectFilter.prototype.fromQuery = function(query) {
 };
 
 SelectFilter.prototype.setValue = function(value) {
-  this.$input.find('option[selected]').attr('selected','false');
-  this.$input.find('option[value="' + value + '"]').attr('selected','true');
+  this.$input.find('option[selected]').prop('selected', false);
+  this.$input.find('option[value="' + value + '"]').prop('selected', true);
   this.$input.change();
 };
 
