@@ -69,6 +69,10 @@
     }
   }
 
+  .side-nav__tab {
+    display: block;
+  }
+
   .side-nav__link {
     padding: u(.85rem 1rem .85rem 1.8rem);
 
@@ -77,12 +81,16 @@
       background-color: $gray-lightest;
     }
 
-    &.is-active {
+    &[aria-selected=true] {
       background-color: initial;
       border-left: 4px solid $base;
       padding-left: 1.4rem;
     }
   }
+}
+
+.side-nav__tab {
+  display: none;
 }
 
 @include media($med) {
