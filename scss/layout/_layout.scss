@@ -78,6 +78,17 @@
   position: relative;
 }
 
+.main__content--right-full {
+  @include clearfix();
+  position: relative;
+  width: 100%;
+
+  @include media($med) {
+    display: table-cell;
+    width: calc(100% - 4rem);
+  }
+}
+
 .content__section {
   @include clearfix();
   padding: u(0 0 2rem 0);
@@ -120,7 +131,7 @@
   padding-bottom: u(2rem);
 }
 
-.u-padding-left {
+.u-padding--left {
   padding-left: u(2rem);
 }
 

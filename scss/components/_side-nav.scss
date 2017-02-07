@@ -58,9 +58,13 @@
   }
 }
 
-
 .side-nav-alt {
-  padding-bottom: u(2rem);
+  display: table-cell;
+  width: 100%;
+
+  ul {
+    margin: u(0 2rem 2rem 0);
+  }
 
   .side-nav__item {
     border-bottom: 1px solid $gray;
@@ -83,6 +87,10 @@
       border-left: 4px solid $base;
       padding-left: 1.4rem;
     }
+  }
+
+  @include media($med) {
+    width: 250px;
   }
 }
 
