@@ -125,6 +125,11 @@
   margin-bottom: u(.5rem);
   padding: 0;
   text-transform: uppercase;
+
+  .label__optional {
+    text-transform: none;
+    font-weight: normal;
+  }
 }
 
 .label--help {
