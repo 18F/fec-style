@@ -125,6 +125,11 @@
   margin-bottom: u(.5rem);
   padding: 0;
   text-transform: uppercase;
+
+  .label__optional {
+    text-transform: none;
+    font-weight: normal;
+  }
 }
 
 .label--help {
@@ -305,5 +310,14 @@
   padding: u(0 .25rem 1rem .25rem);
   vertical-align: bottom;
   display: inline-block;
+}
+
+// Conditional field
+// When a field appears conditionally, i.e. when selecting an option reveals
+// a new text input
+.conditional-field {
+  border-left: 8px solid $gray;
+  padding: u(2rem);
+  margin-bottom: u(2rem);
 }
 

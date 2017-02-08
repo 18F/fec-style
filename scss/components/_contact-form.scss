@@ -1,0 +1,52 @@
+.contact-form {
+  padding: u(2rem);
+
+  .contact-form__element {
+    padding: u(1rem 0);
+  }
+
+  textarea {
+    height: u(15rem);
+  }
+
+  .tt-input {
+    @include u-icon-bg($magnifying-glass-arrow, $gray-dark);
+    background-position: right 10px top 50%;
+  }
+
+  .hr--light {
+    border: 1px solid $gray;
+    display: block;
+    margin: u(2rem 0 2rem);
+  }
+
+  .hr--dark {
+    border: 1px solid $gray-dark;
+    display: block;
+    margin-top: u(2rem);
+  }
+
+  .contact-form__reset {
+    display: block;
+    padding-top: u(2rem);
+  }
+
+  @include media($med) {
+    @include span-columns(9);
+    padding: u(4rem 0);
+
+    .contact-form__element {
+      @include span-columns(7 of 10);
+      @include shift(1);
+    }
+
+    input,
+    select {
+      @include span-columns(6 of 7);
+    }
+
+    .tt-input {
+      width: 100%;
+    }
+  }
+}

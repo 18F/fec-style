@@ -270,7 +270,7 @@
 
     &.i-elections {
       @include u-icon-bg($person-location, $primary-contrast);
-    } 
+    }
   }
 }
 
@@ -302,7 +302,11 @@
       @include u-icon-bg($updates, $secondary-contrast);
       background-size: 60%;
     }
-	
+
+    &.i-question-bubble {
+      @include u-icon-bg($question-bubble, $secondary-contrast);
+      background-size: 80%;
+    }
   }
 }
 
