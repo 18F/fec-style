@@ -9,12 +9,6 @@
     height: u(15rem);
   }
 
-  .conditional-field {
-    border-left: 8px solid $gray;
-    padding: u(2rem);
-    margin-bottom: u(2rem);
-  }
-
   .tt-input {
     @include u-icon-bg($magnifying-glass-arrow, $gray-dark);
     background-position: right 10px top 50%;

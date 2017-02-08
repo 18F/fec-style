@@ -312,3 +312,12 @@
   display: inline-block;
 }
 
+// Conditional field
+// When a field appears conditionally, i.e. when selecting an option reveals
+// a new text input
+.conditional-field {
+  border-left: 8px solid $gray;
+  padding: u(2rem);
+  margin-bottom: u(2rem);
+}
+
