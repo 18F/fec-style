@@ -19,6 +19,12 @@
     margin-bottom: u(1rem);
   }
 
+  // Thumbnails
+  img {
+    border: 2px solid $gray-lightest;
+    height: auto;
+  }
+
   .rich-text {
     img {
         float: right;
@@ -27,8 +33,15 @@
         width: auto;
       }
 
-    // Hide tables that might be in the body content from the scraped pages
-    table {
+    // Hide elements included in the beginning of a post other than the first paragraph
+    table,
+    ul,
+    h1,
+    h2,
+    h3,
+    h4,
+    br,
+    p:not(:first-of-type) {
       display: none;
     }
   }
