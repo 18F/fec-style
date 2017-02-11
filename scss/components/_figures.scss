@@ -39,3 +39,21 @@
     display: inline !important;
   }
 }
+
+.entity__figure {
+  background-color: $inverse;
+  padding: u(1rem);
+  margin-bottom: u(2rem);
+  border-radius: 2px;
+
+  .figure__label {
+    font-weight: bold;
+  }
+
+  .figure__label,
+  .figure__value {
+    font-size: u(1.6rem);
+    padding: u(.5rem);
+    vertical-align: top;
+  }
+}

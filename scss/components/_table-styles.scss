@@ -200,3 +200,59 @@ h3 + .simple-table {
     }
   }
 }
+
+// "Balance sheet" table styles
+// These provide the visual sense of nested / hierarchical rows in a balance sheet
+.level--1,
+.level--2,
+.level--3,
+.level--4 {
+  td {
+    padding: u(.5rem);
+  }
+
+  td:first-child {
+    width: 80%;
+  }
+
+  td:last-child {
+    text-align: right;
+  }
+}
+
+.level--1 {
+  background-color: $gray;
+  border-bottom: 2px solid $inverse;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.level--2 {
+  background-color: $gray-light;
+  border: 1px solid $gray-medium;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  td:first-child {
+    border-right: 1px solid $gray;
+  }
+}
+
+.level--3 {
+  td:first-child {
+    border-right: 1px solid $gray;
+    padding-left: u(2rem);
+  }
+
+  & + .level--2 {
+    border-bottom: 1px solid $gray-medium;
+  }
+}
+
+.level--4 {
+  td:first-child {
+    border-right: 1px solid $gray;
+    padding-left: u(4rem);
+    font-style: italic;
+  }
+}
