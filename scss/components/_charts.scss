@@ -362,10 +362,10 @@ $tooltip-border-color: #999;
 }
 
 .line--pac {
-  stroke: $gray;
+  stroke: $orange;
 
   circle {
-    fill: $gray;
+    fill: $orange;
   }
 }
 
@@ -461,7 +461,7 @@ $tooltip-border-color: #999;
   }
 
   &.pacs {
-    background-color: $gray;
+    background-color: $orange;
   }
 
   &.parties {
