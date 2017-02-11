@@ -354,10 +354,10 @@ $tooltip-border-color: #999;
 
 // Line charts
 .line--candidate {
-  stroke: $deep-aqua;
+  stroke: $federal-blue;
 
   circle {
-    fill: $deep-aqua;
+    fill: $federal-blue;
   }
 }
 
@@ -457,7 +457,7 @@ $tooltip-border-color: #999;
   vertical-align: middle;
 
   &.candidates {
-    background-color: $deep-aqua;
+    background-color: $federal-blue;
   }
 
   &.pacs {
