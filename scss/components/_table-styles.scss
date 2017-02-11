@@ -207,6 +207,8 @@ h3 + .simple-table {
 .level--2,
 .level--3,
 .level--4 {
+  border-collapse: separate;
+
   td {
     padding: u(.5rem);
   }
@@ -234,24 +236,22 @@ h3 + .simple-table {
   text-transform: uppercase;
 
   td:first-child {
-    border-right: 1px solid $gray;
+    border-right: 1px solid $gray-medium;
   }
 }
 
 .level--3 {
-  td:first-child {
-    border-right: 1px solid $gray;
-    padding-left: u(2rem);
-  }
+  border-bottom: 1px solid $gray-medium;
 
-  & + .level--2 {
-    border-bottom: 1px solid $gray-medium;
+  td:first-child {
+    border-right: 1px solid $gray-medium;
+    padding-left: u(2rem);
   }
 }
 
 .level--4 {
   td:first-child {
-    border-right: 1px solid $gray;
+    border-right: 1px solid $gray-medium;
     padding-left: u(4rem);
     font-style: italic;
   }
