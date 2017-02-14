@@ -19,11 +19,31 @@
     margin-bottom: u(1rem);
   }
 
+  // Thumbnails
   img {
-    float: right;
-    margin-left: u(2rem);
-    height: 150px;
-    width: auto;
+    border: 2px solid $gray-lightest;
+    height: auto;
+  }
+
+  .rich-text {
+    img {
+      float: right;
+      margin-left: u(2rem);
+      height: 150px;
+      width: auto;
+    }
+
+    // Hide elements included in the beginning of a post other than the first paragraph
+    table,
+    ul,
+    h1,
+    h2,
+    h3,
+    h4,
+    br,
+    p:not(:first-of-type) {
+      display: none;
+    }
   }
 }
 

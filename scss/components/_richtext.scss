@@ -30,6 +30,13 @@
   td {
     @extend .simple-table__cell;
   }
+
+  img {
+    display: block;
+    clear: both;
+    float: none;
+    margin-bottom: u(2rem);
+  }
 }
 
 @media print {
