@@ -88,6 +88,16 @@
   }
 }
 
+.list--more-columns {
+  @include media($med) {
+    @include columns(2)
+  }
+
+  @include media($lg) {
+    @include columns(4)
+  }
+}
+
 .list--spacious {
   ul {
     padding-top: u(1rem);
