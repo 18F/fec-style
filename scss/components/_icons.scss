@@ -160,3 +160,11 @@
     height: u(1.5rem);
   }
 }
+
+// Used to create a spacer in the version column the same width as the
+// version icons
+.icon-blank {
+  display: inline-block;
+  content: '';
+  width: 20px;
+}
