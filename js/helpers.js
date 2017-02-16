@@ -1,7 +1,7 @@
 'use strict';
 
 /* global require, module */
-
+var _ = require('underscore');
 var bleach = require('bleach');
 var moment = require('moment');
 var Handlebars = require('hbsfy/runtime');
@@ -58,9 +58,14 @@ function sanitizeValue(value) {
   var validCharactersRegEx = /[^a-z0-9-',.()\s]/ig;
 
   if (value !== null || value !== undefined) {
-    if ($.isArray(value)) {
+    if (_.isArray(value)) {
       for (var i = 0; i < value.length; i++) {
-        value[i] = bleach.sanitize(value[i]).replace(validCharactersRegEx, '');
+        if (value[i] !== null || value[i] !== undefined) {
+          value[i] = bleach.sanitize(value[i]).replace(
+            validCharactersRegEx,
+            ''
+          );
+        }
       }
     } else {
       value = bleach.sanitize(value).replace(validCharactersRegEx, '');
