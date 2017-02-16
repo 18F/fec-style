@@ -31,7 +31,7 @@ describe('helpers', function() {
     });
 
     it('skips sanitizing undefined values', function() {
-      var value = undefined;
+      var value;
 
       expect(helpers.sanitizeValue(value)).to.be.undefined;
     });
@@ -67,6 +67,6 @@ describe('helpers', function() {
         support_oppose_indicator: 'S',
         q: ''
       });
-    })
+    });
   });
 });
