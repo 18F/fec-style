@@ -4,6 +4,7 @@ var $ = require('jquery');
 var _ = require('underscore');
 var URI = require('urijs');
 
+var helpers = require('./helpers');
 var TextFilter = require('./text-filter').TextFilter;
 var CheckboxFilter = require('./checkbox-filter').CheckboxFilter;
 var MultiFilter = require('./multi-filter').MultiFilter;
@@ -48,7 +49,7 @@ FilterSet.prototype.buildFilter = function($elm) {
 
 FilterSet.prototype.activate = function($selector) {
   var self = this;
-  var query = URI.parseQuery(window.location.search);
+  var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
   var filters = _.chain($selector)
     .map(function(elm) {
       var filter = self.buildFilter($(elm)); // .fromQuery(query);
@@ -156,7 +157,7 @@ FilterSet.prototype.switchFilters = function(dataType) {
 
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   // Save the current query for later
-  var query = URI.parseQuery(window.location.search);
+  var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
   // Clear filters if this isn't the first page load
   // Set forceRemove: true to clear date filters that are usually nonremovable
   if (!this.firstLoad) {
