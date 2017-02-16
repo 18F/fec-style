@@ -2,8 +2,10 @@
 
 /* global ga */
 
-var URI = require('urijs');
 var _ = require('underscore');
+var URI = require('urijs');
+
+var helpers = require('./helpers');
 
 function trackerExists() {
   if (typeof ga !== 'undefined') {
@@ -31,7 +33,7 @@ function pageView() {
   if (typeof ga === 'undefined') { return; }
   var path = document.location.pathname;
   if (document.location.search) {
-    var query = URI.parseQuery(document.location.search);
+    var query = helpers.sanitizeQueryParams(URI.parseQuery(document.location.search));
     path += '?' + sortQuery(query);
   }
   ga('notDAP.send', 'pageview', path);

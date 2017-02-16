@@ -1,7 +1,8 @@
 'use strict';
 
 /* global require, module */
-
+var _ = require('underscore');
+var bleach = require('bleach');
 var moment = require('moment');
 var Handlebars = require('hbsfy/runtime');
 
@@ -51,6 +52,42 @@ function datetime(value, options) {
   return parsed.isValid() ? parsed.format(format) : null;
 }
 
+// Sanitizes a single value by removing HTML tags and whitelisting valid
+// characters.
+function sanitizeValue(value) {
+  var validCharactersRegEx = /[^a-z0-9-',.()\s]/ig;
+
+  if (value !== null && value !== undefined) {
+    if (_.isArray(value)) {
+      for (var i = 0; i < value.length; i++) {
+        if (value[i] !== null && value[i] !== undefined) {
+          value[i] = bleach.sanitize(value[i]).replace(
+            validCharactersRegEx,
+            ''
+          );
+        }
+      }
+    } else {
+      value = bleach.sanitize(value).replace(validCharactersRegEx, '');
+    }
+  }
+
+  return value;
+}
+
+// Sanitizes all parameters retrieved from the query string in the URL.
+function sanitizeQueryParams(query) {
+  var param;
+
+  for (param in query) {
+    if (query.hasOwnProperty(param)) {
+      query[param] = sanitizeValue(query[param]);
+    }
+  }
+
+  return query;
+}
+
 Handlebars.registerHelper('datetime', datetime);
 
 Handlebars.registerHelper({
@@ -70,5 +107,7 @@ module.exports = {
   getWindowWidth: getWindowWidth,
   helpers: Handlebars.helpers,
   LOADING_DELAY: LOADING_DELAY,
-  SUCCESS_DELAY: SUCCESS_DELAY
+  SUCCESS_DELAY: SUCCESS_DELAY,
+  sanitizeValue: sanitizeValue,
+  sanitizeQueryParams: sanitizeQueryParams
 };
