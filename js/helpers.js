@@ -57,10 +57,10 @@ function datetime(value, options) {
 function sanitizeValue(value) {
   var validCharactersRegEx = /[^a-z0-9-',.()\s]/ig;
 
-  if (value !== null || value !== undefined) {
+  if (value !== null && value !== undefined) {
     if (_.isArray(value)) {
       for (var i = 0; i < value.length; i++) {
-        if (value[i] !== null || value[i] !== undefined) {
+        if (value[i] !== null && value[i] !== undefined) {
           value[i] = bleach.sanitize(value[i]).replace(
             validCharactersRegEx,
             ''

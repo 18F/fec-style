@@ -56,6 +56,7 @@ describe('helpers', function() {
         max_date: '12-31-2016',
         min_date: '01-01-2015',
         support_oppose_indicator: 'S',
+        sort: '@#$(@#8923012;,/.as><AJKO@&amp;&#41;',
         q: '@@@@@@@@@@@@@@@@@@@@@@'
       };
 
@@ -65,6 +66,7 @@ describe('helpers', function() {
         max_date: '12-31-2016',
         min_date: '01-01-2015',
         support_oppose_indicator: 'S',
+        sort: '(8923012,.asAJKOamp41',
         q: ''
       });
     });
