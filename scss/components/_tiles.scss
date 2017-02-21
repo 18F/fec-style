@@ -1,0 +1,23 @@
+// Grid items that are also links
+
+.tile {
+  background-color: $gray-lightest;
+  border-top: 1rem solid $primary;
+  border-bottom: none;
+  display: block;
+  padding: 2rem 1rem;
+  transition: border-top-color .2s ease-out;
+
+  @include media($med) {
+    min-height: 20rem;
+  }
+
+  @include media($lg) {
+    min-height: 25rem;
+  }
+
+  &:hover,
+  &:focus {
+    border-top-color: $primary-contrast;
+  }
+}
