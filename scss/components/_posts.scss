@@ -19,6 +19,10 @@
     margin-bottom: u(1rem);
   }
 
+  p {
+    margin: u(0 0 1rem 0);
+  }
+
   // Thumbnails
   img {
     border: 2px solid $gray-lightest;
