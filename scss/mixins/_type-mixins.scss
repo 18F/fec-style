@@ -20,12 +20,11 @@
     font-family: $serif;
     font-size: u(2.4rem);
     font-weight: bold;
-    line-height: 1.15;
+    line-height: 1.2;
     margin: 0;
 
     @include media($med) {
       font-size: u(3.6rem);
-      line-height: 1.2;
     }
   }
 
