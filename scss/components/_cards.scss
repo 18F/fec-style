@@ -315,24 +315,24 @@
 // such as the "Reports about the FEC" landing page.
 .card--major {
   background-color: $gray-lightest;
-  border-top: 1rem solid $primary;
+  border-top: u(1rem) solid $primary;
   border-bottom: none;
   display: block;
-  padding: 2rem 1.5rem;
+  padding: u(2rem 1.5rem);
   position: relative;
   transition: border-top-color .2s ease-out;
 
   @include media($med) {
-    min-height: 20rem;
+    min-height: u(20rem);
   }
 
   @include media($lg) {
-    min-height: 27rem;
+    min-height: u(27rem);
 
     .card__count {
       position: absolute;
-      bottom: 2rem;
-      left: 1.5rem;
+      bottom: u(2rem);
+      left: u(1.5rem);
     }
   }
 
@@ -347,7 +347,7 @@
 }
 
 .card--major__title {
-  margin-bottom: 2rem;
+  margin-bottom: u(2rem);
 
   h2 {
     display: inline;
