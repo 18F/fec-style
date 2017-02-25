@@ -5,6 +5,8 @@
 
 .overview__chart {
   position: relative;
+  min-height: 20rem;
+  width: 100%;
 
   svg {
     font-size: u(1rem);
