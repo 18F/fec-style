@@ -20,12 +20,11 @@
     font-family: $serif;
     font-size: u(2.4rem);
     font-weight: bold;
-    line-height: 1.15;
+    line-height: 1.2;
     margin: 0;
 
     @include media($med) {
       font-size: u(3.6rem);
-      line-height: 1.2;
     }
   }
 
@@ -44,16 +43,16 @@
     font-family: $serif;
     font-size: u(1.8rem);
     font-weight: bold;
-    line-height: 1.14;
+    line-height: 1.6;
   }
 
   @if $level == h4 {
     font-family: $sans-serif;
     font-size: u(1.8rem);
-    font-weight: normal;
+    font-weight: bold;
     line-height: 1.2;
     letter-spacing: -.3px;
-    margin: 0;
+    margin: u(1.4rem 0 1rem 0);
   }
 
   @if $level == h5 {
