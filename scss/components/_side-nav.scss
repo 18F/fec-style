@@ -47,7 +47,7 @@
   font-family: $sans-serif;
   padding: 4px;
   text-transform: uppercase;
-  line-height: 2rem;
+  line-height: u(2rem);
 
   &:hover,
   &.is-active {
