@@ -316,7 +316,7 @@
 //
 // Styleguide components.buttons.calendar-dropdown-buttons
 
-.button--calendar {
+.button--add-calendar {
   @include u-icon-bg($cal-add, $base);
   background-position: u(1rem .7rem);
   background-size: u(2rem);
@@ -324,7 +324,7 @@
   padding-right: u(6rem);
 }
 
-.button--calendar--mini {
+.button--add-calendar--mini {
   @include u-icon-bg($cal-add, $base);
   background-position: u(1rem .7rem);
   background-size: u(2rem);
@@ -452,6 +452,14 @@
 
 .button--check {
   @include u-icon-button($check);
+}
+
+.button--updates {
+  @include u-icon-button($updates);
+}
+
+.button--calendar {
+  @include u-icon-button($calendar);
 }
 
 // Special Buttons
