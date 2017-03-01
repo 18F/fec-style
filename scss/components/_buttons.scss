@@ -306,15 +306,6 @@
 }
 
 // Buttons: Calendar dropdown buttons
-//
-// .button--calendar                - Add calendar button
-// .button--calendar--mini          - Mini add calendar button
-//
-// Markup:
-// <button class="button--calendar dropdown__button button--alt">Add to calendar</button>
-// <button class="button--calendar--mini dropdown__button dropdown__button--mini button--alt"></button>
-//
-// Styleguide components.buttons.calendar-dropdown-buttons
 
 .button--add-calendar {
   @include u-icon-bg($cal-add, $base);
