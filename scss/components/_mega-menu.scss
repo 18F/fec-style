@@ -60,6 +60,10 @@
     }
   }
 
+  .mega__inner--secondary {
+    background-color: $secondary;
+  }
+
   .mega-heading {
     border-bottom: 2px solid $inverse;
     padding-bottom: u(.8rem);

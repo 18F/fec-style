@@ -260,15 +260,27 @@
     }
   }
 
+  .site-nav__item--secondary {
+    &.is-open,
+    &:hover {
+      .site-nav__link {
+        background-color: $secondary;
+      }
+    }
+  }
+
   .site-nav__link {
+    @include u-icon-bg($arrow-down, $primary);
+    background-position: right u(1rem) top 60%;
     color: $primary;
     text-align: center;
     border-bottom: u(.5rem) solid transparent;
-    padding: u(1rem 2rem .5rem 2rem);
+    padding: u(1rem 3rem .5rem 2rem);
 
     &:hover,
     &:focus,
     &:active {
+      @include u-icon-bg($arrow-down, $inverse);
       border-bottom-color: transparent;
       background-color: $primary;
       color: $gray-lightest;

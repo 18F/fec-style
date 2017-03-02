@@ -14,6 +14,8 @@ require('accessible-mega-menu');
 
 var TEMPLATES = {
   data: require('./templates/nav-data.hbs'),
+  legal: require('./templates/nav-legal.hbs'),
+  services: require('./templates/nav-services.hbs'),
   mobile: require('./templates/mobile-nav.hbs')
 };
 
