@@ -29,7 +29,13 @@
     height: auto;
   }
 
+  .richtext-image {
+    // Hides images that have been inserted in the richtext editor
+    display: none;
+  }
+
   .rich-text {
+    // This floats images that are included in the body by virtue of being scraped and imported
     img {
       float: right;
       margin-left: u(2rem);
