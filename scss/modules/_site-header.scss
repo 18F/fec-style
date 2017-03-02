@@ -137,6 +137,24 @@
   }
 }
 
+.search_form{
+  float:right;
+  margin-right: 2.5rem;
+  margin-top: .25rem;
+  label {
+    float:left;
+    margin-right:.5rem;
+    margin-top: .5rem;
+  }
+  .usagov-search-autocomplete {
+    float:left;
+    width:auto;
+  }
+  .button--cta {
+    float:left;
+  }
+}
+
 @media (min-width: $medium-screen), print {
 
   .disclaimer {
@@ -263,6 +281,9 @@
   }
 
   .utility-nav {
+    display: none;
+  }
+  #search_form {
     display: none;
   }
 }
