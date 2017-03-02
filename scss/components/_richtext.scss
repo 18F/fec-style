@@ -39,6 +39,16 @@
   }
 }
 
+.richtext-image {
+  &.right {
+    float: right;
+  }
+
+  &.left {
+    float: left;
+  }
+}
+
 @media print {
   .rich-text table,
   .block-table table {
