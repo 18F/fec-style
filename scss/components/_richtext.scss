@@ -39,13 +39,19 @@
   }
 }
 
-.richtext-image {
-  &.right {
-    float: right;
-  }
+@include media($lg) {
+  .richtext-image {
+    &.right {
+      float: right;
+      margin-left: u(5rem);
+      margin-bottom: u(4rem);
+    }
 
-  &.left {
-    float: left;
+    &.left {
+      float: left;
+      margin-right: u(5rem);
+      margin-bottom: u(4rem);
+    }
   }
 }
 
