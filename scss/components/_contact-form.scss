@@ -41,7 +41,7 @@
 
   .errorlist {
     font-family: $sans-serif;
-    margin-top: .5rem;
+    margin-top: u(.5rem);
 
     li {
       color: $error;
