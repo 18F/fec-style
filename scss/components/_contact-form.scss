@@ -3,6 +3,14 @@
 
   .contact-form__element {
     padding: u(1rem 0);
+
+    &.is-erroring {
+      textarea,
+      select,
+      input {
+        border-color: $error;
+      }
+    }
   }
 
   textarea {
@@ -29,6 +37,15 @@
   .contact-form__reset {
     display: block;
     padding-top: u(2rem);
+  }
+
+  .errorlist {
+    font-family: $sans-serif;
+    margin-top: .5rem;
+
+    li {
+      color: $error;
+    }
   }
 
   @include media($med) {
