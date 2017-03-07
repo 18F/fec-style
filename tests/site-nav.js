@@ -80,6 +80,10 @@ describe('SiteNav', function() {
       it('should append a mega menu to items with [data-submenu]', function() {
         expect(this.siteNav.$menu.find('[data-submenu]').find('.mega').length).to.equal(1);
       });
+
+      it('should remove hrefs from links that have submenus', function() {
+        expect(this.siteNav.$menu.find('[data-submenu] a').attr('href')).to.equal('');
+      });
     });
   });
 

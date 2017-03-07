@@ -70,33 +70,8 @@
     margin: u(1rem 0);
   }
 
-  .mega-heading--sub {
-    border-bottom: 1px solid $gray-light;
-    margin-bottom: u(1rem);
-
-    .mega-heading__title {
-      font-size: u(1.6rem);
-      line-height: 1.5;
-      margin: 0;
-      padding-bottom: u(.5rem);
-    }
-  }
-
   .mega-heading__title {
     margin-bottom: 0;
-
-    a {
-      border-bottom: 1px dotted $inverse;
-    }
-  }
-
-  .mega__group {
-    @include clearfix();
-    padding-bottom: u(2rem);
-  }
-
-  .mega__column {
-    @include span-columns(3);
   }
 
   .mega__item {

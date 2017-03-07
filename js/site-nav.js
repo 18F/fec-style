@@ -71,6 +71,11 @@ SiteNav.prototype.initMegaMenu = function() {
     var id = $(this).data('submenu');
     var submenu = TEMPLATES[id](self.opts);
     $(this).append(submenu);
+
+    // Remove hrefs and default click behavior for links that have submenus
+    $(this).find('a').attr('href', '').on('click', function(e) {
+      e.preventDefault();
+    });
   });
 
   this.$menu.accessibleMegaMenu({
@@ -83,6 +88,7 @@ SiteNav.prototype.initMegaMenu = function() {
     focusClass: 'is-focus',
     openClass: 'is-open',
     openDelay: 500,
+    openOnClick: true,
     selectors: {
       topNavItems: '[data-submenu]'
     }

@@ -118,14 +118,6 @@
   &:last-child .site-nav__link {
     border-bottom: 0;
   }
-
-  &.is-disabled {
-    opacity: 1;
-
-    .site-nav__link {
-      color: $disabled;
-    }
-  }
 }
 
 .site-nav__item--sub {
@@ -232,39 +224,25 @@
     float: left;
     border-bottom: none;
     color: $primary;
-
-    &.is-open,
-    &:hover {
-      .site-nav__link {
-        border-bottom-color: transparent;
-        background-color: $primary;
-        color: $gray-lightest;
-      }
-    }
-
-    &.is-disabled {
-      .site-nav__link {
-        color: $disabled;
-        cursor: default;
-
-        &:hover,
-        &:focus {
-          background-color: transparent;
-        }
-      }
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-    }
   }
 
   .site-nav__item--secondary {
-    &.is-open,
-    &:hover {
-      .site-nav__link {
+    .site-nav__link {
+
+      &.is-parent {
+        border-bottom-color: $secondary;
+      }
+
+      &.is-open,
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom-color: $secondary-contrast;
+      }
+
+      &.is-open {
         background-color: $secondary;
+        color: $inverse;
       }
     }
   }
@@ -277,17 +255,21 @@
     border-bottom: u(.5rem) solid transparent;
     padding: u(1rem 3rem .5rem 2rem);
 
+    &.is-parent {
+      border-color: $navy;
+    }
+
     &:hover,
     &:focus,
     &:active {
-      @include u-icon-bg($arrow-down, $inverse);
-      border-bottom-color: transparent;
-      background-color: $primary;
-      color: $gray-lightest;
+      border-bottom-color: $primary-contrast;
+      cursor: default;
     }
 
-    &.is-parent {
-      border-color: $navy;
+    &.is-open {
+      @include u-icon-bg($arrow-down, $inverse);
+      background-color: $primary;
+      color: $inverse;
     }
   }
 
