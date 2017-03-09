@@ -20,6 +20,8 @@
   }
 
   p {
+    font-family: $sans-serif;
+    letter-spacing: -.3px;
     margin: u(0 0 1rem 0);
   }
 
@@ -95,6 +97,10 @@
       border-color: $secondary;
     }
   }
+}
+
+.post--child {
+  margin-left: u(4rem);
 }
 
 // Special press release styling
