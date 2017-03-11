@@ -237,7 +237,9 @@
       &:hover,
       &:focus,
       &:active {
-        border-bottom-color: $secondary-contrast;
+        .site-nav__link__title {
+          border-bottom-color: $secondary-contrast;
+        }
       }
 
       &.is-open {
@@ -247,13 +249,19 @@
     }
   }
 
-  .site-nav__link {
-    @include u-icon-bg($arrow-down, $primary);
-    background-position: right u(1rem) top 60%;
-    color: $primary;
-    text-align: center;
+  .site-nav__link__title {
+    display: inline-block;
     border-bottom: u(.5rem) solid transparent;
-    padding: u(1rem 3rem .5rem 2rem);
+    padding-bottom: u(.5rem);
+  }
+
+  .site-nav__link {
+    @include u-icon-bg($arrow-down, $gray-dark);
+    background-position: right u(1rem) top 50%;
+    color: $base;
+    cursor: default;
+    text-align: center;
+    padding: u(1rem 3rem 0 2rem);
 
     &.is-parent {
       border-color: $navy;
@@ -262,8 +270,9 @@
     &:hover,
     &:focus,
     &:active {
-      border-bottom-color: $primary-contrast;
-      cursor: default;
+      .site-nav__link__title {
+        border-bottom-color: $primary-contrast;
+      }
     }
 
     &.is-open {

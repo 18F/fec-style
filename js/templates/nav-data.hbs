@@ -1,46 +1,48 @@
-<div class="mega">
-  <div class="mega__inner">
-    <div class="usa-width-one-third">
-      <div class="mega-heading">
-        <h3 class="mega-heading__title icon-heading--overviews"><a href="{{webAppUrl}}">Data home</a></h3>
-      </div>
-      <ul>
-        <li class="mega__item"><a href="{{webAppUrl}}#raising">Raising overview</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}#spending">Spending overview</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}/elections">Find an election</a></li>
-      </ul>
-    </div>
-    <div class="usa-width-one-third">
-      <div class="mega-heading">
-        <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
-      </div>
-      <form action="{{webAppUrl}}" method="GET" autocomplete="off">
-        <label class="t-sans mega__item" for="menu-search">Search for candidates</label>
-        <div class="combo--search--mini">
-          <input id="menu-search" name="search" class="combo__input js-menu-search" type="text"
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false">
-          <input type="hidden" name="search_type" value="candidates">
-          <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
+<div class="mega-container">
+  <div class="mega">
+    <div class="mega__inner">
+      <div class="usa-width-one-third">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title icon-heading--overviews"><a href="{{webAppUrl}}">Data home</a></h3>
         </div>
-      </form>
-    </div>
-    <div class="usa-width-one-third">
-      <div class="mega-heading">
-        <h3 class="mega-heading__title icon-heading--table"><a href="{{webAppUrl}}/advanced">Advanced data</a></h3>
+        <ul>
+          <li class="mega__item"><a href="{{webAppUrl}}#raising">Raising overview</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}#spending">Spending overview</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/elections">Find an election</a></li>
+        </ul>
       </div>
-      <ul class="usa-width-one-half">
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=raising">Raising</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=spending">Spending</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=candidates">Candidates</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=committees">Committees</a></li>
-      </ul>
-      <ul class="usa-width-one-half">
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=reports">Reports and filings</a></li>
-        <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=other">Bulk data and other sources</a></li>
-      </ul>
+      <div class="usa-width-one-third">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title icon-heading--profiles"><a href="{{webAppUrl}}">Profiles</a></h3>
+        </div>
+        <form action="{{webAppUrl}}" method="GET" autocomplete="off">
+          <label class="t-sans mega__item" for="menu-search">Search for candidates</label>
+          <div class="combo--search--mini">
+            <input id="menu-search" name="search" class="combo__input js-menu-search" type="text"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false">
+            <input type="hidden" name="search_type" value="candidates">
+            <button class="combo__button button--search button--standard" type="submit"><span class="u-visually-hidden">Search</span></button>
+          </div>
+        </form>
+      </div>
+      <div class="usa-width-one-third">
+        <div class="mega-heading">
+          <h3 class="mega-heading__title icon-heading--table"><a href="{{webAppUrl}}/advanced">Advanced data</a></h3>
+        </div>
+        <ul class="usa-width-one-half">
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=raising">Raising</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=spending">Spending</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=candidates">Candidates</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=committees">Committees</a></li>
+        </ul>
+        <ul class="usa-width-one-half">
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=reports">Reports and filings</a></li>
+          <li class="mega__item"><a href="{{webAppUrl}}/advanced?tab=other">Bulk data and other sources</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

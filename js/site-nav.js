@@ -82,7 +82,7 @@ SiteNav.prototype.initMegaMenu = function() {
     uuidPrefix: 'mega-menu',
     menuClass: 'site-nav__panel--main',
     topNavItemClass: 'site-nav__item',
-    panelClass: 'mega',
+    panelClass: 'mega-container',
     panelGroupClass: 'mega__group',
     hoverClass: 'is-hover',
     focusClass: 'is-focus',

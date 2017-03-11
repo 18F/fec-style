@@ -1,6 +1,6 @@
 // Mega menu
 
-.mega {
+.mega-container{
   a {
     border-bottom: none;
 
@@ -15,7 +15,7 @@
 }
 
 @include media($lg) {
-  .mega {
+  .mega-container{
     @include u-font-color($inverse);
     @include clearfix();
     display: block !important; // Important to override [aria-hidden] styles
@@ -31,7 +31,7 @@
       padding-bottom: u(8rem); // Padding so that the shadow doesn't get cut off
       z-index: $z-navigation;
 
-      .mega__inner {
+      .mega {
         @include transition(all .4s ease-out);
         @include transform(translateY(0));
         box-shadow: 0 6px 8px 2px rgba(0, 0, 0, .3);
@@ -44,7 +44,7 @@
     }
   }
 
-  .mega__inner {
+  .mega {
     @include clearfix();
     @include transition(all .4s ease-out);
     @include transform(translateY(-100%));
@@ -60,7 +60,7 @@
     }
   }
 
-  .mega__inner--secondary {
+  .mega--secondary {
     background-color: $secondary;
   }
 
@@ -75,8 +75,7 @@
   }
 
   .mega__item {
-    line-height: 1;
-    margin-bottom: u(1rem);
+    margin-bottom: u(1.5rem);
   }
 
   .mega__item__sub {
