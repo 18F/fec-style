@@ -1,6 +1,6 @@
 // Mega menu
 
-.mega-container{
+.mega-container {
   a {
     border-bottom: none;
 
@@ -15,7 +15,7 @@
 }
 
 @include media($lg) {
-  .mega-container{
+  .mega-container {
     @include u-font-color($inverse);
     @include clearfix();
     display: block !important; // Important to override [aria-hidden] styles
