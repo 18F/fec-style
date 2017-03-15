@@ -197,6 +197,12 @@
   }
 }
 
+.t-small {
+  font-size: u(1.4rem);
+  line-height: u(1.5rem);
+  color: $gray-dark;
+}
+
 .h1 {
   @include heading(h1);
 }
