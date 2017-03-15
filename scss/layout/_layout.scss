@@ -139,6 +139,18 @@
   padding-right: u(2rem);
 }
 
+.u-small-icon-padding--left {
+  padding-left: u(2.5rem);
+}
+
+// horizontal rule
+
+.hr--light {
+  border-bottom: 1px solid $gray-light;
+  display: block;
+  margin: u(2rem 0 2rem);
+}
+
 // Class applied to candidate and committee pages with tabs
 .tab-interface {
   overflow-x: hidden;
