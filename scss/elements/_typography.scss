@@ -79,3 +79,10 @@ hr {
   border-top: none;
   margin: u(1rem 0);
 }
+
+blockquote {
+  border-left: 10px solid $gray-lightest;
+  padding-left: 30px;
+  font-style: italic;
+  margin-left: 0;
+}

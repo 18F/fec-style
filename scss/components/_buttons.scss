@@ -306,17 +306,8 @@
 }
 
 // Buttons: Calendar dropdown buttons
-//
-// .button--calendar                - Add calendar button
-// .button--calendar--mini          - Mini add calendar button
-//
-// Markup:
-// <button class="button--calendar dropdown__button button--alt">Add to calendar</button>
-// <button class="button--calendar--mini dropdown__button dropdown__button--mini button--alt"></button>
-//
-// Styleguide components.buttons.calendar-dropdown-buttons
 
-.button--calendar {
+.button--add-calendar {
   @include u-icon-bg($cal-add, $base);
   background-position: u(1rem .7rem);
   background-size: u(2rem);
@@ -324,7 +315,7 @@
   padding-right: u(6rem);
 }
 
-.button--calendar--mini {
+.button--add-calendar--mini {
   @include u-icon-bg($cal-add, $base);
   background-position: u(1rem .7rem);
   background-size: u(2rem);
@@ -452,6 +443,14 @@
 
 .button--check {
   @include u-icon-button($check);
+}
+
+.button--updates {
+  @include u-icon-button($updates);
+}
+
+.button--calendar {
+  @include u-icon-button($calendar);
 }
 
 // Special Buttons
