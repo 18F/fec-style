@@ -26,3 +26,39 @@ td,
 th {
   vertical-align: middle;
 }
+.custom_table{
+  table {  
+    margin-bottom:1rem;
+    td {
+      padding:0 2rem;
+      text-align:right;
+      border:1px solid #ccc;
+     }
+	thead th:first-child{
+	font-size:inherit
+	}
+    th {
+	 font-family: "karla", sans-serif;
+     letter-spacing: -.3px;
+     text-align:center;
+     font-weight:bold;
+	 border:1px solid #ccc;
+    }
+	thead th {
+     border-top: 2px solid #aaa;
+     border-bottom: 2px solid #aaa;
+     background: #eee;
+    }
+	th:first-child {
+     width: 20%;
+     font-size: 1rem;
+	 font-weight:bold;
+    }
+  } 
+  h2, h3, h4, h5, p{
+    margin:2rem 0 0.5rem 0;
+  }
+  .custom_footnote {
+    margin-bottom:1rem;
+  }
+}
