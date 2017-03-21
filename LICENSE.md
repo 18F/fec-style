@@ -7,8 +7,6 @@ This project includes a mix of the following:
 
 ## Parts of this project that are not in the public domain
 
-This site is based on the U.S. Web Design Standards (WDS), which also includes works under the SIL Open Font License, MIT license, and public domain. The full license details for those assets are described in the [WDS license file](https://github.com/18F/web-design-standards/blob/staging/LICENSE.md).
-
 ### Files licensed under the SIL Open Font License
 
 The Karla font files in `src/fonts` are from [Google Web Fonts](https://fonts.google.com/specimen/Karla), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?item_id=OFL), and copyright [Jonny Pinhorn](https://github.com/jonpinhorn) with Reserved Font Name ‘Karla'.
@@ -40,6 +38,9 @@ Notes:
 ## Image licenses
 
 This site also includes a number of images that have various copyright statuses, including Creative Commons licenses and public domain. These images are in the `assets` directory.
+
+## Reuse of open-source style guides
+Much of the designs, guidance, and code in the FEC style guide is based on user interface (UI) patterns from the [U.S. Web Design Standards](https://standards.usa.gov/).
 
 ## The rest of this project is in the worldwide public domain
 
