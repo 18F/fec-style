@@ -8,7 +8,7 @@ To ensure a welcoming environment for our projects, our staff follows the [18F C
 If you’d prefer, you can also reach us by [email](mailto:betafeedback@fec.gov).
 
 ## Public domain
-All contributions to this project will be released under the CC0 dedication alongside the public domain portions of this project.
+All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
 
 ### Issues
 We use GitHub issues to track user issues and team tasks. Whenever possible, we follow this outline:
