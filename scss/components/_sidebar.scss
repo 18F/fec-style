@@ -123,6 +123,26 @@
   }
 }
 
+.sidebar__related-links {
+  li {
+    margin-bottom: u(1rem);
+  }
+}
+
+.sidebar__record-title {
+  margin-bottom: u(2rem);
+  line-height: u(3rem);
+
+  &::before {
+    @include u-icon-circle($updates, $secondary, $inverse, 3rem);
+    background-size: u(1.5rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+    vertical-align: middle;
+  }
+}
+
 @media print {
   .sidebar {
     display: none;
