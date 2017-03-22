@@ -39,9 +39,6 @@ Notes:
 
 This site also includes a number of images that have various copyright statuses, including Creative Commons licenses and public domain. These images are in the `assets` directory.
 
-## Reuse of open-source style guides
-Much of the designs, guidance, and code in the FEC style guide is based on user interface (UI) patterns from the [U.S. Web Design Standards](https://standards.usa.gov/).
-
 ## The rest of this project is in the worldwide public domain
 
 As a work of the United States government, this project is in the public domain within the United States.
@@ -60,6 +57,14 @@ You can copy, modify, distribute and perform the work, even for commercial purpo
 In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.
 
 Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law. When using or citing the work, you should not imply endorsement by the author or the affirmer.
+
+## Reuse of open-source style guides
+Much of the design, guidance, and code in the FEC style guide is based on user interface (UI) patterns from the [U.S. Web Design Standards](https://standards.usa.gov/), including:
+- Grid column classes:  [/scss/_grid.scss](/blob/master/scss/_grid.scss)
+- Some colors in the color palette:  [/scss/_variables.scss](/blob/master/scss/_variables.scss)
+- Header navigation with mega menu
+- Footer navigation and guidance
+- Side navigation
 
 ### Contributions to this project
 
