@@ -40,6 +40,15 @@
   @include outer-container;
 }
 
+// flexbox for full height cards
+.grid--flex {
+  display: flex;
+
+  .grid__item {
+    display: flex !important;
+  }
+}
+
 .grid__item {
   margin-bottom: u(2rem);
   width: 100%;
