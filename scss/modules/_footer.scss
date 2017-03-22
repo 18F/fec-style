@@ -21,31 +21,49 @@
   background-color: $navy;
   color: $inverse;
   font-family: $sans-serif;
-  padding: u(1rem 0);
+  padding: u(2rem 0 1rem 0);
 
   a {
-    border-bottom-color: $inverse;
+    border-bottom: none;
     color: $inverse;
+
+    &:hover {
+      border-bottom: 1px dotted $inverse;
+    }
   }
 
-  .footer-links__column li {
-    font-size: u(1.8rem);
+  li {
+    font-size: u(1.6rem);
+    padding: (.5rem 0);
+  }
+
+  .grid--6-wide .grid__item {
+    @include span-columns(8);
+
+    // on large screens the first column is a blank spacer
+    // so we do not need this space for tablet sizes and below
+    &:first-child {
+      display: none;
+    }
+
+    // override clear because of first empty column
+    &:nth-child(2n+1) {
+      clear: none;
+    }
   }
 
   @include media($med) {
-    .footer-links__column {
-      @include span-columns(6);
-      float: right;
+    .grid--6-wide .grid__item {
+      @include span-columns(2);
+    }
+  }
 
-      ul {
-        @include span-columns(3 of 6);
-        padding: u(1rem 0);
+  @include media($lg) {
+    .grid--6-wide .grid__item {
+      @include span-columns(2);
+
+      &:first-child {
         display: block;
-      }
-
-      li {
-        font-size: u(1.6rem);
-        padding: u(.5rem 0);
       }
     }
   }
