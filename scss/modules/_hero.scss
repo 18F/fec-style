@@ -4,7 +4,6 @@
 //
 // .hero--data            - Hero panel for the campaign finance data section.
 // .hero--legal           - Hero panel for the legal resources section.
-// .hero--registration    - Hero panel for the registration and reporting section.
 // .hero--press           - Hero panel for the press section.
 //
 // Markup: heroes.hbs
@@ -117,7 +116,8 @@
   }
 }
 
-.hero--registration {
+.hero--registration,
+.hero--services {
   .hero__image {
     background-image: url('../img/hero-registration.jpg');
   }
