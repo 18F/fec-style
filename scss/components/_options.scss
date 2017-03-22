@@ -44,6 +44,10 @@
 .option__aside {
   @include span-columns(4);
   padding-top: u(2rem);
+
+  h6 {
+    border-bottom: none;
+  }
 }
 
 .option__aside__block + .option__aside__block {
