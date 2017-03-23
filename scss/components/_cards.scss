@@ -295,6 +295,12 @@
       background-size: 60%;
     }
 
+    &.i-document {
+      @include u-icon-bg($document, $secondary-contrast);
+      background-position: 50% 50%;
+      background-size: 50%;
+    }
+
     &.i-info-person {
       @include u-icon-bg($info-person, $secondary-contrast);
       background-position: 50% 110%;
