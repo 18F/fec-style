@@ -42,6 +42,7 @@
 
 // flexbox for full height cards
 .grid--flex {
+  flex-wrap: wrap;
   display: flex;
 
   .grid__item {
