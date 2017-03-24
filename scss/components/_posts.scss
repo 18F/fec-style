@@ -59,6 +59,11 @@
   }
 }
 
+.post--child {
+  padding: u(1rem 0);
+  margin-left: u(3rem);
+}
+
 .post__pre {
   @include clearfix();
   color: $gray-dark;
@@ -105,10 +110,6 @@
   }
 }
 
-.post--child {
-  margin-left: u(4rem);
-}
-
 // Special press release styling
 // .press_release_content is an inheritied class from the scraped content
 // A lot of the scraped content contains tables or other weird things
@@ -148,3 +149,4 @@
     font-size: u(1.4rem);
   }
 }
+
