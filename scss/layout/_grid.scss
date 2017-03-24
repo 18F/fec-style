@@ -130,7 +130,8 @@
 @include media(min-width $medium-screen max-width (strip-units($large-screen) * $em-base - 1)) {
   .grid--2-wide,
   .grid--3-wide,
-  .grid--4-wide {
+  .grid--4-wide,
+  .grid--6-wide {
     .grid__item {
       @include span-columns(6);
       @include omega(2n);
@@ -170,6 +171,13 @@
     .grid__item {
       @include span-columns(3);
       @include omega(4n);
+    }
+  }
+
+  .grid--6-wide {
+    .grid__item {
+      @include span-columns(2);
+      @include omega(6n);
     }
   }
 
