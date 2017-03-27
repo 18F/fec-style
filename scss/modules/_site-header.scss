@@ -223,7 +223,7 @@
     border-left: 1px solid $gray;
     margin-right: 0;
     padding: u(0 1.5rem);
-    line-height: u(1.6rem);
+    line-height: u(3.6rem);
     font-size: u(1.4rem);
 
     &:first-child {
@@ -243,6 +243,10 @@
       }
     }
   }
+}
+
+.utility-nav__search {
+  width: u(40rem);
 }
 
 @media print {

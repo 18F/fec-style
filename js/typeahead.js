@@ -128,7 +128,7 @@ Typeahead.prototype.init = function(type) {
     this.$input.typeahead('destroy');
   }
   this.dataset = datasets[type];
-  this.typeahead = this.$input.typeahead(typeaheadOpts, this.dataset);
+  this.typeahead = this.$input.typeahead(typeaheadOpts, datasets['candidates'], datasets['committees']);
   this.$element = this.$input.parent('.twitter-typeahead');
   this.$element.css('display', 'block');
   this.$element.find('.tt-menu').attr('aria-live', 'polite');
