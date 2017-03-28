@@ -284,6 +284,10 @@
     &.i-folder-with-person {
       @include u-icon-bg($folder-with-person, $primary-contrast);
     }
+
+    &.i-data-flag {
+      @include u-icon-bg($data-flag, $primary-contrast);
+    }
   }
 }
 
