@@ -160,6 +160,14 @@
     float: left;
   }
 
+  .card__image__container--secondary {
+    background-color: $secondary;
+
+    .card__title {
+      color: $secondary-contrast;
+    }
+  }
+
   @include media($lg) {
 
     .card__image__container {
@@ -272,6 +280,10 @@
     &.i-elections {
       @include u-icon-bg($person-location, $primary-contrast);
     }
+
+    &.i-folder-with-person {
+      @include u-icon-bg($folder-with-person, $primary-contrast);
+    }
   }
 }
 
@@ -281,6 +293,12 @@
       @include u-icon-bg($calendar, $secondary-contrast);
       background-position: 50% 50%;
       background-size: 60%;
+    }
+
+    &.i-document {
+      @include u-icon-bg($document, $secondary-contrast);
+      background-position: 50% 50%;
+      background-size: 50%;
     }
 
     &.i-info-person {
