@@ -260,7 +260,7 @@ h3 + .simple-table {
 // For custom_table_block in streamfactory
 
 .custom-table {
-  box-shadow: -8px 0px 9px -2px #ccc inset;
+  box-shadow: -8px 0px 9px -2px $gray-medium inset;
   overflow-x: scroll;
   display: block;
   margin-bottom: u(1rem);
@@ -270,22 +270,25 @@ h3 + .simple-table {
     width: auto;
 
     th {
-    @extend .simple-table__header;
+      @extend .simple-table__header;
       table-layout: auto;
       padding: u(1rem);
-      text-align:left;
-      border-right:1px solid $gray-medium;;
+      text-align: left;
+      border-right: 1px solid $gray-medium;
     }
 
     tr {
-      @extend .simple-table__row
+      @extend .simple-table__row;
+      th:first-child {
+        border-bottom: 1px solid $neutral;
+      }
     }
 
     td {
       @extend .simple-table__cell;
-      border-right:1px solid $gray-medium;
-      text-align:right;
-      padding: u(1rem) !important
+      border-right: 1px solid $gray-medium;
+      text-align: right;
+      padding: u(1rem) !important;
     }
 
     td:last-child,
@@ -301,23 +304,18 @@ h3 + .simple-table {
     thead tr th:first-child {
       border-bottom: 1px solid $primary;
     }
-
-    tr th:first-child {
-      border-bottom: 1px solid $neutral;
-    }
   }
 
   @include media($lg) {
-    box-shadow: none
-
+    box-shadow: none;
   }
 
   @include media(min-width 640px max-width 755px 12) {
-    box-shadow: -8px 0px 9px -2px #ccc inset;
+    box-shadow: -8px 0px 9px -2px $gray-medium inset;
   }
 
   @include media(min-width 515px max-width 639px 12) {
-      box-shadow: none;
+    box-shadow: none;
   }
 }
 
