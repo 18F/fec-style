@@ -1,6 +1,6 @@
 // // Tables
-// // 
-// // 
+// //
+// //
 // // Styleguide elements.tables
 
 table {
@@ -19,6 +19,7 @@ th {
 
 td {
   padding: 0;
+
 }
 
 tr,
@@ -26,80 +27,3 @@ td,
 th {
   vertical-align: middle;
 }
-// For custom_table_block in streamfactory
-
-.custom_table table {
-  margin-bottom: u(1rem);
-
-  td {
-    border: 1px solid $gray-medium;
-    font-size: u(1rem); 
-    padding: u(0 .5rem);
-    text-align: right;
-  }
-
-  th {
-    border: 1px solid $gray-medium;
-	  font-family: "karla", sans-serif;
-    font-weight: bold;
-    letter-spacing: -.3px;
-    text-align: center;
-    @include word-wrap(break-word);
-    font-size: u(.75rem);
-  }
-
-  thead th {
-    border-top: 2px solid $gray;
-    border-bottom: 2px solid $gray;
-    background: $gray-lightest;
-    }
-
-  th:first-child {
-    width: 20%;
-  }
-}
-
-.custom_table {
-  h2,
-  h3,
-  h4,
-  h5,
-  p {
-    margin: u(2rem 0 0.5rem);
-  }
-
-  .custom_footnote {
-    margin-bottom: u(1rem);
-  }
-}
-
-@include media($lg) {
-  .custom_table table {
-    td {
-      padding: u(0 2rem);
-      font-size: inherit;
-    }
-
-    th {
-      padding: u(0 .3rem);
-      font-size:u(1rem);
-      @include word-wrap(inherit);
-    }
-  }
-}
-
-.custom_table table {
-  @include media(min-width 480px max-width 640px, 12) {
-    td {
-      padding: u(0 .5rem);
-      font-size: inherit;
-     }
-
-    th {
-      padding: u(0 .2rem);
-      font-size: u(1rem);
-      @include word-wrap(inherit);
-     }
-   }
-}
- 
