@@ -189,6 +189,16 @@
   }
 }
 
+.icon-heading--document-circle {
+  &::before {
+    @include u-icon-circle($document, $inverse, $secondary-contrast, 4.5rem);
+    background-size: u(2.5rem);
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
 // icons for homepage - legal resources (on primary [blue] slab)
 .icon-heading--mallet-circle {
   &::before {
