@@ -123,10 +123,29 @@ var individualDataset = {
   }
 };
 
+/* This is a fake dataset for showing an empty option with the query
+ * when clicked, this will submit the form to the DigitalGov search site
+ */
+var digitalgov = {
+  display: 'id',
+  source: function(query, syncResults) {
+    syncResults([{
+      id: query,
+      type: 'digitalgov'
+    }]);
+  },
+  templates: {
+    suggestion: function(datum) {
+      return '<span><strong>Search everything else:</strong> "' + datum.id + '"</span>';
+    }
+  }
+};
+
 var datasets = {
   candidates: candidateDataset,
   committees: committeeDataset,
-  individuals: individualDataset
+  individuals: individualDataset,
+  digitalgov: digitalgov
 };
 
 var typeaheadOpts = {
@@ -170,9 +189,26 @@ Typeahead.prototype.handleChangeEvent = function(data) {
 Typeahead.prototype.select = function(event, datum) {
   if (datum.type === 'individual') {
     window.location = this.url + 'receipts/individual-contributions/?contributor_name=' + datum.id;
+  } else if (datum.type === 'digitalgov') {
+    this.searchDigitalGov(datum.id);
   } else {
     window.location = this.url + this.dataset.name + '/' + datum.id;
   }
+};
+
+Typeahead.prototype.searchDigitalGov = function(query) {
+  /* If the DigitalGov option is selected, this function handles submitting
+   * a new search to the DigitalGov search tool, in a certain collection.
+   */
+
+  var $form = this.$input.closest('form');
+  var action = $form.attr('action');
+  this.$input.val(query);
+  // Update the action to go to the /docs path
+  $form.attr('action', action + '/docs');
+  // Add a hidden input with the ID of the DigitalGov collection to use
+  $form.append('<input type="hidden" name="dc" value="4104">');
+  $form.submit();
 };
 
 module.exports = {
