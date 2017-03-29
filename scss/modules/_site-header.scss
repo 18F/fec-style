@@ -247,6 +247,10 @@
 
 .utility-nav__search {
   width: u(40rem);
+
+  .tt-menu {
+    z-index: $z-max !important;
+  }
 }
 
 @media print {
