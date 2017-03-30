@@ -340,6 +340,11 @@
       @include u-icon-bg($question-bubble, $secondary-contrast);
       background-size: 80%;
     }
+
+    &.i-notebook {
+      @include u-icon-bg($notebook, $secondary-contrast);
+      background-size: 50%;
+    }
   }
 }
 
