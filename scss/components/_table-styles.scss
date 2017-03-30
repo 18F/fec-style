@@ -253,14 +253,14 @@ h3 + .simple-table {
   td:first-child {
     border-right: 1px solid $gray-medium;
     padding-left: u(4rem);
-     font-style: italic;
+    font-style: italic;
   }
 }
 
 // For custom_table_block in streamfactory
 
 .custom-table {
-  box-shadow: -8px 0px 9px -2px $gray-medium inset;
+  box-shadow: -10px 0 20px -10px $gray-medium inset;
   overflow-x: scroll;
   display: block;
   margin-bottom: u(1rem);
@@ -268,10 +268,11 @@ h3 + .simple-table {
   table {
     @extend .simple-table;
     width: auto;
+    table-layout: auto;
+    line-height: 1;
 
     th {
       @extend .simple-table__header;
-      table-layout: auto;
       padding: u(1rem);
       text-align: left;
       border-right: 1px solid $gray-medium;
@@ -279,9 +280,6 @@ h3 + .simple-table {
 
     tr {
       @extend .simple-table__row;
-      th:first-child {
-        border-bottom: 1px solid $neutral;
-      }
     }
 
     td {
@@ -292,29 +290,16 @@ h3 + .simple-table {
     }
 
     td:last-child,
-    thead th:last-child {
+    th:last-child {
       border-right: none;
     }
 
-    tr td:first-child {
-      font-weight: bold;
-      text-align: left;
-    }
-
-    thead tr th:first-child {
-      border-bottom: 1px solid $primary;
+    tbody th {
+      border-bottom: 1px solid $neutral;
     }
   }
 
   @include media($lg) {
-    box-shadow: none;
-  }
-
-  @include media(min-width 640px max-width 755px 12) {
-    box-shadow: -8px 0px 9px -2px $gray-medium inset;
-  }
-
-  @include media(min-width 515px max-width 639px 12) {
     box-shadow: none;
   }
 }
@@ -330,7 +315,5 @@ h3 + .simple-table {
 
   .custom_footnote {
     margin-bottom: u(1rem);
-
   }
 }
-
