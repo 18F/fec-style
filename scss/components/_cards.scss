@@ -102,6 +102,16 @@
     padding: 0;
   }
 
+  .card__content--full-width {
+    text-align: left;
+    padding: u(1.5rem 0 0 0);
+    font-family: $sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -.3px;
+    clear: both;
+  }
+
   // Option: .card--full-bleed makes the image full height
   &.card--full-bleed {
     border: none;
@@ -283,6 +293,10 @@
 
     &.i-folder-with-person {
       @include u-icon-bg($folder-with-person, $primary-contrast);
+    }
+
+    &.i-data-flag {
+      @include u-icon-bg($data-flag, $primary-contrast);
     }
   }
 }
