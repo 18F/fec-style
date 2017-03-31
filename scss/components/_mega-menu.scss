@@ -1,7 +1,7 @@
 // Mega menu
 
 .mega-container {
-  a {
+  a:not(.mega__page-link) {
     border-bottom: none;
 
     &:hover {
@@ -12,6 +12,34 @@
   ul {
     margin-left: 0;
   }
+}
+
+.mega__inner {
+  padding: 1rem;
+}
+
+.mega-heading__title {
+  display: none;
+}
+
+.mega-heading {
+  display: none;
+}
+
+.mega__page-link {
+  @include heading(h3);
+  border-bottom: 1px solid $inverse;
+  display: block;
+  padding-bottom: u(.8rem);
+  margin: u(1rem 0);
+}
+
+.mega__item {
+  margin-bottom: u(1.5rem);
+}
+
+.mega {
+  background-color: $navy;
 }
 
 @include media($lg) {
@@ -64,21 +92,19 @@
     background-color: $secondary;
   }
 
+  .mega__item__sub {
+    margin-left: u(2rem);
+  }
+
   .mega-heading {
+    display: none;
     border-bottom: 2px solid $inverse;
     padding-bottom: u(.8rem);
     margin: u(1rem 0);
   }
 
   .mega-heading__title {
+    display: block;
     margin-bottom: 0;
-  }
-
-  .mega__item {
-    margin-bottom: u(1.5rem);
-  }
-
-  .mega__item__sub {
-    margin-left: u(2rem);
-  }
+  }  
 }

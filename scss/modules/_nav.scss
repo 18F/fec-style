@@ -53,7 +53,7 @@
   color: $inverse;
   font-size: u(1.6rem);
   overflow-y: scroll;
-  padding: u(1rem 2rem);
+  padding: u(1rem 0);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -126,6 +126,8 @@
 
 .site-nav__link {
   @include transition(background-color, .1s);
+  @include u-icon-bg($plus-circle, $inverse);
+  background-position: right u(1rem) top 50%;
   color: $inverse;
   display: block;
   font-size: inherit;
@@ -135,6 +137,10 @@
   border-bottom: none;
   width: 100%;
   text-align: left;
+
+  &[aria-expanded="true"] {
+    @include u-icon-bg($minus-circle, $inverse);
+  }
 }
 
 .site-nav__link--underline {
@@ -151,7 +157,7 @@
 
 .site-nav__title {
   border-bottom: 1px solid $inverse;
-  padding: u(1rem 0);
+  padding: u(1rem 1rem);
   margin: 0;
 }
 
@@ -257,6 +263,7 @@
 
   .site-nav__link {
     @include u-icon-bg($arrow-down, $gray-dark);
+    background-image: none;
     background-position: right u(1rem) top 50%;
     color: $base;
     cursor: default;
