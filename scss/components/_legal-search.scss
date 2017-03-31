@@ -103,6 +103,6 @@
 .pending-ao__title {
   @include u-icon-bg($timer, $base);
   display: inline-block;
-  padding-right: 2.5rem;
+  padding-right: u(2.5rem);
   background-position: 100% 50%;
 }
