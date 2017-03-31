@@ -22,6 +22,10 @@
   border-width: 0 0 0 3px;
   margin: u(2rem 0);
   padding: u(5rem 2rem 2rem 2rem);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .message--success {
