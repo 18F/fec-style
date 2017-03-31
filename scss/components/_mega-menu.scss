@@ -42,6 +42,7 @@
   background-color: $navy;
 }
 
+// scss-lint:disable ImportantRule
 @include media($lg) {
   .mega-container {
     @include u-font-color($inverse);
@@ -92,10 +93,6 @@
     background-color: $secondary;
   }
 
-  .mega__item__sub {
-    margin-left: u(2rem);
-  }
-
   .mega-heading {
     display: none;
     border-bottom: 2px solid $inverse;
@@ -106,5 +103,5 @@
   .mega-heading__title {
     display: block;
     margin-bottom: 0;
-  }  
+  }
 }
