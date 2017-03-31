@@ -270,34 +270,36 @@ h3 + .simple-table {
     width: auto;
     table-layout: auto;
     line-height: 1;
-
-    th {
-      @extend .simple-table__header;
-      padding: u(1rem);
-      text-align: left;
-      border-right: 1px solid $gray-medium;
-    }
-
-    tr {
-      @extend .simple-table__row;
-    }
-
-    td {
-      @extend .simple-table__cell;
-      border-right: 1px solid $gray-medium;
-      text-align: right;
-      padding: u(1rem) !important;
-    }
-
-    td:last-child,
-    th:last-child {
-      border-right: none;
-    }
-
-    tbody th {
-      border-bottom: 1px solid $neutral;
-    }
   }
+
+  th {
+    @extend .simple-table__header;
+    padding: u(1rem);
+    text-align: left;
+    border-right: 1px solid $gray-medium;
+  }
+
+  tbody th {
+    border-bottom: 1px solid $neutral;
+  }
+
+  tr {
+    @extend .simple-table__row;
+  }
+
+  // scss-lint:disable ImportantRule
+  td {
+    @extend .simple-table__cell;
+    border-right: 1px solid $gray-medium;
+    text-align: right;
+    padding: u(1rem) !important;
+  }
+
+  td:last-child,
+  th:last-child {
+    border-right: none;
+  }
+
 
   @include media($lg) {
     box-shadow: none;
