@@ -319,3 +319,39 @@ h3 + .simple-table {
     margin-bottom: u(1rem);
   }
 }
+
+// Dense table
+// For tables with a lot of data that need to be condensed
+.dense-table {
+  table-layout: auto;
+  border-top: none;
+  border-bottom-width: 0;
+
+  td,
+  th {
+    border-bottom: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    font-size: u(1.2rem);
+    line-height: 1.2;
+    padding: u(.5rem);
+    vertical-align: middle;
+    word-wrap: break-word;
+  }
+
+  thead th {
+    border-bottom: 1px solid $primary;
+  }
+
+  tbody th {
+    border-right: 1px solid $primary;
+  }
+
+  th[scope="colgroup"],
+  th[scope="rowgroup"] {
+    text-align: center;
+    background-color: $primary;
+    color: $inverse;
+    border-bottom: none;
+    border-right: none;
+  }
+}
