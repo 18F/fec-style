@@ -409,6 +409,10 @@
 
 .button--download {
   @include u-icon-button($download, left);
+}
+
+.button--download--dropdown {
+  @include u-icon-button($download, left);
   padding-right: u(6rem);
 }
 

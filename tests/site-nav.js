@@ -14,20 +14,20 @@ var helpers = require('../js/helpers');
 var dom = '<nav class="site-nav js-site-nav">' +
   '<div id="site-menu" class="site-nav__container">' +
   '<ul>' +
-    '<li class="site-nav__item" data-submenu="data">' +
-      '<a href="/" class="site-nav__link is-current">' +
-        'Campaign Finance Data</a>' +
-    '</li>' +
-    '<li class="site-nav__item">' +
-      '<a href="#" class="site-nav__link">Calendar</a>' +
-    '</li>' +
-    '<li class="site-nav__item">' +
-      '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
-    '</li>' +
+  '<li class="site-nav__item" data-submenu="data">' +
+  '<a href="/" class="site-nav__link is-current">' +
+  'Campaign Finance Data</a>' +
+  '</li>' +
+  '<li class="site-nav__item">' +
+  '<a href="#" class="site-nav__link">Calendar</a>' +
+  '</li>' +
+  '<li class="site-nav__item">' +
+  '<a href="#" class="site-nav__link is-disabled">TBD</a>' +
+  '</li>' +
   '</ul>' +
   '</div>' +
   '<button class="js-nav-toggle" aria-controls="site-menu">Menu</button>' +
-'</nav>';
+  '</nav>';
 
 describe('SiteNav', function() {
   before(function() {
@@ -80,6 +80,10 @@ describe('SiteNav', function() {
       it('should append a mega menu to items with [data-submenu]', function() {
         expect(this.siteNav.$menu.find('[data-submenu]').find('.mega').length).to.equal(1);
       });
+
+      it('should remove hrefs from links that have submenus', function() {
+        expect(this.siteNav.$menu.find('[data-submenu] a').attr('href')).to.equal('');
+      });
     });
   });
 
@@ -95,13 +99,6 @@ describe('SiteNav', function() {
     afterEach(function() {
       $('body').width(1000);
       helpers.getWindowWidth.restore();
-    });
-
-    describe('initMobileMenu()', function() {
-      it('should append the mobile menu', function() {
-        expect(this.siteNav.$menu.find('.js-mobile-nav').length).to.equal(1);
-        expect(this.siteNav.isMobile).to.be.true;
-      });
     });
 
     describe('assignAria()', function() {
@@ -122,7 +119,7 @@ describe('SiteNav', function() {
       function isClosed(siteNav) {
         return !siteNav.isOpen &&
           !siteNav.$element.hasClass('is-open') &&
-          siteNav.$menu.attr('aria-hidden') !== 'false'  &&
+          siteNav.$menu.attr('aria-hidden') !== 'false' &&
           !siteNav.$toggle.hasClass('active');
       }
 
@@ -131,63 +128,6 @@ describe('SiteNav', function() {
         expect(isOpen(this.siteNav)).to.be.true;
         this.siteNav.toggleMenu();
         expect(isClosed(this.siteNav)).to.be.true;
-      });
-    });
-
-    describe('mobile panels', function() {
-      it('should show a panel when clicking a target', function() {
-        this.siteNav.$element.find('.js-panel-trigger[aria-controls="nav-advanced"]').click();
-        expect(this.siteNav.$element.find('#nav-advanced').attr('aria-hidden')).to.equal('false');
-      });
-
-      it('should hide a panel when clicking the back button', function() {
-        this.siteNav.$element.find('.js-panel-close[aria-controls="nav-advanced"]').click();
-        expect(this.siteNav.$element.find('#nav-advanced').attr('aria-hidden')).to.equal('true');
-      });
-    });
-  });
-
-  describe('switchMenu()', function() {
-    describe('when switching to a small screen', function() {
-      before(function() {
-        this.originalWidth = $('body').width();
-        var width = 400;
-        sinon.stub(helpers, 'getWindowWidth').returns(width);
-        $('body').width(width);
-        this.siteNav.switchMenu();
-      });
-
-      after(function() {
-        $('body').width(this.originalWidth);
-        helpers.getWindowWidth.restore();
-      });
-
-      it('should remove the mega menu', function() {
-        expect(this.siteNav.$element.find('.mega').length).to.equal(0);
-      });
-
-      it('should instantiate the small menu', function() {
-        expect(this.siteNav.$element.find('.js-mobile-nav').length).to.equal(1);
-      });
-    });
-
-    describe('when switching to a large screen', function() {
-      before(function() {
-        this.originalWidth = $('body').width();
-        var width = 1000;
-        sinon.stub(helpers, 'getWindowWidth').returns(width);
-        $('body').width(width);
-        this.siteNav.switchMenu();
-      });
-
-      after(function() {
-        $('body').width(this.originalWidth);
-        helpers.getWindowWidth.restore();
-      });
-
-      it('should remove the mobile menu if the screen gets big', function() {
-        this.siteNav.switchMenu();
-        expect(this.siteNav.$element.find('.js-mobile-nav').length).to.equal(0);
       });
     });
   });

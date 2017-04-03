@@ -6,23 +6,11 @@
 // .site-nav                        - The outer nav element
 // .site-nav__container             - div that contains the ul and all panels
 // .site-nav__panel                 - Styles for each panel on mobile
-// .site-nav__panel--sub            - Panels after the main screen
 
 .site-nav {
   @include clearfix();
 
   &.is-open {
-
-    // When the menu is open, set all sub-panels 100% off
-    .site-nav__panel--sub {
-      @include transform(translateX(100%));
-
-      // When subpanels open, set them to 0
-      &.is-open {
-        @include transform(translateX(0));
-      }
-    }
-
     .site-nav__container {
       @include transform(translateX(0));
       @include transition(transform, .2s, ease-out);
@@ -42,6 +30,7 @@
   overflow-x: hidden;
   z-index: $z-navigation;
 
+  // scss-lint:disable ImportantRule
   &[aria-hidden='true'] {
     display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
   }
@@ -53,7 +42,7 @@
   color: $inverse;
   font-size: u(1.6rem);
   overflow-y: scroll;
-  padding: u(1rem 2rem);
+  padding: u(1rem 0);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -63,12 +52,9 @@
     @include transform(translateX(0));
   }
 
+  // scss-lint:disable ImportantRule
   &[aria-hidden='true'] {
     display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
-  }
-
-  .utility-nav__item {
-    padding: 0;
   }
 }
 
@@ -79,11 +65,8 @@
 // Granular elements
 // .site-nav__button        - Hamburger button that triggers menu on mobile
 // .site-nav__item          - li element
-// .site-nav__item--sub     - Indented item nested under a parent
 // .site-nav__link          - link or button inside each li
-// .site-nav__back          - Back button that moves back a panel
 // .site-nav__title         - Panel titles on mobile
-// .site-nav__block         - Block area, such as for search bars
 //
 // Note: Buttons that trigger panels are styled with .button--nav-panel
 
@@ -118,22 +101,11 @@
   &:last-child .site-nav__link {
     border-bottom: 0;
   }
-
-  &.is-disabled {
-    opacity: 1;
-
-    .site-nav__link {
-      color: $disabled;
-    }
-  }
-}
-
-.site-nav__item--sub {
-  padding-left: u(1rem);
 }
 
 .site-nav__link {
   @include transition(background-color, .1s);
+  background-position: right u(1rem) top 50%;
   color: $inverse;
   display: block;
   font-size: inherit;
@@ -143,30 +115,29 @@
   border-bottom: none;
   width: 100%;
   text-align: left;
+
+  &[aria-expanded="true"] {
+    @include u-icon-bg($minus-circle, $inverse);
+  }
 }
 
-.site-nav__link--underline {
-  border-bottom: 1px dotted $inverse;
-}
-
-.site-nav__back {
-  background-position: 0 50%;
-  border: none;
-  margin: u(1rem 0 1rem 0);
-  padding: u(0 0 0 2rem);
-  font-size: u(1.4rem);
+[data-submenu] {
+  @include u-icon-bg($plus-circle, $inverse);
+  background-position: right u(1rem) top 50%;
 }
 
 .site-nav__title {
   border-bottom: 1px solid $inverse;
-  padding: u(1rem 0);
+  padding: u(1rem 1rem);
   margin: 0;
 }
 
-.site-nav__block {
-  @include clearfix();
-  border-bottom: 1px solid $inverse;
-  padding: u(1.6rem 2rem 2rem 2rem);
+.utility-nav__item {
+  border-bottom: none;
+
+  .site-nav__link {
+    font-family: $sans-serif;
+  }
 }
 
 // BREAKPOINT: MEDIUM
@@ -206,11 +177,6 @@
     width: 100%;
   }
 
-  .site-nav__panel--sub {
-    @include transform(translateX(0));
-    display: none;
-  }
-
   .site-nav__panel {
     @include transform(translateX(0));
     background: none;
@@ -232,50 +198,61 @@
     float: left;
     border-bottom: none;
     color: $primary;
+  }
 
-    &.is-open,
-    &:hover {
-      .site-nav__link {
-        border-bottom-color: transparent;
-        background-color: $primary;
-        color: $gray-lightest;
+  .site-nav__item--secondary {
+    .site-nav__link {
+
+      &.is-parent {
+        border-bottom-color: $secondary;
       }
-    }
 
-    &.is-disabled {
-      .site-nav__link {
-        color: $disabled;
-        cursor: default;
-
-        &:hover,
-        &:focus {
-          background-color: transparent;
+      &.is-open,
+      &:hover,
+      &:focus,
+      &:active {
+        .site-nav__link__title {
+          border-bottom-color: $secondary-contrast;
         }
       }
 
-      &:hover,
-      &:focus {
-        background-color: transparent;
+      &.is-open {
+        background-color: $secondary;
+        color: $inverse;
       }
     }
   }
 
-  .site-nav__link {
-    color: $primary;
-    text-align: center;
+  .site-nav__link__title {
+    display: inline-block;
     border-bottom: u(.5rem) solid transparent;
-    padding: u(1rem 2rem .5rem 2rem);
+    padding-bottom: u(.5rem);
+  }
+
+  .site-nav__link {
+    @include u-icon-bg($arrow-down, $gray-dark);
+    background-position: right u(1rem) top 50%;
+    color: $base;
+    cursor: default;
+    text-align: center;
+    padding: u(1rem 3rem 0 2rem);
+
+    &.is-parent {
+      border-color: $navy;
+    }
 
     &:hover,
     &:focus,
     &:active {
-      border-bottom-color: transparent;
-      background-color: $primary;
-      color: $gray-lightest;
+      .site-nav__link__title {
+        border-bottom-color: $primary-contrast;
+      }
     }
 
-    &.is-parent {
-      border-color: $navy;
+    &.is-open {
+      @include u-icon-bg($arrow-down, $inverse);
+      background-color: $primary;
+      color: $inverse;
     }
   }
 
