@@ -56,10 +56,6 @@
   &[aria-hidden='true'] {
     display: block !important; // It's hidden by the transform, so this keeps it visible when it slides in
   }
-
-  .utility-nav__item {
-    padding: 0;
-  }
 }
 
 .site-nav__panel--sub {
@@ -109,7 +105,6 @@
 
 .site-nav__link {
   @include transition(background-color, .1s);
-  @include u-icon-bg($plus-circle, $inverse);
   background-position: right u(1rem) top 50%;
   color: $inverse;
   display: block;
@@ -126,10 +121,23 @@
   }
 }
 
+[data-submenu] {
+  @include u-icon-bg($plus-circle, $inverse);
+  background-position: right u(1rem) top 50%;
+}
+
 .site-nav__title {
   border-bottom: 1px solid $inverse;
   padding: u(1rem 1rem);
   margin: 0;
+}
+
+.utility-nav__item {
+  border-bottom: none;
+
+  .site-nav__link {
+    font-family: $sans-serif;
+  }
 }
 
 // BREAKPOINT: MEDIUM
@@ -223,7 +231,6 @@
 
   .site-nav__link {
     @include u-icon-bg($arrow-down, $gray-dark);
-    background-image: none;
     background-position: right u(1rem) top 50%;
     color: $base;
     cursor: default;
