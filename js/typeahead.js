@@ -80,8 +80,8 @@ var candidateDataset = {
     ),
     suggestion: Handlebars.compile(
       '<span>' +
-        '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
-        '<span class="tt-suggestion__office">{{ office }}</span>' +
+      '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
+      '<span class="tt-suggestion__office">{{ office }}</span>' +
       '</span>'
     )
   }
@@ -204,10 +204,7 @@ Typeahead.prototype.searchDigitalGov = function(query) {
   var $form = this.$input.closest('form');
   var action = $form.attr('action');
   this.$input.val(query);
-  // Update the action to go to the /docs path
-  $form.attr('action', action + '/docs');
-  // Add a hidden input with the ID of the DigitalGov collection to use
-  $form.append('<input type="hidden" name="dc" value="4104">');
+  $form.attr('action', action);
   $form.submit();
 };
 
