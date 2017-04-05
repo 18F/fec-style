@@ -160,6 +160,37 @@
   }
 }
 
+.icon-small--arrow-up-border {
+  display: inline-block;
+  margin-left: u(1rem);
+  vertical-align: middle;
+
+  &::before {
+    @include u-icon-bg($arrow-up-border, $inverse);
+    content: '';
+    background-size: 75%;
+    display: block;
+    width: u(1.5rem);
+    height: u(1.5rem);
+  }
+}
+
+.icon-small--arrow-down-border {
+  display: inline-block;
+  margin-left: u(1rem);
+  vertical-align: middle;
+
+  &::before {
+    @include u-icon-bg($arrow-down-border, $inverse);
+    content: '';
+    background-size: 75%;
+    display: block;
+    width: u(1.5rem);
+    height: u(1.5rem);
+  }
+}
+
+
 .icon-document--inline--left {
   display: inline-block;
   vertical-align: middle;
