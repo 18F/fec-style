@@ -40,3 +40,10 @@ dl {
     margin: 0;
   }
 }
+
+// When <p>s are inside <li>s, they shouldn't have bottom margin.
+// Only targetting the last-child in case there's a situation with multiple <p>
+// in which case every one but the last should have margin-bottom.
+li p:last-child {
+  margin-bottom: 0;
+}

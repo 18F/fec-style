@@ -256,3 +256,102 @@ h3 + .simple-table {
     font-style: italic;
   }
 }
+
+// For custom_table_block in streamfactory
+
+.custom-table {
+  box-shadow: -10px 0 20px -10px $gray-medium inset;
+  overflow-x: scroll;
+  display: block;
+  margin-bottom: u(1rem);
+
+  table {
+    @extend .simple-table;
+    width: auto;
+    table-layout: auto;
+    line-height: 1;
+  }
+
+  th {
+    @extend .simple-table__header;
+    padding: u(1rem);
+    text-align: left;
+    border-right: 1px solid $gray-medium;
+  }
+
+  tbody th {
+    border-bottom: 1px solid $neutral;
+  }
+
+  tr {
+    @extend .simple-table__row;
+  }
+
+  // scss-lint:disable ImportantRule
+  td {
+    @extend .simple-table__cell;
+    border-right: 1px solid $gray-medium;
+    text-align: right;
+    padding: u(1rem) !important;
+  }
+
+  td:last-child,
+  th:last-child {
+    border-right: none;
+  }
+
+
+  @include media($lg) {
+    box-shadow: none;
+  }
+}
+
+.block-custom_table {
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: u(2rem 0 0.5rem);
+  }
+
+  .custom_footnote {
+    margin-bottom: u(1rem);
+  }
+}
+
+// Dense table
+// For tables with a lot of data that need to be condensed
+.dense-table {
+  table-layout: auto;
+  border-top: none;
+  border-bottom-width: 0;
+
+  td,
+  th {
+    border-bottom: 1px solid $gray-light;
+    border-right: 1px solid $gray-light;
+    font-size: u(1.2rem);
+    line-height: 1.2;
+    padding: u(.5rem);
+    vertical-align: middle;
+    word-wrap: break-word;
+  }
+
+  thead th {
+    border-bottom: 1px solid $primary;
+  }
+
+  tbody th {
+    border-right: 1px solid $primary;
+  }
+
+  th[scope="colgroup"],
+  th[scope="rowgroup"] {
+    text-align: center;
+    background-color: $primary;
+    color: $inverse;
+    border-bottom: none;
+    border-right: none;
+  }
+}

@@ -20,6 +20,8 @@
   }
 
   p {
+    font-family: $sans-serif;
+    letter-spacing: -.3px;
     margin: u(0 0 1rem 0);
   }
 
@@ -55,6 +57,11 @@
       display: none;
     }
   }
+}
+
+.post--child {
+  padding: u(1rem 0);
+  margin-left: u(3rem);
 }
 
 .post__pre {
@@ -142,3 +149,4 @@
     font-size: u(1.4rem);
   }
 }
+

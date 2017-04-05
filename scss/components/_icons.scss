@@ -35,6 +35,10 @@
   display: inline-block;
   margin-right: u(1rem);
   vertical-align: text-bottom;
+
+  &.i-share {
+    background-size: 80%;
+  }
 }
 
 .icon-circle--calendar {
