@@ -8,6 +8,11 @@ function SiteOrientation(selector) {
   this.$toggle = this.$selector.find('.toggle-text');
 
   this.$toggle.on('click', this.handleToggle.bind(this));
+
+  this.$selector.on('click', '.js-feedback', function () {
+    $(document.body).trigger('feedback:open');
+  });
+
 }
 
 SiteOrientation.prototype.handleToggle = function() {
