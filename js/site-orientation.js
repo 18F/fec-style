@@ -6,6 +6,10 @@ var countdown = require('countdown');
 function SiteOrientation(selector) {
   this.$selector = $(selector);
 
+  this.initBanner();
+}
+
+SiteOrientation.prototype.initBanner = function () {
   // fill in _ DAYS until this site...
   this.$days = this.$selector.find('.days');
   var countdownDate = new Date(this.$days.data('date'));
@@ -19,7 +23,7 @@ function SiteOrientation(selector) {
   // show more/less banner text
   this.$toggle = this.$selector.find('.toggle-text');
   this.$toggle.on('click', this.handleToggle.bind(this));
-}
+};
 
 SiteOrientation.prototype.handleToggle = function () {
   this.$selector.find('.toggle, .less, .more').toggle();
