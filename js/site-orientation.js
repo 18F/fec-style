@@ -2,6 +2,7 @@
 
 var $ = require('jquery');
 var countdown = require('countdown');
+var introJs = require('intro.js');
 
 function SiteOrientation(selector) {
   this.$selector = $(selector);
@@ -39,20 +40,39 @@ SiteOrientation.prototype.startTour = function () {
   this.$banner.hide();
   this.$tourHeader.show();
 
-  this.$selector.css('min-height', '6rem');
+  $('body').css('padding-top', '6rem');
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
+
+  var tour = introJs.introJs();
+
+  tour.setOptions({
+    tooltipClass: 'tour-tooltip',
+    tooltipPosition: 'bottom-middle-aligned',
+    nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
+    showStepNumbers: false,
+    overlayOpacity: 0
+  });
+
+  tour.start();
+
+  $('.tour-dot').css('display', 'inline-block');
+  $('.tour-dot--middle').show();
+  $('.introjs-overlay').remove();
 };
 
 SiteOrientation.prototype.exitTour = function () {
   this.$tourHeader.hide();
   this.$banner.show();
 
-  this.$selector.removeAttr('style');
+  $('body').removeAttr('style');
 
   this.$selector.find('.toggle, .less').hide();
   this.$selector.find('.more').show();
+
+  $('.tour-dot').hide();
+  $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
 };
 
 module.exports = {

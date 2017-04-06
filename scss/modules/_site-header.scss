@@ -2,7 +2,7 @@
 //
 // Styleguide modules.site-header
 
-// Banner for dev/stanging and pre-flip
+// Banner for dev
 .banner {
   background-color: $navy;
   color: $inverse;
@@ -16,79 +16,7 @@
     border-bottom-color: $inverse;
     color: $inverse;
   }
-
-  .highlight {
-    background-color: $federal-blue;
-    color: $bright-blue;
-    padding: u(0 .5rem);
-    margin-right: u(.25rem);
-    display: inline-block;
-  }
-
-  .note {
-    font-size: u(1.4rem);
-    line-height: u(1.5rem);
-    padding: u(1rem 0);
-  }
-
-  h2 {
-    margin-bottom: u(1rem);
-  }
-
-  .toggle-text {
-    bottom: u(1rem);
-    right: u(1.5rem);
-    cursor: pointer;
-    position: absolute;
-  }
-
-  .icon--small {
-    color: $inverse;
-    display: inline-block;
-    max-height: u(1.5rem);
-    max-width: u(1.5rem);
-  }
-
-  .more {
-    display: none;
-  }
 }
-
-.tour-header {
-  background-color: $gray-light;
-  font-family: $sans-serif;
-  padding: u(1rem 2rem 1rem 4rem);
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: $z8;
-  display: none;
-  @include clearfix();
-
-  ol {
-    display: inline-block;
-  }
-
-  li {
-    border: 1px solid $gray-medium;
-    background-color: $inverse;
-    padding: u(.5rem 1.5rem);
-    margin-right: u(1rem);
-    cursor: pointer;
-    display: inline-block;
-  }
-
-  .button {
-    background-color: $bright-blue;
-    border-color: $bright-blue;
-    color: $primary;
-    padding-left: u(1rem);
-    padding-right: u(1rem);
-    text-align: left;
-    float: right;
-  }
-}
-
 
 // Skip nav
 .skip-nav {
@@ -340,3 +268,4 @@
     display: none;
   }
 }
+

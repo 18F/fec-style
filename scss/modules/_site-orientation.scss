@@ -1,0 +1,246 @@
+// Tour: site orientation
+
+// pre-flip banner
+.site-orientation {
+  .banner {
+    .highlight {
+      background-color: $federal-blue;
+      color: $bright-blue;
+      padding: u(0 .5rem);
+      margin-right: u(.25rem);
+      display: inline-block;
+    }
+
+    .note {
+      font-size: u(1.4rem);
+      line-height: u(1.5rem);
+      padding: u(1rem 0);
+    }
+
+    h2 {
+      margin-bottom: u(1rem);
+    }
+
+    .toggle-text {
+      bottom: u(1rem);
+      right: u(1.5rem);
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .icon--small {
+      color: $inverse;
+      display: inline-block;
+      max-height: u(1.5rem);
+      max-width: u(1.5rem);
+    }
+
+    .more {
+      display: none;
+    }
+  }
+}
+
+.tour-header {
+  background-color: $gray-light;
+  font-family: $sans-serif;
+  padding: u(1rem 2rem 1rem 4rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-max;
+  display: none;
+  @include clearfix();
+
+  li {
+    border: 1px solid $gray-medium;
+    background-color: $inverse;
+    padding: u(.5rem 1.5rem);
+    margin-right: u(1rem);
+    cursor: pointer;
+    position: relative;
+    float: left;
+
+    a {
+      border: none;
+    }
+
+    // &::after,
+    // &::before {
+    //   left: 100%;
+    //   top: 50%;
+    //   border: solid transparent;
+    //   content: '';
+    //   height: 0;
+    //   width: 0;
+    //   position: absolute;
+    //   pointer-events: none;
+    //   border-width: 20px 0 20px 12px;
+    //   margin-top: -20px;
+    // }
+
+    // &::after {
+    //   border-color: rgba(255, 255, 255, 0);
+    //   border-left-color: $inverse;
+    //   margin-left: -1px;
+    // }
+
+    // &::before {
+    //   border-color: rgba(214, 215, 217, 0);
+    //   border-left-color: $gray-medium;
+    // }
+  }
+
+  .exit-tour {
+    background-color: $bright-blue;
+    border-color: $bright-blue;
+    border-radius: 3px;
+    color: $primary;
+    padding: u(0 1rem);
+    line-height: u(3.5rem);
+    text-align: left;
+    float: right;
+  }
+
+  .icon--inline--right {
+    margin-left: u(.5rem);
+    vertical-align: middle;
+  }
+}
+
+.tour-dot {
+  background-color: $orange;
+  width: 7px;
+  height: 7px;
+  margin: u(0 .25rem);
+  border-radius: 7px;
+  box-shadow: 0 0 5px $orange;
+  animation: pulse 2s infinite;
+  display: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.tour-dot--middle {
+  margin: auto;
+  margin-top: u(.5rem);
+}
+
+.tour-dot--left {
+  top: 13px;
+  left: -15px;
+  position: absolute;
+}
+
+.tour-tooltip {
+  font-family: $sans-serif;
+  padding: u(1.5rem);
+  margin-top: u(1rem);
+  border: 4px solid $gray;
+  box-shadow: none;
+
+  &::after,
+  &::before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: $inverse;
+    border-width: 8px;
+    margin-left: -4px;
+  }
+
+  &::before {
+    border-color: rgba(174, 176, 181, 0);
+    border-bottom-color: $gray;
+    border-width: 14px;
+    margin-left: -10px;
+  }
+
+  .introjs-arrow {
+    display: none !important;
+  }
+
+  h5 {
+    font-family: $sans-serif;
+    font-size: u(1.5rem);
+    margin: u(0 0 .5rem 0);
+  }
+
+  .introjs-tooltiptext {
+    font-size: u(1.4rem);
+    line-height: u(1.5rem);
+    border-bottom: 2px solid $gray-medium;
+    padding-bottom: u(1.5rem);
+  }
+
+  .introjs-bullets ul {
+    margin: u(.5rem 0 0 .25rem);
+    display: block;
+
+    li {
+      margin-top: u(1.25rem);
+    }
+
+    a {
+      border: none;
+    }
+
+    .active {
+      background-color: $orange;
+      box-shadow: 0 0 5px $gray;
+    }
+  }
+
+  .introjs-button {
+    margin-top: 0;
+  }
+
+  .introjs-nextbutton {
+    background-color: $gray;
+    background-image: none;
+    border: none;
+    border-radius: 3px;
+    font-size: u(1.3rem);
+    text-shadow: none;
+    color: $base;
+    padding: u(6px 1rem);
+    display: inline-block;
+
+    &:hover {
+      background-color: $gray-medium;
+    }
+
+    .icon {
+      margin-bottom: u(-.1rem);
+      margin-left: u(.75rem);
+    }
+  }
+
+  .introjs-prevbutton,
+  .introjs-skipbutton,
+  .introjs-disabled {
+    display: none;
+  }
+}
