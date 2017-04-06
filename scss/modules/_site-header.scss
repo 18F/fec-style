@@ -2,7 +2,7 @@
 //
 // Styleguide modules.site-header
 
-// Staging banner
+// Banner for dev/stanging and pre-flip
 .banner {
   background-color: $navy;
   color: $inverse;
@@ -53,6 +53,42 @@
     display: none;
   }
 }
+
+.tour-header {
+  background-color: $gray-light;
+  font-family: $sans-serif;
+  padding: u(1rem 2rem 1rem 4rem);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: $z8;
+  display: none;
+  @include clearfix();
+
+  ol {
+    display: inline-block;
+  }
+
+  li {
+    border: 1px solid $gray-medium;
+    background-color: $inverse;
+    padding: u(.5rem 1.5rem);
+    margin-right: u(1rem);
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .button {
+    background-color: $bright-blue;
+    border-color: $bright-blue;
+    color: $primary;
+    padding-left: u(1rem);
+    padding-right: u(1rem);
+    text-align: left;
+    float: right;
+  }
+}
+
 
 // Skip nav
 .skip-nav {
