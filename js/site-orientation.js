@@ -55,10 +55,15 @@ SiteOrientation.prototype.startTour = function () {
     overlayOpacity: 0
   });
 
+  // scroll to top of orientation step with some padding
+  tour.onafterchange(function(target) {
+    $('body').scrollTop($(target).parent().position().top - 100);
+  });
+
   tour.start();
 
   $('.tour-dot').css('display', 'inline-block');
-  $('.tour-dot--middle').show();
+  $('.tour-dot--middle').css('display', 'block');
   $('.introjs-overlay').remove();
 };
 
