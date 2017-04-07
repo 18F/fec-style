@@ -113,11 +113,12 @@ SiteOrientation.prototype.startTour = function () {
   var tour = introJs.introJs();
   var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
   var nextSectionLink = this.$selector.find('.is-active').next().find('a').attr('href');
+  var lastTourPage = 'legal-resources';
 
   // Legal resources is last tour page
-  // Last tooltip button ends tour
-  if (TOUR_PAGE === 'legal-resources') {
-    tourLastLabel = 'Close tour';
+  // Last tooltip opens modal
+  if (TOUR_PAGE === lastTourPage) {
+    tourLastLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   }
 
   tour.setOptions({
@@ -137,8 +138,27 @@ SiteOrientation.prototype.startTour = function () {
   });
 
   tour.onexit(function () {
-    if (tourLastLabel === 'Close tour') {
+    if (TOUR_PAGE === lastTourPage) {
       self.exitTour();
+
+      var tourEndCurtain = $('<div />', {'class': 'tour-end--curtain'});
+      var tourEndModal = $('<div />', {
+        'class': 'tour-end--modal',
+        'html': '<h5><i class="icon icon-star"></i> Congratulations!</h5>' +
+        'You\'ve completed our tour of new features!' +
+        '<a role="button" class="tour-end--button tour-end--button--home" href="' +
+        CMS_URL + '/">Return home</a>' +
+        '<p>Send us your questions and feedback anonymously from any page using our ' +
+        '<a class="js-feedback">feedback tool</a>.</p>' +
+        '<a role="button" class="tour-end--button tour-end--button--close">Close tour</a>'
+      });
+
+      self.$selector.prepend(tourEndCurtain, tourEndModal);
+
+      self.$selector.find('.tour-end--button--close').on('click', function () {
+        tourEndCurtain.remove();
+        tourEndModal.remove();
+      });
     }
     else {
       window.location.href = nextSectionLink;

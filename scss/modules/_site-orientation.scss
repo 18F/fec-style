@@ -251,7 +251,7 @@
 
   .introjs-tooltiptext {
     font-size: u(1.4rem);
-    line-height: u(1.5rem);
+    line-height: u(1.6rem);
     border-bottom: 2px solid $gray-medium;
     padding-bottom: u(1.5rem);
   }
@@ -289,7 +289,7 @@
     font-size: u(1.3rem);
     text-shadow: none;
     color: $base;
-    padding: u(6px 1rem);
+    padding: u(.75rem 1rem);
     display: inline-block;
 
     &:hover {
@@ -315,5 +315,75 @@
   .introjs-skipbutton,
   .introjs-disabled {
     display: none;
+  }
+}
+
+// end tour modal
+.tour-end--curtain {
+  background-color: $base;
+  opacity: .75;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: $z7;
+}
+
+.tour-end--modal {
+  background-color: $inverse;
+  font-family: $sans-serif;
+  max-width: 375px;
+  padding: u(1.5rem);
+  top: 30%;
+  left: 50%;
+  margin-left: -187px;
+  border: 4px solid $gray;
+  border-radius: 3px;
+  position: fixed;
+  z-index: $z8;
+
+  h5 {
+    font-family: $sans-serif;
+    font-size: u(1.5rem);
+    margin: u(0 0 .5rem 0);
+  }
+
+  p {
+    font-size: u(1.4rem);
+    line-height: u(1.6rem);
+    margin: 0;
+    padding: u(1.5rem 0);
+    border-bottom: 2px solid $gray-medium;
+    clear: both;
+  }
+
+  .tour-end--button {
+    background-color: $gray;
+    background-image: none;
+    border: none;
+    border-radius: 3px;
+    margin: u(.5rem 0 0 0);
+    font-size: u(1.3rem);
+    color: $base;
+    padding: u(.25rem 1rem);
+    display: inline-block;
+  }
+
+  .tour-end--button--home {
+    background-color: $federal-blue;
+    color: $inverse;
+
+    &:hover {
+      background-color: $navy;
+    }
+  }
+
+  .tour-end--button--close {
+    float: right;
+
+    &:hover {
+      background-color: $gray-medium;
+    }
   }
 }

@@ -190,7 +190,6 @@
   }
 }
 
-
 .icon-document--inline--left {
   display: inline-block;
   vertical-align: middle;
@@ -203,6 +202,15 @@
     width: u(1.5rem);
     height: u(1.5rem);
   }
+}
+
+.icon-star {
+  @include u-icon-bg($star, $orange);
+  width: u(1.5rem);
+  height: u(1.5rem);
+  margin-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 // Used to create a spacer in the version column the same width as the
