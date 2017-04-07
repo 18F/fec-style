@@ -49,44 +49,65 @@ SiteOrientation.prototype.handleToggle = function () {
 };
 
 SiteOrientation.prototype.startTour = function () {
+  // if the user clicks "start a tour" on a page without tooltips
+  // then it will take them to the homepage and start the tour
   if (typeof TOUR_PAGE == 'undefined') {
     window.location.href = CMS_URL + '/?tour=true';
     return;
   }
 
+  // make sure tour window starts on top
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   this.$banner.hide();
   this.$tourHeader.show();
 
+  // highlight current tour page on header and turn off link
   this.$tourHeader.find('.tour-' + TOUR_PAGE).addClass('is-active').find('a').click(function (e) {
     e.preventDefault();
   });
 
+  // set top padding for fixed tour header
   $('body').css('padding-top', this.$tourHeader.outerHeight());
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
 
-  $('.tour-dot').css('display', 'inline-block');
+  // display tour dots relative to their nearest element
+  $('.tour-dot').css('display', 'inline-block').parent().css('position', 'relative');
   $('.tour-dot--middle').css('display', 'block');
 
   var tour = introJs.introJs();
 
   tour.setOptions({
+    showStepNumbers: false,
     tooltipClass: 'tour-tooltip',
     tooltipPosition: 'bottom-middle-aligned',
     prevLabel: '<i class="icon icon--small i-arrow-left"></i> Back',
     nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
-    showStepNumbers: false,
+    doneLabel: 'Next section <i class="icon icon--small i-arrow-right"></i>',
     overlayOpacity: 0
   });
 
-  // scroll to top of orientation step with some padding
-  tour.onafterchange(function(target) {
-    $('body').scrollTop($(target).parent().position().top - 100);
+  // native intro.js behavior scrolls longer tooltips offscreen
+  // so this scrolls to tooltip with some padding
+  tour.onchange(function (target) {
+    $(window).scrollTop($(target).offset().top - 200);
   });
 
+  // grab the link to the next tour page
+  var nextLink = this.$selector.find('.is-active').next().find('a').attr('href');
+  // clicking "next section" on last tooltip will send them to next tour page
+  tour.onexit(function () {
+    window.location.href = nextLink;
+  });
+
+  // begin intro.js functionality
   tour.start();
 
+  // removes native intro.js curtain to not close tooltip
   $('.introjs-overlay').remove();
 };
 
@@ -94,6 +115,7 @@ SiteOrientation.prototype.exitTour = function () {
   this.$tourHeader.hide();
   this.initBanner();
 
+  // removes top padding for fixed tour header
   $('body').removeAttr('style');
 
   this.$selector.find('.toggle, .less').hide();

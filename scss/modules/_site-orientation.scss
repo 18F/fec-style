@@ -61,7 +61,6 @@
     padding: u(.5rem 1rem .5rem 2.25rem);
     height: 38px;
     margin-right: u(1rem);
-    cursor: pointer;
     position: relative;
     float: left;
 
@@ -71,6 +70,12 @@
       &::after {
         border-color: transparent transparent transparent $bright-blue;
       }
+    }
+
+    a {
+      width: inherit;
+      height: inherit;
+      display: block;
     }
 
     &.is-active {
@@ -153,7 +158,7 @@
   background-color: $orange;
   width: 7px;
   height: 7px;
-  margin: u(0 .25rem);
+  margin: u(0 .25rem .15rem .25rem);
   border-radius: 7px;
   box-shadow: 0 0 5px $orange;
   animation: pulse 2s infinite;
@@ -181,8 +186,16 @@
 
 .tour-dot--left {
   top: 13px;
-  left: -15px;
+  left: -20px;
   position: absolute;
+}
+
+.tour-dot--top-padding-med {
+  top: 47px;
+}
+
+.tour-dot--top-padding-lg {
+  top: 62px;
 }
 
 .tour-tooltip {
@@ -266,7 +279,8 @@
   }
 
   .introjs-prevbutton,
-  .introjs-nextbutton {
+  .introjs-nextbutton,
+  .introjs-donebutton {
     background-color: $gray;
     background-image: none;
     border: none;
@@ -291,6 +305,11 @@
       margin-bottom: u(-.1rem);
       margin-left: u(.75rem);
     }
+  }
+
+  .introjs-donebutton {
+    float: right;
+    display: inline-block !important;
   }
 
   .introjs-skipbutton,
