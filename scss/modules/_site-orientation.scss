@@ -62,8 +62,21 @@
     position: relative;
     float: left;
 
+    &:hover {
+      background-color: $bright-blue;
+    }
+
+    &.is-active {
+      background-color: $navy;
+      color: $inverse;
+    }
+
     a {
       border: none;
+    }
+
+    span {
+      padding-right: u(.25rem);
     }
 
     // &::after,
@@ -94,13 +107,17 @@
 
   .exit-tour {
     background-color: $bright-blue;
-    border-color: $bright-blue;
+    border: none;
     border-radius: 3px;
     color: $primary;
-    padding: u(0 1rem);
+    padding: u(.25rem 1.5rem);
     line-height: u(3.5rem);
     text-align: left;
     float: right;
+
+    &:hover {
+      background-color: lighten($bright-blue, 5%);
+    }
   }
 
   .icon--inline--right {

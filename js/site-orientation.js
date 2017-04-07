@@ -40,10 +40,17 @@ SiteOrientation.prototype.startTour = function () {
   this.$banner.hide();
   this.$tourHeader.show();
 
-  $('body').css('padding-top', '6rem');
+  if ($('.template-home-page').length) {
+    this.$tourHeader.find('.tour-introduction').addClass('is-active');
+  }
+
+  $('body').css('padding-top', this.$tourHeader.outerHeight());
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
+
+  $('.tour-dot').css('display', 'inline-block');
+  $('.tour-dot--middle').css('display', 'block');
 
   var tour = introJs.introJs();
 
@@ -62,8 +69,6 @@ SiteOrientation.prototype.startTour = function () {
 
   tour.start();
 
-  $('.tour-dot').css('display', 'inline-block');
-  $('.tour-dot--middle').css('display', 'block');
   $('.introjs-overlay').remove();
 };
 
