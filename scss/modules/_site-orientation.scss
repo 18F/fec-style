@@ -1,8 +1,10 @@
 // Tour: site orientation
 
-// pre-flip banner
+// banner
 .site-orientation {
   .banner {
+    display: none;
+
     .highlight {
       background-color: $federal-blue;
       color: $bright-blue;
@@ -41,6 +43,7 @@
   }
 }
 
+// tour header page links
 .tour-header {
   background-color: $gray-light;
   font-family: $sans-serif;
@@ -64,19 +67,24 @@
 
     &:hover {
       background-color: $bright-blue;
-    }
 
-    &:hover::after {
-      border-color: transparent transparent transparent $bright-blue;
+      &::after {
+        border-color: transparent transparent transparent $bright-blue;
+      }
     }
 
     &.is-active {
       background-color: $navy;
       color: $inverse;
-    }
+      cursor: default;
 
-    &.is-active::after {
-      border-color: transparent transparent transparent $navy;
+      a {
+        cursor: default;
+      }
+
+      &::after {
+        border-color: transparent transparent transparent $navy;
+      }
     }
 
     a {
@@ -88,11 +96,13 @@
     }
 
     &:first-child {
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
       padding-left: u(1.75rem);
-    }
 
-    &:first-child::before {
-      border: none;
+      &::before {
+        border: none;
+      }
     }
 
     &::before,
@@ -116,31 +126,6 @@
       border-color: transparent transparent transparent $inverse;
       left: 100%;
     }
-
-    // &::after,
-    // &::before {
-    //   left: 100%;
-    //   top: 50%;
-    //   border: solid transparent;
-    //   content: '';
-    //   height: 0;
-    //   width: 0;
-    //   position: absolute;
-    //   pointer-events: none;
-    //   border-width: 20px 0 20px 12px;
-    //   margin-top: -20px;
-    // }
-
-    // &::after {
-    //   border-color: rgba(255, 255, 255, 0);
-    //   border-left-color: $inverse;
-    //   margin-left: -1px;
-    // }
-
-    // &::before {
-    //   border-color: rgba(214, 215, 217, 0);
-    //   border-left-color: $gray-medium;
-    // }
   }
 
   .exit-tour {

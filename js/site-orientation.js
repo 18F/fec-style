@@ -3,8 +3,13 @@
 var $ = require('jquery');
 var countdown = require('countdown');
 var introJs = require('intro.js');
+var URI = require('urijs');
+
+var helpers = require('./helpers');
 
 function SiteOrientation(selector) {
+  var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
+
   this.$selector = $(selector);
 
   this.$banner = this.$selector.find('.banner');
@@ -13,10 +18,17 @@ function SiteOrientation(selector) {
   this.$startTourLink = this.$selector.find('.start-tour');
   this.$startTourLink.on('click', this.startTour.bind(this));
 
-  this.initBanner();
+  if (query.tour) {
+    this.startTour();
+  }
+  else {
+    this.initBanner();
+  }
 }
 
 SiteOrientation.prototype.initBanner = function () {
+  this.$banner.show();
+
   // fill in _ DAYS until this site...
   this.$days = this.$selector.find('.days');
   var countdownDate = new Date(this.$days.data('date'));
@@ -37,12 +49,17 @@ SiteOrientation.prototype.handleToggle = function () {
 };
 
 SiteOrientation.prototype.startTour = function () {
+  if (typeof TOUR_PAGE == 'undefined') {
+    window.location.href = CMS_URL + '/?tour=true';
+    return;
+  }
+
   this.$banner.hide();
   this.$tourHeader.show();
 
-  if ($('.template-home-page').length) {
-    this.$tourHeader.find('.tour-introduction').addClass('is-active');
-  }
+  this.$tourHeader.find('.tour-' + TOUR_PAGE).addClass('is-active').find('a').click(function (e) {
+    e.preventDefault();
+  });
 
   $('body').css('padding-top', this.$tourHeader.outerHeight());
 
@@ -75,7 +92,7 @@ SiteOrientation.prototype.startTour = function () {
 
 SiteOrientation.prototype.exitTour = function () {
   this.$tourHeader.hide();
-  this.$banner.show();
+  this.initBanner();
 
   $('body').removeAttr('style');
 
