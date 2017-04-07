@@ -57,6 +57,7 @@ SiteOrientation.prototype.startTour = function () {
   tour.setOptions({
     tooltipClass: 'tour-tooltip',
     tooltipPosition: 'bottom-middle-aligned',
+    prevLabel: '<i class="icon icon--small i-arrow-left"></i> Back',
     nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
     showStepNumbers: false,
     overlayOpacity: 0

@@ -54,9 +54,9 @@
   @include clearfix();
 
   li {
-    border: 1px solid $gray-medium;
     background-color: $inverse;
-    padding: u(.5rem 1.5rem);
+    padding: u(.5rem 1rem .5rem 2.25rem);
+    height: 38px;
     margin-right: u(1rem);
     cursor: pointer;
     position: relative;
@@ -66,9 +66,17 @@
       background-color: $bright-blue;
     }
 
+    &:hover::after {
+      border-color: transparent transparent transparent $bright-blue;
+    }
+
     &.is-active {
       background-color: $navy;
       color: $inverse;
+    }
+
+    &.is-active::after {
+      border-color: transparent transparent transparent $navy;
     }
 
     a {
@@ -77,6 +85,36 @@
 
     span {
       padding-right: u(.25rem);
+    }
+
+    &:first-child {
+      padding-left: u(1.75rem);
+    }
+
+    &:first-child::before {
+      border: none;
+    }
+
+    &::before,
+    &::after {
+      width: 0;
+      height: 0;
+      content: '';
+      border-style: solid;
+      top: 0;
+      position: absolute;
+    }
+
+    &::before {
+      border-width: 19px 0 19px 10px;
+      border-color: transparent transparent transparent $gray-light;
+      left: 0;
+    }
+
+    &::after {
+      border-width: 19px 0 19px 10px;
+      border-color: transparent transparent transparent $inverse;
+      left: 100%;
     }
 
     // &::after,
@@ -165,7 +203,7 @@
 .tour-tooltip {
   font-family: $sans-serif;
   padding: u(1.5rem);
-  margin-top: u(1rem);
+  margin-top: u(.5rem);
   border: 4px solid $gray;
   box-shadow: none;
 
@@ -193,6 +231,14 @@
     border-bottom-color: $gray;
     border-width: 14px;
     margin-left: -10px;
+  }
+
+  &.tour-tooltip--right::before {
+    margin-left: 88px;
+  }
+
+  &.tour-tooltip--right::after {
+    margin-left: 94px;
   }
 
   .introjs-arrow {
@@ -234,11 +280,13 @@
     margin-top: 0;
   }
 
+  .introjs-prevbutton,
   .introjs-nextbutton {
     background-color: $gray;
     background-image: none;
     border: none;
     border-radius: 3px;
+    margin-left: u(.5rem);
     font-size: u(1.3rem);
     text-shadow: none;
     color: $base;
@@ -249,13 +297,17 @@
       background-color: $gray-medium;
     }
 
-    .icon {
+    .i-arrow-left {
+      margin-bottom: u(-.1rem);
+      margin-right: u(.7rem);
+    }
+
+    .i-arrow-right {
       margin-bottom: u(-.1rem);
       margin-left: u(.75rem);
     }
   }
 
-  .introjs-prevbutton,
   .introjs-skipbutton,
   .introjs-disabled {
     display: none;
