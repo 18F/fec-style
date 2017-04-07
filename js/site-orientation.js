@@ -7,12 +7,17 @@ var URI = require('urijs');
 
 var helpers = require('./helpers');
 
-function SiteOrientation(selector) {
-  var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
+var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
 
+function SiteOrientation(selector) {
   this.$selector = $(selector);
 
   this.$banner = this.$selector.find('.banner');
+  this.$bannerToggleSection = this.$selector.find('.toggle');
+  this.$bannerToggleLink = this.$selector.find('.toggle-text');
+  this.$bannerMoreText = this.$selector.find('.more');
+  this.$bannerLessText = this.$selector.find('.less');
+
   this.$tourHeader = this.$selector.find('.tour-header');
 
   this.$startTourLink = this.$selector.find('.start-tour');
@@ -39,13 +44,38 @@ SiteOrientation.prototype.initBanner = function () {
     $(document.body).trigger('feedback:open');
   });
 
-  // show more/less banner text
-  this.$toggleLink = this.$selector.find('.toggle-text');
-  this.$toggleLink.on('click', this.handleToggle.bind(this));
+  this.$bannerToggleLink.on('click', this.toggleBanner.bind(this));
+
+  if (localStorage.getItem('FEC_BANNER_COLLAPSED') === 'true') {
+    this.$bannerToggleSection.hide();
+    this.$bannerLessText.hide();
+    this.$bannerMoreText.show();
+  }
 };
 
-SiteOrientation.prototype.handleToggle = function () {
-  this.$selector.find('.toggle, .less, .more').toggle();
+SiteOrientation.prototype.toggleBanner = function () {
+  this.$bannerToggleSection.toggle();
+  this.$bannerLessText.toggle();
+  this.$bannerMoreText.toggle();
+
+  this.setBannerState();
+};
+
+SiteOrientation.prototype.collapseBanner = function () {
+  this.$bannerToggleSection.hide();
+  this.$bannerLessText.hide();
+  this.$bannerMoreText.show();
+
+  this.setBannerState();
+};
+
+SiteOrientation.prototype.setBannerState = function () {
+  if (this.$bannerMoreText.is(':visible')) {
+    localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
+  }
+  else {
+    localStorage.setItem('FEC_BANNER_COLLAPSED', 'false');
+  }
 };
 
 SiteOrientation.prototype.startTour = function () {
@@ -131,8 +161,7 @@ SiteOrientation.prototype.exitTour = function () {
   // removes top padding for fixed tour header
   $('body').removeAttr('style');
 
-  this.$selector.find('.toggle, .less').hide();
-  this.$selector.find('.more').show();
+  this.collapseBanner();
 
   $('.tour-dot').hide();
   $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
