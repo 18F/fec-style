@@ -7,23 +7,24 @@ var URI = require('urijs');
 
 var helpers = require('./helpers');
 
-var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
+var uri = window.location.toString();
+var uriQuery = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
 
 function SiteOrientation(selector) {
   this.$selector = $(selector);
 
   this.$banner = this.$selector.find('.banner');
-  this.$bannerToggleSection = this.$selector.find('.toggle');
-  this.$bannerToggleLink = this.$selector.find('.toggle-text');
-  this.$bannerMoreText = this.$selector.find('.more');
-  this.$bannerLessText = this.$selector.find('.less');
+  this.$bannerToggleSection = this.$banner.find('.toggle');
+  this.$bannerToggleLink = this.$banner.find('.toggle-text');
+  this.$bannerMoreText = this.$bannerToggleLink.find('.more');
+  this.$bannerLessText = this.$bannerToggleLink.find('.less');
 
   this.$tourHeader = this.$selector.find('.tour-header');
 
   this.$startTourLink = this.$selector.find('.start-tour');
   this.$startTourLink.on('click', this.startTour.bind(this));
 
-  if (query.tour) {
+  if (uriQuery.tour) {
     this.startTour();
   }
   else {
@@ -44,16 +45,15 @@ SiteOrientation.prototype.initBanner = function () {
     $(document.body).trigger('feedback:open');
   });
 
-  this.$bannerToggleLink.on('click', this.toggleBanner.bind(this));
-
   if (localStorage.getItem('FEC_BANNER_COLLAPSED') === 'true') {
-    this.$bannerToggleSection.hide();
-    this.$bannerLessText.hide();
-    this.$bannerMoreText.show();
+    this.collapseBanner();
   }
+
+  // unbind to prevent multiple click actions
+  this.$bannerToggleLink.unbind().on('click', this.handleToggle.bind(this));
 };
 
-SiteOrientation.prototype.toggleBanner = function () {
+SiteOrientation.prototype.handleToggle = function () {
   this.$bannerToggleSection.toggle();
   this.$bannerLessText.toggle();
   this.$bannerMoreText.toggle();
@@ -65,12 +65,10 @@ SiteOrientation.prototype.collapseBanner = function () {
   this.$bannerToggleSection.hide();
   this.$bannerLessText.hide();
   this.$bannerMoreText.show();
-
-  this.setBannerState();
 };
 
 SiteOrientation.prototype.setBannerState = function () {
-  if (this.$bannerMoreText.is(':visible')) {
+  if (this.$selector.find('.more').is(':visible')) {
     localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
   }
   else {
@@ -162,9 +160,16 @@ SiteOrientation.prototype.exitTour = function () {
   $('body').removeAttr('style');
 
   this.collapseBanner();
+  this.setBannerState();
 
   $('.tour-dot').hide();
   $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
+
+  // remove ?tour=true querystring
+  if (uri.indexOf('?') > 0) {
+    var clean_uri = uri.substring(0, uri.indexOf('?'));
+    window.history.replaceState({}, document.title, clean_uri);
+  }
 };
 
 module.exports = {
