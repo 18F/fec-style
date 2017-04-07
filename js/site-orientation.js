@@ -49,6 +49,8 @@ SiteOrientation.prototype.handleToggle = function () {
 };
 
 SiteOrientation.prototype.startTour = function () {
+  var self = this;
+
   // if the user clicks "start a tour" on a page without tooltips
   // then it will take them to the homepage and start the tour
   if (typeof TOUR_PAGE == 'undefined') {
@@ -62,15 +64,16 @@ SiteOrientation.prototype.startTour = function () {
   };
 
   this.$banner.hide();
+
+  // set top padding for fixed tour header
+  $('body').css('padding-top', this.$tourHeader.outerHeight());
+
   this.$tourHeader.show();
 
   // highlight current tour page on header and turn off link
   this.$tourHeader.find('.tour-' + TOUR_PAGE).addClass('is-active').find('a').click(function (e) {
     e.preventDefault();
   });
-
-  // set top padding for fixed tour header
-  $('body').css('padding-top', this.$tourHeader.outerHeight());
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
@@ -80,6 +83,14 @@ SiteOrientation.prototype.startTour = function () {
   $('.tour-dot--middle').css('display', 'block');
 
   var tour = introJs.introJs();
+  var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
+  var nextSectionLink = this.$selector.find('.is-active').next().find('a').attr('href');
+
+  // Legal resources is last tour page
+  // Last tooltip button ends tour
+  if (TOUR_PAGE === 'legal-resources') {
+    tourLastLabel = 'Close tour';
+  }
 
   tour.setOptions({
     showStepNumbers: false,
@@ -87,7 +98,7 @@ SiteOrientation.prototype.startTour = function () {
     tooltipPosition: 'bottom-middle-aligned',
     prevLabel: '<i class="icon icon--small i-arrow-left"></i> Back',
     nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
-    doneLabel: 'Next section <i class="icon icon--small i-arrow-right"></i>',
+    doneLabel: tourLastLabel,
     overlayOpacity: 0
   });
 
@@ -97,11 +108,13 @@ SiteOrientation.prototype.startTour = function () {
     $(window).scrollTop($(target).offset().top - 200);
   });
 
-  // grab the link to the next tour page
-  var nextLink = this.$selector.find('.is-active').next().find('a').attr('href');
-  // clicking "next section" on last tooltip will send them to next tour page
   tour.onexit(function () {
-    window.location.href = nextLink;
+    if (tourLastLabel === 'Close tour') {
+      self.exitTour();
+    }
+    else {
+      window.location.href = nextSectionLink;
+    }
   });
 
   // begin intro.js functionality
