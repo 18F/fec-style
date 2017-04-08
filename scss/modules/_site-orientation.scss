@@ -20,8 +20,12 @@
     .note {
       font-size: u(1.3rem);
       line-height: u(1.6rem);
-      padding: u(1rem 0);
+      padding: u(.5rem 0);
       display: inline-block;
+    }
+
+    .note-comments {
+      display: none;
     }
 
     h2 {
@@ -52,6 +56,11 @@
       .note {
         font-size: u(1.4rem);
         line-height: u(1.8rem);
+        padding: u(1rem 0);
+      }
+
+      .note-comments {
+        display: block;
       }
 
       .toggle-text {
@@ -72,8 +81,9 @@
 // tour header page links
 .tour-header {
   background-color: $gray-light;
+  border-bottom: 2px solid $navy;
   font-family: $sans-serif;
-  padding: u(1rem 2rem 1rem 4rem);
+  padding: u(1rem);
   position: fixed;
   top: 0;
   left: 0;
@@ -84,9 +94,12 @@
 
   li {
     background-color: $inverse;
-    padding: u(.5rem 1rem .5rem 2.25rem);
-    height: 38px;
-    margin-right: u(1rem);
+    border-radius: 3px;
+    border: 1px solid $gray-medium;
+    padding: u(.15rem 0);
+    margin-right: u(.75rem);
+    min-width: 30px;
+    text-align: center;
     position: relative;
     float: left;
 
@@ -101,6 +114,7 @@
     a {
       width: inherit;
       height: inherit;
+      border: none;
       display: block;
     }
 
@@ -118,44 +132,12 @@
       }
     }
 
-    a {
-      border: none;
-    }
-
-    span {
+    .tour-page-number {
       padding-right: u(.25rem);
     }
 
-    &:first-child {
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
-      padding-left: u(1.75rem);
-
-      &::before {
-        border: none;
-      }
-    }
-
-    &::before,
-    &::after {
-      width: 0;
-      height: 0;
-      content: '';
-      border-style: solid;
-      top: 0;
-      position: absolute;
-    }
-
-    &::before {
-      border-width: 19px 0 19px 10px;
-      border-color: transparent transparent transparent $gray-light;
-      left: 0;
-    }
-
-    &::after {
-      border-width: 19px 0 19px 10px;
-      border-color: transparent transparent transparent $inverse;
-      left: 100%;
+    .tour-page {
+      display: none;
     }
   }
 
@@ -164,8 +146,7 @@
     border: none;
     border-radius: 3px;
     color: $primary;
-    padding: u(.25rem 1.5rem);
-    line-height: u(3.5rem);
+    padding: u(.5rem 1.25rem);
     text-align: left;
     float: right;
 
@@ -177,6 +158,61 @@
   .icon--inline--right {
     margin-left: u(.5rem);
     vertical-align: middle;
+  }
+}
+
+@include media($med) {
+  .tour-header {
+    border: none;
+    padding: u(1rem 2rem 1rem 4rem);
+
+    li {
+      padding: u(.5rem 1rem .5rem 2.25rem);
+      margin-right: u(1rem);
+      border: none;
+      height: 38px;
+
+      &:first-child {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        padding-left: u(1.75rem);
+
+        &::before {
+          border: none;
+        }
+      }
+
+      &::before,
+      &::after {
+        width: 0;
+        height: 0;
+        content: '';
+        border-style: solid;
+        top: 0;
+        position: absolute;
+      }
+
+      &::before {
+        border-width: 19px 0 19px 10px;
+        border-color: transparent transparent transparent $gray-light;
+        left: 0;
+      }
+
+      &::after {
+        border-width: 19px 0 19px 10px;
+        border-color: transparent transparent transparent $inverse;
+        left: 100%;
+      }
+
+      .tour-page {
+        display: inline-block;
+      }
+    }
+
+    .exit-tour {
+      padding: u(.25rem 1.5rem);
+      line-height: u(3.5rem);
+    }
   }
 }
 
