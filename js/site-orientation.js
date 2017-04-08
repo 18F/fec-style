@@ -106,6 +106,12 @@ SiteOrientation.prototype.startTour = function () {
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
 
+  // if mobile toggle visible
+  // remove desktop only tour points
+  if ($('.js-nav-toggle').is(':visible')) {
+    $('.masthead .tour-dot, .js-sticky-side .tour-dot').remove();
+  }
+
   // display tour dots relative to their nearest element
   $('.tour-dot').css('display', 'inline-block').parent().css('position', 'relative');
   $('.tour-dot--middle').css('display', 'block');

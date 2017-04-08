@@ -263,9 +263,13 @@
 .tour-tooltip {
   font-family: $sans-serif;
   padding: u(1.5rem);
-  margin-top: u(.5rem);
+  margin-top: u(5rem);
   border: 4px solid $gray;
   box-shadow: none;
+
+  @include media($med) {
+    margin-top: u(.5rem);
+  }
 
   &::after,
   &::before {
@@ -398,12 +402,15 @@
   max-width: 375px;
   padding: u(1.5rem);
   top: 30%;
-  left: 50%;
-  margin-left: -187px;
   border: 4px solid $gray;
   border-radius: 3px;
   position: fixed;
   z-index: $z8;
+
+  @include media($med) {
+    left: 50%;
+    margin-left: -187px;
+  }
 
   h5 {
     font-family: $sans-serif;
