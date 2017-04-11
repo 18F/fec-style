@@ -1,4 +1,5 @@
-// Tour: site orientation
+// Site orientation tour
+// Includes .introjs-* overrides for intro.js module
 
 // banner
 .site-orientation {
@@ -28,9 +29,18 @@
       display: none;
     }
 
-    h2 {
+    h2,
+    .start-tour {
       font-size: u(1.8rem);
+      color: $inverse;
       margin-bottom: u(1rem);
+    }
+
+    .start-tour {
+      font-family: $serif;
+      font-weight: bold;
+      border-bottom: 1px dotted $inverse;
+      padding: 0;
     }
 
     .icon--small {
@@ -40,8 +50,10 @@
       max-width: u(1.5rem);
     }
 
-    .toggle-text {
+    .less,
+    .more {
       font-size: u(1.3rem);
+      color: $inverse;
     }
 
     .more {
@@ -63,7 +75,8 @@
         display: block;
       }
 
-      .toggle-text {
+      .less,
+      .more {
         font-size: u(1.4rem);
         bottom: u(1rem);
         right: u(1.5rem);
@@ -71,7 +84,8 @@
         position: absolute;
       }
 
-      h2 {
+      h2,
+      .start-tour {
         font-size: u(2rem);
       }
     }
@@ -79,7 +93,7 @@
 }
 
 // tour header page links
-.tour-header {
+.tour__header {
   background-color: $gray-light;
   border-bottom: 2px solid $navy;
   font-family: $sans-serif;
@@ -132,11 +146,11 @@
       }
     }
 
-    .tour-page-number {
+    .tour__header__page--number {
       padding-right: u(.25rem);
     }
 
-    .tour-page {
+    .tour__header__page {
       display: none;
     }
   }
@@ -162,7 +176,7 @@
 }
 
 @include media($med) {
-  .tour-header {
+  .tour__header {
     border: none;
     padding: u(1rem 2rem 1rem 4rem);
 
@@ -201,10 +215,10 @@
       &::after {
         border-width: 19px 0 19px 10px;
         border-color: transparent transparent transparent $inverse;
-        left: 100%;
+        right: -9px;
       }
 
-      .tour-page {
+      .tour__header__page {
         display: inline-block;
       }
     }
@@ -216,7 +230,7 @@
   }
 }
 
-.tour-dot {
+.tour__point {
   background-color: $orange;
   width: 7px;
   height: 7px;
@@ -241,26 +255,26 @@
   }
 }
 
-.tour-dot--middle {
+.tour__point--middle {
   margin: auto;
   margin-top: u(.5rem);
 }
 
-.tour-dot--left {
+.tour__point--left {
   top: 13px;
   left: -20px;
   position: absolute;
 }
 
-.tour-dot--top-padding-med {
+.tour__point--top-padding-med {
   top: 47px;
 }
 
-.tour-dot--top-padding-lg {
+.tour__point--top-padding-lg {
   top: 62px;
 }
 
-.tour-tooltip {
+.tour__tooltip {
   font-family: $sans-serif;
   padding: u(1.5rem);
   margin-top: u(5rem);
@@ -297,11 +311,11 @@
     margin-left: -10px;
   }
 
-  &.tour-tooltip--right::before {
+  &.tour__tooltip--right::before {
     margin-left: 88px;
   }
 
-  &.tour-tooltip--right::after {
+  &.tour__tooltip--right::after {
     margin-left: 94px;
   }
 
@@ -385,7 +399,7 @@
 }
 
 // end tour modal
-.tour-end--curtain {
+.tour__end__curtain {
   background-color: $base;
   opacity: .75;
   top: 0;
@@ -396,7 +410,7 @@
   z-index: $z7;
 }
 
-.tour-end--modal {
+.tour__end__modal {
   background-color: $inverse;
   font-family: $sans-serif;
   max-width: 375px;
@@ -427,7 +441,7 @@
     clear: both;
   }
 
-  .tour-end--button {
+  .tour__end__button {
     background-color: $gray;
     background-image: none;
     border: none;
@@ -439,7 +453,7 @@
     display: inline-block;
   }
 
-  .tour-end--button--home {
+  .tour__end__button--home {
     background-color: $federal-blue;
     color: $inverse;
 
@@ -448,7 +462,8 @@
     }
   }
 
-  .tour-end--button--close {
+  .tour__end__button--close {
+    padding: u(.75rem 1rem);
     float: right;
 
     &:hover {

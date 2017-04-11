@@ -19,7 +19,7 @@ function SiteOrientation(selector) {
   this.$bannerMoreText = this.$bannerToggleLink.find('.more');
   this.$bannerLessText = this.$bannerToggleLink.find('.less');
 
-  this.$tourHeader = this.$selector.find('.tour-header');
+  this.$tourHeader = this.$selector.find('.tour__header');
 
   this.$startTourLink = this.$selector.find('.start-tour');
   this.$startTourLink.on('click', this.startTour.bind(this));
@@ -76,16 +76,7 @@ SiteOrientation.prototype.setBannerState = function () {
   }
 };
 
-SiteOrientation.prototype.startTour = function () {
-  var self = this;
-
-  // if the user clicks "start a tour" on a page without tooltips
-  // then it will take them to the homepage and start the tour
-  if (typeof TOUR_PAGE == 'undefined') {
-    window.location.href = CMS_URL + '/?tour=true';
-    return;
-  }
-
+SiteOrientation.prototype.setupTourHeader = function () {
   // make sure tour window starts on top
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
@@ -105,36 +96,52 @@ SiteOrientation.prototype.startTour = function () {
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
+};
 
+SiteOrientation.prototype.setupTourPoints = function () {
   // if mobile toggle visible
   // remove desktop only tour points
   if ($('.js-nav-toggle').is(':visible')) {
-    $('.masthead .tour-dot, .js-sticky-side .tour-dot').remove();
+    $('.masthead .tour__point, .js-sticky-side .tour__point').remove();
   }
 
   // display tour dots relative to their nearest element
-  $('.tour-dot').css('display', 'inline-block').parent().css('position', 'relative');
-  $('.tour-dot--middle').css('display', 'block');
+  $('.tour__point').css('display', 'inline-block').parent().css('position', 'relative');
+  $('.tour__point--middle').css('display', 'block');
+};
+
+SiteOrientation.prototype.startTour = function () {
+  var self = this;
+
+  // if the user clicks "start a tour" on a page without tooltips
+  // then it will take them to the homepage and start the tour
+  if (typeof TOUR_PAGE == 'undefined') {
+    window.location.href = CMS_URL + '/?tour=true';
+    return;
+  }
+
+  this.setupTourHeader();
+  this.setupTourPoints();
 
   var tour = introJs.introJs();
   var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
   var nextSectionLink = this.$selector.find('.is-active').next().find('a').attr('href');
   var lastTourPage = 'legal-resources';
 
-  // Legal resources is last tour page
-  // Last tooltip opens modal
   if (TOUR_PAGE === lastTourPage) {
+    // Last tooltip (tour.onexit) opens modal
     tourLastLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   }
 
   tour.setOptions({
     showStepNumbers: false,
-    tooltipClass: 'tour-tooltip',
+    tooltipClass: 'tour__tooltip',
     tooltipPosition: 'bottom-middle-aligned',
     prevLabel: '<i class="icon icon--small i-arrow-left"></i> Back',
     nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
     doneLabel: tourLastLabel,
-    overlayOpacity: 0
+    overlayOpacity: 0,
+    exitOnEsc: false
   });
 
   // native intro.js behavior scrolls longer tooltips offscreen
@@ -147,21 +154,23 @@ SiteOrientation.prototype.startTour = function () {
     if (TOUR_PAGE === lastTourPage) {
       self.exitTour();
 
-      var tourEndCurtain = $('<div />', {'class': 'tour-end--curtain'});
+      var tourEndCurtain = $('<div />', {'class': 'tour__end__curtain'});
       var tourEndModal = $('<div />', {
-        'class': 'tour-end--modal',
+        'class': 'tour__end__modal',
         'html': '<h5><i class="icon icon-star"></i> Congratulations!</h5>' +
         'You\'ve completed our tour of new features!' +
-        '<a role="button" class="tour-end--button tour-end--button--home" href="' +
+        '<a role="button" class="tour__end__button tour__end__button--home" href="' +
         CMS_URL + '/">Return home</a>' +
         '<p>Send us your questions and feedback anonymously from any page using our ' +
         '<a class="js-feedback">feedback tool</a>.</p>' +
-        '<a role="button" class="tour-end--button tour-end--button--close">Close tour</a>'
+        '<button class="tour__end__button tour__end__button--close">Close tour</button>'
       });
 
       self.$selector.prepend(tourEndCurtain, tourEndModal);
 
-      self.$selector.find('.tour-end--button--close').on('click', function () {
+      $('.tour__end__button--home').focus();
+
+      self.$selector.find('.tour-end__button--close').on('click', function () {
         tourEndCurtain.remove();
         tourEndModal.remove();
       });
@@ -173,6 +182,13 @@ SiteOrientation.prototype.startTour = function () {
 
   // begin intro.js functionality
   tour.start();
+
+  // click ESC to end tour
+  $(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      self.exitTour();
+    }
+  });
 
   // removes native intro.js curtain to not close tooltip
   $('.introjs-overlay').remove();
@@ -188,7 +204,7 @@ SiteOrientation.prototype.exitTour = function () {
   this.collapseBanner();
   this.setBannerState();
 
-  $('.tour-dot').hide();
+  $('.tour__point').hide();
   $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
 
   // remove ?tour=true querystring
