@@ -13,6 +13,8 @@ var uriQuery = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search
 function SiteOrientation(selector) {
   this.$selector = $(selector);
 
+  this.isMobile = $('.js-nav-toggle').is(':visible');
+
   this.$banner = this.$selector.find('.banner');
   this.$bannerToggleSection = this.$banner.find('.toggle');
   this.$bannerToggleLink = this.$banner.find('.toggle-text');
@@ -76,11 +78,23 @@ SiteOrientation.prototype.setBannerState = function () {
   }
 };
 
-SiteOrientation.prototype.setupTourHeader = function () {
+SiteOrientation.prototype.tourPageCheck = function () {
   // make sure tour window starts on top
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
+
+  // if the user clicks "start a tour" on a page without tooltips
+  // then it will take them to the homepage and start the tour
+  if (typeof TOUR_PAGE == 'undefined') {
+    window.location.href = CMS_URL + '/?tour=true';
+    return;
+  }
+};
+
+SiteOrientation.prototype.setupTourHeader = function () {
+  var currentPage = this.$tourHeader.find('.tour-' + TOUR_PAGE);
+  this.lastTourPage = 'legal-resources';
 
   this.$banner.hide();
 
@@ -90,18 +104,19 @@ SiteOrientation.prototype.setupTourHeader = function () {
   this.$tourHeader.show();
 
   // highlight current tour page on header and turn off link
-  this.$tourHeader.find('.tour-' + TOUR_PAGE).addClass('is-active').find('a').click(function (e) {
+  currentPage.addClass('is-active').find('a').click(function (e) {
     e.preventDefault();
   });
+
+  this.nextSectionLink = currentPage.next().find('a').attr('href');
 
   this.$exitTourButton = this.$selector.find('.exit-tour');
   this.$exitTourButton.on('click', this.exitTour.bind(this));
 };
 
 SiteOrientation.prototype.setupTourPoints = function () {
-  // if mobile toggle visible
-  // remove desktop only tour points
-  if ($('.js-nav-toggle').is(':visible')) {
+  if (this.isMobile) {
+    // remove desktop only tour points
     $('.masthead .tour__point, .js-sticky-side .tour__point').remove();
   }
 
@@ -112,23 +127,14 @@ SiteOrientation.prototype.setupTourPoints = function () {
 
 SiteOrientation.prototype.startTour = function () {
   var self = this;
+  var tour = introJs.introJs();
+  var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
 
-  // if the user clicks "start a tour" on a page without tooltips
-  // then it will take them to the homepage and start the tour
-  if (typeof TOUR_PAGE == 'undefined') {
-    window.location.href = CMS_URL + '/?tour=true';
-    return;
-  }
-
+  this.pageTourCheck();
   this.setupTourHeader();
   this.setupTourPoints();
 
-  var tour = introJs.introJs();
-  var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
-  var nextSectionLink = this.$selector.find('.is-active').next().find('a').attr('href');
-  var lastTourPage = 'legal-resources';
-
-  if (TOUR_PAGE === lastTourPage) {
+  if (TOUR_PAGE === this.lastTourPage) {
     // Last tooltip (tour.onexit) opens modal
     tourLastLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   }
@@ -151,7 +157,7 @@ SiteOrientation.prototype.startTour = function () {
   });
 
   tour.onexit(function () {
-    if (TOUR_PAGE === lastTourPage) {
+    if (TOUR_PAGE === this.lastTourPage) {
       self.exitTour();
 
       var tourEndCurtain = $('<div />', {'class': 'tour__end__curtain'});
@@ -176,7 +182,7 @@ SiteOrientation.prototype.startTour = function () {
       });
     }
     else {
-      window.location.href = nextSectionLink;
+      window.location.href = self.nextSectionLink;
     }
   });
 
