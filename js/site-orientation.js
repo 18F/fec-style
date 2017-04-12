@@ -46,30 +46,32 @@ SiteOrientation.prototype.initBanner = function () {
   }
 
   // unbind to prevent multiple click actions
-  this.$bannerToggleLink.unbind().on('click', this.handleToggle.bind(this));
+  this.$bannerToggleLink.unbind().on('click', this.toggleBanner.bind(this));
 };
 
-SiteOrientation.prototype.handleToggle = function () {
-  this.$bannerToggleSection.toggle();
-  this.$bannerLessText.toggle();
-  this.$bannerMoreText.toggle();
+SiteOrientation.prototype.toggleBanner = function () {
+  if (this.$bannerToggleSection.is(':visible')) {
+    this.collapseBanner();
+  }
+  else {
+    this.openBanner();
+  }
+};
 
-  this.setBannerState();
+SiteOrientation.prototype.openBanner = function () {
+  this.$bannerToggleSection.show();
+  this.$bannerLessText.show();
+  this.$bannerMoreText.hide();
+
+  localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
 
 SiteOrientation.prototype.collapseBanner = function () {
   this.$bannerToggleSection.hide();
   this.$bannerLessText.hide();
   this.$bannerMoreText.show();
-};
 
-SiteOrientation.prototype.setBannerState = function () {
-  if (this.$selector.find('.more').is(':visible')) {
-    localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
-  }
-  else {
-    localStorage.setItem('FEC_BANNER_COLLAPSED', 'false');
-  }
+  localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
 
 SiteOrientation.prototype.tourPageCheck = function () {
@@ -122,6 +124,8 @@ SiteOrientation.prototype.setupTourPoints = function () {
 SiteOrientation.prototype.startTour = function () {
   var self = this;
   var tour = introJs.introJs();
+  var tourPrevLabel = '<i class="icon icon--small i-arrow-left"></i> Back';
+  var tourNextLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
 
   this.tourPageCheck();
@@ -137,8 +141,8 @@ SiteOrientation.prototype.startTour = function () {
     showStepNumbers: false,
     tooltipClass: 'tour__tooltip',
     tooltipPosition: 'bottom-middle-aligned',
-    prevLabel: '<i class="icon icon--small i-arrow-left"></i> Back',
-    nextLabel: 'Next <i class="icon icon--small i-arrow-right"></i>',
+    prevLabel: tourPrevLabel,
+    nextLabel: tourNextLabel,
     doneLabel: tourLastLabel,
     overlayOpacity: 0,
     exitOnEsc: false
@@ -202,7 +206,6 @@ SiteOrientation.prototype.exitTour = function () {
   $('body').removeAttr('style');
 
   this.collapseBanner();
-  this.setBannerState();
 
   $('.tour__point').hide();
   $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
