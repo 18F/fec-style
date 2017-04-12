@@ -34,7 +34,7 @@ function SiteOrientation(selector) {
 }
 
 SiteOrientation.prototype.initBanner = function () {
-  this.$banner.show();
+  this.$banner.attr('aria-hidden', 'false').show();
 
   // anonymous feedback tool click
   this.$selector.on('click', '.js-feedback', function () {
@@ -42,7 +42,7 @@ SiteOrientation.prototype.initBanner = function () {
   });
 
   if (localStorage.getItem('FEC_BANNER_COLLAPSED') === 'true') {
-    this.collapseBanner();
+    this.minimizeBanner();
   }
 
   // unbind to prevent multiple click actions
@@ -51,7 +51,7 @@ SiteOrientation.prototype.initBanner = function () {
 
 SiteOrientation.prototype.toggleBanner = function () {
   if (this.$bannerToggleSection.is(':visible')) {
-    this.collapseBanner();
+    this.minimizeBanner();
   }
   else {
     this.openBanner();
@@ -59,17 +59,19 @@ SiteOrientation.prototype.toggleBanner = function () {
 };
 
 SiteOrientation.prototype.openBanner = function () {
-  this.$bannerToggleSection.show();
-  this.$bannerLessText.show();
-  this.$bannerMoreText.hide();
+  this.$bannerToggleSection.show().attr('aria-hidden', 'false');
+  this.$bannerLessText.attr('aria-hidden', 'false').show();
+  this.$bannerMoreText.attr('aria-hidden', 'true').hide();
+  this.$bannerToggleLink.attr('aria-expanded', 'true');
 
   localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
 
-SiteOrientation.prototype.collapseBanner = function () {
-  this.$bannerToggleSection.hide();
-  this.$bannerLessText.hide();
-  this.$bannerMoreText.show();
+SiteOrientation.prototype.minimizeBanner = function () {
+  this.$bannerToggleSection.attr('aria-hidden', 'true').hide();
+  this.$bannerLessText.attr('aria-hidden', 'true').hide();
+  this.$bannerMoreText.attr('aria-hidden', 'false').show();
+  this.$bannerToggleLink.attr('aria-expanded', 'false');
 
   localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
@@ -92,12 +94,11 @@ SiteOrientation.prototype.setupTourHeader = function () {
   var currentPage = this.$tourHeader.find('.tour-' + TOUR_PAGE);
   this.lastTourPage = 'legal-resources';
 
-  this.$banner.hide();
+  this.$banner.attr('aria-hidden', 'true').hide();
+  this.$tourHeader.attr('aria-hidden', 'false').show();
 
   // set top padding for fixed tour header
   $('body').css('padding-top', this.$tourHeader.outerHeight());
-
-  this.$tourHeader.show();
 
   // highlight current tour page on header and turn off link
   currentPage.addClass('is-active').find('a').click(function (e) {
@@ -199,13 +200,13 @@ SiteOrientation.prototype.startTour = function () {
 };
 
 SiteOrientation.prototype.exitTour = function () {
-  this.$tourHeader.hide();
+  this.$tourHeader.attr('aria-hidden', 'true').hide();
   this.initBanner();
 
   // removes top padding for fixed tour header
   $('body').removeAttr('style');
 
-  this.collapseBanner();
+  this.minimizeBanner();
 
   $('.tour__point').hide();
   $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
