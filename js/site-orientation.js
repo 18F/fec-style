@@ -92,7 +92,6 @@ SiteOrientation.prototype.tourPageCheck = function () {
 
 SiteOrientation.prototype.setupTourHeader = function () {
   var currentPage = this.$tourHeader.find('.tour-' + TOUR_PAGE);
-  this.lastTourPage = 'legal-resources';
 
   this.$banner.attr('aria-hidden', 'true').hide();
   this.$tourHeader.attr('aria-hidden', 'false').show();
@@ -106,9 +105,6 @@ SiteOrientation.prototype.setupTourHeader = function () {
   });
 
   this.nextSectionLink = currentPage.next().find('a').attr('href');
-
-  this.$exitTourButton = this.$selector.find('.exit-tour');
-  this.$exitTourButton.on('click', this.exitTour.bind(this));
 };
 
 SiteOrientation.prototype.setupTourPoints = function () {
@@ -128,6 +124,7 @@ SiteOrientation.prototype.startTour = function () {
   var tourPrevLabel = '<i class="icon icon--small i-arrow-left"></i> Back';
   var tourNextLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
+  var lastTourPage = 'legal-resources';
 
   this.tourPageCheck();
   this.setupTourHeader();
@@ -155,8 +152,8 @@ SiteOrientation.prototype.startTour = function () {
     $(window).scrollTop($(target).offset().top - 200);
   });
 
-  tour.onexit(function () {
-    if (TOUR_PAGE === this.lastTourPage) {
+  tour.oncomplete(function () {
+    if (TOUR_PAGE == lastTourPage) {
       self.exitTour();
 
       var tourEndCurtain = $('<div />', {'class': 'tour__end__curtain'});
@@ -175,7 +172,7 @@ SiteOrientation.prototype.startTour = function () {
 
       $('.tour__end__button--home').focus();
 
-      self.$selector.find('.tour-end__button--close').on('click', function () {
+      $('.tour__end__button--close').on('click', function () {
         tourEndCurtain.remove();
         tourEndModal.remove();
       });
@@ -185,14 +182,22 @@ SiteOrientation.prototype.startTour = function () {
     }
   });
 
+  tour.onexit(function () {
+    self.exitTour();
+  });
+
   // begin intro.js functionality
   tour.start();
 
   // click ESC to end tour
   $(document).keyup(function (e) {
     if (e.keyCode == 27) {
-      self.exitTour();
+      tour.exit();
     }
+  });
+
+  this.$selector.find('.exit-tour').on('click', function () {
+    tour.exit();
   });
 
   // removes native intro.js curtain to not close tooltip
@@ -209,7 +214,7 @@ SiteOrientation.prototype.exitTour = function () {
   this.minimizeBanner();
 
   $('.tour__point').hide();
-  $('.introjs-helperLayer , .introjs-tooltipReferenceLayer').remove();
+  $('.introjs-helperLayer, .introjs-tooltipReferenceLayer').remove();
 
   // remove ?tour=true querystring
   if (uri.indexOf('?') > 0) {
