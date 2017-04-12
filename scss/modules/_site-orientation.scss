@@ -2,92 +2,62 @@
 // Includes .introjs-* overrides for intro.js module
 
 // banner
-.site-orientation {
-  .banner {
+.site-orientation .banner {
+  display: none;
+
+  // side second line on mobile
+  .toggle span:nth-child(2) {
     display: none;
+  }
 
-    .countdown {
-      font-size: u(1.1rem);
-    }
+  h2,
+  .start-tour {
+    font-size: u(1.8rem);
+    color: $inverse;
+    margin: u(.5rem 0);
+  }
 
-    .highlight {
-      background-color: $federal-blue;
-      color: $bright-blue;
-      padding: u(0 .5rem);
-      margin-right: u(.25rem);
-      display: inline-block;
-    }
+  .start-tour {
+    font-family: $serif;
+    font-weight: bold;
+    border-bottom: 1px dotted $inverse;
+    padding: 0;
+  }
 
-    .note {
-      font-size: u(1.3rem);
-      line-height: u(1.6rem);
-      padding: u(.5rem 0);
-      display: inline-block;
-    }
+  .icon--small {
+    color: $inverse;
+    display: inline-block;
+    max-height: u(1.5rem);
+    max-width: u(1.5rem);
+  }
 
-    .note-comments {
-      display: none;
-    }
+  .less,
+  .more {
+    font-size: u(1.3rem);
+    color: $inverse;
+  }
 
-    h2,
-    .start-tour {
-      font-size: u(1.8rem);
-      color: $inverse;
-      margin-bottom: u(1rem);
-    }
+  .more {
+    display: none;
+  }
 
-    .start-tour {
-      font-family: $serif;
-      font-weight: bold;
-      border-bottom: 1px dotted $inverse;
-      padding: 0;
-    }
-
-    .icon--small {
-      color: $inverse;
-      display: inline-block;
-      max-height: u(1.5rem);
-      max-width: u(1.5rem);
+  @include media($med) {
+    .toggle span:nth-child(2) {
+      display: block;
     }
 
     .less,
     .more {
-      font-size: u(1.3rem);
-      color: $inverse;
+      font-size: u(1.4rem);
+      bottom: u(1rem);
+      right: u(1.5rem);
+      cursor: pointer;
+      position: absolute;
     }
 
-    .more {
-      display: none;
-    }
-
-    @include media($med) {
-      .countdown {
-        font-size: u(1.4rem);
-      }
-
-      .note {
-        font-size: u(1.4rem);
-        line-height: u(1.8rem);
-        padding: u(1rem 0);
-      }
-
-      .note-comments {
-        display: block;
-      }
-
-      .less,
-      .more {
-        font-size: u(1.4rem);
-        bottom: u(1rem);
-        right: u(1.5rem);
-        cursor: pointer;
-        position: absolute;
-      }
-
-      h2,
-      .start-tour {
-        font-size: u(2rem);
-      }
+    h2,
+    .start-tour {
+      font-size: u(2rem);
     }
   }
 }

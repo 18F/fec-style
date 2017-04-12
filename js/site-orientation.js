@@ -1,7 +1,6 @@
 'use strict';
 
 var $ = require('jquery');
-var countdown = require('countdown');
 var introJs = require('intro.js');
 var URI = require('urijs');
 
@@ -36,11 +35,6 @@ function SiteOrientation(selector) {
 
 SiteOrientation.prototype.initBanner = function () {
   this.$banner.show();
-
-  // fill in _ DAYS until this site...
-  this.$days = this.$selector.find('.days');
-  var countdownDate = new Date(this.$days.data('date'));
-  this.$days.html(countdown(countdownDate, null, countdown.DAYS).days);
 
   // anonymous feedback tool click
   this.$selector.on('click', '.js-feedback', function () {
@@ -130,7 +124,7 @@ SiteOrientation.prototype.startTour = function () {
   var tour = introJs.introJs();
   var tourLastLabel = 'Next section <i class="icon icon--small i-arrow-right"></i>';
 
-  this.pageTourCheck();
+  this.tourPageCheck();
   this.setupTourHeader();
   this.setupTourPoints();
 
