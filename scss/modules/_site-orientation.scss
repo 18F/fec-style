@@ -10,14 +10,16 @@
     display: none;
   }
 
-  h2,
-  .start-tour {
-    font-size: u(1.8rem);
+  .tour__start,
+  .tour__start__button {
+    font-size: u(2rem);
+    font-family: $serif;
+    font-weight: bold;
     color: $inverse;
     margin: u(.5rem 0);
   }
 
-  .start-tour {
+  .tour__start__button {
     font-family: $serif;
     font-weight: bold;
     border-bottom: 1px dotted $inverse;

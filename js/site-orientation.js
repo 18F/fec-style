@@ -22,7 +22,7 @@ function SiteOrientation(selector) {
 
   this.$tourHeader = this.$selector.find('.tour__header');
 
-  this.$startTourLink = this.$selector.find('.start-tour');
+  this.$startTourLink = this.$selector.find('.tour__start__button');
   this.$startTourLink.on('click', this.startTour.bind(this));
 
   if (uriQuery.tour) {
