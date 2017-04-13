@@ -32,6 +32,7 @@ $filter-button-width: u(4.6rem);
   &.is-open {
     .filters__content {
       left: 0;
+      position: relative;
     }
 
     // For long filter titles, wrap them in a class to force icons to line up
