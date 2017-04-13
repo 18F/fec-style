@@ -10,7 +10,6 @@ var helpers = require('./helpers');
 var defaultOptions = {
   body: '.filters',
   content: '.filters__content',
-  dataContainer: '.data-container',
   filterHeader: '.js-filter-header',
   form: '#category-filters',
   focus: '.js-filter-toggle',
@@ -23,7 +22,6 @@ function FilterPanel(options) {
 
   this.$body = $(this.options.body);
   this.$content = this.$body.find(this.options.content);
-  this.$dataContainer = $(this.options.dataContainer);
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
