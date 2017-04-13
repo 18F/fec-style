@@ -126,7 +126,7 @@ var individualDataset = {
 /* This is a fake dataset for showing an empty option with the query
  * when clicked, this will submit the form to the DigitalGov search site
  */
-var digitalgov = {
+var siteDataset = {
   display: 'id',
   source: function(query, syncResults) {
     syncResults([{
@@ -145,7 +145,7 @@ var datasets = {
   candidates: candidateDataset,
   committees: committeeDataset,
   individuals: individualDataset,
-  digitalgov: digitalgov
+  site: siteDataset
 };
 
 var typeaheadOpts = {
@@ -189,16 +189,16 @@ Typeahead.prototype.handleChangeEvent = function(data) {
 Typeahead.prototype.select = function(event, datum) {
   if (datum.type === 'individual') {
     window.location = this.url + 'receipts/individual-contributions/?contributor_name=' + datum.id;
-  } else if (datum.type === 'digitalgov') {
-    this.searchDigitalGov(datum.id);
+  } else if (datum.type === 'site') {
+    this.searchSite(datum.id);
   } else {
     window.location = this.url + this.dataset.name + '/' + datum.id;
   }
 };
 
-Typeahead.prototype.searchDigitalGov = function(query) {
-  /* If the DigitalGov option is selected, this function handles submitting
-   * a new search to the DigitalGov search tool, in a certain collection.
+Typeahead.prototype.searchSite = function(query) {
+  /* If the site search option is selected, this function handles submitting
+   * a new search on /search
    */
 
   var $form = this.$input.closest('form');
