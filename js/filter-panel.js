@@ -10,7 +10,6 @@ var helpers = require('./helpers');
 var defaultOptions = {
   body: '.filters',
   content: '.filters__content',
-  dataContainer: '.data-container',
   filterHeader: '.js-filter-header',
   form: '#category-filters',
   focus: '.js-filter-toggle',
@@ -23,7 +22,6 @@ function FilterPanel(options) {
 
   this.$body = $(this.options.body);
   this.$content = this.$body.find(this.options.content);
-  this.$dataContainer = $(this.options.dataContainer);
   this.$form = $(this.options.form);
   this.$focus = $(this.options.focus);
   this.$toggle = $(this.options.toggle);
@@ -48,8 +46,7 @@ FilterPanel.prototype.setInitialDisplay = function() {
 
 FilterPanel.prototype.show = function(focus) {
   if (!helpers.isLargeScreen()) {
-    var top = this.$toggle.outerHeight() +  this.$toggle.position().top;
-    this.$content.css('top', top);
+    this.$content.css('top', 0);
   }
   this.$body.addClass('is-open');
   this.$content.attr('aria-hidden', false);
@@ -64,6 +61,10 @@ FilterPanel.prototype.show = function(focus) {
 };
 
 FilterPanel.prototype.hide = function() {
+  if (!helpers.isLargeScreen()) {
+    var top = this.$toggle.outerHeight() +  this.$toggle.position().top;
+    this.$content.css('top', top);
+  }
   this.$body.removeClass('is-open');
   this.$content.attr('aria-hidden', true);
   this.$focus.focus();
