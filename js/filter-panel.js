@@ -48,8 +48,7 @@ FilterPanel.prototype.setInitialDisplay = function() {
 
 FilterPanel.prototype.show = function(focus) {
   if (!helpers.isLargeScreen()) {
-    var top = this.$toggle.outerHeight() +  this.$toggle.position().top;
-    this.$content.css('top', top);
+    this.$content.css('top', 0);
   }
   this.$body.addClass('is-open');
   this.$content.attr('aria-hidden', false);
@@ -64,6 +63,10 @@ FilterPanel.prototype.show = function(focus) {
 };
 
 FilterPanel.prototype.hide = function() {
+  if (!helpers.isLargeScreen()) {
+    var top = this.$toggle.outerHeight() +  this.$toggle.position().top;
+    this.$content.css('top', top);
+  }
   this.$body.removeClass('is-open');
   this.$content.attr('aria-hidden', true);
   this.$focus.focus();
