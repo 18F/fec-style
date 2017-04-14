@@ -110,6 +110,14 @@
   }
 }
 
+.post__preview {
+  margin-top: u(.5rem);
+
+  .entity__type {
+    line-height: 1;
+  }
+}
+
 // Special press release styling
 // .press_release_content is an inheritied class from the scraped content
 // A lot of the scraped content contains tables or other weird things
