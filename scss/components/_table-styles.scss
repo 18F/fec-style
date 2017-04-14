@@ -213,12 +213,14 @@ h3 + .simple-table {
     padding: u(.5rem);
   }
 
-  td:first-child {
-    width: 80%;
-  }
-
   td:last-child {
     text-align: right;
+  }
+
+  @include media($lg) {
+    td:first-child {
+      width: 80%;
+    }
   }
 }
 
@@ -250,10 +252,11 @@ h3 + .simple-table {
 }
 
 .level--4 {
+  font-style: italic;
+
   td:first-child {
     border-right: 1px solid $gray-medium;
     padding-left: u(4rem);
-    font-style: italic;
   }
 }
 

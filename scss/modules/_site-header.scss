@@ -2,12 +2,14 @@
 //
 // Styleguide modules.site-header
 
-// Staging banner
+// Banner for dev
 .banner {
   background-color: $navy;
   color: $inverse;
   font-family: $sans-serif;
   padding: u(1rem 0);
+  position: relative;
+  text-align: center;
   width: 100%;
 
   a {
@@ -275,3 +277,4 @@
     display: none;
   }
 }
+

@@ -1,6 +1,6 @@
 {
   "name": "fec-style",
-  "version": "8.0.0",
+  "version": "9.0.1",
   "description": "Shared styles for FEC Beta",
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "bleach": "0.3.0",
     "glossary-panel": "0.1.2",
     "eventemitter2": "0.4.14",
+    "intro.js": "2.5.0",
     "jquery": "2.2.4",
     "jquery.inputmask": "3.2.7",
     "moment": "2.10.3",
