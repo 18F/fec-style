@@ -134,6 +134,7 @@ describe('FilterSet', function() {
       this.filterSet.activateSwitchedFilters('efiling');
       expect(this.filterSet.firstLoad).to.be.false;
       expect(this.filterSet.previousQuery).to.deep.equal({name: 'Noah'});
+      window.history.replaceState({}, null, null);
     });
 
     it('loads from the previous query after switching', function() {

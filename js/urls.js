@@ -52,6 +52,9 @@ function ensureArray(value) {
 }
 
 module.exports = {
-  updateQuery: updateQuery,
-  pushQuery: pushQuery
+  compareQuery: compareQuery,
+  ensureArray: ensureArray,
+  nextUrl: nextUrl,
+  pushQuery: pushQuery,
+  updateQuery: updateQuery
 };
