@@ -11,13 +11,13 @@ var $ = require('jquery');
 var StickyBar = require('../js/sticky-bar').StickyBar;
 var helpers = require('../js/helpers');
 
-var DOM = '<div class="sticky" data-trigger-offset="100">Sticky bar</div>';
+var DOM = '<div class="sticky" data-trigger-offset="100" style="height: 20px">Sticky bar</div>';
 
 describe('Sticky bar', function() {
   before(function() {
     this.$fixture = $('<div id="fixtures"></div>');
     $('body').append(this.$fixture);
-    $('body').css('padding-top', '100px');
+    $('body').css('padding-top', '0px');
   });
 
   beforeEach(function() {
@@ -31,7 +31,7 @@ describe('Sticky bar', function() {
 
   it('configures the offsets and padding', function() {
     var offset = this.stickyBar.$bar.offset().top;
-    expect(this.stickyBar.defaultBodyPadding).to.equal('100px');
+    expect(this.stickyBar.defaultBodyPadding).to.equal('0px');
     expect(this.stickyBar.offset).to.equal(offset);
     expect(this.stickyBar.triggerOffset).to.equal(100);
   });
@@ -49,6 +49,7 @@ describe('Sticky bar', function() {
       sinon.stub(helpers, 'isLargeScreen').returns(true);
       this.stickyBar.toggle();
       expect(this.stickyBar.$bar.hasClass('is-stuck')).to.be.true;
+      expect($('body').css('padding-top')).to.equal('20px');
       helpers.isLargeScreen.restore();
     });
 
