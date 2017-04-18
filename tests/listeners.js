@@ -10,9 +10,7 @@ var $ = require('jquery');
 
 var Listeners = require('../js/listeners').Listeners;
 
-function dummyListener() {
-  return true;
-};
+function dummyListener() { return true; }
 
 describe('Listeners', function() {
   before(function() {
