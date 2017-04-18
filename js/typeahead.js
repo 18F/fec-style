@@ -23,7 +23,16 @@ function formatCandidate(result) {
   return {
     name: result.name,
     id: result.id,
+    type: 'candidate',
     office: officeMap[result.office_sought]
+  };
+}
+
+function formatCommittee(result) {
+  return {
+    name: result.name,
+    id: result.id,
+    type: 'committee'
   };
 }
 
@@ -62,7 +71,7 @@ var committeeEngine = createEngine({
     url: getUrl('committees'),
     wildcard: '%QUERY',
     transform: function(response) {
-      return response.results;
+      return _.map(response.results, formatCommittee);
     },
   }
 });
@@ -144,8 +153,8 @@ var siteDataset = {
 var datasets = {
   candidates: candidateDataset,
   committees: committeeDataset,
-  individuals: individualDataset,
-  site: siteDataset
+  allData: [candidateDataset, committeeDataset],
+  all: [candidateDataset, committeeDataset, individualDataset, siteDataset]
 };
 
 var typeaheadOpts = {
@@ -159,12 +168,7 @@ function Typeahead(selector, type, url) {
   this.url = url || '/';
   this.typeahead = null;
 
-  // If there's a type defined, use that dataset; otherwise use all of them
-  if (type) {
-    this.dataset = datasets[type];
-  } else {
-    this.dataset = Object.values(datasets);
-  }
+  this.dataset = datasets[type];
 
   this.init();
 
@@ -192,7 +196,7 @@ Typeahead.prototype.select = function(event, datum) {
   } else if (datum.type === 'site') {
     this.searchSite(datum.id);
   } else {
-    window.location = this.url + this.dataset.name + '/' + datum.id;
+    window.location = this.url + datum.type + '/' + datum.id;
   }
 };
 

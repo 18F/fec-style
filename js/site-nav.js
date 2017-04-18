@@ -52,8 +52,6 @@ function SiteNav(selector, opts) {
 
 SiteNav.prototype.initMenu = function() {
   this.initMegaMenu();
-
-  new typeahead.Typeahead('.js-menu-search', 'candidates', '/data/');
 };
 
 SiteNav.prototype.initMegaMenu = function() {
