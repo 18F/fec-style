@@ -85,7 +85,7 @@ var candidateDataset = {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
     pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
     notFound: Handlebars.compile(
-      '<span class="tt-suggestion__header tt-suggestion__missing">No candidates found matching "{{query}}"</span>'
+      '<span></span>'
     ),
     suggestion: Handlebars.compile(
       '<span>' +
@@ -105,7 +105,7 @@ var committeeDataset = {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
     pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
     notFound: Handlebars.compile(
-      '<span class="tt-suggestion__header tt-suggestion__missing">No committees found matching "{{query}}"</span>'
+      '<span></span>'
     ),
     suggestion: Handlebars.compile(
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>'
@@ -145,7 +145,7 @@ var siteDataset = {
   },
   templates: {
     suggestion: function(datum) {
-      return '<span><strong>Search everything else:</strong> "' + datum.id + '"</span>';
+      return '<span><strong>Search other pages:</strong> "' + datum.id + '"</span>';
     }
   }
 };
