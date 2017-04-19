@@ -124,7 +124,7 @@
   font-family: $sans-serif;
   display: none;
   float: right;
-  padding: u(1.6rem 0);
+  padding: u(1rem 0);
 }
 
 .site-nav {
@@ -225,7 +225,7 @@
     border-left: 1px solid $gray;
     margin-right: 0;
     padding: u(0 1.5rem);
-    line-height: u(1.6rem);
+    line-height: u(3.6rem);
     font-size: u(1.4rem);
 
     &:first-child {
@@ -244,6 +244,15 @@
         border-bottom: 1px dotted $base;
       }
     }
+  }
+}
+
+.utility-nav__search {
+  padding-right: u(2rem);
+  width: u(30rem);
+
+  .tt-menu {
+    z-index: $z-max;
   }
 }
 

@@ -110,6 +110,23 @@
   }
 }
 
+.post__preview {
+  .entity__type {
+    line-height: 1;
+  }
+
+  &:first-of-type {
+    margin-top: u(.5rem);
+  }
+}
+
+@include media($lg) {
+  .post__path,
+  .post__preview {
+    padding-left: u(3rem);
+  }
+}
+
 // Special press release styling
 // .press_release_content is an inheritied class from the scraped content
 // A lot of the scraped content contains tables or other weird things
@@ -149,4 +166,3 @@
     font-size: u(1.4rem);
   }
 }
-

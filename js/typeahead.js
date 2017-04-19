@@ -23,7 +23,16 @@ function formatCandidate(result) {
   return {
     name: result.name,
     id: result.id,
+    type: 'candidate',
     office: officeMap[result.office_sought]
+  };
+}
+
+function formatCommittee(result) {
+  return {
+    name: result.name,
+    id: result.id,
+    type: 'committee'
   };
 }
 
@@ -62,7 +71,7 @@ var committeeEngine = createEngine({
     url: getUrl('committees'),
     wildcard: '%QUERY',
     transform: function(response) {
-      return response.results;
+      return _.map(response.results, formatCommittee);
     },
   }
 });
@@ -70,6 +79,7 @@ var committeeEngine = createEngine({
 var candidateDataset = {
   name: 'candidate',
   display: 'name',
+  limit: 3,
   source: candidateEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
@@ -79,8 +89,8 @@ var candidateDataset = {
     ),
     suggestion: Handlebars.compile(
       '<span>' +
-        '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
-        '<span class="tt-suggestion__office">{{ office }}</span>' +
+      '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
+      '<span class="tt-suggestion__office">{{ office }}</span>' +
       '</span>'
     )
   }
@@ -89,6 +99,7 @@ var candidateDataset = {
 var committeeDataset = {
   name: 'committee',
   display: 'name',
+  limit: 3,
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
@@ -102,9 +113,48 @@ var committeeDataset = {
   }
 };
 
+/* This is a fake dataset for showing an empty option with the query
+ * when clicked, this will load the receipts page,
+ * filtered to contributions from this person
+ */
+var individualDataset = {
+  display: 'id',
+  source: function(query, syncResults) {
+    syncResults([{
+      id: query,
+      type: 'individual'
+    }]);
+  },
+  templates: {
+    suggestion: function(datum) {
+      return '<span><strong>Search individual contributions from:</strong> "' + datum.id + '"</span>';
+    }
+  }
+};
+
+/* This is a fake dataset for showing an empty option with the query
+ * when clicked, this will submit the form to the DigitalGov search site
+ */
+var siteDataset = {
+  display: 'id',
+  source: function(query, syncResults) {
+    syncResults([{
+      id: query,
+      type: 'digitalgov'
+    }]);
+  },
+  templates: {
+    suggestion: function(datum) {
+      return '<span><strong>Search everything else:</strong> "' + datum.id + '"</span>';
+    }
+  }
+};
+
 var datasets = {
   candidates: candidateDataset,
-  committees: committeeDataset
+  committees: committeeDataset,
+  allData: [candidateDataset, committeeDataset],
+  all: [candidateDataset, committeeDataset, individualDataset, siteDataset]
 };
 
 var typeaheadOpts = {
@@ -118,16 +168,17 @@ function Typeahead(selector, type, url) {
   this.url = url || '/';
   this.typeahead = null;
 
-  this.init(type || 'candidates');
+  this.dataset = datasets[type];
+
+  this.init();
 
   events.on('searchTypeChanged', this.handleChangeEvent.bind(this));
 }
 
-Typeahead.prototype.init = function(type) {
+Typeahead.prototype.init = function() {
   if (this.typeahead) {
     this.$input.typeahead('destroy');
   }
-  this.dataset = datasets[type];
   this.typeahead = this.$input.typeahead(typeaheadOpts, this.dataset);
   this.$element = this.$input.parent('.twitter-typeahead');
   this.$element.css('display', 'block');
@@ -140,7 +191,25 @@ Typeahead.prototype.handleChangeEvent = function(data) {
 };
 
 Typeahead.prototype.select = function(event, datum) {
-  window.location = this.url + this.dataset.name + '/' + datum.id;
+  if (datum.type === 'individual') {
+    window.location = this.url + 'receipts/individual-contributions/?contributor_name=' + datum.id;
+  } else if (datum.type === 'site') {
+    this.searchSite(datum.id);
+  } else {
+    window.location = this.url + datum.type + '/' + datum.id;
+  }
+};
+
+Typeahead.prototype.searchSite = function(query) {
+  /* If the site search option is selected, this function handles submitting
+   * a new search on /search
+   */
+
+  var $form = this.$input.closest('form');
+  var action = $form.attr('action');
+  this.$input.val(query);
+  $form.attr('action', action);
+  $form.submit();
 };
 
 module.exports = {
