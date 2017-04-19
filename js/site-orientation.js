@@ -25,11 +25,13 @@ function SiteOrientation(selector) {
   this.$startTourLink = this.$selector.find('.tour__start__button');
   this.$startTourLink.on('click', this.startTour.bind(this));
 
-  if (uriQuery.tour) {
-    this.startTour();
-  }
-  else {
-    this.initBanner();
+  if (this.$selector.length) {
+    if (uriQuery.tour) {
+      this.startTour();
+    }
+    else {
+      this.initBanner();
+    }
   }
 }
 
