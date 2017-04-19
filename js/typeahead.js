@@ -140,7 +140,7 @@ var siteDataset = {
   source: function(query, syncResults) {
     syncResults([{
       id: query,
-      type: 'digitalgov'
+      type: 'site'
     }]);
   },
   templates: {
