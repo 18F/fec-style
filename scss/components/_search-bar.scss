@@ -35,8 +35,26 @@ $search-button-width: u(5.6rem);
 
 .combo--search {
   .combo__input {
+    float: left;
+    border-radius: 4px 0 0 4px;
+    width: calc(100% - #{$search-button-width});
+  }
+
+  .search__select + .combo__input {
     border-radius: 0 4px 4px 0;
     width: calc(100% - 14rem);
+
+    & + .combo__button {
+      width: 100%;
+      border-radius: 4px;
+      margin-top: u(1rem);
+    }
+  }
+
+  .combo__button {
+    border-radius: 0 4px 4px 0;
+    margin-top: 0;
+    width: $search-button-width;
   }
 }
 
@@ -83,17 +101,17 @@ $search-button-width: u(5.6rem);
 // BREAKPOINT: MEDIUM
 @include media($med) {
   .combo--search {
-    .combo__input {
-      border-radius: 0 0 0 0;
-      width: calc(100% - 20.6rem);
-    }
-
     .combo__button {
       width: $search-button-width;
     }
 
     .tt-menu {
-      width: calc(100% - 6.8rem);
+      width: calc(100% - #{$search-button-width});
+    }
+
+    .search__select + .combo__input {
+      border-radius: 0;
+      width: calc(100% - 20.6rem);
     }
   }
 
@@ -126,11 +144,13 @@ $search-button-width: u(5.6rem);
       font-size: u(1.8rem);
       height: u(6rem);
       line-height: 1;
-      width: calc(100% - 31rem);
+      width: calc(100% - 10rem);
     }
 
     .combo__button {
+      border-radius: 0 4px 4px 0;
       height: u(6rem);
+      margin-top: 0;
       width: u(10rem);
     }
 
@@ -138,6 +158,17 @@ $search-button-width: u(5.6rem);
       height: u(6rem);
       width: u(21rem);
       font-size: u(1.8rem);
+    }
+
+    .search__select + .combo__input {
+      border-radius: 0;
+      width: calc(100% - 31rem);
+
+      & + .combo__button {
+        border-radius: 0 4px 4px 0;
+        margin-top: 0;
+        width: u(10rem);
+      }
     }
 
     .tt-menu {
@@ -176,6 +207,7 @@ $search-button-width: u(5.6rem);
 }
 
 .tt-suggestion {
+  color: $base;
   display: table;
   position: relative;
   padding: u(1rem);
