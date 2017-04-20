@@ -83,7 +83,7 @@ var candidateDataset = {
   source: candidateEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
-    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
+    pending: '<span class="tt-suggestion__loading">Loading candidates...</span>',
     notFound: Handlebars.compile(
       '<span></span>'
     ),
@@ -103,7 +103,7 @@ var committeeDataset = {
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
-    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
+    pending: '<span class="tt-suggestion__loading">Loading committees...</span>',
     notFound: Handlebars.compile(
       '<span></span>'
     ),
