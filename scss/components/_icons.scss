@@ -59,6 +59,15 @@
   }
 }
 
+.icon-circle--calculator {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($calculator, $primary, $inverse, 3.4rem);
+    content: '';
+  }
+}
+
 .icon-circle--updates--inline--left {
   display: inline-block;
   margin-right: u(1.5rem);
