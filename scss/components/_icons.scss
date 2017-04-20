@@ -59,6 +59,17 @@
   }
 }
 
+.icon-circle--calculator {
+  display: block;
+
+  &::before {
+    @include u-icon-circle($calculator, $primary, $inverse, 3.4rem);
+    background-size: 70%;
+    background-position: 50% 45%;
+    content: '';
+  }
+}
+
 .icon-circle--updates--inline--left {
   display: inline-block;
   margin-right: u(1.5rem);
