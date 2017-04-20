@@ -106,3 +106,7 @@
   padding-right: u(2.5rem);
   background-position: 100% 50%;
 }
+
+.pending-ao__icon {
+  @include u-icon-bg($timer, $primary-contrast);
+}
