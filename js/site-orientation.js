@@ -25,11 +25,13 @@ function SiteOrientation(selector) {
   this.$startTourLink = this.$selector.find('.tour__start__button');
   this.$startTourLink.on('click', this.startTour.bind(this));
 
-  if (uriQuery.tour) {
-    this.startTour();
-  }
-  else {
-    this.initBanner();
+  if (this.$selector.length) {
+    if (uriQuery.tour) {
+      this.startTour();
+    }
+    else {
+      this.initBanner();
+    }
   }
 }
 
@@ -130,7 +132,7 @@ SiteOrientation.prototype.startTour = function () {
   this.setupTourHeader();
   this.setupTourPoints();
 
-  if (TOUR_PAGE === this.lastTourPage) {
+  if (TOUR_PAGE === lastTourPage) {
     // Last tooltip (tour.onexit) opens modal
     tourLastLabel = 'Next <i class="icon icon--small i-arrow-right"></i>';
   }
