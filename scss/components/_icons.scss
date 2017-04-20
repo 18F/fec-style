@@ -64,6 +64,8 @@
 
   &::before {
     @include u-icon-circle($calculator, $primary, $inverse, 3.4rem);
+    background-size: 70%;
+    background-position: 50% 45%;
     content: '';
   }
 }
