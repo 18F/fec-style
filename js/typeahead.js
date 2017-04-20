@@ -84,9 +84,7 @@ var candidateDataset = {
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
     pending: '<span class="tt-suggestion__loading">Loading candidates...</span>',
-    notFound: Handlebars.compile(
-      '<span></span>'
-    ),
+    notFound: Handlebars.compile(''), // This has to be empty to not show anything
     suggestion: Handlebars.compile(
       '<span>' +
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
@@ -104,9 +102,7 @@ var committeeDataset = {
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
     pending: '<span class="tt-suggestion__loading">Loading committees...</span>',
-    notFound: Handlebars.compile(
-      '<span></span>'
-    ),
+    notFound: Handlebars.compile(''), // This has to be empty to not show anything
     suggestion: Handlebars.compile(
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>'
     )
