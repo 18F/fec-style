@@ -83,10 +83,8 @@ var candidateDataset = {
   source: candidateEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
-    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
-    notFound: Handlebars.compile(
-      '<span class="tt-suggestion__header tt-suggestion__missing">No candidates found matching "{{query}}"</span>'
-    ),
+    pending: '<span class="tt-suggestion__loading">Loading candidates...</span>',
+    notFound: Handlebars.compile(''), // This has to be empty to not show anything
     suggestion: Handlebars.compile(
       '<span>' +
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>' +
@@ -103,10 +101,8 @@ var committeeDataset = {
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
-    pending: '<span class="tt-suggestion__loading">Loading suggestions...</span>',
-    notFound: Handlebars.compile(
-      '<span class="tt-suggestion__header tt-suggestion__missing">No committees found matching "{{query}}"</span>'
-    ),
+    pending: '<span class="tt-suggestion__loading">Loading committees...</span>',
+    notFound: Handlebars.compile(''), // This has to be empty to not show anything
     suggestion: Handlebars.compile(
       '<span class="tt-suggestion__name">{{ name }} ({{ id }})</span>'
     )
@@ -140,12 +136,12 @@ var siteDataset = {
   source: function(query, syncResults) {
     syncResults([{
       id: query,
-      type: 'digitalgov'
+      type: 'site'
     }]);
   },
   templates: {
     suggestion: function(datum) {
-      return '<span><strong>Search everything else:</strong> "' + datum.id + '"</span>';
+      return '<span><strong>Search other pages:</strong> "' + datum.id + '"</span>';
     }
   }
 };
