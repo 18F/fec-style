@@ -1,0 +1,8 @@
+---
+path: ./styleguide
+applications:
+- name: fec-style
+  memory: 64M
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+  env:
+    FORCE_HTTPS: true
