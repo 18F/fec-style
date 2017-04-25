@@ -66,6 +66,8 @@ SiteOrientation.prototype.openBanner = function () {
   this.$bannerMoreText.attr('aria-hidden', 'true').hide();
   this.$bannerToggleLink.attr('aria-expanded', 'true');
 
+  this.$bannerToggleLink.find('.less').focus();
+
   localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
 
@@ -74,6 +76,8 @@ SiteOrientation.prototype.minimizeBanner = function () {
   this.$bannerLessText.attr('aria-hidden', 'true').hide();
   this.$bannerMoreText.attr('aria-hidden', 'false').show();
   this.$bannerToggleLink.attr('aria-expanded', 'false');
+
+  this.$bannerToggleLink.find('.more').focus();
 
   localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
 };
