@@ -1,7 +1,6 @@
 'use strict';
 
 var chai = require('chai');
-var sinon = require('sinon');
 var sinonChai = require('sinon-chai');
 var expect = chai.expect;
 chai.use(sinonChai);
@@ -21,7 +20,7 @@ describe('Skip nav link', function() {
   beforeEach(function() {
     this.$fixture.empty().append(DOM);
     this.skipNav = new SkipNav('.skip-nav', 'main');
-  })
+  });
 
   it('locates DOM elements', function() {
     expect($(this.skipNav.anchor).is('#fixtures .skip-nav')).to.be.true;

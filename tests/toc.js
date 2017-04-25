@@ -7,7 +7,6 @@ var expect = chai.expect;
 chai.use(sinonChai);
 
 var $ = require('jquery');
-var scrollMonitor = require('scrollmonitor');
 
 var TOC = require('../js/toc').TOC;
 
