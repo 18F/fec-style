@@ -64,6 +64,15 @@
   margin-left: u(3rem);
 }
 
+// If there's an icon in the title, use this class to align everything to the right of the icon
+.post--icon {
+  padding-left: u(3rem);
+
+  .icon {
+    margin-left: u(-3rem);
+  }
+}
+
 .post__pre {
   @include clearfix();
   color: $gray-dark;
@@ -117,13 +126,6 @@
 
   &:first-of-type {
     margin-top: u(.5rem);
-  }
-}
-
-@include media($lg) {
-  .post__path,
-  .post__preview {
-    padding-left: u(3rem);
   }
 }
 
