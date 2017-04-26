@@ -117,14 +117,14 @@
 }
 
 .fc-other-month {
-  &.fc-day-number,
+  &.fc-day-top,
   &.fc-day {
     opacity: .5;
   }
 }
 
 .fc-week {
-  td:not(.fc-day-number) {
+  td:not(.fc-day-top) {
     border-width: 0 2px;
     border-style: solid;
     border-color: $neutral;
@@ -136,7 +136,7 @@
   }
 }
 
-.fc-day-number {
+.fc-day-top {
   border: 2px solid $neutral;
   border-bottom: none;
   color: $primary;
