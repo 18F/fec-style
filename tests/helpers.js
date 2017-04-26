@@ -71,4 +71,48 @@ describe('helpers', function() {
       });
     });
   });
+
+  describe('datetime()', function() {
+    it('formats MM/DD/YYYY if no format was specified', function() {
+      var date = helpers.datetime('2017-12-25', {});
+      expect(date).to.equal('12/25/2017');
+    });
+
+    it('does not format invalid dates', function() {
+      var date = helpers.datetime('17-41-2', {});
+      expect(date).to.be.null;
+    });
+
+    it('formats a pretty date if specified', function() {
+      var date = helpers.datetime('2017-12-25', {hash: {format: 'pretty'}});
+      expect(date).to.equal('December 25, 2017');
+    });
+  });
+
+  describe('window helpers', function() {
+    it('gets window inner width', function() {
+      var w = helpers.getWindowWidth();
+      expect(w).to.equal(window.innerWidth);
+    });
+
+    it('identifies large screens', function() {
+      window.innerWidth = 1200;
+      expect(helpers.isLargeScreen()).to.be.true;
+    });
+
+    it('identifies non-large screens', function() {
+      window.innerWidth = 800;
+      expect(helpers.isLargeScreen()).to.be.false;
+    });
+
+    it('identifies medium screens', function() {
+      window.innerWidth = 700;
+      expect(helpers.isMediumScreen()).to.be.true;
+    });
+
+    it('identifies small screens', function() {
+      window.innerWidth = 400;
+      expect(helpers.isMediumScreen()).to.be.false;      
+    });
+  });
 });
