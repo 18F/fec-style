@@ -62,7 +62,7 @@ SiteNav.prototype.initMegaMenu = function() {
     $(this).append(submenu);
 
     // Remove hrefs and default click behavior for links that have submenus
-    $(this).find('.site-nav__link').attr('href', '').on('click', function(e) {
+    $(this).find('.site-nav__link').attr('href', '#0').on('click', function(e) {
       e.preventDefault();
     });
   });

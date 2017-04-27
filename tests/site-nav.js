@@ -82,7 +82,7 @@ describe('SiteNav', function() {
       });
 
       it('should remove hrefs from links that have submenus', function() {
-        expect(this.siteNav.$menu.find('[data-submenu] a').attr('href')).to.equal('');
+        expect(this.siteNav.$menu.find('[data-submenu] a').attr('href')).to.equal('#0');
       });
     });
   });
