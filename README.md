@@ -1,4 +1,5 @@
 [![Build Status](https://img.shields.io/travis/18F/fec-style/master.svg)](https://travis-ci.org/18F/fec-style)
+[![Dependencies](https://img.shields.io/gemnasium/18F/fec-style.svg)](https://gemnasium.com/18F/fec-style)
 [![Test Coverage](https://img.shields.io/codecov/c/github/18F/fec-style/master.svg)](https://codecov.io/github/18F/fec-style)
 
 ## Campaign finance for everyone
