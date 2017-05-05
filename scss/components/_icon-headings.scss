@@ -187,3 +187,45 @@
     margin-right: u(1.5rem);
   }
 }
+
+// Data landing page links to breakdowns
+.icon-heading--graph-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($graph-horizontal-ordered, $primary, $inverse, $size);
+  }
+}
+
+.icon-heading--graph-unordered-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($graph-horizontal-unordered, $primary, $inverse, $size);
+
+  }
+}
+
+.icon-heading--map-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($map-us-states, $primary, $inverse, $size);
+  }
+}
+
+.icon-heading--graph-circle,
+.icon-heading--graph-unordered-circle,
+.icon-heading--map-circle {
+  border-bottom: none;
+
+  span {
+    line-height: 1.2;
+    display: inline-block;
+    width: calc(100% - 7rem);
+    vertical-align: top;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-right: u(2rem);
+  }
+}
