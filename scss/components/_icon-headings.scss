@@ -229,3 +229,13 @@
     margin-right: u(2rem);
   }
 }
+
+// scss-lint:disable QualifyingElement
+// Only want the hover effect if the element is a link
+a.icon-heading--graph-circle,
+a.icon-heading--graph-unordered-circle,
+a.icon-heading--map-circle {
+  &:hover span {
+    border-bottom: 1px dotted $primary;
+  }
+}
