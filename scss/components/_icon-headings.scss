@@ -193,6 +193,7 @@
   &::before {
     $size: u(4rem);
     @include u-icon-circle($graph-horizontal-ordered, $primary, $inverse, $size);
+    background-size: u(1.8rem);
   }
 }
 
@@ -200,7 +201,7 @@
   &::before {
     $size: u(4rem);
     @include u-icon-circle($graph-horizontal-unordered, $primary, $inverse, $size);
-
+    background-size: u(1.8rem);
   }
 }
 
@@ -215,12 +216,12 @@
 .icon-heading--graph-unordered-circle,
 .icon-heading--map-circle {
   border-bottom: none;
+  display: table;
 
-  span {
+  .icon-heading__text {
     line-height: 1.2;
-    display: inline-block;
-    width: calc(100% - 7rem);
-    vertical-align: top;
+    display: table-cell;
+    vertical-align: middle;
   }
 
   &::before {
@@ -235,7 +236,7 @@
 a.icon-heading--graph-circle,
 a.icon-heading--graph-unordered-circle,
 a.icon-heading--map-circle {
-  &:hover span {
+  &:hover .icon-heading__text span {
     border-bottom: 1px dotted $primary;
   }
 }
