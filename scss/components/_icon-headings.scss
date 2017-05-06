@@ -78,58 +78,6 @@
   padding-left: u(3rem);
 }
 
-.icon-heading--profiles {
-  @include u-icon-bg($folder-with-person, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--overviews {
-  @include u-icon-bg($graph, $inverse);
-  padding-left: u(3rem);
-}
-
-.icon-heading--location {
-  @include u-icon-bg($map-pin, $inverse);
-  padding-left: u(3rem);
-}
-
-.icon-heading--candidates {
-  @include u-icon-bg($candidate, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--committees {
-  @include u-icon-bg($committee, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--receipts {
-  @include u-icon-bg($piggy-bank, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--disbursements {
-  @include u-icon-bg($disbursement, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--filings {
-  @include u-icon-bg($papers, $inverse);
-  background-size: u(2rem);
-  padding-left: u(3rem);
-}
-
-.icon-heading--table {
-  @include u-icon-bg($table, $inverse);
-  background-position: 0 50%;
-  padding-left: u(3rem);
-}
-
 .icon-heading--raising-circle {
   &::before {
     $size: u(4rem);
@@ -237,5 +185,58 @@
     content: '';
     float: left;
     margin-right: u(1.5rem);
+  }
+}
+
+// Data landing page links to breakdowns
+.icon-heading--graph-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($graph-horizontal-ordered, $primary, $inverse, $size);
+    background-size: u(1.8rem);
+  }
+}
+
+.icon-heading--graph-unordered-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($graph-horizontal-unordered, $primary, $inverse, $size);
+    background-size: u(1.8rem);
+  }
+}
+
+.icon-heading--map-circle {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($map-us-states, $primary, $inverse, $size);
+  }
+}
+
+.icon-heading--graph-circle,
+.icon-heading--graph-unordered-circle,
+.icon-heading--map-circle {
+  border-bottom: none;
+  display: table;
+
+  .icon-heading__text {
+    line-height: 1.2;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-right: u(2rem);
+  }
+}
+
+// scss-lint:disable QualifyingElement
+// Only want the hover effect if the element is a link
+a.icon-heading--graph-circle,
+a.icon-heading--graph-unordered-circle,
+a.icon-heading--map-circle {
+  &:hover .icon-heading__text span {
+    border-bottom: 1px dotted $primary;
   }
 }
