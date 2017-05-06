@@ -109,9 +109,19 @@ $search-button-width: u(5.6rem);
       width: calc(100% - #{$search-button-width});
     }
 
+    .search__select {
+      width: u(15rem);
+    }
+
     .search__select + .combo__input {
       border-radius: 0;
-      width: calc(100% - 20.6rem);
+      width: calc(100% - #{$search-button-width} - 15rem);
+
+      & + .combo__button {
+        border-radius: 0 4px 4px 0;
+        margin-top: 0;
+        width: $search-button-width;
+      }
     }
   }
 
