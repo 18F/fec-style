@@ -134,7 +134,7 @@
 .sidebar__record-title {
   &::before {
     @include u-icon-circle($updates, $secondary, $inverse, 3rem);
-    background-size: u(1.5rem);    
+    background-size: u(1.5rem);
   }
 }
 
