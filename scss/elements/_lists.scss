@@ -47,3 +47,8 @@ dl {
 li p:last-child {
   margin-bottom: 0;
 }
+
+p + ul,
+p + ol {
+  margin-top: u(-2rem);
+}
