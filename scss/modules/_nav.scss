@@ -203,7 +203,7 @@
   .site-nav__item--secondary {
     .site-nav__link {
 
-      &.is-parent {
+      &.is-parent .site-nav__link__title {
         border-bottom-color: $secondary;
       }
 
@@ -237,7 +237,7 @@
     text-align: center;
     padding: u(1rem 3rem 0 2rem);
 
-    &.is-parent {
+    &.is-parent .site-nav__link__title {
       border-color: $navy;
     }
 
