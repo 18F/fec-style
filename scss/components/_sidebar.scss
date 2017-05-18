@@ -124,18 +124,32 @@
 }
 
 .sidebar__related-links {
+  margin-bottom: u(4rem);
+
   li {
     margin-bottom: u(1rem);
   }
 }
 
 .sidebar__record-title {
-  margin-bottom: u(2rem);
-  line-height: u(3rem);
-
   &::before {
     @include u-icon-circle($updates, $secondary, $inverse, 3rem);
     background-size: u(1.5rem);
+  }
+}
+
+.sidebar__question {
+  &::before {
+    @include u-icon-circle($question-bubble, $secondary, $inverse, 3rem);
+  }
+}
+
+.sidebar__record-title,
+.sidebar__question {
+  margin-bottom: u(1rem);
+  line-height: u(3rem);
+
+  &::before {
     content: '';
     float: left;
     margin-right: u(1.5rem);
