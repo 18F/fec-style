@@ -14,7 +14,10 @@ gulp.task('minify-icons', function() {
           removeAttrs: {attrs: '(fill|fill-rule)'}
         },
         {
-          removeStyleElement: true
+          removeStyleElement: true,
+        },
+        {
+          removeTitle: true
         }
       ]
     }))
