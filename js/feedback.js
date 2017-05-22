@@ -2,6 +2,9 @@
 
 var $ = require('jquery');
 var _ = require('underscore');
+
+var accessibility = require('./accessibility');
+
 var feedback = require('./templates/feedback.hbs');
 
 var statusClasses = {
@@ -33,6 +36,8 @@ function Feedback(url, parent) {
   this.$reset.on('click', this.reset.bind(this));
   this.$form.on('submit', this.submit.bind(this));
 
+  accessibility.removeTabindex(this.$box);
+
   $(document.body).on('feedback:open', this.show.bind(this));
 }
 
@@ -45,12 +50,16 @@ Feedback.prototype.show = function() {
   this.$box.attr('aria-hidden', 'false');
   this.$button.attr('aria-expanded', 'true');
   this.isOpen = true;
+
+  accessibility.restoreTabindex(this.$box);
 };
 
 Feedback.prototype.hide = function() {
   this.$box.attr('aria-hidden', 'true');
   this.$button.attr('aria-expanded', 'false');
   this.isOpen = false;
+
+  accessibility.removeTabindex(this.$box);
 };
 
 Feedback.prototype.submit = function(e) {
