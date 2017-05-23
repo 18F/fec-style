@@ -5,6 +5,14 @@
 .site-orientation .banner {
   display: none;
 
+  button {
+    font-size: u(1.4rem);
+    font-family: $sans-serif;
+    color: $inverse;
+    border-bottom: 1px dotted $inverse;
+    padding: 0;
+  }
+
   // side second line on mobile
   .toggle span:nth-child(2) {
     display: none;
@@ -22,8 +30,6 @@
   .tour__start__button {
     font-family: $serif;
     font-weight: bold;
-    border-bottom: 1px dotted $inverse;
-    padding: 0;
   }
 
   .icon--small {
