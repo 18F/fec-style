@@ -10,7 +10,12 @@ var uri = window.location.toString();
 var uriQuery = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
 
 // Use a fresh localstorage item once we're in production
-var STORAGE_ITEM = window.CANONICAL_BASE === 'https://fec.gov' ? 'FEC_BANNER_COLLAPSED_PROD' : 'FEC_BANNER_COLLAPSED';
+var STORAGE_ITEM;
+if (window.CANONICAL_BASE === 'https://fec.gov') {
+  STORAGE_ITEM = 'FEC_BANNER_COLLAPSED_PROD';
+} else {
+  STORAGE_ITEM = 'FEC_BANNER_COLLAPSED';
+}
 
 function SiteOrientation(selector) {
   this.$selector = $(selector);
