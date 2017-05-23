@@ -9,6 +9,14 @@ var helpers = require('./helpers');
 var uri = window.location.toString();
 var uriQuery = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
 
+// Use a fresh localstorage item once we're in production
+var STORAGE_ITEM;
+if (window.CANONICAL_BASE === 'https://www.fec.gov') {
+  STORAGE_ITEM = 'FEC_BANNER_COLLAPSED_PROD';
+} else {
+  STORAGE_ITEM = 'FEC_BANNER_COLLAPSED';
+}
+
 function SiteOrientation(selector) {
   this.$selector = $(selector);
 
@@ -43,7 +51,7 @@ SiteOrientation.prototype.initBanner = function () {
     $(document.body).trigger('feedback:open');
   });
 
-  if (localStorage.getItem('FEC_BANNER_COLLAPSED') === 'true') {
+  if (localStorage.getItem(STORAGE_ITEM) === 'true') {
     this.minimizeBanner();
   }
 
@@ -68,7 +76,7 @@ SiteOrientation.prototype.openBanner = function () {
 
   this.$bannerToggleLink.find('.less').focus();
 
-  localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
+  localStorage.setItem(STORAGE_ITEM, 'true');
 };
 
 SiteOrientation.prototype.minimizeBanner = function () {
@@ -79,7 +87,7 @@ SiteOrientation.prototype.minimizeBanner = function () {
 
   this.$bannerToggleLink.find('.more').focus();
 
-  localStorage.setItem('FEC_BANNER_COLLAPSED', 'true');
+  localStorage.setItem(STORAGE_ITEM, 'true');
 };
 
 SiteOrientation.prototype.tourPageCheck = function () {
