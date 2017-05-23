@@ -11,7 +11,7 @@ var uriQuery = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search
 
 // Use a fresh localstorage item once we're in production
 var STORAGE_ITEM;
-if (window.CANONICAL_BASE === 'https://fec.gov') {
+if (window.CANONICAL_BASE === 'https://www.fec.gov') {
   STORAGE_ITEM = 'FEC_BANNER_COLLAPSED_PROD';
 } else {
   STORAGE_ITEM = 'FEC_BANNER_COLLAPSED';
