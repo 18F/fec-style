@@ -115,7 +115,7 @@
   }
 
   .data-container__action {
-    @include span-columns(4);
+    @include span-columns(7);
     float: right;
     text-align: right;
   }
@@ -131,6 +131,11 @@
   .data-container__export {
     display: inline-block;
     position: relative;
+  }
+
+  .data-container__message {
+    display: inline-block;
+    margin: 0 u(1rem) 0 0;
   }
 
   .data-container__tags {
