@@ -39,7 +39,7 @@ updated automatically on every successful push to the `master` branch.
 
 ### View the style guide
 
-Clone the repo to your machine and open `styleguide/index.html`. Voila.
+The FEC Pattern Library is accessible [on this Github repo](https://github.com/18F/fec-pattern-library).
 
 
 ### Install dependencies
@@ -68,41 +68,6 @@ Watching the Sass:
 
     $ npm run watch-sass
 
-Note: in order for css changes to be visible on the styleguide, you need to run `npm run copy-css`, which will copy it to the styleguide directory.
-
-Generate the styleguide once:
-
-    $ npm run build
-
-And then we're using a custom template for the styleguide, which lives in
-`fec-template/`. To make style changes to the template, you need to edit
-`kss.less` and then run:
-
-    $ npm run build-styleguide
-
-To upload screenshots to [percy.io](https://percy.io):
-
-    $ gem install percy
-    $ npm run percy
-
-### Use KSS
-We use the KSS standard for documenting our Sass. This is both readable to humans and can be used to automatically generate styleguides. Here's an example:
-
-```
-// Buttons
-// A button suitable for giving stars to someone.
-//
-// Markup:
-// <button>Button</button>
-// <button class="primary">Primary Button</button>
-//
-// :hover             - Subtle hover highlight.
-// .primary           - The primary action button
-// .disabled          - Dims the button to indicate it cannot be used.
-//
-// Styleguide 2.1.3.
-//
-```
 
 ### Versioning
 We use [Semantic Versioning](http://semver.org/):
