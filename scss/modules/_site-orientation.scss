@@ -25,6 +25,7 @@
     margin: u(1rem 0);
     padding: u(1.2rem);
     border-radius: 3px;
+    border: 1px solid transparent;
 
     &::after {
       background-color: $orange;
@@ -37,6 +38,10 @@
       content: '\00a0';
       vertical-align: middle;
       display: inline-block;
+    }
+
+    &:hover {
+      border: 1px solid $inverse;
     }
   }
 
