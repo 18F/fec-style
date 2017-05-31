@@ -9,7 +9,6 @@
     font-size: u(1.4rem);
     font-family: $sans-serif;
     color: $inverse;
-    border-bottom: 1px dotted $inverse;
     padding: 0;
   }
 
@@ -18,18 +17,27 @@
     display: none;
   }
 
-  .tour__start,
   .tour__start__button {
-    font-size: u(2rem);
-    font-family: $serif;
+    background-color: $primary;
     font-weight: bold;
+    text-transform: uppercase;
     color: $inverse;
-    margin: u(.5rem 0);
-  }
+    margin: u(1rem 0);
+    padding: u(1.2rem);
+    border-radius: 3px;
 
-  .tour__start__button {
-    font-family: $serif;
-    font-weight: bold;
+    &::after {
+      background-color: $orange;
+      width: 7px;
+      height: 7px;
+      margin: u(-.25rem 0 0 .75rem);
+      border-radius: 7px;
+      box-shadow: 0 0 5px $orange;
+      animation: pulse 2s infinite;
+      content: '\00a0';
+      vertical-align: middle;
+      display: inline-block;
+    }
   }
 
   .icon--small {
