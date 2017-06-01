@@ -1,11 +1,6 @@
 // Forms
 //
-// .slab--neutral     - When the form is on a neutral background
-// .slab--primary     - When the form is on a primary background
-// .slab--secondary   - When the form is on a secondary background
-//
-// Markup:
-// <div class="slab {{modifier_class}}">
+// <div class="slab slab--neutral">
 //   <div class="container">
 //     <label class="label" for="input">Input</label>
 //     <input type="text" id="input">
@@ -103,12 +98,7 @@ input[type="file"] {
 //
 // Custom checkboxes and radio buttons
 //
-// .slab--primary     - When the form is on a primary background
-// .slab--secondary   - When the form is on a secondary background
-// .slab--neutral     - When the form is on a neutral background
-//
-// Markup:
-// <div class="slab {{modifier_class}}">
+// <div class="slab slab--primary">
 //  <div class="container">
 //   <fieldset>
 //     <legend class="label">Select any</legend>
@@ -210,7 +200,6 @@ input[type="file"] {
 
 // Basic button reset
 //
-// Markup:
 // <button>Unstyled button</button>
 //
 
