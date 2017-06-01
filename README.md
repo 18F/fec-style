@@ -46,14 +46,6 @@ The FEC Pattern Library is accessible [on this Github repo](https://github.com/1
 
     $ npm install
 
-Watch for changes in SCSS:
-
-    $ npm run watch
-
-Generate the CSS:
-
-    $ npm run build-sass
-
 Generate icons:
 
     $ npm build-icons
