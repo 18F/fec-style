@@ -341,7 +341,7 @@
   }
 
   .column--med {
-    width: 15%;
+    min-width: 180px;
   }
 
   .column--large {
@@ -361,11 +361,5 @@
     .column--med {
       width: 25%;
     }
-  }
-}
-
-@include media($lg) {
-  .column--med {
-    width: 12%;
   }
 }
