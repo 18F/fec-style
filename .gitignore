@@ -7,6 +7,5 @@ css/styles.css
 
 fec-icons/output/*.svg
 npm-debug.log
-fec-template/public/kss.css
 
 img/.DS_Store

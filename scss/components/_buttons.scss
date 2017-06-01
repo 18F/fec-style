@@ -15,7 +15,6 @@
 //   <button class="is-disabled {{modifier_class}}">Active button</button>
 // </div>
 //
-// Styleguide components.buttons.1-neutral
 
 .button {
   @include transition(background-color, .1s, color, .1s, border-color, .1s);

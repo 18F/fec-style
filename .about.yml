@@ -20,7 +20,7 @@ parent: openFEC
 
 # Maturity stage of the project (required)
 # values: discovery, alpha, beta, live
-stage: beta
+stage: live
 
 # Should this repo have automated tests? If so, set to `true`. (required)
 # values: true, false
@@ -32,15 +32,15 @@ testable: true
 #   id: Internal team identifier/user name
 #   role: Team member's role; leads should be designated as 'lead'
 team:
-- github: arowla
-- github: emileighoutlaw
+- github: anthonygarvan
+- github: ccostino
 - github: jenniferthibault
-- github: jmcarp
-- github: LeahBannon
-  role: product manager
+- github: jontours
 - github: LindsayYoung
+- github: nickykrause
 - github: noahmanger
-- github: onezerojeremy
+- github: vrajmohan
+- github: xtine
 
 # Services used to supply project status information
 # Items:

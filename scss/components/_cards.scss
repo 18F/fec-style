@@ -9,9 +9,6 @@
 // .card--full-bleed            - Image has no padding
 // .card--wide                  - Wide cards, used on data landing page. Big image container with a background
 //
-// Markup: cards.hbs
-//
-// Styleguide components.cards
 
 .card {
   @include clearfix();

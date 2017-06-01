@@ -26,11 +26,10 @@
 //   </div>
 // </div>
 //
-// Styleguide modules.page-controls
 
 .page-controls {
   @include clearfix();
-  padding: u(0 2rem); 
+  padding: u(0 2rem);
   .container {
     padding: 0;
   }

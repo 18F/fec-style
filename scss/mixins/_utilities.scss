@@ -1,14 +1,10 @@
 // Utility Mixins
 //
-// Weight: 90
-//
-// Styleguide mixins
 
 // u-visually-hidden()
 //
 // Used to visually hide components but keep them visible to screenreaders. Also includes a utility class .u-visually-hidden.
 //
-// Styleguide mixins.visually-hidden
 
 @mixin u-visually_hidden {
   position: absolute !important;
@@ -77,7 +73,6 @@
 //
 // Most basic mixin for using a variable svg as a background image
 //
-// Styleguide mixins.icon-bg
 
 @mixin u-icon-bg($icon, $color) {
   background-image: url('#{svg-fill($icon, $color)}');
@@ -89,7 +84,6 @@
 // Generates a circle with a background color and an icon within that circle
 // Can be used in pseudo-elements to create a quasi-background image
 //
-// Styleguide mixins.icon-circle
 
 @mixin u-icon-circle($icon, $circlecolor, $iconcolor, $size) {
   @include u-icon-bg($icon, $iconcolor);
@@ -102,14 +96,12 @@
   width: $size;
 }
 
-
 // u-font-color()
 //
 // Used to set the color of all child elements
 //
 // $color     - The color of the font and (if applicable) border-color
 //
-// Styleguide mixins.font-color
 
 @mixin u-font-color($color) {
   color: $color;
@@ -201,7 +193,6 @@
 //
 // Used to set generate all of the styles for a bg--primary element
 //
-// Styleguide mixins.bg-primary
 
 @mixin u-bg--primary() {
   @include u-form--inverse();
@@ -229,7 +220,6 @@
 //
 // Used to set generate all of the styles for a bg--secondary element
 //
-// Styleguide mixins.bg-secondary
 
 @mixin u-bg--secondary() {
   @include u-form--inverse();
@@ -274,7 +264,6 @@
 //
 // Used to set generate all of the styles for a bg--dark element
 //
-// Styleguide mixins.bg-dark
 
 @mixin u-bg--dark() {
   @include u-form--inverse();
@@ -306,7 +295,6 @@
 // Truncate text to a single line with an ellipsis
 // Thanks to http://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
 //
-// Styleguide mixins.truncate
 @mixin u-truncate() {
   white-space: nowrap;
   overflow: hidden;
@@ -320,7 +308,6 @@
 // $image     - Name of the image file. It will create two calls, one to a png and one to an svg
 // $position: - Will set the background-position property, defaults to 50% 50%
 //
-// Styleguide mixins.background-image
 
 @mixin u-background-image($image, $position: 50% 50%) {
   background-image: url('../img/' + $image + '.png');
@@ -336,7 +323,6 @@
 // $icon:         - Name of the icon to use
 // $color:        - Color variable the icon should be
 //
-// Styleguide mixins.icon()
 
 @mixin u-icon($icon, $color: $base, $width: 4rem, $height: 4rem, $background-size: 50%) {
   background-image: url('#{svg-fill($icon, $color)}');
@@ -354,7 +340,6 @@
 // $side          - Icon on the left or right? Defaults to left
 // $width         - Width of the icon, defaults to 1.5rem
 //
-// Styleguide mixins.icon-button
 
 @mixin u-icon-button($icon, $side: left, $width: 1.5rem) {
   background-image: url('#{svg-fill($icon, $base)}');

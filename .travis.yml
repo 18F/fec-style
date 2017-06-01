@@ -13,25 +13,7 @@ before_script:
   - travis_retry npm install codecov.io
 
 script:
-  - npm run build-js
-  - npm run build-sass
   - npm run test-single
 
 after_success:
   - cat ./coverage/coverage.json | ./node_modules/codecov.io/bin/codecov.io.js
-
-deploy:
-  - provider: script
-    script: ./deploy.sh
-    skip_cleanup: true
-    on:
-      branch: master
-  - provider: npm
-    skip_cleanup: true
-    email:
-      secure: "KtSDH6Qlnm1it8CZnX4W7fXu3lSe5UrqskyLkaAeDzBarHxki2bLflXa+D0G2xC1WOeu9rFXjfXLVpdpa46CHvVrJ15Y4kOr3xHnf823L+MYsFtb3VQBtoEA/vs+xP0LPlU9IoOO2ZjaLgDCPAVi54kR8KuXrDfzb0Ync/aYY8MIfSvSm9GLqt+VQUTo4oQdVm1G9NzKz025K/DYi8mWKvMF7lhYxBeBGRH/pnemUMCIEYTwQGZ6io/fccXv9N9g1EOu6uouU/xibth7HxQS9VLvlQigMyQ8gy9UI/x0O/hoBDA6jEEfQ8zQAczK11rRlCVedcD5a9NqHwUv/yplhYuS/AFtu4uqDK3aSYC2Udi6b9eMH1nlIt/mdl99JYhWM+YLaROvRviSf73FB4jpNIbXILQai7Q0K+N53uZwsxHaq0oJ7ADsts75tK4br8jbZtMxcKO+Xg+rY/nQ/X/EkK4qEk+1/8TwrTypk/YQd+M4Hk463+kdEsBs7u1P4uLHekuagcODVCNJsL+qIx321+gE2HiDVD3kf3aNcST4Q8sZGMFOiPBvtTVjh0nKYADGDmtHnAzqK09iwmDCtOcL2/vWK4+/nrlPAsa9sVw2gGiRocWTsmrfJ8rq3M/FxfJAlQKWQ2QKjYfNSKHqPWAxniIXkFWptXyi/CJKdRCNfeQ="
-    api_key:
-      secure: "dkzgI5VgMbrQa4w9uVH+TDGtwdRGFgZSWOByS7MFxvyuKzKF2ckufk9KCXb9mTFl3y46b2etDq9M+JHSOsONBmz9nHHNmLsMJbstiN9AvwhCXmbsowU7T8TYyeBN5fjU3jmPq2u2VhfsSuDi4O1QKyJc6j8pMWro/8bKkxneDGyQm/QGwcIYewp4khLJdPQ+QUyaOMG6JfHwzmxJyDzN1J0dt5phjdB0JDyJOCEISUM0krUGH/GfyXE13XLYzxU2E7oIgHrrRARJVtqCyTZIvIW1o+mZQoY+HEf4AIRfgzHS+HJnbPPxwIH4AHwnEGC1cyvxWztY9up29VL4Ne9Nt8ZCmvKNP3AabuQD/2HE117SRcLrQXPZLbD0HOg9TLT89iFfLfmh8HgXJb9dJFuh2CuFyiAplTlmsRk1vp1GhZuqpktacq3+YmBlO7L2gRdPNtFXVyIEROl3K9tDWVMqwJSTJMqRnPBvYH9IZwISKWBwYMLdmCYFuFjkrjrpq3pRxF4ISUK97sEVlWgXlz4kBPQNXE5/yIuMCvXyPl3dUYgmUsGvu5e20JOqGV61ILr2H9BQ75t9tBJJfh6yNEhd3QLf/umxOFJdXsES00Tgm72kBS+qITuHSw+hxP6n7wqohfBT0O/p6l3bzj87PDz/aCfYtByPj+veX8Y5kXnCYnU=" # 18f-devops
-    on:
-      branch: master
-      tags: true

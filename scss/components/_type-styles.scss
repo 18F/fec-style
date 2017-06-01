@@ -14,7 +14,6 @@
 // Markup:
 // <h2 class="t-display {{modifier_class}}">Some great heading</h2>
 //
-// Styleguide type-styles.display
 
 .t-display {
   @include heading(display);
@@ -31,7 +30,6 @@
 // Markup:
 // <span class="t-display--sans">$2,010</span>
 //
-// Styleguide type-styles.display-sans
 
 .t-display--sans {
   @include heading(display);
@@ -52,7 +50,6 @@
 // Markup:
 // <h2 class="t-ruled {{ modifier_class }}">Another heading</h2>
 //
-// Styleguide type-styles.ruled-headings
 
 .t-ruled {
   @include clearfix();
@@ -110,7 +107,6 @@
 // Markup:
 // <p class="{{ modifier_class }}">Sample text</p>
 //
-// Styleguide type-styles.miscellaneous
 
 .t-note {
   display: inline-block;
@@ -236,7 +232,6 @@
 // Markup:
 // <p class="{{ modifier_class }}"">Some sample text</p>
 //
-// Styleguide type-styles.modifiers
 
 .t-centered {
   text-align: center;
