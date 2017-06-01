@@ -1,0 +1,4794 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Style guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script>
+    API_LOCATION = "https://api.open.fec.gov";
+    API_VERSION = "v1";
+    API_KEY = "DEMO_KEY";
+  </script>
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <span class="draft-note">Draft</span>
+    <h1 class="kss-doc-title"><em>beta</em>.FEC.gov style guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="./index.html">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-elements.html">
+          <span class="kss-nav__ref">1</span
+          ><span class="kss-nav__name">Elements</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-layout.html">
+          <span class="kss-nav__ref">2</span
+          ><span class="kss-nav__name">Layout</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-components.html">
+          <span class="kss-nav__ref">3</span
+          ><span class="kss-nav__name">Components</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-accordions">
+                <span class="kss-nav__ref">3.1</span
+                ><span class="kss-nav__name">Accordions</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-billboards">
+                <span class="kss-nav__ref">3.2</span
+                ><span class="kss-nav__name">Billboards</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-breadcrumbs">
+                <span class="kss-nav__ref">3.3</span
+                ><span class="kss-nav__name">Breadcrumbs</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-buttons">
+                <span class="kss-nav__ref">3.4</span
+                ><span class="kss-nav__name">Buttons</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-callouts">
+                <span class="kss-nav__ref">3.5</span
+                ><span class="kss-nav__name">Callout</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-card-icons">
+                <span class="kss-nav__ref">3.6</span
+                ><span class="kss-nav__name">Card icons</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-cards">
+                <span class="kss-nav__ref">3.7</span
+                ><span class="kss-nav__name">Cards</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-cycle-select">
+                <span class="kss-nav__ref">3.8</span
+                ><span class="kss-nav__name">Cycle Select</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-documents">
+                <span class="kss-nav__ref">3.9</span
+                ><span class="kss-nav__name">Documents</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-dropdowns">
+                <span class="kss-nav__ref">3.10</span
+                ><span class="kss-nav__name">Dropdowns</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-figures">
+                <span class="kss-nav__ref">3.11</span
+                ><span class="kss-nav__name">Figures</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-form-styles">
+                <span class="kss-nav__ref">3.12</span
+                ><span class="kss-nav__name">Form styles</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-headings">
+                <span class="kss-nav__ref">3.13</span
+                ><span class="kss-nav__name">Headings</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-icon-headings">
+                <span class="kss-nav__ref">3.16</span
+                ><span class="kss-nav__name">Icon headings (complex)</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-list-styles">
+                <span class="kss-nav__ref">3.17</span
+                ><span class="kss-nav__name">List Styles</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-messages">
+                <span class="kss-nav__ref">3.18</span
+                ><span class="kss-nav__name">Messages</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-options">
+                <span class="kss-nav__ref">3.19</span
+                ><span class="kss-nav__name">Option components</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-overlay">
+                <span class="kss-nav__ref">3.20</span
+                ><span class="kss-nav__name">Overlay</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-page-header">
+                <span class="kss-nav__ref">3.21</span
+                ><span class="kss-nav__name">Page Header</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-pagination">
+                <span class="kss-nav__ref">3.22</span
+                ><span class="kss-nav__name">Pagination</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-reaction-box">
+                <span class="kss-nav__ref">3.23</span
+                ><span class="kss-nav__name">Reaction box</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-search-bar">
+                <span class="kss-nav__ref">3.24</span
+                ><span class="kss-nav__name">Search Bar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-search-results">
+                <span class="kss-nav__ref">3.25</span
+                ><span class="kss-nav__name">Search results</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-search-results-legal">
+                <span class="kss-nav__ref">3.26</span
+                ><span class="kss-nav__name">Legal search</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-side-nav">
+                <span class="kss-nav__ref">3.27</span
+                ><span class="kss-nav__name">Side nav</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-sidebar">
+                <span class="kss-nav__ref">3.28</span
+                ><span class="kss-nav__name">Sidebar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-simple-icon-headings">
+                <span class="kss-nav__ref">3.29</span
+                ><span class="kss-nav__name">Icon headings (simple)</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-simple-table">
+                <span class="kss-nav__ref">3.30</span
+                ><span class="kss-nav__name">Simple table</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-sticky-bar">
+                <span class="kss-nav__ref">3.31</span
+                ><span class="kss-nav__name">Sticky bar</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-toggles">
+                <span class="kss-nav__ref">3.32</span
+                ><span class="kss-nav__name">Toggles</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-tooltips">
+                <span class="kss-nav__ref">3.33</span
+                ><span class="kss-nav__name">Tooltips</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-components.html#kssref-components-tooltips">
+                <span class="kss-nav__ref">3.33</span
+                ><span class="kss-nav__name">Tooltips under an element</span>
+              </a>
+            </li>
+        </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-modules.html">
+          <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">Modules</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-colors.html">
+          <span class="kss-nav__ref">5</span
+          ><span class="kss-nav__name">Color swatches</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-icons.html">
+          <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">Icons</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-type-styles.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Type Styles</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-functions.html">
+          <span class="kss-nav__ref">8</span
+          ><span class="kss-nav__name">Utility Functions</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-mixins.html">
+          <span class="kss-nav__ref">9</span
+          ><span class="kss-nav__name">Utility Mixins</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+      <div     id="kssref-components" class="kss-section kss-section--depth-1">
+
+    <div class="kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-components">
+          <span class="kss-title__ref">
+              3
+            <span class="kss-title__permalink-hash">
+                #components
+            </span>
+          </span>
+          Components
+        </a>
+      </h1>
+
+
+    </div>
+
+
+      </div>
+      <section id="kssref-components-accordions" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-accordions">
+          <span class="kss-title__ref">
+              3.1
+            <span class="kss-title__permalink-hash">
+                #components.accordions
+            </span>
+          </span>
+          Accordions
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.accordion--neutral</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          No background, dark buttons
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="js-accordion accordion--neutral" data-content-prefix="first">
+  <li>
+    <button class="accordion__button">
+      First Amendment
+    </button>
+    <div class="accordion__content">
+      <p>
+      Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
+      </p>
+    </div>
+  </li>
+  <li>
+    <button class="accordion__button">
+      Second Amendment
+    </button>
+    <div class="accordion__content">
+      <p>
+      A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
+      </p>
+    </div>
+  </li>
+ </ul>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.accordion--inverse</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Dark background, light buttons
+        </div>
+        <div class="kss-modifier__example clearfix">
+           Coming soon
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html"></code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-billboards" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-billboards">
+          <span class="kss-title__ref">
+              3.2
+            <span class="kss-title__permalink-hash">
+                #components.billboards
+            </span>
+          </span>
+          Billboards
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Full-width sections for promoting specific features</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="billboard">
+  <div class="billboard__image__container">
+    <img class="billboard__image" src="img/api@2x.png" alt="API documentation screenshot">
+  </div>
+  <div class="billboard__content">
+    <h2 class="feature__title">The FEC API: Use our data in your project</h2>
+    <p>An application programming interface (API)  is an easy way for computers, programs and developers to share and translate large amounts of data in meaningful ways. We recently released the FEC’s first API to help you use the data to tell your own story. This API is the backbone of the campaign finance data on beta.FEC.gov.</p>
+    <p>Check out the <a href="https://api.open.fec.gov">API documentation</a>.</p>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;billboard&quot;&gt;
+  &lt;div class=&quot;billboard__image__container&quot;&gt;
+    &lt;img class=&quot;billboard__image&quot; src=&quot;img/api@2x.png&quot; alt=&quot;API documentation screenshot&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;billboard__content&quot;&gt;
+    &lt;h2 class=&quot;feature__title&quot;&gt;The FEC API: Use our data in your project&lt;/h2&gt;
+    &lt;p&gt;An application programming interface (API)  is an easy way for computers, programs and developers to share and translate large amounts of data in meaningful ways. We recently released the FEC’s first API to help you use the data to tell your own story. This API is the backbone of the campaign finance data on beta.FEC.gov.&lt;/p&gt;
+    &lt;p&gt;Check out the &lt;a href=&quot;https://api.open.fec.gov&quot;&gt;API documentation&lt;/a&gt;.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-breadcrumbs" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-breadcrumbs">
+          <span class="kss-title__ref">
+              3.3
+            <span class="kss-title__permalink-hash">
+                #components.breadcrumbs
+            </span>
+          </span>
+          Breadcrumbs
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.breadcrumbs</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base class, used on blue and crimson backgrounds
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding:2rem">
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link" rel="Home">Home</a></li>
+  <li class="breadcrumbs__item">
+    <span class="breadcrumbs__separator">›</span>
+    <a href="#" class="breadcrumbs__link">Campaign finance data</a>
+  </li>
+  <li class="breadcrumbs__item">
+    <span class="breadcrumbs__separator">›</span>
+    <span>Advanced data</span>
+  </li>
+  <li class="breadcrumbs__item breadcrumbs__item--current">
+    <span class="breadcrumbs__separator">›</span>
+    <span>Candidates</span>
+  </li>
+</ul>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot; style=&quot;padding:2rem&quot;&gt;
+&lt;ul class=&quot;breadcrumbs&quot;&gt;
+  &lt;li class=&quot;breadcrumbs__item&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;breadcrumbs__link&quot; rel=&quot;Home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;breadcrumbs__item&quot;&gt;
+    &lt;span class=&quot;breadcrumbs__separator&quot;&gt;›&lt;/span&gt;
+    &lt;a href=&quot;#&quot; class=&quot;breadcrumbs__link&quot;&gt;Campaign finance data&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;breadcrumbs__item&quot;&gt;
+    &lt;span class=&quot;breadcrumbs__separator&quot;&gt;›&lt;/span&gt;
+    &lt;span&gt;Advanced data&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;breadcrumbs__item breadcrumbs__item--current&quot;&gt;
+    &lt;span class=&quot;breadcrumbs__separator&quot;&gt;›&lt;/span&gt;
+    &lt;span&gt;Candidates&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-buttons">
+          <span class="kss-title__ref">
+              3.4
+            <span class="kss-title__permalink-hash">
+                #components.buttons
+            </span>
+          </span>
+          Buttons
+        </a>
+      </h2>
+
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-buttons-1-neutral" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-1-neutral">
+          <span class="kss-title__ref">
+              3.4.1
+            <span class="kss-title__permalink-hash">
+                #components.buttons.1-neutral
+            </span>
+          </span>
+          Buttons: Neutral background
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--standard</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Standard button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem">
+  <button class="button--standard">Basic button</button>
+  <button class="is-active button--standard">Active button</button>
+  <button class="is-disabled button--standard">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--cta</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Call to action button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem">
+  <button class="button--cta">Basic button</button>
+  <button class="is-active button--cta">Active button</button>
+  <button class="is-disabled button--cta">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--alt</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Alternate button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem">
+  <button class="button--alt">Basic button</button>
+  <button class="is-active button--alt">Active button</button>
+  <button class="is-disabled button--alt">Active button</button>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--neutral&quot; style=&quot;padding: 2rem&quot;&gt;
+  &lt;button class=&quot;[modifier class]&quot;&gt;Basic button&lt;/button&gt;
+  &lt;button class=&quot;is-active [modifier class]&quot;&gt;Active button&lt;/button&gt;
+  &lt;button class=&quot;is-disabled [modifier class]&quot;&gt;Active button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-2-primary" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-2-primary">
+          <span class="kss-title__ref">
+              3.4.2
+            <span class="kss-title__permalink-hash">
+                #components.buttons.2-primary
+            </span>
+          </span>
+          Buttons: Primary background
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--standard</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Standard button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem">
+  <button class="button--standard">Basic button</button>
+  <button class="is-active button--standard">Active button</button>
+  <button class="is-disabled button--standard">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--cta-primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Call to action button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem">
+  <button class="button--cta-primary">Basic button</button>
+  <button class="is-active button--cta-primary">Active button</button>
+  <button class="is-disabled button--cta-primary">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--alt-primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Alternate button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem">
+  <button class="button--alt-primary">Basic button</button>
+  <button class="is-active button--alt-primary">Active button</button>
+  <button class="is-disabled button--alt-primary">Active button</button>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot; style=&quot;padding: 2rem&quot;&gt;
+  &lt;button class=&quot;[modifier class]&quot;&gt;Basic button&lt;/button&gt;
+  &lt;button class=&quot;is-active [modifier class]&quot;&gt;Active button&lt;/button&gt;
+  &lt;button class=&quot;is-disabled [modifier class]&quot;&gt;Active button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-3-secondary" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-3-secondary">
+          <span class="kss-title__ref">
+              3.4.3
+            <span class="kss-title__permalink-hash">
+                #components.buttons.3-secondary
+            </span>
+          </span>
+          Buttons: Secondary background
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--standard</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Standard button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--secondary" style="padding: 2rem">
+  <button class="button--standard">Basic button</button>
+  <button class="is-active button--standard">Active button</button>
+  <button class="is-disabled button--standard">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--cta-secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Call to action button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--secondary" style="padding: 2rem">
+  <button class="button--cta-secondary">Basic button</button>
+  <button class="is-active button--cta-secondary">Active button</button>
+  <button class="is-disabled button--cta-secondary">Active button</button>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--alt-secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Alternate button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--secondary" style="padding: 2rem">
+  <button class="button--alt-secondary">Basic button</button>
+  <button class="is-active button--alt-secondary">Active button</button>
+  <button class="is-disabled button--alt-secondary">Active button</button>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--secondary&quot; style=&quot;padding: 2rem&quot;&gt;
+  &lt;button class=&quot;[modifier class]&quot;&gt;Basic button&lt;/button&gt;
+  &lt;button class=&quot;is-active [modifier class]&quot;&gt;Active button&lt;/button&gt;
+  &lt;button class=&quot;is-disabled [modifier class]&quot;&gt;Active button&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-icon-and-text-buttons" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-icon-and-text-buttons">
+          <span class="kss-title__ref">
+              3.4.4
+            <span class="kss-title__permalink-hash">
+                #components.buttons.icon-and-text-buttons
+            </span>
+          </span>
+          Buttons: Icon and text buttons
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Icon color matches text color and small vertical line between icon and text. Uses the u-icon-button mixin.
+Defaults to the styles for button--alt and button--standard, with overrides for other classes</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--browse</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          For links to the datatable view
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--browse">Button</button>
+<button class="button--cta button--browse">Button</button>
+<button class="button--alt button--browse">Button</button>
+<button class="button--cta-primary button--browse">Button</button>
+<button class="button--alt-primary button--browse">Button</button>
+<button class="button--cta-secondary button--browse">Button</button>
+<button class="button--alt-secondary button--browse">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--document</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Document button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--document">Button</button>
+<button class="button--cta button--document">Button</button>
+<button class="button--alt button--document">Button</button>
+<button class="button--cta-primary button--document">Button</button>
+<button class="button--alt-primary button--document">Button</button>
+<button class="button--cta-secondary button--document">Button</button>
+<button class="button--alt-secondary button--document">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--download</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Download button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--download">Button</button>
+<button class="button--cta button--download">Button</button>
+<button class="button--alt button--download">Button</button>
+<button class="button--cta-primary button--download">Button</button>
+<button class="button--alt-primary button--download">Button</button>
+<button class="button--cta-secondary button--download">Button</button>
+<button class="button--alt-secondary button--download">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--list</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          List view button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--list">Button</button>
+<button class="button--cta button--list">Button</button>
+<button class="button--alt button--list">Button</button>
+<button class="button--cta-primary button--list">Button</button>
+<button class="button--alt-primary button--list">Button</button>
+<button class="button--cta-secondary button--list">Button</button>
+<button class="button--alt-secondary button--list">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--map</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Map button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--map">Button</button>
+<button class="button--cta button--map">Button</button>
+<button class="button--alt button--map">Button</button>
+<button class="button--cta-primary button--map">Button</button>
+<button class="button--alt-primary button--map">Button</button>
+<button class="button--cta-secondary button--map">Button</button>
+<button class="button--alt-secondary button--map">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--search--text</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Search with text
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--search--text">Button</button>
+<button class="button--cta button--search--text">Button</button>
+<button class="button--alt button--search--text">Button</button>
+<button class="button--cta-primary button--search--text">Button</button>
+<button class="button--alt-primary button--search--text">Button</button>
+<button class="button--cta-secondary button--search--text">Button</button>
+<button class="button--alt-secondary button--search--text">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--subscribe</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Subscribe button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--subscribe">Button</button>
+<button class="button--cta button--subscribe">Button</button>
+<button class="button--alt button--subscribe">Button</button>
+<button class="button--cta-primary button--subscribe">Button</button>
+<button class="button--alt-primary button--subscribe">Button</button>
+<button class="button--cta-secondary button--subscribe">Button</button>
+<button class="button--alt-secondary button--subscribe">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--two-candidates</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Toggle two-candidate view on map comparison
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--two-candidates">Button</button>
+<button class="button--cta button--two-candidates">Button</button>
+<button class="button--alt button--two-candidates">Button</button>
+<button class="button--cta-primary button--two-candidates">Button</button>
+<button class="button--alt-primary button--two-candidates">Button</button>
+<button class="button--cta-secondary button--two-candidates">Button</button>
+<button class="button--alt-secondary button--two-candidates">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--export</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Export button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--export">Button</button>
+<button class="button--cta button--export">Button</button>
+<button class="button--alt button--export">Button</button>
+<button class="button--cta-primary button--export">Button</button>
+<button class="button--alt-primary button--export">Button</button>
+<button class="button--cta-secondary button--export">Button</button>
+<button class="button--alt-secondary button--export">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--go</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Go
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--go">Button</button>
+<button class="button--cta button--go">Button</button>
+<button class="button--alt button--go">Button</button>
+<button class="button--cta-primary button--go">Button</button>
+<button class="button--alt-primary button--go">Button</button>
+<button class="button--cta-secondary button--go">Button</button>
+<button class="button--alt-secondary button--go">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--table</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Table button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--table">Button</button>
+<button class="button--cta button--table">Button</button>
+<button class="button--alt button--table">Button</button>
+<button class="button--cta-primary button--table">Button</button>
+<button class="button--alt-primary button--table">Button</button>
+<button class="button--cta-secondary button--table">Button</button>
+<button class="button--alt-secondary button--table">Button</button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--standard [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--cta [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--alt [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--cta-primary [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--alt-primary [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--cta-secondary [modifier class]&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;button--alt-secondary [modifier class]&quot;&gt;Button&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-icon-buttons" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-icon-buttons">
+          <span class="kss-title__ref">
+              3.4.5
+            <span class="kss-title__permalink-hash">
+                #components.buttons.icon-buttons
+            </span>
+          </span>
+          Buttons: Search button
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--search</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Search button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--search"></button>
+<button class="button--cta button--search"></button>
+<button class="button--cta-primary button--search"></button>
+<button class="button--cta-secondary button--search"></button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--standard [modifier class]&quot;&gt;&lt;/button&gt;
+&lt;button class=&quot;button--cta [modifier class]&quot;&gt;&lt;/button&gt;
+&lt;button class=&quot;button--cta-primary [modifier class]&quot;&gt;&lt;/button&gt;
+&lt;button class=&quot;button--cta-secondary [modifier class]&quot;&gt;&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-remove" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-remove">
+          <span class="kss-title__ref">
+              3.4.6
+            <span class="kss-title__permalink-hash">
+                #components.buttons.remove
+            </span>
+          </span>
+          Buttons: Remove button
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>For clearing form inputs</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="input--removable is-active">
+ <input type="text" value="Input">
+ <button type="button" class="button--remove button" data-removes=""><span class="u-visually-hidden">Remove</span></button>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;input--removable is-active&quot;&gt;
+ &lt;input type=&quot;text&quot; value=&quot;Input&quot;&gt;
+ &lt;button type=&quot;button&quot; class=&quot;button--remove button&quot; data-removes=&quot;&quot;&gt;&lt;span class=&quot;u-visually-hidden&quot;&gt;Remove&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-size-variations" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-size-variations">
+          <span class="kss-title__ref">
+              3.4.7
+            <span class="kss-title__permalink-hash">
+                #components.buttons.size-variations
+            </span>
+          </span>
+          Buttons: Size variations
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--lg</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Large button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--lg">Button</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--sm</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Small button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--standard button--sm">Button</button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;button--standard [modifier class]&quot;&gt;Button&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-buttons-special-buttons" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-buttons-special-buttons">
+          <span class="kss-title__ref">
+              3.4.8
+            <span class="kss-title__permalink-hash">
+                #components.buttons.special-buttons
+            </span>
+          </span>
+          Special Buttons
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Common icon buttons for various purposes</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--previous</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Go back
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--previous"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--next</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Go next
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--next"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--close--base</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base close button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--close--base"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--close--inverse</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Inverse close button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--close--inverse"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--close--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Primary close button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--close--primary"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--down</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Down button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--down"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--cancel</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Cancel button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--cancel"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--unstyled</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Unstyled button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--unstyled"></button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.button--panel</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Panel trigger button
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <button class="button--panel"></button>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;button class=&quot;[modifier class]&quot;&gt;&lt;/button&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-callouts" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-callouts">
+          <span class="kss-title__ref">
+              3.5
+            <span class="kss-title__permalink-hash">
+                #components.callouts
+            </span>
+          </span>
+          Callout
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Action-oriented components. 100% width of their container.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.callout</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base class
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="callout callout">
+  <div class="callout__content">
+    <h4 class="callout__title">
+      <a href="#">Committee name</a>
+    </h4>
+    <span class="callout__subtitle">Principal campaign committee</span>
+    <span class="callout__subtitle t-block">2008 - 2012</span>
+  </div>
+  <div class="callout__action">
+    <ul class="callout__sublinks">
+      <li><a href="#">Money received</a></li>
+      <li><a href="#">Money spent</a></li>
+      <li><a href="#">Reports filed</a></li>
+    </ul>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.callout--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Primary
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="callout callout--primary">
+  <div class="callout__content">
+    <h4 class="callout__title">
+      <a href="#">Committee name</a>
+    </h4>
+    <span class="callout__subtitle">Principal campaign committee</span>
+    <span class="callout__subtitle t-block">2008 - 2012</span>
+  </div>
+  <div class="callout__action">
+    <ul class="callout__sublinks">
+      <li><a href="#">Money received</a></li>
+      <li><a href="#">Money spent</a></li>
+      <li><a href="#">Reports filed</a></li>
+    </ul>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.callout--secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Secondary
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="callout callout--secondary">
+  <div class="callout__content">
+    <h4 class="callout__title">
+      <a href="#">Committee name</a>
+    </h4>
+    <span class="callout__subtitle">Principal campaign committee</span>
+    <span class="callout__subtitle t-block">2008 - 2012</span>
+  </div>
+  <div class="callout__action">
+    <ul class="callout__sublinks">
+      <li><a href="#">Money received</a></li>
+      <li><a href="#">Money spent</a></li>
+      <li><a href="#">Reports filed</a></li>
+    </ul>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;callout [modifier class]&quot;&gt;
+  &lt;div class=&quot;callout__content&quot;&gt;
+    &lt;h4 class=&quot;callout__title&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Committee name&lt;/a&gt;
+    &lt;/h4&gt;
+    &lt;span class=&quot;callout__subtitle&quot;&gt;Principal campaign committee&lt;/span&gt;
+    &lt;span class=&quot;callout__subtitle t-block&quot;&gt;2008 - 2012&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;callout__action&quot;&gt;
+    &lt;ul class=&quot;callout__sublinks&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Money received&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Money spent&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Reports filed&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-card-icons" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-card-icons">
+          <span class="kss-title__ref">
+              3.6
+            <span class="kss-title__permalink-hash">
+                #components.card-icons
+            </span>
+          </span>
+          Card icons
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>CSS generated icons for cards</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-candidate</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Candidate icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-candidate"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-committee</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Committee icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-committee"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-receipt</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Receipt icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-receipt"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-disbursement</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Disbursement icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-disbursement"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-overview</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Overview icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-overview"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-profile</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Profile icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-profile"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.i-elections</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Election icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid--3-wide">
+<aside class="card card--primary card--horizontal grid__item">
+<div class="card__image">
+  <span class="card__icon i-elections"><span class="u-visually-hidden">Icon representing [something]</span></span>
+</div>
+<div class="card__content">
+  Card icon
+</div>
+</aside>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;grid--3-wide&quot;&gt;
+&lt;aside class=&quot;card card--primary card--horizontal grid__item&quot;&gt;
+&lt;div class=&quot;card__image&quot;&gt;
+  &lt;span class=&quot;card__icon [modifier class]&quot;&gt;&lt;span class=&quot;u-visually-hidden&quot;&gt;Icon representing [something]&lt;/span&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;card__content&quot;&gt;
+  Card icon
+&lt;/div&gt;
+&lt;/aside&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-cards" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-cards">
+          <span class="kss-title__ref">
+              3.7
+            <span class="kss-title__permalink-hash">
+                #components.cards
+            </span>
+          </span>
+          Cards
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Small boxes that contain content. Default layout is image stacked on text.
+All sizing is handled by using .grid and .grid__item,
+either as containers or on the cards themselves</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.card</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base style
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+    <div class="grid grid--4-wide">
+        <aside class="grid__item card card--primary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--neutral">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--secondary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--secondary-contrast">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+    </div>
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.card--horizontal</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Horizontal layout
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+    <div class="grid grid--2-wide">
+        <aside class="grid__item card card--horizontal card--primary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--neutral">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--secondary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--secondary-contrast">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+    </div>
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.card--full-bleed</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Image has no padding
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+    <div class="grid grid--2-wide">
+        <aside class="grid__item card card--horizontal card--full-bleed card--primary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--full-bleed card--neutral">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--full-bleed card--secondary">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+        <aside class="grid__item card card--horizontal card--full-bleed card--secondary-contrast">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+    </div>
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.card--wide</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Wide cards, used on data landing page. Big image container with a background
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+    <div class="grid grid--2-wide">
+      <aside class="grid__item card card--horizontal card--wide">
+        <div class="card__image__container">
+          <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Committee data</h2>
+          <ul class="card__links list--bulleted">
+            <li><a href="#">Most recent committees &raquo;</a></li>
+            <li><a href="#">All PACs active 2015-2016 &raquo;</a></li>
+            <li><a href="#">All independent expenditure committees active 2015-2016 &raquo;</a></li>
+          </ul>
+          <a class="button--standard button--browse" href="#">All committee data</a>
+        </div>
+      </aside>
+    </div>
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;container&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-cycle-select" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-cycle-select">
+          <span class="kss-title__ref">
+              3.8
+            <span class="kss-title__permalink-hash">
+                #components.cycle-select
+            </span>
+          </span>
+          Cycle Select
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="cycle-select">
+  <label for="" class="cycle-select__label">Election:</label>
+  <select class="select--alt" name="cycle">
+    <option value="2016">2016</option>
+    <option value="2014">2014</option>
+    <option value="2012">2012</option>
+  </select>
+</div>
+<fieldset class="js-subcycle-select">
+  <legend class="cycle-select__label">Time period:</legend>
+  <div class="toggles">
+    <label>
+      <input type="radio" name="cycle-toggle" checked>
+      <span class="button--alt">
+        Full cycle: 2011–2016
+      </span>
+    </label>
+    <label>
+      <input type="radio" name="cycle-toggle">
+      <span class="button--alt">
+        2011–2012
+      </span>
+    </label>
+    <label>
+      <input type="radio" name="cycle-toggle">
+      <span class="button--alt">
+        2013–2014
+      </span>
+    </label>
+    <label>
+      <input type="radio" name="cycle-toggle">
+      <span class="button--alt is-disabled">
+        2015–2016
+      </span>
+    </label>
+  </div>
+</fieldset>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;cycle-select&quot;&gt;
+  &lt;label for=&quot;&quot; class=&quot;cycle-select__label&quot;&gt;Election:&lt;/label&gt;
+  &lt;select class=&quot;select--alt&quot; name=&quot;cycle&quot;&gt;
+    &lt;option value=&quot;2016&quot;&gt;2016&lt;/option&gt;
+    &lt;option value=&quot;2014&quot;&gt;2014&lt;/option&gt;
+    &lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;fieldset class=&quot;js-subcycle-select&quot;&gt;
+  &lt;legend class=&quot;cycle-select__label&quot;&gt;Time period:&lt;/legend&gt;
+  &lt;div class=&quot;toggles&quot;&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;cycle-toggle&quot; checked&gt;
+      &lt;span class=&quot;button--alt&quot;&gt;
+        Full cycle: 2011–2016
+      &lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;cycle-toggle&quot;&gt;
+      &lt;span class=&quot;button--alt&quot;&gt;
+        2011–2012
+      &lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;cycle-toggle&quot;&gt;
+      &lt;span class=&quot;button--alt&quot;&gt;
+        2013–2014
+      &lt;/span&gt;
+    &lt;/label&gt;
+    &lt;label&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;cycle-toggle&quot;&gt;
+      &lt;span class=&quot;button--alt is-disabled&quot;&gt;
+        2015–2016
+      &lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-documents" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-documents">
+          <span class="kss-title__ref">
+              3.9
+            <span class="kss-title__permalink-hash">
+                #components.documents
+            </span>
+          </span>
+          Documents
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Displaying documents as thumbnails.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid grid--2-wide">
+  <div class="grid__item document-thumbnail">
+    <a class="document-thumbnail__img" href="#" target="_blank">
+      <img src="img/thumbnail--feca.jpg" alt="Title 52, Voting and Elections, GPO">
+    </a>
+    <span class="document-thumbnail__description">
+      <a href="#" target="_blank">Title 52, Voting and Elections, GPO</a><br>(1.6MB PDF)
+    </span>
+  </div>
+  <div class="grid__item document-thumbnail">
+    <a class="document-thumbnail__img" href="#" target="_blank">
+      <img src="img/thumbnail--title52.jpg" alt="Title 26, Internal Revenue Code, GPO">
+    </a>
+    <span class="document-thumbnail__description">
+      <a href="#" target="_blank">Title 26, Internal Revenue Code, GPO</a><br>(1.6MB PDF)
+    </span>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;grid grid--2-wide&quot;&gt;
+  &lt;div class=&quot;grid__item document-thumbnail&quot;&gt;
+    &lt;a class=&quot;document-thumbnail__img&quot; href=&quot;#&quot; target=&quot;_blank&quot;&gt;
+      &lt;img src=&quot;img/thumbnail--feca.jpg&quot; alt=&quot;Title 52, Voting and Elections, GPO&quot;&gt;
+    &lt;/a&gt;
+    &lt;span class=&quot;document-thumbnail__description&quot;&gt;
+      &lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;Title 52, Voting and Elections, GPO&lt;/a&gt;&lt;br&gt;(1.6MB PDF)
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;grid__item document-thumbnail&quot;&gt;
+    &lt;a class=&quot;document-thumbnail__img&quot; href=&quot;#&quot; target=&quot;_blank&quot;&gt;
+      &lt;img src=&quot;img/thumbnail--title52.jpg&quot; alt=&quot;Title 26, Internal Revenue Code, GPO&quot;&gt;
+    &lt;/a&gt;
+    &lt;span class=&quot;document-thumbnail__description&quot;&gt;
+      &lt;a href=&quot;#&quot; target=&quot;_blank&quot;&gt;Title 26, Internal Revenue Code, GPO&lt;/a&gt;&lt;br&gt;(1.6MB PDF)
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-dropdowns" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-dropdowns">
+          <span class="kss-title__ref">
+              3.10
+            <span class="kss-title__permalink-hash">
+                #components.dropdowns
+            </span>
+          </span>
+          Dropdowns
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Dropdowns used for dropdown filter checkboxes and export buttons
+If you need to align the panel to the right edge, use .dropdown__panel--right</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <fieldset class="js-dropdown">
+  <legend class="label">Election Years</legend>
+  <ul class="dropdown__selected"></ul>
+  <div class="dropdown">
+    <button class="dropdown__button button--alt">More</button>
+    <div id="cycle-dropdown" class="dropdown__panel" aria-hidden="true">
+      <ul class="dropdown__list">
+        <li class="dropdown__item">
+          <input id="A" name="cycle" type="checkbox" value="A" />
+          <label class="dropdown__value" for="A">A</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="B" name="cycle" type="checkbox" value="B" />
+          <label class="dropdown__value" for="B">B</label>
+        </li>
+        <li class="dropdown__item">
+          <input id="C" name="cycle" type="checkbox" value="C" />
+          <label class="dropdown__value" for="C">C</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</fieldset>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;fieldset class=&quot;js-dropdown&quot;&gt;
+  &lt;legend class=&quot;label&quot;&gt;Election Years&lt;/legend&gt;
+  &lt;ul class=&quot;dropdown__selected&quot;&gt;&lt;/ul&gt;
+  &lt;div class=&quot;dropdown&quot;&gt;
+    &lt;button class=&quot;dropdown__button button--alt&quot;&gt;More&lt;/button&gt;
+    &lt;div id=&quot;cycle-dropdown&quot; class=&quot;dropdown__panel&quot; aria-hidden=&quot;true&quot;&gt;
+      &lt;ul class=&quot;dropdown__list&quot;&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;A&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;A&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;A&quot;&gt;A&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;B&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;B&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;B&quot;&gt;B&lt;/label&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;dropdown__item&quot;&gt;
+          &lt;input id=&quot;C&quot; name=&quot;cycle&quot; type=&quot;checkbox&quot; value=&quot;C&quot; /&gt;
+          &lt;label class=&quot;dropdown__value&quot; for=&quot;C&quot;&gt;C&lt;/label&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-figures" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-figures">
+          <span class="kss-title__ref">
+              3.11
+            <span class="kss-title__permalink-hash">
+                #components.figures
+            </span>
+          </span>
+          Figures
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Styles for combinations of labels + numbers.
+Labels can be either inline or above the numbers
+Note: Zero-padding with decimals is handled by Javascript</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.figure--zero-pad</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Used when the numbers should be preceded by decimals
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="figure--zero-pad">
+  <div class="figure__item">
+    <span class="figure__label">Label</span>
+    <span class="figure__number">
+     <span class="figure__decimals"></span>$20,000
+    </span>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;figure--zero-pad&quot;&gt;
+  &lt;div class=&quot;figure__item&quot;&gt;
+    &lt;span class=&quot;figure__label&quot;&gt;Label&lt;/span&gt;
+    &lt;span class=&quot;figure__number&quot;&gt;
+     &lt;span class=&quot;figure__decimals&quot;&gt;&lt;/span&gt;$20,000
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-form-styles" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles">
+          <span class="kss-title__ref">
+              3.12
+            <span class="kss-title__permalink-hash">
+                #components.form-styles
+            </span>
+          </span>
+          Form styles
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>For fancy form styling</p>
+
+      </div>
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-form-styles-combo" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles-combo">
+          <span class="kss-title__ref">
+              3.12.1
+            <span class="kss-title__permalink-hash">
+                #components.form-styles.combo
+            </span>
+          </span>
+          Combo
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>On medium and up, displays input and button right next to each other. On small screens they&#39;re stacked.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.combo</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base styling
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary">
+  <div class="container">
+  <div class="combo">
+    <input type="text" class="combo__input">
+    <button class="button--standard combo__button">Go</button>
+  </div>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;combo&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;combo__input&quot;&gt;
+    &lt;button class=&quot;button--standard combo__button&quot;&gt;Go&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-form-styles-date-range-input" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles-date-range-input">
+          <span class="kss-title__ref">
+              3.12.2
+            <span class="kss-title__permalink-hash">
+                #components.form-styles.date-range-input
+            </span>
+          </span>
+          Date range inputs
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Combination of radio buttons and text inputs for selecting date ranges
+Adds padding to the left of the input to line up with the radio button labels</p>
+
+      </div>
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-form-styles-inline-form" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles-inline-form">
+          <span class="kss-title__ref">
+              3.12.3
+            <span class="kss-title__permalink-hash">
+                #components.form-styles.inline-form
+            </span>
+          </span>
+          Inline forms
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>For displaying multiple form elements in a row</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+           <div class="row">
+ <input class="form-element--inline" type="text">
+ <select class="form-element--inline" ><option>Select an option</option></select>
+ <button class="form-element--inline button--standard">Submit</button>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html"> &lt;div class=&quot;row&quot;&gt;
+ &lt;input class=&quot;form-element--inline&quot; type=&quot;text&quot;&gt;
+ &lt;select class=&quot;form-element--inline&quot; &gt;&lt;option&gt;Select an option&lt;/option&gt;&lt;/select&gt;
+ &lt;button class=&quot;form-element--inline button--standard&quot;&gt;Submit&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-form-styles-labels" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles-labels">
+          <span class="kss-title__ref">
+              3.12.4
+            <span class="kss-title__permalink-hash">
+                #components.form-styles.labels
+            </span>
+          </span>
+          Labels
+        </a>
+      </h3>
+
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">.label</code>
+          <div class="kss-parameters__description">Bold, uppercase, with a bottom margin</div>
+        </li>
+      </ul>
+    </div>
+
+
+      </section>
+      <section id="kssref-components-form-styles-selects" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-form-styles-selects">
+          <span class="kss-title__ref">
+              3.12.5
+            <span class="kss-title__permalink-hash">
+                #components.form-styles.selects
+            </span>
+          </span>
+          Selects
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Alternate styles to the base select style</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.select--alt</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Neutral background
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+  <select class="select--alt">
+   <option>Alt select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--primary" style="padding: 2rem;">
+  <select class="select--alt-primary">
+   <option>Alt primary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--secondary" style="padding: 2rem;">
+  <select class="select--alt-secondary">
+   <option>Alt secondary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.select--alt-primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Primary background
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+  <select class="select--alt">
+   <option>Alt select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--primary" style="padding: 2rem;">
+  <select class="select--alt-primary">
+   <option>Alt primary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--secondary" style="padding: 2rem;">
+  <select class="select--alt-secondary">
+   <option>Alt secondary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.select--alt-secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Secondary background
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+  <select class="select--alt">
+   <option>Alt select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--primary" style="padding: 2rem;">
+  <select class="select--alt-primary">
+   <option>Alt primary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+<div class="slab slab--secondary" style="padding: 2rem;">
+  <select class="select--alt-secondary">
+   <option>Alt secondary select</option>
+   <option>Option 2</option>
+  </select>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--neutral&quot; style=&quot;padding: 2rem;&quot;&gt;
+  &lt;select class=&quot;select--alt&quot;&gt;
+   &lt;option&gt;Alt select&lt;/option&gt;
+   &lt;option&gt;Option 2&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class=&quot;slab slab--primary&quot; style=&quot;padding: 2rem;&quot;&gt;
+  &lt;select class=&quot;select--alt-primary&quot;&gt;
+   &lt;option&gt;Alt primary select&lt;/option&gt;
+   &lt;option&gt;Option 2&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class=&quot;slab slab--secondary&quot; style=&quot;padding: 2rem;&quot;&gt;
+  &lt;select class=&quot;select--alt-secondary&quot;&gt;
+   &lt;option&gt;Alt secondary select&lt;/option&gt;
+   &lt;option&gt;Option 2&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-headings" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-headings">
+          <span class="kss-title__ref">
+              3.13
+            <span class="kss-title__permalink-hash">
+                #components.headings
+            </span>
+          </span>
+          Headings
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Contain the title, date select and action button.
+Use <code>.heading--main</code> when the heading is the top-level heading on a page as it provides extra margin-bottom.
+Use <code>.heading--section</code> When the heading is just a heading of a section on a page for less margin-bottom.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <header class="heading--main">
+  <h1>Page heading</h1>
+</header>
+<header class="heading--section">
+ <h2>Section heading</h2>
+ <span class="heading__subtitle">Heading subtitle</span>
+</header>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;header class=&quot;heading--main&quot;&gt;
+  &lt;h1&gt;Page heading&lt;/h1&gt;
+&lt;/header&gt;
+&lt;header class=&quot;heading--section&quot;&gt;
+ &lt;h2&gt;Section heading&lt;/h2&gt;
+ &lt;span class=&quot;heading__subtitle&quot;&gt;Heading subtitle&lt;/span&gt;
+&lt;/header&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-headings-with-action-1" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-headings-with-action-1">
+          <span class="kss-title__ref">
+              3.14.1
+            <span class="kss-title__permalink-hash">
+                #components.headings-with-action.1
+            </span>
+          </span>
+          Headings with actions
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>When the heading title includes an action, add this class to one of the base classes.
+Set line height to the height of the buttons or selects in the heading.
+Use <code>.heading__left</code> and <code>.heading__right</code> to float elements at <code>$med</code> breakpoints</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <header class="heading--section heading--with-action">
+ <h2 class="heading__left">A heading with an action</h2>
+ <div class="heading__right">
+   <ul class="list--buttons">
+     <li><a class="button button--standard button--table" href="#">Explore data</a></li>
+     <li><button class="button button--standard button--share">Share</button></li>
+   </ul>
+ </div>
+</header>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;header class=&quot;heading--section heading--with-action&quot;&gt;
+ &lt;h2 class=&quot;heading__left&quot;&gt;A heading with an action&lt;/h2&gt;
+ &lt;div class=&quot;heading__right&quot;&gt;
+   &lt;ul class=&quot;list--buttons&quot;&gt;
+     &lt;li&gt;&lt;a class=&quot;button button--standard button--table&quot; href=&quot;#&quot;&gt;Explore data&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;button class=&quot;button button--standard button--share&quot;&gt;Share&lt;/button&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-headings-with-date-2" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-headings-with-date-2">
+          <span class="kss-title__ref">
+              3.15.1
+            <span class="kss-title__permalink-hash">
+                #components.headings-with-date.2
+            </span>
+          </span>
+          Headings with dates
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Add this class when a heading includes a date on the right side, as with Press Releases</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <header class="heading--main heading--with-date">
+  <div class="row">
+    <h1 class="heading__left">Press release</h1>
+    <div class="heading__right">
+      <span class="t-sans">September 14, 2016</span>
+    </div>
+  </div>
+</header>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;header class=&quot;heading--main heading--with-date&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;h1 class=&quot;heading__left&quot;&gt;Press release&lt;/h1&gt;
+    &lt;div class=&quot;heading__right&quot;&gt;
+      &lt;span class=&quot;t-sans&quot;&gt;September 14, 2016&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-icon-headings" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-icon-headings">
+          <span class="kss-title__ref">
+              3.16
+            <span class="kss-title__permalink-hash">
+                #components.icon-headings
+            </span>
+          </span>
+          Icon headings (complex)
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Lockups that combine an icon, title and some additional text</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base class
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="icon-heading">
+  <img class="icon-heading__image" src="../img/i-overviews--primary.svg" alt="Icon representing interactive overviews">
+  <div class="icon-heading__content">
+    <h2 class="icon-heading__title">Interactive overviews</h2>
+    <p>You don’t have to be an expert to learn more about campaign finance. These overviews are a visual introduction to how money is raised and spent in federal elections.</p>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;icon-heading&quot;&gt;
+  &lt;img class=&quot;icon-heading__image&quot; src=&quot;../img/i-overviews--primary.svg&quot; alt=&quot;Icon representing interactive overviews&quot;&gt;
+  &lt;div class=&quot;icon-heading__content&quot;&gt;
+    &lt;h2 class=&quot;icon-heading__title&quot;&gt;Interactive overviews&lt;/h2&gt;
+    &lt;p&gt;You don’t have to be an expert to learn more about campaign finance. These overviews are a visual introduction to how money is raised and spent in federal elections.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-list-styles" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-list-styles">
+          <span class="kss-title__ref">
+              3.17
+            <span class="kss-title__permalink-hash">
+                #components.list-styles
+            </span>
+          </span>
+          List Styles
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>These are classes to be applied to lists to give them particular styles</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--bulleted</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Bulleted list (for ul)
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--bulleted">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--bulleted--alt</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Bulleted list where child lists don&#39;t have bullets
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--bulleted--alt">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--numbered--alt</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Numbered list where child lists have bullets
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--numbered--alt">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--numbered</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Numbered list (for ol)
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--numbered">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--flat</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Lay out items horizontally
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--flat">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.list--spacious</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Adds padding above and below list items
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--spacious">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 2</li>
+</ul>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;[modifier class]&quot;&gt;
+ &lt;li&gt;Unordered list item 1&lt;/li&gt;
+ &lt;li&gt;Unordered list item 2&lt;/li&gt;
+ &lt;li&gt;Unordered list item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-list-styles-button-lists" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-list-styles-button-lists">
+          <span class="kss-title__ref">
+              3.17.1
+            <span class="kss-title__permalink-hash">
+                #components.list-styles.button-lists
+            </span>
+          </span>
+          Button lists
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>List of buttons, such as a list of browse buttons
+On mobile, we want these to be stacked, with margin, and with full-width buttons</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--buttons">
+<li><button class="button--standard">Button</button></li>
+<li><button class="button--cta">Button</button></li>
+<li><button class="button--alt">Button</button></li>
+</ul>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list--buttons&quot;&gt;
+&lt;li&gt;&lt;button class=&quot;button--standard&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;button--cta&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;button class=&quot;button--alt&quot;&gt;Button&lt;/button&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-list-styles-checks" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-list-styles-checks">
+          <span class="kss-title__ref">
+              3.17.2
+            <span class="kss-title__permalink-hash">
+                #components.list-styles.checks
+            </span>
+          </span>
+          Checkbox Lists
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>For check marks as list bullets</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <ul class="list--checks">
+ <li>Unordered list item 1</li>
+ <li>Unordered list item 2</li>
+ <li>Unordered list item 3</li>
+</ul>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;ul class=&quot;list--checks&quot;&gt;
+ &lt;li&gt;Unordered list item 1&lt;/li&gt;
+ &lt;li&gt;Unordered list item 2&lt;/li&gt;
+ &lt;li&gt;Unordered list item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-messages" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-messages">
+          <span class="kss-title__ref">
+              3.18
+            <span class="kss-title__permalink-hash">
+                #components.messages
+            </span>
+          </span>
+          Messages
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Banners and alerts</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--no-icon</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Results message. Communicates information about search results that don&#39;t return data.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--no-icon">
+    <h2 class="message__title">No results</h2>
+    <p>Sorry, we didn't find any financial data for <strong>Committee Name</strong> in the <strong>2007–2012</strong> election cycle.</p>
+    <div class="message--alert__bottom">
+        <p>Is this information incorrect? Please let us know.</p>
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">File an issue</a></li>
+          <li><a class="button button--standard" href="#">Email our team</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--success</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Success message. The user has taken an action that successfully completes. Always help them find what to do next, including confirming their previous action.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--success">
+
+    <h2 class="message__title">Thanks for helping us improve</h2>
+    <p>This information has been reported on GitHub, where it's publicly visible.</p>
+    <div class="message--alert__bottom">
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">Track your feedback</a></li>
+          <li><a class="button button--standard" href="#">Submit another issue</a></li>
+        </ul>
+    </div>
+
+
+
+
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--error</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Error message. The user has taken an action that the system cannot accept. Always offer guidance to correcting their action.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--error">
+
+
+    <h2 class="message__title">Input required</h2>
+    <p>Please fill out at least one field.</p>
+    <div class="message--alert__bottom">
+        <ul class="list--buttons">
+          <li><a class="button button--standard" href="#">Try again</a></li>
+        </ul>
+    </div>
+
+
+
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--alert</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Warning message. The user has reached a dead end through their navigation. Either they’ve entered a search which returns no results, or there is no data available in this entry. Offer users igational assistance to get them back on the main trail. Be careful not to treat this like an error. It’s the site that has returned no data, not an error on the user’s part.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--alert">
+
+
+
+    <h2 class="message__title">Oops: We messed up</h2>
+    <p>We had trouble processing your request. Please try reloading the page.</p>
+    <div class="message--alert__bottom">
+        <p>Still not working?</p>
+        <ul class="list--buttons">
+          <li><a class="button button--cta" href="#">Return home</a></li>
+          <li><a class="button button--standard" href="#">File an issue</a></li>
+          <li><a class="button button--standard" href="#">Email our team</a></li>
+        </ul>
+    </div>
+
+
+</div>
+
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--info</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Informational alert. The user needs this information, but does not need to take any action. This should be used sparingly, as it interrupts the viewing flow intentionally.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--info">
+
+
+
+
+    <p>Due to the large number of transactions, records begin in 2011.</p>
+
+</div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;message [modifier class]&quot;&gt;
+
+
+
+
+
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-messages-big" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-messages-big">
+          <span class="kss-title__ref">
+              3.18.1
+            <span class="kss-title__permalink-hash">
+                #components.messages.big
+            </span>
+          </span>
+          Messages: Big
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--big</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Big message, for error pages
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--alert message--big">
+  <h2 id="section-1-header" tabindex="0">Oops!</h2>
+  <p>We couldn't find what you're looking for. Please double-check the URL and try again.</p>
+  <div class="message--alert__bottom">
+      <p>Still can't find what you're looking for?</p>
+      <ul class="list--buttons">
+        <li><a class="button button--cta" href="#">Return home</a></li>
+        <li><a class="button button--standard" href="#">File an issue</a></li>
+        <li><a class="button button--standard" href="#">Email our team</a></li>
+      </ul>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;message message--alert [modifier class]&quot;&gt;
+  &lt;h2 id=&quot;section-1-header&quot; tabindex=&quot;0&quot;&gt;Oops!&lt;/h2&gt;
+  &lt;p&gt;We couldn&#x27;t find what you&#x27;re looking for. Please double-check the URL and try again.&lt;/p&gt;
+  &lt;div class=&quot;message--alert__bottom&quot;&gt;
+      &lt;p&gt;Still can&#x27;t find what you&#x27;re looking for?&lt;/p&gt;
+      &lt;ul class=&quot;list--buttons&quot;&gt;
+        &lt;li&gt;&lt;a class=&quot;button button--cta&quot; href=&quot;#&quot;&gt;Return home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;button button--standard&quot; href=&quot;#&quot;&gt;File an issue&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;button button--standard&quot; href=&quot;#&quot;&gt;Email our team&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-messages-inverse" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-messages-inverse">
+          <span class="kss-title__ref">
+              3.18.2
+            <span class="kss-title__permalink-hash">
+                #components.messages.inverse
+            </span>
+          </span>
+          Messages: Inverse
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Use this style against a dark background</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--success</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Success message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem;">
+<div class="message message--inverse message--success">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--error</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Error message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem;">
+<div class="message message--inverse message--error">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--alert</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Alert message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem;">
+<div class="message message--inverse message--alert">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--info</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Info messages
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 2rem;">
+<div class="message message--inverse message--info">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot; style=&quot;padding: 2rem;&quot;&gt;
+&lt;div class=&quot;message message--inverse [modifier class]&quot;&gt;
+  &lt;p&gt;Sample message content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-messages-inverse-alt" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-messages-inverse-alt">
+          <span class="kss-title__ref">
+              3.18.3
+            <span class="kss-title__permalink-hash">
+                #components.messages.inverse-alt
+            </span>
+          </span>
+          Messages: Inverse (Alt)
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Use this style against a light neutral background (e.g. a filter panel)</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--success</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Success message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+<div class="message message--inverse-alt message--success">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--error</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Error message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+<div class="message message--inverse-alt message--error">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--alert</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Alert message
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+<div class="message message--inverse-alt message--alert">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--info</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Info messages
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--neutral" style="padding: 2rem;">
+<div class="message message--inverse-alt message--info">
+  <p>Sample message content.</p>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--neutral&quot; style=&quot;padding: 2rem;&quot;&gt;
+&lt;div class=&quot;message message--inverse-alt [modifier class]&quot;&gt;
+  &lt;p&gt;Sample message content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-messages-small" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-messages-small">
+          <span class="kss-title__ref">
+              3.18.4
+            <span class="kss-title__permalink-hash">
+                #components.messages.small
+            </span>
+          </span>
+          Messages: Small
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.message--small</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Big message, for error pages
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="message message--info message--small">
+  <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;message message--info [modifier class]&quot;&gt;
+  &lt;p&gt;This entity has no financial data for the 2011-2012 election cycle in OpenFEC.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-options" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-options">
+          <span class="kss-title__ref">
+              3.19
+            <span class="kss-title__permalink-hash">
+                #components.options
+            </span>
+          </span>
+          Option components
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Used for presenting a list of options, each of which is a row with main
+content and an aside. Used on the landing_page template.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <section class="main__content--right">
+  <div id="candidate-committees" class="option">
+    <div class="option__content">
+      <h3><a href="#">Candidates and candidate committees</a></h3>
+      <p>An individual running for a seat in the House or Senate becomes a candidate when he or she raises or spends more than $5,000 in contributions or expenditures.</p>
+      <a class="button button--standard button--go" href="#">Get started</a>
+    </div>
+    <div class="option__aside">
+      <h5 class="label">Campaign guide</h5>
+      <a class="u-no-border" href="http://www.fec.gov/pdf/candgui.pdf">
+        <img src="img/guide--candidates.jpg" alt="Federal Election Commission Campaign Guide: Congressional Candidates and Committees, June 2014">
+      </a>
+      <a class="t-sans" href="http://www.fec.gov/pdf/candgui.pdf">(PDF)</a>
+      <div class="icon-heading--calendar--secondary option__aside__alt-action">
+        <a href="#">Reporting deadlines</a>
+      </div>
+    </div>
+  </div>
+</section>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;section class=&quot;main__content--right&quot;&gt;
+  &lt;div id=&quot;candidate-committees&quot; class=&quot;option&quot;&gt;
+    &lt;div class=&quot;option__content&quot;&gt;
+      &lt;h3&gt;&lt;a href=&quot;#&quot;&gt;Candidates and candidate committees&lt;/a&gt;&lt;/h3&gt;
+      &lt;p&gt;An individual running for a seat in the House or Senate becomes a candidate when he or she raises or spends more than $5,000 in contributions or expenditures.&lt;/p&gt;
+      &lt;a class=&quot;button button--standard button--go&quot; href=&quot;#&quot;&gt;Get started&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;option__aside&quot;&gt;
+      &lt;h5 class=&quot;label&quot;&gt;Campaign guide&lt;/h5&gt;
+      &lt;a class=&quot;u-no-border&quot; href=&quot;http://www.fec.gov/pdf/candgui.pdf&quot;&gt;
+        &lt;img src=&quot;img/guide--candidates.jpg&quot; alt=&quot;Federal Election Commission Campaign Guide: Congressional Candidates and Committees, June 2014&quot;&gt;
+      &lt;/a&gt;
+      &lt;a class=&quot;t-sans&quot; href=&quot;http://www.fec.gov/pdf/candgui.pdf&quot;&gt;(PDF)&lt;/a&gt;
+      &lt;div class=&quot;icon-heading--calendar--secondary option__aside__alt-action&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;Reporting deadlines&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-overlay" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-overlay">
+          <span class="kss-title__ref">
+              3.20
+            <span class="kss-title__permalink-hash">
+                #components.overlay
+            </span>
+          </span>
+          Overlay
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>An absolutely positioned overlay over any relatively positioned area</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.is-loading</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Adds the loading-state gif
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="overlay__container">
+  <div class="overlay is-loading">
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;overlay__container&quot;&gt;
+  &lt;div class=&quot;overlay [modifier class]&quot;&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-page-header" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-page-header">
+          <span class="kss-title__ref">
+              3.21
+            <span class="kss-title__permalink-hash">
+                #components.page-header
+            </span>
+          </span>
+          Page Header
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>The band of color at the top of a page that contains the parent category.
+Consists of an h1 within a container within a slab. h1 may have an icon.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.page-header--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Primary background with primary-contrast accents and type
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="page-header page-header--primary">
+ <div class="container">
+   <span>Page heading</span>
+ </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.page-header--secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Secondary background with secondary-contrast accents and type
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="page-header page-header--secondary">
+ <div class="container">
+   <span>Page heading</span>
+ </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;page-header [modifier class]&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+   &lt;span&gt;Page heading&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-pagination" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-pagination">
+          <span class="kss-title__ref">
+              3.22
+            <span class="kss-title__permalink-hash">
+                #components.pagination
+            </span>
+          </span>
+          Pagination
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Based on the datatables.js markup and classes
+Markup simplified for demo&#39;s sake</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="dataTables_paginate paging_simple_numbers" id="results_paginate">
+  <a class="paginate_button previous">Previous</a>
+  <span>
+    <a class="paginate_button">1</a>
+    <a class="paginate_button">2</a>
+    <a class="paginate_button current">3</a>
+    <a class="paginate_button">4</a>
+    <a class="paginate_button">5</a>
+    <span class="ellipsis">…</span>
+    <a class="paginate_button">162</a>
+  </span>
+  <a class="paginate_button next">Next</a>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;dataTables_paginate paging_simple_numbers&quot; id=&quot;results_paginate&quot;&gt;
+  &lt;a class=&quot;paginate_button previous&quot;&gt;Previous&lt;/a&gt;
+  &lt;span&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;1&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;2&lt;/a&gt;
+    &lt;a class=&quot;paginate_button current&quot;&gt;3&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;4&lt;/a&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;5&lt;/a&gt;
+    &lt;span class=&quot;ellipsis&quot;&gt;…&lt;/span&gt;
+    &lt;a class=&quot;paginate_button&quot;&gt;162&lt;/a&gt;
+  &lt;/span&gt;
+  &lt;a class=&quot;paginate_button next&quot;&gt;Next&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-reaction-box" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-reaction-box">
+          <span class="kss-title__ref">
+              3.23
+            <span class="kss-title__permalink-hash">
+                #components.reaction-box
+            </span>
+          </span>
+          Reaction box
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Box for measuring reactions to charts or other components</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.reaction-box</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Base style
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="reaction-box js-reaction-box">
+  <fieldset>
+    <legend class="reaction-box__heading">What do you think of this chart?</legend>
+  <ul>
+    <li>
+      <input type="radio" value="informative" name="reaction" id="reaction-informative">
+      <label for="reaction-informative">Informative</label>
+    </li>
+    <li>
+      <input type="radio" value="confusing" name="reaction" id="reaction-confusing">
+      <label for="reaction-confusing">Confusing</label>
+    </li>
+    <li>
+      <input type="radio" value="not-interested" name="reaction" id="reaction-not-interested">
+      <label for="reaction-not-interested">Not interested</label>
+    </li>
+    <li>
+      <input type="radio" value="none" name="reaction" id="reaction-none">
+      <label for="reaction-none">None of these</label>
+    </li>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;reaction-box js-reaction-box&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend class=&quot;reaction-box__heading&quot;&gt;What do you think of this chart?&lt;/legend&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;informative&quot; name=&quot;reaction&quot; id=&quot;reaction-informative&quot;&gt;
+      &lt;label for=&quot;reaction-informative&quot;&gt;Informative&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;confusing&quot; name=&quot;reaction&quot; id=&quot;reaction-confusing&quot;&gt;
+      &lt;label for=&quot;reaction-confusing&quot;&gt;Confusing&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;not-interested&quot; name=&quot;reaction&quot; id=&quot;reaction-not-interested&quot;&gt;
+      &lt;label for=&quot;reaction-not-interested&quot;&gt;Not interested&lt;/label&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;input type=&quot;radio&quot; value=&quot;none&quot; name=&quot;reaction&quot; id=&quot;reaction-none&quot;&gt;
+      &lt;label for=&quot;reaction-none&quot;&gt;None of these&lt;/label&gt;
+    &lt;/li&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-bar" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-search-bar">
+          <span class="kss-title__ref">
+              3.24
+            <span class="kss-title__permalink-hash">
+                #components.search-bar
+            </span>
+          </span>
+          Search Bar
+        </a>
+      </h2>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.combo--search--large</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          6rem tall
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary">
+  <div class="container">
+    <form id="large-search" autocomplete="off" class="search__container js-search">
+      <div class="combo combo--search combo--search--large">
+        <select class="search__select select--alt-primary js-search-type" name="search_type">
+          <option value="candidates">Candidates</option>
+          <option value="committees">Committees</option>
+        </select>
+        <input type="text" class="combo__input js-search-input">
+        <button type="submit" class="button--standard combo__button button--search">
+         <span class="u-visually-hidden">Search</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;form id=&quot;large-search&quot; autocomplete=&quot;off&quot; class=&quot;search__container js-search&quot;&gt;
+      &lt;div class=&quot;combo combo--search [modifier class]&quot;&gt;
+        &lt;select class=&quot;search__select select--alt-primary js-search-type&quot; name=&quot;search_type&quot;&gt;
+          &lt;option value=&quot;candidates&quot;&gt;Candidates&lt;/option&gt;
+          &lt;option value=&quot;committees&quot;&gt;Committees&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;input type=&quot;text&quot; class=&quot;combo__input js-search-input&quot;&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;button--standard combo__button button--search&quot;&gt;
+         &lt;span class=&quot;u-visually-hidden&quot;&gt;Search&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-results" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-search-results">
+          <span class="kss-title__ref">
+              3.25
+            <span class="kss-title__permalink-hash">
+                #components.search-results
+            </span>
+          </span>
+          Search results
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Components that make up the search results page</p>
+
+      </div>
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-search-results-count" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-search-results-count">
+          <span class="kss-title__ref">
+              3.25.1
+            <span class="kss-title__permalink-hash">
+                #components.search-results.count
+            </span>
+          </span>
+          Search results: Count
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Message notifying how many results with link to datatable</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="results__count message message--alert">
+  Showing first 20 results.
+  <a href="#">View all »</a>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;results__count message message--alert&quot;&gt;
+  Showing first 20 results.
+  &lt;a href=&quot;#&quot;&gt;View all »&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-results-election" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-search-results-election">
+          <span class="kss-title__ref">
+              3.25.2
+            <span class="kss-title__permalink-hash">
+                #components.search-results.election
+            </span>
+          </span>
+          Search results: Election result
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Used for showing results in the election search</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="grid grid--2-wide">
+  <div class="grid__item">
+    <div class="result">
+      <h3>
+        <span></span>
+        <a href="#">US President</a>
+      </h3>
+      <div class="row">
+        <span class="result__term">Next general election:</span>
+        <span class="result__definition">November 4, 2016</span>
+      </div>
+      <div class="row">
+        <span class="result__term">Current officeholder:</span>
+        <a class="result__definition" href="#">OBAMA, BARACK</a>
+        </div>
+      <div class="row">
+        <span class="result__term">Current candidates:</span>
+        <a class="result__definition" href="#">View all &raquo;</a>
+      </div>
+    </div>
+    <div class="result">
+      <h3>
+        <span></span>
+        <a href="#">US President</a>
+      </h3>
+      <div class="row">
+        <span class="result__term">Next general election:</span>
+        <span class="result__definition">November 4, 2016</span>
+      </div>
+      <div class="row">
+        <span class="result__term">Current officeholder:</span>
+        <a class="result__definition" href="#">OBAMA, BARACK</a>
+        </div>
+      <div class="row">
+        <span class="result__term">Current candidates:</span>
+        <a class="result__definition" href="#">View all &raquo;</a>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;grid grid--2-wide&quot;&gt;
+  &lt;div class=&quot;grid__item&quot;&gt;
+    &lt;div class=&quot;result&quot;&gt;
+      &lt;h3&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;a href=&quot;#&quot;&gt;US President&lt;/a&gt;
+      &lt;/h3&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Next general election:&lt;/span&gt;
+        &lt;span class=&quot;result__definition&quot;&gt;November 4, 2016&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Current officeholder:&lt;/span&gt;
+        &lt;a class=&quot;result__definition&quot; href=&quot;#&quot;&gt;OBAMA, BARACK&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Current candidates:&lt;/span&gt;
+        &lt;a class=&quot;result__definition&quot; href=&quot;#&quot;&gt;View all &amp;raquo;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;result&quot;&gt;
+      &lt;h3&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;a href=&quot;#&quot;&gt;US President&lt;/a&gt;
+      &lt;/h3&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Next general election:&lt;/span&gt;
+        &lt;span class=&quot;result__definition&quot;&gt;November 4, 2016&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Current officeholder:&lt;/span&gt;
+        &lt;a class=&quot;result__definition&quot; href=&quot;#&quot;&gt;OBAMA, BARACK&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;div class=&quot;row&quot;&gt;
+        &lt;span class=&quot;result__term&quot;&gt;Current candidates:&lt;/span&gt;
+        &lt;a class=&quot;result__definition&quot; href=&quot;#&quot;&gt;View all &amp;raquo;&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-results-name-result" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-search-results-name-result">
+          <span class="kss-title__ref">
+              3.25.3
+            <span class="kss-title__permalink-hash">
+                #components.search-results.name-result
+            </span>
+          </span>
+          Search results: Name search result
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Individual search result item</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="main__content">
+<div class="result">
+  <div class="result__header">
+    <h3 class="result__title">
+      <a title="LASTNAME, FIRSTNAME" href="#">LASTNAME, FIRSTNAME</a>
+    </h3>
+    <span class="result__years t-data">
+        Election years: 2012
+    </span>
+  </div>
+  <div class="row">
+    <ul class="result__column">
+      <li>Office sought: Senate</li>
+      <li><span class="term" data-term="party" title="Click to define" tabindex="0">Party:</span> Some Party</li>
+    </ul>
+    <ul class="result__column">
+      <li>State: PA</li>
+      <li>District: 00</li>
+    </ul>
+    <div class="result__column">
+      <span class="t-block t-bold">Principal campaign committee:</span>
+        <a title="LASTNAME COMMITTEE" href="#">LASTNAME COMMITTEE</a>
+    </div>
+  </div>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;main__content&quot;&gt;
+&lt;div class=&quot;result&quot;&gt;
+  &lt;div class=&quot;result__header&quot;&gt;
+    &lt;h3 class=&quot;result__title&quot;&gt;
+      &lt;a title=&quot;LASTNAME, FIRSTNAME&quot; href=&quot;#&quot;&gt;LASTNAME, FIRSTNAME&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;span class=&quot;result__years t-data&quot;&gt;
+        Election years: 2012
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;ul class=&quot;result__column&quot;&gt;
+      &lt;li&gt;Office sought: Senate&lt;/li&gt;
+      &lt;li&gt;&lt;span class=&quot;term&quot; data-term=&quot;party&quot; title=&quot;Click to define&quot; tabindex=&quot;0&quot;&gt;Party:&lt;/span&gt; Some Party&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class=&quot;result__column&quot;&gt;
+      &lt;li&gt;State: PA&lt;/li&gt;
+      &lt;li&gt;District: 00&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;result__column&quot;&gt;
+      &lt;span class=&quot;t-block t-bold&quot;&gt;Principal campaign committee:&lt;/span&gt;
+        &lt;a title=&quot;LASTNAME COMMITTEE&quot; href=&quot;#&quot;&gt;LASTNAME COMMITTEE&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-results-title" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-search-results-title">
+          <span class="kss-title__ref">
+              3.25.4
+            <span class="kss-title__permalink-hash">
+                #components.search-results.title
+            </span>
+          </span>
+          Search results: Title
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Title at the top of a list of search results</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <h2 class="results__title">Results</h2>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;h2 class=&quot;results__title&quot;&gt;Results&lt;/h2&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-search-results-legal" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-search-results-legal">
+          <span class="kss-title__ref">
+              3.26
+            <span class="kss-title__permalink-hash">
+                #components.search-results-legal
+            </span>
+          </span>
+          Legal search
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Styles for legal search results.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="simple-table simple-table--display simple-table--responsive">
+  <div class="simple-table__header">
+    <div class="simple-table__header-cell">Section</div>
+    <div class="simple-table__header-cell">Description <span class="simple-table__header-subtext">| Hit</span></div>
+  </div>
+  <div class="simple-table__row-group">
+    <div class="simple-table__row legal-search-result">
+      <div class="simple-table__cell"><a title="" href="/regulations/5-6/2016-annual-5#5-6">§ 5.6</a></div>
+      <div class="simple-table__cell">
+        <div class="legal-search-result__name">Fees.</div>
+        <div class="t-serif legal-search-result__hit">
+          … per copy, including reproduction and binding).  Cost ($.0006 per
+          <em>Computer</em> Resource Unit Utilized—CRU … ) to process the
+          request plus the cost of the <em>computer</em> tape ($25) and
+          professional staff time (see … Research Time). The cost varies based
+          upon request.  No charge for 20 or fewer requests for
+          <em>computer</em> … ID numbers will cost $2.00 for each ID number
+          requested. Other <em>computer</em> index requests for more … than 20
+          ID numbers will cost $.0006 per CRU (<em>Computer</em> Resource Unit)
+          utilized. Name Search—A <em>computer</em> …
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;simple-table simple-table--display simple-table--responsive&quot;&gt;
+  &lt;div class=&quot;simple-table__header&quot;&gt;
+    &lt;div class=&quot;simple-table__header-cell&quot;&gt;Section&lt;/div&gt;
+    &lt;div class=&quot;simple-table__header-cell&quot;&gt;Description &lt;span class=&quot;simple-table__header-subtext&quot;&gt;| Hit&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;simple-table__row-group&quot;&gt;
+    &lt;div class=&quot;simple-table__row legal-search-result&quot;&gt;
+      &lt;div class=&quot;simple-table__cell&quot;&gt;&lt;a title=&quot;&quot; href=&quot;/regulations/5-6/2016-annual-5#5-6&quot;&gt;§ 5.6&lt;/a&gt;&lt;/div&gt;
+      &lt;div class=&quot;simple-table__cell&quot;&gt;
+        &lt;div class=&quot;legal-search-result__name&quot;&gt;Fees.&lt;/div&gt;
+        &lt;div class=&quot;t-serif legal-search-result__hit&quot;&gt;
+          … per copy, including reproduction and binding).  Cost ($.0006 per
+          &lt;em&gt;Computer&lt;/em&gt; Resource Unit Utilized—CRU … ) to process the
+          request plus the cost of the &lt;em&gt;computer&lt;/em&gt; tape ($25) and
+          professional staff time (see … Research Time). The cost varies based
+          upon request.  No charge for 20 or fewer requests for
+          &lt;em&gt;computer&lt;/em&gt; … ID numbers will cost $2.00 for each ID number
+          requested. Other &lt;em&gt;computer&lt;/em&gt; index requests for more … than 20
+          ID numbers will cost $.0006 per CRU (&lt;em&gt;Computer&lt;/em&gt; Resource Unit)
+          utilized. Name Search—A &lt;em&gt;computer&lt;/em&gt; …
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-side-nav" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-side-nav">
+          <span class="kss-title__ref">
+              3.27
+            <span class="kss-title__permalink-hash">
+                #components.side-nav
+            </span>
+          </span>
+          Side nav
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Sticky side nav that tracks the user&#39;s scroll progress through a page</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="sidebar-container sidebar-container--left">
+  <nav class="sidebar sidebar--neutral sidebar--left side-nav">
+    <ul class="sidebar__content">
+      <li class="side-nav__item"><a class="side-nav__link is-active" href="#">Link (active)</a></li>
+      <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+      <li class="side-nav__item"><a class="side-nav__link" href="#">Link</a></li>
+      <li class="is-disabled side-nav__item"><span class="side-nav__link" href="#">TBD</span></li>
+    </ul>
+  </nav>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sidebar-container sidebar-container--left&quot;&gt;
+  &lt;nav class=&quot;sidebar sidebar--neutral sidebar--left side-nav&quot;&gt;
+    &lt;ul class=&quot;sidebar__content&quot;&gt;
+      &lt;li class=&quot;side-nav__item&quot;&gt;&lt;a class=&quot;side-nav__link is-active&quot; href=&quot;#&quot;&gt;Link (active)&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;side-nav__item&quot;&gt;&lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;side-nav__item&quot;&gt;&lt;a class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;is-disabled side-nav__item&quot;&gt;&lt;span class=&quot;side-nav__link&quot; href=&quot;#&quot;&gt;TBD&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-sidebar" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-sidebar">
+          <span class="kss-title__ref">
+              3.28
+            <span class="kss-title__permalink-hash">
+                #components.sidebar
+            </span>
+          </span>
+          Sidebar
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Sidebars are asides with .bg--* classes applied to color the text and forms.
+Sidebars can contain .sidebar__sections which provide a bottom rule</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.sidebar--primary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Blue background sidebar
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+<div class="sidebar-container">
+<aside class="sidebar sidebar--primary">
+ <h4 class="sidebar__title">Sidebar title</h4>
+ <div class="sidebar__content">
+ <h5>Legal Resources</h5>
+ <ul>
+   <li><a href="#">102.2(a) »</a></li>
+   <li><a href="#">102.7(a), (b), (c) »</a></li>
+   <li><a href="#">102.9(c)  »</a></li>
+ </ul>
+ </div>
+</aside>
+</div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.sidebar--secondary</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Crimson background sidebar
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="container">
+<div class="sidebar-container">
+<aside class="sidebar sidebar--secondary">
+ <h4 class="sidebar__title">Sidebar title</h4>
+ <div class="sidebar__content">
+ <h5>Legal Resources</h5>
+ <ul>
+   <li><a href="#">102.2(a) »</a></li>
+   <li><a href="#">102.7(a), (b), (c) »</a></li>
+   <li><a href="#">102.9(c)  »</a></li>
+ </ul>
+ </div>
+</aside>
+</div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;sidebar-container&quot;&gt;
+&lt;aside class=&quot;sidebar [modifier class]&quot;&gt;
+ &lt;h4 class=&quot;sidebar__title&quot;&gt;Sidebar title&lt;/h4&gt;
+ &lt;div class=&quot;sidebar__content&quot;&gt;
+ &lt;h5&gt;Legal Resources&lt;/h5&gt;
+ &lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.2(a) »&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.7(a), (b), (c) »&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;102.9(c)  »&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-simple-icon-headings" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-simple-icon-headings">
+          <span class="kss-title__ref">
+              3.29
+            <span class="kss-title__permalink-hash">
+                #components.simple-icon-headings
+            </span>
+          </span>
+          Icon headings (simple)
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Used when you just want a single icon next to a single heading
+Styled for use against dark backgrounds</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--profiles</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Profiles icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--profiles">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--overviews</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Overviews icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--overviews">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--location</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Location icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--location">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--candidates</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Candidates icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--candidates">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--committees</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Committees icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--committees">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--receipts</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Receipts icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--receipts">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--disbursements</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Disbursements icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--disbursements">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--filings</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Filings icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--filings">Icon heading</h2>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.icon-heading--table</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Table icon
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="slab slab--primary" style="padding: 20px">
+  <h2 class="icon-heading--table">Icon heading</h2>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;slab slab--primary&quot; style=&quot;padding: 20px&quot;&gt;
+  &lt;h2 class=&quot;[modifier class]&quot;&gt;Icon heading&lt;/h2&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-simple-table" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-simple-table">
+          <span class="kss-title__ref">
+              3.30
+            <span class="kss-title__permalink-hash">
+                #components.simple-table
+            </span>
+          </span>
+          Simple table
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Simple table with rules</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.simple-table</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Simple table with rules.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <table class="simple-table simple-table">
+    <thead class="simple-table__header">
+        <tr>
+            <th class="simple-table__header-cell">Dates covered</th>
+            <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">January 1–March 31</td>
+            <td class="simple-table__cell">April 15</td>
+        </tr>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">April 1–June 30</td>
+            <td class="simple-table__cell">July 15</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.simple-table--responsive</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Display a table on larger screens, collapse to compact display on small screens.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <table class="simple-table simple-table--responsive">
+    <thead class="simple-table__header">
+        <tr>
+            <th class="simple-table__header-cell">Dates covered</th>
+            <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">January 1–March 31</td>
+            <td class="simple-table__cell">April 15</td>
+        </tr>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">April 1–June 30</td>
+            <td class="simple-table__cell">July 15</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.simple-table--display</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          More padding with vertical rules and alternating background color similar to <code>.datatables</code>.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <table class="simple-table simple-table--display">
+    <thead class="simple-table__header">
+        <tr>
+            <th class="simple-table__header-cell">Dates covered</th>
+            <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">January 1–March 31</td>
+            <td class="simple-table__cell">April 15</td>
+        </tr>
+        <tr class="simple-table__row">
+            <td class="simple-table__cell">April 1–June 30</td>
+            <td class="simple-table__cell">July 15</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;table class=&quot;simple-table [modifier class]&quot;&gt;
+    &lt;thead class=&quot;simple-table__header&quot;&gt;
+        &lt;tr&gt;
+            &lt;th class=&quot;simple-table__header-cell&quot;&gt;Dates covered&lt;/th&gt;
+            &lt;th class=&quot;simple-table__header-cell&quot;&gt;Due &lt;span class=&quot;simple-table__header-subtext&quot;&gt;| Notes&lt;/span&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr class=&quot;simple-table__row&quot;&gt;
+            &lt;td class=&quot;simple-table__cell&quot;&gt;January 1–March 31&lt;/td&gt;
+            &lt;td class=&quot;simple-table__cell&quot;&gt;April 15&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr class=&quot;simple-table__row&quot;&gt;
+            &lt;td class=&quot;simple-table__cell&quot;&gt;April 1–June 30&lt;/td&gt;
+            &lt;td class=&quot;simple-table__cell&quot;&gt;July 15&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-sticky-bar" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-sticky-bar">
+          <span class="kss-title__ref">
+              3.31
+            <span class="kss-title__permalink-hash">
+                #components.sticky-bar
+            </span>
+          </span>
+          Sticky bar
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Styles for the sticky-bar JavaScript component
+Use this class along with .js-sticky-bar to have a full-width bar stick to the top of the screen when you scroll past it.</p>
+<p>.sticky-bar</p>
+
+      </div>
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-toggles" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-toggles">
+          <span class="kss-title__ref">
+              3.32
+            <span class="kss-title__permalink-hash">
+                #components.toggles
+            </span>
+          </span>
+          Toggles
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>We use radio buttons for toggles, wrapped in a fieldset with a legend to label them.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+            <div class="slab
+    
+    " style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-0">
+        <input id="toggle-state-0" type="radio" name="receipt-aggregate--0" value="by-state" checked>
+        <span class="button--alt">State</span>
+      </label>
+      <label for="toggle-contribution-size-0">
+        <input id="toggle-contribution-size-0" type="radio" name="receipt-aggregate--0" value="by-contribution-size">
+        <span class="button--alt">Contribution size</span>
+      </label>
+      <label for="toggle-employer-0">
+        <input id="toggle-employer-0" type="radio" name="receipt-aggregate--0" value="by-employer">
+        <span class="button--alt">Employer</span>
+      </label>
+      <label for="toggle-occupation-0">
+        <input id="toggle-occupation-0" type="radio" name="receipt-aggregate--0" value="by-occupation">
+        <span class="button--alt">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+  <div class="slab
+    slab--primary
+    " style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-1">
+        <input id="toggle-state-1" type="radio" name="receipt-aggregate--1" value="by-state" checked>
+        <span class="button--alt-primary">State</span>
+      </label>
+      <label for="toggle-contribution-size-1">
+        <input id="toggle-contribution-size-1" type="radio" name="receipt-aggregate--1" value="by-contribution-size">
+        <span class="button--alt-primary">Contribution size</span>
+      </label>
+      <label for="toggle-employer-1">
+        <input id="toggle-employer-1" type="radio" name="receipt-aggregate--1" value="by-employer">
+        <span class="button--alt-primary">Employer</span>
+      </label>
+      <label for="toggle-occupation-1">
+        <input id="toggle-occupation-1" type="radio" name="receipt-aggregate--1" value="by-occupation">
+        <span class="button--alt-primary">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+  <div class="slab
+    
+    slab--secondary" style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-2">
+        <input id="toggle-state-2" type="radio" name="receipt-aggregate--2" value="by-state" checked>
+        <span class="button--alt-secondary">State</span>
+      </label>
+      <label for="toggle-contribution-size-2">
+        <input id="toggle-contribution-size-2" type="radio" name="receipt-aggregate--2" value="by-contribution-size">
+        <span class="button--alt-secondary">Contribution size</span>
+      </label>
+      <label for="toggle-employer-2">
+        <input id="toggle-employer-2" type="radio" name="receipt-aggregate--2" value="by-employer">
+        <span class="button--alt-secondary">Employer</span>
+      </label>
+      <label for="toggle-occupation-2">
+        <input id="toggle-occupation-2" type="radio" name="receipt-aggregate--2" value="by-occupation">
+        <span class="button--alt-secondary">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">  <div class="slab
+    
+    " style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-0">
+        <input id="toggle-state-0" type="radio" name="receipt-aggregate--0" value="by-state" checked>
+        <span class="button--alt">State</span>
+      </label>
+      <label for="toggle-contribution-size-0">
+        <input id="toggle-contribution-size-0" type="radio" name="receipt-aggregate--0" value="by-contribution-size">
+        <span class="button--alt">Contribution size</span>
+      </label>
+      <label for="toggle-employer-0">
+        <input id="toggle-employer-0" type="radio" name="receipt-aggregate--0" value="by-employer">
+        <span class="button--alt">Employer</span>
+      </label>
+      <label for="toggle-occupation-0">
+        <input id="toggle-occupation-0" type="radio" name="receipt-aggregate--0" value="by-occupation">
+        <span class="button--alt">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+  <div class="slab
+    slab--primary
+    " style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-1">
+        <input id="toggle-state-1" type="radio" name="receipt-aggregate--1" value="by-state" checked>
+        <span class="button--alt-primary">State</span>
+      </label>
+      <label for="toggle-contribution-size-1">
+        <input id="toggle-contribution-size-1" type="radio" name="receipt-aggregate--1" value="by-contribution-size">
+        <span class="button--alt-primary">Contribution size</span>
+      </label>
+      <label for="toggle-employer-1">
+        <input id="toggle-employer-1" type="radio" name="receipt-aggregate--1" value="by-employer">
+        <span class="button--alt-primary">Employer</span>
+      </label>
+      <label for="toggle-occupation-1">
+        <input id="toggle-occupation-1" type="radio" name="receipt-aggregate--1" value="by-occupation">
+        <span class="button--alt-primary">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+  <div class="slab
+    
+    slab--secondary" style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-2">
+        <input id="toggle-state-2" type="radio" name="receipt-aggregate--2" value="by-state" checked>
+        <span class="button--alt-secondary">State</span>
+      </label>
+      <label for="toggle-contribution-size-2">
+        <input id="toggle-contribution-size-2" type="radio" name="receipt-aggregate--2" value="by-contribution-size">
+        <span class="button--alt-secondary">Contribution size</span>
+      </label>
+      <label for="toggle-employer-2">
+        <input id="toggle-employer-2" type="radio" name="receipt-aggregate--2" value="by-employer">
+        <span class="button--alt-secondary">Employer</span>
+      </label>
+      <label for="toggle-occupation-2">
+        <input id="toggle-occupation-2" type="radio" name="receipt-aggregate--2" value="by-occupation">
+        <span class="button--alt-secondary">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-tooltips" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-tooltips">
+          <span class="kss-title__ref">
+              3.33
+            <span class="kss-title__permalink-hash">
+                #components.tooltips
+            </span>
+          </span>
+          Tooltips
+        </a>
+      </h2>
+
+
+    </div>
+
+
+      </section>
+      <section id="kssref-components-tooltips" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-components-tooltips">
+          <span class="kss-title__ref">
+              3.33
+            <span class="kss-title__permalink-hash">
+                #components.tooltips
+            </span>
+          </span>
+          Tooltips under an element
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>By default, this class centers a tooltip below the element it&#39;s referencing and centers the point.</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.tooltip--left</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Aligns the tooltip along the left side of an element; useful when the element is near the left side of the page.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div style="position:relative; display: inline-block; margin-bottom: 50px;">
+  <button class="button button--cta button--export">Export</button>
+  <div class="tooltip tooltip--left tooltip--under">
+    <p class="tooltip__content">Explanatory content about this element</p>
+  </div>
+</div>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.tooltip--right</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          Aligns the tooltip along the right side of the element; useful when the element is near the right side of the page.
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div style="position:relative; display: inline-block; margin-bottom: 50px;">
+  <button class="button button--cta button--export">Export</button>
+  <div class="tooltip tooltip--right tooltip--under">
+    <p class="tooltip__content">Explanatory content about this element</p>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div style=&quot;position:relative; display: inline-block; margin-bottom: 50px;&quot;&gt;
+  &lt;button class=&quot;button button--cta button--export&quot;&gt;Export&lt;/button&gt;
+  &lt;div class=&quot;tooltip [modifier class] tooltip--under&quot;&gt;
+    &lt;p class=&quot;tooltip__content&quot;&gt;Explanatory content about this element&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-tooltips-general" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-tooltips-general">
+          <span class="kss-title__ref">
+              3.33.1
+            <span class="kss-title__permalink-hash">
+                #components.tooltips.general
+            </span>
+          </span>
+          Tooltips: General
+        </a>
+      </h3>
+
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Examples
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__name kss-style">
+          <pre>.tooltip--above</pre>
+        </div>
+        <div class="kss-modifier__description kss-style">
+          When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <div class="sg-absolute-container">
+  <div class="tooltip tooltip--above">
+   <div class="tooltip__title">Michigan</div>
+   <div class="tooltip__value">$100,000</div>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;div class=&quot;sg-absolute-container&quot;&gt;
+  &lt;div class=&quot;tooltip [modifier class]&quot;&gt;
+   &lt;div class=&quot;tooltip__title&quot;&gt;Michigan&lt;/div&gt;
+   &lt;div class=&quot;tooltip__value&quot;&gt;$100,000&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+      <section id="kssref-components-tooltips-learn-more" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-components-tooltips-learn-more">
+          <span class="kss-title__ref">
+              3.33.2
+            <span class="kss-title__permalink-hash">
+                #components.tooltips.learn-more
+            </span>
+          </span>
+          Tooltips: Learn more
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>For tooltips on regular DOM elements (rather than on maps) that contain additional info</p>
+
+      </div>
+
+    </div>
+
+      <div class="kss-modifier__wrapper">
+        <div class="kss-modifier__heading kss-style">
+          Example
+          <button class="js-toggle-markup markup-toggle">Show markup</button>
+        </div>
+        <div class="kss-modifier__example clearfix">
+          <label class="label tooltip__trigger-text">Select something</label>
+<div class="tooltip__container">
+  <button class="tooltip__trigger"><span class="u-visually-hidden">Learn more</span></button>
+  <div class="tooltip tooltip--under">
+    <p class="tooltip__content">Learn more about this thing!</p>
+  </div>
+  <select><option>Select one</option></select>
+</div>
+        </div>
+      </div>
+
+      <div class="kss-markup kss-style">
+        <pre class="prettyprint linenums lang-html"><code data-language="html">&lt;label class=&quot;label tooltip__trigger-text&quot;&gt;Select something&lt;/label&gt;
+&lt;div class=&quot;tooltip__container&quot;&gt;
+  &lt;button class=&quot;tooltip__trigger&quot;&gt;&lt;span class=&quot;u-visually-hidden&quot;&gt;Learn more&lt;/span&gt;&lt;/button&gt;
+  &lt;div class=&quot;tooltip tooltip--under&quot;&gt;
+    &lt;p class=&quot;tooltip__content&quot;&gt;Learn more about this thing!&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;select&gt;&lt;option&gt;Select one&lt;/option&gt;&lt;/select&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script src="public/main.js"></script>
+<script>
+  prettyPrint();
+</script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>

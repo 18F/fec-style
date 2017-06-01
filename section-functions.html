@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]>            <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IEMobile 7]>          <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (IE 7)&(!IEMobile)]>  <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>                <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Style guide</title>
+
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <script>
+    API_LOCATION = "https://api.open.fec.gov";
+    API_VERSION = "v1";
+    API_KEY = "DEMO_KEY";
+  </script>
+</head>
+<body id="kss-node">
+
+<div class="kss-sidebar kss-style">
+  <header class="kss-header">
+    <span class="draft-note">Draft</span>
+    <h1 class="kss-doc-title"><em>beta</em>.FEC.gov style guide</h1>
+  </header>
+  <nav class="kss-nav">
+    <ul class="kss-nav__menu">
+      <li class="kss-nav__menu-item">
+        <a href="./index.html">
+          <span class="kss-nav__ref">0</span
+          ><span class="kss-nav__name">Overview</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-elements.html">
+          <span class="kss-nav__ref">1</span
+          ><span class="kss-nav__name">Elements</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-layout.html">
+          <span class="kss-nav__ref">2</span
+          ><span class="kss-nav__name">Layout</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-components.html">
+          <span class="kss-nav__ref">3</span
+          ><span class="kss-nav__name">Components</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-modules.html">
+          <span class="kss-nav__ref">4</span
+          ><span class="kss-nav__name">Modules</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-colors.html">
+          <span class="kss-nav__ref">5</span
+          ><span class="kss-nav__name">Color swatches</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-icons.html">
+          <span class="kss-nav__ref">6</span
+          ><span class="kss-nav__name">Icons</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-type-styles.html">
+          <span class="kss-nav__ref">7</span
+          ><span class="kss-nav__name">Type Styles</span>
+        </a>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-functions.html">
+          <span class="kss-nav__ref">8</span
+          ><span class="kss-nav__name">Utility Functions</span>
+        </a>
+        <ul class="kss-nav__menu-child">
+            <li class="kss-nav__menu-item">
+              <a href="section-functions.html#kssref-functions-convert-units">
+                <span class="kss-nav__ref">8.1</span
+                ><span class="kss-nav__name">Unit conversion</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-functions.html#kssref-functions-parse-int">
+                <span class="kss-nav__ref">8.2</span
+                ><span class="kss-nav__name">u-parse-int($n)</span>
+              </a>
+            </li>
+            <li class="kss-nav__menu-item">
+              <a href="section-functions.html#kssref-functions-scale-to-px">
+                <span class="kss-nav__ref">8.3</span
+                ><span class="kss-nav__name">u-scale-to-px($n)</span>
+              </a>
+            </li>
+        </ul>
+      </li>
+      <li class="kss-nav__menu-item">
+        <a href="section-mixins.html">
+          <span class="kss-nav__ref">9</span
+          ><span class="kss-nav__name">Utility Mixins</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<article role="main" class="kss-main">
+
+      <div     id="kssref-functions" class="kss-section kss-section--depth-1">
+
+    <div class="kss-style">
+      <h1 class="kss-title kss-title--level-1">
+        <a class="kss-title__permalink" href="#kssref-functions">
+          <span class="kss-title__ref">
+              8
+            <span class="kss-title__permalink-hash">
+                #functions
+            </span>
+          </span>
+          Utility Functions
+        </a>
+      </h1>
+
+      <div class="kss-description">
+        <p>Various useful functions.</p>
+
+      </div>
+
+    </div>
+
+
+      </div>
+      <section id="kssref-functions-convert-units" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-functions-convert-units">
+          <span class="kss-title__ref">
+              8.1
+            <span class="kss-title__permalink-hash">
+                #functions.convert-units
+            </span>
+          </span>
+          Unit conversion
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>When using the FEC styleguide with other frameworks, it might be useful to
+scale and convert the FEC component sizes. Use these variables to adjust how
+the styleguide is built.</p>
+
+      </div>
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">$px-only</code>
+          <div class="kss-parameters__description">(bool) convert <code>rem</code> units to <code>px</code></div>
+        </li>
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">$base-size-px</code>
+          <div class="kss-parameters__description">(integer) sets the base size for a <code>rem</code> unit (only take effect when <code>$px-only</code> is true)</div>
+        </li>
+      </ul>
+    </div>
+
+
+      </section>
+      <section id="kssref-functions-convert-units-function" class="kss-section kss-section--depth-3">
+
+    <div class="kss-style">
+      <h3 class="kss-title kss-title--level-3">
+        <a class="kss-title__permalink" href="#kssref-functions-convert-units-function">
+          <span class="kss-title__ref">
+              8.1.1
+            <span class="kss-title__permalink-hash">
+                #functions.convert-units.function
+            </span>
+          </span>
+          u($values)
+        </a>
+      </h3>
+
+      <div class="kss-description">
+        <p>Convert and/or scale <code>rem</code> units. This should be used on all
+properties related to component size. This allows FEC styleguide
+to scale component sizes properly.</p>
+<p>Inspired by <a href="https://github.com/saxinte/rem-to-px-revisited">https://github.com/saxinte/rem-to-px-revisited</a></p>
+
+      </div>
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">$values</code>
+          <div class="kss-parameters__description">single unit or list of units e.g. <code>1rem 1.2rem</code></div>
+        </li>
+      </ul>
+    </div>
+
+
+      </section>
+      <section id="kssref-functions-parse-int" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-functions-parse-int">
+          <span class="kss-title__ref">
+              8.2
+            <span class="kss-title__permalink-hash">
+                #functions.parse-int
+            </span>
+          </span>
+          u-parse-int($n)
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Parses the integer part from a value with unit.</p>
+
+      </div>
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">$n</code>
+          <div class="kss-parameters__description">the value to parse e.g. 2em</div>
+        </li>
+      </ul>
+    </div>
+
+
+      </section>
+      <section id="kssref-functions-scale-to-px" class="kss-section kss-section--depth-2">
+
+    <div class="kss-style">
+      <h2 class="kss-title kss-title--level-2">
+        <a class="kss-title__permalink" href="#kssref-functions-scale-to-px">
+          <span class="kss-title__ref">
+              8.3
+            <span class="kss-title__permalink-hash">
+                #functions.scale-to-px
+            </span>
+          </span>
+          u-scale-to-px($n)
+        </a>
+      </h2>
+
+      <div class="kss-description">
+        <p>Scales the value according to <code>$base-size-px</code> and appends the <code>px</code> unit.</p>
+
+      </div>
+
+      <ul class="kss-parameters">
+        <li class="kss-parameters__item">
+          <code class="kss-parameters__name">$n</code>
+          <div class="kss-parameters__description">value to scale to <code>px</code></div>
+        </li>
+      </ul>
+    </div>
+
+
+      </section>
+</article>
+
+<!-- SCRIPTS -->
+<script src="public/kss.js"></script>
+<script src="public/prettify.js"></script>
+<script src="public/main.js"></script>
+<script>
+  prettyPrint();
+</script>
+
+
+
+<!-- Automatically generated using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
+</body>
+</html>
