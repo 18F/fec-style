@@ -41,7 +41,6 @@
     "gulp-iconfont": "^6.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-svgmin": "^1.2.2",
-    "handlebars": "^4.0.5",
     "karma": "^0.13.14",
     "karma-browserify": "^4.4.0",
     "karma-chai-sinon": "^0.1.5",
