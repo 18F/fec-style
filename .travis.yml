@@ -13,7 +13,6 @@ before_script:
   - travis_retry npm install codecov.io
 
 script:
-  - npm run build-sass
   - npm run test-single
 
 after_success:
