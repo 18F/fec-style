@@ -1,12 +1,9 @@
 // Navigation
 //
 // Primary site navigation
+//           -
 
-// Main layout elements
-// .site-nav                        - The outer nav element
-// .site-nav__container             - div that contains the ul and all panels
-// .site-nav__panel                 - Styles for each panel on mobile
-
+// The outer nav element
 .site-nav {
   @include clearfix();
 
@@ -18,6 +15,7 @@
   }
 }
 
+// div that contains the ul and all panels
 .site-nav__container {
   $top: u(6.3rem);
   @include transform(translateX(-100%));
@@ -36,6 +34,7 @@
   }
 }
 
+// Styles for each panel on mobile
 .site-nav__panel {
   @include transition(transform, .2s, ease-out);
   background-color: $primary;
@@ -62,14 +61,9 @@
   @include transform(translateX(200%));
 }
 
-// Granular elements
-// .site-nav__button        - Hamburger button that triggers menu on mobile
-// .site-nav__item          - li element
-// .site-nav__link          - link or button inside each li
-// .site-nav__title         - Panel titles on mobile
-//
 // Note: Buttons that trigger panels are styled with .button--nav-panel
 
+// Hamburger button that triggers menu on mobile
 .site-nav__button {
   @include u-icon-bg($menu, $primary);
   background-color: $gray-lightest;
@@ -94,6 +88,7 @@
   }
 }
 
+// li element
 .site-nav__item {
   @include clearfix();
   border-bottom: 1px solid $inverse;
@@ -103,6 +98,7 @@
   }
 }
 
+// link or button inside each li
 .site-nav__link {
   @include transition(background-color, .1s);
   background-position: right u(1rem) top 50%;
@@ -126,6 +122,7 @@
   background-position: right u(1rem) top 50%;
 }
 
+// Panel titles on mobile
 .site-nav__title {
   border-bottom: 1px solid $inverse;
   padding: u(1rem 1rem);
@@ -140,9 +137,7 @@
   }
 }
 
-// BREAKPOINT: MEDIUM
 // Mostly stays the same except the menu button now has the word menu in it
-
 @include media($med) {
   .site-nav__container {
     $top: u(11.6rem);
@@ -162,9 +157,7 @@
   }
 }
 
-// BREAKPOINT: LARGE
 // Switches to traditional dropdown menu
-
 @include media($lg) {
   .site-nav__container {
     @include clearfix();

@@ -68,8 +68,6 @@
   }
 }
 
-// BREAKPOINT: MEDIUM
-
 @include media($med) {
   .results-info {
     padding: u(1rem 1rem);
@@ -110,7 +108,6 @@
   }
 }
 
-// BREAKPOINT: LARGE
 @include media($lg) {
   .results-info {
     padding: u(1rem 0);

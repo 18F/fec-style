@@ -19,6 +19,8 @@
   position: relative;
 
 }
+
+// modal
 .panel__overlay {
   @include transition(opacity .2s);
   background-color: $inverse;

@@ -1,8 +1,8 @@
 // Data Container module
 //
-// The body area that goes with the filter panels
-// Contains a widget area for tags and export controls
-// And a body area for the datatable or calendar
+// Container for the content results for Datatable pages
+// Datatable name, export buttons, result information and tags, datatable results
+//
 
 .data-container {
   @include clearfix();
@@ -81,7 +81,6 @@
 
 // BREAKPOINT: LARGE
 // Data-container shrinks and floats
-
 @include media($lg) {
   .data-container__wrapper {
     display: table;

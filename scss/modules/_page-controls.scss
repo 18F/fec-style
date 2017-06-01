@@ -5,8 +5,7 @@
 // .page-controls--primary    - On blue background
 // .page-controls--secondary  - On crimson background
 //
-// Markup:
-// <div class="page-controls {{modifier_class}}">
+// <div class="page-controls page-controls--primary">
 //   <div class="page-controls__top">
 //     <div class="container">
 //       <span class="page-controls__title">Page Title</span>
@@ -130,10 +129,8 @@
   @include u-bg--neutral();
 }
 
-// BREAKPOINT: MEDIUM
-// - Display tabs in a row
 @include media($med) {
-
+  // Display tabs in a row
   .page-tabs__item {
     a {
       padding: u(1rem);
@@ -141,9 +138,8 @@
   }
 }
 
-// BREAKPOINT: LARGE
-// - More padding
 @include media($lg) {
+  // More padding
   .page-tabs {
     overflow-x: visible;
   }
