@@ -80,7 +80,7 @@ var committeeEngine = createEngine({
 var candidateDataset = {
   name: 'candidate',
   display: 'name',
-  limit: 3,
+  limit: 5,
   source: candidateEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
@@ -98,7 +98,7 @@ var candidateDataset = {
 var committeeDataset = {
   name: 'committee',
   display: 'name',
-  limit: 3,
+  limit: 5,
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
