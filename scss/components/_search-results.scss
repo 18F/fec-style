@@ -1,41 +1,21 @@
 // Search results
 //
-// Components that make up the search results page
-//
-// Styleguide components.search-results
-
-// Search results: Title
-//
-// Title at the top of a list of search results
-//
-// Markup:
-// <h2 class="results__title">Results</h2>
-//
 
 .results__title {
   margin: u(2rem 0 1rem 0);
 }
 
-// Search results: Count
-//
-// Message notifying how many results with link to datatable
-//
-// Markup:
 // <div class="results__count message message--alert">
 //   Showing first 20 results.
 //   <a href="#">View all »</a>
 // </div>
 //
-
 .results__count {
   padding: u(2rem 0);
 }
 
 // Search results: Name search result
 //
-// Individual search result item
-//
-// Markup:
 // <div class="main__content">
 // <div class="result">
 //   <div class="result__header">
@@ -103,9 +83,6 @@
 
 // Search results: Election result
 //
-// Used for showing results in the election search
-//
-// Markup:
 // <div class="grid grid--2-wide">
 //   <div class="grid__item">
 //     <div class="result">

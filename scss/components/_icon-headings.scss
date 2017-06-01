@@ -2,9 +2,6 @@
 //
 // Lockups that combine an icon, title and some additional text
 //
-// .icon-heading        - Base class
-//
-// Markup:
 // <div class="icon-heading">
 //   <img class="icon-heading__image" src="../img/i-overviews--primary.svg" alt="Icon representing interactive overviews">
 //   <div class="icon-heading__content">
@@ -56,22 +53,20 @@
 // Used when you just want a single icon next to a single heading
 // Styled for use against dark backgrounds
 //
-// .icon-heading--profiles      - Profiles icon
-// .icon-heading--overviews     - Overviews icon
-// .icon-heading--location      - Location icon
-// .icon-heading--candidates    - Candidates icon
-// .icon-heading--committees    - Committees icon
-// .icon-heading--receipts      - Receipts icon
-// .icon-heading--disbursements - Disbursements icon
-// .icon-heading--filings       - Filings icon
-// .icon-heading--table         - Table icon
+// .icon-heading--profiles
+// .icon-heading--overviews
+// .icon-heading--location
+// .icon-heading--candidates
+// .icon-heading--committees
+// .icon-heading--receipts
+// .icon-heading--disbursements
+// .icon-heading--filings
+// .icon-heading--table
 //
-// Markup:
 // <div class="slab slab--primary" style="padding: 20px">
 //   <h2 class="{{ modifier_class }}">Icon heading</h2>
 // </div>
 //
-// Styleguide components.simple-icon-headings
 
 @mixin u-icon-heading() {
   padding-left: u(3rem);

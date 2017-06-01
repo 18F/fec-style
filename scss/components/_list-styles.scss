@@ -9,7 +9,6 @@
 // .list--flat          - Lay out items horizontally
 // .list--spacious      - Adds padding above and below list items
 //
-// Markup:
 // <ul class="{{modifier_class}}">
 //  <li>Unordered list item 1</li>
 //  <li>Unordered list item 2</li>
@@ -141,14 +140,12 @@
 //
 // For check marks as list bullets
 //
-// Markup:
 // <ul class="list--checks">
 //  <li>Unordered list item 1</li>
 //  <li>Unordered list item 2</li>
 //  <li>Unordered list item 3</li>
 // </ul>
 //
-// Styleguide components.list-styles.checks
 
 .list--checks {
   li {
@@ -171,14 +168,12 @@
 // List of buttons, such as a list of browse buttons
 // On mobile, we want these to be stacked, with margin, and with full-width buttons
 //
-// Markup:
 // <ul class="list--buttons">
 // <li><button class="button--standard">Button</button></li>
 // <li><button class="button--cta">Button</button></li>
 // <li><button class="button--alt">Button</button></li>
 // </ul>
 //
-// Styleguide components.list-styles.button-lists
 
 .list--buttons {
   @include clearfix();

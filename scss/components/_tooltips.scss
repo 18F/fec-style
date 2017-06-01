@@ -1,12 +1,5 @@
 // Tooltips
 //
-// Styleguide components.tooltips
-
-// Tooltips: General
-//
-// .tooltip--above        - When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
-//
-// Markup:
 // <div class="sg-absolute-container">
 //   <div class="tooltip {{ modifier_class }}">
 //    <div class="tooltip__title">Michigan</div>
@@ -33,8 +26,9 @@
   font-weight: bold;
 }
 
-// .tooltip__content      - Use to left align a paragraph of text in a tooltip
-.tooltip__content.tooltip__content { // Hack to override any font color styles on the parent element
+// Use to left align a paragraph of text in a tooltip
+.tooltip__content.tooltip__content {
+  // Hack to override any font color styles on the parent element
   color: $primary;
   text-align: left;
   text-transform: initial;
@@ -56,6 +50,7 @@
   }
 }
 
+// When the tooltip is above the content. Puts the arrow at the bottom center of the tooltip
 .tooltip--above {
   width: u(12rem);
 
@@ -85,7 +80,6 @@
 // .tooltip--left      - Aligns the tooltip along the left side of an element; useful when the element is near the left side of the page.
 // .tooltip--right     - Aligns the tooltip along the right side of the element; useful when the element is near the right side of the page.
 //
-// Markup:
 // <div style="position:relative; display: inline-block; margin-bottom: 50px;">
 //   <button class="button button--cta button--export">Export</button>
 //   <div class="tooltip {{ modifier_class }} tooltip--under">
@@ -93,7 +87,6 @@
 //   </div>
 // </div>
 //
-// Styleguide components.tooltips
 
 .tooltip--under {
   $top: u(1rem);
@@ -115,7 +108,6 @@
     width: u(2rem);
   }
 
-  // Tooltip
   &.tooltip--left {
     left: u(-2rem);
 
@@ -139,7 +131,6 @@
 //
 // For tooltips on regular DOM elements (rather than on maps) that contain additional info
 //
-// Markup:
 // <label class="label tooltip__trigger-text">Select something</label>
 // <div class="tooltip__container">
 //   <button class="tooltip__trigger"><span class="u-visually-hidden">Learn more</span></button>
@@ -149,7 +140,6 @@
 //   <select><option>Select one</option></select>
 // </div>
 //
-// Styleguide components.tooltips.learn-more
 
 .tooltip__container {
   width: u(2rem);

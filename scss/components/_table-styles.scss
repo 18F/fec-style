@@ -1,12 +1,5 @@
 // Simple table
 //
-// Simple table with rules
-//
-// .simple-table                - Simple table with rules.
-// .simple-table--responsive    - Display a table on larger screens, collapse to compact display on small screens.
-// .simple-table--display       - More padding with vertical rules and alternating background color similar to `.datatables`.
-//
-// Markup:
 // <table class="simple-table {{ modifier_class }}">
 //     <thead class="simple-table__header">
 //         <tr>
@@ -70,6 +63,7 @@ h3 + .simple-table {
   margin-top: u(-1rem);
 }
 
+// More padding with vertical rules and alternating background color similar to `.datatables`
 .simple-table--display {
   &.simple-table {
     color: $base;

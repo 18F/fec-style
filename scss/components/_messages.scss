@@ -2,12 +2,6 @@
 //
 // Banners and alerts
 //
-// .message--no-icon    - Results message. Communicates information about search results that don't return data.
-// .message--success    - Success message. The user has taken an action that successfully completes. Always help them find what to do next, including confirming their previous action.
-// .message--error      - Error message. The user has taken an action that the system cannot accept. Always offer guidance to correcting their action.
-// .message--alert      - Warning message. The user has reached a dead end through their navigation. Either they’ve entered a search which returns no results, or there is no data available in this entry. Offer users igational assistance to get them back on the main trail. Be careful not to treat this like an error. It’s the site that has returned no data, not an error on the user’s part.
-// .message--info       - Informational alert. The user needs this information, but does not need to take any action. This should be used sparingly, as it interrupts the viewing flow intentionally.
-//
 
 .message {
   @include clearfix();
@@ -76,7 +70,6 @@
 //   </div>
 // </div>
 //
-// Styleguide components.messages.big
 
 .message--big {
   @include media($lg) {
@@ -85,16 +78,12 @@
   }
 }
 
-// Messages: Small
+// Small message
 //
-// .message--small      - Big message, for error pages
-//
-// Markup:
-// <div class="message message--info {{ modifier_class }}">
+// <div class="message message--info message-small">
 //   <p>This entity has no financial data for the 2011-2012 election cycle in OpenFEC.</p>
 // </div>
 //
-// Styleguide components.messages.small
 
 .message--small {
   background-position: u(1rem 1rem);
@@ -117,21 +106,10 @@
 
 // Messages: Inverse
 //
-// Use this style against a dark background
-//
-// .message--success  - Success message
-// .message--error    - Error message
-// .message--alert   - Alert message
-// .message--info     - Info messages
-//
-// Markup:
-// <div class="slab slab--primary" style="padding: 2rem;">
-// <div class="message message--inverse {{ modifier_class }}">
+// <div class="message message--inverse message--success">
 //   <p>Sample message content.</p>
 // </div>
-// </div>
 //
-// Styleguide components.messages.inverse
 
 .message--inverse {
   color: $inverse;
@@ -157,24 +135,6 @@
     @include u-icon-bg($info-circle, $inverse);
   }
 }
-
-// Messages: Inverse (Alt)
-//
-// Use this style against a light neutral background (e.g. a filter panel)
-//
-// .message--success  - Success message
-// .message--error    - Error message
-// .message--alert   - Alert message
-// .message--info     - Info messages
-//
-// Markup:
-// <div class="slab slab--neutral" style="padding: 2rem;">
-// <div class="message message--inverse-alt {{ modifier_class }}">
-//   <p>Sample message content.</p>
-// </div>
-// </div>
-//
-// Styleguide components.messages.inverse-alt
 
 .message--inverse-alt {
   background-color: $inverse-translucent;

@@ -3,10 +3,6 @@
 // The band of color at the top of a page that contains the parent category.
 // Consists of an h1 within a container within a slab. h1 may have an icon.
 //
-// .page-header--primary     - Primary background with primary-contrast accents and type
-// .page-header--secondary   - Secondary background with secondary-contrast accents and type
-//
-// Markup:
 // <div class="page-header {{ modifier_class }}">
 //  <div class="container">
 //    <span>Page heading</span>
@@ -41,11 +37,9 @@
   line-height: 1;
 }
 
-// BREAKPOINT: MEDIUM
-// Add padding
-// Show the search bar in line with the page title
 
 @include media($med) {
+  // Add padding, show the search bar in line with the page title
   .page-header {
     @include clearfix();
     display: block;
@@ -69,10 +63,8 @@
   }
 }
 
-// BREAKPOINT: Large
-// Wider search bar
-
 @include media($lg) {
+  // wider search bar
   .page-header {
     .search__container {
       width: u(50rem);

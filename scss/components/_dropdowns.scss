@@ -1,7 +1,18 @@
 // Dropdowns
 //
-// Dropdowns used for dropdown filter checkboxes and export buttons
-// If you need to align the panel to the right edge, use .dropdown__panel--right
+// Most dropdowns are used for Datatable filters
+//
+// <div class="dropdown">
+//   <button type="button" class="dropdown__button button--alt" data-name="name">More</button>
+//   <div id="name-dropdown" class="dropdown__panel" aria-hidden="true">
+//     <ul class="dropdown__list">
+//       <li class="dropdown__item">
+//         <input id="name-checkbox-2016" name="name" type="checkbox" value="2016" />
+//         <label class="dropdown__value" for="name-checkbox-2016">2016</label>
+//       </li>
+//     </ul>
+//   </div>
+// </div>
 //
 
 .dropdown {

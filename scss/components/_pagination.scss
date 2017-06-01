@@ -1,9 +1,7 @@
 // Pagination
 //
 // Based on the datatables.js markup and classes
-// Markup simplified for demo's sake
 //
-// Markup:
 // <div class="dataTables_paginate paging_simple_numbers" id="results_paginate">
 //   <a class="paginate_button previous">Previous</a>
 //   <span>
@@ -45,5 +43,4 @@
   &.current {
     background-color: $gray;
   }
-
 }
