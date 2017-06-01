@@ -1,0 +1,62 @@
+<div class="container">
+  {{#if (eq modifier_class 'card')}}
+    <div class="grid grid--4-wide">
+      {{#renderChild 'card--primary' 'card--neutral' 'card--secondary' 'card--secondary-contrast'}}
+        <aside class="grid__item card {{className}}">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+      {{/renderChild}}
+    </div>
+  {{/if}}
+  {{#if (eq modifier_class 'card--horizontal')}}
+    <div class="grid grid--2-wide">
+      {{#renderChild 'card--primary' 'card--neutral' 'card--secondary' 'card--secondary-contrast'}}
+        <aside class="grid__item card card--horizontal {{className}}">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+      {{/renderChild}}
+    </div>
+  {{/if}}
+  {{#if (eq modifier_class 'card--full-bleed')}}
+    <div class="grid grid--2-wide">
+      {{#renderChild 'card--primary' 'card--neutral' 'card--secondary' 'card--secondary-contrast'}}
+        <aside class="grid__item card card--horizontal card--full-bleed {{className}}">
+          <div class="card__image__container">
+            <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+          </div>
+          <div class="card__content">
+            <a href="#">Take this action</a>
+          </div>
+        </aside>
+      {{/renderChild}}
+    </div>
+  {{/if}}
+  {{#if (eq modifier_class 'card--wide')}}
+    <div class="grid grid--2-wide">
+      <aside class="grid__item card card--horizontal card--wide">
+        <div class="card__image__container">
+          <img alt="" src="img/i-calendar--primary.svg" class="icon--complex card__image">
+        </div>
+        <div class="card__content">
+          <h2 class="card__title">Committee data</h2>
+          <ul class="card__links list--bulleted">
+            <li><a href="#">Most recent committees &raquo;</a></li>
+            <li><a href="#">All PACs active 2015-2016 &raquo;</a></li>
+            <li><a href="#">All independent expenditure committees active 2015-2016 &raquo;</a></li>
+          </ul>
+          <a class="button--standard button--browse" href="#">All committee data</a>
+        </div>
+      </aside>
+    </div>
+  {{/if}}
+</div>

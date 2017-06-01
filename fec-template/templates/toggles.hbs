@@ -1,0 +1,25 @@
+{{#renderChild 'button--alt' 'button--alt-primary' 'button--alt-secondary'}}
+  <div class="slab
+    {{#if (eq className 'button--alt-primary')}}slab--primary{{/if}}
+    {{#if (eq className 'button--alt-secondary')}}slab--secondary{{/if}}" style="padding: 2rem">
+    <fieldset class="toggles">
+      <legend class="label">Show by:</legend>
+      <label for="toggle-state-{{ index }}">
+        <input id="toggle-state-{{ index }}" type="radio" name="receipt-aggregate--{{ index }}" value="by-state" checked>
+        <span class="{{ className }}">State</span>
+      </label>
+      <label for="toggle-contribution-size-{{ index }}">
+        <input id="toggle-contribution-size-{{ index }}" type="radio" name="receipt-aggregate--{{ index }}" value="by-contribution-size">
+        <span class="{{ className }}">Contribution size</span>
+      </label>
+      <label for="toggle-employer-{{ index }}">
+        <input id="toggle-employer-{{ index }}" type="radio" name="receipt-aggregate--{{ index }}" value="by-employer">
+        <span class="{{ className }}">Employer</span>
+      </label>
+      <label for="toggle-occupation-{{ index }}">
+        <input id="toggle-occupation-{{ index }}" type="radio" name="receipt-aggregate--{{ index }}" value="by-occupation">
+        <span class="{{ className }}">Occupation</span>
+      </label>
+    </fieldset>
+  </div>
+{{/renderChild}}
