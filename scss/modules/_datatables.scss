@@ -66,6 +66,7 @@
   height: 100%;
   font-family: $sans-serif;
   position: relative;
+  table-layout: auto;
 
   th {
     line-height: u(1.4rem);
@@ -79,7 +80,7 @@
       background-position: calc(100% - 1rem) 50%;
       background-repeat: no-repeat;
       cursor: pointer;
-      padding-right: u(2rem);
+      padding-right: u(3rem);
     }
 
     &.sorting {
@@ -340,7 +341,7 @@
   }
 
   .column--med {
-    width: 15%;
+    min-width: 180px;
   }
 
   .column--large {
@@ -360,11 +361,5 @@
     .column--med {
       width: 25%;
     }
-  }
-}
-
-@include media($lg) {
-  .column--med {
-    width: 12%;
   }
 }
