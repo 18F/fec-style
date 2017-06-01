@@ -46,9 +46,7 @@ The FEC Pattern Library is accessible [on this Github repo](https://github.com/1
 
     $ npm install
 
-Eventually we'll have a sweet build process for this all. In the mean time, we're using node-sass and kss-node to compile the Sass and generate the styleguide.
-
-Watch the sass, build css and styleguide:
+Watch for changes in SCSS:
 
     $ npm run watch
 
@@ -56,17 +54,13 @@ Generate the CSS:
 
     $ npm run build-sass
 
-Generate the JS:
+Generate icons:
 
-    $ npm run build-js
+    $ npm build-icons
 
 Run unit tests:
 
     $ npm test
-
-Watching the Sass:
-
-    $ npm run watch-sass
 
 
 ### Versioning
