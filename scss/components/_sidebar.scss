@@ -1,26 +1,23 @@
 // Sidebar
 //
-// Sidebars are asides with .bg--* classes applied to color the text and forms.
-// Sidebars can contain .sidebar__sections which provide a bottom rule
-//
 // .sidebar--primary    - Blue background sidebar
 // .sidebar--secondary  - Crimson background sidebar
 //
 // Markup:
 // <div class="container">
-// <div class="sidebar-container">
-// <aside class="sidebar {{modifier_class}}">
-//  <h4 class="sidebar__title">Sidebar title</h4>
-//  <div class="sidebar__content">
-//  <h5>Legal Resources</h5>
-//  <ul>
-//    <li><a href="#">102.2(a) »</a></li>
-//    <li><a href="#">102.7(a), (b), (c) »</a></li>
-//    <li><a href="#">102.9(c)  »</a></li>
-//  </ul>
-//  </div>
-// </aside>
-// </div>
+//   <div class="sidebar-container">
+//     <aside class="sidebar {{modifier_class}}">
+//       <h4 class="sidebar__title">Sidebar title</h4>
+//       <div class="sidebar__content">
+//         <h5>Legal Resources</h5>
+//         <ul>
+//           <li><a href="#">102.2(a) »</a></li>
+//           <li><a href="#">102.7(a), (b), (c) »</a></li>
+//           <li><a href="#">102.9(c)  »</a></li>
+//         </ul>
+//       </div>
+//     </aside>
+//   </div>
 // </div>
 //
 
