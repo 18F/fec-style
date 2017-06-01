@@ -1,13 +1,13 @@
 // Callout
 //
 // Action-oriented components. 100% width of their container.
+// Used on about candidate pages.
 //
 // .callout             - Base class
 // .callout--primary    - Primary
 // .callout--secondary  - Secondary
 //
-// Markup:
-// <div class="callout {{modifier_class}}">
+// <div class="callout callout--primary">
 //   <div class="callout__content">
 //     <h4 class="callout__title">
 //       <a href="#">Committee name</a>
@@ -75,5 +75,4 @@
     padding-left: u(1rem);
     padding-top: 0;
   }
-
 }

@@ -1,6 +1,25 @@
 // Date Range Calendar Grid Date Picker
 //
-// Filter interaction for filter date fields
+// Datatables: Filter interaction for filter date fields
+//
+// <div class="date-range__grid js-date-grid">
+//   <div class="date-range__row">
+//     <div class="date-range__year">2016</div>
+//     <ul data-year="2016" class="date-range__months">
+//       <li data-month="01"><div>Jan</div></li>
+//       ...
+//       <li data-month="12"><div>Dec</div></li>
+//     </ul>
+//   </div>
+//   <div class="date-range__row">
+//     <div class="date-range__year">2017</div>
+//     <ul data-year="2017" class="date-range__months">
+//       <li data-month="01"><div>Jan</div></li>
+//       ...
+//       <li data-month="12"><div>Dec</div></li>
+//     </ul>
+//   </div>
+// </div>
 //
 
 .date-range__grid {
