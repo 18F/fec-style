@@ -66,6 +66,7 @@
   height: 100%;
   font-family: $sans-serif;
   position: relative;
+  table-layout: auto;
 
   th {
     line-height: u(1.4rem);
