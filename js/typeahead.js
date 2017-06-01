@@ -4,6 +4,7 @@ var $ = require('jquery');
 var URI = require('urijs');
 var _ = require('underscore');
 var Handlebars = require('handlebars');
+var helpers = require('./helpers');
 
 // Hack: Append jQuery to `window` for use by typeahead.js
 window.$ = window.jQuery = $;
@@ -79,7 +80,7 @@ var committeeEngine = createEngine({
 var candidateDataset = {
   name: 'candidate',
   display: 'name',
-  limit: 3,
+  limit: 5,
   source: candidateEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a candidate:</span>',
@@ -97,7 +98,7 @@ var candidateDataset = {
 var committeeDataset = {
   name: 'committee',
   display: 'name',
-  limit: 3,
+  limit: 5,
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
@@ -117,7 +118,7 @@ var individualDataset = {
   display: 'id',
   source: function(query, syncResults) {
     syncResults([{
-      id: query,
+      id: helpers.sanitizeValue(query),
       type: 'individual'
     }]);
   },
@@ -135,7 +136,7 @@ var siteDataset = {
   display: 'id',
   source: function(query, syncResults) {
     syncResults([{
-      id: query,
+      id: helpers.sanitizeValue(query),
       type: 'site'
     }]);
   },
