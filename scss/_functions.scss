@@ -2,9 +2,6 @@
 //
 // Various useful functions.
 //
-// Weight: 90
-//
-// Styleguide functions
 
 // Unit conversion
 //
@@ -15,7 +12,6 @@
 // $px-only - (bool) convert `rem` units to `px`
 // $base-size-px - (integer) sets the base size for a `rem` unit (only take effect when `$px-only` is true)
 //
-// Styleguide functions.convert-units
 $base-size-px: 10 !default;
 $px-only: false !default;
 
@@ -25,7 +21,6 @@ $px-only: false !default;
 //
 // $n - the value to parse e.g. 2em
 //
-// Styleguide functions.parse-int
 @function u-parse-int($n) {
   @return $n / ($n * 0 + 1);
 }
@@ -36,7 +31,6 @@ $px-only: false !default;
 //
 // $n - value to scale to `px`
 //
-// Styleguide functions.scale-to-px
 @function u-scale-to-px($n) {
   @return $n * $base-size-px + px;
 }
@@ -51,7 +45,6 @@ $px-only: false !default;
 //
 // $values - single unit or list of units e.g. `1rem 1.2rem`
 //
-// Styleguide functions.convert-units.function
 @function u($values) {
   $converted: ();
 

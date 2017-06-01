@@ -3,9 +3,6 @@
 // .accordion--neutral         - No background, dark buttons
 // .accordion--inverse         - Dark background, light buttons
 //
-// Markup: accordions.hbs
-//
-// Styleguide components.accordions
 
 .accordion__button {
   @include u-icon-bg($plus-circle, $primary);

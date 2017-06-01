@@ -2,9 +2,6 @@
 //
 // These are basic grid and color styles to be applied to components
 //
-// Weight: -80
-//
-// Styleguide layout
 
 @import 'slabs';
 @import 'grid';
@@ -23,7 +20,6 @@
 // .content__section--narrow  - Narrow container for text interspersed with other elements
 // .content__section--ruled   - Adds a border
 //
-// Styleguide layout.elements
 
 .container {
   @include outer-container();
