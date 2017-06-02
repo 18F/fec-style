@@ -54,10 +54,7 @@
 
 // Messages: Big
 //
-// .message--big      - Big message, for error pages
-//
-// Markup:
-// <div class="message message--alert {{ modifier_class }}">
+// <div class="message message--alert message--big">
 //   <h2 id="section-1-header" tabindex="0">Oops!</h2>
 //   <p>We couldn't find what you're looking for. Please double-check the URL and try again.</p>
 //   <div class="message--alert__bottom">

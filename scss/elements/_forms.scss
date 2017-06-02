@@ -104,12 +104,12 @@ input[type="file"] {
 //     <legend class="label">Select any</legend>
 //     <ul>
 //       <li>
-//         <input type="checkbox" id="checkbox-{{modifier_class}}-A" checked>
-//         <label for="checkbox-{{modifier_class}}-A">Option 1</label>
+//         <input type="checkbox" id="checkbox-A" checked>
+//         <label for="checkbox-A">Option 1</label>
 //       </li>
 //       <li>
-//         <input type="checkbox" id="checkbox-{{modifier_class}}-B">
-//         <label for="checkbox-{{modifier_class}}-B">Option 2</label>
+//         <input type="checkbox" id="checkbox-B">
+//         <label for="checkbox-B">Option 2</label>
 //       </li>
 //     </ul>
 //   </fieldset>
@@ -117,12 +117,12 @@ input[type="file"] {
 //     <legend class="label">Select one</legend>
 //     <ul>
 //       <li>
-//         <input type="radio" id="radio-{{modifier_class}}-A" name="radio" tab-index="0" checked>
-//         <label for="radio-{{modifier_class}}-A">Option 1</label>
+//         <input type="radio" id="radio-A" name="radio" tab-index="0" checked>
+//         <label for="radio-A">Option 1</label>
 //       </li>
 //       <li>
-//         <input type="radio" id="radio-{{modifier_class}}-B" name="radio" tab-index="0">
-//         <label for="radio-{{modifier_class}}-B" >Option 2</label>
+//         <input type="radio" id="radio-B" name="radio" tab-index="0">
+//         <label for="radio-B" >Option 2</label>
 //       </li>
 //     </ul>
 //   </fieldset>

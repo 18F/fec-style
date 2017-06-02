@@ -80,11 +80,9 @@
 // .tooltip--left      - Aligns the tooltip along the left side of an element; useful when the element is near the left side of the page.
 // .tooltip--right     - Aligns the tooltip along the right side of the element; useful when the element is near the right side of the page.
 //
-// <div style="position:relative; display: inline-block; margin-bottom: 50px;">
-//   <button class="button button--cta button--export">Export</button>
-//   <div class="tooltip {{ modifier_class }} tooltip--under">
-//     <p class="tooltip__content">Explanatory content about this element</p>
-//   </div>
+// <button class="button button--cta button--export">Export</button>
+// <div class="tooltip tooltip--under tooltip--under">
+//   <p class="tooltip__content">Explanatory content about this element</p>
 // </div>
 //
 

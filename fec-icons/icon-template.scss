@@ -6,10 +6,6 @@
 // <% _.each(icons, function(svg) { %>
 // .i-<%= svg.name %>   - <%= svg.name %><% }); %>
 //
-// Markup:
-// <i class="i {{modifier_class}}"></i>
-//
-// Styleguide icons
 
 .i {
   display: inline-block;
