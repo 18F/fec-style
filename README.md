@@ -39,7 +39,7 @@ We’re thrilled you want to get involved!
 
 Generate icons:
 
-    $ npm build-icons
+    $ npm run build-icons
 
 Run unit tests:
 
