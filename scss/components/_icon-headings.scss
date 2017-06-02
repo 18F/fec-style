@@ -53,19 +53,7 @@
 // Used when you just want a single icon next to a single heading
 // Styled for use against dark backgrounds
 //
-// .icon-heading--profiles
-// .icon-heading--overviews
-// .icon-heading--location
-// .icon-heading--candidates
-// .icon-heading--committees
-// .icon-heading--receipts
-// .icon-heading--disbursements
-// .icon-heading--filings
-// .icon-heading--table
-//
-// <div class="slab slab--primary" style="padding: 20px">
-//   <h2 class="{{ modifier_class }}">Icon heading</h2>
-// </div>
+// <h2 class="icon-heading--raising-circle">Icon heading</h2>
 //
 
 @mixin u-icon-heading() {
