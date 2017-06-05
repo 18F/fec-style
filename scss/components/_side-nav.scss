@@ -107,6 +107,14 @@
       line-height: u(2rem);
       margin: u(1rem 2rem 1rem 2.75rem);
     }
+
+    a {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: 1px dotted $primary;
+      }
+    }
   }
 
   @include media($med) {
