@@ -44,7 +44,8 @@
   padding: u(1rem);
   margin-bottom: u(2rem);
   border-radius: 2px;
-
+  page-break-inside: avoid;
+  
   .figure__label {
     font-weight: bold;
   }

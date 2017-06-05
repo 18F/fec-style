@@ -122,6 +122,13 @@
   }
 }
 
+@media print {
+  [role="tabpanel"] {
+    page-break-inside: avoid;
+  }
+
+}
+
 @include media($med) {
   .side-nav {
     display: block;
