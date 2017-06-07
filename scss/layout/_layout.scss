@@ -139,6 +139,23 @@
   padding-left: u(2.5rem);
 }
 
+// Utility margin classes
+.u-margin--bottom {
+  margin-bottom: u(1rem);
+}
+
+.u-margin--top {
+  margin-top: u(1rem);
+}
+
+.u-margin--left {
+  margin-left: u(1rem);
+}
+
+.u-margin--right {
+  margin-right: u(1rem);
+}
+
 // horizontal rule
 
 .hr--lighter {
