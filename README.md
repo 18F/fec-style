@@ -33,7 +33,7 @@ We’re thrilled you want to get involved!
 
 ## Set up
 
-You can view the current styleguide on https://pages.18f.gov/fec-style/. It is
+You can view the current styleguide on https://fec-style.18f.gov/. It is
 updated automatically on every successful push to the `master` branch.
 
 
