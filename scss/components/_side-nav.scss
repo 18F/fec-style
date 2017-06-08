@@ -64,7 +64,6 @@
 //
 
 .side-nav-alt {
-  display: table-cell;
   width: 100%;
 
   ul {
@@ -118,6 +117,7 @@
   }
 
   @include media($med) {
+    display: table-cell;
     width: 250px;
   }
 }
