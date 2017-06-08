@@ -57,6 +57,14 @@
     vertical-align: top;
   }
 
+  .simple-table {
+    margin-top: u(1rem);
+  }
+
+  .tag__category {
+    margin-top: 0;
+  }
+
   @include media($med) {
     padding: u(2rem 4rem);
   }
