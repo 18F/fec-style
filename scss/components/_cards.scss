@@ -288,6 +288,10 @@
       @include u-icon-bg($person-location, $primary-contrast);
     }
 
+    &.i-individual-contributions {
+      @include u-icon-bg($individual-contributions, $primary-contrast);
+    }
+
     &.i-folder-with-person {
       @include u-icon-bg($folder-with-person, $primary-contrast);
     }
