@@ -83,7 +83,6 @@ FilterSet.prototype.activateEfiling = function() {
   if (_.isEmpty(this.efilingFilters)) {
     var $filters = this.$body.find('.js-efiling-filters .js-filter');
     this.efilingFilters = this.activate($filters);
-
   }
 };
 
@@ -171,6 +170,11 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
     });
   }
 
+  // If there was a previous query, combine the two
+  if (this.previousQuery) {
+    query = _.extend({}, this.previousQuery, query);
+  }
+
   // Identify which set of filters to activate and store as this.filters
   this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
 
@@ -178,6 +182,7 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
     filter.fromQuery(query);
   });
 
+  this.previousQuery = query;
   this.firstLoad = false;
 };
 
