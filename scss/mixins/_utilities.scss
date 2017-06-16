@@ -69,6 +69,15 @@
   padding: u(1rem);
 }
 
+.u-flex {
+  display: flex;
+}
+
+// scss-lint:disable ImportantRule
+.u-default-cursor {
+  cursor: default !important;
+}
+
 // u-icon-bg()
 //
 // Most basic mixin for using a variable svg as a background image
