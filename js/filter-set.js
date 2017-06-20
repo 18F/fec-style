@@ -73,15 +73,15 @@ FilterSet.prototype.activate = function($selector) {
 };
 
 FilterSet.prototype.activateProcessed = function() {
-  var $filters = this.$body.find('.js-processed-filters .js-filter');
   if (_.isEmpty(this.processedFilters)) {
+    var $filters = this.$body.find('.js-processed-filters .js-filter');
     this.processedFilters = this.activate($filters);
   }
 };
 
 FilterSet.prototype.activateEfiling = function() {
-  var $filters = this.$body.find('.js-efiling-filters .js-filter');
   if (_.isEmpty(this.efilingFilters)) {
+    var $filters = this.$body.find('.js-efiling-filters .js-filter');
     this.efilingFilters = this.activate($filters);
   }
 };
@@ -170,20 +170,18 @@ FilterSet.prototype.activateSwitchedFilters = function(dataType) {
     });
   }
 
+  // If there was a previous query, combine the two
+  if (this.previousQuery) {
+    query = _.extend({}, this.previousQuery, query);
+  }
+
   // Identify which set of filters to activate and store as this.filters
   this.filters = dataType === 'efiling' ? this.efilingFilters : this.processedFilters;
 
-  // If there's a previous query, activate filters
-  // This way we don't activate the initial query when toggling data type for the first time
-  if (!this.firstLoad && this.previousQuery.data_type === dataType) {
-    var previousQuery = this.previousQuery || query;
+  _.each(this.filters, function(filter) {
+    filter.fromQuery(query);
+  });
 
-    _.each(this.filters, function(filter) {
-      filter.fromQuery(previousQuery);
-    });
-  }
-
-  // Store the query for future reference
   this.previousQuery = query;
   this.firstLoad = false;
 };
