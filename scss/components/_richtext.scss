@@ -29,6 +29,7 @@
 
   td {
     @extend .simple-table__cell;
+    padding-right: u(1rem) !important;
   }
 
   img {
