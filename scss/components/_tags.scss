@@ -92,6 +92,17 @@
   }
 }
 
+.tag__category--and {
+  .tag__item {
+    margin-right: u(4rem);
+
+    &::after {
+      content: 'and';
+      right: u(-3.25rem);
+    }
+  }
+}
+
 .tag__category__range--amount,
 .tag__category__range--date {
   .tag__item {

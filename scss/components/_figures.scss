@@ -43,6 +43,7 @@
   padding: u(1rem);
   margin-bottom: u(2rem);
   border-radius: 2px;
+  page-break-inside: avoid;
 
   .figure__label {
     font-weight: bold;
@@ -53,6 +54,18 @@
     font-size: u(1.6rem);
     padding: u(.5rem);
     vertical-align: top;
+  }
+
+  .simple-table {
+    margin-top: u(1rem);
+  }
+
+  .tag__category {
+    margin-top: 0;
+  }
+
+  @include media($med) {
+    padding: u(2rem 4rem);
   }
 }
 

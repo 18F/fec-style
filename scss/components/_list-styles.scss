@@ -28,6 +28,42 @@
       margin-bottom: u(1.5rem);
     }
   }
+
+  ul, ol {
+    margin-left: u(1.5rem);
+
+    li:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  ul li {
+    list-style-type: circle;
+  }
+
+  ul ul li {
+    list-style-type: square;
+  }
+}
+
+.list--numbered {
+  ul {
+    margin-bottom: 0;
+    margin-left: u(1.5rem);
+
+    li {
+      list-style-type: circle;
+    }
+  }
+
+  ol li {
+    list-style-type: lower-alpha;
+
+    ol li {
+      list-style-type: lower-roman;
+    }
+  }
 }
 
 .list--bulleted {

@@ -52,6 +52,8 @@
   }
 }
 
+
+
 .mega__list:last-of-type {
   li:last-of-type {
     .mega__page-link {
@@ -74,6 +76,19 @@
 
   &:first-of-type {
     margin-top: u(1rem);
+  }
+}
+
+.mega__card {
+  border: 1px solid $inverse;
+  margin-bottom: u(1.5rem);
+
+  .card__image {
+    margin-right: 0;
+  }
+
+  .card__content {
+    padding-top: u(.5rem);
   }
 }
 

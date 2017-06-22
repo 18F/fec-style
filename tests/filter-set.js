@@ -96,9 +96,10 @@ describe('FilterSet', function() {
           '</div>' +
         '</div>' +
         '<div class="js-efiling-filters">' +
-          '<div class="js-filter" data-filter="text">' +
-            '<input name="name">' +
-            '<button></button>' +
+          '<div class="js-filter" data-filter="checkbox">' +
+            '<input name="cycle" type="checkbox" value="2012" />' +
+            '<input name="cycle" type="checkbox" value="2014" />' +
+            '<input name="cycle" type="checkbox" value="2016" />' +
           '</div>' +
         '</div>' +
         '</form>'
@@ -113,7 +114,7 @@ describe('FilterSet', function() {
 
     it('activates and stores the efiling filters', function() {
       this.filterSet.activateEfiling();
-      expect(Object.keys(this.filterSet.efilingFilters)).to.deep.equal(['name']);
+      expect(Object.keys(this.filterSet.efilingFilters)).to.deep.equal(['cycle']);
     });
 
     it('does not activate filters if it has efiling filters', function() {
@@ -129,20 +130,12 @@ describe('FilterSet', function() {
         .attr('aria-hidden')).to.equal('false');
     });
 
-    it('stores the current query after switching', function() {
-      window.history.replaceState({}, null, '?name=Noah');
+    it('loads the toggled filters with relevant query params', function() {
+      window.history.replaceState({}, null, '?cycle=2012');
+      this.filterSet.activateEfiling();
       this.filterSet.activateSwitchedFilters('efiling');
       expect(this.filterSet.firstLoad).to.be.false;
-      expect(this.filterSet.previousQuery).to.deep.equal({name: 'Noah'});
-      window.history.replaceState({}, null, null);
-    });
-
-    it('loads from the previous query after switching', function() {
-      this.filterSet.activateAll();
-      this.filterSet.firstLoad = false;
-      this.filterSet.previousQuery = {cycle: ['2012'], data_type: 'processed'};
-      this.filterSet.switchFilters('processed');
-      expect(this.filterSet.$body.find('.js-processed-filters input[value="2012"]').is(':checked')).to.be.true;
+      expect(this.filterSet.$body.find('.js-efiling-filters input[value="2012"]').is(':checked')).to.be.true;
     });
   });
 });

@@ -98,7 +98,7 @@ var candidateDataset = {
 var committeeDataset = {
   name: 'committee',
   display: 'name',
-  limit: 5,
+  limit: 10,
   source: committeeEngine,
   templates: {
     header: '<span class="tt-suggestion__header">Select a committee:</span>',
