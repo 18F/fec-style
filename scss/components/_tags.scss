@@ -1,4 +1,26 @@
 // Tags
+//
+// Applied filter tags on Datatables
+//
+// <ul class="tags" aria-hidden="false">
+//   <li data-tag-category="has_raised_funds" class="tag__category">
+//     <div data-id="cycle-checkbox-has-raised-funds" data-removable="true" class="tag__item">
+//       Has raised more than $0
+//       <button class="button js-close tag__remove">
+//         <span class="u-visually-hidden">Remove</span>
+//       </button>
+//     </div>
+//   </li>
+//   <li data-tag-category="office" class="tag__category">
+//     <div data-id="cycle-checkbox-s" data-removable="true" class="tag__item">
+//       Senate
+//       <button class="button js-close tag__remove">
+//         <span class="u-visually-hidden">Remove</span>
+//       </button>
+//     </div>
+//   </li>
+// </ul>
+//
 
 .tags__title {
   font-family: $sans-serif;

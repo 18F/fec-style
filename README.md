@@ -33,26 +33,22 @@ We’re thrilled you want to get involved!
 
 ## Set up
 
-You can view the current styleguide on https://pages.18f.gov/fec-style/. It is
-updated automatically on every successful push to the `master` branch.
-
-
-### View the style guide
-
-The FEC Pattern Library is accessible [on this Github repo](https://github.com/18F/fec-pattern-library).
-
-
 ### Install dependencies
 
     $ npm install
 
 Generate icons:
 
-    $ npm build-icons
+    $ npm run build-icons
 
 Run unit tests:
 
     $ npm test
+
+
+### Style Guide
+
+The FEC Pattern Library is accessible [on this Github repo](https://github.com/18F/fec-pattern-library).
 
 
 ### Versioning

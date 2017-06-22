@@ -1,5 +1,7 @@
 // Entity headers
 //
+// Blue header for election pages
+//
 
 .entity__header {
   padding: u(3rem 0);
@@ -135,7 +137,6 @@
 }
 
 // Color rules
-
 .entity__header--neutral {
   @include u-bg--neutral();
 
@@ -155,7 +156,6 @@
   }
 }
 
-// BREAKPOINT: MEDIUM
 @include media($med) {
   .entity__type {
     display: inline-block;
@@ -169,7 +169,6 @@
   }
 }
 
-// BREAKPOINT: LARGE
 @include media($lg) {
   .entity__cycle {
     @include span-columns(8);

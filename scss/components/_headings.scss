@@ -61,7 +61,6 @@
 // Set line height to the height of the buttons or selects in the heading.
 // Use `.heading__left` and `.heading__right` to float elements at `$med` breakpoints
 //
-// Markup:
 // <header class="heading--section heading--with-action">
 //  <h2 class="heading__left">A heading with an action</h2>
 //  <div class="heading__right">
@@ -72,7 +71,6 @@
 //  </div>
 // </header>
 //
-// Styleguide components.headings-with-action.1
 
 .heading--with-action {
   h1,
@@ -97,7 +95,6 @@
 //
 // Add this class when a heading includes a date on the right side, as with Press Releases
 //
-// Markup:
 // <header class="heading--main heading--with-date">
 //   <div class="row">
 //     <h1 class="heading__left">Press release</h1>
@@ -107,7 +104,6 @@
 //   </div>
 // </header>
 //
-// Styleguide components.headings-with-date.2
 
 .heading--with-date {
   @include media($med) {

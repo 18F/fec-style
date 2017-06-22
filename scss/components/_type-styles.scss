@@ -3,17 +3,6 @@
 // For classes that define type styles
 // Prefix these styles with t-
 //
-// Styleguide type-styles
-
-// Display
-//
-// Large type with top and bottom borders for major page headings. In order to have rules, apply .t-ruled
-//
-// .t-ruled     - Apply top and bottom rules to the heading
-//
-// Markup:
-// <h2 class="t-display {{modifier_class}}">Some great heading</h2>
-//
 
 .t-display {
   @include heading(display);
@@ -23,33 +12,13 @@
   }
 }
 
-// Display sans
-//
 // Used for showing large numbers. Sans-serif and no border
-//
-// Markup:
-// <span class="t-display--sans">$2,010</span>
-//
-
 .t-display--sans {
   @include heading(display);
   border: none;
   font-family: $sans-serif;
   margin-bottom: 0;
 }
-
-// Ruled Headings
-//
-// Adds top and bottom borders; color changed by u-font-color
-//
-// .t-ruled           - 1px top and bottom rule
-// .t-ruled--bold     - 2px weight borders
-// .t-ruled--bottom   - Only rule on the bottom
-// .t-no-rules        - Removes a rule on an item that has one by default
-//
-// Markup:
-// <h2 class="t-ruled {{ modifier_class }}">Another heading</h2>
-//
 
 .t-ruled {
   @include clearfix();
@@ -80,33 +49,6 @@
     border-top: none;
   }
 }
-
-// Miscellaneous
-//
-// .t-note          - Small text for adding a note somewhere
-// .t-block         - Force display: block
-// .t-inline-block  - Force display: inline-block
-// .t-sans          - Force sans serif
-// .t-serif         - Force serif
-// .t-italic        - Italicize
-// .t-bold          - Embolden!
-// .t-normal        - Normal weight
-// .t-highlight     - Highlight
-// .t-upper         - Transform to uppercase
-// .t-data-header   - Small header above a big data number
-// .t-big-data      - Big number
-// .t-secondary-contrast    - Force secondary contrast color
-// .t-lead          - Set a bigger size to lead paragraphs
-// .t-short         - Used when we want a heading to break onto two lines
-// .h1              - Fake h1 style
-// .h2              - Fake h2 style
-// .h3              - Fake h3 style
-// .h4              - Fake h4 style
-// .h5              - Fake h5 style
-//
-// Markup:
-// <p class="{{ modifier_class }}">Sample text</p>
-//
 
 .t-note {
   display: inline-block;
@@ -157,6 +99,7 @@
   text-transform: uppercase;
 }
 
+// Small header above a big data number
 .t-data-header {
   display: inline-block;
   font-family: $sans-serif;
@@ -184,6 +127,7 @@
   color: $secondary-contrast;
 }
 
+// Set a bigger size to lead paragraphs
 .t-lead,
 .t-lead p {
   font-weight: regular;
@@ -191,6 +135,7 @@
   line-height: u(2.8rem);
 }
 
+// Used when we want a heading to break onto two lines
 .t-short {
   @include media($lg) {
     display: block;
@@ -224,16 +169,6 @@
   @include heading(h5);
 }
 
-// Modifier styles for text
-//
-// .t-centered       - Center the text
-// .t-right-aligned  - Right-align the text
-// .t-left-aligned   - Left-align the text
-//
-// Markup:
-// <p class="{{ modifier_class }}"">Some sample text</p>
-//
-
 .t-centered {
   text-align: center;
 }
@@ -246,7 +181,7 @@
   text-align: left;
 }
 
-// .t-all-data      - Adds an icon to signify a master table
+// Adds an icon to signify a master table
 .t-all-data {
   @include u-icon-bg($all-files, $base);
   display: inline-block;

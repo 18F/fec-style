@@ -2,11 +2,8 @@
 //
 // An absolutely positioned overlay over any relatively positioned area
 //
-// .is-loading        - Adds the loading-state gif
-//
-// Markup:
 // <div class="overlay__container">
-//   <div class="overlay {{modifier_class}}">
+//   <div class="overlay is-loading">
 //   </div>
 // </div>
 //

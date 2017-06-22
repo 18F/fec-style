@@ -2,10 +2,6 @@
 //
 // Hero units are special solid-colored slabs that have a thin image slice at the top. They are used on landing pages for top-level sections.
 //
-// .hero--data            - Hero panel for the campaign finance data section.
-// .hero--legal           - Hero panel for the legal resources section.
-// .hero--press           - Hero panel for the press section.
-//
 
 .hero {
   padding-bottom: u(2rem);
@@ -107,6 +103,7 @@
   }
 }
 
+// Hero panel for the campaign finance data section
 .hero--data {
   .hero__image {
     background-image: url('../img/hero-data.jpg');
@@ -120,12 +117,14 @@
   }
 }
 
+// Hero panel for the legal resources section.
 .hero--legal {
   .hero__image {
     background-image: url('../img/hero-legal.jpg');
   }
 }
 
+// Hero panel for the press section.
 .hero--press {
   .hero__image {
     background-image: url('../img/hero-press.jpg');

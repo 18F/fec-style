@@ -1,3 +1,6 @@
+// Icon mixins
+//
+
 @function str-replace($string, $search, $replace: '') {
     $index: str-index($string, $search);
 
@@ -12,4 +15,3 @@
   $fillColor: str-replace(#{$color}, '#', '%23');
   @return str-replace($svg, '%3Csvg', '%3Csvg%20%20fill%3D%27#{$fillColor}%27');
 }
-

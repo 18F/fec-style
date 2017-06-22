@@ -2,12 +2,7 @@
 //
 // Utility class for displaying grids of items, such as cards, callouts, images, etc.
 //
-// .grid--2-wide        - 2 to a row
-// .grid--3-wide        - 3 to a row
-// .grid--4-wide        - 4 to a row
-//
-// Markup:
-// <div class="grid sg-grid-example {{modifier_class}}">
+// <div class="grid sg-grid-example grid--2-wide">
 //   <div class="grid__item">
 //     Grid item
 //   </div>
@@ -150,7 +145,6 @@
   }
 }
 
-// BREAKPOINT: LARGE
 @include media($lg) {
   .grid--2-wide {
     .grid__item {

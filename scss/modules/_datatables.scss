@@ -4,8 +4,7 @@
 // preceded/followed by buttons (or nav arrows), always enclose with
 // a rule line using `.results-info`.
 //
-// Markup:
-// <table id="data-table" class="data-table {{ modifier_class }}">
+// <table id="data-table" class="data-table data-table--text">
 //   <thead>
 //     <tr>
 //       <th>No.</th>
@@ -312,7 +311,6 @@
 // .cell--90 - 90% width
 // .cell--95 - 95% width
 //
-// Styleguide modules.datatables.cell-widths
 @mixin cell-width($width) {
   width: $width * 1%;
 }

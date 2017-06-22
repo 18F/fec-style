@@ -63,10 +63,8 @@
 // Term classes
 //
 // Wrap glossary terms with these classes
-//
-// .term          - Standard class -- adds the book icon
-// .term--p       - Used when the term is in a body paragaraph of text, reduces padding and adds margin
 
+// standard class, adds the book icon
 .term {
   @include u-icon-bg($book, $primary);
   @include transition(background-color, .2s, box-shadow, .2s, color, .2s);
@@ -88,6 +86,7 @@
   }
 }
 
+// Used when the term is in a body paragaraph of text, reduces padding and adds margin
 .term--p {
   margin-right: u(.5rem);
   box-shadow: none;

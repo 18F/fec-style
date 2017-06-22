@@ -1,6 +1,16 @@
-// .example
-// Used to style example blurbs or thumbnails that are used
-// in explanatory content in CMS pages
+// Examples
+//
+// Used to style example blurbs or thumbnails that are used in explanatory content in CMS pages
+//
+// <div class="row example">
+//   <div class="usa-width-one-half">
+//     <a class="example__thumbnail" href="">
+//       <img />
+//     </a>
+//     <span class="t-block"><a href="">example text</a></span>
+//   </div>
+// </div>
+//
 
 .example {
   border-left: 10px solid $gray-lightest;

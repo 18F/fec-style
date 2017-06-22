@@ -1,29 +1,22 @@
 // Simple table
 //
-// Simple table with rules
-//
-// .simple-table                - Simple table with rules.
-// .simple-table--responsive    - Display a table on larger screens, collapse to compact display on small screens.
-// .simple-table--display       - More padding with vertical rules and alternating background color similar to `.datatables`.
-//
-// Markup:
-// <table class="simple-table {{ modifier_class }}">
-//     <thead class="simple-table__header">
-//         <tr>
-//             <th class="simple-table__header-cell">Dates covered</th>
-//             <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
-//         </tr>
-//     </thead>
-//     <tbody>
-//         <tr class="simple-table__row">
-//             <td class="simple-table__cell">January 1–March 31</td>
-//             <td class="simple-table__cell">April 15</td>
-//         </tr>
-//         <tr class="simple-table__row">
-//             <td class="simple-table__cell">April 1–June 30</td>
-//             <td class="simple-table__cell">July 15</td>
-//         </tr>
-//     </tbody>
+// <table class="simple-table simple-table--display">
+//   <thead class="simple-table__header">
+//     <tr>
+//       <th class="simple-table__header-cell">Dates covered</th>
+//       <th class="simple-table__header-cell">Due <span class="simple-table__header-subtext">| Notes</span></th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr class="simple-table__row">
+//       <td class="simple-table__cell">January 1–March 31</td>
+//       <td class="simple-table__cell">April 15</td>
+//     </tr>
+//     <tr class="simple-table__row">
+//       <td class="simple-table__cell">April 1–June 30</td>
+//       <td class="simple-table__cell">July 15</td>
+//     </tr>
+//   </tbody>
 // </table>
 //
 
@@ -70,6 +63,7 @@ h3 + .simple-table {
   margin-top: u(-1rem);
 }
 
+// More padding with vertical rules and alternating background color similar to `.datatables`
 .simple-table--display {
   &.simple-table {
     color: $base;

@@ -4,12 +4,8 @@
 // All sizing is handled by using .grid and .grid__item,
 // either as containers or on the cards themselves
 //
-// .card                        - Base style
-// .card--horizontal            - Horizontal layout
-// .card--full-bleed            - Image has no padding
-// .card--wide                  - Wide cards, used on data landing page. Big image container with a background
-//
 
+// Base style
 .card {
   @include clearfix();
   background-color: $neutral;
@@ -110,6 +106,7 @@
   }
 
   // Option: .card--full-bleed makes the image full height
+  // image has no padding
   &.card--full-bleed {
     border: none;
     padding: 0;
@@ -224,27 +221,25 @@
 //
 // CSS generated icons for cards
 //
-// .i-candidate   - Candidate icon
-// .i-committee   - Committee icon
-// .i-receipt     - Receipt icon
-// .i-disbursement  - Disbursement icon
-// .i-overview      - Overview icon
-// .i-profile       - Profile icon
-// .i-elections      - Election icon
+// .i-candidate
+// .i-committee
+// .i-receipt
+// .i-disbursement
+// .i-overview
+// .i-profile
+// .i-elections
 //
-// Markup:
 // <div class="grid--3-wide">
-// <aside class="card card--primary card--horizontal grid__item">
-// <div class="card__image">
-//   <span class="card__icon {{modifier_class}}"><span class="u-visually-hidden">Icon representing [something]</span></span>
-// </div>
-// <div class="card__content">
-//   Card icon
-// </div>
-// </aside>
+//   <aside class="card card--primary card--horizontal grid__item">
+//     <div class="card__image">
+//       <span class="card__icon i-candidate"><span class="u-visually-hidden">Icon representing [something]</span></span>
+//     </div>
+//     <div class="card__content">
+//       Card icon
+//     </div>
+//   </aside>
 // </div>
 //
-// Styleguide components.card-icons
 
 .card__icon {
   background-color: $neutral;
@@ -393,7 +388,6 @@
     border-bottom: 1px solid transparent;
   }
 }
-
 
 // Print styling
 @media print {

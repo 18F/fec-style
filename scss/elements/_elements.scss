@@ -2,9 +2,6 @@
 //
 // Base styles for html elements
 //
-// Weight: -100
-//
-// Styleguide elements
 
 @import 'typography';
 @import 'links';
@@ -12,9 +9,6 @@
 @import 'forms';
 @import 'tables';
 @import 'images';
-
-// Neat Settings -- uncomment if using Neat -- must be imported before Neat
-// @import 'grid-settings';
 
 // Base styles
 /* apply a natural box layout model to all elements, but allowing components to change */
