@@ -170,7 +170,7 @@
 }
 
 .dropdown__selected {
-  margin-bottom: u(.5rem);
+  margin: u(.5rem 0);
 
   li {
     @include animation(fadeIn .2s ease-in);
