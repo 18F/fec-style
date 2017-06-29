@@ -158,10 +158,8 @@ FilterSet.prototype.switchFilters = function(dataType) {
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   // Save the current query for later
   var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
-  // Clear filters if this isn't the first page load
+
   // Set forceRemove: true to clear date filters that are usually nonremovable
-
-
   this.$body.trigger('tag:removeAll', {forceRemove: true});
   // Go through the current panel and set loaded-once on each input
   // So that they don't show loading indicators
