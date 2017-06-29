@@ -1,7 +1,7 @@
 {
   "name": "fec-style",
   "description": "Shared styles for the new FEC.gov",
-  "version": "12.0.0",
+  "version": "12.1.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/18F/fec-style.git"
