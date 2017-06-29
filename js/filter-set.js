@@ -158,17 +158,15 @@ FilterSet.prototype.switchFilters = function(dataType) {
 FilterSet.prototype.activateSwitchedFilters = function(dataType) {
   // Save the current query for later
   var query = helpers.sanitizeQueryParams(URI.parseQuery(window.location.search));
-  // Clear filters if this isn't the first page load
+
   // Set forceRemove: true to clear date filters that are usually nonremovable
-  if (!this.firstLoad) {
-    this.$body.trigger('tag:removeAll', {forceRemove: true});
-    // Go through the current panel and set loaded-once on each input
-    // So that they don't show loading indicators
-    _.each(this.filters, function(filter) {
-      filter.loadedOnce = false;
-      filter.$elm.find('input').data('loaded-once', false);
-    });
-  }
+  this.$body.trigger('tag:removeAll', {forceRemove: true});
+  // Go through the current panel and set loaded-once on each input
+  // So that they don't show loading indicators
+  _.each(this.filters, function(filter) {
+    filter.loadedOnce = false;
+    filter.$elm.find('input').data('loaded-once', false);
+  });
 
   // If there was a previous query, combine the two
   if (this.previousQuery) {
