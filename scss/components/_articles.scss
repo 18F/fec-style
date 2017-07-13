@@ -25,12 +25,15 @@
     table {
       @extend .simple-table;
     }
+
     tr {
       @extend .simple-table__row;
     }
+
     td {
       @extend .simple-table__cell;
     }
+
     thead {
       @extend .simple-table__header;
     }
@@ -91,9 +94,6 @@
 // could be moved to fec-style/scss/components/_read-next.scss
 //
 // Next article suggestion with title, abstract and image.
-
-.read_next__content {
-}
 
 .read_next__title {
   margin-top: 0;
