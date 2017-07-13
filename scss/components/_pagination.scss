@@ -17,6 +17,8 @@
 // </div>
 //
 
+@import 'buttons';
+
 .paginate_button {
   @extend .button--standard;
   @extend .button--sm;
