@@ -1,0 +1,16 @@
+// This imports all the base libraries, mixins and variables that other files
+// depend on
+
+// Libraries
+@import 'lib/bourbon/bourbon';
+@import 'lib/neat/neat';
+
+// Variables and mixins
+@import 'variables';
+@import 'icon-variables';
+@import 'fonts';
+@import 'functions';
+@import 'grid';
+@import 'mixins/utilities';
+@import 'mixins/type-mixins';
+@import 'mixins/icon-mixins';
