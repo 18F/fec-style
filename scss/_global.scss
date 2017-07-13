@@ -7,18 +7,20 @@
 // Layout: Basic grid and background styles
 @import 'layout/layout';
 
-// Universal components
-@import 'components/glossary';
-@import 'components/site-header';
-@import 'components/breadcrumbs';
-@import 'components/nav';
-@import 'components/footer';
-@import 'components/feedback';
-@import 'components/introjs';
-@import 'components/site-orientation';
-@import 'components/buttons';
-@import 'components/mega-menu';
-@import 'components/form-styles';
+// Base styles
 @import 'components/list-styles';
-@import 'components/page-headers';
+@import 'components/form-styles';
+
+// Universal components
+@import 'components/breadcrumbs';
+@import 'components/buttons';
 @import 'components/cards';
+@import 'components/feedback';
+@import 'components/footer';
+@import 'components/glossary';
+@import 'components/introjs';
+@import 'components/mega-menu';
+@import 'components/nav';
+@import 'components/page-headers';
+@import 'components/site-header';
+@import 'components/site-orientation';
