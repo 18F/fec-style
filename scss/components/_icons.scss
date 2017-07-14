@@ -10,9 +10,23 @@
 
 .icon {
   background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: block;
   height: u(2rem);
   width: u(2rem);
+
+  &.i-all-files {
+    @include u-icon-bg($all-files, $base);
+  }
+
+  &.i-share {
+    @include u-icon-bg($share, $base);
+  }
+
+  &.i-magnifying-glass {
+    @include u-icon-bg($magnifying-glass, $base);
+  }
 }
 
 .icon--small {
