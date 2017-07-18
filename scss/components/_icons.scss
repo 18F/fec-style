@@ -33,6 +33,22 @@
   display: inline-block;
   max-height: u(1rem);
   max-width: u(1rem);
+
+  &.i-arrow-down {
+    @include u-icon-bg($arrow-down, $base);
+  }
+
+  &.i-arrow-right {
+    @include u-icon-bg($arrow-right, $base);
+  }
+
+  &.i-arrow-left {
+    @include u-icon-bg($arrow-left, $base);
+  }
+
+  &.i-book {
+    @include u-icon-bg($book, $base);
+  }
 }
 
 .icon--complex {
