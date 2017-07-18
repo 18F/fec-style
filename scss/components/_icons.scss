@@ -10,15 +10,45 @@
 
 .icon {
   background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: block;
   height: u(2rem);
   width: u(2rem);
+
+  &.i-all-files {
+    @include u-icon-bg($all-files, $base);
+  }
+
+  &.i-share {
+    @include u-icon-bg($share, $base);
+  }
+
+  &.i-magnifying-glass {
+    @include u-icon-bg($magnifying-glass, $base);
+  }
 }
 
 .icon--small {
   display: inline-block;
   max-height: u(1rem);
   max-width: u(1rem);
+
+  &.i-arrow-down {
+    @include u-icon-bg($arrow-down, $base);
+  }
+
+  &.i-arrow-right {
+    @include u-icon-bg($arrow-right, $base);
+  }
+
+  &.i-arrow-left {
+    @include u-icon-bg($arrow-left, $base);
+  }
+
+  &.i-book {
+    @include u-icon-bg($book, $base);
+  }
 }
 
 .icon--complex {

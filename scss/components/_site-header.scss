@@ -109,6 +109,10 @@
   width: 100%;
 }
 
+.site-title--print {
+  display: none;
+}
+
 .utility-nav {
   font-family: $sans-serif;
   display: none;
@@ -167,7 +171,7 @@
   }
 }
 
-@media (min-width: $large-screen), print {
+@media (min-width: $large-screen) {
   .homepage-seal {
     width: 160px;
     top: u(1rem);
@@ -263,6 +267,19 @@
   }
 
   .utility-nav {
+    display: none;
+  }
+
+  .site-title--print {
+    background-image: url('../img/print-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    height: 114px;
+    width: 100%;
+  }
+
+  .homepage-seal {
     display: none;
   }
 }
