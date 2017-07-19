@@ -251,7 +251,7 @@ h3 + .simple-table {
   }
 }
 
-// For custom_table_block in streamfactory
+// For custom_table_block
 
 .custom-table {
   box-shadow: -10px 0 20px -10px $gray-medium inset;
@@ -316,10 +316,25 @@ h3 + .simple-table {
 
 // Dense table
 // For tables with a lot of data that need to be condensed
+.dense-table-container {
+  box-shadow: -10px 0 20px -10px $gray-medium inset;
+  overflow-x: scroll;
+
+  @include media($lg) {
+    box-shadow: none;
+  }
+}
+
+.option__content .dense-table-container {
+  box-shadow: -10px 0 20px -10px $gray-medium inset;
+  overflow-x: scroll;
+}
+
+// scss-lint:disable ImportantRule
 .dense-table {
-  table-layout: auto;
-  border-top: none;
   border-bottom-width: 0;
+  border-top: none !important;
+  table-layout: auto;
 
   td,
   th {
@@ -334,6 +349,7 @@ h3 + .simple-table {
 
   thead th {
     border-bottom: 1px solid $primary;
+    padding: u(.5rem);
   }
 
   tbody th {
