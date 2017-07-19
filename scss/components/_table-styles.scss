@@ -251,7 +251,7 @@ h3 + .simple-table {
   }
 }
 
-// For custom_table_block in streamfactory
+// For custom_table_block
 
 .custom-table {
   box-shadow: -10px 0 20px -10px $gray-medium inset;
@@ -330,6 +330,7 @@ h3 + .simple-table {
   overflow-x: scroll;
 }
 
+// scss-lint:disable ImportantRule
 .dense-table {
   border-bottom-width: 0;
   border-top: none !important;
