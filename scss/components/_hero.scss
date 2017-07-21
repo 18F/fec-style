@@ -27,6 +27,14 @@
   }
 }
 
+.hero__content {
+  padding-top: u(1rem);
+
+  @include media($lg) {
+    @include span-columns(8);
+  }
+}
+
 .hero__image {
   background-repeat: no-repeat;
   background-position: 50% 0;
@@ -36,22 +44,19 @@
 }
 
 .hero--home {
-  .hero__banner {
-    background-image: url('../img/fec-table-tint.jpg');
-    background-position: 50% 50%;
-    width: 100%;
-    height: u(12rem);
-    position: absolute;
-  }
+  background-image: url('../img/fec-table-tint.jpg');
+  background-position: 50% 50%;
+  padding-top: u(2rem);
 
   h2 {
     color: $inverse;
-    margin-bottom: u(1rem);
+    font-size: u(1.8rem);
+    margin-bottom: u(2rem);
   }
 
   .hero__content {
-    padding-bottom: u(2rem);
-    z-index: $z1;
+    background-color: $primary;
+    padding: u(2.5rem);
 
     a {
       border-color: $inverse;
@@ -59,46 +64,14 @@
     }
   }
 
-  .hero__content,
-  .grid {
-    position: relative;
-  }
-
-  .grid__item img {
-    display: block;
-    margin: 0 auto (2rem) auto;
-  }
-
-  @include media($med) {
-    .grid--3-wide .grid__item {
-      @include span-columns(4);
-
-      &:nth-child(2n+1) {
-        clear: none;
-      }
-    }
-  }
-
   @include media($lg) {
-    h2 {
-      color: $inverse;
-      font-size: 3rem;
-      font-weight: normal;
-      line-height: 1.3;
-    }
 
-    .hero__banner {
-      height: u(25rem);
+    h2 {
+      margin-bottom: u(3rem);
     }
 
     .hero__content {
-      padding-top: u(6rem);
-      padding-bottom: u(5rem);
-      @include span-columns(12);
-    }
-
-    h2 {
-      line-height: 1.4;
+      @include span-columns(4);
     }
   }
 }
@@ -134,14 +107,6 @@
 .hero--about {
   .hero__image {
     background-image: url('../img/hero-about.jpg');
-  }
-}
-
-.hero__content {
-  padding-top: u(1rem);
-
-  @include media($lg) {
-    @include span-columns(8);
   }
 }
 
