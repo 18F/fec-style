@@ -41,6 +41,24 @@
   }
 }
 
+// homepage grid items
+.grid__item--featured {
+  background-color: $gray-medium;
+  padding: u(1.5rem);
+  border-radius: 3px;
+
+  h3 {
+    font-size: u(1.7rem);
+    font-style: italic;
+    border-bottom: 1px solid $base;
+    margin-bottom: u(1.5rem);
+  }
+}
+
+.grid__item--home {
+  padding: u(1.5rem 0);
+}
+
 // BREAKPOINT: MEDIUM
 // We set a max-width to prevent the omega mixins from applying multiple times.
 // This is based on $large-screen, but we have to convert to px so that we can

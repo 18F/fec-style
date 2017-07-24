@@ -44,8 +44,10 @@
 }
 
 .hero--home {
-  background-image: url('../img/fec-table-tint.jpg');
-  background-position: 50% 50%;
+  background-image: url('../img/hero-home.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+  background-size: cover;
   padding-top: u(2rem);
 
   h2 {
