@@ -2,6 +2,7 @@
 
 var $ = require('jquery');
 var moment = require('moment');
+var _ = require('underscore');
 
 var Filter = require('./filter-base.js');
 
@@ -98,7 +99,7 @@ DateFilter.prototype.validate = function() {
     parseInt(this.$minDate.val().split('/')[2]) : this.minYear;
   var maxDateYear = this.$maxDate.val() ?
     parseInt(this.$maxDate.val().split('/')[2]) : this.maxYear;
-  if ( years.indexOf(minDateYear) > -1 && years.indexOf(maxDateYear) > -1 ) {
+  if ( (minDateYear >= this.minYear && minDateYear <= this.maxYear) && (maxDateYear >= this.minYear && maxDateYear <= this.maxYear ) ) {
     this.hideWarning();
     this.$elm.trigger('filters:validation', [
       {
@@ -136,7 +137,7 @@ DateFilter.prototype.handleModifyEvent = function(e, opts) {
   // Sets min and max years based on the transactionPeriod filter
   if (opts.filterName === this.name) {
     this.maxYear = parseInt(opts.filterValue);
-    this.minYear = this.maxYear - 1;
+    this.minYear = this.maxYear - 5;
     this.$minDate.val('01/01/' + this.minYear.toString()).change();
     if (this.maxYear === today.getFullYear()) {
       today = moment(today).format('MM/DD/YYYY');
@@ -168,8 +169,7 @@ DateFilter.prototype.handleRemoveAll = function(e, opts) {
 DateFilter.prototype.setupDateGrid = function() {
   var dateBegin = this.$minDate.val().split('/');
   var dateEnd = this.$maxDate.val().split('/');
-  var dateRangeFirst = this.$grid.find('.date-range__row').eq(0);
-  var dateRangeSecond = this.$grid.find('.date-range__row').eq(1);
+  var $grids = this.$grid.find('.date-range__row');
   var minDateMonth = dateBegin[0];
   var minDateYear = dateBegin[2];
   var maxDateMonth = dateEnd[0];
@@ -177,12 +177,12 @@ DateFilter.prototype.setupDateGrid = function() {
   var $dateBegin;
   var $dateEnd;
 
-  // the transaction year starts with the later, so begin before
-  dateRangeFirst.find('.date-range__year').html(this.minYear);
-  dateRangeFirst.find('ul').attr('data-year', this.minYear);
-
-  dateRangeSecond.find('.date-range__year').html(this.maxYear);
-  dateRangeSecond.find('ul').attr('data-year', this.maxYear);
+  var years = _.range(Number(minDateYear), Number(maxDateYear) + 1);
+  for (var i = 0; i < years.length; i++) {
+    var $grid = $($grids[i]);
+    $grid.find('.date-range__year').html(years[i]);
+    $grid.find('ul').attr('data-year', years[i]);
+  }
 
   // get the elements of the beginning and ending dates
   $dateBegin = this.$grid.find('ul[data-year="' + minDateYear + '"] ' +
