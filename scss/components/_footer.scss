@@ -27,9 +27,10 @@
   .grid--6-wide .grid__item {
     @include span-columns(8);
 
-    // on large screens the first column is a blank spacer
+    // on large screens the second and third column are blank spacers
     // so we do not need this space for tablet sizes and below
-    &:first-child {
+    &:nth-child(2),
+    &:nth-child(3) {
       display: none;
     }
 
@@ -48,8 +49,9 @@
   @include media($lg) {
     .grid--6-wide .grid__item {
       @include span-columns(2);
-
-      &:first-child {
+    
+    &:nth-child(2),
+    &:nth-child(3) {
         display: block;
       }
     }
