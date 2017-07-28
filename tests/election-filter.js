@@ -25,7 +25,8 @@ describe('Election filter', function() {
         'data-name="election_year"' +
         'data-cycle-name="cycle"' +
         'data-full-name="election_full"' +
-        'data-duration="4">' +
+        'data-duration="4"' +
+        'data-default-cycle="2016">' +
         '<label class="label" for="election_year">Election cycle</label>' +
         '<select name="election_year" class="js-election">' +
             '<option value="2016">2016</option>' +
@@ -51,6 +52,7 @@ describe('Election filter', function() {
   it('sets its initial state', function() {
     expect(this.filter.name).to.equal('election_year');
     expect(this.filter.duration).to.equal(4);
+    expect(this.filter.defaultCycle).to.equal(2016);
     expect(this.filter.fields).to.deep.equal(['election_year', 'cycle', 'election_full']);
   });
 
