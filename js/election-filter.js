@@ -14,6 +14,7 @@ function ElectionFilter(elm) {
   this.duration = parseInt(this.$elm.data('duration'));
   this.cycleName = this.$elm.data('cycle-name');
   this.fullName = this.$elm.data('full-name');
+  this.defaultCycle = this.$elm.data('default-cycle');
 
   this.$election = this.$elm.find('.js-election');
   this.$cycles = this.$elm.find('.js-cycles');
@@ -31,7 +32,7 @@ ElectionFilter.prototype = Object.create(Filter.prototype);
 ElectionFilter.constructor = ElectionFilter;
 
 ElectionFilter.prototype.fromQuery = function(query) {
-  var election = query[this.name] || '2016';
+  var election = query[this.name] || this.defaultCycle;
   var cycle = query[this.cycleName] || election;
   var full = query[this.fullName] !== null ? query[this.fullName] : true;
   if (election) {
