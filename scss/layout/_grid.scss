@@ -56,8 +56,10 @@
   }
 }
 
-.grid__item--home {
-  padding: u(1.5rem 0);
+@include media($lg) {
+  .grid__item--home {
+    padding: u(1.5rem 0);
+  }
 }
 
 .grid__item--event {
