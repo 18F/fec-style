@@ -318,6 +318,8 @@
 // toggle two-candidate view on map comparison
 .button--two-candidates {
   @include u-icon-button($two-candidates, left);
+  background-size: 3rem;
+  padding-left: 5rem;
 }
 
 .button--election {
