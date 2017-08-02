@@ -19,6 +19,15 @@
   }
 }
 
+.message--inline {
+  display: block;
+
+  @include media($lg) {
+    margin-right: u(1rem);
+    display: inline-block;
+  }
+}
+
 .message--success {
   @include u-icon-bg($check-circle, $primary);
   border-color: $primary-contrast;
@@ -135,6 +144,15 @@
 
 .message--inverse-alt {
   background-color: $inverse-translucent;
+}
+
+.message--red {
+  background-color: $deep-red;
+  border-color: $inverse;
+
+  &.message--info {
+    @include u-icon-bg($info-circle, $inverse);
+  }
 }
 
 @include media($med) {
