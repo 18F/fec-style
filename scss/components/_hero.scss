@@ -31,7 +31,7 @@
   padding-top: u(1rem);
 
   @include media($lg) {
-    @include span-columns(8);
+    @include span-columns(4);
   }
 }
 
@@ -46,19 +46,21 @@
 .hero--home {
   background-image: url('../img/hero-home.jpg');
   background-repeat: no-repeat;
-  background-position: 50% 30%;
+  background-position: 50% 70%;
   background-size: cover;
   padding-top: u(2rem);
 
   h2 {
     color: $inverse;
-    font-size: u(1.8rem);
+    font-size: u(2rem);
+    line-height: u(3rem);
     margin-bottom: u(2rem);
   }
 
   .hero__content {
     background-color: $primary;
     padding: u(2.5rem);
+    margin: u(2rem 0);
 
     a {
       border-color: $inverse;
@@ -73,7 +75,8 @@
     }
 
     .hero__content {
-      @include span-columns(4);
+      @include span-columns(3);
+      // padding: u(3.5rem 2.5rem);
     }
   }
 }
