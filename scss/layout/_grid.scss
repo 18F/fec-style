@@ -2,19 +2,7 @@
 //
 // Utility class for displaying grids of items, such as cards, callouts, images, etc.
 //
-// <div class="grid sg-grid-example grid--2-wide">
-//   <div class="grid__item">
-//     Grid item
-//   </div>
-//   <div class="grid__item">
-//     Grid item
-//   </div>
-//   <div class="grid__item">
-//     Grid item
-//   </div>
-//   <div class="grid__item">
-//     Grid item
-//   </div>
+// <div class="grid grid--2-wide">
 //   <div class="grid__item">
 //     Grid item
 //   </div>
@@ -40,6 +28,7 @@
   display: flex;
 
   .grid__item {
+    flex-direction: column;
     display: flex !important;
   }
 }
@@ -53,66 +42,33 @@
   }
 }
 
-.slab.slab--home {
-  .grid {
-    padding-top: u(3rem);
+// homepage grid items
+.grid__item--featured {
+  background-color: $gray-medium;
+  padding: u(1.5rem);
+  border-radius: 3px;
 
-    .grid__item {
-      border-top: 1px solid $inverse-translucent;
-      padding-top: u(2.5rem);
-
-      &:first-child {
-        border-top: none;
-        padding-top: 0;
-      }
-    }
-  }
-  .grid--no-border {
-    padding-top: u(1rem);
-
-    .grid__item {
-      border: none !important;
-      padding: 0;
-    }
-  }
-  .grid--no-margin {
-    margin: 0;
-    padding: 0;
+  h3 {
+    font-size: u(1.7rem);
+    font-style: italic;
+    border-bottom: 1px solid $base;
+    margin-bottom: u(1.5rem);
   }
 }
 
-.slab--primary.slab--home .grid {
-  a {
-    color: $primary-contrast;
-    border-bottom-color: $primary-contrast;
-
-    &:hover {
-      border-bottom-color: $inverse;
-    }
-  }
-}
-.slab--secondary.slab--home .grid {
-  a {
-    color: $secondary-contrast;
-    border-bottom-color: $secondary-contrast;
-
-    &:hover {
-      border-bottom-color: $inverse;
-    }
+@include media($lg) {
+  .grid__item--home {
+    padding: u(1.5rem 0);
   }
 }
 
-.slab--neutral {
-  &.slab--home {
-    .grid .grid__item {
-      border-top: none;
-      margin-bottom: 0;
-      padding-bottom: u(2rem);
-    }
-  }
+.grid__item--event {
+  padding-bottom: u(4.5rem);
+  position: relative;
 
-  .grid__item {
-    border-bottom: 1px solid $gray;
+  .button {
+    bottom: 0;
+    position: absolute;
   }
 }
 
@@ -135,13 +91,6 @@
   .grid__item--no-margin {
     margin-bottom: 0;
     padding-bottom: 0;
-  }
-
-  .slab .grid {
-    .grid__item:nth-last-child(-n+2) {
-      border-top: 1px solid $inverse;
-      margin-top: 0;
-    }
   }
 }
 
@@ -171,28 +120,6 @@
     .grid__item {
       @include span-columns(2);
       @include omega(6n);
-    }
-  }
-
-  .slab {
-    .grid--2-wide {
-      .grid__item:nth-child(-n+2) {
-        border-top: none;
-        padding-top: 0;
-      }
-    }
-
-    .grid--3-wide {
-      .grid__item:nth-child(-n+3) {
-        border-top: none;
-        padding-top: 0;
-      }
-    }
-
-    .grid--no-border {
-      .grid__item {
-        padding-bottom: u(2rem);
-      }
     }
   }
 }

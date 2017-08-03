@@ -255,6 +255,10 @@
   vertical-align: middle;
 }
 
+.icon-x {
+  @include u-icon-bg($x, $primary);
+}
+
 // Used to create a spacer in the version column the same width as the
 // version icons
 .icon-blank {
