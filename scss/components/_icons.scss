@@ -27,6 +27,10 @@
   &.i-magnifying-glass {
     @include u-icon-bg($magnifying-glass, $base);
   }
+
+  &.i-folder {
+    @include u-icon-bg($folder, $base);
+  }
 }
 
 .icon--small {
