@@ -294,6 +294,22 @@
     &.i-data-flag {
       @include u-icon-bg($data-flag, $primary-contrast);
     }
+
+    &.i-external {
+      @include u-icon-bg($share, $primary-contrast);
+    }
+
+    &.i-filings {
+      @include u-icon-bg($papers, $primary-contrast);
+    }
+
+    &.i-bulk {
+      @include u-icon-bg($bulk, $primary-contrast);
+    }
+
+    &.i-loans {
+      @include u-icon-bg($hand-money, $primary-contrast);
+    }
   }
 }
 
