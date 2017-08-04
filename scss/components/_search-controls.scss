@@ -178,4 +178,9 @@
       clear: none;
     }
   }
+
+  // Aligns the elements that don't have a label with those that do
+  .search-controls__no-label {
+    margin-top: u(3rem);
+  }
 }
