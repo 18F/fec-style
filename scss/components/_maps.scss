@@ -23,6 +23,10 @@
   }
 }
 
+.election-map--small {
+  height: 22rem;
+}
+
 .choropleths {
   position: relative;
 }
@@ -128,4 +132,9 @@ path.shape {
     float: right;
     margin-top: 0;
   }
+}
+
+// Hide the credits that show up at the bottom of the map
+.leaflet-bottom {
+  display: none;
 }
