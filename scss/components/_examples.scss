@@ -2,6 +2,8 @@
 //
 // Used to style example blurbs or thumbnails that are used in explanatory content in CMS pages
 //
+// Use .example--primary for the style used on the data landing page
+//
 // <div class="row example">
 //   <div class="usa-width-one-half">
 //     <a class="example__thumbnail" href="">
@@ -32,4 +34,14 @@
   img {
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
   }
+}
+
+.example--primary {
+  border-left: 2px solid $primary;
+  padding: u(1rem 1.5rem);
+}
+
+.example__title {
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
