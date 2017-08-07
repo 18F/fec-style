@@ -32,10 +32,6 @@
     "definition": "The sum of all purchases and payments made during a filing period by a political committee or any other person, including an organization that is not a political committee that is subject to the Federal Election Campaign Act."
   },
   {
-    "term": "Ending cash on hand",
-    "definition": "The ending balance of cash and cash equivalents on a report for a particular time period.  Cash on hand includes funds held in checking and savings accounts, certificates of deposit, petty cash funds, traveler’s checks, treasury bills and other investments valued at cost.  This balance is calculated by adding beginning cash on hand for the period to  total receipts for the period then subtracting total disbursements for the period."
-  },
-  {
     "term": "Debt",
     "definition": "Debts include unpaid bills. FEC reports show the amount of reportable debt a committee owes to other entities at the end of the filing period."
   },
@@ -57,7 +53,7 @@
   },
   {
     "term": "Authorized committee",
-    "definition": "A political committee that has been authorized by a candidate to accept contributions or make expenditures on his or her behalf, or one that accepts contributions or makes expenditures on behalf of a candidate and has not been disavowed by the candidate. "
+    "definition": "A political committee that has been authorized by a candidate to accept contributions or make expenditures on his or her behalf, or one that accepts contributions or makes expenditures on behalf of a candidate and has not been disavowed by the candidate."
   },
   {
     "term": "Political committee",
@@ -68,7 +64,6 @@
     "definition": "An authorized committee designated by a candidate as the principal committee to raise contributions and make expenditures for his or her campaign for a federal office."
   },
   {
-
     "term": "Candidate",
     "definition": "An individual seeking nomination for election, or reelection, to a federal office becomes a candidate when he or she (or persons working on his or her behalf) receives contributions or makes expenditures that exceed $5,000."
   },
@@ -136,7 +131,7 @@
     "term": "Special election",
     "definition": "A primary, general or runoff election that is not a regularly scheduled election and that is held to fill a vacant seat in the House of Representatives or the Senate. 100.2(f)."
   },
-   {
+  {
     "term": "Separate segregated fund (SSF)",
     "definition": "A political committee established, administered or financially supported by a corporation or labor organization, popularly called a Corporate or Labor Political Action Committee (PAC). See 114.1(a)(2)(iii). The term \"financially supported\" does not include contributions to the SSF, but does include the payment of establishment, administration or solicitation costs. 100.6(b)."
   },
@@ -144,44 +139,64 @@
     "term": "Trade association",
     "definition": "A membership organization consisting of persons engaged in a similar or related line of commerce. A trade association is organized to promote and improve business conditions in that line of commerce and not to engage in a regular business for profit. No part of the net earnings of a trade association may inure to the benefit of any member."
   },
-    {
+  {
     "term": "Presidential public funds",
     "definition": "Public funding of presidential elections means that qualified presidential candidates may choose to receive federal government funds to pay for certain expenses of their political campaigns in both the primary and general elections. Prior to the 2016 presidential election, national political parties could also receive federal money for their national nominating conventions."
   },
-      {
+  {
     "term": "Party committee",
-    "definition": "A political committee that represents a political party and is part of the official party structure at the national, state or local level. "
+    "definition": "A political committee that represents a political party and is part of the official party structure at the national, state or local level."
   },
-     {
+  {
     "term": "Operating expenditures",
     "definition": "A committee's day-to-day expenditures for items such as rent, overhead, administration, personnel, equipment, travel, advertising and fundraising."
   },
-     {
+  {
     "term": "Leadership PAC",
     "definition": "A political committee that is directly or indirectly established, financed, maintained or controlled by a candidate or an individual holding federal office, but is not an authorized committee of the candidate or officeholder and is not affiliated with an authorized committee of a candidate or officeholder."
   },
-     {
+  {
     "term": "Super PAC",
     "definition": "A committee that intends to make independent expenditures, and — consistent with the U.S. Court of Appeals for the District of Columbia Circuit decision in SpeechNow v. FEC — it therefore intends to raise funds in unlimited amounts. This committee will not use those funds to make contributions, whether direct, in-kind or via coordinated communications, to federal candidates or committees."
   },
-     {
+  {
     "term": "Hybrid PAC",
     "definition": "A committee that intends to establish a separate bank account to deposit and withdraw funds raised in unlimited amounts from individuals, corporations, labor organizations and/or other political committees, consistent with the stipulated judgment in Carey v. FEC.  The funds maintained in this separate account will not be used to make contributions, whether direct, in-kind or via coordinated communications, or coordinated expenditures, to federal candidates or committees."
   },
-     {
+  {
     "term": "Lobbyist/Registrant PAC",
     "definition": "Any political committee established or controlled by a person who is a current registrant under Lobbying Disclosure Act or an individual who is named on a current registration or report filed under the Lobbying Disclosure Act."
   },
-     {
+  {
     "term": "Overnight delivery service",
     "definition": "A private delivery service business of established reliability that offers an overnight (next business day) delivery option."
   },
-     {
+  {
     "term": "Postmarked",
-    "definition": "A U.S. Postal Service postmark or the verifiable date of deposit with an overnight delivery service. "
+    "definition": "A U.S. Postal Service postmark or the verifiable date of deposit with an overnight delivery service."
   },
   {
     "term": "Exempt party activities",
     "definition": "Certain candidate support activities that state and local party groups may undertake without making a contribution or expenditure, provided specific rules are followed."
+  },
+  {
+    "term": "Act",
+    "definition": "The Federal Election Campaign Act of 1971, as amended (52 U.S.C. §§30101-30146). 11 CFR 100.18. Prior to September 1, 2014, the Act appeared in Title 2 of the U.S. Code. Sometimes abbreviated FECA."
+  },
+  {
+    "term": "Administrative expense",
+    "definition": "For party committees, rent, utilities, office equipment, office supplies, routine building maintenance and other operating costs not attributable to a specific candidate."
+  },
+  {
+    "term": "Advisory opinion (AO)",
+    "definition": "A formal response from the Commission regarding the legality of a specific activity proposed in an advisory opinion request (AOR). 11 CFR Part 112."
+  },
+  {
+    "term": "Affiliated committees",
+    "definition": "Committees and organizations that are considered one committee for purposes of the contribution limits. 11 CFR 110.3(a)(1). Affiliated committees include (1) All committees established or authorized by a candidate as part of his or her campaign for federal or nonfederal office; and (2) All committees established, financed, maintained or controlled by the same person, group or organization. 11 CFR 100.5(g)(1) and (2); 110.3(a)(1)."
+  },
+  {
+    "term": "Allocation account",
+    "definition": "A separate federal account into which funds from either a committee’s federal and nonfederal accounts, or (for party committees) from its federal and Levin accounts, are deposited solely to pay expenses that must be allocated. (A party committee must have separate allocation accounts for its federal/nonfederal allocation and for its federal/Levin allocation.) 11 CFR 106.7(f) and 300.33(d)."
   }
 ]
