@@ -117,8 +117,9 @@
   text-transform: uppercase;
 
   .label__optional {
-    text-transform: none;
     font-weight: normal;
+    line-height: 1;
+    text-transform: none;
   }
 }
 
@@ -302,4 +303,3 @@
   padding: u(2rem);
   margin-bottom: u(2rem);
 }
-
