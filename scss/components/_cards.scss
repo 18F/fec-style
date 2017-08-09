@@ -43,6 +43,10 @@
   }
 }
 
+.card--empty {
+  background: none;
+}
+
 .card__image {
   display: block;
   margin: 0 auto;
@@ -69,18 +73,22 @@
 }
 
 .card--horizontal {
+  display: table;
   font-size: u(1.4rem);
   padding: u(1rem 2rem);
   text-align: left;
 
   .card__image {
     @include span-columns(1 of 3);
+    display: table-cell;
   }
 
   .card__image__container {
-    @include span-columns(1 of 3);
+    display: table-cell;
+    float: none;
     text-align: center;
-
+    width: u(4.8rem);
+    
     .card__image {
       display: inline;
       float: none;
@@ -90,9 +98,11 @@
   }
 
   .card__content {
-    @include span-columns(2 of 3);
+    display: table-cell;
+    float: none;
     text-align: left;
-    padding: 0;
+    padding: 0 0 0 $gutter;
+    vertical-align: middle;
   }
 
   .card__content--full-width {
@@ -293,6 +303,22 @@
 
     &.i-data-flag {
       @include u-icon-bg($data-flag, $primary-contrast);
+    }
+
+    &.i-external {
+      @include u-icon-bg($share, $primary-contrast);
+    }
+
+    &.i-filings {
+      @include u-icon-bg($papers, $primary-contrast);
+    }
+
+    &.i-bulk {
+      @include u-icon-bg($bulk, $primary-contrast);
+    }
+
+    &.i-loans {
+      @include u-icon-bg($hand-money, $primary-contrast);
     }
   }
 }
