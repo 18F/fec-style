@@ -48,10 +48,12 @@
 
 .example__image {
   @include span-columns(8);
+  border: 2px solid $gray-lightest;
   height: auto;
 }
 
 .example__caption {
   @include span-columns(4);
+  font-family: $serif;
   font-style: italic;
 }
