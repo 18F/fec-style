@@ -50,6 +50,9 @@
 .card__image {
   display: block;
   margin: 0 auto;
+  max-width: u(6rem);
+  height: auto;
+  border-radius: 100%;
 }
 
 .card__image-link {
@@ -95,6 +98,10 @@
       margin: 0;
       width: 100%;
     }
+  }
+
+  .card__image__container--secondary {
+    background-color: $secondary;
   }
 
   .card__content {
