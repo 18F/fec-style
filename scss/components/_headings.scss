@@ -124,3 +124,20 @@
     }
   }
 }
+
+// Headings with images
+.heading--with-image {
+  .heading__text {
+    @include span-columns(11);
+  }
+
+  .heading__image {
+    @include span-columns(1);
+    border-radius: 100%;
+    height: auto;
+  }
+}
+
+.heading__pre-title {
+  margin-bottom: 0;
+}

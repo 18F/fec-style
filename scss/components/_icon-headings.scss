@@ -194,6 +194,17 @@
   }
 }
 
+.icon-heading--financial-document {
+  &::before {
+    $size: u(4rem);
+    @include u-icon-circle($financial-document, $inverse, $secondary-contrast, $size);
+    background-size: 50%;
+    content: '';
+    float: left;
+    margin-right: u(1.5rem);
+  }
+}
+
 .icon-heading--graph-circle,
 .icon-heading--graph-unordered-circle,
 .icon-heading--map-circle {

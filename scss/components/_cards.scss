@@ -50,6 +50,9 @@
 .card__image {
   display: block;
   margin: 0 auto;
+  max-width: u(6rem);
+  height: auto;
+  border-radius: 100%;
 }
 
 .card__image-link {
@@ -88,13 +91,17 @@
     float: none;
     text-align: center;
     width: u(4.8rem);
-    
+
     .card__image {
       display: inline;
       float: none;
       margin: 0;
       width: 100%;
     }
+  }
+
+  .card__image__container--secondary {
+    background-color: $secondary;
   }
 
   .card__content {
@@ -210,6 +217,34 @@
       display: inline;
       float: none;
     }
+  }
+}
+
+// For setting a background behind the image
+.card--alternating-bg {
+  min-height: u(8.3rem);
+  padding: 0;
+
+  .card__image__container {
+    @include span-columns(4);
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
+
+  .card__image {
+    width: u(6rem);
+    vertical-align: middle;
+  }
+
+  .card__image__container--secondary {
+    background-color: $secondary;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .card__content {
+    display: table-cell;
+    padding: 1.5rem;
   }
 }
 

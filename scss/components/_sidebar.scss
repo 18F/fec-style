@@ -60,6 +60,14 @@
   color: $inverse;
 }
 
+.sidebar__title--large {
+  @include heading(h2);
+  line-height: u(4rem);
+  margin-bottom: 0;
+  padding: u(2rem);
+  text-transform: none;
+}
+
 .sidebar__content {
   @include clearfix();
   background-color: $neutral;
