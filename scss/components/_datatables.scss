@@ -266,6 +266,12 @@
   }
 }
 
+.data-table {
+  .is-incumbent::before {
+    top: u(.8rem);
+  }
+}
+
 // Scrolling tables
 .dataTables_scroll {
   position: relative;

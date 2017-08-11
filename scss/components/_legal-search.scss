@@ -107,3 +107,12 @@
 .pending-ao__icon {
   @include u-icon-bg($timer, $primary-contrast);
 }
+
+.ao-result__title {
+  background-color: $gray-light;
+  border-left: .5rem solid $primary;
+  font-family: $sans-serif;
+  letter-spacing: 0;
+  margin: u(2rem 0 0 0);
+  padding: u(1rem);
+}
