@@ -137,7 +137,8 @@ ValidateDateFilter.prototype.handleRemoveAll = function(e, opts) {
 ValidateDateFilter.prototype.showWarning = function() {
   if (!this.showingWarning) {
     var warning =
-    '<div class="message message--error message--small">' +
+    '<div class="filter__message filter__message--error">' +
+      '<strong>Time period is too broad</strong><br>' +
       'Please enter dates within six years of each other.' +
     '</div>';
     this.$range.after(warning);
@@ -147,7 +148,7 @@ ValidateDateFilter.prototype.showWarning = function() {
 
 ValidateDateFilter.prototype.hideWarning = function() {
   if (this.showingWarning) {
-    this.$elm.find('.message').remove();
+    this.$elm.find('.filter__message').remove();
     this.showingWarning = false;
   }
 };
