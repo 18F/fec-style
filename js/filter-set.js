@@ -76,6 +76,7 @@ FilterSet.prototype.activateProcessed = function() {
   if (_.isEmpty(this.processedFilters)) {
     var $filters = this.$body.find('.js-processed-filters .js-filter');
     this.processedFilters = this.activate($filters);
+    // Store the processed filters in this.filters for later reference
     this.filters = this.processedFilters;
   }
 };
@@ -84,6 +85,7 @@ FilterSet.prototype.activateEfiling = function() {
   if (_.isEmpty(this.efilingFilters)) {
     var $filters = this.$body.find('.js-efiling-filters .js-filter');
     this.efilingFilters = this.activate($filters);
+    // Store the efiling filters in this.filters for later reference
     this.filters = this.efilingFilters;
   }
 };
