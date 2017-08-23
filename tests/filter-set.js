@@ -110,12 +110,15 @@ describe('FilterSet', function() {
     it('activates and stores processed filters', function() {
       this.filterSet.activateProcessed();
       expect(Object.keys(this.filterSet.processedFilters)).to.deep.equal(['name', 'cycle']);
+      expect(Object.keys(this.filterSet.filters)).to.deep.equal(['name', 'cycle']);
     });
 
     it('activates and stores the efiling filters', function() {
       this.filterSet.activateEfiling();
       expect(Object.keys(this.filterSet.efilingFilters)).to.deep.equal(['cycle']);
+      expect(Object.keys(this.filterSet.filters)).to.deep.equal(['cycle']);
     });
+
 
     it('does not activate filters if it has efiling filters', function() {
       this.filterSet.activateAll();
