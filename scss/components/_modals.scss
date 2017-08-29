@@ -25,6 +25,7 @@
   z-index: $z-max;
 
   @include media($med) {
+    bottom: auto;
     left: 50%;
     right: auto;
     margin-left: u(-30rem);
@@ -41,4 +42,14 @@
   position: absolute;
   right: u(1rem);
   top: u(1rem);
+}
+
+.modal__form {
+  @include span-columns(6);
+}
+
+.modal__tips {
+  @include span-columns(5);
+  @include shift(1);
+  padding-top: u(1rem);
 }
